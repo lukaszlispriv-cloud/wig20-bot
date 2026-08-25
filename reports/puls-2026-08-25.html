@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 25.08.2026</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E;
+    --amber:#B7791F; --ink:#1C2530; --muted:#5C6672; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+  header{background:var(--navy);color:#fff;padding:20px 16px 24px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 4px}
+  header .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+  header h1{font-size:26px;font-weight:800;margin-top:2px}
+  header .idx{margin-top:12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  header .idx .val{font-size:32px;font-weight:700}
+  header .idx .chg{font-size:16px;font-weight:600;color:#7FD6A8}
+  header .idx .src{font-size:11px;opacity:.65;flex-basis:100%}
+  .stamp-zone{display:flex;justify-content:center;margin:22px 0 6px}
+  .stamp{border:3px solid var(--green);color:var(--green);font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:20px;padding:8px 22px;transform:rotate(-2.5deg);border-radius:6px;background:rgba(14,124,74,.05)}
+  .stamp small{display:block;font-size:10px;letter-spacing:.12em;font-weight:600;text-align:center}
+  main{max-width:720px;margin:0 auto;padding:8px 14px 30px}
+  section{margin-top:26px}
+  h2{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--navy);padding-bottom:6px;margin-bottom:12px}
+  .note{background:#FCF6E8;border:1px solid #EAD9AE;border-left:4px solid var(--amber);border-radius:6px;padding:10px 12px;font-size:13px;color:#5b4a1f;margin-bottom:14px}
+  .news{list-style:none}
+  .news li{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;font-size:14px}
+  .lbl{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:4px;margin-right:6px;vertical-align:1px;color:#fff}
+  .lbl.espi{background:var(--navy)} .lbl.short{background:#6B21A8} .lbl.rekom{background:var(--amber)} .lbl.makro{background:#0B5563}
+  .news .src{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
+  .tbl-scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:540px}
+  th{background:#EEF1EA;text-align:left;padding:8px 10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  td{padding:8px 10px;border-top:1px solid var(--line);white-space:nowrap}
+  td.num{text-align:right}
+  .up{color:var(--green);font-weight:700} .down{color:var(--red);font-weight:700} .bd{color:var(--muted)}
+  .dir{font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:2px 6px;border-radius:4px}
+  .dir.l{background:rgba(14,124,74,.12);color:var(--green)} .dir.s{background:rgba(196,55,46,.12);color:var(--red)}
+  .spread{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}
+  .spread .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+  .spread .big{font-size:26px;font-weight:800;color:var(--green)}
+  .bar{height:14px;background:#ECEEE8;border-radius:7px;margin-top:10px;position:relative;overflow:hidden}
+  .bar .zero{position:absolute;left:50%;top:0;bottom:0;width:2px;background:#B8BFB4}
+  .bar .fill{position:absolute;left:50%;top:0;bottom:0;width:1.9%;background:var(--green);border-radius:0 7px 7px 0}
+  .bar-cap{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px}
+  .cal{list-style:none;font-size:14px}
+  .cal li{padding:8px 10px;background:var(--card);border:1px solid var(--line);border-radius:8px;margin-bottom:8px}
+  .cal .d{font-weight:700;color:var(--navy);margin-right:8px}
+  footer{max-width:720px;margin:10px auto 40px;padding:16px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="tag">Puls WIG20 &middot; raport dzienny &middot; wtorek</div>
+    <h1>25 sierpnia 2026</h1>
+    <div class="idx">
+      <span class="val mono">4&nbsp;008,04</span>
+      <span class="chg mono">+0,18%</span>
+      <span>WIG20 na zamknięciu</span>
+      <span class="src">Źródło: PAP Biznes / Strefa Inwestorów, 25.08.2026. D0 (21.08): 3&nbsp;995,19 &rarr; od D0: +0,32%</span>
+    </div>
+  </div>
+</header>
+
+<div class="stamp-zone">
+  <div class="stamp">Aktualna<small>prognoza 2026-W1 &middot; werdykt 25.08.2026</small></div>
+</div>
+
+<main>
+  <section>
+    <div class="note"><b>Nota o danych:</b> pełne kursy zamknięcia sesji 25.08 nie były dostępne w otwartych źródłach w chwili sporządzania raportu (ograniczony dostęp sieciowy). Zwroty od D0 policzono na <b>zamknięciach z 24.08</b> (PAP/Inwestycje.pl, zweryfikowane względem D0), uzupełnionych o wskazania śróddzienne z 25.08 z podaną godziną. Braki oznaczono „b.d.".</div>
+  </section>
+
+  <section>
+    <h2>Najważniejsze zmiany</h2>
+    <ul class="news">
+      <li><span class="lbl makro">MAKRO</span><b>CIT 30% dla energetyki i paliw od 2027 r. — projekt na stole (filar tezy short).</b> Stawka dla firm o przychodach &gt;50 mln euro ma wzrosnąć z 19% do 30% w 2027, potem 26% i 23%; obejmie m.in. Orlen, PGE, Tauron, Eneę i spółki dystrybucyjne. Analitycy ostrzegają o presji na dywidendy. Rynek na razie ignoruje: we wtorek PGE +1,5%, Tauron +1,3% (godz. 10:50).<span class="src">rp.pl / parkiet.com / stockwatch.pl (projekt ogłoszony ok. 20.08.2026); PAP Biznes 25.08</span></li>
+      <li><span class="lbl espi">ESPI</span><b>Tauron: szacunki za II kw. 2026 (publikacja 25.08).</b> EBITDA 1,606 mld zł (konsensus 1,583 mld), zysk netto 586 mln zł (konsensus 592,6 mln); EBITDA -15% r/r. Lekki beat na EBITDA — poniżej progu reakcji dla pozycji short. Wyniki finalne 9.09.<span class="src">Bankier.pl / Inwestycje.pl, 25.08.2026</span></li>
+      <li><span class="lbl rekom">REKOM.</span><b>Modivo: negatywne otoczenie rekomendacyjne — zgodne z tezą short.</b> Po rozczarowujących wstępnych wynikach II kw. r.obr. (publikacja 11.08: EBITDA skoryg. 390 mln zł poniżej konsensusu 393,6 mln; zysk operacyjny -66% r/r) pojawiła się rekomendacja „sprzedaj"; kurs odbił do ok. 93,8 zł (+3,6% od D0 — poniżej progu reakcji 4%).<span class="src">pl.investing.com / stockwatch.pl / TradingView (stan 25.08)</span></li>
+      <li><span class="lbl espi">ESPI</span><b>Allegro: raport o transakcjach buybacku 17–21.08</b> (opublikowany 24.08) — rutynowy element programu skupu do 800 mln zł (cena maks. 45 zł).<span class="src">PAP Biznes / stockwatch.pl, 24.08.2026</span></li>
+      <li><span class="lbl espi">ESPI</span><b>mBank: przedterminowy wykup obligacji senioralnych serii 11 i 12</b> (25.08) — komunikat techniczny, bez wpływu na tezę.<span class="src">komunikaty ESPI, 25.08.2026</span></li>
+      <li><span class="lbl short">SHORT</span><b>KNF: brak zmian ≥0,3 p.p. w ostatnich 24h dla spółek koszykowych.</b> Ostatni odnotowany ruch: 18.08 QUBE Research zmniejszył short na Allegro 1,48% &rarr; 1,35% (-0,13 p.p., sprzed D0; kierunkowo sprzyja tezie long).<span class="src">rejestr krótkiej sprzedaży KNF, wpisy z 18.08.2026</span></li>
+      <li><span class="lbl makro">MAKRO</span><b>KGHM najsilniejszy w WIG20 w poniedziałek: +4,69%</b> (zamknięcie 358,40 zł), kontynuacja po bardzo mocnym H1 (5,58 mld zł zysku netto wobec 0,58 mld rok wcześniej; raport z ub. tygodnia). We wtorek 15:51 kurs w przedziale 355,35–364,00 zł.<span class="src">Inwestycje.pl 24.08; stockwatch.pl 25.08 15:51</span></li>
+      <li><span class="lbl makro">MAKRO</span><b>Poza koszykami: CD Projekt -5,4%</b> (obrót 187 mln zł) po przesunięciu okna premiery „Wiedźmina 4" na 2028 r. Poza zakresem strategii — bez akcji taktycznej (wyzwalacz nie spełnia definicji „szokowo złych wyników").<span class="src">PAP Biznes / Strefa Inwestorów / parkiet.com, 25.08.2026</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>TOP 5 — zwrot pozycyjny od D0 (21.08)</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Spółka</th><th>Kier.</th><th>D0</th><th>Kurs 24.08</th><th>Zwrot pozycji</th><th>Relatywnie*</th></tr>
+      <tr><td><b>KGHM</b></td><td><span class="dir l">LONG</span></td><td class="num mono">342,35</td><td class="num mono">358,40</td><td class="num mono up">+4,69%</td><td class="num mono up">+4,55 p.p.</td></tr>
+      <tr><td><b>Dino</b></td><td><span class="dir l">LONG</span></td><td class="num mono">34,78</td><td class="num mono">35,05</td><td class="num mono up">+0,78%</td><td class="num mono up">+0,64 p.p.</td></tr>
+      <tr><td><b>Tauron</b></td><td><span class="dir s">SHORT</span></td><td class="num mono">8,248</td><td class="num mono">8,26</td><td class="num mono down">-0,17%</td><td class="num mono down">-0,31 p.p.</td></tr>
+      <tr><td><b>PGE</b></td><td><span class="dir s">SHORT</span></td><td class="num mono">10,19</td><td class="num mono">10,21</td><td class="num mono down">-0,20%</td><td class="num mono down">-0,34 p.p.</td></tr>
+      <tr><td><b>Orlen</b></td><td><span class="dir s">SHORT</span></td><td class="num mono">153,14</td><td class="num mono">154,00</td><td class="num mono down">-0,56%</td><td class="num mono down">-0,70 p.p.</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>BOTTOM 5 — zwrot pozycyjny od D0 (21.08)</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Spółka</th><th>Kier.</th><th>D0</th><th>Kurs 24.08</th><th>Zwrot pozycji</th><th>Relatywnie*</th></tr>
+      <tr><td><b>Modivo</b></td><td><span class="dir s">SHORT</span></td><td class="num mono">90,56</td><td class="num mono bd">~93,78 (25.08)&dagger;</td><td class="num mono down">~-3,6%&dagger;</td><td class="num mono down">~-3,9 p.p.&dagger;</td></tr>
+      <tr><td><b>Budimex</b></td><td><span class="dir l">LONG</span></td><td class="num mono">706,40</td><td class="num mono">696,4</td><td class="num mono down">-1,42%</td><td class="num mono down">-1,56 p.p.</td></tr>
+      <tr><td><b>Allegro</b></td><td><span class="dir l">LONG</span></td><td class="num mono">45,095</td><td class="num mono">44,71</td><td class="num mono down">-0,85%</td><td class="num mono down">-0,99 p.p.</td></tr>
+      <tr><td><b>PKO BP</b></td><td><span class="dir l">LONG</span></td><td class="num mono">113,96</td><td class="num mono">113,14</td><td class="num mono down">-0,72%</td><td class="num mono down">-0,86 p.p.</td></tr>
+      <tr><td><b>mBank</b></td><td><span class="dir s">SHORT</span></td><td class="num mono">1&nbsp;385,50</td><td class="num mono bd">b.d.</td><td class="num mono bd">b.d.</td><td class="num mono bd">b.d.</td></tr>
+    </table></div>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:6px">* względem WIG20 od D0 (24.08: 4&nbsp;000,72, +0,14%). &dagger; Modivo: wskazanie TradingView z 25.08 (brak potwierdzonego zamknięcia); poniżej progu reakcji 4%. Kursy 24.08: zamknięcia wg Inwestycje.pl/PAP (KGHM, Orlen, Allegro potwierdzone niezależnie w stockwatch.pl/investing.com); Dino, PGE, Tauron, PKO BP, Budimex wyliczone ze zmian procentowych sesji 24.08 (Inwestycje.pl) względem D0. Wtorek 25.08 (śróddziennie, PAP 10:50): PGE +1,5%, Tauron +1,3%, Orlen -0,7%, banki +0,6%; PKO BP 9:54: 113,62 (+0,42%); Dino 12:24: 35,66 (+1,74%).</p>
+  </section>
+
+  <section>
+    <h2>Spread koszyków</h2>
+    <div class="spread">
+      <div class="row">
+        <span>LONG &minus; SHORT od D0 (D+2, dane na zamknięciach 24.08)</span>
+        <span class="big mono">+0,19 p.p.</span>
+      </div>
+      <div class="bar"><div class="zero"></div><div class="fill"></div></div>
+      <div class="bar-cap"><span>-5 p.p.</span><span>0</span><span>+5 p.p.</span></div>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:8px">Średnia long (5 spółek): +0,50% &middot; średnia zmiana kursów short (Orlen, PGE, Tauron): +0,31% &rarr; spread +0,19 p.p. Wartość szacunkowa — bez Modivo i mBanku (b.d.); z uwzględnieniem szacunku dla Modivo spread spada do ok. -0,6 p.p.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reakcje / pozycje taktyczne</h2>
+    <ul class="news">
+      <li><b>Lista wykluczeń (exclude): pusta.</b> Żadna spółka koszykowa nie przekroczyła progów reakcji (brak ruchów &ge;4% od D0 przeciw tezie, brak twardych wyzwalaczy, brak zmian shortów KNF &ge;0,3 p.p., brak rekomendacji przeciw tezie od liczącego się DM).</li>
+      <li><b>Pozycje taktyczne: brak</b> (0/2). Skan WIG20 poza koszykami: jedyny twardy kandydat — CD Projekt (-5,4% po przesunięciu premiery) — nie spełnia katalogu wyzwalaczy (to nie raport wynikowy); bez otwarcia pozycji.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kalendarz — środa 26.08 i najbliższe dni</h2>
+    <ul class="cal">
+      <li><span class="d">26.08</span>Orzeł Biały: kontynuacja NWZ z 31.07 oraz dzień wypłaty dywidendy 1,35 zł/akcję <span style="color:var(--muted);font-size:12px">(Strefa Inwestorów, kalendarium 20.08)</span></li>
+      <li><span class="d">02.09</span>CD Projekt: skonsolidowany raport za I półrocze 2026 <span style="color:var(--muted);font-size:12px">(cdprojekt.com)</span></li>
+      <li><span class="d">09.09</span>Tauron: finalne wyniki za I półrocze 2026 <span style="color:var(--muted);font-size:12px">(Bankier.pl, 25.08)</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów prawa.<br>
+  Raport wygenerowany automatycznie przez AI (Puls WIG20) &middot; 25.08.2026, ok. 23:30 CEST &middot; prognoza 2026-W1, D0 = 21.08.2026.
+</footer>
+</body>
+</html>
