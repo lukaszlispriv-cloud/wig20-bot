@@ -1,0 +1,61 @@
+{
+  "version": "2026-W1",
+  "generated": "2026-08-23",
+  "status": "AKTUALNA",
+  "long": [
+    "DINOPL",
+    "KGHM",
+    "BUDIMEX",
+    "PKOBP",
+    "ALLEGRO"
+  ],
+  "short": [
+    "TAURONPE",
+    "PKNORLEN",
+    "PGE",
+    "MODIVO",
+    "MBANK"
+  ],
+  "epics": {
+    "ALIOR": "UZUPELNIJ",
+    "ALLEGRO": "UZUPELNIJ",
+    "BUDIMEX": "UZUPELNIJ",
+    "CDPROJEKT": "UZUPELNIJ",
+    "DINOPL": "UZUPELNIJ",
+    "ERSTEPL": "UZUPELNIJ",
+    "KETY": "UZUPELNIJ",
+    "KGHM": "UZUPELNIJ",
+    "KRUK": "UZUPELNIJ",
+    "LPP": "UZUPELNIJ",
+    "MBANK": "UZUPELNIJ",
+    "MODIVO": "UZUPELNIJ",
+    "PEKAO": "UZUPELNIJ",
+    "PEPCO": "UZUPELNIJ",
+    "PGE": "UZUPELNIJ",
+    "PKNORLEN": "UZUPELNIJ",
+    "PKOBP": "UZUPELNIJ",
+    "PZU": "UZUPELNIJ",
+    "TAURONPE": "UZUPELNIJ",
+    "ZABKA": "UZUPELNIJ"
+  },
+  "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
+  "exclude": [],
+  "d0": {
+    "date": "2026-08-21",
+    "wig20": 3995.19,
+    "prices": {
+      "DINOPL": 34.78,
+      "KGHM": 342.35,
+      "BUDIMEX": 706.4,
+      "PKOBP": 113.96,
+      "ALLEGRO": 45.095,
+      "TAURONPE": 8.248,
+      "PKNORLEN": 153.14,
+      "PGE": 10.19,
+      "MODIVO": 90.56,
+      "MBANK": 1385.5
+    }
+  },
+  "history": [],
+  "tactical": []
+}
