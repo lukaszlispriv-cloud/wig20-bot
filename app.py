@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WIG20 BASKET BOT v1.3.1 — PEŁNY AUTOMAT (eksperyment naukowy, konto DEMO)
+WIG20 BASKET BOT v1.3.2 — PEŁNY AUTOMAT (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -442,6 +442,31 @@ class Capital:
             raise RuntimeError(f"Logowanie nieudane ({r.status_code}): {r.text[:200]}")
         self.s.headers.update({"CST": r.headers.get("CST"),
                                "X-SECURITY-TOKEN": r.headers.get("X-SECURITY-TOKEN")})
+        if ACCOUNT_ID:
+            self._switch_account(ACCOUNT_ID)
+
+    def _switch_account(self, account_id):
+        """Przełącza AKTYWNY rachunek sesji. Konieczne przy >1 rachunku:
+        pozycje i zlecenia zawsze dotyczą rachunku aktywnego, nie tego,
+        z którego czytamy saldo."""
+        try:
+            cur = self._get("/api/v1/session").get("accountId")
+            if cur == account_id:
+                return
+        except Exception:
+            pass  # kształt odpowiedzi nieistotny — spróbujemy przełączyć
+        r = self.s.put(f"{BASE_URL}/api/v1/session",
+                       json={"accountId": account_id}, timeout=20)
+        if r.status_code == 200:
+            for h in ("CST", "X-SECURITY-TOKEN"):
+                if r.headers.get(h):
+                    self.s.headers[h] = r.headers[h]
+            log.info("Aktywny rachunek przełączony na %s.", account_id)
+        elif "not-different" in r.text or "already" in r.text.lower():
+            pass  # ten rachunek jest już aktywny
+        else:
+            raise RuntimeError(f"Nie mogę przełączyć rachunku na {account_id}: "
+                               f"{r.status_code} {r.text[:150]}")
 
     def _get(self, path, **kw):
         r = self.s.get(f"{BASE_URL}{path}", timeout=20, **kw)
@@ -717,7 +742,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.3.1", dry_run=DRY_RUN, demo=CAPITAL_DEMO)
+    return jsonify(ok=True, wersja="1.3.2", dry_run=DRY_RUN, demo=CAPITAL_DEMO)
 
 
 @app.route("/generate", methods=["GET", "POST"])
@@ -758,9 +783,17 @@ def status_ep():
         cap = Capital()
         cap.login()
         eq, ccy, acc = cap.equity()
+        konta = [{"accountId": a.get("accountId"),
+                  "nazwa": a.get("accountName"),
+                  "waluta": a.get("currency"),
+                  "saldo": (a.get("balance") or {}).get("balance"),
+                  "preferowane": a.get("preferred", False),
+                  "aktywne_dla_bota": a.get("accountId") == acc}
+                 for a in cap.accounts()]
         managed = {e for e in sig["epics"].values()
                    if e and not e.upper().startswith("UZUP")}
-        return jsonify(sygnaly={k: sig[k] for k in
+        return jsonify(konta_wszystkie=konta,
+                       sygnaly={k: sig[k] for k in
                                 ("version", "status", "long", "short",
                                  "exclude", "tactical")},
                        historia=sig.get("history", []),
