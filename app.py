@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WIG20 BASKET BOT v1.3.2 — PEŁNY AUTOMAT (eksperyment naukowy, konto DEMO)
+WIG20 BASKET BOT v1.3.3 — PEŁNY AUTOMAT (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -473,8 +473,11 @@ class Capital:
         r.raise_for_status()
         return r.json()
 
+    def accounts(self):
+        return self._get("/api/v1/accounts").get("accounts", [])
+
     def equity(self):
-        accs = self._get("/api/v1/accounts").get("accounts", [])
+        accs = self.accounts()
         pick = None
         for a in accs:
             if ACCOUNT_ID and a.get("accountId") == ACCOUNT_ID:
@@ -742,7 +745,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.3.2", dry_run=DRY_RUN, demo=CAPITAL_DEMO)
+    return jsonify(ok=True, wersja="1.3.3", dry_run=DRY_RUN, demo=CAPITAL_DEMO)
 
 
 @app.route("/generate", methods=["GET", "POST"])
