@@ -1,0 +1,61 @@
+{
+ "aktualizacja": {
+  "ALLEGRO": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "BUDIMEX": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "DINOPL": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "KGHM": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "MBANK": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "MODIVO": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "PGE": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "PKNORLEN": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "PKOBP": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "TAURONPE": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "WIG20": "2026-08-26 (import: PAP/Strefa Inwestorów, zamknięcia 21 i 25.08)"
+ },
+ "kursy": {
+  "ALLEGRO": {
+   "2026-08-21": 45.095,
+   "2026-08-25": 44.87
+  },
+  "BUDIMEX": {
+   "2026-08-21": 706.4,
+   "2026-08-25": 709.0
+  },
+  "DINOPL": {
+   "2026-08-21": 34.78,
+   "2026-08-25": 36.18
+  },
+  "KGHM": {
+   "2026-08-21": 342.35,
+   "2026-08-25": 366.0
+  },
+  "MBANK": {
+   "2026-08-21": 1385.5,
+   "2026-08-25": 1370.5
+  },
+  "MODIVO": {
+   "2026-08-21": 90.56,
+   "2026-08-25": 89.68
+  },
+  "PGE": {
+   "2026-08-21": 10.19,
+   "2026-08-25": 10.54
+  },
+  "PKNORLEN": {
+   "2026-08-21": 153.14,
+   "2026-08-25": 152.52
+  },
+  "PKOBP": {
+   "2026-08-21": 113.96,
+   "2026-08-25": 113.52
+  },
+  "TAURONPE": {
+   "2026-08-21": 8.248,
+   "2026-08-25": 8.432
+  },
+  "WIG20": {
+   "2026-08-21": 3995.19,
+   "2026-08-25": 4008.04
+  }
+ }
+}

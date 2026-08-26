@@ -17,6 +17,11 @@ Co robi:
 4. Symbole-kandydaci: dla spółek o niepewnym kodzie próbuje kolejno
    kilku symboli; braki wypisuje jawnie — wtedy użyj rezerwy (Stooq/PAP)
    i oznacz źródło w raporcie.
+5. CACHE: każde udane pobranie dopisuje zamknięcia do data/kursy-cache.json
+   (obok signals.json). Gdy Yahoo zawodzi (np. HTTP 429), skrypt sięga do
+   cache i podaje kursy z ostatniego udanego pobrania, oznaczając je jako
+   ŹRÓDŁO: cache (z datą aktualizacji) — dane są wtedy zwalidowane, ale
+   mogą nie obejmować najnowszej sesji.
 
 Wyjście: czytelna tabela; z flagą --json — struktura maszynowa.
 """
@@ -113,24 +118,90 @@ def znajdz_signals():
     return None, None
 
 
+# ---------- cache ostatnich udanych pobrań (data/kursy-cache.json) ----------
+
+MAKS_SESJI_CACHE = 40   # ile ostatnich sesji trzymać na ticker
+
+
+def sciezka_cache(sig_path):
+    baza = os.path.dirname(os.path.abspath(sig_path)) if sig_path else os.getcwd()
+    return os.path.join(baza, "data", "kursy-cache.json")
+
+
+def wczytaj_cache(path):
+    try:
+        c = json.load(open(path, encoding="utf-8"))
+        if isinstance(c.get("kursy"), dict):
+            return c
+    except (OSError, json.JSONDecodeError):
+        pass
+    return {"kursy": {}, "aktualizacja": {}}
+
+
+def zapisz_cache(path, cache):
+    try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=1, sort_keys=True)
+        os.replace(tmp, path)
+        return True
+    except OSError:
+        return False
+
+
+def cache_dopisz(cache, ticker, bary, teraz):
+    kursy = cache["kursy"].setdefault(ticker, {})
+    for d, c in bary:
+        kursy[d] = c
+    for d in sorted(kursy)[:-MAKS_SESJI_CACHE]:
+        del kursy[d]
+    cache["aktualizacja"][ticker] = teraz.strftime("%Y-%m-%d %H:%M")
+
+
+def cache_odczytaj(cache, ticker):
+    """Zwraca (bary posortowane po dacie, znacznik aktualizacji) albo ([], None)."""
+    kursy = cache["kursy"].get(ticker) or {}
+    if not kursy:
+        return [], None
+    bary = sorted((d, float(c)) for d, c in kursy.items())
+    return bary, cache["aktualizacja"].get(ticker, "b.d.")
+
+
 def main():
     tryb_json = "--json" in sys.argv
     sig, sig_path = znajdz_signals()
     d0_date = (sig or {}).get("d0", {}).get("date")
     d0_prices = (sig or {}).get("d0", {}).get("prices", {}) or {}
 
+    teraz = datetime.now(WAW)
+    cache_path = sciezka_cache(sig_path)
+    cache = wczytaj_cache(cache_path)
+    cache_zmieniony = False
+
     wynik, problemy = {}, []
     for ticker, kandydaci in SYMBOLE.items():
-        bary, blad, uzyty = [], "nie próbowano", None
+        bary, blad, uzyty, zrodlo = [], "nie próbowano", None, "yahoo"
         for sym in kandydaci:
             bary, blad = pobierz(sym)
             if bary:
                 uzyty = sym
                 break
-        if not bary:
-            problemy.append(f"{ticker}: brak danych ({', '.join(kandydaci)}; "
-                            f"{blad}) — użyj rezerwy (Stooq/PAP) i oznacz źródło")
-            continue
+        if bary:
+            cache_dopisz(cache, ticker, bary, teraz)
+            cache_zmieniony = True
+        else:
+            bary, akt = cache_odczytaj(cache, ticker)
+            if bary:
+                uzyty, zrodlo = "cache", f"cache z {akt}"
+                problemy.append(f"{ticker}: Yahoo bez danych ({blad}) — użyto "
+                                f"CACHE z {akt}; sprawdź, czy obejmuje "
+                                f"ostatnią sesję")
+            else:
+                problemy.append(f"{ticker}: brak danych ({', '.join(kandydaci)}; "
+                                f"{blad}) i brak wpisu w cache — użyj rezerwy "
+                                f"(Stooq/PAP) i oznacz źródło")
+                continue
         oz = ostatnia_zakonczona(bary)
         if not oz:
             problemy.append(f"{ticker}: brak zakończonej sesji w danych")
@@ -152,17 +223,21 @@ def main():
             d0_status = "—"
         wynik[ticker] = {"symbol": uzyty, "data": d, "close": c,
                          "poprzednia": pd, "zmiana_dd_pct": dd,
-                         "walidacja_d0": d0_status}
+                         "walidacja_d0": d0_status, "zrodlo": zrodlo}
+
+    if cache_zmieniony and not zapisz_cache(cache_path, cache):
+        problemy.append(f"cache: nie udało się zapisać {cache_path}")
 
     if tryb_json:
-        print(json.dumps({"wygenerowano": datetime.now(WAW).isoformat(timespec="minutes"),
+        print(json.dumps({"wygenerowano": teraz.isoformat(timespec="minutes"),
                           "d0": d0_date, "signals": sig_path,
+                          "cache": cache_path,
                           "kursy": wynik, "problemy": problemy},
                          ensure_ascii=False, indent=2))
         return
 
     print(f"KURSY GPW — ostatnia zakończona sesja (stan: "
-          f"{datetime.now(WAW).strftime('%Y-%m-%d %H:%M')} CET/CEST)")
+          f"{teraz.strftime('%Y-%m-%d %H:%M')} CET/CEST)")
     if sig_path:
         print(f"Walidacja D0 ({d0_date}) względem {sig_path}, tolerancja "
               f"{TOLERANCJA_D0*100:.1f}%")
@@ -181,6 +256,11 @@ def main():
     if rozjazdy:
         print(f"\nUWAGA: rozjazd z d0.prices dla: {', '.join(rozjazdy)} — "
               f"sprawdź symbol/split/dywidendę zanim użyjesz tych kursów.")
+    z_cache = [t for t, w in wynik.items() if w["zrodlo"] != "yahoo"]
+    if z_cache:
+        print(f"\nŹRÓDŁO CACHE (Yahoo niedostępne): {', '.join(z_cache)} — "
+              f"kursy z ostatniego udanego pobrania (data/kursy-cache.json); "
+              f"upewnij się, że kolumna SESJA wskazuje właściwą sesję.")
 
 
 if __name__ == "__main__":
