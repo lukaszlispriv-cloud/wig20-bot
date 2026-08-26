@@ -1,20 +1,20 @@
 {
-  "version": "2026-W1",
-  "generated": "2026-08-23",
+  "version": "2026-W2",
+  "generated": "2026-08-26",
   "status": "AKTUALNA",
   "long": [
-    "DINOPL",
     "KGHM",
+    "DINOPL",
+    "PEKAO",
     "BUDIMEX",
-    "PKOBP",
-    "ALLEGRO"
+    "KRUK"
   ],
   "short": [
+    "CDPROJEKT",
     "TAURONPE",
-    "PKNORLEN",
     "PGE",
-    "MODIVO",
-    "MBANK"
+    "PEPCO",
+    "MODIVO"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -42,21 +42,31 @@
   "exclude": [],
   "last_daily": "2026-08-26",
   "d0": {
-    "date": "2026-08-21",
-    "wig20": 3995.19,
+    "date": "2026-08-25",
+    "wig20": 4008.04,
     "prices": {
-      "DINOPL": 34.78,
-      "KGHM": 342.35,
-      "BUDIMEX": 706.4,
-      "PKOBP": 113.96,
-      "ALLEGRO": 45.095,
-      "TAURONPE": 8.248,
-      "PKNORLEN": 153.14,
-      "PGE": 10.19,
-      "MODIVO": 90.56,
-      "MBANK": 1385.5
+      "KGHM": 366.0,
+      "DINOPL": 36.18,
+      "PEKAO": 257.9,
+      "BUDIMEX": 709.0,
+      "KRUK": 438.9,
+      "CDPROJEKT": 242.9,
+      "TAURONPE": 8.432,
+      "PGE": 10.54,
+      "PEPCO": 42.14,
+      "MODIVO": 89.68
     }
   },
-  "history": [],
+  "history": [
+    {
+      "week": "2026-W1",
+      "spread_pp": 1.44,
+      "hit_top": "3/5",
+      "hit_bottom": "3/5",
+      "tactical_pp": null,
+      "managed_pp": 1.44,
+      "reaction_pp": 0.0
+    }
+  ],
   "tactical": []
 }

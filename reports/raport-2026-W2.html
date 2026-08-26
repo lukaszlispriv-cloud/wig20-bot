@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raport tygodniowy WIG20 — 2026-W2</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#7FD6A8}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stamp.amber{border-color:#B07B22;color:#B07B22;background:rgba(176,123,34,.07)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.out{background:#7A4A9E}.tag.in{background:#0E7C4A}.tag.espi{background:#3C5A80}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  td.left{text-align:left}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green);font-weight:600}.down{color:var(--red);font-weight:600}.na{color:var(--muted)}
+  .hit{font-weight:700}.hit.y{color:var(--green)}.hit.n{color:var(--red)}
+  .note{font-size:.76rem;color:var(--muted);margin:4px 2px 14px}
+  .spread{background:var(--navy);color:#fff;border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0}
+  .spread .lbl{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+  .spread .val{font-size:1.45rem;font-weight:800}
+  .spreadbar{height:8px;background:#22374F;border-radius:4px;flex:1 1 160px;min-width:140px;position:relative;overflow:hidden}
+  .spreadbar i{position:absolute;left:50%;top:0;bottom:0;background:#7FD6A8}
+  .kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  .kpi .box{flex:1 1 130px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .kpi .box .l{font-size:.68rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+  .kpi .box .v{font-size:1.15rem;font-weight:800;margin-top:2px}
+  .decl{list-style:none}
+  .decl li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  .decl li:last-child{border-bottom:none}
+  .decl b{color:var(--navy)}
+  footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+  .src{font-size:.72rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Raport tygodniowy WIG20</h1>
+      <div class="sub">środa, 26 sierpnia 2026 · rozliczenie tygodnia 2026-W1 (CZĘŚCIOWE, D+2) · nowa prognoza 2026-W2, D0 = 25.08.2026</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 008,04</div>
+      <div class="chg mono">+0,32% od D0 (21.08 → 25.08)</div>
+      <div class="sub">WIG20 — zamknięcie 25.08 (PAP/Strefa Inwestorów)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp amber">Rozliczenie częściowe</span>
+    <span class="stampnote">Bieg tygodniowy wykonany w środę 26.08 — tydzień 2026-W1 rozliczony do ostatniej zakończonej sesji (wtorek 25.08 = D+2, a nie D+5). Wyniki poniżej dotyczą 2 z 5 sesji okna i nie są w pełni porównywalne z pełnotygodniowymi.</span>
+  </div>
+
+  <h2>Najważniejsze zmiany tygodnia</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag out">WYPADA</span><b>LONG: PKOBP, ALLEGRO.</b> Obie spółki przegrały z indeksem w oknie (−0,71 i −0,82 p.p.), bez świeżych katalizatorów; w rankingu spadły odpowiednio na 6. i 13. miejsce (PKO dodatkowo z najwyższą wagą w indeksie — przy porównywalnych argumentach preferujemy mniejsze wagi).</li>
+      <li><span class="tag out">WYPADA</span><b>SHORT: PKNORLEN, MBANK.</b> Orlen: rekordowe marże rafineryjne (śr. zał. 16 USD/bbl), EBITDA LIFO Q2 13,9 mld zł i rekomendacja „kupuj" DM BOŚ (cel 180 zł) — teza short przestała się bronić (wynik 55, środek stawki). mBank: pozycja zarobiła (+1,40 p.p. rel.), ale po zejściu kursu i przy neutralnych rekomendacjach potencjał dalszego osuwania się względem sektora oceniamy jako wyczerpany.</li>
+      <li><span class="tag in">WCHODZI</span><b>LONG: PEKAO, KRUK.</b> Pekao: zysk netto Q2 1 516 mln zł (powyżej konsensusu), sektor z rekomendacjami „kupuj". Kruk: beneficjent niemal pewnej obniżki stóp NBP 1–2.09 (tańsze finansowanie zakupów portfeli), atrakcyjna wycena po tegorocznym deratingu i mała waga w indeksie.</li>
+      <li><span class="tag in">WCHODZI</span><b>SHORT: CDPROJEKT, PEPCO.</b> CD Projekt: przesunięcie premiery „Wiedźmina 4" na 2028 r. (−5,6% przy rekordowym obrocie ~507 mln zł, 25.08), brak nowości na Gamescom, raport H1 2.09 tuż za oknem. Pepco: skup akcji po 47,52 zł rozliczony 17.08 (redukcja ofert 91,8%) — wsparcie popytowe wygasło, kurs ~42 zł osuwa się w serii spadkowych sesji.</li>
+      <li><span class="tag rynek">TAKTYCZNE</span><b>Wynik taktycznych i reakcji: brak aktywności.</b> W całym oknie 2026-W1 nie otwarto pozycji taktycznych (tactical_pp = b.d.) i nie wystąpiła żadna reakcja dzienna CLOSE/REDUCE (exclude puste we wszystkich biegach) — wariant zarządzany = wariant pasywny, reaction_pp = 0,00 p.p.</li>
+      <li><span class="tag makro">MAKRO</span><b>Tło na nowe okno:</b> RPP 1–2.09 (rynek: obniżka 25 pb do 3,50%, inflacja lipiec 3,0%); projekt CIT 30% dla energetyki i paliw od 2027 r. nadal w fazie założeń (wpis do wykazu prac RM 20.08, brak wykładni liczenia podatku) — filar tez SHORT na PGE i Tauronie; CIT 30% dla banków obowiązuje od 2026 r. (uchwalony w 2025). Miedź: prognozy deficytu na 2026 r. (UBS 407 tys. t, GS 300–500 tys. t). Wezwanie na 100% akcji Żabki po 32 zł — zapisy 27.08–25.09 (kurs zakotwiczony, spółka neutralna dla koszyków).</li>
+    </ul>
+  </div>
+
+  <h2>Rozliczenie 2026-W1 — koszyk LONG (D0 21.08 → D+2 25.08)</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0</th><th>Kurs 25.08</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th><th>Trafienie</th></tr></thead>
+      <tbody>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">34,78</td><td class="mono">36,18</td><td class="mono up">+4,03%</td><td class="mono up">+3,70 p.p.</td><td class="hit y">✔</td></tr>
+        <tr><td class="name">KGHM</td><td><span class="dir long">LONG</span></td><td class="mono">342,35</td><td class="mono">366,00</td><td class="mono up">+6,91%</td><td class="mono up">+6,59 p.p.</td><td class="hit y">✔</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">706,40</td><td class="mono">709,00</td><td class="mono up">+0,37%</td><td class="mono up">+0,05 p.p.</td><td class="hit y">✔</td></tr>
+        <tr><td class="name">PKOBP</td><td><span class="dir long">LONG</span></td><td class="mono">113,96</td><td class="mono">113,52</td><td class="mono down">−0,39%</td><td class="mono down">−0,71 p.p.</td><td class="hit n">✘</td></tr>
+        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,095</td><td class="mono">44,87</td><td class="mono down">−0,50%</td><td class="mono down">−0,82 p.p.</td><td class="hit n">✘</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Hit rate TOP5: <b>3/5</b>, średnio +1,76 p.p. relatywnie. W oknie 22–25.08 żadna spółka koszykowa nie miała dnia prawa do dywidendy — bez korekt dywidendowych.</p>
+
+  <h2>Rozliczenie 2026-W1 — koszyk SHORT (D0 21.08 → D+2 25.08)</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0</th><th>Kurs 25.08</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th><th>Trafienie</th></tr></thead>
+      <tbody>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,248</td><td class="mono">8,432</td><td class="mono down">−2,23%</td><td class="mono down">−1,91 p.p.</td><td class="hit n">✘</td></tr>
+        <tr><td class="name">PKNORLEN</td><td><span class="dir short">SHORT</span></td><td class="mono">153,14</td><td class="mono">152,52</td><td class="mono up">+0,40%</td><td class="mono up">+0,73 p.p.</td><td class="hit y">✔</td></tr>
+        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,19</td><td class="mono">10,54</td><td class="mono down">−3,43%</td><td class="mono down">−3,11 p.p.</td><td class="hit n">✘</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">90,56</td><td class="mono">89,68</td><td class="mono up">+0,97%</td><td class="mono up">+1,29 p.p.</td><td class="hit y">✔</td></tr>
+        <tr><td class="name">MBANK</td><td><span class="dir short">SHORT</span></td><td class="mono">1 385,50</td><td class="mono">1 370,50</td><td class="mono up">+1,08%</td><td class="mono up">+1,40 p.p.</td><td class="hit y">✔</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Hit rate BOTTOM5: <b>3/5</b>, średnio −0,32 p.p. relatywnie (na pozycjach). Przeciw pozycjom zagrało odbicie energetyki (PGE +3,4%, Tauron +2,2% od D0) mimo wiszącego projektu CIT.</p>
+
+  <div class="spread">
+    <div>
+      <div class="lbl">Spread LONG − SHORT · rozliczenie częściowe D+2</div>
+      <div class="val mono">+1,44 p.p.</div>
+    </div>
+    <div class="spreadbar"><i style="width:14%"></i></div>
+    <div class="lbl" style="max-width:230px">wariant zarządzany identyczny (brak reakcji dziennych): managed +1,44 p.p., wkład reakcji 0,00 p.p.</div>
+  </div>
+
+  <div class="kpi">
+    <div class="box"><div class="l">spread_pp (pasywny)</div><div class="v mono up">+1,44</div></div>
+    <div class="box"><div class="l">managed_pp</div><div class="v mono up">+1,44</div></div>
+    <div class="box"><div class="l">reaction_pp</div><div class="v mono">0,00</div></div>
+    <div class="box"><div class="l">tactical_pp</div><div class="v mono na">b.d. (brak pozycji)</div></div>
+    <div class="box"><div class="l">Σ reaction_pp (historia)</div><div class="v mono">0,00</div></div>
+    <div class="box"><div class="l">Σ tactical_pp (historia)</div><div class="v mono">0,00</div></div>
+  </div>
+  <p class="note">Uczciwość metodologiczna: to pierwszy rozliczany tydzień systemu, w dodatku skrócony do 2 sesji — 5-sesyjne (a tym bardziej 2-sesyjne) zwroty relatywne są w dużej mierze losowe. Pojedynczy wynik +1,44 p.p. i hit rate 3/5 + 3/5 niczego nie dowodzą; cel długoterminowy to 55–60% trafień w horyzoncie wielu tygodni.</p>
+
+  <h2>Nowy ranking — 2026-W2 (kursy z 25.08, katalizatory 10 sesji)</h2>
+  <div class="tblwrap">
+    <table style="min-width:680px">
+      <thead><tr><th>#</th><th>Ticker</th><th>Wynik</th><th>p</th><th class="left" style="text-align:left">Teza</th><th class="left" style="text-align:left">Ryzyko</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">1</td><td class="name">KGHM</td><td class="mono">74,0</td><td class="mono">62%</td><td class="left">Deficyt miedzi 2026 (UBS/GS), Sierra Gorda: +61% zasobów rudy, sprzedaż miedzi w lipcu +4% r/r; najsilniejsze momentum w indeksie</td><td class="left">Korekta miedzi/realizacja zysków po +6,9% w 2 sesje</td></tr>
+        <tr><td class="mono">2</td><td class="name">DINOPL</td><td class="mono">66,5</td><td class="mono">58%</td><td class="left">H1: przychody +12,5%, 148 nowych sklepów, zysk netto 716 mln zł; momentum po wynikach (20.08)</td><td class="left">Marża EBITDA spadła do 6,98% (−0,56 p.p. r/r); wycena premium</td></tr>
+        <tr><td class="mono">3</td><td class="name">PEKAO</td><td class="mono">61,0</td><td class="mono">56%</td><td class="left">Q2 1 516 mln zł netto (beat), sektor z rekomendacjami „kupuj", kurs przy maksimach 52 tyg.</td><td class="left">Obniżka stóp 1–2.09 ciąży NII; CIT 30% dla banków</td></tr>
+        <tr><td class="mono">4</td><td class="name">BUDIMEX</td><td class="mono">59,0</td><td class="mono">55%</td><td class="left">PSr zgodny z szacunkami (Q2: 163,4 mln zł +4,6% r/r), portfel ~18 mld zł; niższe stopy sprzyjają inwestycjom</td><td class="left">Presja na marże budowlane; wrażliwość na przesunięcia kontraktów</td></tr>
+        <tr><td class="mono">5</td><td class="name">KRUK</td><td class="mono">58,0</td><td class="mono">54%</td><td class="left">Beneficjent obniżki stóp (finansowanie zakupów portfeli), wycena po deratingu, mała waga w indeksie</td><td class="left">Negatywne nastawienie Trigona (lipiec); podaż portfeli NPL</td></tr>
+        <tr><td class="mono">6</td><td class="name">PKOBP</td><td class="mono">56,5</td><td class="mono">53%</td><td class="left">Top pick domów maklerskich na 2026, wyniki zgodne; emisja EMTN 500 mln EUR z redukcją</td><td class="left">Największa waga w indeksie (beta do odpływów); NII przy obniżkach</td></tr>
+        <tr><td class="mono">7</td><td class="name">PZU</td><td class="mono">55,5</td><td class="mono">53%</td><td class="left">Defensywny profil, poza podwyżką CIT bankowego, nastawienie „+" (Trigon)</td><td class="left">Niższe stopy = niższe dochody z portfela obligacji</td></tr>
+        <tr><td class="mono">8</td><td class="name">PKNORLEN</td><td class="mono">55,0</td><td class="mono">53%</td><td class="left">Rekordowe marże rafineryjne (~16 USD/bbl), EBITDA LIFO Q2 13,9 mld zł, „kupuj" DM BOŚ (cel 180 zł, 18.08)</td><td class="left">Projekt CIT 30% dla paliw od 2027; ryzyko „hamulca" cen paliw</td></tr>
+        <tr><td class="mono">9</td><td class="name">ERSTEPL</td><td class="mono">54,5</td><td class="mono">52%</td><td class="left">Q1 powyżej oczekiwań (+11%), rebranding zakończony, sektorowe wsparcie</td><td class="left">Baza wyników zaburzona przejęciem; niższa płynność informacyjna</td></tr>
+        <tr><td class="mono">10</td><td class="name">LPP</td><td class="mono">52,0</td><td class="mono">51%</td><td class="left">Długoterminowy trend wzrostowy, dywidenda 900 zł/akcję, nastawienie „+"</td><td class="left">Chwiejne sesje (−3,4% 20.08); wrażliwość na konsumenta</td></tr>
+        <tr><td class="mono">11</td><td class="name">ZABKA</td><td class="mono">51,0</td><td class="mono">51%</td><td class="left">Wezwanie Couche-Tard na 100% po 32 zł (zapisy 27.08–25.09) stabilizuje kurs</td><td class="left">Kurs zakotwiczony — brak potencjału relatywnego w obie strony</td></tr>
+        <tr><td class="mono">12</td><td class="name">ALIOR</td><td class="mono">50,0</td><td class="mono">50%</td><td class="left">Tania wycena, nastawienie „+" (Trigon), mała waga</td><td class="left">Rezerwy obniżyły wynik Q2 o 96,5 mln zł</td></tr>
+        <tr><td class="mono">13</td><td class="name">ALLEGRO</td><td class="mono">48,0</td><td class="mono">49%</td><td class="left">Lider e-commerce, poprawa wyników k/k</td><td class="left">Short Qube (1,35%), brak świeżych katalizatorów, słabsze momentum</td></tr>
+        <tr><td class="mono">14</td><td class="name">MBANK</td><td class="mono">47,5</td><td class="mono">49%</td><td class="left">Przedterminowy wykup obligacji 750,8 mln EUR (zarządzanie kapitałem)</td><td class="left">Neutralne rekomendacje; wycena wysoka na tle sektora</td></tr>
+        <tr><td class="mono">15</td><td class="name">KETY</td><td class="mono">45,5</td><td class="mono">48%</td><td class="left">Stabilny biznes, dywidendowy profil</td><td class="left">Słaby przemysł UE; −3,8% na sesji 20.08, mdłe momentum</td></tr>
+        <tr><td class="mono">16</td><td class="name">MODIVO</td><td class="mono">41,5</td><td class="mono">46%</td><td class="left">SHORT: platforma modivo.com kurczy się (806 mln zł przychodów, spadek r/r), najbardziej shortowana spółka GPW (~4,5%)</td><td class="left">Rekordowa sprzedaż detaliczna grupy (Q2 3,05 mld zł) może odwrócić sentyment</td></tr>
+        <tr><td class="mono">17</td><td class="name">PEPCO</td><td class="mono">41,0</td><td class="mono">46%</td><td class="left">SHORT: skup po 47,52 zł rozliczony 17.08 (redukcja 91,8%) — popyt wygasł, kurs ~42 zł w serii spadków</td><td class="left">Tania wycena; ewentualny kolejny program skupu</td></tr>
+        <tr><td class="mono">18</td><td class="name">PGE</td><td class="mono">38,0</td><td class="mono">44%</td><td class="left">SHORT: projekt CIT 30% dla energetyki (2027) bez wykładni — nawis regulacyjny; odbicie +3,4% od D0 poprawia punkt wejścia</td><td class="left">Wycofanie/złagodzenie projektu CIT; rotacja do wysokiej bety</td></tr>
+        <tr><td class="mono">19</td><td class="name">TAURONPE</td><td class="mono">37,0</td><td class="mono">44%</td><td class="left">SHORT: szac. EBITDA H1 −12% r/r, pełny raport 9.09; nawis CIT; −11% od 12.08 z korekcyjnym odbiciem</td><td class="left">Nastawienie „+" Trigona (lipiec); dalszy squeeze na odbiciu</td></tr>
+        <tr><td class="mono">20</td><td class="name">CDPROJEKT</td><td class="mono">28,5</td><td class="mono">39%</td><td class="left">SHORT: „Wiedźmin 4" przesunięty na 2028 (−5,6% przy rekordowym obrocie 507 mln zł — dystrybucja), brak nowości na Gamescom, rewizje przychodów w dół</td><td class="left">Raport H1 już 2.09 — pozytywne zaskoczenie/odbicie po przecenie</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Metoda zamrożona: Momentum 25 / Katalizatory 20 / Makro 15 / DM 15 (bazowo 7,5, ±3 wyłącznie za udokumentowane sygnały) / Rewizje 10 / Przepływy 10 / Wycena 5. p = 50% + 0,5×(wynik−50), obcięte do 38–62%. Skład WIG20 zweryfikowany (20 spółek listy systemowej; ERSTEPL = d. Santander BP po rebrandingu 24.04.2026). Rejestr KNF: bez wykrytych zmian ≥0,3 p.p. na spółkach koszykowych w ostatnich sesjach (rejestr niedostępny bezpośrednio z tego środowiska; ostatnia znana zmiana: Qube na Allegro 1,48%→1,35%, 18.08).</p>
+
+  <h2>TOP5 — koszyk LONG 2026-W2</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><b>KGHM (62%).</b> Trójfilarowa teza: (1) makro — deficyt miedzi prognozowany na 2026 r.; (2) spółkowe — wzrost szacowanych zasobów Sierra Gorda o 61% i sprzedaż miedzi w lipcu +4% r/r; (3) techniczne — lider momentum przy dużych obrotach (25.08: 282 mln zł, drugi obrót rynku). Falsyfikator: tygodniowy spadek miedzi &gt;3% lub odwrót kursu poniżej 342 zł (D0 poprzedniego okna).</li>
+      <li><b>DINOPL (58%).</b> Wyniki H1 potwierdziły model ekspansji (3 176 sklepów, +12,5% przychodów). Kurs wybił się po raporcie i utrzymuje siłę relatywną. Ryzykiem erozja marży — ale w krótkim oknie liczy się momentum wynikowe.</li>
+      <li><b>PEKAO (56%).</b> Beat wynikowy Q2 (1 516 mln zł), kurs przy maksimach, sektor przyciąga kapitał. Obniżka stóp 1–2.09 to koszt NII dopiero w kolejnych kwartałach; w oknie ważniejsza rotacja do banków „value".</li>
+      <li><b>BUDIMEX (55%).</b> Portfel ~18 mld zł, wyniki bez rozczarowania, a ścieżka niższych stóp wspiera inwestycje publiczne i mieszkaniówkę. Mała-średnia waga w indeksie zostawia miejsce na alfa.</li>
+      <li><b>KRUK (54%).</b> Najbliższa obniżka stóp bezpośrednio poprawia ekonomikę zakupów portfeli; wycena po deratingu, kurs zaczyna odzyskiwać siłę (+1,25% na 25.08). Kontrargument (negatywne nastawienie Trigona) uwzględniony w umiarkowanej pozycji w koszyku.</li>
+    </ul>
+  </div>
+
+  <h2>BOTTOM5 — koszyk SHORT 2026-W2</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><b>CDPROJEKT (39%).</b> Świeży, twardy katalizator negatywny: premiera „Wiedźmina 4" dopiero w 2028 r. — rewizje modeli przychodów w dół, rekordowy obrót na spadku (dystrybucja), brak pokazów na Gamescom. Ryzyko odbicia po −5,6%, ale historycznie tego typu przeceny osuwają się kilka sesji.</li>
+      <li><b>TAURONPE (44%).</b> Wynikowo słabo (szac. EBITDA H1 −12% r/r), regulacyjnie źle (CIT 30% dla energetyki od 2027 w przygotowaniu), a odbicie +2,2% od D0 wygląda korekcyjnie. Pełny raport 9.09 utrzyma temat przy życiu.</li>
+      <li><b>PGE (44%).</b> Ten sam nawis CIT co Tauron, przy czym odbicie od D0 (+3,4%) było najsilniejsze w energetyce — relatywnie atrakcyjniejszy punkt wejścia w short. Falsyfikator: oficjalne złagodzenie projektu CIT.</li>
+      <li><b>PEPCO (46%).</b> Mechaniczne wsparcie popytu (skup 400 mln EUR po 47,52 zł) skończyło się 17.08; od tego czasu kurs osuwa się (m.in. −1,9% 24.08) i nie ma katalizatora, który zasypałby lukę do ceny skupu. Konsument europejski bez przyspieszenia.</li>
+      <li><b>MODIVO (46%).</b> Najbardziej shortowana spółka GPW (~4,5% wg ostatnich danych); rdzeniowa platforma e-commerce kurczy się mimo rekordowej sprzedaży grupy. Ryzyko squeeze'u przy tak dużym zaangażowaniu shortów — stąd ostatnie miejsce w koszyku, nie pierwsze.</li>
+    </ul>
+  </div>
+
+  <h2>Trzy falsyfikowalne deklaracje na okno 2026-W2 (D0 25.08 → 5 sesji, do 1.09)</h2>
+  <div class="card">
+    <ul class="decl">
+      <li><b>1.</b> KGHM pobije WIG20: zwrot relatywny [D+5/D0−1] − [WIG20 D+5/D0−1] będzie dodatni. Weryfikacja: kursy zamknięcia 1.09 vs D0 25.08 (366,00 zł; WIG20 4 008,04).</li>
+      <li><b>2.</b> CD Projekt zachowa się gorzej od WIG20 o co najmniej 1 p.p. w tym samym ujęciu relatywnym (D0: 242,90 zł).</li>
+      <li><b>3.</b> RPP na posiedzeniu 1–2.09 obetnie stopę referencyjną o 25 pb do 3,50% — a mimo to spread nowych koszyków L/S (średnia relatywna TOP5 minus średnia relatywna BOTTOM5) będzie dodatni na zamknięciu okna.</li>
+    </ul>
+    <p class="note" style="margin-top:8px">Każda deklaracja ma jednoznaczny warunek liczbowy i termin — zostanie rozliczona w kolejnym raporcie tygodniowym.</p>
+  </div>
+
+  <p class="src">Źródła danych: Yahoo Finance chart API (zamknięcia 21.08 i 25.08 dla 10 spółek koszykowych W1 — pobrane i zwalidowane na D0 w biegu z 26.08 rano; w biegu popołudniowym API zwracało HTTP 429 i seria nie mogła być odświeżona — wartości niezmienione), PAP/Strefa Inwestorów (WIG20 4 008,04 na 25.08), StockWatch/Parkiet/Bankier (wyniki, skup Pepco, CIT), attrader/serwisy notowań przez wyszukiwarkę (zamknięcie CDR 242,90 na 25.08), comparic/inwestycje.pl (sesje 24–25.08). Kursy D0 nowego okna dla PEKAO (257,90), KRUK (438,90) i PEPCO (42,14) pochodzą z zestawień prasowych sesji 25.08, nie z Yahoo — oznaczone jako ŹRÓDŁO REZERWOWE, możliwa rozbieżność do ~1% względem oficjalnego zamknięcia; przy walidacji w kolejnym biegu traktować ostrożnie.</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Ranking WIG20 — raport tygodniowy"), 26.08.2026. Rozliczenie tygodnia 2026-W1 jest CZĘŚCIOWE (D+2) — bieg wykonano w środę; 5-sesyjne zwroty relatywne są w dużej mierze losowe, a wyniki pojedynczego tygodnia nie świadczą o skuteczności metody (cel długoterminowy: 55–60% trafień).
+  </footer>
+</div>
+</body>
+</html>
