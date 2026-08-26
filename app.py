@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WIG20 BASKET BOT v1.4 — PEŁNY AUTOMAT (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
+WIG20 BASKET BOT v1.5 — PEŁNY AUTOMAT (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -435,6 +435,7 @@ def generate(mode, do_commit=True):
 # ----------------------------------------------------------------------------
 class Capital:
     def __init__(self):
+        self.switch_error = None
         self.s = requests.Session()
         self.s.headers.update({"X-CAP-API-KEY": CAPITAL_API_KEY,
                                "Content-Type": "application/json"})
@@ -470,8 +471,9 @@ class Capital:
         elif "not-different" in r.text or "already" in r.text.lower():
             pass  # ten rachunek jest już aktywny
         else:
-            raise RuntimeError(f"Nie mogę przełączyć rachunku na {account_id}: "
-                               f"{r.status_code} {r.text[:150]}")
+            self.switch_error = (f"Nie mogę przełączyć rachunku na {account_id}: "
+                                 f"{r.status_code} {r.text[:150]}")
+            log.error(self.switch_error)
 
     def _get(self, path, **kw):
         r = self.s.get(f"{BASE_URL}{path}", timeout=20, **kw)
@@ -530,7 +532,29 @@ class Capital:
         r = self.s.post(f"{BASE_URL}/api/v1/positions",
                         json={"epic": epic, "direction": direction,
                               "size": size, "guaranteedStop": False}, timeout=20)
-        return r.ok, (r.json().get("dealReference") if r.ok else None), r.text[:200]
+        if not r.ok:
+            return False, None, r.text[:200]
+        ref = r.json().get("dealReference")
+        if not ref:
+            return False, None, "brak dealReference: " + r.text[:150]
+        # POTWIERDZENIE realizacji — samo przyjęcie zlecenia to NIE otwarcie
+        # pozycji: broker może je odrzucić na etapie potwierdzenia (np. SELL
+        # niedostępny). Bez tej pętli /run raportowałby fikcyjne "OTWARTO".
+        for _ in range(8):
+            time.sleep(0.5)
+            try:
+                c = self._get(f"/api/v1/confirms/{ref}")
+            except requests.HTTPError:
+                continue
+            st = str(c.get("dealStatus") or c.get("status") or "").upper()
+            if st in ("ACCEPTED", "OPEN", "OPENED"):
+                return True, ref, "potwierdzono"
+            if st in ("REJECTED", "DECLINED", "DELETED"):
+                powod = (c.get("rejectReason") or c.get("reason")
+                         or json.dumps(c, ensure_ascii=False)[:150])
+                return False, ref, f"ODRZUCONO przez brokera: {powod}"
+        return False, ref, ("BRAK POTWIERDZENIA po 4 s — pozycji nie liczę "
+                            "jako otwartej; zweryfikuj w aplikacji")
 
     def close(self, deal_id):
         r = self.s.delete(f"{BASE_URL}/api/v1/positions/{deal_id}", timeout=20)
@@ -622,6 +646,13 @@ def sync():
                        "exclude", "tactical")}
     cap = Capital()
     cap.login()
+    if ACCOUNT_ID and cap.switch_error:
+        return {"handel": "ZABLOKOWANY",
+                "błąd": (f"CAPITAL_ACCOUNT_ID='{ACCOUNT_ID}' odrzucone przez "
+                         f"Capital.com ({cap.switch_error}). Handel wstrzymany, "
+                         "żeby nie działać na niewłaściwym rachunku. Otwórz "
+                         "/status i skopiuj poprawne pole accountId z "
+                         "'konta_wszystkie' (to NIE jest numer konta z aplikacji).")}
     equity, ccy, acc = cap.equity()
     rep["konto"] = {"accountId": acc, "kapital": equity, "waluta": ccy}
     managed = {e for e in sig["epics"].values()
@@ -755,7 +786,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.4", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
+    return jsonify(ok=True, wersja="1.5", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
@@ -805,7 +836,8 @@ def status_ep():
                  for a in cap.accounts()]
         managed = {e for e in sig["epics"].values()
                    if e and not e.upper().startswith("UZUP")}
-        return jsonify(konta_wszystkie=konta,
+        return jsonify(blad_przelaczenia_rachunku=cap.switch_error,
+                       konta_wszystkie=konta,
                        sygnaly={k: sig[k] for k in
                                 ("version", "status", "long", "short",
                                  "exclude", "tactical")},
@@ -825,6 +857,13 @@ def close_all_ep():
     sig, _ = load_signals()
     cap = Capital()
     cap.login()
+    if ACCOUNT_ID and cap.switch_error:
+        return {"handel": "ZABLOKOWANY",
+                "błąd": (f"CAPITAL_ACCOUNT_ID='{ACCOUNT_ID}' odrzucone przez "
+                         f"Capital.com ({cap.switch_error}). Handel wstrzymany, "
+                         "żeby nie działać na niewłaściwym rachunku. Otwórz "
+                         "/status i skopiuj poprawne pole accountId z "
+                         "'konta_wszystkie' (to NIE jest numer konta z aplikacji).")}
     managed = {e for e in sig["epics"].values()
                if e and not e.upper().startswith("UZUP")}
     out = []
@@ -845,6 +884,13 @@ def search_ep():
         return jsonify(error="zły token"), 401
     cap = Capital()
     cap.login()
+    if ACCOUNT_ID and cap.switch_error:
+        return {"handel": "ZABLOKOWANY",
+                "błąd": (f"CAPITAL_ACCOUNT_ID='{ACCOUNT_ID}' odrzucone przez "
+                         f"Capital.com ({cap.switch_error}). Handel wstrzymany, "
+                         "żeby nie działać na niewłaściwym rachunku. Otwórz "
+                         "/status i skopiuj poprawne pole accountId z "
+                         "'konta_wszystkie' (to NIE jest numer konta z aplikacji).")}
     return jsonify(wyniki=cap.search(request.args.get("q", "")))
 
 
