@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WIG20 BASKET BOT v1.6.1 — PEŁNY AUTOMAT (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
+WIG20 BASKET BOT v1.6.2 — PEŁNY AUTOMAT (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -659,49 +659,6 @@ def sync():
     rep = {"czas_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
            "dry_run": DRY_RUN, "akcje": [], "pominiete": [], "błędy": []}
     sig, _ = load_signals()
-    if HEDGE_MODE == "index":
-        long_cel = sum(equity * (TACTICAL_ALLOC_PCT if w.get("tactical")
-                                 else ALLOC_PCT * (REDUCE_FACTOR
-                                                   if w.get("reduced") else 1.0))
-                       for w in book.values() if w["direction"] == "BUY")
-        hedge_cel = long_cel * HEDGE_RATIO
-        hpos = [p for p in positions if p["epic"] == HEDGE_EPIC
-                and p["direction"] == "SELL"]
-        try:
-            hm = cap.market(HEDGE_EPIC)
-        except requests.HTTPError as e:
-            hm, _ = None, rep["błędy"].append(f"hedge: brak rynku {HEDGE_EPIC}: {e}")
-        if hm and hm["mid"]:
-            fx = cap.fx_rate(ccy, hm["currency"])
-            cur_acc = sum(p["size"] for p in hpos) * hm["mid"] / fx
-            rep["hedge"] = {"epic": HEDGE_EPIC, "cel": round(hedge_cel, 2),
-                            "biezacy": round(cur_acc, 2), "waluta": ccy}
-            if hedge_cel <= 0 and hpos:
-                for p in hpos:
-                    do_close(p, "hedge zbędny — brak aktywnych longów")
-            elif hedge_cel > 0 and abs(cur_acc - hedge_cel) > hedge_cel * HEDGE_TOL:
-                for p in hpos:
-                    do_close(p, "hedge — dopasowanie wielkości")
-                step = hm["min"] if hm["min"] > 0 else 0.1
-                size = round(math.floor((hedge_cel * fx / hm["mid"]) / step)
-                             * step, 4)
-                if size >= step:
-                    if DRY_RUN:
-                        rep["akcje"].append(f"[DRY] HEDGE SELL {HEDGE_EPIC} "
-                                            f"size {size} (~{hedge_cel:.0f} {ccy})")
-                    else:
-                        ok, ref, msg = cap.open(HEDGE_EPIC, "SELL", size)
-                        rep["akcje"].append(f"HEDGE SELL {HEDGE_EPIC} size {size}"
-                                            f" — {msg}")
-                        if not ok:
-                            rep["błędy"].append(f"hedge: {msg}")
-                    time.sleep(0.3)
-                else:
-                    rep["błędy"].append(
-                        f"hedge: minimalna wielkość {step} × kurs "
-                        f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} {ccy} "
-                        f"przekracza cel {hedge_cel:.0f} {ccy} — hedge "
-                        f"NIEOTWARTY; rozważ inny instrument albo HEDGE_RATIO")
 
     rep["sygnaly"] = {k: sig[k] for k in
                       ("version", "status", "long", "short",
@@ -840,6 +797,50 @@ def sync():
     notify(f"🤖 WIG20 BOT /run v{sig['version']} | kapitał {equity:.2f} {ccy} | "
            f"akcje: {zam} | pominięte: {len(rep['pominiete'])} | "
            f"{'DRY-RUN' if DRY_RUN else 'DEMO'}")
+    if HEDGE_MODE == "index":
+        long_cel = sum(equity * (TACTICAL_ALLOC_PCT if w.get("tactical")
+                                 else ALLOC_PCT * (REDUCE_FACTOR
+                                                   if w.get("reduced") else 1.0))
+                       for w in book.values() if w["direction"] == "BUY")
+        hedge_cel = long_cel * HEDGE_RATIO
+        hpos = [p for p in positions if p["epic"] == HEDGE_EPIC
+                and p["direction"] == "SELL"]
+        try:
+            hm = cap.market(HEDGE_EPIC)
+        except requests.HTTPError as e:
+            hm, _ = None, rep["błędy"].append(f"hedge: brak rynku {HEDGE_EPIC}: {e}")
+        if hm and hm["mid"]:
+            fx = cap.fx_rate(ccy, hm["currency"])
+            cur_acc = sum(p["size"] for p in hpos) * hm["mid"] / fx
+            rep["hedge"] = {"epic": HEDGE_EPIC, "cel": round(hedge_cel, 2),
+                            "biezacy": round(cur_acc, 2), "waluta": ccy}
+            if hedge_cel <= 0 and hpos:
+                for p in hpos:
+                    do_close(p, "hedge zbędny — brak aktywnych longów")
+            elif hedge_cel > 0 and abs(cur_acc - hedge_cel) > hedge_cel * HEDGE_TOL:
+                for p in hpos:
+                    do_close(p, "hedge — dopasowanie wielkości")
+                step = hm["min"] if hm["min"] > 0 else 0.1
+                size = round(math.floor((hedge_cel * fx / hm["mid"]) / step)
+                             * step, 4)
+                if size >= step:
+                    if DRY_RUN:
+                        rep["akcje"].append(f"[DRY] HEDGE SELL {HEDGE_EPIC} "
+                                            f"size {size} (~{hedge_cel:.0f} {ccy})")
+                    else:
+                        ok, ref, msg = cap.open(HEDGE_EPIC, "SELL", size)
+                        rep["akcje"].append(f"HEDGE SELL {HEDGE_EPIC} size {size}"
+                                            f" — {msg}")
+                        if not ok:
+                            rep["błędy"].append(f"hedge: {msg}")
+                    time.sleep(0.3)
+                else:
+                    rep["błędy"].append(
+                        f"hedge: minimalna wielkość {step} × kurs "
+                        f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} {ccy} "
+                        f"przekracza cel {hedge_cel:.0f} {ccy} — hedge "
+                        f"NIEOTWARTY; rozważ inny instrument albo HEDGE_RATIO")
+
     return rep
 
 
@@ -852,7 +853,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.6.1", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
+    return jsonify(ok=True, wersja="1.6.2", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
