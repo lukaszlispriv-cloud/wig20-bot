@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-08-26</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#7FD6A8}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green);font-weight:600}.down{color:var(--red);font-weight:600}.na{color:var(--muted)}
+  .note{font-size:.76rem;color:var(--muted);margin:4px 2px 14px}
+  .spread{background:var(--navy);color:#fff;border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0}
+  .spread .lbl{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+  .spread .val{font-size:1.45rem;font-weight:800}
+  .spreadbar{height:8px;background:#22374F;border-radius:4px;flex:1 1 160px;min-width:140px;position:relative;overflow:hidden}
+  .spreadbar i{position:absolute;left:50%;top:0;bottom:0;background:#7FD6A8;width:8.5%}
+  ul.cal{list-style:none}
+  ul.cal li{padding:7px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  .cal .t{display:inline-block;min-width:56px;color:var(--muted);font-size:.8rem}
+  footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+  .src{font-size:.72rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">środa, 26 sierpnia 2026 · dane z sesji GPW 25.08.2026 · prognoza 2026-W1, D0 = 21.08.2026</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 008,04</div>
+      <div class="chg mono">+0,18% (25.08) · +0,32% od D0</div>
+      <div class="sub">WIG20 — rekordowe zamknięcie (PAP/Strefa Inwestorów, 25.08)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">Aktualna</span>
+    <span class="stampnote">Werdykt dnia: prognoza tygodniowa utrzymana. Bez wykluczeń (exclude puste), bez zmian taktycznych. Spread liczony na niepełnych danych — szczegóły niżej.</span>
+  </div>
+
+  <h2>Najważniejsze zmiany (24h)</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag makro">MAKRO</span><b>CIT dla energetyki i paliw — filar tezy SHORT aktualny.</b> Projekt (19%→30% w 2027, potem degresywnie do 19% w 2030, wpływ do ~7 mld zł) pozostaje w fazie założeń — wpis do wykazu prac RM z 20.08; 25.08 spółki wciąż czekają na wykładnię sposobu liczenia podatku (rp.pl/Parkiet, 20–25.08). Od 12.08 do 24.08: PGE −8,4%, Tauron −11%.</li>
+      <li><span class="tag espi">ESPI</span><b>Budimex:</b> raport półroczny PSr (25.08), zgodny z sierpniowymi szacunkami — II kw.: 163,4 mln zł zysku netto j.d. (+4,6% r/r), przychody 2 734 mln zł; portfel zamówień ~18 mld zł (StockWatch/Bankier, 25.08). Kurs wśród liderów WIG20.</li>
+      <li><span class="tag espi">ESPI</span><b>Tauron:</b> szacunkowe wyniki H1 (24/25.08) — EBITDA 3,7 mld zł (−12% r/r), II kw.: 586 mln zł zysku netto, EBITDA 1 606 mln zł; pełny raport 9.09 (Bankier/Inwestycje.pl, 25.08). Wynikowo spójne z tezą SHORT; kurs odbił +1,3% po ~11% przeceny.</li>
+      <li><span class="tag rynek">RYNEK</span><b>KGHM:</b> +2,12% na sesji 25.08 (drugi obrót rynku, 282 mln zł) po informacji o wzroście szacowanych zasobów rudy w Sierra Gorda o 61%; wcześniej dane o sprzedaży miedzi w lipcu +4% r/r (Bankier, 24–25.08). Najsilniejsza pozycja koszyka LONG: +6,9% od D0.</li>
+      <li><span class="tag espi">ESPI</span><b>PKO BP:</b> emisja obligacji senior non-preferred 500 mln EUR (EMTN, 7NC6, marża 100 pb, redukcja zapisów 29,2%) — 25.08 (Parkiet/Bankier).</li>
+      <li><span class="tag espi">ESPI</span><b>mBank:</b> uchwała o przedterminowym wykupie obligacji senioralnych serii 11 i 12 łącznie 750,8 mln EUR (wykupy 11.09 i 21.09) — ESPI 47/2026, 25.08 (PAP MediaRoom/obligacje.pl).</li>
+      <li><span class="tag short">SHORT</span><b>Rejestr KNF:</b> brak wykrytych zmian ≥0,3 p.p. na spółkach koszykowych w oknie 24–26.08 (rejestr niedostępny bezpośrednio z tego środowiska; ostatnia znana zmiana: Qube R&amp;T na Allegro 1,48%→1,35%, 18.08 — Strefa Inwestorów). Modivo pozostaje najmocniej shortowaną spółką GPW (~4,5%, dane z 30.07).</li>
+      <li><span class="tag rekom">REKOM.</span><b>Orlen:</b> DM BOŚ „kupuj", cena docelowa podniesiona do 180 zł — raport datowany 18.08, czyli sprzed D0 prognozy (Bankier). Nie kwalifikuje się jako świeży wyzwalacz przeciw tezie — bez akcji. Innych nowych rekomendacji dla spółek koszykowych brak.</li>
+      <li><span class="tag rynek">RYNEK</span><b>CD Projekt (poza koszykami):</b> −6/−7% przy rekordowym obrocie ~507 mln zł po przesunięciu premiery „Wiedźmina 4" na 2028 r. (Bankier/Comparic, 25.08). Nie spełnia literalnego kryterium taktycznego SELL (wyzwalacz nie jest wynikowy, ruch już się dokonał); obserwacja przed raportem H1 2.09.</li>
+      <li><span class="tag rynek">RYNEK</span><b>Żabka (poza koszykami):</b> ok. 26.08 startują zapisy w wezwaniu Couche-Tard po 32 zł/akcję (30 dni); kurs zakotwiczony przy cenie wezwania (PAP Biznes/BiznesInfo).</li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(21.08)</th><th>Kurs ostatni<br>(25.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">34,78</td><td class="mono">36,18*</td><td class="mono up">+4,03%</td><td class="mono up">+3,70 p.p.</td></tr>
+        <tr><td class="name">KGHM</td><td><span class="dir long">LONG</span></td><td class="mono">342,35</td><td class="mono">366,00</td><td class="mono up">+6,91%</td><td class="mono up">+6,59 p.p.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">706,40</td><td class="mono">733,00*</td><td class="mono up">+3,77%</td><td class="mono up">+3,44 p.p.</td></tr>
+        <tr><td class="name">PKOBP</td><td><span class="dir long">LONG</span></td><td class="mono">113,96</td><td class="mono">113,00*</td><td class="mono down">−0,84%</td><td class="mono down">−1,16 p.p.</td></tr>
+        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,095</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">* wartości wyliczone z potwierdzonych zmian procentowych sesji lub kwotowań „previous close" (Bankier/Yahoo/TradingView, 25–26.08) — serwisy notowań GPW były w tym biegu blokowane przez proxy. ALLEGRO: odczyt 44,87 zł nie dał się jednoznacznie przypisać do sesji 25.08 → b.d. (kierunkowo ≈ płasko od D0).</p>
+
+  <h2>Koszyk SHORT</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(21.08)</th><th>Kurs ostatni<br>(25.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,248</td><td class="mono na">b.d.†</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">PKNORLEN</td><td><span class="dir short">SHORT</span></td><td class="mono">153,14</td><td class="mono na">b.d.†</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,19</td><td class="mono">10,36*</td><td class="mono down">−1,69%</td><td class="mono down">−1,37 p.p.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">90,56</td><td class="mono">93,78*</td><td class="mono down">−3,56%</td><td class="mono down">−3,23 p.p.</td></tr>
+        <tr><td class="name">MBANK</td><td><span class="dir short">SHORT</span></td><td class="mono">1 385,50</td><td class="mono na">b.d.†</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,32%). * PGE wyliczone: zamknięcie 24.08 (10,21, Portevo) × +1,5% sesji 25.08 (PAP); MODIVO 93,78 zł — odczyt z 25.08 (TradingView/Bankier), bez pełnego potwierdzenia statusu „close". † Znane kierunki sesji 25.08 przy braku dokładnych zamknięć: Tauron +1,3%, mBank −0,2% (PAP/Strefa Inwestorów); Orlen w korekcie po ATH 157,18 zł z 21.08, „najniżej od 15 dni" (Comparic, 25/26.08) — kierunkowo NA KORZYŚĆ pozycji short. MODIVO: +3,6% od D0 przeciw tezie — poniżej progu redukcji (4%), pod obserwacją.</p>
+
+  <div class="spread">
+    <div>
+      <div class="lbl">Spread LONG − SHORT · D+2 (sesja 25.08)</div>
+      <div class="val mono">≈ +0,85 p.p.</div>
+    </div>
+    <div class="spreadbar"><i></i></div>
+    <div class="lbl" style="max-width:230px">na danych niepełnych: LONG 4/5 spółek (śr. +3,46%), SHORT 2/5 (śr. zmiana kursu +2,62%); brakujące zamknięcia kierunkowo sprzyjają pozycjom short</div>
+  </div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="card"><p style="font-size:.9rem">Brak otwartych pozycji taktycznych i brak nowych. Kandydat odrzucony w tym biegu: CD Projekt (SELL) — twardy negatywny komunikat (premiera „Wiedźmina 4" w 2028 r., −6/−7% przy rekordowym obrocie), ale wyzwalacz nie spełnia protokołu (nie są to wyniki), a ruch w dużej mierze już się dokonał. Obserwacja: raport H1 CDR 2.09.</p></div>
+
+  <h2>Kalendarz — środa 26.08.2026</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t">GPW</span>Żabka — start ~30-dniowych zapisów w wezwaniu Couche-Tard (32 zł/akcję) — ok. 26.08 (BiznesInfo/PAP)</li>
+      <li><span class="t">14:30</span>USA — zamówienia na dobra trwałe, lipiec (Capital Street FX, kalendarz tygodnia)</li>
+      <li><span class="t">po sesji US</span>Wyniki Nvidia — kluczowe dla globalnego sentymentu tech (Wall Street Horizon)</li>
+      <li><span class="t">dalej</span>czw. 27.08: 2. odczyt PKB USA Q2 · pt. 28.08: inflacja PCE (lipiec) · sympozjum Jackson Hole</li>
+      <li><span class="t">PL</span>brak potwierdzonych publikacji GUS/NBP na 26.08 (b.d.); wczoraj: stopa bezrobocia za lipiec 5,8% (GUS, 25.08)</li>
+      <li><span class="t">spółki</span>najbliższe raporty z koszyków: Tauron 9.09 (pełne H1) · PGE 15.09 · Allegro 17.09</li>
+    </ul>
+  </div>
+
+  <p class="src">Główne źródła: PAP/Strefa Inwestorów (zamknięcia WIG20 21–25.08), Bankier.pl (sesja 25.08, ESPI), StockWatch, Parkiet, rp.pl (CIT), Comparic, GUS, Wall Street Horizon. Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach.</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 26.08.2026. Dane mogą zawierać braki (b.d.) wynikające z ograniczeń dostępu do źródeł notowań.
+  </footer>
+</div>
+</body>
+</html>
