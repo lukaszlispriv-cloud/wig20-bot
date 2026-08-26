@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WIG20 BASKET BOT v1.3.3 — PEŁNY AUTOMAT (eksperyment naukowy, konto DEMO)
+WIG20 BASKET BOT v1.4 — PEŁNY AUTOMAT (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -60,6 +60,11 @@ CAPITAL_API_KEY  = os.environ.get("CAPITAL_API_KEY", "")
 CAPITAL_IDENT    = os.environ.get("CAPITAL_IDENTIFIER", "")
 CAPITAL_PASSWORD = os.environ.get("CAPITAL_PASSWORD", "")
 CAPITAL_DEMO     = os.environ.get("CAPITAL_DEMO", "true").lower() == "true"
+# Bezpiecznik LIVE (Etap 13): na rachunku rzeczywistym handel rusza wyłącznie
+# po ustawieniu LIVE_POTWIERDZENIE=ROZUMIEM-RYZYKO. Chroni przed przypadkowym
+# uzbrojeniem po samej zmianie CAPITAL_DEMO/kluczy.
+LIVE_POTWIERDZENIE = os.environ.get("LIVE_POTWIERDZENIE", "").strip().upper()
+LIVE_ODBLOKOWANY   = CAPITAL_DEMO or LIVE_POTWIERDZENIE == "ROZUMIEM-RYZYKO"
 ACCOUNT_ID       = os.environ.get("CAPITAL_ACCOUNT_ID", "")
 
 RUN_TOKEN        = os.environ.get("RUN_TOKEN", "zmien-ten-token")
@@ -604,6 +609,11 @@ def desired_book(sig):
 
 
 def sync():
+    if not LIVE_ODBLOKOWANY:
+        return {"tryb": "LIVE", "handel": "ZABLOKOWANY",
+                "błąd": ("Rachunek rzeczywisty (CAPITAL_DEMO=false) bez zmiennej "
+                         "LIVE_POTWIERDZENIE=ROZUMIEM-RYZYKO — handel wstrzymany. "
+                         "To celowy bezpiecznik: patrz INSTRUKCJA, Etap 13.")}
     rep = {"czas_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
            "dry_run": DRY_RUN, "akcje": [], "pominiete": [], "błędy": []}
     sig, _ = load_signals()
@@ -745,7 +755,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.3.3", dry_run=DRY_RUN, demo=CAPITAL_DEMO)
+    return jsonify(ok=True, wersja="1.4", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
