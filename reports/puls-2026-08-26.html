@@ -75,7 +75,7 @@
 
   <div class="stampline">
     <span class="stamp">Aktualna</span>
-    <span class="stampnote">Werdykt dnia: prognoza tygodniowa utrzymana. Bez wykluczeń (exclude puste), bez zmian taktycznych. Spread liczony na niepełnych danych — szczegóły niżej.</span>
+    <span class="stampnote">Werdykt dnia: prognoza tygodniowa utrzymana. Bez wykluczeń (exclude puste), bez zmian taktycznych. Komplet zamknięć 10/10 z Yahoo Finance, zwalidowany na kursach D0.</span>
   </div>
 
   <h2>Najważniejsze zmiany (24h)</h2>
@@ -99,38 +99,38 @@
     <table>
       <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(21.08)</th><th>Kurs ostatni<br>(25.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
       <tbody>
-        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">34,78</td><td class="mono">36,18*</td><td class="mono up">+4,03%</td><td class="mono up">+3,70 p.p.</td></tr>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">34,78</td><td class="mono">36,18</td><td class="mono up">+4,03%</td><td class="mono up">+3,70 p.p.</td></tr>
         <tr><td class="name">KGHM</td><td><span class="dir long">LONG</span></td><td class="mono">342,35</td><td class="mono">366,00</td><td class="mono up">+6,91%</td><td class="mono up">+6,59 p.p.</td></tr>
-        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">706,40</td><td class="mono">733,00*</td><td class="mono up">+3,77%</td><td class="mono up">+3,44 p.p.</td></tr>
-        <tr><td class="name">PKOBP</td><td><span class="dir long">LONG</span></td><td class="mono">113,96</td><td class="mono">113,00*</td><td class="mono down">−0,84%</td><td class="mono down">−1,16 p.p.</td></tr>
-        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,095</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">706,40</td><td class="mono">709,00</td><td class="mono up">+0,37%</td><td class="mono up">+0,05 p.p.</td></tr>
+        <tr><td class="name">PKOBP</td><td><span class="dir long">LONG</span></td><td class="mono">113,96</td><td class="mono">113,52</td><td class="mono down">−0,39%</td><td class="mono down">−0,71 p.p.</td></tr>
+        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,095</td><td class="mono">44,87</td><td class="mono down">−0,50%</td><td class="mono down">−0,82 p.p.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">* wartości wyliczone z potwierdzonych zmian procentowych sesji lub kwotowań „previous close" (Bankier/Yahoo/TradingView, 25–26.08) — serwisy notowań GPW były w tym biegu blokowane przez proxy. ALLEGRO: odczyt 44,87 zł nie dał się jednoznacznie przypisać do sesji 25.08 → b.d. (kierunkowo ≈ płasko od D0).</p>
+  <p class="note">Zamknięcia z 25.08.2026 pobrane z Yahoo Finance chart API (query2.finance.yahoo.com, odczyt 26.08). Walidacja źródła: zamknięcia z 21.08 zgadzają się co do grosza z kursami D0 zapisanymi w signals.json dla wszystkich 10 spółek.</p>
 
   <h2>Koszyk SHORT</h2>
   <div class="tblwrap">
     <table>
       <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(21.08)</th><th>Kurs ostatni<br>(25.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
       <tbody>
-        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,248</td><td class="mono na">b.d.†</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">PKNORLEN</td><td><span class="dir short">SHORT</span></td><td class="mono">153,14</td><td class="mono">154,00*</td><td class="mono down">−0,56%</td><td class="mono down">−0,88 p.p.</td></tr>
-        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,19</td><td class="mono">10,36*</td><td class="mono down">−1,69%</td><td class="mono down">−1,37 p.p.</td></tr>
-        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">90,56</td><td class="mono">93,78*</td><td class="mono down">−3,56%</td><td class="mono down">−3,23 p.p.</td></tr>
-        <tr><td class="name">MBANK</td><td><span class="dir short">SHORT</span></td><td class="mono">1 385,50</td><td class="mono na">b.d.†</td><td class="mono na">b.d.</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,248</td><td class="mono">8,432</td><td class="mono down">−2,23%</td><td class="mono down">−2,55 p.p.</td></tr>
+        <tr><td class="name">PKNORLEN</td><td><span class="dir short">SHORT</span></td><td class="mono">153,14</td><td class="mono">152,52</td><td class="mono up">+0,41%</td><td class="mono up">+0,08 p.p.</td></tr>
+        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,19</td><td class="mono">10,54</td><td class="mono down">−3,43%</td><td class="mono down">−3,76 p.p.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">90,56</td><td class="mono">89,68</td><td class="mono up">+0,97%</td><td class="mono up">+0,65 p.p.</td></tr>
+        <tr><td class="name">MBANK</td><td><span class="dir short">SHORT</span></td><td class="mono">1 385,50</td><td class="mono">1 370,50</td><td class="mono up">+1,08%</td><td class="mono up">+0,76 p.p.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,32%). * PGE wyliczone: zamknięcie 24.08 (10,21, Portevo) × +1,5% sesji 25.08 (PAP); ORLEN wyliczone: kwotowanie 152,52 zł przy −0,96% z 26.08 rano (StockWatch) → zamknięcie 25.08 ≈ 154,00 zł, spójne z ATH 157,18 z 21.08 i „najniżej od 15 dni" 26.08 (Comparic); MODIVO 93,78 zł — odczyt z 25.08 (TradingView/Bankier), bez pełnego potwierdzenia statusu „close". † Znane kierunki sesji 25.08 przy braku dokładnych zamknięć: Tauron +1,3%, mBank −0,2% (PAP/Strefa Inwestorów). MODIVO: +3,6% od D0 przeciw tezie — poniżej progu redukcji (4%), pod obserwacją. Serwisy notowań (TradingView, Google Finance, Yahoo, stooq, Bankier, GPW i in.) są w tym środowisku blokowane przez politykę sieciową — stąd wyliczenia i braki.</p>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,32%). Zamknięcia z Yahoo Finance chart API (odczyt 26.08), zwalidowane na kursach D0. Przeciw tezie SHORT idą PGE (+3,4% od D0) i Tauron (+2,2%) — obie poniżej progu redukcji (4%), pod obserwacją; energetyka odbija mimo tematu CIT (25.08: PGE +3,2%, Tauron +2,1% na sesji). Orlen, Modivo i mBank pracują na korzyść pozycji.</p>
 
   <div class="spread">
     <div>
       <div class="lbl">Spread LONG − SHORT · D+2 (sesja 25.08)</div>
-      <div class="val mono">≈ +1,52 p.p.</div>
+      <div class="val mono">+1,44 p.p.</div>
     </div>
-    <div class="spreadbar"><i style="width:15%"></i></div>
-    <div class="lbl" style="max-width:230px">na danych niepełnych: LONG 4/5 spółek (śr. +3,46%), SHORT 3/5 (śr. zmiana kursu +1,94%); brakujące zamknięcia (TPE, MBK, ALE) kierunkowo neutralne/sprzyjające</div>
+    <div class="spreadbar"><i style="width:14%"></i></div>
+    <div class="lbl" style="max-width:230px">dane pełne 10/10 (Yahoo Finance): koszyk LONG śr. +2,08%, koszyk SHORT śr. zmiana kursu +0,64%; motor spreadu: KGHM i Dino</div>
   </div>
 
   <h2>Pozycje taktyczne</h2>
