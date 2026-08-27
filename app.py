@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WIG20 BASKET BOT v1.6.2 — PEŁNY AUTOMAT (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
+BASKET BOT v1.7.1 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -195,8 +195,8 @@ def _sanity(sig):
     if set(L) & set(S):
         problemy.append("long i short się pokrywają")
     for t in L + S:
-        if t not in WIG20:
-            problemy.append(f"ticker spoza WIG20: {t}")
+        if t not in sig["epics"]:
+            problemy.append(f"ticker spoza uniwersum (mapy epics): {t}")
     if sig["status"].upper()[:6] not in ("AKTUAL", "NIEAKT"):
         problemy.append(f"nieznany status: {sig['status']}")
     if not isinstance(sig.get("epics"), dict):
@@ -205,7 +205,7 @@ def _sanity(sig):
         if e.get("action", "CLOSE") not in ("CLOSE", "REDUCE"):
             problemy.append(f"złe action w exclude: {e}")
     for t in sig.get("tactical", []):
-        if t.get("ticker") not in WIG20 or t.get("direction") not in ("BUY", "SELL"):
+        if t.get("ticker") not in sig["epics"] or t.get("direction") not in ("BUY", "SELL"):
             problemy.append(f"zła pozycja taktyczna: {t}")
     if problemy:
         raise ValueError("signals.json nie przechodzi kontroli spójności — "
@@ -335,7 +335,7 @@ def validate_daily(j, sig):
         rem = [t for t in j.get("tactical_remove", []) if t in cur]
         for a in j.get("tactical_add", [])[:1]:          # maks. 1 nowa dziennie
             t = a.get("ticker")
-            assert t in WIG20, f"taktyczna spoza WIG20: {t}"
+            assert t in sig["epics"], f"taktyczna spoza uniwersum: {t}"
             assert t not in basket, f"taktyczna nie może dublować koszyka: {t}"
             assert t not in cur, f"taktyczna już otwarta: {t}"
             assert a.get("direction") in ("BUY", "SELL"), "zły kierunek taktycznej"
@@ -357,7 +357,7 @@ def validate_weekly(j):
     assert len(L) == 5 and len(S) == 5, "koszyki muszą mieć po 5 spółek"
     assert not set(L) & set(S), "long i short nie mogą się pokrywać"
     for t in L + S:
-        assert t in WIG20, f"ticker spoza WIG20: {t}"
+        assert t in sig["epics"], f"ticker spoza uniwersum: {t}"
     return j
 
 
@@ -651,15 +651,23 @@ def desired_book(sig):
 
 
 def sync():
-    if not LIVE_ODBLOKOWANY:
+    rep_uwaga_live = (None if LIVE_ODBLOKOWANY else
+                      "TRYB LIVE NIEUZBROJONY (brak LIVE_POTWIERDZENIE) — "
+                      "to wyłącznie plan na sucho; realny handel wymaga "
+                      "potwierdzenia i DRY_RUN=false")
+    if not LIVE_ODBLOKOWANY and not DRY_RUN:
         return {"tryb": "LIVE", "handel": "ZABLOKOWANY",
                 "błąd": ("Rachunek rzeczywisty (CAPITAL_DEMO=false) bez zmiennej "
                          "LIVE_POTWIERDZENIE=ROZUMIEM-RYZYKO — handel wstrzymany. "
-                         "To celowy bezpiecznik: patrz INSTRUKCJA, Etap 13.")}
+                         "To celowy bezpiecznik: patrz sekcja o uzbrajaniu LIVE "
+                         "w INSTRUKCJI. Biegi na sucho (DRY_RUN=true) działają "
+                         "bez potwierdzenia.")}
     rep = {"czas_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
            "dry_run": DRY_RUN, "akcje": [], "pominiete": [], "błędy": []}
     sig, _ = load_signals()
 
+    if rep_uwaga_live:
+        rep["uwaga"] = rep_uwaga_live
     rep["sygnaly"] = {k: sig[k] for k in
                       ("version", "status", "long", "short",
                        "exclude", "tactical")}
@@ -853,7 +861,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.6.2", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
+    return jsonify(ok=True, wersja="1.7.1", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
