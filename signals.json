@@ -40,7 +40,7 @@
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
   "exclude": [],
-  "last_daily": "2026-08-26",
+  "last_daily": "2026-08-27",
   "d0": {
     "date": "2026-08-25",
     "wig20": 4008.04,

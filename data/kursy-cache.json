@@ -1,15 +1,19 @@
 {
  "aktualizacja": {
   "ALLEGRO": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
-  "BUDIMEX": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
-  "DINOPL": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
-  "KGHM": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "BUDIMEX": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
+  "CDPROJEKT": "2026-08-27 (import: kursy D0 25.08 z signals.json)",
+  "DINOPL": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
+  "KGHM": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
+  "KRUK": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
   "MBANK": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
-  "MODIVO": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
-  "PGE": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "MODIVO": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
+  "PEKAO": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
+  "PEPCO": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
+  "PGE": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
   "PKNORLEN": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
   "PKOBP": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
-  "TAURONPE": "2026-08-26 (import: bieg poranny Puls, Yahoo zwalidowane D0)",
+  "TAURONPE": "2026-08-27 (import: bieg poranny Puls, WebSearch money.pl/gpw.pl zamkniecia 26.08, walidacja d/d vs D0)",
   "WIG20": "2026-08-26 (import: PAP/Strefa Inwestorów, zamknięcia 21 i 25.08)"
  },
  "kursy": {
@@ -19,15 +23,25 @@
   },
   "BUDIMEX": {
    "2026-08-21": 706.4,
-   "2026-08-25": 709.0
+   "2026-08-25": 709.0,
+   "2026-08-26": 720.8
+  },
+  "CDPROJEKT": {
+   "2026-08-25": 242.9
   },
   "DINOPL": {
    "2026-08-21": 34.78,
-   "2026-08-25": 36.18
+   "2026-08-25": 36.18,
+   "2026-08-26": 36.09
   },
   "KGHM": {
    "2026-08-21": 342.35,
-   "2026-08-25": 366.0
+   "2026-08-25": 366.0,
+   "2026-08-26": 364.35
+  },
+  "KRUK": {
+   "2026-08-25": 438.9,
+   "2026-08-26": 444.2
   },
   "MBANK": {
    "2026-08-21": 1385.5,
@@ -35,11 +49,21 @@
   },
   "MODIVO": {
    "2026-08-21": 90.56,
-   "2026-08-25": 89.68
+   "2026-08-25": 89.68,
+   "2026-08-26": 90.16
+  },
+  "PEKAO": {
+   "2026-08-25": 257.9,
+   "2026-08-26": 261.9
+  },
+  "PEPCO": {
+   "2026-08-25": 42.14,
+   "2026-08-26": 43.13
   },
   "PGE": {
    "2026-08-21": 10.19,
-   "2026-08-25": 10.54
+   "2026-08-25": 10.54,
+   "2026-08-26": 10.83
   },
   "PKNORLEN": {
    "2026-08-21": 153.14,
@@ -51,7 +75,8 @@
   },
   "TAURONPE": {
    "2026-08-21": 8.248,
-   "2026-08-25": 8.432
+   "2026-08-25": 8.432,
+   "2026-08-26": 8.56
   },
   "WIG20": {
    "2026-08-21": 3995.19,

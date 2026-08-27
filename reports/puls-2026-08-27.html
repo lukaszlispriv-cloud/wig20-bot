@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-08-27</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#7FD6A8}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green);font-weight:600}.down{color:var(--red);font-weight:600}.na{color:var(--muted)}
+  .note{font-size:.76rem;color:var(--muted);margin:4px 2px 14px}
+  .spread{background:var(--navy);color:#fff;border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0}
+  .spread .lbl{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+  .spread .val{font-size:1.45rem;font-weight:800}
+  .spreadbar{height:8px;background:#22374F;border-radius:4px;flex:1 1 160px;min-width:140px;position:relative;overflow:hidden}
+  .spreadbar i{position:absolute;top:0;bottom:0;background:#E38B7F;right:50%;width:10.4%}
+  ul.cal{list-style:none}
+  ul.cal li{padding:7px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  .cal .t{display:inline-block;min-width:56px;color:var(--muted);font-size:.8rem}
+  footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+  .src{font-size:.72rem;color:var(--muted)}
+  .warn{background:#FFF6E8;border:1px solid #E8D5AE;border-radius:10px;padding:12px 14px;font-size:.85rem;margin:14px 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">czwartek, 27 sierpnia 2026 · dane z sesji GPW 26.08.2026 · prognoza 2026-W2, D0 = 25.08.2026</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">b.d.</div>
+      <div class="chg mono">śródsesyjnie 26.08: +0,9% (~godz. 11, PAP)</div>
+      <div class="sub">WIG20 — zamknięcie 26.08 niepotwierdzone; ostatni pewny odczyt: 4 008,04 (25.08, D0)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">Aktualna</span>
+    <span class="stampnote">Werdykt dnia: prognoza tygodniowa 2026-W2 utrzymana. Bez wykluczeń (exclude puste), bez zmian taktycznych. Kursy 26.08: 9/10 spółek z rezerwy (WebSearch — widżety money.pl/GPW), zwalidowane spójnością zmian d/d z kursami D0; Yahoo niedostępne (HTTP 429).</span>
+  </div>
+
+  <div class="warn"><b>Ograniczenie danych w tym biegu:</b> Yahoo Finance odrzucało wszystkie zapytania (HTTP 429, trzy próby w odstępach), Stooq odmawiał połączeń, a serwisy notowań są poza polityką sieciową środowiska. Zamknięcia z 26.08 pochodzą z odczytów widżetów notowań (money.pl, gpw.pl) przez WebSearch — dla 7/9 pozycji zmiana d/d zgadza się co do ułamka procenta z kursami D0 z signals.json. Brak potwierdzonego zamknięcia: WIG20 (indeks) i CD Projekt (szacunek z kapitalizacji ~242,8 zł, ~0% vs D0). Kolumna „relatywnie vs WIG20" = b.d.</div>
+
+  <h2>Najważniejsze zmiany (24h)</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag makro">MAKRO</span><b>Energetyka odbija drugi dzień mimo tematu CIT — pozycje SHORT PGE i Tauron pod presją.</b> Sesja 26.08: PGE +2,75% (10,83 zł), Tauron +1,49% (8,56 zł); od D0 odpowiednio +2,75% i +1,52% przeciw tezie — poniżej progu redukcji (4–8%), pod ścisłą obserwacją. Projekt CIT 30% dla energetyki i paliw od 2027 r. (degresywnie do 19% w 2030, ~7 mld zł wpływów) pozostaje w fazie założeń; media podkreślają presję na dywidendy PGE/Tauron/Enei (rp.pl, stockwatch.pl, 20–26.08). Filar tezy SHORT nienaruszony.</li>
+      <li><span class="tag rynek">RYNEK</span><b>CD Projekt (SHORT):</b> po wtorkowej przecenie −6/−7% (premiera „Wiedźmina 4" przesunięta na 2028 r., ogłoszone 25.08 przed Gamescom) kurs 26.08 ustabilizował się — kapitalizacja 24,25 mld zł implikuje ~242,8 zł, tj. ~0% vs D0 242,90 (TradingView/Comparic, 26–27.08). Gamescom w Kolonii trwa do 30.08 — CDR nie pokaże tam „Wiedźmina 4"; remaster „Wiedźmina 3" zapowiedziany na 29.09.2026, dodatek „Pieśni przeszłości" na 2027 (StockWatch, 26.08). Teza SHORT pracuje.</li>
+      <li><span class="tag rynek">RYNEK</span><b>Banki mocne 26.08 — sprzyja LONG Pekao:</b> żaden bank z WIG20/mWIG40 nie spadł, WIG-Banki +1,3% (26 492 pkt); najmocniejsze mBank, Alior, Millennium ~+2% (PAP/Strefa Inwestorów, 26.08). Pekao +1,55% od D0 (261,90 zł).</li>
+      <li><span class="tag rynek">RYNEK</span><b>KGHM (LONG):</b> śródsesyjnie 26.08 rósł ~1,9% do 372,90 zł (PAP, ~godz. 11), ale zamknięcie 364,35 zł (−0,45% d/d) — realizacja zysków po +6,9% w dniu D0 (po informacji o wzroście zasobów Sierra Gorda). Pozycja −0,45% od D0.</li>
+      <li><span class="tag rynek">RYNEK</span><b>Pepco (SHORT):</b> +1,72% na sesji 26.08 (43,13 zł), +2,35% od D0 przeciw tezie — poniżej progu redukcji. Kontekst: zakończony 12.08 skup akcji po 47,52 zł (do 400 mln EUR) i deklaracje zarządu o wzroście wskaźnika wypłaty dywidendy do ~40% wciąż wspierają kurs (PAP/Bankier, sprzed D0).</li>
+      <li><span class="tag short">SHORT</span><b>Rejestr KNF:</b> pozycje krótkie utrzymywane m.in. na Budimeksie, CD Projekcie, Dino, KGHM, Kruku i Modivo (Parkiet, stan sierpień 2026). Brak wykrytych zmian ≥0,3 p.p. na spółkach koszykowych w oknie 26–27.08 — rejestr (rss.knf.gov.pl) niedostępny bezpośrednio z tego środowiska (b.d. szczegółów dziennych).</li>
+      <li><span class="tag rekom">REKOM.</span><b>Brak nowych rekomendacji</b> dla spółek koszykowych datowanych 26–27.08 w dostępnych źródłach. DM BOŚ utrzymuje Dino, KGHM i Budimex na wakacyjnej liście top picks (StockWatch, sprzed D0).</li>
+      <li><span class="tag espi">ESPI</span><b>Sezon raportów H1 trwa:</b> brak nowych raportów okresowych spółek koszykowych w oknie 24h (Budimex opublikował PSr 25.08 — w cenach D0; pełny raport Taurona 9.09, PGE 15.09). Dziś na GPW szeroka fala raportów spoza koszyków (m.in. Citi Handlowy, Asseco, Eurocash, XTB).</li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(25.08)</th><th>Kurs ostatni<br>(26.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">KGHM</td><td><span class="dir long">LONG</span></td><td class="mono">366,00</td><td class="mono">364,35</td><td class="mono down">−0,45%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">36,18</td><td class="mono">36,09</td><td class="mono down">−0,25%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">257,90</td><td class="mono">261,90</td><td class="mono up">+1,55%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">709,00</td><td class="mono">720,80</td><td class="mono up">+1,66%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">KRUK</td><td><span class="dir long">LONG</span></td><td class="mono">438,90</td><td class="mono">444,20</td><td class="mono up">+1,21%</td><td class="mono na">b.d.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zamknięcia 26.08 z odczytu widżetów notowań (money.pl) przez WebSearch, 27.08 rano. Walidacja: dla KGHM, Dino i Budimeksu podawana zmiana d/d odtwarza kursy D0 z signals.json co do ułamka procenta; dla Pekao i Kruka implikowany kurs odniesienia różni się o ~0,3% od D0 (w granicach tolerancji 0,5%).</p>
+
+  <h2>Koszyk SHORT</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(25.08)</th><th>Kurs ostatni<br>(26.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">CDPROJEKT</td><td><span class="dir short">SHORT</span></td><td class="mono">242,90</td><td class="mono na">b.d. (~242,8*)</td><td class="mono na">~0,0%*</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,432</td><td class="mono">8,56</td><td class="mono down">−1,52%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,54</td><td class="mono">10,83</td><td class="mono down">−2,75%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">42,14</td><td class="mono">43,13</td><td class="mono down">−2,35%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">89,68</td><td class="mono">90,16</td><td class="mono down">−0,54%</td><td class="mono na">b.d.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu. *CD Projekt: brak potwierdzonego zamknięcia 26.08 — szacunek z kapitalizacji 24,25 mld zł (TradingView, odczyt 27.08 rano) wskazuje ~242,8 zł, tj. kurs praktycznie bez zmian vs D0; wartość szacunkowa, nieużyta do decyzji. Zamknięcia PGE, Taurona, Pepco i Modivo z widżetów gpw.pl (odczyt 27.08 rano); dla PGE, Taurona i Modivo zmiana d/d odtwarza kursy D0 co do ułamka procenta, dla Pepco implikowany kurs odniesienia różni się o ~0,6% od D0 (nieco powyżej tolerancji 0,5% — pozycja oznaczona do ponownej walidacji w kolejnym biegu). Cały koszyk SHORT idzie 26.08 przeciw tezie (odbicie energetyki i Pepco), ale wszystkie ruchy od D0 są poniżej progu redukcji 4%.</p>
+
+  <div class="spread">
+    <div>
+      <div class="lbl">Spread LONG − SHORT · D+1 (sesja 26.08)</div>
+      <div class="val mono">−1,04 p.p.*</div>
+    </div>
+    <div class="spreadbar"><i></i></div>
+    <div class="lbl" style="max-width:230px">*orientacyjnie, 9/10 kursów (bez CDR): koszyk LONG śr. +0,74%, koszyk SHORT śr. zmiana kursu +1,79%; ciężarem odbicie PGE i Pepco</div>
+  </div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="card"><p style="font-size:.9rem">Brak otwartych pozycji taktycznych i brak nowych. Skan WIG20 poza koszykami (26–27.08): mocne banki (PKO BP, mBank, Alior — ruchy ~+2%, bez twardego wyzwalacza wynikowego), Żabka zakotwiczona przy cenie wezwania Couche-Tard (32 zł, zapisy trwają), Orlen bez świeżego komunikatu. Żadne zdarzenie 24h nie spełnia protokołu twardego wyzwalacza (wynik wyraźnie powyżej konsensusu z pozytywną reakcją / przełomowy kontrakt / wezwanie / szokowo złe wyniki).</p></div>
+
+  <h2>Kalendarz — czwartek 27.08.2026</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t">GPW</span>Raporty H1 (spoza koszyków): Citi Handlowy, Asseco Poland, Dom Development, Eurocash, XTB, Text, Neuca, Mirbud, Mo-Bruk (Strefa Inwestorów, kalendarium tygodnia)</li>
+      <li><span class="t">14:30</span>USA — drugi odczyt PKB za II kw. oraz cotygodniowe wnioski o zasiłek</li>
+      <li><span class="t">PL</span>w tym tygodniu: sprzedaż detaliczna, podaż pieniądza M3, stopa bezrobocia (GUS/NBP — dokładne godziny b.d.)</li>
+      <li><span class="t">event</span>Gamescom w Kolonii trwa do 30.08 (CD Projekt — bez pokazu „Wiedźmina 4"; remaster „Wiedźmina 3" 29.09)</li>
+      <li><span class="t">GPW</span>Żabka — trwają zapisy w wezwaniu Couche-Tard (32 zł/akcję)</li>
+      <li><span class="t">jutro</span>pt. 28.08: inflacja PCE w USA (lipiec)</li>
+      <li><span class="t">spółki</span>najbliższe raporty z koszyków: CD Projekt 2.09 (H1) · Tauron 9.09 (pełne H1) · PGE 15.09</li>
+    </ul>
+  </div>
+
+  <p class="src">Główne źródła: PAP/Strefa Inwestorów (depesza śródsesyjna 26.08, WIG-Banki), widżety notowań money.pl i gpw.pl odczytane przez WebSearch 27.08 rano (zamknięcia 26.08), TradingView/Comparic (kapitalizacja CDR), StockWatch (Gamescom, CIT, top picks), rp.pl/Parkiet (CIT 30%), Bankier (Pepco). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach.</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 27.08.2026. Dane mogą zawierać braki (b.d.) wynikające z ograniczeń dostępu do źródeł notowań (Yahoo HTTP 429, blokady sieciowe środowiska).
+  </footer>
+</div>
+</body>
+</html>
