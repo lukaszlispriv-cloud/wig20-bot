@@ -28,6 +28,7 @@ Wyjście: czytelna tabela; z flagą --json — struktura maszynowa.
 import json
 import os
 import sys
+import time
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -36,6 +37,13 @@ from zoneinfo import ZoneInfo
 WAW = ZoneInfo("Europe/Warsaw")
 KONIEC_SESJI = (17, 10)          # po tej godzinie dzisiejsza świeca = zakończona
 TOLERANCJA_D0 = 0.005            # 0,5%
+
+# Yahoo z IP chmury dławi serie zapytań (HTTP 429) — pojedyncze przechodzą.
+# Dlatego: pauza między zapytaniami + ponowienia z backoffem przy 429,
+# ograniczone wspólnym budżetem czasu (spółki koszykowe idą pierwsze).
+PAUZA_MIEDZY_ZAPYTANIAMI = 3.0   # s
+BACKOFF_429 = (40, 100)          # s; kolejne ponowienia tego samego symbolu
+MAKS_BUDZET_BACKOFF = 360        # s łącznie na cały bieg
 
 # Ticker systemowy -> lista symboli Yahoo do spróbowania (pierwszy trafiony wygrywa)
 SYMBOLE = {
@@ -74,7 +82,12 @@ def pobierz(sym):
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             dane = json.load(r)
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+    except urllib.error.HTTPError as e:
+        blad = f"błąd sieci/odpowiedzi: {e}"
+        if e.code == 429:
+            blad = "HTTP 429"
+        return [], blad
+    except (urllib.error.URLError, TimeoutError,
             json.JSONDecodeError, OSError) as e:
         return [], f"błąd sieci/odpowiedzi: {e}"
     try:
@@ -168,6 +181,22 @@ def cache_odczytaj(cache, ticker):
     return bary, cache["aktualizacja"].get(ticker, "b.d.")
 
 
+def kolejnosc_symboli(sig):
+    """WIG20 i spółki koszykowe/taktyczne najpierw — mają pierwszeństwo
+    do budżetu ponowień, zanim limiter Yahoo zdławi resztę biegu."""
+    prio = ["WIG20"]
+    if sig:
+        prio += [t for t in (sig.get("long") or []) + (sig.get("short") or [])]
+        prio += [w.get("ticker") for w in (sig.get("tactical") or [])
+                 if isinstance(w, dict)]
+    widziane, kolej = set(), []
+    for t in prio + list(SYMBOLE):
+        if t in SYMBOLE and t not in widziane:
+            widziane.add(t)
+            kolej.append(t)
+    return kolej
+
+
 def main():
     tryb_json = "--json" in sys.argv
     sig, sig_path = znajdz_signals()
@@ -179,11 +208,33 @@ def main():
     cache = wczytaj_cache(cache_path)
     cache_zmieniony = False
 
+    budzet_backoff = [MAKS_BUDZET_BACKOFF]
+    ostatnie_zapytanie = [0.0]
+
+    def pobierz_grzecznie(sym):
+        """pobierz() z pauzą między zapytaniami i backoffem przy HTTP 429."""
+        czekaj = PAUZA_MIEDZY_ZAPYTANIAMI - (time.monotonic() - ostatnie_zapytanie[0])
+        if czekaj > 0:
+            time.sleep(czekaj)
+        bary, blad = [], "nie próbowano"
+        for pauza in (0,) + BACKOFF_429:
+            if pauza:
+                if budzet_backoff[0] < pauza:
+                    return [], "HTTP 429 (budżet ponowień wyczerpany)"
+                budzet_backoff[0] -= pauza
+                time.sleep(pauza)
+            bary, blad = pobierz(sym)
+            ostatnie_zapytanie[0] = time.monotonic()
+            if bary or blad != "HTTP 429":
+                return bary, blad
+        return [], "HTTP 429 (po ponowieniach)"
+
     wynik, problemy = {}, []
-    for ticker, kandydaci in SYMBOLE.items():
+    for ticker in kolejnosc_symboli(sig):
+        kandydaci = SYMBOLE[ticker]
         bary, blad, uzyty, zrodlo = [], "nie próbowano", None, "yahoo"
         for sym in kandydaci:
-            bary, blad = pobierz(sym)
+            bary, blad = pobierz_grzecznie(sym)
             if bary:
                 uzyty = sym
                 break
