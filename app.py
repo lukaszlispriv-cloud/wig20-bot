@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-BASKET BOT v1.7.1 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
+BASKET BOT v1.7.2 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
@@ -598,7 +598,19 @@ def calc_size(cap, target_acc, epic, acc_ccy):
         return None, m, "brak ceny"
     fx = cap.fx_rate(acc_ccy, m["currency"])   # 1.0 gdy waluty zgodne
     step = m["min"] if m["min"] > 0 else 1.0
-    size = round(math.floor((target_acc * fx / m["mid"]) / step) * step, 4)
+    surowy = target_acc * fx / m["mid"]
+    dol = math.floor(surowy / step) * step
+    gora = dol + step
+    size = dol
+    # Zaokrąglanie do BLIŻSZEGO kroku (nie floor): przy grubych krokach floor
+    # potrafił zaniżać pozycję o 20-30% (np. TSLA 0.2 zam. 0.3). Krok w górę
+    # dopuszczamy do 125% celu — bliżej celu niż niedomiar, bez przestrzału.
+    if dol >= step:
+        w_dol = abs(dol * m["mid"] / fx - target_acc)
+        w_gore = abs(gora * m["mid"] / fx - target_acc)
+        if w_gore < w_dol and gora * m["mid"] / fx <= target_acc * 1.25:
+            size = gora
+    size = round(size, 4)
     if size < step:
         min_acc = step * m["mid"] / fx
         if min_acc <= target_acc * MAX_OVERSHOOT:
@@ -789,7 +801,7 @@ def sync():
             continue
         if DRY_RUN:
             rep["akcje"].append(f"[DRY] OTWÓRZ {want['direction']} "
-                                f"{want['ticker']} size {size} @ ~{m['mid']} "
+                                f"{want['ticker']} size {size} @ ~{m['mid']:.2f} "
                                 f"{m['currency']} ({info})")
             continue
         ok, ref, msg = cap.open(epic, want["direction"], size)
@@ -861,7 +873,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.7.1", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
+    return jsonify(ok=True, wersja="1.7.2", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
