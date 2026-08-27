@@ -65,9 +65,9 @@
       <div class="sub">czwartek, 27 sierpnia 2026 · dane z sesji GPW 26.08.2026 · prognoza 2026-W2, D0 = 25.08.2026</div>
     </div>
     <div class="wigbox">
-      <div class="val mono">b.d.</div>
-      <div class="chg mono">śródsesyjnie 26.08: +0,9% (~godz. 11, PAP)</div>
-      <div class="sub">WIG20 — zamknięcie 26.08 niepotwierdzone; ostatni pewny odczyt: 4 008,04 (25.08, D0)</div>
+      <div class="val mono">4 038,12</div>
+      <div class="chg mono">+0,75% (26.08) · +0,75% od D0</div>
+      <div class="sub">WIG20 — zamknięcie 26.08 (bankier.pl, odczyt 27.08; zgodne z depeszą PAP o wzrostach)</div>
     </div>
   </div>
 </header>
@@ -76,17 +76,17 @@
 
   <div class="stampline">
     <span class="stamp">Aktualna</span>
-    <span class="stampnote">Werdykt dnia: prognoza tygodniowa 2026-W2 utrzymana. Bez wykluczeń (exclude puste), bez zmian taktycznych. Kursy 26.08: 9/10 spółek z rezerwy (WebSearch — widżety money.pl/GPW), zwalidowane spójnością zmian d/d z kursami D0; Yahoo niedostępne (HTTP 429).</span>
+    <span class="stampnote">Werdykt dnia: prognoza tygodniowa 2026-W2 utrzymana. Bez wykluczeń (exclude puste), bez zmian taktycznych. Kursy 26.08: komplet 10/10 + indeks — Yahoo niedostępne (HTTP 429), dane z rezerwy bankier.pl (tabele notowań), skrzyżowane z widżetami money.pl/GPW i zwalidowane spójnością zmian d/d z kursami D0.</span>
   </div>
 
-  <div class="warn"><b>Ograniczenie danych w tym biegu:</b> Yahoo Finance odrzucało wszystkie zapytania (HTTP 429, trzy próby w odstępach), Stooq odmawiał połączeń, a serwisy notowań są poza polityką sieciową środowiska. Zamknięcia z 26.08 pochodzą z odczytów widżetów notowań (money.pl, gpw.pl) przez WebSearch — dla 7/9 pozycji zmiana d/d zgadza się co do ułamka procenta z kursami D0 z signals.json. Brak potwierdzonego zamknięcia: WIG20 (indeks) i CD Projekt (szacunek z kapitalizacji ~242,8 zł, ~0% vs D0). Kolumna „relatywnie vs WIG20" = b.d.</div>
+  <div class="warn"><b>Nota o danych (aktualizacja z tego samego dnia):</b> poranny bieg miał braki (Yahoo HTTP 429; WIG20 i CD Projekt = b.d.). Po dodaniu <code>www.bankier.pl</code> do allowlisty sieci środowiska raport uzupełniono o pełne zamknięcia 26.08 z tabel notowań Bankiera: WIG20 4 038,12 (+0,75%), CD Projekt 238,00 zł (−2,02% — poranny szacunek „~0%" z kapitalizacji był błędny). Wszystkie pozostałe kursy potwierdziły się w obu źródłach. <code>kursy.py</code> ma od tego biegu wbudowaną rezerwę Bankiera i ochronę przed limiterem Yahoo.</div>
 
   <h2>Najważniejsze zmiany (24h)</h2>
   <div class="card">
     <ul class="changes">
       <li><span class="tag makro">MAKRO</span><b>Energetyka odbija drugi dzień mimo tematu CIT — pozycje SHORT PGE i Tauron pod presją.</b> Sesja 26.08: PGE +2,75% (10,83 zł), Tauron +1,49% (8,56 zł); od D0 odpowiednio +2,75% i +1,52% przeciw tezie — poniżej progu redukcji (4–8%), pod ścisłą obserwacją. Projekt CIT 30% dla energetyki i paliw od 2027 r. (degresywnie do 19% w 2030, ~7 mld zł wpływów) pozostaje w fazie założeń; media podkreślają presję na dywidendy PGE/Tauron/Enei (rp.pl, stockwatch.pl, 20–26.08). Filar tezy SHORT nienaruszony.</li>
-      <li><span class="tag rynek">RYNEK</span><b>CD Projekt (SHORT):</b> po wtorkowej przecenie −6/−7% (premiera „Wiedźmina 4" przesunięta na 2028 r., ogłoszone 25.08 przed Gamescom) kurs 26.08 ustabilizował się — kapitalizacja 24,25 mld zł implikuje ~242,8 zł, tj. ~0% vs D0 242,90 (TradingView/Comparic, 26–27.08). Gamescom w Kolonii trwa do 30.08 — CDR nie pokaże tam „Wiedźmina 4"; remaster „Wiedźmina 3" zapowiedziany na 29.09.2026, dodatek „Pieśni przeszłości" na 2027 (StockWatch, 26.08). Teza SHORT pracuje.</li>
-      <li><span class="tag rynek">RYNEK</span><b>Banki mocne 26.08 — sprzyja LONG Pekao:</b> żaden bank z WIG20/mWIG40 nie spadł, WIG-Banki +1,3% (26 492 pkt); najmocniejsze mBank, Alior, Millennium ~+2% (PAP/Strefa Inwestorów, 26.08). Pekao +1,55% od D0 (261,90 zł).</li>
+      <li><span class="tag rynek">RYNEK</span><b>CD Projekt (SHORT):</b> po wtorkowej przecenie −6/−7% (premiera „Wiedźmina 4" przesunięta na 2028 r., ogłoszone 25.08 przed Gamescom) spadki trwały też 26.08 — zamknięcie 238,00 zł, −2,02% vs D0 (bankier.pl). Pozycja SHORT +2,02% od D0, najlepsza w koszyku. Gamescom w Kolonii trwa do 30.08 — CDR nie pokaże tam „Wiedźmina 4"; remaster „Wiedźmina 3" zapowiedziany na 29.09.2026, dodatek „Pieśni przeszłości" na 2027 (StockWatch, 26.08).</li>
+      <li><span class="tag rynek">RYNEK</span><b>Banki mocne 26.08 — sprzyja LONG Pekao:</b> żaden bank z WIG20/mWIG40 nie spadł, WIG-Banki +1,3% (26 492 pkt); najmocniejsze mBank, Alior, Millennium ~+2% (PAP/Strefa Inwestorów, 26.08). Pekao +1,55% od D0 (261,90 zł). Uwaga: sesja 27.08 (w toku, ok. godz. 11) odwraca obraz — szeroka przecena, WIG20 ~−1,3%, Kruk ~−5,4%, Pekao ~−3,1% (bankier.pl, śródsesyjnie) — do rozliczenia w jutrzejszym biegu.</li>
       <li><span class="tag rynek">RYNEK</span><b>KGHM (LONG):</b> śródsesyjnie 26.08 rósł ~1,9% do 372,90 zł (PAP, ~godz. 11), ale zamknięcie 364,35 zł (−0,45% d/d) — realizacja zysków po +6,9% w dniu D0 (po informacji o wzroście zasobów Sierra Gorda). Pozycja −0,45% od D0.</li>
       <li><span class="tag rynek">RYNEK</span><b>Pepco (SHORT):</b> +1,72% na sesji 26.08 (43,13 zł), +2,35% od D0 przeciw tezie — poniżej progu redukcji. Kontekst: zakończony 12.08 skup akcji po 47,52 zł (do 400 mln EUR) i deklaracje zarządu o wzroście wskaźnika wypłaty dywidendy do ~40% wciąż wspierają kurs (PAP/Bankier, sprzed D0).</li>
       <li><span class="tag short">SHORT</span><b>Rejestr KNF:</b> pozycje krótkie utrzymywane m.in. na Budimeksie, CD Projekcie, Dino, KGHM, Kruku i Modivo (Parkiet, stan sierpień 2026). Brak wykrytych zmian ≥0,3 p.p. na spółkach koszykowych w oknie 26–27.08 — rejestr (rss.knf.gov.pl) niedostępny bezpośrednio z tego środowiska (b.d. szczegółów dziennych).</li>
@@ -100,38 +100,38 @@
     <table>
       <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(25.08)</th><th>Kurs ostatni<br>(26.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
       <tbody>
-        <tr><td class="name">KGHM</td><td><span class="dir long">LONG</span></td><td class="mono">366,00</td><td class="mono">364,35</td><td class="mono down">−0,45%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">36,18</td><td class="mono">36,09</td><td class="mono down">−0,25%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">257,90</td><td class="mono">261,90</td><td class="mono up">+1,55%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">709,00</td><td class="mono">720,80</td><td class="mono up">+1,66%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">KRUK</td><td><span class="dir long">LONG</span></td><td class="mono">438,90</td><td class="mono">444,20</td><td class="mono up">+1,21%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">KGHM</td><td><span class="dir long">LONG</span></td><td class="mono">366,00</td><td class="mono">364,35</td><td class="mono down">−0,45%</td><td class="mono down">−1,20 p.p.</td></tr>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">36,18</td><td class="mono">36,09</td><td class="mono down">−0,25%</td><td class="mono down">−1,00 p.p.</td></tr>
+        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">257,90</td><td class="mono">261,90</td><td class="mono up">+1,55%</td><td class="mono up">+0,80 p.p.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">709,00</td><td class="mono">720,80</td><td class="mono up">+1,66%</td><td class="mono up">+0,91 p.p.</td></tr>
+        <tr><td class="name">KRUK</td><td><span class="dir long">LONG</span></td><td class="mono">438,90</td><td class="mono">444,20</td><td class="mono up">+1,21%</td><td class="mono up">+0,46 p.p.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">Zamknięcia 26.08 z odczytu widżetów notowań (money.pl) przez WebSearch, 27.08 rano. Walidacja: dla KGHM, Dino i Budimeksu podawana zmiana d/d odtwarza kursy D0 z signals.json co do ułamka procenta; dla Pekao i Kruka implikowany kurs odniesienia różni się o ~0,3% od D0 (w granicach tolerancji 0,5%).</p>
+  <p class="note">Zamknięcia 26.08 z tabel notowań bankier.pl (odczyt 27.08), potwierdzone niezależnie widżetami money.pl/GPW przez WebSearch. „Relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,75%). Walidacja: dla KGHM, Dino i Budimeksu zmiana d/d odtwarza kursy D0 z signals.json co do ułamka procenta; dla Pekao i Kruka implikowany kurs odniesienia różni się o ~0,3% od D0 (w granicach tolerancji 0,5%).</p>
 
   <h2>Koszyk SHORT</h2>
   <div class="tblwrap">
     <table>
       <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(25.08)</th><th>Kurs ostatni<br>(26.08)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
       <tbody>
-        <tr><td class="name">CDPROJEKT</td><td><span class="dir short">SHORT</span></td><td class="mono">242,90</td><td class="mono na">b.d. (~242,8*)</td><td class="mono na">~0,0%*</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,432</td><td class="mono">8,56</td><td class="mono down">−1,52%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,54</td><td class="mono">10,83</td><td class="mono down">−2,75%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">42,14</td><td class="mono">43,13</td><td class="mono down">−2,35%</td><td class="mono na">b.d.</td></tr>
-        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">89,68</td><td class="mono">90,16</td><td class="mono down">−0,54%</td><td class="mono na">b.d.</td></tr>
+        <tr><td class="name">CDPROJEKT</td><td><span class="dir short">SHORT</span></td><td class="mono">242,90</td><td class="mono">238,00</td><td class="mono up">+2,02%</td><td class="mono up">+1,27 p.p.</td></tr>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,432</td><td class="mono">8,56</td><td class="mono down">−1,52%</td><td class="mono down">−2,27 p.p.</td></tr>
+        <tr><td class="name">PGE</td><td><span class="dir short">SHORT</span></td><td class="mono">10,54</td><td class="mono">10,83</td><td class="mono down">−2,75%</td><td class="mono down">−3,50 p.p.</td></tr>
+        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">42,14</td><td class="mono">43,13</td><td class="mono down">−2,35%</td><td class="mono down">−3,10 p.p.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">89,68</td><td class="mono">90,16</td><td class="mono down">−0,54%</td><td class="mono down">−1,29 p.p.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu. *CD Projekt: brak potwierdzonego zamknięcia 26.08 — szacunek z kapitalizacji 24,25 mld zł (TradingView, odczyt 27.08 rano) wskazuje ~242,8 zł, tj. kurs praktycznie bez zmian vs D0; wartość szacunkowa, nieużyta do decyzji. Zamknięcia PGE, Taurona, Pepco i Modivo z widżetów gpw.pl (odczyt 27.08 rano); dla PGE, Taurona i Modivo zmiana d/d odtwarza kursy D0 co do ułamka procenta, dla Pepco implikowany kurs odniesienia różni się o ~0,6% od D0 (nieco powyżej tolerancji 0,5% — pozycja oznaczona do ponownej walidacji w kolejnym biegu). Cały koszyk SHORT idzie 26.08 przeciw tezie (odbicie energetyki i Pepco), ale wszystkie ruchy od D0 są poniżej progu redukcji 4%.</p>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,75%). Zamknięcia 26.08 z tabel notowań bankier.pl (odczyt 27.08), potwierdzone widżetami gpw.pl; dla PGE, Taurona i Modivo zmiana d/d odtwarza kursy D0 co do ułamka procenta, dla Pepco implikowany kurs odniesienia różni się o ~0,6% od D0 (nieco powyżej tolerancji 0,5% — do ponownej walidacji w kolejnym biegu). CD Projekt: 238,00 zł (−2,02%) — kontynuacja przeceny po przesunięciu „Wiedźmina 4", jedyna pozycja SHORT na plusie. Pozostałe cztery idą 26.08 przeciw tezie (odbicie energetyki i Pepco), ale wszystkie ruchy od D0 są poniżej progu redukcji 4%.</p>
 
   <div class="spread">
     <div>
       <div class="lbl">Spread LONG − SHORT · D+1 (sesja 26.08)</div>
-      <div class="val mono">−1,04 p.p.*</div>
+      <div class="val mono">−0,28 p.p.</div>
     </div>
-    <div class="spreadbar"><i></i></div>
-    <div class="lbl" style="max-width:230px">*orientacyjnie, 9/10 kursów (bez CDR): koszyk LONG śr. +0,74%, koszyk SHORT śr. zmiana kursu +1,79%; ciężarem odbicie PGE i Pepco</div>
+    <div class="spreadbar"><i style="right:50%;width:2.8%"></i></div>
+    <div class="lbl" style="max-width:230px">dane pełne 10/10 (bankier.pl): koszyk LONG śr. +0,74%, koszyk SHORT śr. zmiana kursu +1,03%; ciężarem odbicie PGE i Pepco, amortyzuje spadek CDR</div>
   </div>
 
   <h2>Pozycje taktyczne</h2>
@@ -150,10 +150,10 @@
     </ul>
   </div>
 
-  <p class="src">Główne źródła: PAP/Strefa Inwestorów (depesza śródsesyjna 26.08, WIG-Banki), widżety notowań money.pl i gpw.pl odczytane przez WebSearch 27.08 rano (zamknięcia 26.08), TradingView/Comparic (kapitalizacja CDR), StockWatch (Gamescom, CIT, top picks), rp.pl/Parkiet (CIT 30%), Bankier (Pepco). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach.</p>
+  <p class="src">Główne źródła: bankier.pl — tabele notowań akcji i indeksów GPW (zamknięcia 26.08, odczyt 27.08 po dodaniu domeny do allowlisty), PAP/Strefa Inwestorów (depesza śródsesyjna 26.08, WIG-Banki), widżety money.pl/gpw.pl przez WebSearch (niezależne potwierdzenie), StockWatch (Gamescom, CIT, top picks), rp.pl/Parkiet (CIT 30%). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach.</p>
 
   <footer>
-    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 27.08.2026. Dane mogą zawierać braki (b.d.) wynikające z ograniczeń dostępu do źródeł notowań (Yahoo HTTP 429, blokady sieciowe środowiska).
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 27.08.2026; uzupełniono tego samego dnia po odblokowaniu źródła bankier.pl.
   </footer>
 </div>
 </body>
