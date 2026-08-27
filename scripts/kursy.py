@@ -17,9 +17,15 @@ Co robi:
 4. Symbole-kandydaci: dla spółek o niepewnym kodzie próbuje kolejno
    kilku symboli; braki wypisuje jawnie — wtedy użyj rezerwy (Stooq/PAP)
    i oznacz źródło w raporcie.
-5. CACHE: każde udane pobranie dopisuje zamknięcia do data/kursy-cache.json
-   (obok signals.json). Gdy Yahoo zawodzi (np. HTTP 429), skrypt sięga do
-   cache i podaje kursy z ostatniego udanego pobrania, oznaczając je jako
+5. REZERWA BANKIER: gdy Yahoo zawodzi (typowo HTTP 429 z IP chmury —
+   limiter dławi SERIE zapytań; stąd pauzy, ponowienia z budżetem czasu
+   i priorytet dla spółek koszykowych), skrypt czyta serwerowo renderowane
+   tabele notowań bankier.pl (wymaga www.bankier.pl na allowliście sieci
+   środowiska). W trakcie sesji zamknięcie poprzedniej sesji odtwarzane
+   jest jako kurs − zmiana absolutna.
+6. CACHE: każde udane pobranie (Yahoo i Bankier) dopisuje zamknięcia do
+   data/kursy-cache.json (obok signals.json). Gdy zawiodą oba źródła,
+   skrypt podaje kursy z ostatniego udanego pobrania, oznaczając je jako
    ŹRÓDŁO: cache (z datą aktualizacji) — dane są wtedy zwalidowane, ale
    mogą nie obejmować najnowszej sesji.
 
@@ -75,6 +81,15 @@ URL = ("https://query2.finance.yahoo.com/v8/finance/chart/{sym}"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
+# Rezerwa: serwerowo renderowane tabele notowań Bankiera (wymagają
+# www.bankier.pl na allowliście sieci środowiska). Dają kurs, zmianę %
+# i zmianę absolutną — w trakcie sesji zamknięcie poprzedniej sesji
+# odtwarzamy jako kurs − zmiana absolutna.
+BANKIER_STRONY = (
+    "https://www.bankier.pl/gielda/notowania/akcje",
+    "https://www.bankier.pl/gielda/notowania/indeksy-gpw",
+)
+
 
 def pobierz(sym):
     """Zwraca listę (data 'YYYY-MM-DD', close) albo [] przy braku danych."""
@@ -103,6 +118,70 @@ def pobierz(sym):
         d = datetime.fromtimestamp(t, tz=timezone.utc).astimezone(WAW)
         bary.append((d.strftime("%Y-%m-%d"), round(float(c), 4)))
     return bary, None
+
+
+def _bankier_liczba(s):
+    s = s.replace("\xa0", "").replace(" ", "").replace(",", ".")
+    try:
+        return float(s.rstrip("%"))
+    except ValueError:
+        return None
+
+
+def _poprzedni_dzien_roboczy(d):
+    import datetime as _dt
+    d = d - _dt.timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= _dt.timedelta(days=1)
+    return d
+
+
+def bankier_pobierz(teraz=None):
+    """Rezerwa: {ticker: (data 'YYYY-MM-DD', close, opis)} — ostatnia
+    ZAKOŃCZONA sesja z tabel notowań Bankiera. W trakcie sesji zamknięcie
+    poprzedniej sesji = kurs − zmiana absolutna (data szacowana jako
+    poprzedni dzień roboczy — święta GPW nie są rozpoznawane)."""
+    import re
+    teraz = teraz or datetime.now(WAW)
+    wynik = {}
+    for url in BANKIER_STRONY:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=25) as r:
+                html = r.read().decode("utf-8", "replace")
+        except (urllib.error.URLError, TimeoutError, OSError):
+            continue
+        for wiersz in html.split("<tr")[1:]:
+            m = re.search(r'quote\.html\?symbol=([A-Z0-9_]+)"', wiersz)
+            if not m or m.group(1) not in SYMBOLE:
+                continue
+            ticker = m.group(1)
+            wart = re.findall(
+                r'a-quote-item [^"]*">\s*([-+]?[\d\s\xa0.,]+%?)\s*</span>',
+                wiersz)
+            mczas = re.search(r'(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2})', wiersz)
+            if len(wart) < 3 or not mczas:
+                continue
+            kurs = _bankier_liczba(wart[0])
+            zmiana_abs = _bankier_liczba(wart[2])
+            if kurs is None or zmiana_abs is None:
+                continue
+            data_wiersza = mczas.group(1)
+            godz = (int(mczas.group(2)), int(mczas.group(3)))
+            dzis = teraz.strftime("%Y-%m-%d")
+            if data_wiersza == dzis and godz < KONIEC_SESJI:
+                # sesja w toku: cofamy dzisiejszą zmianę
+                d_sesji = _poprzedni_dzien_roboczy(teraz.date())
+                wynik[ticker] = (d_sesji.strftime("%Y-%m-%d"),
+                                 round(kurs - zmiana_abs, 4),
+                                 f"bankier (kurs {kurs} − zmiana dnia "
+                                 f"{zmiana_abs}, odczyt {data_wiersza} "
+                                 f"{godz[0]:02d}:{godz[1]:02d})")
+            else:
+                wynik[ticker] = (data_wiersza, kurs,
+                                 f"bankier (zamknięcie, odczyt {data_wiersza} "
+                                 f"{godz[0]:02d}:{godz[1]:02d})")
+    return wynik
 
 
 def ostatnia_zakonczona(bary, teraz=None):
@@ -181,20 +260,23 @@ def cache_odczytaj(cache, ticker):
     return bary, cache["aktualizacja"].get(ticker, "b.d.")
 
 
-def kolejnosc_symboli(sig):
-    """WIG20 i spółki koszykowe/taktyczne najpierw — mają pierwszeństwo
-    do budżetu ponowień, zanim limiter Yahoo zdławi resztę biegu."""
-    prio = ["WIG20"]
+def zbior_priorytetowy(sig):
+    """WIG20 + spółki koszykowe/taktyczne: tylko one dostają ponowienia
+    przy 429; reszta uniwersum jest pobierana oportunistycznie."""
+    prio = {"WIG20"}
     if sig:
-        prio += [t for t in (sig.get("long") or []) + (sig.get("short") or [])]
-        prio += [w.get("ticker") for w in (sig.get("tactical") or [])
-                 if isinstance(w, dict)]
-    widziane, kolej = set(), []
-    for t in prio + list(SYMBOLE):
-        if t in SYMBOLE and t not in widziane:
-            widziane.add(t)
-            kolej.append(t)
-    return kolej
+        prio |= set(sig.get("long") or []) | set(sig.get("short") or [])
+        prio |= {w.get("ticker") for w in (sig.get("tactical") or [])
+                 if isinstance(w, dict)}
+    return prio & set(SYMBOLE)
+
+
+def kolejnosc_symboli(sig):
+    """Priorytetowe najpierw — mają pierwszeństwo do budżetu ponowień,
+    zanim limiter Yahoo zdławi resztę biegu."""
+    prio = zbior_priorytetowy(sig)
+    kolej = [t for t in SYMBOLE if t in prio]
+    return kolej + [t for t in SYMBOLE if t not in prio]
 
 
 def main():
@@ -210,14 +292,22 @@ def main():
 
     budzet_backoff = [MAKS_BUDZET_BACKOFF]
     ostatnie_zapytanie = [0.0]
+    widziano_429 = [False]
+    prio = zbior_priorytetowy(sig)
+    bankier = None   # pobierany leniwie, jednym zapytaniem na bieg
 
-    def pobierz_grzecznie(sym):
-        """pobierz() z pauzą między zapytaniami i backoffem przy HTTP 429."""
+    def pobierz_grzecznie(sym, z_ponowieniami):
+        """pobierz() z pauzą między zapytaniami i backoffem przy HTTP 429.
+        Ponowienia tylko dla symboli priorytetowych; gdy limiter już
+        zadziałał w tym biegu, symbole nie-priorytetowe nie strzelają
+        do Yahoo w ogóle (mniejsza seria = szybsze odblokowanie IP)."""
+        if widziano_429[0] and not z_ponowieniami:
+            return [], "pominięto Yahoo (limiter 429 aktywny w tym biegu)"
         czekaj = PAUZA_MIEDZY_ZAPYTANIAMI - (time.monotonic() - ostatnie_zapytanie[0])
         if czekaj > 0:
             time.sleep(czekaj)
         bary, blad = [], "nie próbowano"
-        for pauza in (0,) + BACKOFF_429:
+        for pauza in ((0,) + BACKOFF_429) if z_ponowieniami else (0,):
             if pauza:
                 if budzet_backoff[0] < pauza:
                     return [], "HTTP 429 (budżet ponowień wyczerpany)"
@@ -225,6 +315,8 @@ def main():
                 time.sleep(pauza)
             bary, blad = pobierz(sym)
             ostatnie_zapytanie[0] = time.monotonic()
+            if blad == "HTTP 429":
+                widziano_429[0] = True
             if bary or blad != "HTTP 429":
                 return bary, blad
         return [], "HTTP 429 (po ponowieniach)"
@@ -234,7 +326,7 @@ def main():
         kandydaci = SYMBOLE[ticker]
         bary, blad, uzyty, zrodlo = [], "nie próbowano", None, "yahoo"
         for sym in kandydaci:
-            bary, blad = pobierz_grzecznie(sym)
+            bary, blad = pobierz_grzecznie(sym, ticker in prio)
             if bary:
                 uzyty = sym
                 break
@@ -242,17 +334,29 @@ def main():
             cache_dopisz(cache, ticker, bary, teraz)
             cache_zmieniony = True
         else:
-            bary, akt = cache_odczytaj(cache, ticker)
-            if bary:
-                uzyty, zrodlo = "cache", f"cache z {akt}"
+            if bankier is None:
+                bankier = bankier_pobierz(teraz)
+            if ticker in bankier:
+                d_b, c_b, opis = bankier[ticker]
+                bary = [(d_b, c_b)]
+                uzyty, zrodlo = "bankier", opis
+                cache_dopisz(cache, ticker, bary, teraz)
+                cache_zmieniony = True
                 problemy.append(f"{ticker}: Yahoo bez danych ({blad}) — użyto "
-                                f"CACHE z {akt}; sprawdź, czy obejmuje "
-                                f"ostatnią sesję")
+                                f"rezerwy: {opis}")
             else:
-                problemy.append(f"{ticker}: brak danych ({', '.join(kandydaci)}; "
-                                f"{blad}) i brak wpisu w cache — użyj rezerwy "
-                                f"(Stooq/PAP) i oznacz źródło")
-                continue
+                bary, akt = cache_odczytaj(cache, ticker)
+                if bary:
+                    uzyty, zrodlo = "cache", f"cache z {akt}"
+                    problemy.append(f"{ticker}: Yahoo bez danych ({blad}) — "
+                                    f"użyto CACHE z {akt}; sprawdź, czy "
+                                    f"obejmuje ostatnią sesję")
+                else:
+                    problemy.append(f"{ticker}: brak danych "
+                                    f"({', '.join(kandydaci)}; {blad}), brak "
+                                    f"w rezerwie Bankier i w cache — użyj "
+                                    f"rezerwy ręcznej (PAP) i oznacz źródło")
+                    continue
         oz = ostatnia_zakonczona(bary)
         if not oz:
             problemy.append(f"{ticker}: brak zakończonej sesji w danych")
@@ -268,6 +372,8 @@ def main():
             odch = abs(d0_close / float(ref) - 1)
             d0_status = ("OK" if odch <= TOLERANCJA_D0
                          else f"RÓŻNICA {odch*100:.2f}% (Yahoo {d0_close} vs D0 {ref})")
+        elif ref and zrodlo.startswith("bankier"):
+            d0_status = "— (bankier: tylko ostatnia sesja, bez świecy D0)"
         elif ref:
             d0_status = "BRAK świecy z D0 w Yahoo"
         else:
@@ -307,11 +413,19 @@ def main():
     if rozjazdy:
         print(f"\nUWAGA: rozjazd z d0.prices dla: {', '.join(rozjazdy)} — "
               f"sprawdź symbol/split/dywidendę zanim użyjesz tych kursów.")
-    z_cache = [t for t, w in wynik.items() if w["zrodlo"] != "yahoo"]
+    z_bankiera = [t for t, w in wynik.items()
+                  if w["zrodlo"].startswith("bankier")]
+    if z_bankiera:
+        print(f"\nŹRÓDŁO BANKIER (Yahoo niedostępne): {', '.join(z_bankiera)} — "
+              f"zamknięcia z tabel notowań bankier.pl (w trakcie sesji: "
+              f"kurs − zmiana dnia).")
+    z_cache = [t for t, w in wynik.items()
+               if w["zrodlo"].startswith("cache")]
     if z_cache:
-        print(f"\nŹRÓDŁO CACHE (Yahoo niedostępne): {', '.join(z_cache)} — "
-              f"kursy z ostatniego udanego pobrania (data/kursy-cache.json); "
-              f"upewnij się, że kolumna SESJA wskazuje właściwą sesję.")
+        print(f"\nŹRÓDŁO CACHE (Yahoo i Bankier niedostępne): "
+              f"{', '.join(z_cache)} — kursy z ostatniego udanego pobrania "
+              f"(data/kursy-cache.json); upewnij się, że kolumna SESJA "
+              f"wskazuje właściwą sesję.")
 
 
 if __name__ == "__main__":
