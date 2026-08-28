@@ -149,7 +149,7 @@
     </ul>
   </div>
 
-  <p class="src">Główne źródła: bankier.pl — tabele notowań akcji/indeksów GPW i karty spółek (zamknięcia 27.08, odczyty 17:00–17:15), Strefa Inwestorów/PAP (depesza zamknięcia 27.08: WIG20 3 959,63, −1,94%; WIG-Banki −2,71%), StockWatch/Parkiet/INNPoland (wyniki H1 Kruka i reakcja kursu, 26–27.08), rp.pl/Parkiet/StockWatch (CIT 30% dla energetyki, 20–26.08). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach.</p>
+  <p class="src">Główne źródła: bankier.pl — tabele notowań akcji/indeksów GPW i karty spółek (zamknięcia 27.08, odczyty 17:00–17:15), Strefa Inwestorów/PAP (depesza zamknięcia 27.08: WIG20 3 959,63, −1,94%; WIG-Banki −2,71%), StockWatch/Parkiet/INNPoland (wyniki H1 Kruka i reakcja kursu, 26–27.08), rp.pl/Parkiet/StockWatch (CIT 30% dla energetyki, 20–26.08). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach. PROBLEMY (bieg 11:15): konektor FMP jest już włączony w sesji rutyny, ale bieżący plan FMP blokuje endpointy kursowe — świece EOD („chart" wymaga wyższego planu) i kwotowania („quote" wymaga planu Premium/Ultimate/Enterprise) zwracają ACCESS DENIED, więc FMP nie może pełnić roli priorytetowego źródła kursów; użyto rezerwy <code>kursy.py</code> (Yahoo ponownie HTTP 429 z IP chmury → bankier.pl, zamknięcia 27.08 zgodne z porannym odczytem co do grosza). Rejestr krótkiej sprzedaży KNF (rss.knf.gov.pl) nadal niedostępny bezpośrednio z tego środowiska — b.d. zmian dziennych.</p>
 
   <footer>
     Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 28.08.2026.
