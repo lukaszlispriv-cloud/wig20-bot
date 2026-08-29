@@ -1,20 +1,20 @@
 {
-  "version": "2026-W2",
-  "generated": "2026-08-26",
+  "version": "2026-W3",
+  "generated": "2026-08-29",
   "status": "AKTUALNA",
   "long": [
     "KGHM",
-    "DINOPL",
+    "ALLEGRO",
     "PEKAO",
     "BUDIMEX",
-    "KRUK"
+    "DINOPL"
   ],
   "short": [
     "CDPROJEKT",
     "TAURONPE",
-    "PGE",
+    "MODIVO",
     "PEPCO",
-    "MODIVO"
+    "KETY"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -39,29 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "KRUK",
-      "action": "REDUCE",
-      "since": "2026-08-28",
-      "reason": "Ruch -6,56% od D0 przeciw tezie LONG (przedzial 4-8%) po negatywnie przyjetych wynikach H1 2026 (zysk netto 555 mln zl, -5% r/r; sesja 27.08: -7,68%). Redukcja do polowy, utrzymana do soboty."
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-08-29",
   "d0": {
-    "date": "2026-08-25",
-    "wig20": 4008.04,
+    "date": "2026-08-28",
+    "wig20": 3993.7,
     "prices": {
-      "KGHM": 366.0,
-      "DINOPL": 36.18,
-      "PEKAO": 257.9,
-      "BUDIMEX": 709.0,
-      "KRUK": 438.9,
-      "CDPROJEKT": 242.9,
-      "TAURONPE": 8.432,
-      "PGE": 10.54,
-      "PEPCO": 42.14,
-      "MODIVO": 89.68
+      "KGHM": 362.0,
+      "ALLEGRO": 45.35,
+      "PEKAO": 255.5,
+      "BUDIMEX": 704.4,
+      "DINOPL": 35.56,
+      "CDPROJEKT": 236.5,
+      "TAURONPE": 8.388,
+      "MODIVO": 87.0,
+      "PEPCO": 43.2,
+      "KETY": 1247.0
     }
   },
   "history": [
@@ -73,6 +66,15 @@
       "tactical_pp": null,
       "managed_pp": 1.44,
       "reaction_pp": 0.0
+    },
+    {
+      "week": "2026-W2",
+      "spread_pp": -2.31,
+      "hit_top": "0/5",
+      "hit_bottom": "3/5",
+      "tactical_pp": null,
+      "managed_pp": -2.14,
+      "reaction_pp": 0.17
     }
   ],
   "tactical": []
