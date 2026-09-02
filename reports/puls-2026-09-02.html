@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-09-02</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#E8B4AC}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--amber);color:var(--amber);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(176,123,34,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.reakcja{background:#C4372E}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green)}.dn{color:var(--red)}.na{color:var(--muted)}
+  .badge-reduce{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.5px;padding:2px 6px;border-radius:3px;color:#fff;background:var(--amber);margin-left:6px;vertical-align:1px}
+  .note{font-size:.78rem;color:var(--muted);margin:2px 2px 18px}
+  .spread{background:var(--navy);color:#fff;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:6px 0 4px}
+  .spread .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.8px;opacity:.75}
+  .spread .val{font-size:1.4rem;font-weight:700;color:#E8B4AC}
+  .spreadbar{height:8px;background:#22374F;border-radius:4px;flex:1 1 160px;min-width:140px;position:relative;overflow:hidden}
+  .spreadbar i{position:absolute;top:0;bottom:0;background:#E8B4AC;border-radius:4px}
+  ul.cal{list-style:none}
+  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  ul.cal .t{display:inline-block;min-width:64px;font-weight:700;color:var(--navy)}
+  .src{font-size:.75rem;color:var(--muted);margin-top:20px}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">środa, 2 września 2026 · bieg poranny 8:30 (przed sesją) · prognoza tygodniowa 2026-W3</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 003,94</div>
+      <div class="chg mono">−0,47% (zamknięcie 1.09)</div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">Aktualna</span>
+    <span class="stampnote">Werdykt dnia: prognoza 2026-W3 utrzymana, ale z PIERWSZĄ REAKCJĄ — <b>KGHM (LONG): REDUCE</b>, cięcie pozycji do połowy. Kurs −4,14% od D0 (362,00 → 347,00 zł) przeciw tezie po korekcie miedzi na LME z okolic rekordu — miękki wyzwalacz z pasma 4–8%. Reszta koszyków bez progów reakcji. Spread po sesji 1.09: −0,15 p.p. (WIG20 od D0 +0,26%). Kursy 1.09: komplet 10/10 + indeks (bankier.pl; walidacja D0 11/11 OK).</span>
+  </div>
+
+  <h2>Najważniejsze zmiany (24h)</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag reakcja">REAKCJA</span><b>KGHM (LONG): REDUCE — cięcie pozycji do połowy.</b> Na sesji 1.09 kurs spadł o 2,86% do 347,00 zł; od D0 (28.08, 362,00 zł) to już −4,14% przeciw tezie — miękki wyzwalacz z pasma 4–8% wg protokołu. Tło: korekta spadkowa miedzi na LME, która zawróciła z okolic rekordu ~14 400 USD/t i uderzyła w notowania producentów. To reakcja zarządcza, nie upadek filaru tezy (fundamenty surowcowe bez zmian) — pozycja zredukowana zostaje do soboty; awans do CLOSE tylko przy ruchu &gt;8% od D0 lub twardym zdarzeniu (bankier.pl — kurs 1.09, 17:03; innpoland.pl — komentarz do korekty miedzi).</li>
+      <li><span class="tag rynek">RYNEK</span><b>Sesja 1.09 na minusie, spread zszedł pod zero:</b> WIG20 −0,47% do 4 003,94 (WIG −0,53%, mWIG40 −0,71%). Koszyk LONG średnio −0,75% kursowo (ciężar: KGHM −4,14% i BUDIMEX −1,87% od D0), SHORT (ceny) średnio −0,60% — spread LONG−SHORT spadł z +0,31 do <b>−0,15 p.p.</b> Po stronie SHORT najlepiej pracują KĘTY (kurs −3,18% na sesji 1.09, pozycja +2,25% od D0) i MODIVO (+1,45% od D0); przeciw tezie idzie PEPCO (kurs +1,68% na 1.09, pozycja −1,99% od D0 — poniżej progu 4%) (Strefa Inwestorów/bankier.pl, 1.09).</li>
+      <li><span class="tag rynek">RYNEK</span><b>CD Projekt (SHORT): DZIŚ raport H1 2026</b> — najważniejszy twardy punkt kontrolny tezy w tym tygodniu. Kurs 1.09 bez zmian (234,40 zł; pozycja +0,89% od D0). Spółka w Q1 pobiła konsensus na wszystkich poziomach (zysk netto 106,2 mln zł, +11,9% vs konsensus PAP) — ryzyko dla tezy SHORT, gdyby H1 znów zaskoczył w górę z pozytywną reakcją kursu; werdykt po publikacji w jutrzejszym biegu (Strefa Inwestorów/kalendarium; investing.com — Q1).</li>
+      <li><span class="tag espi">ESPI</span><b>Pepco (SHORT): dziś WZ ws. skupu akcji</b> — formalności po buybacku za 400 mln EUR (36,5 mln akcji po 47,52 zł, rozliczonym 17.08; akcje do umorzenia, IBEX zejdzie do 66,1%). Kurs 1.09 +1,68% do 44,06 zł — buyback pozostaje głównym wiatrem w oczy tezy SHORT, ale ruch od D0 (−1,99% na pozycji) daleko od progu reakcji (PAP Biznes/stockwatch.pl, sierpień; kalendarium 2.09).</li>
+      <li><span class="tag espi">ESPI</span><b>Poza koszykami: PGE podała dane finansowe za Q2 2026</b> (ESPI 1.09, 17:24, po sesji — kurs na sesji 1.09 −0,95%, reakcja na dane dopiero dziś). Brak raportów bieżących ESPI spółek koszykowych w ostatnich 24h (bankier.pl — komunikaty spółek, 1–2.09).</li>
+      <li><span class="tag makro">MAKRO</span><b>CIT 30% dla energetyki i paliw — filar tezy SHORT na TAURONPE bez zmian:</b> projekt (30% w 2027, 26% w 2028, 23% w 2029; obejmie też dystrybucję grup PGE/Tauron/Enea/Energa; ~7 mld zł wpływów) pozostaje w fazie projektu — brak nowych faktów legislacyjnych w depeszach 1–2.09 (rp.pl/Parkiet, 20.08–1.09).</li>
+      <li><span class="tag short">SHORT</span><b>Rejestr KNF:</b> b.d. zmian dziennych — rejestr rss.knf.gov.pl niedostępny z tego środowiska (blokada sieci); w depeszach 1–2.09 rano brak doniesień o zmianach ≥0,3 p.p. na spółkach koszykowych. Ostatni znany obraz z prasy (Parkiet, 19.08): ~20 pozycji, m.in. Budimex, Dino i KGHM.</li>
+      <li><span class="tag rekom">REKOM.</span><b>Brak nowych rekomendacji</b> dla spółek koszykowych datowanych 1–2.09 (rano) w dostępnych źródłach.</li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(28.08)</th><th>Kurs ostatni<br>(1.09)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">KGHM<span class="badge-reduce">REDUCE</span></td><td><span class="dir long">LONG</span></td><td class="mono">362,00</td><td class="mono">347,00</td><td class="mono dn">−4,14%</td><td class="mono dn">−4,40 p.p.</td></tr>
+        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,35</td><td class="mono">45,41</td><td class="mono up">+0,13%</td><td class="mono dn">−0,12 p.p.</td></tr>
+        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">255,50</td><td class="mono">256,30</td><td class="mono up">+0,31%</td><td class="mono up">+0,06 p.p.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">704,40</td><td class="mono">691,20</td><td class="mono dn">−1,87%</td><td class="mono dn">−2,13 p.p.</td></tr>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">35,56</td><td class="mono">36,20</td><td class="mono up">+1,80%</td><td class="mono up">+1,54 p.p.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zamknięcia 1.09 z bankier.pl (tabele notowań, odczyty 17:00–17:15). Kursy D0 (28.08) w cache zgodne z polem <code>d0.prices</code> w signals.json co do grosza (walidacja 11/11 OK). WIG20 od D0: +0,26% (3 993,70 → 4 003,94). KGHM objęty reakcją REDUCE (miękki wyzwalacz 4–8% przeciw tezie).</p>
+
+  <h2>Koszyk SHORT</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(28.08)</th><th>Kurs ostatni<br>(1.09)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">CDPROJEKT</td><td><span class="dir short">SHORT</span></td><td class="mono">236,50</td><td class="mono">234,40</td><td class="mono up">+0,89%</td><td class="mono up">+1,14 p.p.</td></tr>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,388</td><td class="mono">8,352</td><td class="mono up">+0,43%</td><td class="mono up">+0,69 p.p.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">87,00</td><td class="mono">85,74</td><td class="mono up">+1,45%</td><td class="mono up">+1,70 p.p.</td></tr>
+        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">43,20</td><td class="mono">44,06</td><td class="mono dn">−1,99%</td><td class="mono dn">−1,73 p.p.</td></tr>
+        <tr><td class="name">KETY</td><td><span class="dir short">SHORT</span></td><td class="mono">1 247,00</td><td class="mono">1 219,00</td><td class="mono up">+2,25%</td><td class="mono up">+2,50 p.p.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,26%). Cały koszyk SHORT pracuje na plus poza PEPCO (kurs +1,99% od D0 przeciw tezie — poniżej progu miękkiej reakcji 4%).</p>
+
+  <div class="spread">
+    <div>
+      <div class="lbl">Spread LONG − SHORT · po sesji 1.09</div>
+      <div class="val mono">−0,15 p.p.</div>
+    </div>
+    <div class="spreadbar"><i style="left:46%;width:4%"></i></div>
+    <div class="lbl" style="max-width:230px">LONG śr. −0,75% vs SHORT (ceny) śr. −0,60%; spadek z +0,31 p.p. głównie przez KGHM; kolejny pomiar po sesji 2.09 (17:00)</div>
+  </div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="card"><p style="font-size:.9rem">Brak otwartych pozycji taktycznych i brak nowych. Skan WIG20 poza koszykami (sesja 1.09 + poranek 2.09): PGE podała dane za Q2 dopiero po sesji (1.09, 17:24) — bez potwierdzonej pozytywnej reakcji kursu nie ma rangi twardego wyzwalacza; poza tym w depeszach żadnych wezwań, przełomowych kontraktów ani wyników wyraźnie powyżej konsensusu. Żabka dalej zakotwiczona wezwaniem Couche-Tard.</p></div>
+
+  <h2>Kalendarz — środa 2.09</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t">9:00</span>Otwarcie sesji GPW — trzecia sesja pomiarowa koszyków 2026-W3 (zamknięcie 17:00)</li>
+      <li><span class="t">dziś</span><b>CD Projekt — raport H1 2026</b> (SHORT; kluczowy punkt kontrolny tezy, jedyny raport półroczny z WIG20 w tym tygodniu; w Q1 spółka biła konsensus)</li>
+      <li><span class="t">dziś</span><b>WZ Pepco</b> (SHORT) ws. skupu/umorzenia akcji własnych po buybacku za 400 mln EUR</li>
+      <li><span class="t">dziś</span>raporty H1 z mWIG40: Cyber_Folks, Vercom</li>
+      <li><span class="t">14:15</span>USA: raport ADP o zatrudnieniu za sierpień; 16:00 zamówienia fabryczne/dobra trwałe za lipiec; 20:00 Beżowa Księga Fed</li>
+      <li><span class="t">spółki</span>dalsze raporty z koszyków: Tauron 9.09 (pełne H1) · pozostałe terminy: b.d.</li>
+    </ul>
+  </div>
+
+  <p class="src">Główne źródła: bankier.pl — tabele notowań akcji/indeksów GPW (zamknięcia 1.09, odczyty 17:00–17:15; kurs KGHM 347,00 zł, −2,86% potwierdzony na profilu spółki), Strefa Inwestorów (WIG20 4 003,94, −0,47%; WIG −0,53%, mWIG40 −0,71%, sWIG80 −0,39%; 1.09), innpoland.pl (korekta miedzi na LME z okolic rekordu ~14 400 USD/t jako tło spadku KGHM), bankier.pl — komunikaty spółek ESPI/EBI (PGE: dane finansowe za Q2, 1.09 17:24; brak komunikatów spółek koszykowych 1–2.09), PAP Biznes/stockwatch.pl (buyback Pepco: 36,5 mln akcji za 400 mln EUR po 47,52 zł, rozliczenie 17.08, redukcja zapisów 91,76%), Strefa Inwestorów — kalendarium raportów półrocznych (CD Projekt, Cyber_Folks, Vercom — 2.09; makro USA: ADP, zamówienia, Beige Book; WZ Pepco ws. buybacku), investing.com/Strefa Inwestorów (CD Projekt Q1: zysk netto 106,2 mln zł, +11,9% vs konsensus PAP), rp.pl/Parkiet (projekt CIT 30% dla energetyki i paliw, 20.08), Parkiet (rejestr krótkiej sprzedaży KNF — stan 19.08). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach. PROBLEMY (bieg poranny 2.09): konektor FMP jest w sesji, ale bieżący plan FMP nadal blokuje endpointy kursowe i newsowe („chart" → ACCESS DENIED wymagany wyższy plan; „news" → wymagany plan Starter+) — FMP nie może pełnić roli priorytetowego źródła; grant/plan konektora dla rutyny wciąż nieustawiony. Użyto rezerwy <code>kursy.py</code>: Yahoo chart API ponownie HTTP 429 z IP chmury (limiter), komplet zamknięć 1.09 z tabel bankier.pl (walidacja D0 przez cache: 11/11 OK). Rejestr krótkiej sprzedaży KNF (rss.knf.gov.pl) i parkiet.com (kalendarium) niedostępne wprost z tego środowiska (blokada sieci).</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 2.09.2026, 8:20–8:40 (przed sesją).
+  </footer>
+</div>
+</body>
+</html>
