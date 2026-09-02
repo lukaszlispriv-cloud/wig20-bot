@@ -39,8 +39,15 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-09-01",
+  "exclude": [
+    {
+      "ticker": "KGHM",
+      "action": "REDUCE",
+      "date": "2026-09-02",
+      "reason": "Ruch -4,14% od D0 przeciw tezie LONG (362,00 -> 347,00 zl, zamkniecie 1.09) po korekcie miedzi na LME z okolic rekordu ~14 400 USD/t - miekki wyzwalacz z pasma 4-8%: ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy ruchu >8% od D0 lub twardym zdarzeniu."
+    }
+  ],
+  "last_daily": "2026-09-02",
   "d0": {
     "date": "2026-08-28",
     "wig20": 3993.7,
