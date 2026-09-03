@@ -44,10 +44,16 @@
       "ticker": "KGHM",
       "action": "REDUCE",
       "date": "2026-09-02",
-      "reason": "Ruch -4,14% od D0 przeciw tezie LONG (362,00 -> 347,00 zl, zamkniecie 1.09) po korekcie miedzi na LME z okolic rekordu ~14 400 USD/t - miekki wyzwalacz z pasma 4-8%: ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy ruchu >8% od D0 lub twardym zdarzeniu."
+      "reason": "Ruch -4,14% od D0 przeciw tezie LONG (362,00 -> 347,00 zl, zamkniecie 1.09) po korekcie miedzi na LME z okolic rekordu ~14 400 USD/t - miekki wyzwalacz z pasma 4-8%: ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy ruchu >8% od D0 lub twardym zdarzeniu. Aktualizacja 3.09: po sesji 2.09 kurs 344,15 zl (-4,93% od D0) - nadal w pasmie 4-8%, REDUCE utrzymany."
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "action": "REDUCE",
+      "date": "2026-09-03",
+      "reason": "Raport H1 2026 (2.09, po sesji) wyraznie powyzej konsensusu PAP przeciw tezie SHORT: przychody Q2 244,2 mln zl (+22%), EBITDA 161,4 mln zl (+47%), zysk netto 142,9 mln zl (+44% vs 99,3 mln zl) - istotny news przeciw tezie ponizej rangi szoku (czesc beatu to rozwiazanie rezerwy na program motywacyjny; zarzad uznaje cel 3 mld zl zysku netto 2024-2027 za malo prawdopodobny, co potwierdza filar tezy o opoznionym harmonogramie wydawniczym). Kurs 2.09 (231,20 zl, -2,24% od D0) nie zawiera jeszcze reakcji na wyniki. Ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy odbiciu >4% od D0 (powyzej ~246 zl) lub twardym zdarzeniu."
     }
   ],
-  "last_daily": "2026-09-02",
+  "last_daily": "2026-09-03",
   "d0": {
     "date": "2026-08-28",
     "wig20": 3993.7,
@@ -84,5 +90,14 @@
       "reaction_pp": 0.17
     }
   ],
-  "tactical": []
+  "tactical": [
+    {
+      "ticker": "PGE",
+      "direction": "BUY",
+      "entry_date": "2026-09-03",
+      "entry_price": 11.85,
+      "entry_note": "zamkniecie 2.09 (bankier.pl)",
+      "reason": "Twardy wyzwalacz 24h: szacunkowe wyniki Q2 2026 (ESPI 1.09, 17:24) wyraznie powyzej konsensusu - zysk netto j.d. ok. 2,06 mld zl vs 1,78 mld zl konsensusu PAP (+16%), EBITDA powtarzalna ok. 3,96 mld zl - z pozytywna reakcja kursu na sesji 2.09: +7,78% (10,995 -> 11,85 zl), lider WIG20 (WIG-ENERG +3,99%). Ryzyko tezy: nawis CIT 30% dla energetyki od 2027 (projekt), jednorazowe zdarzenia +151 mln zl w EBITDA; pelny raport Q2 15.09."
+    }
+  ]
 }
