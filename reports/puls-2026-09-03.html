@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-09-03</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#B8E0C6}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--amber);color:var(--amber);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(176,123,34,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.reakcja{background:#C4372E}.tag.takt{background:#0E7C4A}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green)}.dn{color:var(--red)}.na{color:var(--muted)}
+  .badge-reduce{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.5px;padding:2px 6px;border-radius:3px;color:#fff;background:var(--amber);margin-left:6px;vertical-align:1px}
+  .badge-new{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.5px;padding:2px 6px;border-radius:3px;color:#fff;background:var(--green);margin-left:6px;vertical-align:1px}
+  .note{font-size:.78rem;color:var(--muted);margin:2px 2px 18px}
+  .spread{background:var(--navy);color:#fff;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:6px 0 4px}
+  .spread .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.8px;opacity:.75}
+  .spread .val{font-size:1.4rem;font-weight:700;color:#E8B4AC}
+  .spreadbar{height:8px;background:#22374F;border-radius:4px;flex:1 1 160px;min-width:140px;position:relative;overflow:hidden}
+  .spreadbar i{position:absolute;top:0;bottom:0;background:#E8B4AC;border-radius:4px}
+  .spreadbar b{position:absolute;top:-2px;bottom:-2px;left:50%;width:2px;background:#8FA3BC}
+  ul.cal{list-style:none}
+  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  ul.cal .t{display:inline-block;min-width:64px;font-weight:700;color:var(--navy)}
+  .src{font-size:.75rem;color:var(--muted);margin-top:20px}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">czwartek, 3 września 2026 · bieg poranny 8:30 (przed sesją) · prognoza tygodniowa 2026-W3</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 019,89</div>
+      <div class="chg mono">+0,40% (zamknięcie 2.09)</div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">Aktualna</span>
+    <span class="stampnote">Werdykt dnia: prognoza 2026-W3 utrzymana, ale z DRUGĄ REAKCJĄ — <b>CDPROJEKT (SHORT): REDUCE</b>, cięcie pozycji do połowy po raporcie H1 wyraźnie powyżej konsensusu (zysk netto Q2 +44% vs konsensus PAP). <b>KGHM (LONG): REDUCE utrzymany</b> (−4,93% od D0, wciąż w paśmie 4–8%). <b>Nowa pozycja taktyczna: PGE BUY</b> — szacunki Q2 +16% powyżej konsensusu i +7,78% na sesji 2.09. Spread po sesji 2.09: −0,45 p.p. (WIG20 od D0 +0,66%). Kursy 2.09: komplet 10/10 + indeks (bankier.pl; walidacja D0 przez cache 11/11 OK).</span>
+  </div>
+
+  <h2>Najważniejsze zmiany (24h)</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag reakcja">REAKCJA</span><b>CD Projekt (SHORT): REDUCE — cięcie pozycji do połowy.</b> Raport H1 2026 (2.09, ok. 17:30, po sesji) wyraźnie pobił konsensus PAP: przychody Q2 244,2 mln zł vs 200 mln (+22%), EBITDA 161,4 mln zł vs 106,6–110,1 mln (+47%), zysk netto 142,9 mln zł vs 99,3 mln (+44%); H1: przychody 435,3 mln zł (+23% r/r), zysk netto 249,1 mln zł (+37% r/r), rentowność netto 57%. To „istotny news przeciw tezie poniżej rangi szoku": część beatu to rozwiązanie rezerwy na program motywacyjny, a zarząd uznał cel 3 mld zł skumulowanego zysku netto (faza II programu 2024–2027) za mało prawdopodobny przy obecnym harmonogramie — co potwierdza filar tezy (Wiedźmin 4 w 2028, Remaster W3 29.09, dodatek 2027). Kurs 2.09 (231,20 zł, −1,37% na sesji; pozycja +2,24% od D0) nie zawiera jeszcze reakcji na wyniki. Awans do CLOSE przy odbiciu &gt;4% od D0 (powyżej ~246 zł) lub twardym zdarzeniu; redukcja obowiązuje do soboty (PAP Biznes/Strefa Inwestorów, 2.09; Parkiet, 2.09).</li>
+      <li><span class="tag reakcja">REAKCJA</span><b>KGHM (LONG): REDUCE utrzymany.</b> Na sesji 2.09 kurs −0,82% do 344,15 zł; od D0 −4,93% (362,00 → 344,15) — nadal w paśmie miękkiej reakcji 4–8%, bez twardego zdarzenia. Próg awansu do CLOSE: −8% od D0 (≈333,0 zł) (bankier.pl — kurs 2.09, 17:04).</li>
+      <li><span class="tag takt">TAKTYCZNA</span><b>PGE — nowa pozycja BUY (entry 3.09, kurs odniesienia 11,85 zł = zamknięcie 2.09).</b> Twardy wyzwalacz 24h: szacunkowe dane za Q2 2026 (ESPI 1.09, 17:24) — zysk netto j.d. ok. 2,06 mld zł vs 1,78 mld zł konsensusu PAP (+16%), EBITDA powtarzalna ok. 3,96 mld zł, raportowana ok. 4,11 mld zł — z pozytywną reakcją kursu: +7,78% na sesji 2.09 (10,995 → 11,85 zł), lider WIG20, WIG-ENERG +3,99%. Ryzyka: zdarzenia jednorazowe +151 mln zł w EBITDA (m.in. ugoda ws. bloku 7 Turów +135 mln zł), nawis CIT 30% od 2027 (projekt), pełny raport Q2 15.09 (bankier.pl/PAP Biznes, 1.09; Strefa Inwestorów — indeksy 2.09).</li>
+      <li><span class="tag rynek">RYNEK</span><b>Sesja 2.09 na plusie, ale spread dalej pod kreską:</b> WIG20 +0,40% do 4 019,89 (WIG +0,27% do 152 161,14; mWIG40 +0,06%; sWIG80 −0,25%), obroty 2,52 mld zł (największe: Dino 313 mln zł). Silne branże: WIG-ENERG +3,99%, WIG-CHEMIA +3,76%, WIG-BANKI +0,90% (mBank +4,38%). Koszyk LONG średnio −1,46% kursowo (ciężar: KGHM −4,93%, BUDIMEX −1,76%, ALLEGRO −1,31% od D0), SHORT (ceny) średnio −1,01% — spread LONG−SHORT −0,45 p.p. (z −0,15). Po stronie SHORT pracują KĘTY (+2,65% na pozycji), CD PROJEKT (+2,24%) i MODIVO (+1,24%); przeciw tezie idzie TAURON (kurs +1,84% na 2.09 w ślad za rajdem energetyki po PGE; pozycja −1,41% od D0 — poniżej progu 4%) (Strefa Inwestorów/PAP, 2.09; bankier.pl).</li>
+      <li><span class="tag espi">ESPI</span><b>Pepco (SHORT): NWZ 2.09</b> — porządek obrad obejmował upoważnienie do dalszego skupu do 10% akcji po zakończonym buybacku (36,46 mln akcji po 47,52 zł za 1,73 mld zł, rozliczenie 17.08, akcje do umorzenia). Uchwały: b.d. w depeszach do 8:30. Kurs 2.09 −2,29% do 43,05 zł (pozycja +0,35% od D0) — mimo upoważnienia do kolejnego skupu (PAP Biznes — ESPI 33/2026; stockwatch.pl).</li>
+      <li><span class="tag espi">ESPI</span><b>Brak raportów bieżących ESPI spółek koszykowych 2–3.09 (do 8:30)</b> poza raportem okresowym CD Projekt. Poza koszykami po sesji 2.09: szacunkowe wyniki Q2/H1 Grupy Azoty, Puław i Polic (21:21–21:26) (bankier.pl — komunikaty spółek).</li>
+      <li><span class="tag makro">MAKRO</span><b>CIT 30% dla energetyki i paliw — bez nowych faktów legislacyjnych:</b> projekt (30% w 2027, 26% w 2028, 23% w 2029, 19% od 2030; firmy &gt;50 mln EUR przychodu, dystrybucja &gt;100 tys. odbiorców, ~7 mld zł wpływów) pozostaje w fazie projektu MF. Nawis dotyczy zarówno TAURONPE (SHORT), jak i taktycznej PGE — rynek 2.09 go zignorował (rp.pl/Parkiet/bankier.pl, 20.08; brak nowych depesz 1–3.09).</li>
+      <li><span class="tag short">SHORT</span><b>Rejestr KNF:</b> b.d. zmian dziennych — rss.knf.gov.pl niedostępny z tego środowiska (blokada sieci, HTTP 403 na proxy); w depeszach 2–3.09 brak doniesień o zmianach ≥0,3 p.p. na spółkach koszykowych. Ostatni znany obraz z prasy (Parkiet, 19.08): 20 pozycji na 11 spółkach, m.in. Budimex, Dino, KGHM, Kruk, LPP, Żabka.</li>
+      <li><span class="tag rekom">REKOM.</span><b>Brak nowych rekomendacji</b> dla spółek koszykowych i WIG20 datowanych 1–3.09 — ostatni wpis w tabeli bankier.pl to 31.08 (Mo-BRUK, Noble Securities); fala aktualizacji wycen po wynikach H1 CD Projektu i szacunkach PGE możliwa w kolejnych dniach (bankier.pl — rekomendacje, odczyt 3.09 8:25).</li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(28.08)</th><th>Kurs ostatni<br>(2.09)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">KGHM<span class="badge-reduce">REDUCE</span></td><td><span class="dir long">LONG</span></td><td class="mono">362,00</td><td class="mono">344,15</td><td class="mono dn">−4,93%</td><td class="mono dn">−5,59 p.p.</td></tr>
+        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,35</td><td class="mono">44,755</td><td class="mono dn">−1,31%</td><td class="mono dn">−1,97 p.p.</td></tr>
+        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">255,50</td><td class="mono">257,20</td><td class="mono up">+0,67%</td><td class="mono up">+0,01 p.p.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">704,40</td><td class="mono">692,00</td><td class="mono dn">−1,76%</td><td class="mono dn">−2,42 p.p.</td></tr>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">35,56</td><td class="mono">35,57</td><td class="mono up">+0,03%</td><td class="mono dn">−0,63 p.p.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zamknięcia 2.09 z bankier.pl (tabele notowań, odczyty 17:00–17:15). Kursy D0 (28.08) z cache kursów zgodne z polem <code>d0.prices</code> w signals.json co do grosza (walidacja 11/11 OK). WIG20 od D0: +0,66% (3 993,70 → 4 019,89). KGHM objęty reakcją REDUCE od 2.09 (miękki wyzwalacz 4–8% przeciw tezie). Brak dni prawa do dywidendy w koszykach w oknie (Kęty: dzień dywidendy 19.08, przed D0).</p>
+
+  <h2>Koszyk SHORT</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(28.08)</th><th>Kurs ostatni<br>(2.09)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">CDPROJEKT<span class="badge-reduce">REDUCE</span></td><td><span class="dir short">SHORT</span></td><td class="mono">236,50</td><td class="mono">231,20</td><td class="mono up">+2,24%</td><td class="mono up">+1,59 p.p.</td></tr>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,388</td><td class="mono">8,506</td><td class="mono dn">−1,41%</td><td class="mono dn">−2,06 p.p.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">87,00</td><td class="mono">85,92</td><td class="mono up">+1,24%</td><td class="mono up">+0,59 p.p.</td></tr>
+        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">43,20</td><td class="mono">43,05</td><td class="mono up">+0,35%</td><td class="mono dn">−0,31 p.p.</td></tr>
+        <tr><td class="name">KETY</td><td><span class="dir short">SHORT</span></td><td class="mono">1 247,00</td><td class="mono">1 214,00</td><td class="mono up">+2,65%</td><td class="mono up">+1,99 p.p.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+0,66%). Cztery z pięciu pozycji SHORT na plusie; przeciw tezie idzie TAURONPE (kurs +1,41% od D0 — poniżej progu miękkiej reakcji 4%). CDPROJEKT objęty reakcją REDUCE od 3.09 (raport H1 powyżej konsensusu) — kurs 2.09 sprzed publikacji wyników.</p>
+
+  <div class="spread">
+    <div>
+      <div class="lbl">Spread LONG − SHORT · po sesji 2.09</div>
+      <div class="val mono">−0,45 p.p.</div>
+    </div>
+    <div class="spreadbar"><b></b><i style="left:45.5%;width:4.5%"></i></div>
+    <div class="lbl" style="max-width:230px">LONG śr. −1,46% vs SHORT (ceny) śr. −1,01%; spadek z −0,15 p.p. (KGHM, Allegro, Tauron); kolejny pomiar po sesji 3.09 (17:00), rozliczenie okna W3 po sesji 4.09</div>
+  </div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Entry<br>(data)</th><th>Kurs odniesienia</th><th>Kurs ostatni<br>(2.09)</th><th>Zwrot<br>pozycji</th></tr></thead>
+      <tbody>
+        <tr><td class="name">PGE<span class="badge-new">NOWA</span></td><td><span class="dir long">BUY</span></td><td class="mono">3.09</td><td class="mono">11,85</td><td class="mono">11,85</td><td class="mono na">0,00%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Wyzwalacz: szacunki Q2 2026 (ESPI 1.09, po sesji) — zysk netto j.d. ok. 2,06 mld zł vs 1,78 mld zł konsensusu (+16%), EBITDA powtarzalna ok. 3,96 mld zł — i potwierdzona pozytywna reakcja kursu na sesji 2.09 (+7,78%, lider WIG20). Kurs odniesienia = zamknięcie 2.09; pomiar od sesji 3.09. Teza upada przy konkretyzacji CIT 30% (skierowanie projektu do Sejmu) lub rozczarowaniu pełnym raportem 15.09. Skan pozostałych spółek WIG20 poza koszykami (sesja 2.09 + poranek 3.09): mBank +4,38% bez zidentyfikowanego twardego komunikatu (rajd banków, WIG-BANKI +0,90%) — nie spełnia kryterium; Orlen +1,58%; Żabka zakotwiczona wezwaniem Couche-Tard (32 zł, zapisy do 25.09). Otwarte łącznie: 1/2.</p>
+
+  <h2>Kalendarz — czwartek 3.09</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t">9:00</span>Otwarcie sesji GPW — czwarta sesja pomiarowa koszyków 2026-W3 (zamknięcie 17:00); <b>pierwsza sesja po raporcie H1 CD Projektu</b> (SHORT/REDUCE — reakcja kursu decyduje o ewentualnym awansie do CLOSE w piątkowym biegu)</li>
+      <li><span class="t">3:30–10:30</span>PMI usług: Chiny (Caixin), Hiszpania, Włochy, Francja, Niemcy, strefa euro, Wielka Brytania (finalne, sierpień)</li>
+      <li><span class="t">11:00</span>Strefa euro: PPI za lipiec</li>
+      <li><span class="t">14:30</span>USA: tygodniowe wnioski o zasiłek, wydajność i koszty pracy (Q2, rew.), bilans handlowy (lipiec)</li>
+      <li><span class="t">16:00</span>USA: indeks ISM dla usług za sierpień</li>
+      <li><span class="t">dziś</span>Grupa Kęty (SHORT): wypłata I transzy dywidendy 16,33 zł/akcję (dzień dywidendy był 19.08 — bez korekty kursów w oknie); raporty H1: GPW, Sygnity, Voxel; Benefit Systems — ostatni dzień z prawem do dywidendy 100 zł</li>
+      <li><span class="t">spółki</span>Tauron — pełny raport H1 9.09 (SHORT); PGE — pełny raport Q2 15.09 (taktyczna); Allegro — pełny raport H1 17.09 (LONG); Żabka — zapisy w wezwaniu do 25.09</li>
+    </ul>
+  </div>
+
+  <p class="src">Główne źródła: bankier.pl — tabele notowań akcji/indeksów GPW (zamknięcia 2.09, odczyty 17:00–17:15; komplet 20 spółek + WIG20 przez <code>scripts/kursy.py</code>), Strefa Inwestorów/PAP Biznes (indeksy 2.09: WIG20 4 019,89 +0,40%, WIG 152 161,14 +0,27%, mWIG40 +0,06%, sWIG80 −0,25%, obroty 2,516 mld zł, Dino 313 mln zł; WIG-ENERG +3,99%, WIG-CHEMIA +3,76%, WIG-BANKI +0,90%; PGE +7,78%), PAP Biznes/Strefa Inwestorów (CD Projekt Q2: przychody 244,2 vs 200 mln zł, EBITDA 161,4 vs 106,6 mln zł, EBIT 148,3 vs 94 mln zł, zysk netto 142,9 vs 99,3 mln zł; H1 435,3 mln zł przychodów, 249,1 mln zł zysku; program motywacyjny — cel 3 mld zł mało prawdopodobny; Wiedźmin 4 w 2028, Remaster W3 29.09), Parkiet/wnp.pl (H1 CD Projektu), bankier.pl/PAP Biznes/ISBnews (PGE — szacunki Q2: zysk netto j.d. ok. 2,06 mld zł vs 1,78 mld zł konsensusu; EBITDA powtarzalna ok. 3,96 mld zł, raportowana ok. 4,11 mld zł; jednorazowe +151 mln zł; raport 15.09), Strefa Biznesu (PGE +8% po wynikach), PAP Biznes (Pepco — ESPI 33/2026, NWZ 2.09, upoważnienie do skupu do 10%), stockwatch.pl (buyback Pepco 36,46 mln akcji po 47,52 zł, 1,73 mld zł), bankier.pl — komunikaty spółek (Grupa Azoty/Puławy/Police — szacunki Q2, 2.09 21:21–21:26; brak ESPI spółek koszykowych), bankier.pl — rekomendacje (ostatni wpis 31.08), Strefa Inwestorów/stockwatch.pl (Kęty: dywidenda 48,97 zł, dzień dywidendy 19.08, I transza 16,33 zł 3.09), rp.pl/Parkiet/bankier.pl/PolsatNews (projekt CIT 30% dla energetyki i paliw, 20.08), Parkiet (rejestr krótkiej sprzedaży KNF — stan 19.08), bankier.pl/ISBnews (kalendarium makro 3.09: PMI usług, PPI EZ, wnioski o zasiłek, ISM usług). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach. PROBLEMY (bieg poranny 3.09): konektor FMP jest w sesji, ale plan FMP nadal blokuje endpoint kursowy („chart" → ACCESS DENIED, wymagany wyższy plan) — FMP nie może pełnić roli priorytetowego źródła; grant/plan konektora dla rutyny wciąż nieustawiony. Użyto rezerwy <code>kursy.py</code>: Yahoo chart API ponownie HTTP 429 z IP chmury (limiter), komplet zamknięć 2.09 z tabel bankier.pl (walidacja D0 przez cache: 11/11 OK, D0 co do grosza). Rejestr krótkiej sprzedaży KNF (rss.knf.gov.pl — HTTP 403 na proxy), kalendarium PAP na 3.09 (pusta odpowiedź) i parkiet.com/investing.com (blokada sieci) niedostępne wprost z tego środowiska; komentarz sesyjny Strefy Inwestorów z 2.09 za paywallem (dostępne tylko indeksy).</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 3.09.2026, 8:20–8:40 (przed sesją).
+  </footer>
+</div>
+</body>
+</html>
