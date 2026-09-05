@@ -1,5 +1,14 @@
 # wig20-bot — instrukcje dla sesji automatycznych
 
+## Metoda i metryki (od 5.09.2026)
+
+- Reguły punktowania i rozliczania: `docs/metoda.md` (obowiązują obie rutyny). Wagi kategorii zamrożone; momentum liczone MECHANICZNIE skryptem, DM ±3 tylko za sygnały z 30 dni, katalizatory jako rejestr zdarzeń (D+1…D+10, brak = 10/20), remis → mniejsza waga w WIG20.
+- `scripts/metryki.py momentum --d0 RRRR-MM-DD` — punkty momentum 0–25 z `data/kursy-cache.json` (rel5 2/3 + rel20 1/3; flaga `BRAK_20S`, dopóki cache nie ma 20 sesji).
+- `scripts/metryki.py rozlicz --week 2026-Wn --d0 … --d5 …` — metryki całego rankingu: baza tygodnia ȳ, hit rate obok oczekiwania losowego, Brier (baseline 0,50 i ȳ(1−ȳ)), Spearman. Wymaga `rankings/<week>.json`.
+- `rankings/<week>.json` — pełny ranking tygodnia (20 spółek, punkty per kategoria, p, uzasadnienie), rejestr katalizatorów, `data_quality`. Raport tygodniowy tworzy nowy plik; Puls DOPISUJE katalizatory i kody jakości. Plików z poprzednich tygodni NIE zmieniać ex post.
+- `history` w `signals.json` ma dodatkowo pola `base_rate`, `spearman`, `brier`, `data_quality`.
+- Aktualne prompty rutyn: `docs/routine-raport-tygodniowy-prompt.txt`, `docs/routine-puls-wig20-prompt.txt` (wersje do wklejenia w claude.ai → Routines).
+
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 
 KOLEJNOŚĆ ŹRÓDEŁ: (1) konektor FMP → (2) skrypt `kursy.py` (Yahoo → bankier.pl → cache).

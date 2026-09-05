@@ -1,0 +1,496 @@
+{
+ "week": "2026-W4",
+ "d0": "2026-09-04",
+ "generated": "2026-09-05",
+ "momentum_method": "uznaniowe",
+ "uwaga": "ranking opublikowany 5.09 w reports/raport-2026-W4.html; punkty nadane uznaniowo w ramach zamrożonych wag — od W5 momentum liczone mechanicznie (scripts/metryki.py momentum); kolumna momentum_mech poniżej to cień do porównania, NIE zmienia rankingu",
+ "long": [
+  "PKNORLEN",
+  "PGE",
+  "PEKAO",
+  "PZU",
+  "MBANK"
+ ],
+ "short": [
+  "KRUK",
+  "PEPCO",
+  "CDPROJEKT",
+  "KETY",
+  "MODIVO"
+ ],
+ "ranking": [
+  {
+   "rank": 1,
+   "ticker": "PKNORLEN",
+   "score": 70.5,
+   "p": 0.6,
+   "pts": {
+    "momentum": 20,
+    "katalizatory": 13,
+    "makro": 11,
+    "dm": 10.5,
+    "rewizje": 7,
+    "przeplywy": 6,
+    "wycena": 3
+   },
+   "uzasadnienie": "momentum +6,05% t/t i rekord; Brent +7% t/t; DM BOŚ kupuj 180 zł (18.08, +3); PDH; ryzyko CIT 30% i największa waga",
+   "momentum_mech": 23.7,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 2,
+   "ticker": "PGE",
+   "score": 69.5,
+   "p": 0.6,
+   "pts": {
+    "momentum": 20,
+    "katalizatory": 13,
+    "makro": 8,
+    "dm": 10.5,
+    "rewizje": 8,
+    "przeplywy": 7,
+    "wycena": 3
+   },
+   "uzasadnienie": "szacunki Q2 +16% vs kons. (1.09); aukcja mocy; windfall bez retroaktywności; DM BOŚ lista długich (sierpień, +3); ryzyko realizacji zysków po +15%",
+   "momentum_mech": 25.0,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 3,
+   "ticker": "PEKAO",
+   "score": 65.5,
+   "p": 0.58,
+   "pts": {
+    "momentum": 19,
+    "katalizatory": 12,
+    "makro": 11,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 7,
+    "wycena": 3
+   },
+   "uzasadnienie": "jedyne trafienie LONG W3; WIG-Banki rekord; RPP 9.09 raczej bez cięcia (marża); duża waga",
+   "momentum_mech": 18.4,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 4,
+   "ticker": "PZU",
+   "score": 62.5,
+   "p": 0.56,
+   "pts": {
+    "momentum": 18,
+    "katalizatory": 13,
+    "makro": 9,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 6,
+    "wycena": 3
+   },
+   "uzasadnienie": "+3,45%; KNF bez sprzeciwu Link4 (28.08); Q2 beat; dywidenda 4,80 zł z prawem do 15.09",
+   "momentum_mech": 19.7,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 5,
+   "ticker": "MBANK",
+   "score": 61.5,
+   "p": 0.56,
+   "pts": {
+    "momentum": 19,
+    "katalizatory": 10,
+    "makro": 11,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 6,
+    "wycena": 2
+   },
+   "uzasadnienie": "+4,03% (najlepszy bank); CHF wygasa; mała waga; brak katalizatora w oknie; wysoka wycena",
+   "momentum_mech": 22.4,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 6,
+   "ticker": "ERSTEPL",
+   "score": 60.5,
+   "p": 0.55,
+   "pts": {
+    "momentum": 19,
+    "katalizatory": 9,
+    "makro": 11,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 5,
+    "wycena": 3
+   },
+   "uzasadnienie": "+3,58%, rekord; Q2 +11% vs oczek.; brak katalizatorów",
+   "momentum_mech": 21.1,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 7,
+   "ticker": "PKOBP",
+   "score": 56.5,
+   "p": 0.53,
+   "pts": {
+    "momentum": 17,
+    "katalizatory": 9,
+    "makro": 11,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 4,
+    "wycena": 3
+   },
+   "uzasadnienie": "+3,00%; cap 15% od 18.09 (podaż pasywna); kary KNF; największa waga",
+   "momentum_mech": 17.1,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 8,
+   "ticker": "ALIOR",
+   "score": 54.5,
+   "p": 0.52,
+   "pts": {
+    "momentum": 14,
+    "katalizatory": 9,
+    "makro": 11,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 5,
+    "wycena": 4
+   },
+   "uzasadnienie": "równo z indeksem; tania wycena; konkurs na zarząd do 16.09",
+   "momentum_mech": 14.5,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 9,
+   "ticker": "LPP",
+   "score": 54.5,
+   "p": 0.52,
+   "pts": {
+    "momentum": 15,
+    "katalizatory": 11,
+    "makro": 8,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 5,
+    "wycena": 3
+   },
+   "uzasadnienie": "+2,50% pt; marketplace Sinsay; raport H1 17.09 (D+9, poza oknem wyniku)",
+   "momentum_mech": 13.2,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 10,
+   "ticker": "BUDIMEX",
+   "score": 51.5,
+   "p": 0.51,
+   "pts": {
+    "momentum": 13,
+    "katalizatory": 11,
+    "makro": 8,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 5,
+    "wycena": 2
+   },
+   "uzasadnienie": "pt +3,23%; PSE Ełk Bis; strategia we wrześniu; RPP bez cięcia; BDM redukuj (maj, poza 30 dni)",
+   "momentum_mech": 9.2,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 11,
+   "ticker": "ALLEGRO",
+   "score": 51.5,
+   "p": 0.51,
+   "pts": {
+    "momentum": 12,
+    "katalizatory": 12,
+    "makro": 8,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 4,
+    "wycena": 2
+   },
+   "uzasadnienie": "brak reakcji na wyniki; raport H1 17.09 (D+9); short Qube 1,35%",
+   "momentum_mech": 7.9,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 12,
+   "ticker": "KGHM",
+   "score": 50.5,
+   "p": 0.5,
+   "pts": {
+    "momentum": 9,
+    "katalizatory": 9,
+    "makro": 13,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 4,
+    "wycena": 3
+   },
+   "uzasadnienie": "miedź rekord, ale kurs spada 2 tyg. (dywergencja); brak katalizatora do ~22.09",
+   "momentum_mech": 3.9,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 13,
+   "ticker": "DINOPL",
+   "score": 48.5,
+   "p": 0.49,
+   "pts": {
+    "momentum": 13,
+    "katalizatory": 8,
+    "makro": 8,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 5,
+    "wycena": 2
+   },
+   "uzasadnienie": "ryzyko strajku (mediacje 24.09); żywność −0,9% r/r; Qube 0,81%",
+   "momentum_mech": 11.8,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 14,
+   "ticker": "TAURONPE",
+   "score": 47.5,
+   "p": 0.49,
+   "pts": {
+    "momentum": 15,
+    "katalizatory": 8,
+    "makro": 7,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 3,
+    "wycena": 3
+   },
+   "uzasadnienie": "momentum +2,84%; raport H1 9.09 bez zaskoczeń; STOXX exit 21.09; CIT 30%",
+   "momentum_mech": 15.8,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 15,
+   "ticker": "ZABKA",
+   "score": 45.5,
+   "p": 0.48,
+   "pts": {
+    "momentum": 10,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 4,
+    "wycena": 2
+   },
+   "uzasadnienie": "kurs przybity wezwaniem 32 zł (zapisy do 25.09) — neutralna",
+   "momentum_mech": 6.6,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 16,
+   "ticker": "MODIVO",
+   "score": 41.5,
+   "p": 0.46,
+   "pts": {
+    "momentum": 11,
+    "katalizatory": 7,
+    "makro": 7,
+    "dm": 7.5,
+    "rewizje": 3,
+    "przeplywy": 3,
+    "wycena": 3
+   },
+   "uzasadnienie": "Q2 poniżej oczekiwań; najbardziej shortowana (Qube 0,83%); raport 1.10; najmniejsza waga",
+   "momentum_mech": 10.5,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 17,
+   "ticker": "KETY",
+   "score": 40.5,
+   "p": 0.45,
+   "pts": {
+    "momentum": 9,
+    "katalizatory": 7,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 4,
+    "wycena": 3
+   },
+   "uzasadnienie": "PMI 48,3; EBC podwyżka; mocny PLN; normalizacja H2; szacunki Q3 24.09",
+   "momentum_mech": 5.3,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 18,
+   "ticker": "CDPROJEKT",
+   "score": 40.0,
+   "p": 0.45,
+   "pts": {
+    "momentum": 7,
+    "katalizatory": 7.5,
+    "makro": 7,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 3,
+    "wycena": 2
+   },
+   "uzasadnienie": "brak reakcji na beat H1; shorty rosną; remaster 29.09 poza oknem; rewizje w górę (przeciw)",
+   "momentum_mech": 2.6,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 19,
+   "ticker": "PEPCO",
+   "score": 38.5,
+   "p": 0.44,
+   "pts": {
+    "momentum": 6,
+    "katalizatory": 7,
+    "makro": 7,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 4,
+    "wycena": 3
+   },
+   "uzasadnienie": "3. tydzień spadków po końcu skupu; MSCI SC exit 1.09; ryzyko nowego skupu (NWZ 2.09)",
+   "momentum_mech": 0.0,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  },
+  {
+   "rank": 20,
+   "ticker": "KRUK",
+   "score": 32.5,
+   "p": 0.41,
+   "pts": {
+    "momentum": 4,
+    "katalizatory": 6,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 3,
+    "przeplywy": 3,
+    "wycena": 3
+   },
+   "uzasadnienie": "−10% w 2 tyg.; H1 −5% r/r; RPP bez cięcia; brak katalizatorów do 27.10",
+   "momentum_mech": 1.3,
+   "momentum_mech_flagi": [
+    "BRAK_20S"
+   ]
+  }
+ ],
+ "katalizatory": [
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "raport H1 2026 (szacunki znane od 24.08)",
+   "wklad_pkt": 0
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-09-15",
+   "dn": 7,
+   "opis": "skonsolidowany raport H1 2026",
+   "wklad_pkt": 1
+  },
+  {
+   "ticker": "PZU",
+   "data": "2026-09-15",
+   "dn": 7,
+   "opis": "ostatni dzień z prawem do dywidendy 4,80 zł (dzień dywidendy 17.09)",
+   "wklad_pkt": 2
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-09-16",
+   "dn": 8,
+   "opis": "koniec naboru na zarząd",
+   "wklad_pkt": -1
+  },
+  {
+   "ticker": "ALLEGRO",
+   "data": "2026-09-17",
+   "dn": 9,
+   "opis": "raport H1 2026 (przed sesją)",
+   "wklad_pkt": 1
+  },
+  {
+   "ticker": "LPP",
+   "data": "2026-09-17",
+   "dn": 9,
+   "opis": "raport H1 2026/27",
+   "wklad_pkt": 1
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-09-18",
+   "dn": 10,
+   "opis": "rewizja kwartalna GPW — cap 15% w WIG20",
+   "wklad_pkt": -1
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "RPP — decyzja (konsensus: 3,75% bez zmian; termin 8–9.09 zweryfikowany: bankier.pl 4.09; NBP przesunął z 1–2.09 komunikatem z 9.07)",
+   "wklad_pkt": 0
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "EBC — decyzja (oczekiwana podwyżka do 2,50%)",
+   "wklad_pkt": 0
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "CPI USA za sierpień (14:30 CEST)",
+   "wklad_pkt": 0
+  }
+ ],
+ "data_quality": []
+}

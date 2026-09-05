@@ -1,0 +1,187 @@
+{
+ "week": "2026-W2",
+ "d0": "2026-08-25",
+ "generated": "2026-08-26",
+ "momentum_method": "uznaniowe",
+ "zrodlo": "reports/raport-2026-W2.html (tabela rankingu, odtworzona 2026-09-05 bez zmian)",
+ "ranking": [
+  {
+   "rank": 1,
+   "ticker": "KGHM",
+   "score": 74.0,
+   "p": 0.62,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 2,
+   "ticker": "DINOPL",
+   "score": 66.5,
+   "p": 0.58,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 3,
+   "ticker": "PEKAO",
+   "score": 61.0,
+   "p": 0.56,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 4,
+   "ticker": "BUDIMEX",
+   "score": 59.0,
+   "p": 0.55,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 5,
+   "ticker": "KRUK",
+   "score": 58.0,
+   "p": 0.54,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 6,
+   "ticker": "PKOBP",
+   "score": 56.5,
+   "p": 0.53,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 7,
+   "ticker": "PZU",
+   "score": 55.5,
+   "p": 0.53,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 8,
+   "ticker": "PKNORLEN",
+   "score": 55.0,
+   "p": 0.53,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 9,
+   "ticker": "ERSTEPL",
+   "score": 54.5,
+   "p": 0.52,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 10,
+   "ticker": "LPP",
+   "score": 52.0,
+   "p": 0.51,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 11,
+   "ticker": "ZABKA",
+   "score": 51.0,
+   "p": 0.51,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 12,
+   "ticker": "ALIOR",
+   "score": 50.0,
+   "p": 0.5,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 13,
+   "ticker": "ALLEGRO",
+   "score": 48.0,
+   "p": 0.49,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 14,
+   "ticker": "MBANK",
+   "score": 47.5,
+   "p": 0.49,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 15,
+   "ticker": "KETY",
+   "score": 45.5,
+   "p": 0.48,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 16,
+   "ticker": "MODIVO",
+   "score": 41.5,
+   "p": 0.46,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 17,
+   "ticker": "PEPCO",
+   "score": 41.0,
+   "p": 0.46,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 18,
+   "ticker": "PGE",
+   "score": 38.0,
+   "p": 0.44,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 19,
+   "ticker": "TAURONPE",
+   "score": 37.0,
+   "p": 0.43,
+   "pts": null,
+   "uzasadnienie": null
+  },
+  {
+   "rank": 20,
+   "ticker": "CDPROJEKT",
+   "score": 28.5,
+   "p": 0.39,
+   "pts": null,
+   "uzasadnienie": null
+  }
+ ],
+ "katalizatory": [],
+ "data_quality": [
+  "OKNO_SKROCONE_D3"
+ ],
+ "long": [
+  "KGHM",
+  "DINOPL",
+  "PEKAO",
+  "BUDIMEX",
+  "KRUK"
+ ],
+ "short": [
+  "CDPROJEKT",
+  "TAURONPE",
+  "PGE",
+  "PEPCO",
+  "MODIVO"
+ ]
+}

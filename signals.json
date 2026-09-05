@@ -65,7 +65,13 @@
       "hit_bottom": "3/5",
       "tactical_pp": null,
       "managed_pp": 1.44,
-      "reaction_pp": 0.0
+      "reaction_pp": 0.0,
+      "base_rate": null,
+      "spearman": null,
+      "brier": null,
+      "data_quality": [
+        "BRAK_PELNEGO_RANKINGU"
+      ]
     },
     {
       "week": "2026-W2",
@@ -74,7 +80,14 @@
       "hit_bottom": "3/5",
       "tactical_pp": null,
       "managed_pp": -2.14,
-      "reaction_pp": 0.17
+      "reaction_pp": 0.17,
+      "base_rate": 0.286,
+      "spearman": -0.212,
+      "brier": 0.2703,
+      "data_quality": [
+        "OKNO_SKROCONE_D3",
+        "METRYKI_N14_Z_20"
+      ]
     },
     {
       "week": "2026-W3",
@@ -83,7 +96,13 @@
       "hit_bottom": "4/5",
       "tactical_pp": 4.11,
       "managed_pp": 1.16,
-      "reaction_pp": -0.17
+      "reaction_pp": -0.17,
+      "base_rate": 0.4,
+      "spearman": 0.143,
+      "brier": 0.2529,
+      "data_quality": [
+        "RPP_DATE_ERROR"
+      ]
     }
   ],
   "tactical": []
