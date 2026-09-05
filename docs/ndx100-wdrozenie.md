@@ -93,7 +93,7 @@ i `data_quality: ["BRAK_PELNEGO_RANKINGU"]`, chyba że da się policzyć metryki
 
 **KROK 1 (research):** „[NOWE 5.09] DATY MAKRO I WYNIKÓW: każdą datę potwierdzaj w datowanym źródle pierwotnym (FOMC: kalendarz federalreserve.gov;
 CPI/NFP: harmonogram BLS z godziną ET; wyniki spółek: strona IR spółki z oznaczeniem BMO/AMC), nigdy z pamięci ani z rocznego harmonogramu.
-Godziny przeliczaj z ET na czas polski (ET+6 h latem, +6 h zimą — sprawdź DST obu stref). Jeśli data z raportu tygodniowego jest błędna,
+Godziny przeliczaj z ET na czas polski: zwykle +6 h; w tygodniach, gdy tylko jedna strefa ma już czas letni (druga połowa marca, koniec października do początku listopada) różnica wynosi +5 h albo +7 h — sprawdź DST obu stref na konkretną datę. Jeśli data z raportu tygodniowego jest błędna,
 napisz to w raporcie i dodaj kod (np. FOMC_DATE_ERROR, EARNINGS_DATE_ERROR) do data_quality w `rankings/<version>.json`."
 
 **KROK 2 (werdykt, reakcje):** „[NOWE 5.09] Każdy wpis exclude ma oprócz ticker/action/date/reason pola liczbowe: `price_before`
