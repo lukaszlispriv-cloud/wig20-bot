@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-09-05</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#B8E0C6}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--amber);color:var(--amber);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(176,123,34,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.reakcja{background:#C4372E}.tag.takt{background:#0E7C4A}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green)}.dn{color:var(--red)}.na{color:var(--muted)}
+  .badge-reduce{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.5px;padding:2px 6px;border-radius:3px;color:#fff;background:var(--amber);margin-left:6px;vertical-align:1px}
+  .note{font-size:.78rem;color:var(--muted);margin:2px 2px 18px}
+  .spread{background:var(--navy);color:#fff;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:6px 0 4px}
+  .spread .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.8px;opacity:.75}
+  .spread .val{font-size:1.4rem;font-weight:700;color:#B8E0C6}
+  .spreadbar{height:8px;background:#22374F;border-radius:4px;flex:1 1 160px;min-width:140px;position:relative;overflow:hidden}
+  .spreadbar i{position:absolute;top:0;bottom:0;background:#B8E0C6;border-radius:4px}
+  .spreadbar b{position:absolute;top:-2px;bottom:-2px;left:50%;width:2px;background:#8FA3BC}
+  ul.cal{list-style:none}
+  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  ul.cal .t{display:inline-block;min-width:64px;font-weight:700;color:var(--navy)}
+  .src{font-size:.75rem;color:var(--muted);margin-top:20px}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">sobota, 5 września 2026 · bieg poranny (GPW zamknięta) · prognoza tygodniowa 2026-W3 · okno zamknięte po sesji 4.09</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 090,27</div>
+      <div class="chg mono">+1,36% (zamknięcie 4.09, rekord)</div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">Aktualna</span>
+    <span class="stampnote">Werdykt dnia: prognoza 2026-W3 utrzymana, <b>bez nowych reakcji</b>; obie redukcje z tygodnia zostają w mocy do końca okna (sobota): <b>KGHM (LONG): REDUCE</b> — kurs +1,08% do 356,00 zł (−1,66% od D0, poniżej pasma 4–8%); <b>CDPROJEKT (SHORT): REDUCE</b> — −0,30% do 232,00 zł (pozycja +1,90% od D0, próg awansu do CLOSE ~246 zł daleko). <b>Taktyczna PGE BUY: +5,86%</b> (12,545 zł, +2,58% na sesji). Ostatnia sesja okna: WIG20 +1,36% do rekordowych <b>4 090,27</b> (+2,42% od D0); spread LONG−SHORT <b>+1,32 p.p.</b> (z +0,43). Kursy 4.09: komplet 10/10 + indeks + taktyczna (bankier.pl; walidacja D0 przez cache 11/11 OK).</span>
+  </div>
+
+  <h2>Najważniejsze zmiany (24h)</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag rynek">RYNEK</span><b>Sesja 4.09: WIG20 +1,36% do 4 090,27 pkt — nowy rekord wszech czasów, spread okna W3 kończy na +1,32 p.p.</b> WIG +1,24% (153 948,21), mWIG40 +0,92% (10 486,58), sWIG80 +0,29% (31 253,18), WIG-Banki +1,72% (26 798,69, rekord). Obroty 2,30 mld zł (1,68 mld zł w WIG20; największe PKO BP 228,5 mln zł). W WIG20 17 spółek na plusie, 3 na minusie: najsilniejsze Budimex +3,23%, Erste +2,81%, Modivo +2,69%, PGE +2,58%, LPP +2,50%, Pekao +1,93%, PKO BP +1,85%; najsłabsze Kruk −1,08%, CD Projekt −0,30%, Pepco −0,10%. Po pięciu sesjach okna: koszyk LONG średnio <b>+0,81%</b> od D0 (4/5 na plusie, ale tylko Pekao pobiło indeks), SHORT (zmiana cen) średnio <b>−0,52%</b> (3/5 pozycji zyskownych: Pepco, CD Projekt, Kęty) — spread <b>+1,32 p.p.</b>; WIG20 od D0 +2,42%. Rozliczenie tygodnia W3 i nowa prognoza należą do biegu tygodniowego — ten raport nie zmienia historii (bankier.pl — wiadomości giełdowe 4.09 17:22 i tabele notowań 17:00–17:15; Strefa Inwestorów/PAP — „DZIEŃ NA GPW" 4.09; ISBnews 4.09).</li>
+      <li><span class="tag reakcja">REAKCJA</span><b>KGHM (LONG): REDUCE utrzymany do końca okna — kurs dalej odrabia.</b> Zamknięcie 4.09: 356,00 zł (+1,08% d/d; dzienne maksimum 360,00), od D0 −1,66% (362,00 → 356,00), relatywnie −4,08 p.p. wobec WIG20. Tło: miedź na LME z rekordowym zamknięciem 14 349,50 USD/t (poprzednia sesja wg PAP; maksimum intraday 14 527,50 USD/t ze stycznia), +15,5% od początku roku, czwarta sesja wzrostów przy niskich zapasach. Brak ESPI KGHM we wrześniu (ostatni: wyniki produkcyjne za lipiec — sprzedaż miedzi 58,9 tys. t, +4% r/r). Zgodnie z protokołem raz zredukowana pozycja zostaje do soboty; próg awansu do CLOSE (−8% od D0, ≈333,0 zł) nieosiągnięty (bankier.pl — notowania KGHM 4.09; PAP Biznes — miedź na LME; bankier.pl — komunikaty KGHM).</li>
+      <li><span class="tag reakcja">REAKCJA</span><b>CD Projekt (SHORT): REDUCE utrzymany — kurs nie podąża za wynikami.</b> Sesja 4.09: −0,30% do 232,00 zł (jedna z trzech spadkowych w WIG20 w dniu rekordu); pozycja SHORT +1,90% od D0. Nowe z 4.09 (16:28): CFO Piotr Nielubowicz — przychody z licencjonowania IP w Q2 ok. 85 mln zł (vs ok. 10 mln zł w Q1), ponad 100 partnerów w H1, część przychodów dotyczy nieogłoszonych jeszcze projektów; wzrost sprzedaży „Wiedźmina 3" po Gamescomie i zapowiedzi remastera (premiera 29.09). Filar tezy (brak dużej premiery do 2028, cel 3 mld zł programu motywacyjnego mało prawdopodobny) bez zmian. Próg awansu do CLOSE: odbicie &gt;4% od D0, powyżej ~246 zł — kurs 6,0% poniżej progu (bankier.pl — wiadomości CD Projekt 4.09; bankier.pl — komunikaty: jedyny ESPI we wrześniu to raport PSr 2.09 17:18).</li>
+      <li><span class="tag takt">TAKTYCZNA</span><b>PGE BUY: +5,86% od wejścia (11,85 → 12,545 zł), +2,58% na sesji 4.09 — trzecia z rzędu sesja w czołówce WIG20.</b> Wsparcie dnia: energetyka zyskała po deklaracji ministra energii Miłosza Motyki, że nowa ustawa o podatku od nadzwyczajnych zysków będzie pozbawiona działania wstecz (obejmie tylko przyszłe ponadprzeciętne dochody; projekt możliwy jesienią). ESPI 3.09 17:21: w aukcji dogrywkowej rynku mocy na 2027 r. PGE zakontraktowała nie mniej niż 1 859 MW. Ryzyka tezy bez zmian: projekt CIT 30% od 2027 r. w konsultacjach, pełny raport Q2 15.09 (bankier.pl — wiadomości giełdowe 4.09; Strefa Biznesu/PAP — deklaracja min. Motyki; bankier.pl — komunikaty PGE 3.09).</li>
+      <li><span class="tag makro">MAKRO</span><b>CIT 30% dla energetyki i paliw — wyzwalacz „skierowanie do Sejmu" nie zaszedł; równolegle resort energii łagodzi ton.</b> Projekt MF (30% w 2027, 26% w 2028, 23% w 2029, 19% od 2030; szacowane wpływy 2,83 mld zł w 2027, 2,55 mld zł w 2028, 1,57 mld zł w 2029; dla podmiotów o przychodach &gt;50 mln EUR — wytwarzanie, przesył i dystrybucja energii, obrót gazem i paliwami) pozostaje na etapie konsultacji. Minister Motyka zapowiedział osobne założenia ustawy o podatku od nadzwyczajnych zysków bez działania prawa wstecz — rynek odczytał to jako mniejsze ryzyko dla wyników już zaksięgowanych (WIG-ENERG w górę: PGE +2,58%, Tauron +0,70%). Nawis dotyczy TAURONPE (SHORT) i taktycznej PGE (PolsatNews/rp.pl/Parkiet 20–21.08 — projekt MF; Strefa Biznesu/Super Biznes/PAP — wypowiedź min. Motyki; bankier.pl 4.09).</li>
+      <li><span class="tag espi">ESPI</span><b>Tauron (SHORT): dwa komunikaty z 3.09 po sesji, kurs 4.09 +0,70% do 8,626 zł.</b> 15:50 — szacunkowe wyniki aukcji dogrywkowej rynku mocy na 2027 r.: 1 410,223 MW obowiązku mocowego (w tym 1 394,66 MW bloki węglowe, 14,155 MW magazyny, 1,408 MW instalacje hybrydowe), cena zamknięcia 325,56–372,04 zł/kW/rok, przychody 459,1–524,7 mln zł — neutralne dla tezy; 16:00 — zawiadomienie The Goldman Sachs Group o zmianie udziału w ogólnej liczbie głosów (art. 69 Ustawy o ofercie; raport 34/2026) — nowy udział <b>b.d.</b> (treść raportu niedostępna z tego środowiska; w 2025 r. GS oscylował wokół progu 5%). Pozycja SHORT −2,84% od D0 (kurs +2,84% przeciw tezie) — poniżej progu miękkiej reakcji 4%. Pełny raport H1 w środę 9.09 (szacunki: zysk netto Q2 586 mln zł, EBITDA 1 606 mln zł); od 21.09 Tauron poza STOXX Europe 600 (za XTB) — czynnik podażowy zgodny z tezą (bankier.pl — komunikaty Tauron 3.09; ISBnews/Strefa Biznesu — aukcja mocy; STOXX — przegląd 1.09).</li>
+      <li><span class="tag rynek">RYNEK</span><b>Pozostałe SHORT: Modivo +2,69% do 87,88 zł w dniu siły odzieży (LPP +2,50%) — pozycja −1,01% od D0, poniżej progu 4%;</b> Pepco −0,10% do 41,83 zł (pozycja +3,17%, najlepsza w koszyku; jedyny ESPI we wrześniu: wyniki głosowań NWZ 2.09 14:10); Kęty +0,24% do 1 230 zł (pozycja +1,36%; brak ESPI we wrześniu, szacunki Q3 zapowiedziane na 24.09; zarząd podtrzymuje 1 112 mln zł EBITDA 2026 i zapowiada normalizację wyników w H2). Modivo pozostaje ulubieńcem funduszy w rejestrze KNF — brak sygnałów zamykania shortów (bankier.pl — notowania i komunikaty 4.09; stockwatch.pl; Parkiet — rejestr KNF).</li>
+      <li><span class="tag rynek">RYNEK</span><b>LONG poza reakcjami: Pekao +1,93% do 263,90 zł (+3,29% od D0, jedyna pozycja LONG bijąca WIG20) na fali rekordu WIG-Banki; Budimex +3,23% do 709,00 zł (lider WIG20; +0,65% od D0)</b> — bez ESPI; w tle wyrok Sądu Okręgowego w Warszawie (4.09) oddalający skargę konsorcjum Mirbud–Torpol ws. Rail Baltica (Białystok–Ełk, ~4,5 mld zł; Mirbud −5,31%) — najbliżej kontraktu konsorcjum Unibep–Track Tec–Intop, konsorcjum Budimex–Porr było już wcześniej wykluczone, więc wpływ na Budimex neutralny; Allegro +1,14% do 45,605 zł (+0,56% od D0; raport H1 17.09; BM BNP Paribas ma Allegro w portfelu na wrzesień); Dino +0,39% do 35,98 zł (+1,18%; mediacje z OPZZ 2.09 bez porozumienia) (bankier.pl — notowania 4.09 i wiadomości Mirbud 13:26; Parkiet/rp.pl — Rail Baltica; stockwatch.pl — Dino).</li>
+      <li><span class="tag makro">MAKRO</span><b>USA: payrolls za sierpień +162 tys. wobec konsensusu ok. +53–55 tys. (najwięcej od marca), bezrobocie 4,1%, płace +0,3% m/m i +3,1% r/r, rewizje czerwca i lipca łącznie +55 tys.</b> Rynek podniósł wycenę podwyżki stóp Fed na posiedzeniu 16.09 do ok. 60% (z 50%, wg M. Rogalskiego z DM BOŚ); GPW zignorowała słabszy Wall Street — kolejny test to CPI USA w piątek 11.09 (konsensus 3,4% r/r) (BLS 4.09 14:30; CNBC/NBC; bankier.pl 4.09 17:22; Parkiet).</li>
+      <li><span class="tag espi">ESPI</span><b>Brak raportów bieżących ESPI spółek koszykowych 4.09 (do 5.09 rano).</b> Poza koszykami 4.09: Torpol — wyniki PSr (18:15); Orlen — zapowiedź bliskiego zamknięcia transakcji PDH (finansowanie 1,35 mld zł), kurs +1,31%; Żabka +0,19% do 31,55 zł — zakotwiczona wezwaniem Couche-Tard (32 zł, zapisy do 25.09, &gt;57% akcji objęte zobowiązaniami) (bankier.pl — komunikaty spółek 4–5.09; ISBnews; stockwatch.pl/Parkiet — wezwanie).</li>
+      <li><span class="tag short">SHORT</span><b>Rejestr KNF: b.d. zmian dziennych</b> — rss.knf.gov.pl zablokowany dla tego środowiska (egress proxy). Ostatnia znana aktualizacja rejestru: 2.09 (stan pozycji na 1.09) — usunięty błędny wpis Marshall Wace „100%" na Syn2Bio, nowa niewielka pozycja Fidelity (Hongkong) na Grupie Azoty; w depeszach 3–5.09 brak doniesień o zmianach ≥0,3 p.p. na spółkach koszykowych (bankier.pl 3.09 — rejestr KNF; Parkiet).</li>
+      <li><span class="tag rekom">REKOM.</span><b>Brak nowych rekomendacji</b> dla spółek koszykowych, taktycznej PGE i WIG20 datowanych 4–5.09 w dostępnych źródłach; z ostatnich tygodni: DM BOŚ w sierpniu dodał PGE do listy pozycji długich (usunął m.in. KGHM i Modivo), Trigon w lipcu obniżył do „neutralnie" KGHM, Pepco i Kęty (stockwatch.pl; Strefa Inwestorów; bankier.pl — rekomendacje).</li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(28.08)</th><th>Kurs ostatni<br>(4.09)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">KGHM<span class="badge-reduce">REDUCE</span></td><td><span class="dir long">LONG</span></td><td class="mono">362,00</td><td class="mono">356,00</td><td class="mono dn">−1,66%</td><td class="mono dn">−4,08 p.p.</td></tr>
+        <tr><td class="name">ALLEGRO</td><td><span class="dir long">LONG</span></td><td class="mono">45,35</td><td class="mono">45,605</td><td class="mono up">+0,56%</td><td class="mono dn">−1,86 p.p.</td></tr>
+        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">255,50</td><td class="mono">263,90</td><td class="mono up">+3,29%</td><td class="mono up">+0,87 p.p.</td></tr>
+        <tr><td class="name">BUDIMEX</td><td><span class="dir long">LONG</span></td><td class="mono">704,40</td><td class="mono">709,00</td><td class="mono up">+0,65%</td><td class="mono dn">−1,77 p.p.</td></tr>
+        <tr><td class="name">DINOPL</td><td><span class="dir long">LONG</span></td><td class="mono">35,56</td><td class="mono">35,98</td><td class="mono up">+1,18%</td><td class="mono dn">−1,24 p.p.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zamknięcia 4.09 z bankier.pl (tabele notowań, odczyty 17:00–17:15; zmiany dzienne zgodne z depeszami ISBnews/PAP). Kursy D0 (28.08) z cache kursów zgodne z polem <code>d0.prices</code> w signals.json co do grosza (walidacja 11/11 OK). WIG20 od D0: +2,42% (3 993,70 → 4 090,27). KGHM objęty reakcją REDUCE od 2.09 (do końca okna). Brak dni prawa do dywidendy w koszykach w oknie.</p>
+
+  <h2>Koszyk SHORT</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>(28.08)</th><th>Kurs ostatni<br>(4.09)</th><th>Zwrot<br>pozycji</th><th>Relatywnie<br>vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">CDPROJEKT<span class="badge-reduce">REDUCE</span></td><td><span class="dir short">SHORT</span></td><td class="mono">236,50</td><td class="mono">232,00</td><td class="mono up">+1,90%</td><td class="mono dn">−0,52 p.p.</td></tr>
+        <tr><td class="name">TAURONPE</td><td><span class="dir short">SHORT</span></td><td class="mono">8,388</td><td class="mono">8,626</td><td class="mono dn">−2,84%</td><td class="mono dn">−5,26 p.p.</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">87,00</td><td class="mono">87,88</td><td class="mono dn">−1,01%</td><td class="mono dn">−3,43 p.p.</td></tr>
+        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">43,20</td><td class="mono">41,83</td><td class="mono up">+3,17%</td><td class="mono up">+0,75 p.p.</td></tr>
+        <tr><td class="name">KETY</td><td><span class="dir short">SHORT</span></td><td class="mono">1 247,00</td><td class="mono">1 230,00</td><td class="mono up">+1,36%</td><td class="mono dn">−1,05 p.p.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Zwrot pozycji SHORT = odwrotność zmiany kursu; „relatywnie" = zwrot pozycji minus zwrot WIG20 od D0 (+2,42%). Trzy z pięciu pozycji SHORT na plusie; przeciw tezie idą TAURONPE (kurs +2,84% od D0) i MODIVO (+1,01%) — obie poniżej progu miękkiej reakcji 4%. CDPROJEKT objęty reakcją REDUCE od 3.09 (do końca okna).</p>
+
+  <div class="spread">
+    <div>
+      <div class="lbl">Spread LONG − SHORT · po sesji 4.09 (koniec okna W3)</div>
+      <div class="val mono">+1,32 p.p.</div>
+    </div>
+    <div class="spreadbar"><b></b><i style="left:50%;width:13.2%"></i></div>
+    <div class="lbl" style="max-width:230px">LONG śr. +0,81% vs SHORT (ceny) śr. −0,52%; poprawa z +0,43 p.p. (Pekao, Budimex, Pepco, CD Projekt); to ostatni odczyt okna W3 — rozliczenie tygodnia w biegu tygodniowym</div>
+  </div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kierunek</th><th>Entry<br>(data)</th><th>Kurs odniesienia</th><th>Kurs ostatni<br>(4.09)</th><th>Zwrot<br>pozycji</th></tr></thead>
+      <tbody>
+        <tr><td class="name">PGE</td><td><span class="dir long">BUY</span></td><td class="mono">3.09</td><td class="mono">11,85</td><td class="mono">12,545</td><td class="mono up">+5,86%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Wyzwalacz (1–2.09): szacunki Q2 2026 +16% powyżej konsensusu i +7,78% na sesji 2.09; kolejne +3,21% (3.09) i +2,58% (4.09). Teza upada przy konkretyzacji CIT 30% (skierowanie projektu do Sejmu) lub rozczarowaniu pełnym raportem 15.09. Skan pozostałych spółek WIG20 poza koszykami (sesja 4.09): Erste +2,81% (745,60 zł) i PKO BP +1,85% (116,90 zł) na rekordzie WIG-Banki — bez twardego komunikatu; LPP +2,50% (21 340 zł) bez ESPI; Alior +1,53%, Orlen +1,31% (zapowiedź zamknięcia PDH — kontynuacja znanej transakcji), PZU +0,82%, mBank +0,43%, Żabka +0,19% (wezwanie, zapisy do 25.09), Kruk −1,08% (395,00 zł) bez komunikatu — brak nowych twardych wyzwalaczy; otwarte łącznie: 1/2. Bez zmian.</p>
+
+  <h2>Kalendarz — sobota 5.09 i najbliższy tydzień</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t">dziś</span>GPW zamknięta (weekend) — <b>okno pomiarowe 2026-W3 zakończone po sesji 4.09</b>; rozliczenie tygodnia i nowa prognoza w biegu tygodniowym; brak zdarzeń korporacyjnych spółek WIG20</li>
+      <li><span class="t">pon 7.09</span>Otwarcie tygodnia na GPW po rekordzie; Torpol — wideokonferencja wynikowa (10:00); brak zdarzeń spółek koszykowych</li>
+      <li><span class="t">śr 9.09</span><b>RPP — decyzja ws. stóp</b> (oczekiwane utrzymanie 3,75%); <b>Tauron — raport H1 2026</b> (SHORT); wyniki: Poltreg, Woodpecker</li>
+      <li><span class="t">czw 10.09</span>14:15 EBC — decyzja (oczekiwana obniżka stopy depozytowej do 2,25%), 15:00 wystąpienie prezesa NBP; CPI Niemcy/Czechy, PPI USA; wyniki: Enea, Grupa Azoty, Bogdanka, Inter Cars, Diagnostyka</li>
+      <li><span class="t">pt 11.09</span>14:30 <b>CPI USA za sierpień</b> (konsensus 3,4% r/r) — ostatni kluczowy odczyt przed Fed 16.09; PKB Wielkiej Brytanii za lipiec</li>
+      <li><span class="t">spółki</span>PGE — pełny raport Q2 15.09 (taktyczna); Fed — decyzja 16.09; Allegro — raport H1 17.09 (LONG); STOXX Europe 600 — wejście w życie zmian (XTB za Tauron) 21.09; Kęty — szacunki Q3 24.09 (SHORT); Żabka — zapisy w wezwaniu do 25.09; CD Projekt — Remaster W3 29.09</li>
+    </ul>
+  </div>
+
+  <p class="src">Główne źródła: bankier.pl — tabele notowań akcji/indeksów GPW (zamknięcia 4.09, odczyty 17:00–17:15; komplet 20 spółek + WIG20 przez <code>scripts/kursy.py</code>), bankier.pl — „WIG20 z przytupem rozpoczyna wrzesień" (4.09 17:22: WIG20 4 090,27 +1,36%, WIG 153 948,21 +1,24%, mWIG40 +0,92%, sWIG80 +0,29%, obroty 2,3 mld zł / 1,68 mld zł WIG20; liderzy i maruderzy; energetyka po deklaracji ministra), Strefa Inwestorów/PAP — „DZIEŃ NA GPW: WIG Banki i WIG20 na historycznych maksimach" (4.09: WIG-Banki 26 798,69 +1,72%; LPP, Modivo, PGE; Mirbud −5,4%; payrolls), ISBnews (4.09: 17/20 spółek na plusie, zmiany dzienne wszystkich spółek WIG20, obroty 2 304,05 mln zł, PKO BP 228,49 mln zł), bankier.pl — wiadomości CD Projekt (4.09 16:28: CFO Nielubowicz — licencje IP ~85 mln zł w Q2, &gt;100 partnerów, nieogłoszone projekty, remaster W3 29.09), bankier.pl — komunikaty ESPI (KGHM, Budimex, Pekao, Dino, Allegro — brak we wrześniu; CD Projekt 2.09 17:18; Tauron 3.09 15:50 i 16:00; Modivo — brak; Pepco 2.09 14:10; Kęty — brak, szacunki Q3 24.09; PGE 3.09 17:21 — min. 1 859 MW), ISBnews/Strefa Biznesu (Tauron: 1 410,223 MW, 325,56–372,04 zł/kW/rok, 459,1–524,7 mln zł), PAP Biznes (miedź LME: rekord zamknięcia 14 349,50 USD/t, +15,51% YTD, max 14 527,50), bankier.pl — notowania KGHM 4.09 (max 360,00), PolsatNews/rp.pl/Parkiet/Strefa Biznesu (projekt CIT 30% MF: 30/26/23%, wpływy 2 830/2 547/1 566 mln zł; deklaracja min. Motyki o ustawie bez działania wstecz), BLS/CNBC/NBC/Kiplinger (payrolls +162 tys., bezrobocie 4,1%, płace +0,3% m/m, rewizje +55 tys.), Parkiet/Interia (Rogalski, DM BOŚ: podwyżka Fed 16.09 — 60%), bankier.pl/Parkiet/rp.pl (Rail Baltica: wyrok 4.09, Mirbud −5,31%, Unibep–Track Tec–Intop, Budimex–Porr wykluczone), stockwatch.pl/Parkiet/rp.pl (wezwanie Couche-Tard na Żabkę: 32 zł, zapisy do 25.09, &gt;57% zobowiązań), bankier.pl 3.09 (rejestr KNF: aktualizacja 2.09, błąd Syn2Bio, Fidelity/Azoty), Parkiet (skład rejestru KNF: Modivo, CD Projekt, Tauron, Pepco, Kęty, Budimex, Allegro, Żabka), stockwatch.pl/Strefa Inwestorów (DM BOŚ sierpień — PGE do longów; Trigon lipiec — KGHM/Pepco/Kęty „neutralnie"; BM BNP Paribas — Allegro we wrześniu), stockwatch.pl (Kęty: EBITDA 2026 1 112 mln zł, normalizacja H2; Dino: mediacje OPZZ 2.09), bankier.pl — „Ważny tydzień dla kredytobiorców" (4.09: RPP 9.09 — 3,75%, EBC 10.09 14:15 — 2,25%, NBP 15:00, CPI USA 11.09 — 3,4% r/r, Tauron/Enea wyniki), ISBnews — kalendarium (Torpol 7.09 10:00), STOXX (przegląd 1.09: XTB za Tauron od 21.09). Wszystkie liczby z datami w treści; „b.d." = brak potwierdzonego odczytu w dostępnych źródłach. PROBLEMY (bieg 5.09): konektor FMP jest w sesji, ale plan FMP nadal blokuje endpoint kursowy („chart" → ACCESS DENIED, wymagany wyższy plan; „quote" nie odpytywany — zablokowany w poprzednich biegach) — FMP nie może pełnić roli priorytetowego źródła; grant/plan konektora dla rutyny wciąż nieustawiony. Użyto rezerwy <code>kursy.py</code>: Yahoo chart API ponownie HTTP 429 z IP chmury (budżet ponowień wyczerpany), komplet zamknięć 4.09 (21/21) z tabel bankier.pl, zmiany dzienne spójne z depeszami ISBnews; walidacja D0 przez cache: 11/11 OK, D0 co do grosza; cache zaktualizowany i scommitowany. Niedostępne wprost z tego środowiska (blokada egress): rss.knf.gov.pl (rejestr KNF), biznes.pap.pl (pusta odpowiedź), parkiet.com, inwestycje.pl, interia.pl, wnp.pl, tauron.pl, energetyka24.com, squaber — dane z tych źródeł wyłącznie przez podsumowania wyszukiwarki; treść raportu Tauron 34/2026 (udział Goldman Sachs) nieodczytana — b.d.</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny — nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów. Wygenerowano automatycznie przez system AI („Puls WIG20"), 5.09.2026, ok. 8:10–8:40 (GPW zamknięta).
+  </footer>
+</div>
+</body>
+</html>
