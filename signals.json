@@ -44,16 +44,16 @@
       "ticker": "KGHM",
       "action": "REDUCE",
       "date": "2026-09-02",
-      "reason": "Ruch -4,14% od D0 przeciw tezie LONG (362,00 -> 347,00 zl, zamkniecie 1.09) po korekcie miedzi na LME z okolic rekordu ~14 400 USD/t - miekki wyzwalacz z pasma 4-8%: ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy ruchu >8% od D0 lub twardym zdarzeniu. Aktualizacja 3.09: po sesji 2.09 kurs 344,15 zl (-4,93% od D0) - nadal w pasmie 4-8%, REDUCE utrzymany. Aktualizacja 4.09: po sesji 3.09 kurs 352,20 zl (+2,34% d/d, -2,71% od D0) - odbicie za miedzia (rekordowe ceny), ponizej pasma 4-8%, ale REDUCE zgodnie z protokolem utrzymany do soboty (bez cofania)."
+      "reason": "Ruch -4,14% od D0 przeciw tezie LONG (362,00 -> 347,00 zl, zamkniecie 1.09) po korekcie miedzi na LME z okolic rekordu ~14 400 USD/t - miekki wyzwalacz z pasma 4-8%: ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy ruchu >8% od D0 lub twardym zdarzeniu. Aktualizacja 3.09: po sesji 2.09 kurs 344,15 zl (-4,93% od D0) - nadal w pasmie 4-8%, REDUCE utrzymany. Aktualizacja 4.09: po sesji 3.09 kurs 352,20 zl (+2,34% d/d, -2,71% od D0) - odbicie za miedzia (rekordowe ceny), ponizej pasma 4-8%, ale REDUCE zgodnie z protokolem utrzymany do soboty (bez cofania). Aktualizacja 5.09: po sesji 4.09 kurs 356,00 zl (+1,08% d/d, -1,66% od D0) - miedz na LME z rekordem zamkniecia (14 349,50 USD/t), kurs dalej ponizej pasma 4-8%; REDUCE utrzymany do konca okna W3 (sobota) zgodnie z protokolem, bez nowych wyzwalaczy."
     },
     {
       "ticker": "CDPROJEKT",
       "action": "REDUCE",
       "date": "2026-09-03",
-      "reason": "Raport H1 2026 (2.09, po sesji) wyraznie powyzej konsensusu PAP przeciw tezie SHORT: przychody Q2 244,2 mln zl (+22%), EBITDA 161,4 mln zl (+47%), zysk netto 142,9 mln zl (+44% vs 99,3 mln zl) - istotny news przeciw tezie ponizej rangi szoku (czesc beatu to rozwiazanie rezerwy na program motywacyjny; zarzad uznaje cel 3 mld zl zysku netto 2024-2027 za malo prawdopodobny, co potwierdza filar tezy o opoznionym harmonogramie wydawniczym). Kurs 2.09 (231,20 zl, -2,24% od D0) nie zawiera jeszcze reakcji na wyniki. Ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy odbiciu >4% od D0 (powyzej ~246 zl) lub twardym zdarzeniu. Aktualizacja 4.09: pierwsza sesja po wynikach (3.09) tylko +0,65% do 232,70 zl (pozycja +1,61% od D0) - reakcja stlumiona, daleko od progu awansu do CLOSE (~246 zl); REDUCE utrzymany do soboty."
+      "reason": "Raport H1 2026 (2.09, po sesji) wyraznie powyzej konsensusu PAP przeciw tezie SHORT: przychody Q2 244,2 mln zl (+22%), EBITDA 161,4 mln zl (+47%), zysk netto 142,9 mln zl (+44% vs 99,3 mln zl) - istotny news przeciw tezie ponizej rangi szoku (czesc beatu to rozwiazanie rezerwy na program motywacyjny; zarzad uznaje cel 3 mld zl zysku netto 2024-2027 za malo prawdopodobny, co potwierdza filar tezy o opoznionym harmonogramie wydawniczym). Kurs 2.09 (231,20 zl, -2,24% od D0) nie zawiera jeszcze reakcji na wyniki. Ciecie pozycji do polowy, obowiazuje do soboty; awans do CLOSE przy odbiciu >4% od D0 (powyzej ~246 zl) lub twardym zdarzeniu. Aktualizacja 4.09: pierwsza sesja po wynikach (3.09) tylko +0,65% do 232,70 zl (pozycja +1,61% od D0) - reakcja stlumiona, daleko od progu awansu do CLOSE (~246 zl); REDUCE utrzymany do soboty. Aktualizacja 5.09: sesja 4.09 -0,30% do 232,00 zl (pozycja SHORT +1,90% od D0); CFO 4.09: przychody z licencji IP w Q2 ok. 85 mln zl (vs ok. 10 mln zl w Q1), czesc z nieogloszonych projektow - bez zmiany filaru tezy; REDUCE utrzymany do konca okna W3 (sobota), prog awansu do CLOSE (~246 zl) nieosiagniety."
     }
   ],
-  "last_daily": "2026-09-04",
+  "last_daily": "2026-09-05",
   "d0": {
     "date": "2026-08-28",
     "wig20": 3993.7,
