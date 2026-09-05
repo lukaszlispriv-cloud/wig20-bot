@@ -8,6 +8,7 @@
 - `rankings/<week>.json` — pełny ranking tygodnia (20 spółek, punkty per kategoria, p, uzasadnienie), rejestr katalizatorów, `data_quality`. Raport tygodniowy tworzy nowy plik; Puls DOPISUJE katalizatory i kody jakości. Plików z poprzednich tygodni NIE zmieniać ex post.
 - `history` w `signals.json` ma dodatkowo pola `base_rate`, `spearman`, `brier`, `data_quality`.
 - Aktualne prompty rutyn: `docs/routine-raport-tygodniowy-prompt.txt`, `docs/routine-puls-wig20-prompt.txt` (wersje do wklejenia w claude.ai → Routines).
+- `scripts/metryki.py` przyjmuje `--index` i `--cache`, więc działa też dla innych uniwersów; pakiet wdrożeniowy dla rutyn NDX100: `docs/ndx100-wdrozenie.md`.
 
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 

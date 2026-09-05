@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-metryki.py — metryki całego rankingu WIG20 i mechaniczne momentum.
+metryki.py — metryki całego rankingu (WIG20, NDX100 — dowolny indeks w cache) i mechaniczne momentum.
 
-Użycie (w katalogu repo):
+Użycie (w katalogu repo; opcje wspólne: --index KLUCZ_INDEKSU [domyślnie WIG20,
+np. NDX], --cache ŚCIEŻKA [domyślnie data/kursy-cache.json]):
   python3 scripts/metryki.py momentum --d0 2026-09-04 [--json]
       Momentum 0–25 pkt liczone MECHANICZNIE z data/kursy-cache.json:
       ranga po zwrocie relatywnym do WIG20 z 5 sesji (waga 2/3) i 20 sesji
@@ -48,6 +49,10 @@ def p_z_wyniku(score):
     return round(min(P_MAX, max(P_MIN, (50 + 0.5 * (score - 50)) / 100)), 2)
 
 
+INDEKS = "WIG20"            # klucz indeksu w cache; nadpisywany przez --index (np. NDX)
+CACHE = os.path.join("data", "kursy-cache.json")   # nadpisywany przez --cache
+
+
 def _baza():
     for b in (".", ".."):
         if os.path.exists(os.path.join(b, "signals.json")):
@@ -55,9 +60,12 @@ def _baza():
     return "."
 
 
-def wczytaj_cache():
-    p = os.path.join(_baza(), "data", "kursy-cache.json")
-    return json.load(open(p, encoding="utf-8"))["kursy"]
+def wczytaj_cache(sciezka=None):
+    p = sciezka or os.path.join(_baza(), CACHE)
+    cache = json.load(open(p, encoding="utf-8"))["kursy"]
+    if INDEKS not in cache:
+        sys.exit(f"brak indeksu {INDEKS} w {p} (użyj --index)")
+    return cache
 
 
 def rangi_srednie(wartosci, malejaco=True):
@@ -89,14 +97,14 @@ def pearson(x, y):
 # ---------------------------------------------------------------- momentum
 
 def momentum(d0, cache):
-    sesje = sorted(cache["WIG20"])
+    sesje = sorted(cache[INDEKS])
     if d0 not in sesje:
-        sys.exit(f"brak sesji {d0} dla WIG20 w cache")
+        sys.exit(f"brak sesji {d0} dla {INDEKS} w cache")
     i0 = sesje.index(d0)
     d5 = sesje[i0 - 5] if i0 >= 5 else None
     d20 = sesje[i0 - 20] if i0 >= 20 else None
-    wig = cache["WIG20"]
-    tick = sorted(t for t in cache if t != "WIG20")
+    wig = cache[INDEKS]
+    tick = sorted(t for t in cache if t != INDEKS)
     rel5, rel20, flagi = {}, {}, {}
     for t in tick:
         k = cache[t]
@@ -139,9 +147,9 @@ def momentum(d0, cache):
 def rozlicz(week, d0, d5, cache):
     p = os.path.join(_baza(), "rankings", f"{week}.json")
     rk = json.load(open(p, encoding="utf-8"))
-    wig = cache["WIG20"]
+    wig = cache[INDEKS]
     if d0 not in wig or d5 not in wig:
-        sys.exit(f"brak WIG20 dla {d0}/{d5} w cache")
+        sys.exit(f"brak {INDEKS} dla {d0}/{d5} w cache")
     rb = wig[d5] / wig[d0] - 1
     wiersze, braki = [], []
     for w in rk["ranking"]:
@@ -170,7 +178,7 @@ def rozlicz(week, d0, d5, cache):
     hit_top = sum(w["y"] for w in top)
     hit_bot = sum(1 - w["y"] for w in bot)
     kier = sum(1 for w in wiersze if (w["p"] > 0.5) == (w["y"] == 1) or (w["p"] == 0.5)) / n
-    return {"week": week, "d0": d0, "d5": d5, "wig20_zwrot_pct": round(rb * 100, 2),
+    return {"week": week, "d0": d0, "d5": d5, "indeks": INDEKS, "indeks_zwrot_pct": round(rb * 100, 2),
             "n": n, "braki": braki,
             "baza_tygodnia": round(ybar, 3),
             "hit_top5": f"{hit_top}/5", "hit_top5_losowo": round(5 * ybar, 2),
@@ -182,13 +190,17 @@ def rozlicz(week, d0, d5, cache):
 
 
 def main():
+    global INDEKS
     ap = argparse.ArgumentParser()
+    ap.add_argument("--index", default=INDEKS, help="klucz indeksu w cache (WIG20, NDX, ...)")
+    ap.add_argument("--cache", default=None, help="ścieżka do kursy-cache.json (domyślnie data/kursy-cache.json)")
     sub = ap.add_subparsers(dest="cmd", required=True)
     m = sub.add_parser("momentum"); m.add_argument("--d0", required=True); m.add_argument("--json", action="store_true")
     r = sub.add_parser("rozlicz"); r.add_argument("--week", required=True); r.add_argument("--d0", required=True)
     r.add_argument("--d5", required=True); r.add_argument("--json", action="store_true")
     a = ap.parse_args()
-    cache = wczytaj_cache()
+    INDEKS = a.index
+    cache = wczytaj_cache(a.cache)
     if a.cmd == "momentum":
         out = momentum(a.d0, cache)
         if a.json:
@@ -203,7 +215,7 @@ def main():
         out = rozlicz(a.week, a.d0, a.d5, cache)
         if a.json:
             print(json.dumps(out, ensure_ascii=False, indent=1)); return
-        print(f"ROZLICZENIE {out['week']} ({out['d0']} → {out['d5']}), WIG20 {out['wig20_zwrot_pct']:+.2f}%, n={out['n']}"
+        print(f"ROZLICZENIE {out['week']} ({out['d0']} → {out['d5']}), {out['indeks']} {out['indeks_zwrot_pct']:+.2f}%, n={out['n']}"
               + (f", BRAKI: {', '.join(out['braki'])}" if out["braki"] else ""))
         print(f"{'#':>2} {'TICKER':10} {'p':>5} {'D0':>9} {'D+5':>9} {'zwrot%':>8} {'alfa pp':>8} y")
         for w in sorted(out["wiersze"], key=lambda w: w["rank"]):
