@@ -69,10 +69,12 @@ Kroki 1–3 i 4 muszą iść w tej kolejności, inaczej bot zamilknie w locie.
   Postman `capital-com-sv/capital-api-postman`). Każda zmiana wielkości — `REDUCE` i korekta
   roli — to zamknij+otwórz i drugi spread. Dlatego bot rusza pozycję dopiero przy odchyleniu
   ponad `SIZE_TOL`, a nie przy każdym biegu.
-- **Koszyk SHORT nadal nie jest handlowany.** To świadomy wybór trybu `HEDGE_MODE=index`
-  dla rachunku LONG_ONLY, nie usterka. Konsekwencja: rachunek zbiera wyłącznie alfę strony
-  długiej. Za W3 to była różnica między +1,32 p.p. na papierze a −1,61 p.p. na rachunku.
-  Jeśli chcesz zbierać obie strony, potrzebny jest rachunek dopuszczający SELL na akcjach
-  i `HEDGE_EPIC` puste (tryb `classic`).
+- **Koszyk SHORT nie jest handlowany i nie będzie.** Rachunek Capital.com nie pozwala
+  otwierać pozycji krótkich na CFD na akcje (potwierdzone 7.09.2026), więc tryb `classic`
+  jest niedostępny — to ograniczenie rachunku, nie ustawienie do przełączenia. Konsekwencja:
+  rachunek zbiera wyłącznie alfę strony długiej, a spread LONG−SHORT jest metryką z definicji
+  nieosiągalną. Za W3 to była różnica między +1,32 p.p. na papierze a −1,61 p.p. na rachunku.
+  Jedyną otwartą decyzją konstrukcyjną zostaje `HEDGE_RATIO` — reguła jej zmiany jest
+  zadeklarowana z góry w `docs/metoda.md`, sekcja 10, żeby nie tuningować na szumie.
 - **Luka rotacyjna.** Raport liczy od zamknięcia piątku, bot rotuje w poniedziałek 9:15.
   Poniedziałkowa luka otwarcia jest kosztem, którego model nie widzi.
