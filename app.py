@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-BASKET BOT v1.8.0 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
+BASKET BOT v1.8.1 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
-do GitHuba i sam powiadamia na Telegramie. Człowiek nic nie podmienia.
+do GitHuba. Człowiek nic nie podmienia. Raportowanie: log Rendera
+(filtruj po prefiksie "BOT |"; awarie lecą jako ERROR) oraz JSON endpointów.
 
 ZMIANY w v1.8.0 (po audycie rozjazdu raport vs rachunek, 7.09.2026):
   * hedge indeksowy liczony z FAKTYCZNIE otwartych pozycji, nie z koszyka
@@ -20,9 +21,21 @@ ZMIANY w v1.8.0 (po audycie rozjazdu raport vs rachunek, 7.09.2026):
   wielkości to zamknij+otwórz i drugi spread — stąd progi, a nie korekta
   przy każdym biegu.
 
+ZMIANY w v1.8.1:
+  * Telegram odcięty — kanał nigdy nie był podłączony, a treść i tak szła do
+    logu. Jedyny kanał raportowania to log Rendera (prefiks "BOT |"; awarie
+    jako ERROR, bieg z błędami jako WARNING) plus JSON endpointów;
+  * OGRANICZENIA_RACHUNKU — jawny zapis, że rachunek nie shortuje CFD na
+    akcje. API Capital.com NIE ma pola o dostępności SELL (odpowiedź
+    /markets/{epic} to instrument + dealingRules), więc bez tego zapisu
+    ograniczenie ginie i wraca jako "napraw HEDGE_MODE na classic";
+  * /status zwraca ekspozycję netto oraz diagnostyka_instrumentow: dla każdej
+    nogi koszyka status rynku, minDealSize i werdykt, czy wejdzie w docelowej
+    wielkości — odpowiedź na "czemu ten long nie wszedł" bez czekania na bieg.
+
 OBIEG DOBOWY (sterowany z cron-job.org):
   pn–pt 8:10  -> /generate?mode=daily   (puls: status + ew. wykluczenia,
-                                         raport HTML, Telegram ~8:30)
+                                         raport HTML ~8:30)
   pn–pt 9:15  -> /run                   (synchronizacja pozycji na demo)
   pn–pt 13:05 -> /run                   (bieg doganiający, opcjonalny)
   sobota 8:30 -> /generate?mode=weekly  (rozliczenie tygodnia + nowe koszyki)
@@ -133,8 +146,11 @@ HEDGE_TOL   = float(os.environ.get("HEDGE_TOL", "0.30"))
 HEDGE_MODE  = ("classic" if not HEDGE_EPIC
                else ("off" if HEDGE_EPIC.upper() == "OFF" else "index"))
 
-TG_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-TG_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "")
+# Telegram usunięty w v1.8.1 — kanał nigdy nie był podłączony, a cała treść
+# powiadomień i tak szła najpierw do logu. Jedynym kanałem raportowania jest
+# log Rendera (+ odpowiedź JSON endpointu). Nie przywracaj wysyłki do
+# zewnętrznego serwisu bez wyraźnej decyzji: to wynoszenie stanu rachunku
+# na zewnątrz.
 
 BASE_URL = ("https://demo-api-capital.backend-capital.com" if CAPITAL_DEMO
             else "https://api-capital.backend-capital.com")
@@ -149,15 +165,17 @@ log = logging.getLogger("wig20bot")
 app = Flask(__name__)
 
 
-def notify(text: str):
-    log.info("NOTIFY: %s", text)
-    if TG_TOKEN and TG_CHAT:
-        try:
-            requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
-                          json={"chat_id": TG_CHAT, "text": text,
-                                "disable_web_page_preview": True}, timeout=10)
-        except Exception as e:
-            log.warning("Telegram nie zadziałał: %s", e)
+def notify(text: str, poziom: str = "info"):
+    """Jedyny kanał raportowania: log Rendera.
+
+    Poziom ma znaczenie praktyczne — w panelu Rendera można filtrować po
+    ERROR/WARNING, więc awarie da się znaleźć bez czytania całego dnia
+    logów. Wcześniej wszystko szło jako INFO i ginęło w szumie gunicorna.
+    Każda linia dostaje prefiks BOT, żeby dało się filtrować po nim.
+    """
+    zapisz = {"error": log.error, "warning": log.warning}.get(poziom, log.info)
+    for i, linia in enumerate(str(text).splitlines() or [""]):
+        zapisz("BOT | %s%s", "" if i == 0 else "    ", linia)
 
 
 # ----------------------------------------------------------------------------
@@ -644,6 +662,85 @@ def calc_size(cap, target_acc, epic, acc_ccy):
     return size, m, "ok"
 
 
+# ----------------------------------------------------------------------------
+# OGRANICZENIA RACHUNKU — wiedza, której API NIE zwraca
+# ----------------------------------------------------------------------------
+# Odpowiedź /api/v1/markets/{epic} zawiera wyłącznie instrument + dealingRules
+# (minDealSize, dystanse stopów, marketOrderPreference, trailingStopsPreference).
+# NIE MA tam żadnego pola mówiącego, czy na danym instrumencie wolno otworzyć
+# pozycję krótką — sprawdzone w oficjalnej kolekcji Postman capital-com-sv.
+# Jedynym sposobem sprawdzenia jest wysłanie zlecenia i odczytanie odrzucenia.
+# Dlatego ograniczenie jest tu zapisane JAWNIE, a nie „wiadome" z kodu: bez
+# tego co pół roku ktoś (człowiek albo model) próbuje „naprawić" HEDGE_MODE
+# na classic i odkrywa problem od nowa, po drodze psując ekspozycję.
+OGRANICZENIA_RACHUNKU = {
+    "short_na_akcjach": False,
+    "potwierdzone": "2026-09-07",
+    "zrodlo": "właściciel rachunku; wcześniej odrzucenia brokera na etapie "
+              "/confirms przy SELL na CFD na akcje",
+    "skutek": [
+        "HEDGE_MODE=classic jest NIEDOSTĘPNY — koszyk SHORT nie może trafić "
+        "na rachunek jako pozycje na akcjach",
+        "stronę krótką realizuje wyłącznie short na indeksie (HEDGE_EPIC)",
+        "spread LONG−SHORT jest metryką Z DEFINICJI NIEOSIĄGALNĄ — nie wolno "
+        "jej podawać jako wyniku rachunku ani stawiać jako celu",
+        "rachunek zbiera wyłącznie alfę strony długiej wobec indeksu",
+    ],
+    "uwaga_api": "Capital.com nie udostępnia pola o dostępności SELL ani "
+                 "częściowego zamknięcia pozycji — obie rzeczy są "
+                 "ograniczeniami brokera, nie do obejścia w kodzie.",
+}
+
+
+def diagnostyka_instrumentow(cap, sig, equity, ccy):
+    """Czy każda noga koszyka MOŻE wejść w docelowej wielkości.
+
+    Odpowiada na pytanie „czemu ten long nie wszedł" BEZ czekania na kolejny
+    bieg: dla każdej spółki koszykowej podaje status rynku, minimalną wielkość
+    brokera i wynikającą z niej minimalną wartość pozycji wobec celu
+    i tolerancji MAX_OVERSHOOT.
+    """
+    cel = equity * ALLOC_PCT
+    out = []
+    for ticker in list(sig.get("long", [])) + list(sig.get("short", [])):
+        epic = sig.get("epics", {}).get(ticker, "")
+        w = {"ticker": ticker, "epic": epic, "kierunek":
+             "BUY" if ticker in sig.get("long", []) else "SELL"}
+        if not epic or epic.upper().startswith("UZUP"):
+            out.append(dict(w, werdykt="BRAK EPIC — nie da się handlować"))
+            continue
+        if w["kierunek"] == "SELL" and HEDGE_MODE != "classic":
+            out.append(dict(w, werdykt="NIE HANDLOWANE — koszyk SHORT idzie "
+                                       "przez short indeksu (rachunek nie "
+                                       "shortuje akcji)"))
+            continue
+        try:
+            m = cap.market(epic)
+        except requests.HTTPError as e:
+            out.append(dict(w, werdykt=f"rynek niedostępny w API ({e})"))
+            continue
+        fx = cap.fx_rate(ccy, m["currency"])
+        min_wart = m["min"] * m["mid"] / fx if m["mid"] else None
+        w.update({"status_rynku": m["status"], "kurs": m["mid"],
+                  "min_wielkosc": m["min"],
+                  "min_wartosc_pozycji": round(min_wart, 2) if min_wart else None,
+                  "cel": round(cel, 2),
+                  "tolerancja": round(cel * MAX_OVERSHOOT, 2)})
+        if min_wart is None:
+            w["werdykt"] = "brak ceny — pominięty"
+        elif min_wart > cel * MAX_OVERSHOOT:
+            w["werdykt"] = (f"NIE WEJDZIE: minimalna pozycja {min_wart:.0f} "
+                            f"{ccy} > tolerancja {cel * MAX_OVERSHOOT:.0f} "
+                            f"{ccy}. Podnieś ALLOC_PCT albo MAX_OVERSHOOT, "
+                            f"albo pogódź się z węższym koszykiem.")
+        elif m["status"] != "TRADEABLE":
+            w["werdykt"] = f"NIE WEJDZIE TERAZ: rynek {m['status']}"
+        else:
+            w["werdykt"] = "OK"
+        out.append(w)
+    return out
+
+
 def wartosc_pozycji(cap, p, acc_ccy):
     """Wartość otwartej pozycji w WALUCIE RACHUNKU (None, gdy brak ceny)."""
     try:
@@ -764,8 +861,9 @@ def sync():
     if equity < START_EQUITY * KILL_LEVEL:
         for p in positions:
             do_close(p, "KILL SWITCH")
-        notify(f"⛔ WIG20 BOT KILL SWITCH: kapitał {equity:.2f} {ccy}. "
-               f"Wszystko zamknięte, handel wstrzymany.")
+        notify(f"⛔ KILL SWITCH: kapitał {equity:.2f} {ccy} poniżej progu "
+               f"{START_EQUITY * KILL_LEVEL:.2f}. Wszystko zamknięte, handel "
+               f"wstrzymany.", "error")
         rep["akcje"].append("KILL SWITCH aktywny — handel wstrzymany.")
         return rep
 
@@ -998,7 +1096,7 @@ def sync():
         linie.append(f"• pominięte: {x}")
     for x in rep["błędy"][:6]:
         linie.append(f"‼️ {x[:160]}")
-    notify("\n".join(linie))
+    notify("\n".join(linie), "warning" if rep["błędy"] else "info")
     log.info("RAPORT /run: %s", json.dumps(rep, ensure_ascii=False)[:4000])
     return rep
 
@@ -1038,7 +1136,7 @@ def auth_ok():
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.8.0", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
+    return jsonify(ok=True, wersja="1.8.1", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
@@ -1053,8 +1151,8 @@ def generate_ep():
         return jsonify(generate(mode, do_commit))
     except Exception as e:
         log.exception("Błąd generatora")
-        notify(f"❌ WIG20 BOT /generate {mode}: {e}. "
-               f"Stare sygnały pozostają w mocy — decyzja ręczna.")
+        notify(f"❌ /generate {mode}: {e}. "
+               f"Stare sygnały pozostają w mocy — decyzja ręczna.", "error")
         return jsonify(error=str(e)), 500
 
 
@@ -1066,7 +1164,7 @@ def run_ep():
         return jsonify(sync())
     except Exception as e:
         log.exception("Błąd biegu")
-        notify(f"❌ WIG20 BOT /run: {e}")
+        notify(f"❌ /run przerwany: {e}", "error")
         return jsonify(error=str(e)), 500
 
 
@@ -1090,6 +1188,12 @@ def status_ep():
                    if e and not e.upper().startswith("UZUP")}
         if HEDGE_MODE == "index" and HEDGE_EPIC:
             managed.add(HEDGE_EPIC)
+        pozycje = [p for p in cap.positions() if p["epic"] in managed]
+        dlugie = sum(wartosc_pozycji(cap, p, ccy) or 0.0 for p in pozycje
+                     if p["direction"] == "BUY" and p["epic"] != HEDGE_EPIC)
+        krotkie = sum(wartosc_pozycji(cap, p, ccy) or 0.0 for p in pozycje
+                      if p["direction"] == "SELL")
+        netto = dlugie - krotkie
         return jsonify(blad_przelaczenia_rachunku=cap.switch_error,
                        konta_wszystkie=konta,
                        sygnaly={k: sig[k] for k in
@@ -1097,8 +1201,19 @@ def status_ep():
                                  "exclude", "tactical")},
                        historia=sig.get("history", []),
                        konto={"accountId": acc, "kapital": eq, "waluta": ccy},
-                       pozycje=[p for p in cap.positions()
-                                if p["epic"] in managed],
+                       pozycje=pozycje,
+                       ekspozycja={"dlugie": round(dlugie, 2),
+                                   "krotkie": round(krotkie, 2),
+                                   "netto": round(netto, 2),
+                                   "netto_pct_kapitalu": (
+                                       round(netto / eq * 100, 1) if eq else None),
+                                   "waluta": ccy,
+                                   "uwaga": ("wartości ujemne netto = rachunek "
+                                             "jest per saldo KRÓTKI")},
+                       ograniczenia_rachunku=OGRANICZENIA_RACHUNKU,
+                       tryb_hedge=HEDGE_MODE,
+                       diagnostyka_instrumentow=diagnostyka_instrumentow(
+                           cap, sig, eq, ccy),
                        dry_run=DRY_RUN)
     except Exception as e:
         return jsonify(error=str(e)), 500
@@ -1130,7 +1245,7 @@ def close_all_ep():
             else:
                 ok, msg = cap.close(p["dealId"])
                 out.append(f"zamknięto {p['epic']}" if ok else f"błąd: {msg}")
-    notify("WIG20 BOT: ręczne CLOSE_ALL wykonane.")
+    notify("ręczne CLOSE_ALL wykonane — portfel płasko.", "warning")
     return jsonify(wynik=out)
 
 
