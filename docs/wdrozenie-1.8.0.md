@@ -1,11 +1,19 @@
-# Wdrożenie v1.8.0 — co trzeba zrobić ręcznie
+# Wdrożenie v1.8.x — co trzeba zrobić ręcznie
+
+Stan na 7.09.2026 po wdrożeniu v1.8.1: punkty 1 i 2 są ROZSTRZYGNIĘTE, do zrobienia zostają 3, 4 i przesunięcie porannego crona (punkt 2).
 
 Zmiany w kodzie wchodzą same przy najbliższym deployu na Renderze. Poniższe kroki
 wymagają Twojej ręki — bez nich część poprawek nie zadziała.
 
-## 1. Pilne: wyrównanie ekspozycji na rachunku
+## 1. Wyrównanie ekspozycji — ZROBIONE 7.09.2026
 
-Stan zastany 7.09.2026 po biegu 9:15 (z `leveraged_trades_history` i logu Rendera):
+Po wdrożeniu v1.8.1 `/status` pokazał ekspozycję netto **−79 PLN = −2,7% kapitału**
+(było −1 077 PLN = −36,7%). Wszystkie pięć longów jest otwartych, PGE zostało
+przeskalowane z 12 na 22,4 szt. (291 PLN, dokładnie cel). Hedge 0,37 kontraktu
+= 1 519 PLN naprzeciw 1 439 PLN longów — odchyłka 5,5%, poniżej progu
+`HEDGE_TOL`, więc bot słusznie go nie rusza. **Nie ma tu nic do zrobienia ręcznie.**
+
+Stan sprzed poprawki, dla historii (po biegu 9:15, z `leveraged_trades_history` i logu Rendera):
 
 | pozycja | wielkość | wartość |
 |---|---|---|
@@ -15,27 +23,31 @@ Stan zastany 7.09.2026 po biegu 9:15 (z `leveraged_trades_history` i logu Render
 | **ekspozycja netto** | | **−1 077 PLN = −36,7% kapitału** |
 
 Bot uznawał to za pozycję neutralną, bo hedge liczył od koszyka docelowego (5 × 293 = 1 466 PLN),
-a nie od tego, co realnie weszło. Po deployu **pierwszy `/run` sam to naprawi**: policzy ekspozycję
-długą z faktycznych pozycji i dotnie hedge do jej wielkości.
+a nie od tego, co realnie weszło.
 
-Zanim to zrobisz, zajrzyj do `/status` — jeśli WIG20 zdąży się cofnąć, domknięcie shorta na spadku
-kosztuje mniej. To jedyna decyzja, której kod za Ciebie nie podejmie.
+## 2. Dlaczego PKNORLEN, PZU i MBANK nie weszły — ROZSTRZYGNIĘTE 7.09.2026
 
-## 2. Dlaczego PKNORLEN, PZU i MBANK nie weszły
+Odpowiedź z `/status` po wdrożeniu, przez eliminację:
 
-**Nie musisz czekać na kolejny bieg** — otwórz `/status` i spójrz na `diagnostyka_instrumentow`.
-Dla każdej nogi koszyka podaje status rynku, minimalną wielkość brokera, wynikającą z niej minimalną
-wartość pozycji i werdykt (`OK` albo `NIE WEJDZIE: ...` z liczbami). Powody trafiają też do logu
-przy każdym biegu. Najbardziej prawdopodobne dwa:
+1. **To nie była minimalna wielkość.** Diagnostyka pokazała `min_wielkosc: 0.1`
+   dla wszystkich nóg (min. wartość pozycji 1,3–26 PLN przy tolerancji 466 PLN),
+   a MBANK wszedł przy 0,2. Hipoteza o `minDealSize` odpada.
+2. **To nie był błąd API.** Gdyby `market()` rzuciło wyjątkiem, wpis trafiłby do
+   `błędy`, nie do `pominiete`. Log z 7.09 mówi `pominięte: 4`.
+3. Zostaje jedyna ścieżka, która wrzuca do `pominiete` bez wyjątku i bez
+   problemu z wielkością: **`status_rynku` inny niż `TRADEABLE`**.
 
-- **minimalna wielkość transakcji ponad tolerancję** — przy celu 293 PLN i `MAX_OVERSHOOT=1.6`
-  próg to 469 PLN; MBANK po ~1 420 zł wymaga kroku ≥0,33, więc jeśli Capital.com ma tam
-  `minDealSize` np. 0,5 (≈710 PLN), pozycja jest odrzucana z automatu;
-- **rynek nie `TRADEABLE` o 9:15** — bieg wypada 15 minut po otwarciu GPW.
+Czyli o 9:15 CEST Capital.com nie miał jeszcze polskich CFD na akcje jako
+zbywalnych, mimo że GPW otwiera się o 9:00. Zamknięcia starego koszyka
+przeszły (te nie wymagają otwarcia rynku w tym samym sensie), otwarcia nie —
+i rachunek został z pełnym hedgem naprzeciw dwóch nóg aż do biegu
+doganiającego o 13:05.
 
-Jeśli okaże się to pierwsze, masz trzy wyjścia: podnieść `ALLOC_PCT`, podnieść `MAX_OVERSHOOT`
-albo świadomie zostawić te spółki poza koszykiem — ale wtedy hedge (już poprawny) będzie
-odpowiednio mniejszy i strategia stanie się węższa, niż zakłada ranking.
+**Zalecenie: przesuń poranny `/run` z 9:15 na ok. 10:00 CEST.** Bieg 13:05
+zostaje jako siatka bezpieczeństwa. Bez tej zmiany każda poniedziałkowa
+rotacja będzie powtarzać ten sam schemat: zamknięcia rano, otwarcia dopiero
+po południu, a pomiędzy nimi kilka godzin ekspozycji netto, której nikt nie
+zamierzał.
 
 ## 3. Token poza URL
 
@@ -65,7 +77,7 @@ Do **usunięcia** z Rendera (v1.8.1 ich nie czyta): `TELEGRAM_BOT_TOKEN`, `TELEG
 
 Żadnej nie trzeba ustawiać od razu — domyślne wartości są bezpieczne.
 
-## 5. Czego v1.8.0 NIE naprawia
+## 5. Czego v1.8.x NIE naprawia
 
 - **Częściowe zamknięcie pozycji nie istnieje w API Capital.com.** `DELETE /positions/{dealId}`
   nie przyjmuje rozmiaru, `PUT` zmienia tylko stop/limit (sprawdzone w oficjalnej kolekcji
@@ -79,5 +91,7 @@ Do **usunięcia** z Rendera (v1.8.1 ich nie czyta): `TELEGRAM_BOT_TOKEN`, `TELEG
   nieosiągalną. Za W3 to była różnica między +1,32 p.p. na papierze a −1,61 p.p. na rachunku.
   Jedyną otwartą decyzją konstrukcyjną zostaje `HEDGE_RATIO` — reguła jej zmiany jest
   zadeklarowana z góry w `docs/metoda.md`, sekcja 10, żeby nie tuningować na szumie.
-- **Luka rotacyjna.** Raport liczy od zamknięcia piątku, bot rotuje w poniedziałek 9:15.
+- **Luka rotacyjna.** Raport liczy od zamknięcia piątku, bot rotuje w poniedziałek rano.
   Poniedziałkowa luka otwarcia jest kosztem, którego model nie widzi.
+- **Limit zapytań Capital.com.** v1.8.1 dostał pamięć podręczną notowań na czas żądania
+  i ponowienia przy HTTP 429, ale broker nadal dławi serie. Nie odpytuj `/status` w pętli.
