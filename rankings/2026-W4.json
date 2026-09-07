@@ -490,7 +490,27 @@
    "dn": 5,
    "opis": "CPI USA za sierpień (14:30 CEST)",
    "wklad_pkt": 0
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-07",
+   "dn": 1,
+   "opis": "nieoficjalne doniesienia prasowe: Skarb Panstwa proponuje Orlenowi zakup 40-45% akcji PGZ za 20-22 mld zl (obejscie prezydenckiego weta wobec podatku od nadmiarowych zyskow); brak ESPI, brak decyzji i harmonogramu; kurs bez negatywnej reakcji (+0,35% o 10:40, +0,80% od D0 o 11:48) - ponizej progu reakcji, bez REDUCE",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl, 2026-09-07 10:45"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "wystapienie prezesa NBP A. Glapinskiego, 15:00 (termin potwierdzony w datowanym zrodle z biezacego tygodnia)",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl, 'Wazny tydzien dla kredytobiorcow w zlotych i euro', publ. 2026-09-04, akt. 2026-09-06"
   }
  ],
- "data_quality": []
+ "data_quality": [
+  "FMP_PLAN_BLOKADA",
+  "KNF_SHORT_NIEDOSTEPNY",
+  "EBC_KONSENSUS_ROZBIEZNE_ZRODLA"
+ ]
 }
