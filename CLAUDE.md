@@ -10,6 +10,25 @@
 - Aktualne prompty rutyn: `docs/routine-raport-tygodniowy-prompt.txt`, `docs/routine-puls-wig20-prompt.txt` (wersje do wklejenia w claude.ai → Routines).
 - `scripts/metryki.py` przyjmuje `--index` i `--cache`, więc działa też dla innych uniwersów; pakiet wdrożeniowy dla rutyn NDX100: `docs/ndx100-wdrozenie.md`.
 
+## Wynik rachunku vs spread papierowy (OBOWIĄZKOWE od 7.09.2026)
+
+Bot handluje na Capital.com z `HEDGE_MODE=index`: kupuje 5 spółek koszyka LONG i sprzedaje kontrakt na WIG20.
+**Koszyka SHORT nie handluje wcale** — `desired_book()` w `app.py` pomija go, gdy tryb ≠ `classic`. Dlatego:
+
+- **Liczba nagłówkowa w każdym raporcie i powiadomieniu = WYNIK RACHUNKU = średnia LONG − WIG20.**
+- Spread LONG−SHORT wolno podawać wyłącznie obok, z etykietą „papierowy (miara selekcji, nie wynik rachunku)".
+- Rozjazd = spread papierowy − wynik rachunku; podawaj go, gdy przekracza 0,5 p.p.
+- Nie nazywaj spreadu papierowego zyskiem i nie pisz o zysku, gdy wynik rachunku jest ujemny.
+
+Obie liczby wypisuje `scripts/metryki.py rozlicz` w sekcji KOSZYKI — bierz je stamtąd, nie licz ręcznie.
+Tło i przykład (W3: papier +1,32 p.p., rachunek −1,61 p.p.) w `docs/metoda.md`, sekcja 7a.
+
+Do wyniku brutto dopisuj koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE i korekcie wielkości dwa razy —
+Capital.com nie ma częściowego zamknięcia), punkty swapowe za dobę utrzymania, luka między zamknięciem D0
+a realizacją (rotacja w poniedziałek 9:15, raport liczy od zamknięcia piątku).
+
+Testy logiki portfela: `python3 tests/test_hedge.py` (stdlib, bez pytest). Uruchom po każdej zmianie w `app.py`.
+
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 
 KOLEJNOŚĆ ŹRÓDEŁ: (1) konektor FMP → (2) skrypt `kursy.py` (Yahoo → bankier.pl → cache).

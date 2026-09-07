@@ -178,8 +178,35 @@ def rozlicz(week, d0, d5, cache):
     hit_top = sum(w["y"] for w in top)
     hit_bot = sum(1 - w["y"] for w in bot)
     kier = sum(1 for w in wiersze if (w["p"] > 0.5) == (w["y"] == 1) or (w["p"] == 0.5)) / n
+
+    # --- KOSZYKI: spread papierowy vs to, co realnie gra rachunek ---------
+    # Bot z HEDGE_MODE=index NIE handluje koszyka SHORT — kupuje 5 longów
+    # i sprzedaje indeks. Jego wynik brutto to (LONG − indeks), a nie
+    # (LONG − SHORT). Rozjazd tych dwóch liczb był powodem, dla którego
+    # raport pokazywał +1,32 p.p. za W3, a rachunek tracił.
+    zwroty = {w["ticker"]: w["zwrot_pct"] for w in wiersze}
+
+    def _srednia(kosz):
+        v = [zwroty[t] for t in kosz if t in zwroty]
+        return (sum(v) / len(v), len(v)) if v else (None, 0)
+
+    kosz = {}
+    dl, n_dl = _srednia(rk.get("long", []))
+    kr, n_kr = _srednia(rk.get("short", []))
+    if dl is not None:
+        kosz["long_pct"] = round(dl, 2)
+        kosz["long_n"] = n_dl
+        kosz["long_vs_indeks_pp"] = round(dl - rb * 100, 2)
+    if kr is not None:
+        kosz["short_pct"] = round(kr, 2)
+        kosz["short_n"] = n_kr
+        kosz["short_vs_indeks_pp"] = round(rb * 100 - kr, 2)
+    if dl is not None and kr is not None:
+        kosz["spread_papierowy_pp"] = round(dl - kr, 2)
+        kosz["rozjazd_pp"] = round((dl - kr) - (dl - rb * 100), 2)
+
     return {"week": week, "d0": d0, "d5": d5, "indeks": INDEKS, "indeks_zwrot_pct": round(rb * 100, 2),
-            "n": n, "braki": braki,
+            "n": n, "braki": braki, "koszyki": kosz,
             "baza_tygodnia": round(ybar, 3),
             "hit_top5": f"{hit_top}/5", "hit_top5_losowo": round(5 * ybar, 2),
             "hit_bottom5": f"{hit_bot}/5", "hit_bottom5_losowo": round(5 * (1 - ybar), 2),
@@ -226,6 +253,18 @@ def main():
               f"hit BOTTOM5 {out['hit_bottom5']} (losowo {out['hit_bottom5_losowo']})")
         print(f"Brier {out['brier']:.4f} | baseline 0,50: {out['brier_stale_050']:.4f} | ex post ȳ(1−ȳ): {out['brier_expost']:.4f}")
         print(f"Spearman (ranga publ. vs ranga alfy) {out['spearman']:+.3f}; trafność kierunku 20/20: {out['trafnosc_kierunku_20']:.2f}")
+        k = out.get("koszyki") or {}
+        if k:
+            print("\nKOSZYKI")
+            if "long_pct" in k:
+                print(f"  LONG  ({k['long_n']} spółek) {k['long_pct']:+.2f}%  "
+                      f"vs indeks {k['long_vs_indeks_pp']:+.2f} p.p.   <-- WYNIK RACHUNKU (hedge indeksowy)")
+            if "short_pct" in k:
+                print(f"  SHORT ({k['short_n']} spółek) {k['short_pct']:+.2f}%  "
+                      f"vs indeks {k['short_vs_indeks_pp']:+.2f} p.p.   (alfa NIEZBIERANA, gdy HEDGE_MODE=index)")
+            if "spread_papierowy_pp" in k:
+                print(f"  spread papierowy LONG−SHORT: {k['spread_papierowy_pp']:+.2f} p.p.")
+                print(f"  ROZJAZD papier − rachunek:   {k['rozjazd_pp']:+.2f} p.p.")
 
 
 if __name__ == "__main__":
