@@ -29,6 +29,15 @@ a realizacją (rotacja w poniedziałek 9:15, raport liczy od zamknięcia piątku
 
 Testy logiki portfela: `python3 tests/test_hedge.py` (stdlib, bez pytest). Uruchom po każdej zmianie w `app.py`.
 
+**Raportowanie bota: wyłącznie log Rendera** (Telegram odcięty w v1.8.1 — nigdy nie był podłączony).
+Filtruj po prefiksie `BOT |`; awarie lecą jako ERROR, bieg z błędami jako WARNING. Nie dodawaj wysyłki
+do zewnętrznych serwisów bez wyraźnej decyzji właściciela — to wynoszenie stanu rachunku na zewnątrz.
+
+**Ograniczenia rachunku są zapisane w kodzie** (`OGRANICZENIA_RACHUNKU` w `app.py`, widoczne w `/status`):
+rachunek Capital.com NIE pozwala shortować CFD na akcje, a API nie ma pola, które by o tym mówiło.
+Nie próbuj „naprawiać" `HEDGE_MODE` na `classic`. `/status` zwraca też `diagnostyka_instrumentow`
+(czy każda noga koszyka może wejść w docelowej wielkości) i `ekspozycja` (netto; ujemne = rachunek per saldo krótki).
+
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 
 KOLEJNOŚĆ ŹRÓDEŁ: (1) konektor FMP → (2) skrypt `kursy.py` (Yahoo → bankier.pl → cache).

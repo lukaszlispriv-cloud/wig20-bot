@@ -23,9 +23,10 @@ kosztuje mniej. To jedyna decyzja, której kod za Ciebie nie podejmie.
 
 ## 2. Dlaczego PKNORLEN, PZU i MBANK nie weszły
 
-Log podaje tylko licznik (`pominięte: 4` = koszyk SHORT + trzy longi). Od v1.8.0 powody idą
-w treści powiadomienia na Telegramie i do logu (`RAPORT /run: {...}`), więc następny bieg
-sam powie, co się stało. Najbardziej prawdopodobne dwa powody:
+**Nie musisz czekać na kolejny bieg** — otwórz `/status` i spójrz na `diagnostyka_instrumentow`.
+Dla każdej nogi koszyka podaje status rynku, minimalną wielkość brokera, wynikającą z niej minimalną
+wartość pozycji i werdykt (`OK` albo `NIE WEJDZIE: ...` z liczbami). Powody trafiają też do logu
+przy każdym biegu. Najbardziej prawdopodobne dwa:
 
 - **minimalna wielkość transakcji ponad tolerancję** — przy celu 293 PLN i `MAX_OVERSHOOT=1.6`
   próg to 469 PLN; MBANK po ~1 420 zł wymaga kroku ≥0,33, więc jeśli Capital.com ma tam
@@ -47,7 +48,7 @@ każdy z dostępem do logów przejmuje kontrolę nad botem. Kolejność działa�
    usuń `?token=...` z URL i dodaj nagłówek:
    `X-Run-Token: <nowy token>`
    (zakładka „Headers" w edycji zadania; alternatywnie `Authorization: Bearer <token>`).
-3. Sprawdź, że biegi przechodzą (Telegram + `/health`).
+3. Sprawdź, że biegi przechodzą (`/health` + log Rendera, filtr `BOT |`).
 4. Dopiero wtedy ustaw na Renderze `ALLOW_TOKEN_IN_URL=false` — od tego momentu wariant
    z URL jest odrzucany.
 
@@ -59,6 +60,8 @@ Kroki 1–3 i 4 muszą iść w tej kolejności, inaczej bot zamilknie w locie.
 |---|---|---|
 | `SIZE_TOL` | `0.35` | dopuszczalne odchylenie wielkości otwartej pozycji od celu, zanim bot ją przeskaluje (zamknij+otwórz, drugi spread) |
 | `ALLOW_TOKEN_IN_URL` | `true` | czy `?token=` jest jeszcze akceptowany; ustaw `false` po kroku 3 |
+
+Do **usunięcia** z Rendera (v1.8.1 ich nie czyta): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
 
 Żadnej nie trzeba ustawiać od razu — domyślne wartości są bezpieczne.
 

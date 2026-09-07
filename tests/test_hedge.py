@@ -57,6 +57,11 @@ class FakeCapital:
     def equity(self):
         return EQUITY, "PLN", "acc-1"
 
+    def accounts(self):
+        return [{"accountId": "acc-1", "accountName": "demo", "currency": "PLN",
+                 "balance": {"balance": EQUITY, "profitLoss": 0.0},
+                 "preferred": True}]
+
     def positions(self):
         return [dict(p) for p in self._pozycje]
 
@@ -164,6 +169,77 @@ class TestPrzeskalowanie(unittest.TestCase):
         cap = FakeCapital(pozycje=[poz("FW2020U2026", "SELL", 0.37)])
         rep = uruchom(cap)
         self.assertTrue(any("koszyk SHORT" in x for x in rep["pominiete"]))
+
+
+class TestDiagnostykaInstrumentow(unittest.TestCase):
+    """Odpowiedź na „czemu ten long nie wszedł" bez czekania na kolejny bieg."""
+
+    def test_za_duza_minimalna_wielkosc_jest_nazwana_wprost(self):
+        # MBANK ~1420 zł przy minDealSize 0,5 => 710 PLN, a tolerancja to
+        # 293 × 1,6 = 469 PLN. Taka noga nie ma prawa wejść.
+        cap = FakeCapital(pozycje=[], min_deal={"MBK": 0.5})
+        d = app.diagnostyka_instrumentow(cap, SYGNALY, EQUITY, "PLN")
+        mbk = next(w for w in d if w["ticker"] == "MBANK")
+        self.assertIn("NIE WEJDZIE", mbk["werdykt"])
+        self.assertGreater(mbk["min_wartosc_pozycji"], mbk["tolerancja"])
+
+    def test_normalna_spolka_przechodzi(self):
+        cap = FakeCapital(pozycje=[])
+        d = app.diagnostyka_instrumentow(cap, SYGNALY, EQUITY, "PLN")
+        self.assertEqual(next(w for w in d if w["ticker"] == "PZU")["werdykt"], "OK")
+
+    def test_zamkniety_rynek_jest_odrozniony_od_za_duzej_pozycji(self):
+        cap = FakeCapital(pozycje=[], nietradeable={"PKN"})
+        d = app.diagnostyka_instrumentow(cap, SYGNALY, EQUITY, "PLN")
+        self.assertIn("rynek CLOSED",
+                      next(w for w in d if w["ticker"] == "PKNORLEN")["werdykt"])
+
+    def test_koszyk_short_opisany_jako_niehandlowany(self):
+        cap = FakeCapital(pozycje=[])
+        d = app.diagnostyka_instrumentow(cap, SYGNALY, EQUITY, "PLN")
+        kru = next(w for w in d if w["ticker"] == "KRUK")
+        self.assertIn("NIE HANDLOWANE", kru["werdykt"])
+
+
+class TestOgraniczeniaRachunku(unittest.TestCase):
+
+    def test_zapisane_jawnie_ze_short_na_akcjach_jest_niemozliwy(self):
+        o = app.OGRANICZENIA_RACHUNKU
+        self.assertIs(o["short_na_akcjach"], False)
+        self.assertTrue(any("classic" in s for s in o["skutek"]))
+
+    def test_status_zwraca_ograniczenia_i_ekspozycje(self):
+        cap = FakeCapital(pozycje=[poz("PEO", "BUY", 1.1),
+                                   poz("FW2020U2026", "SELL", 0.37)])
+        with mock.patch.object(app, "Capital", lambda: cap), \
+             mock.patch.object(app, "load_signals", lambda: (dict(SYGNALY), "sha")):
+            klient = app.app.test_client()
+            r = klient.get("/status", headers={"X-Run-Token": "test-token"})
+        self.assertEqual(r.status_code, 200)
+        j = r.get_json()
+        self.assertIs(j["ograniczenia_rachunku"]["short_na_akcjach"], False)
+        # PEO 290,51 długie vs hedge 1522,98 krótkie => rachunek per saldo krótki
+        self.assertLess(j["ekspozycja"]["netto"], 0)
+        self.assertTrue(any("NIE WEJDZIE" in w["werdykt"] or w["werdykt"] == "OK"
+                            for w in j["diagnostyka_instrumentow"]))
+
+
+class TestRaportowanieBezTelegrama(unittest.TestCase):
+
+    def test_notify_nie_wychodzi_do_sieci(self):
+        with mock.patch.object(app.requests, "post") as posted:
+            app.notify("test")
+            posted.assert_not_called()
+
+    def test_poziom_bledu_trafia_do_logu_jako_error(self):
+        with self.assertLogs(app.log, level="ERROR") as zapis:
+            app.notify("awaria", "error")
+        self.assertTrue(any("awaria" in x for x in zapis.output))
+
+    def test_wieloliniowy_komunikat_nie_gubi_linii(self):
+        with self.assertLogs(app.log, level="INFO") as zapis:
+            app.notify("pierwsza\ndruga\ntrzecia")
+        self.assertEqual(len(zapis.output), 3)
 
 
 class TestToken(unittest.TestCase):
