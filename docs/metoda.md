@@ -57,10 +57,41 @@ Nie ma automatycznego przerzutu do przeciwnego koszyka; ma być tylko brak kotwi
 - Wpis `history` w `signals.json` dostaje pola: `base_rate`, `spearman`, `brier`, `data_quality` (lista kodów).
 - Spread, managed_pp, reaction_pp, tactical_pp — bez zmian (definicje w promptach rutyn).
 
+## 7a. Papier a rachunek — DWIE różne liczby (od 7.09.2026)
+
+To jest najważniejsze rozróżnienie w całej metodzie i przed 7.09.2026 go nie było, przez co raporty pokazywały zysk,
+gdy rachunek tracił.
+
+Bot handluje na Capital.com z `HEDGE_MODE=index`: **kupuje 5 spółek z koszyka LONG i sprzedaje kontrakt na WIG20**.
+Koszyka SHORT jako akcji **nie handluje wcale** (`desired_book()` w `app.py` pomija go, gdy tryb ≠ `classic`).
+Stąd dwie metryki, obie liczone przez `scripts/metryki.py rozlicz` w sekcji KOSZYKI:
+
+| metryka | wzór | co opisuje |
+|---|---|---|
+| **wynik rachunku** | średnia LONG − indeks | to, co realnie zarabia lub traci konto (brutto, przed spreadem i swapem) |
+| spread papierowy | średnia LONG − średnia SHORT | jakość selekcji obu koszyków; **nie jest wynikiem rachunku** |
+| rozjazd | spread papierowy − wynik rachunku | alfa strony krótkiej, której rachunek NIE zbiera |
+
+**W raportach nagłówkową liczbą jest wynik rachunku (LONG − indeks).** Spread papierowy wolno podawać wyłącznie
+obok niego i wyłącznie z etykietą „papierowy”. Przykład z W3 (28.08→4.09): spread papierowy **+1,32 p.p.**,
+wynik rachunku **−1,61 p.p.**, rozjazd **+2,93 p.p.** — cała przewaga tygodnia powstała na koszyku SHORT,
+którego rachunek nie miał.
+
+Do wyniku rachunku **brutto** dochodzą jeszcze koszty, które w raporcie należy wymienić, a nie pomijać:
+spread bid/ask przy każdym wejściu i wyjściu (a przy `REDUCE` i korekcie wielkości — dwa razy, bo Capital.com
+nie ma częściowego zamknięcia), punkty swapowe za każdą dobę utrzymania i luka między zamknięciem D0 a ceną
+realizacji (bot rotuje w poniedziałek o 9:15, raport liczy od zamknięcia piątku).
+
+Gdyby kiedyś `HEDGE_MODE` wrócił do `classic` (realne SELL na akcjach), nagłówkową metryką znów staje się
+spread LONG−SHORT — wtedy ta sekcja wymaga aktualizacji, a nie obejścia.
+
 ## 8. Kody `data_quality`
 
 `RPP_DATE_ERROR` (błędna data posiedzenia), `OKNO_SKROCONE_Dn`, `BRAK_PELNEGO_RANKINGU`, `METRYKI_Nk_Z_20` (metryki z k spółek),
-`DYWIDENDA_KOREKTA_<TICKER>`, `KURS_ZRODLO_REZERWA` (kurs D0/D+5 spoza bankier/Yahoo), `KALENDARZ_NIEPOTWIERDZONY`.
+`DYWIDENDA_KOREKTA_<TICKER>`, `KURS_ZRODLO_REZERWA` (kurs D0/D+5 spoza bankier/Yahoo), `KALENDARZ_NIEPOTWIERDZONY`,
+`FMP_PLAN_BLOKADA` (konektor w sesji, ale abonament blokuje endpointy), `KNF_SHORT_NIEDOSTEPNY` (rejestr krótkiej sprzedaży
+poza zasięgiem sieci), `EBC_KONSENSUS_ROZBIEZNE_ZRODLA`, `EKSPOZYCJA_NIEPELNA` (rachunek nie odwzorował koszyka —
+pominięte nogi, patrz `pominiete`/`ekspozycja_dluga` w odpowiedzi `/run`).
 
 ## 9. Lista kontrolna dat makro (przed scoringiem i w każdym Pulsie)
 

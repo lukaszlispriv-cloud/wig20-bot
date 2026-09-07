@@ -1,10 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-BASKET BOT v1.7.2 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
+BASKET BOT v1.8.0 — PEŁNY AUTOMAT (uniwersum z mapy epics: WIG20 / Nasdaq-100 / dowolne) (hedge indeksowy dla kont LONG_ONLY) (DEMO/LIVE z bezpiecznikiem) (eksperyment naukowy, konto DEMO)
 =======================================================================
 Nowość vs v1.0: bot sam generuje rekomendacje i raporty (API Anthropic
 z wyszukiwaniem internetowym), sam commit'uje signals.json + raport HTML
 do GitHuba i sam powiadamia na Telegramie. Człowiek nic nie podmienia.
+
+ZMIANY w v1.8.0 (po audycie rozjazdu raport vs rachunek, 7.09.2026):
+  * hedge indeksowy liczony z FAKTYCZNIE otwartych pozycji, nie z koszyka
+    docelowego — pominięty long nie zostawia już gołego shorta indeksu;
+  * pozycje o złej wielkości są przeskalowywane (np. taktyczna, która w nowym
+    tygodniu stała się pełnym longiem koszykowym) — próg SIZE_TOL;
+  * powiadomienie idzie PO korekcie hedge'u i zawiera powody pominięć,
+    błędy oraz ekspozycję netto (dotąd był sam licznik "pominięte: N");
+  * token endpointów przyjmowany nagłówkiem X-Run-Token (query string
+    lądował w logach); ?token= zostaje do czasu ALLOW_TOKEN_IN_URL=false.
+  UWAGA: Capital.com nie ma częściowego zamknięcia pozycji (DELETE
+  /positions/{dealId} bez rozmiaru, PUT tylko stop/limit), więc każda zmiana
+  wielkości to zamknij+otwórz i drugi spread — stąd progi, a nie korekta
+  przy każdym biegu.
 
 OBIEG DOBOWY (sterowany z cron-job.org):
   pn–pt 8:10  -> /generate?mode=daily   (puls: status + ew. wykluczenia,
@@ -46,6 +60,7 @@ import re
 import json
 import math
 import time
+import hmac
 import base64
 import logging
 from datetime import datetime, timezone, date
@@ -68,9 +83,18 @@ LIVE_ODBLOKOWANY   = CAPITAL_DEMO or LIVE_POTWIERDZENIE == "ROZUMIEM-RYZYKO"
 ACCOUNT_ID       = os.environ.get("CAPITAL_ACCOUNT_ID", "")
 
 RUN_TOKEN        = os.environ.get("RUN_TOKEN", "zmien-ten-token")
+# Token w query stringu ląduje w logach Rendera i u operatora crona. Docelowo
+# ma jechać nagłówkiem X-Run-Token; ta zmienna pozwala wyłączyć wariant z URL
+# dopiero PO przestawieniu zadań w cron-job.org (inaczej bot zamilkłby w locie).
+ALLOW_TOKEN_IN_URL = os.environ.get("ALLOW_TOKEN_IN_URL", "true").lower() == "true"
 DRY_RUN          = os.environ.get("DRY_RUN", "true").lower() == "true"
 ALLOC_PCT        = float(os.environ.get("ALLOC_PCT", "0.10"))
 MAX_OVERSHOOT    = float(os.environ.get("MAX_OVERSHOOT", "1.6"))
+# Dopuszczalne odchylenie wielkości OTWARTEJ pozycji od celu, zanim bot ją
+# przeskaluje (zamknij+otwórz — Capital.com nie ma częściowego zamknięcia).
+# Ratuje sytuację, w której pozycja weszła jako taktyczna (połowa wielkości),
+# a w nowym tygodniu jest pełnym longiem koszykowym i tak już zostaje.
+SIZE_TOL         = float(os.environ.get("SIZE_TOL", "0.35"))
 START_EQUITY     = float(os.environ.get("START_EQUITY", "1000"))
 KILL_LEVEL       = float(os.environ.get("KILL_LEVEL", "0.75"))
 FX_EPIC          = os.environ.get("FX_EPIC", "USDPLN")
@@ -620,6 +644,17 @@ def calc_size(cap, target_acc, epic, acc_ccy):
     return size, m, "ok"
 
 
+def wartosc_pozycji(cap, p, acc_ccy):
+    """Wartość otwartej pozycji w WALUCIE RACHUNKU (None, gdy brak ceny)."""
+    try:
+        m = cap.market(p["epic"])
+    except requests.HTTPError:
+        return None
+    if not m["mid"]:
+        return None
+    return p["size"] * m["mid"] / cap.fx_rate(acc_ccy, m["currency"])
+
+
 # ----------------------------------------------------------------------------
 # SYNCHRONIZACJA PORTFELA (/run)
 # ----------------------------------------------------------------------------
@@ -702,16 +737,28 @@ def sync():
     positions = [p for p in cap.positions() if p["epic"] in managed]
     rep["pozycje_przed"] = positions
 
+    # Księga faktycznej ekspozycji tego biegu. Hedge MUSI się opierać na tym,
+    # co na rachunku realnie jest (albo w DRY_RUN: co by było), a nie na
+    # koszyku docelowym — inaczej pominięty long (min. wielkość, rynek
+    # zamknięty, odrzucenie brokera) zostawia niezabezpieczonego shorta
+    # indeksu i rachunek robi się per saldo krótki.
+    zamkniete = set()      # epiki zamknięte w tym biegu
+    odtworzone = set()     # epiki zamknięte i od razu otwarte na nowo (korekta wielkości)
+    otwarte_acc = {}       # epic -> wartość NOWO otwartej pozycji BUY (waluta rachunku)
+
     def do_close(p, powod):
         if DRY_RUN:
             rep["akcje"].append(f"[DRY] ZAMKNIJ {p['direction']} "
                                 f"{epic2tic.get(p['epic'], p['epic'])} — {powod}")
+            zamkniete.add(p["epic"])
             return
         ok, msg = cap.close(p["dealId"])
         rep["akcje"].append(f"ZAMKNIĘTO {epic2tic.get(p['epic'], p['epic'])} "
                             f"({powod})" if ok
                             else f"BŁĄD zamykania {p['epic']}: {msg}")
-        if not ok:
+        if ok:
+            zamkniete.add(p["epic"])
+        else:
             rep["błędy"].append(msg)
 
     if equity < START_EQUITY * KILL_LEVEL:
@@ -741,43 +788,80 @@ def sync():
         elif want["direction"] != p["direction"]:
             do_close(p, f"zmiana kierunku na {want['direction']}")
 
-    # REDUKCJE: dotnij pozycje oznaczone action=REDUCE do połowy wielkości
-    # (technicznie: zamknij i otwórz ponownie mniejszą — koszt to drugi spread)
+    # PRZESKALOWANIA: pozycje, które ZOSTAJĄ, ale mają złą wielkość.
+    # Dwa przypadki: (a) action=REDUCE — dotnij do połowy; (b) dryf roli —
+    # np. spółka weszła jako taktyczna (TACTICAL_ALLOC_PCT), a w nowym
+    # tygodniu jest pełnym longiem koszykowym i bez tego zostałaby na
+    # połowie wielkości aż do rotacji.
+    # Capital.com NIE ma częściowego zamknięcia (DELETE /positions/{dealId}
+    # nie przyjmuje rozmiaru, PUT zmienia tylko stop/limit), więc jedyną
+    # drogą jest zamknij+otwórz — kosztem drugiego spreadu. Dlatego ruszamy
+    # pozycję dopiero przy odchyleniu > SIZE_TOL, a nie przy każdym biegu.
     for p in positions:
         want = book.get(p["epic"])
-        if (not want or not want.get("reduced")
-                or want["direction"] != p["direction"]):
+        if (not want or want["direction"] != p["direction"]
+                or p["epic"] in zamkniete):
             continue
-        try:
-            m = cap.market(p["epic"])
-        except requests.HTTPError:
+        cel_acc = equity * (TACTICAL_ALLOC_PCT if want.get("tactical")
+                            else ALLOC_PCT * (REDUCE_FACTOR
+                                              if want.get("reduced") else 1.0))
+        cur_acc = wartosc_pozycji(cap, p, ccy)
+        if cur_acc is None or cel_acc <= 0:
             continue
-        if not m["mid"]:
+        # REDUCE tnie tylko w dół (raz zredukowana zostaje do soboty),
+        # dryf roli koryguje w obie strony.
+        odchylka = (cur_acc - cel_acc) / cel_acc
+        if want.get("reduced"):
+            if odchylka <= 0.35:
+                continue
+        elif abs(odchylka) <= SIZE_TOL:
             continue
-        fx = cap.fx_rate(ccy, m["currency"])
-        cur_acc = p["size"] * m["mid"] / fx
-        cel_acc = equity * ALLOC_PCT * REDUCE_FACTOR
-        if cur_acc <= cel_acc * 1.35:
-            continue  # już zredukowana — nic nie rób
+        powod = ("redukcja" if want.get("reduced")
+                 else f"korekta wielkości ({cur_acc:.0f}→{cel_acc:.0f} {ccy})")
         if DRY_RUN:
-            rep["akcje"].append(f"[DRY] REDUKUJ {want['ticker']} "
-                                f"z ~{cur_acc:.0f} do ~{cel_acc:.0f} {ccy}")
+            rep["akcje"].append(f"[DRY] PRZESKALUJ {want['ticker']} "
+                                f"z ~{cur_acc:.0f} do ~{cel_acc:.0f} {ccy} "
+                                f"({powod})")
+            zamkniete.add(p["epic"])
+            odtworzone.add(p["epic"])
+            if want["direction"] == "BUY":
+                otwarte_acc[p["epic"]] = cel_acc
             continue
         ok, msg = cap.close(p["dealId"])
         if not ok:
-            rep["błędy"].append(f"redukcja {want['ticker']}: {msg}")
+            rep["błędy"].append(f"{powod} {want['ticker']}: {msg}")
             continue
+        zamkniete.add(p["epic"])
         size, m2, info = calc_size(cap, cel_acc, p["epic"], ccy)
-        if size and m2["status"] == "TRADEABLE":
-            ok2, ref, msg2 = cap.open(p["epic"], want["direction"], size)
-            rep["akcje"].append(f"ZREDUKOWANO {want['ticker']} do size {size}"
-                                if ok2
-                                else f"BŁĄD redukcji {want['ticker']}: {msg2}")
-            if not ok2:
-                rep["błędy"].append(msg2)
+        if not size or m2["status"] != "TRADEABLE":
+            # Pozycja została ZAMKNIĘTA, a nowa nie weszła — to musi być
+            # głośne, bo koszyk cichnie o jedną nogę (hedge policzy się
+            # z faktycznego stanu, więc ekspozycja zostanie spójna).
+            rep["błędy"].append(
+                f"{want['ticker']}: po zamknięciu do korekty NIE udało się "
+                f"otworzyć na nowo ({info if not size else m2['status']}) — "
+                f"pozycja jest teraz ZEROWA")
+            continue
+        ok2, ref, msg2 = cap.open(p["epic"], want["direction"], size)
+        rep["akcje"].append(f"PRZESKALOWANO {want['ticker']} do size {size} "
+                            f"({powod})" if ok2
+                            else f"BŁĄD korekty {want['ticker']}: {msg2}")
+        if ok2:
+            odtworzone.add(p["epic"])
+            if want["direction"] == "BUY":
+                # Wartość FAKTYCZNIE objęta, nie cel: calc_size zaokrągla
+                # do kroku brokera i potrafi wyjść do 125% celu.
+                otwarte_acc[p["epic"]] = (size * m2["mid"]
+                                          / cap.fx_rate(ccy, m2["currency"]))
+        else:
+            rep["błędy"].append(msg2)
         time.sleep(0.4)
 
-    held = {p["epic"]: p["direction"] for p in positions}
+    # Pozycja policzona jako "trzymana" tylko wtedy, gdy naprawdę na rachunku
+    # jest: zamknięta i nieodtworzona wypada, żeby pętla niżej mogła ją
+    # otworzyć jeszcze raz w tym samym biegu.
+    held = {p["epic"]: p["direction"] for p in positions
+            if p["epic"] not in zamkniete or p["epic"] in odtworzone}
     rep["wielkosc_docelowa"] = {
         "waluta": ccy,
         "koszyk": round(equity * ALLOC_PCT, 2),
@@ -799,30 +883,51 @@ def sync():
         if m["status"] != "TRADEABLE":
             rep["pominiete"].append(f"{want['ticker']}: rynek {m['status']}")
             continue
+        wartosc_acc = size * m["mid"] / cap.fx_rate(ccy, m["currency"])
         if DRY_RUN:
             rep["akcje"].append(f"[DRY] OTWÓRZ {want['direction']} "
                                 f"{want['ticker']} size {size} @ ~{m['mid']:.2f} "
                                 f"{m['currency']} ({info})")
+            if want["direction"] == "BUY":
+                otwarte_acc[epic] = wartosc_acc
             continue
         ok, ref, msg = cap.open(epic, want["direction"], size)
         rep["akcje"].append(f"OTWARTO {want['direction']} {want['ticker']} "
                             f"size {size} (ref {ref})" if ok
                             else f"BŁĄD otwarcia {want['ticker']}: {msg}")
-        if not ok:
+        if ok:
+            if want["direction"] == "BUY":
+                otwarte_acc[epic] = wartosc_acc
+        else:
             rep["błędy"].append(msg)
         time.sleep(0.4)
 
-    zam = len([a for a in rep["akcje"] if "ZAMK" in a or "OTWAR" in a
-               or a.startswith("[DRY]")])
-    notify(f"🤖 WIG20 BOT /run v{sig['version']} | kapitał {equity:.2f} {ccy} | "
-           f"akcje: {zam} | pominięte: {len(rep['pominiete'])} | "
-           f"{'DRY-RUN' if DRY_RUN else 'DEMO'}")
     if HEDGE_MODE == "index":
-        long_cel = sum(equity * (TACTICAL_ALLOC_PCT if w.get("tactical")
-                                 else ALLOC_PCT * (REDUCE_FACTOR
-                                                   if w.get("reduced") else 1.0))
-                       for w in book.values() if w["direction"] == "BUY")
+        # EKSPOZYCJA DŁUGA LICZONA Z FAKTYCZNEGO STANU RACHUNKU.
+        # Wcześniej brała się z książki życzeń (`book`), czyli z koszyka
+        # DOCELOWEGO. Gdy któryś long nie wszedł — min. wielkość ponad
+        # tolerancję, rynek nie TRADEABLE, odrzucenie brokera — hedge i tak
+        # zabezpieczał pełne 5 nóg. Efekt: 7.09.2026 realne longi warte
+        # 446 PLN stały naprzeciw shorta indeksu za 1523 PLN, czyli rachunek
+        # był w 37% KRÓTKI przy "neutralnej" strategii i tracił na rosnącym
+        # WIG20. Teraz sumujemy to, co na rachunku zostało (pozycje BUY
+        # nietknięte tym biegiem) plus to, co w tym biegu faktycznie weszło.
+        long_cel = 0.0
+        rozbicie = {}
+        for p in positions:
+            if (p["direction"] != "BUY" or p["epic"] == HEDGE_EPIC
+                    or p["epic"] in zamkniete):
+                continue
+            w = wartosc_pozycji(cap, p, ccy)
+            if w:
+                long_cel += w
+                rozbicie[epic2tic.get(p["epic"], p["epic"])] = round(w, 2)
+        for epic, w in otwarte_acc.items():
+            long_cel += w
+            rozbicie[epic2tic.get(epic, epic)] = round(w, 2)
         hedge_cel = long_cel * HEDGE_RATIO
+        rep["ekspozycja_dluga"] = {"razem": round(long_cel, 2),
+                                   "pozycje": rozbicie, "waluta": ccy}
         hpos = [p for p in positions if p["epic"] == HEDGE_EPIC
                 and p["direction"] == "SELL"]
         try:
@@ -833,10 +938,12 @@ def sync():
             fx = cap.fx_rate(ccy, hm["currency"])
             cur_acc = sum(p["size"] for p in hpos) * hm["mid"] / fx
             rep["hedge"] = {"epic": HEDGE_EPIC, "cel": round(hedge_cel, 2),
-                            "biezacy": round(cur_acc, 2), "waluta": ccy}
+                            "biezacy": round(cur_acc, 2),
+                            "po_korekcie": round(cur_acc, 2), "waluta": ccy}
             if hedge_cel <= 0 and hpos:
                 for p in hpos:
                     do_close(p, "hedge zbędny — brak aktywnych longów")
+                rep["hedge"]["po_korekcie"] = 0.0
             elif hedge_cel > 0 and abs(cur_acc - hedge_cel) > hedge_cel * HEDGE_TOL:
                 for p in hpos:
                     do_close(p, "hedge — dopasowanie wielkości")
@@ -847,20 +954,52 @@ def sync():
                     if DRY_RUN:
                         rep["akcje"].append(f"[DRY] HEDGE SELL {HEDGE_EPIC} "
                                             f"size {size} (~{hedge_cel:.0f} {ccy})")
+                        rep["hedge"]["po_korekcie"] = round(
+                            size * hm["mid"] / fx, 2)
                     else:
                         ok, ref, msg = cap.open(HEDGE_EPIC, "SELL", size)
                         rep["akcje"].append(f"HEDGE SELL {HEDGE_EPIC} size {size}"
                                             f" — {msg}")
+                        # Stary hedge jest już zamknięty. Jeśli nowy nie wszedł,
+                        # rachunek został BEZ zabezpieczenia — to musi być widać
+                        # w powiadomieniu, a nie tylko w JSON-ie.
+                        rep["hedge"]["po_korekcie"] = (
+                            round(size * hm["mid"] / fx, 2) if ok else 0.0)
                         if not ok:
-                            rep["błędy"].append(f"hedge: {msg}")
+                            rep["błędy"].append(
+                                f"hedge: {msg} — stare zabezpieczenie ZAMKNIĘTE, "
+                                f"nowe NIE weszło, rachunek jest teraz "
+                                f"NIEZABEZPIECZONY (longi {long_cel:.0f} {ccy})")
                     time.sleep(0.3)
                 else:
+                    rep["hedge"]["po_korekcie"] = 0.0
                     rep["błędy"].append(
                         f"hedge: minimalna wielkość {step} × kurs "
                         f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} {ccy} "
                         f"przekracza cel {hedge_cel:.0f} {ccy} — hedge "
                         f"NIEOTWARTY; rozważ inny instrument albo HEDGE_RATIO")
 
+    # Powiadomienie NA KOŃCU — wcześniej szło przed blokiem hedge'u, więc
+    # licznik "akcje" nie obejmował ani otwarcia, ani korekty zabezpieczenia.
+    # Powody pominięć i błędy idą w treści: sam licznik "pominięte: 4" nie
+    # pozwalał zdiagnozować, czemu trzy longi nie weszły.
+    zam = len([a for a in rep["akcje"] if "ZAMK" in a or "OTWAR" in a
+               or "PRZESKAL" in a or "HEDGE" in a or a.startswith("[DRY]")])
+    linie = [f"🤖 WIG20 BOT /run v{sig['version']} | kapitał {equity:.2f} {ccy} "
+             f"| akcje: {zam} | pominięte: {len(rep['pominiete'])} | "
+             f"{'DRY-RUN' if DRY_RUN else ('DEMO' if CAPITAL_DEMO else 'LIVE')}"]
+    if "ekspozycja_dluga" in rep:
+        h = rep.get("hedge") or {}
+        netto = rep["ekspozycja_dluga"]["razem"] - (h.get("po_korekcie") or 0.0)
+        linie.append(f"longi {rep['ekspozycja_dluga']['razem']:.0f} / hedge "
+                     f"{h.get('biezacy', 0):.0f} → netto {netto:+.0f} {ccy} "
+                     f"({netto / equity * 100:+.1f}% kapitału)")
+    for x in rep["pominiete"][:6]:
+        linie.append(f"• pominięte: {x}")
+    for x in rep["błędy"][:6]:
+        linie.append(f"‼️ {x[:160]}")
+    notify("\n".join(linie))
+    log.info("RAPORT /run: %s", json.dumps(rep, ensure_ascii=False)[:4000])
     return rep
 
 
@@ -868,12 +1007,38 @@ def sync():
 # ENDPOINTY
 # ----------------------------------------------------------------------------
 def auth_ok():
-    return request.args.get("token") == RUN_TOKEN
+    """Token przyjmowany NAGŁÓWKIEM X-Run-Token (albo Authorization: Bearer).
+
+    Wariant `?token=` zostaje wyłącznie dla zgodności wstecz, bo query string
+    ląduje w logach Rendera i u operatora crona w postaci jawnej — każdy, kto
+    ma wgląd w logi, przejmuje kontrolę nad botem. Po przestawieniu zadań
+    w cron-job.org na nagłówek ustaw ALLOW_TOKEN_IN_URL=false.
+    """
+    if not RUN_TOKEN or RUN_TOKEN == "zmien-ten-token":
+        log.error("RUN_TOKEN nieustawiony — endpointy zablokowane.")
+        return False
+    naglowek = (request.headers.get("X-Run-Token") or "").strip()
+    if not naglowek:
+        auth = (request.headers.get("Authorization") or "").strip()
+        if auth.lower().startswith("bearer "):
+            naglowek = auth[7:].strip()
+    if naglowek:
+        return hmac.compare_digest(naglowek, RUN_TOKEN)
+    if not ALLOW_TOKEN_IN_URL:
+        log.warning("Token w URL odrzucony (ALLOW_TOKEN_IN_URL=false) — "
+                    "użyj nagłówka X-Run-Token.")
+        return False
+    z_url = request.args.get("token") or ""
+    if z_url and hmac.compare_digest(z_url, RUN_TOKEN):
+        log.warning("Token przyszedł w URL — trafia do logów. Przestaw crona "
+                    "na nagłówek X-Run-Token i ustaw ALLOW_TOKEN_IN_URL=false.")
+        return True
+    return False
 
 
 @app.get("/health")
 def health():
-    return jsonify(ok=True, wersja="1.7.2", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
+    return jsonify(ok=True, wersja="1.8.0", dry_run=DRY_RUN, tryb=("DEMO" if CAPITAL_DEMO else "LIVE"), live_odblokowany=LIVE_ODBLOKOWANY)
 
 
 @app.route("/generate", methods=["GET", "POST"])
