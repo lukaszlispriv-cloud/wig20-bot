@@ -13,14 +13,14 @@
 ## Wynik rachunku vs spread papierowy (OBOWIĄZKOWE od 7.09.2026)
 
 Bot handluje na Capital.com z `HEDGE_MODE=index`: kupuje 5 spółek koszyka LONG i sprzedaje kontrakt na WIG20.
-**Koszyka SHORT nie handluje wcale** — `desired_book()` w `app.py` pomija go, gdy tryb ≠ `classic`. Dlatego:
+**Koszyka SHORT nie handluje wcale** — `desired_book()` w `app.py` pomija go, gdy tryb ≠ `classic`, a tryb `classic` jest NIEDOSTĘPNY: rachunek Capital.com nie pozwala otwierać pozycji krótkich na CFD na akcje (potwierdzone 7.09.2026). Spread LONG−SHORT jest więc metryką z definicji nieosiągalną. Dlatego:
 
 - **Liczba nagłówkowa w każdym raporcie i powiadomieniu = WYNIK RACHUNKU = średnia LONG − WIG20.**
 - Spread LONG−SHORT wolno podawać wyłącznie obok, z etykietą „papierowy (miara selekcji, nie wynik rachunku)".
 - Rozjazd = spread papierowy − wynik rachunku; podawaj go, gdy przekracza 0,5 p.p.
 - Nie nazywaj spreadu papierowego zyskiem i nie pisz o zysku, gdy wynik rachunku jest ujemny.
 
-Obie liczby wypisuje `scripts/metryki.py rozlicz` w sekcji KOSZYKI — bierz je stamtąd, nie licz ręcznie.
+Trzy warianty (bez hedge'u / z hedge'em / papierowy) wypisuje `scripts/metryki.py rozlicz` w sekcji KOSZYKI — bierz je stamtąd, nie licz ręcznie. Reguła zmiany `HEDGE_RATIO` jest zadeklarowana z góry w `docs/metoda.md` sekcja 10: do 12 zamkniętych okien NIE zmieniamy strategii, żeby nie dopasowywać jej do szumu.
 Tło i przykład (W3: papier +1,32 p.p., rachunek −1,61 p.p.) w `docs/metoda.md`, sekcja 7a.
 
 Do wyniku brutto dopisuj koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE i korekcie wielkości dwa razy —

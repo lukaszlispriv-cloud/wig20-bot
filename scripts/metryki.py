@@ -194,6 +194,11 @@ def rozlicz(week, d0, d5, cache):
     dl, n_dl = _srednia(rk.get("long", []))
     kr, n_kr = _srednia(rk.get("short", []))
     if dl is not None:
+        # long_abs_pct = wariant BEZ hedge'u. Rachunek nie może shortować
+        # akcji (Capital.com blokuje SELL na CFD na akcje), więc jedyną
+        # otwartą decyzją konstrukcyjną jest hedgować albo nie — obie
+        # liczby muszą lecieć obok siebie do history.
+        kosz["long_abs_pct"] = round(dl, 2)
         kosz["long_pct"] = round(dl, 2)
         kosz["long_n"] = n_dl
         kosz["long_vs_indeks_pp"] = round(dl - rb * 100, 2)
@@ -257,13 +262,17 @@ def main():
         if k:
             print("\nKOSZYKI")
             if "long_pct" in k:
-                print(f"  LONG  ({k['long_n']} spółek) {k['long_pct']:+.2f}%  "
-                      f"vs indeks {k['long_vs_indeks_pp']:+.2f} p.p.   <-- WYNIK RACHUNKU (hedge indeksowy)")
+                print(f"  LONG  ({k['long_n']} spółek) bez hedge'u {k['long_abs_pct']:+.2f}%   "
+                      f"(wariant HEDGE_RATIO=0)")
+                print(f"  LONG − indeks {k['long_vs_indeks_pp']:+.2f} p.p."
+                      f"   <-- WYNIK RACHUNKU (stan obecny, HEDGE_RATIO=1.0)")
             if "short_pct" in k:
                 print(f"  SHORT ({k['short_n']} spółek) {k['short_pct']:+.2f}%  "
-                      f"vs indeks {k['short_vs_indeks_pp']:+.2f} p.p.   (alfa NIEZBIERANA, gdy HEDGE_MODE=index)")
+                      f"vs indeks {k['short_vs_indeks_pp']:+.2f} p.p.   "
+                      f"(NIEOSIĄGALNE — rachunek nie shortuje akcji)")
             if "spread_papierowy_pp" in k:
-                print(f"  spread papierowy LONG−SHORT: {k['spread_papierowy_pp']:+.2f} p.p.")
+                print(f"  spread papierowy LONG−SHORT: {k['spread_papierowy_pp']:+.2f} p.p. "
+                      f"(miara selekcji, nie wynik)")
                 print(f"  ROZJAZD papier − rachunek:   {k['rozjazd_pp']:+.2f} p.p.")
 
 

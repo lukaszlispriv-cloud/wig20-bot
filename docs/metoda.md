@@ -82,8 +82,29 @@ spread bid/ask przy każdym wejściu i wyjściu (a przy `REDUCE` i korekcie wiel
 nie ma częściowego zamknięcia), punkty swapowe za każdą dobę utrzymania i luka między zamknięciem D0 a ceną
 realizacji (bot rotuje w poniedziałek o 9:15, raport liczy od zamknięcia piątku).
 
-Gdyby kiedyś `HEDGE_MODE` wrócił do `classic` (realne SELL na akcjach), nagłówkową metryką znów staje się
-spread LONG−SHORT — wtedy ta sekcja wymaga aktualizacji, a nie obejścia.
+**Tryb `classic` (realne SELL na akcjach) jest NIEDOSTĘPNY** — rachunek Capital.com nie pozwala otwierać pozycji
+krótkich na CFD na akcje (potwierdzone przez właściciela rachunku 7.09.2026; ślad w kodzie: `Capital.open()` ma
+pętlę potwierdzenia właśnie pod odrzucenia typu „SELL niedostępny"). To nie jest ustawienie do przełączenia,
+tylko trwałe ograniczenie rachunku. Wniosek: **spread LONG−SHORT jest metryką z definicji nieosiągalną** i nie
+wolno go stawiać jako celu ani wyniku. Rachunek może zbierać wyłącznie alfę strony długiej wobec indeksu.
+
+Konsekwencja dla rankingu: BOTTOM5 nie trafia na rachunek jako pozycja. Zachowuje sens jako (a) lista, której
+nie wolno trzymać długo, i (b) diagnostyka jakości modelu. Krótką ekspozycję na te spółki rachunek ma wyłącznie
+pośrednio — w wadze indeksowej, przez shorta na WIG20.
+
+### Trzy warianty, które trzeba raportować równolegle
+
+Skoro strona krótka jest poza zasięgiem, jedyną otwartą decyzją konstrukcyjną zostaje **czy w ogóle hedgować**.
+Dlatego `metryki.py rozlicz` podaje trzy liczby i wszystkie trzy idą do `history`:
+
+| wariant | wzór | uwaga |
+|---|---|---|
+| `long_abs_pct` | średnia LONG (bez hedge'u) | czysta ekspozycja kierunkowa, zbiera beta rynku |
+| `long_vs_index_pp` | średnia LONG − indeks | **stan obecny**, `HEDGE_RATIO=1.0` |
+| `spread_pp` | średnia LONG − średnia SHORT | papierowy, nieosiągalny — wyłącznie miara selekcji |
+
+Hedge indeksowy ma sens **tylko wtedy, gdy selekcja długa bije indeks**. Jeżeli nie bije, hedge zamienia zwyżkę
+rynku w stratę. Decyzji o `HEDGE_RATIO` **nie podejmuje się na kilku tygodniach danych** — patrz sekcja 10.
 
 ## 8. Kody `data_quality`
 
@@ -106,3 +127,29 @@ pominięte nogi, patrz `pominiete`/`ekspozycja_dluga` w odpowiedzi `/run`).
 
 Przy 5 pozycjach 95-proc. przedział Wilsona dla 2/5 to ok. 12–77%. Wyniki pojedynczych tygodni nie dowodzą przewagi.
 Ocena kategorii (które dodają wartość) dopiero po ≥20 tygodniach z pełnymi rankingami w `rankings/`.
+
+### Decyzja o `HEDGE_RATIO` — reguła zadeklarowana Z GÓRY (7.09.2026)
+
+Stan na 7.09.2026, dwa pełne okna (W2, W3) — za mało, żeby cokolwiek rozstrzygać, ale dość, żeby ustalić regułę:
+
+| wariant | W2 | W3 | razem |
+|---|---|---|---|
+| LONG bez hedge'u | −2,38% | +0,81% | **−1,57%** |
+| LONG − indeks (stan obecny) | −2,02 p.p. | −1,61 p.p. | **−3,63 p.p.** |
+| spread papierowy (nieosiągalny) | −2,31 p.p. | +1,32 p.p. | −0,99 p.p. |
+
+Trafienia TOP5 przez trzy tygodnie: 4/15. Dla W2 i W3, gdzie znamy bazę tygodnia, losowo wypadłoby 3,4 trafienia,
+padło 1. BOTTOM5: padło 7 przy 6,6 losowo. **Żadna z tych liczb niczego nie dowodzi** — to trzy tygodnie i n=15
+spółkotygodni na stronę. Nie wolno na tej podstawie zmieniać strategii; to byłoby dopasowanie do szumu.
+
+Dlatego reguła jest ustalona teraz, zanim dane ją podpowiedzą:
+
+1. Do **12 zamkniętych okien** `HEDGE_RATIO` zostaje **1.0** i strategii się nie tuninguje. Zbieramy dane.
+2. Po 12. oknie porównujemy skumulowane `long_abs_pct` i `long_vs_index_pp` z `history`.
+3. Jeżeli `long_vs_index_pp` skumulowane jest ujemne **i** trafienia TOP5 nie przekraczają oczekiwania losowego
+   (suma 5·ȳ po wszystkich oknach), to znaczy, że selekcja długa nie bije indeksu, a hedge tylko wycina beta.
+   Wtedy — i tylko wtedy — schodzimy z `HEDGE_RATIO` do 0,5 na kolejne 12 okien i zapisujemy to w `history`
+   jako zmianę reżimu.
+4. Zmiana `HEDGE_RATIO` w środku okna jest zabroniona. Wyłącznie przy sobotniej rotacji.
+5. Każda zmiana reżimu jest odnotowana w raporcie tygodniowym wraz z uzasadnieniem i datą — inaczej po roku
+   nie da się odróżnić przewagi modelu od przewagi majsterkowania przy parametrach.
