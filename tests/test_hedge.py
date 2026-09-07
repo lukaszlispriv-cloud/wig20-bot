@@ -242,6 +242,49 @@ class TestRaportowanieBezTelegrama(unittest.TestCase):
         self.assertEqual(len(zapis.output), 3)
 
 
+class TestLimitZapytan(unittest.TestCase):
+    """Regresja: 429 z Capital.com w środku pętli wygląda jak „long nie wszedł"."""
+
+    def _capital(self):
+        cap = app.Capital.__new__(app.Capital)
+        cap.switch_error = None
+        cap._rynki = {}
+        return cap
+
+    def test_ten_sam_epic_odpytany_raz(self):
+        cap = self._capital()
+        odpowiedz = {"instrument": {"name": "ORLEN", "currency": "PLN"},
+                     "snapshot": {"bid": 159.0, "offer": 159.2,
+                                  "marketStatus": "TRADEABLE"},
+                     "dealingRules": {"minDealSize": {"value": 0.1}}}
+        with mock.patch.object(cap, "_get", return_value=odpowiedz) as g:
+            a = cap.market("PKN")
+            b = cap.market("PKN")
+        self.assertEqual(g.call_count, 1, "drugie wywołanie ma iść z cache")
+        self.assertEqual(a, b)
+        self.assertAlmostEqual(a["mid"], 159.1)
+
+    def test_odswiez_wymusza_ponowne_pobranie(self):
+        cap = self._capital()
+        odpowiedz = {"instrument": {}, "snapshot": {"bid": 1, "offer": 1},
+                     "dealingRules": {}}
+        with mock.patch.object(cap, "_get", return_value=odpowiedz) as g:
+            cap.market("X")
+            cap.market("X", odswiez=True)
+        self.assertEqual(g.call_count, 2)
+
+    def test_429_jest_ponawiane_a_nie_wywala_biegu(self):
+        cap = self._capital()
+        cap.s = mock.Mock()
+        ok = mock.Mock(status_code=200)
+        ok.json.return_value = {"ok": True}
+        ok.raise_for_status.return_value = None
+        cap.s.get.side_effect = [mock.Mock(status_code=429), ok]
+        with mock.patch.object(app.time, "sleep"):
+            self.assertEqual(cap._get("/api/v1/markets/PKN"), {"ok": True})
+        self.assertEqual(cap.s.get.call_count, 2)
+
+
 class TestToken(unittest.TestCase):
 
     def test_naglowek_dziala_a_zly_token_nie(self):

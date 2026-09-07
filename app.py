@@ -487,6 +487,7 @@ def generate(mode, do_commit=True):
 class Capital:
     def __init__(self):
         self.switch_error = None
+        self._rynki = {}          # cache notowań na czas jednego żądania
         self.s = requests.Session()
         self.s.headers.update({"X-CAP-API-KEY": CAPITAL_API_KEY,
                                "Content-Type": "application/json"})
@@ -527,7 +528,20 @@ class Capital:
             log.error(self.switch_error)
 
     def _get(self, path, **kw):
-        r = self.s.get(f"{BASE_URL}{path}", timeout=20, **kw)
+        # Capital.com dławi serie zapytań (HTTP 429). Jeden bieg /run potrafi
+        # odpytać kilkanaście rynków pod rząd, a 429 w środku pętli otwierania
+        # wygląda potem jak "long nie wszedł" — czyli dokładnie ten objaw,
+        # ktory diagnozowaliśmy 7.09. Dlatego krótkie ponowienia z odczekaniem.
+        for proba in range(3):
+            r = self.s.get(f"{BASE_URL}{path}", timeout=20, **kw)
+            if r.status_code == 429 and proba < 2:
+                pauza = 1.5 * (proba + 1)
+                log.warning("429 z Capital.com na %s — czekam %.1fs (próba %d/3)",
+                            path, pauza, proba + 2)
+                time.sleep(pauza)
+                continue
+            r.raise_for_status()
+            return r.json()
         r.raise_for_status()
         return r.json()
 
@@ -559,19 +573,33 @@ class Capital:
                         "upl": pos.get("upl")})
         return out
 
-    def market(self, epic):
+    def market(self, epic, odswiez=False):
+        """Notowanie instrumentu, z pamięcią podręczną NA CZAS ŻĄDANIA.
+
+        Obiekt Capital powstaje na każde wywołanie endpointu, więc cache żyje
+        sekundy — cena w tym oknie się nie zmienia w sposób istotny dla
+        doboru wielkości pozycji. Bez tego ten sam epic był odpytywany
+        dwukrotnie (raz przy liczeniu ekspozycji, raz w diagnostyce), co
+        podbijało liczbę zapytań i kończyło się HTTP 429. Po zamknięciu
+        i ponownym otwarciu pozycji świadomie NIE odświeżamy — chodzi
+        o wielkość, nie o tick.
+        """
+        if not odswiez and epic in self._rynki:
+            return self._rynki[epic]
         d = self._get(f"/api/v1/markets/{epic}")
         snap = d.get("snapshot", {})
         rules = d.get("dealingRules", {})
         instr = d.get("instrument", {})
         bid, offer = snap.get("bid"), snap.get("offer")
         mid = (bid + offer) / 2 if bid and offer else (bid or offer)
-        return {"epic": epic, "name": instr.get("name", epic),
-                "currency": instr.get("currency")
-                            or (instr.get("currencies") or [{}])[0].get("code")
-                            or "PLN",
-                "status": snap.get("marketStatus"), "mid": mid,
-                "min": float(rules.get("minDealSize", {}).get("value", 1) or 1)}
+        wynik = {"epic": epic, "name": instr.get("name", epic),
+                 "currency": instr.get("currency")
+                             or (instr.get("currencies") or [{}])[0].get("code")
+                             or "PLN",
+                 "status": snap.get("marketStatus"), "mid": mid,
+                 "min": float(rules.get("minDealSize", {}).get("value", 1) or 1)}
+        self._rynki[epic] = wynik
+        return wynik
 
     def search(self, term):
         d = self._get("/api/v1/markets", params={"searchTerm": term})
