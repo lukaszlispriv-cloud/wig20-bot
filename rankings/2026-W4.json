@@ -506,6 +506,54 @@
    "opis": "wystapienie prezesa NBP A. Glapinskiego, 15:00 (termin potwierdzony w datowanym zrodle z biezacego tygodnia)",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl, 'Wazny tydzien dla kredytobiorcow w zlotych i euro', publ. 2026-09-04, akt. 2026-09-06"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-09-07",
+   "dn": 1,
+   "opis": "sesja 7.09: PGE +4,94%, najlepszy blue chip; WIG-ENERG +3,98%, Tauron +4,80% — ruch sektorowy na oczekiwaniach wyzszych cen hurtowych energii i wyzszego eksportu, bez ESPI spolki; zgodny z teza LONG",
+   "wklad_pkt": null,
+   "zrodlo": "PAP/strefainwestorow.pl (zamkniecia 7.09), bankier.pl, stockwatch.pl"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-07",
+   "dn": 1,
+   "opis": "Trigon DM — strategia portfelowa na wrzesien: CD Projekt wsrod 15 spolek majacych zachowac sie lepiej niz rynek (obok Orlenu, Allegro, Budimeksu); spolka dnia 7.09, kurs +2,03% od D0. Rekomendacja PRZECIW tezie short -> REDUCE 8.09",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl, 'Trigon DM przedstawia top picks na wrzesien, zaleca wieksza ostroznosc na rynkach', 7.09.2026; parkiet.com"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-09-07",
+   "dn": 1,
+   "opis": "Trigon DM — strategia portfelowa na wrzesien: mBank wsrod spolek majacych zachowac sie gorzej niz rynek. Rekomendacja PRZECIW tezie long -> REDUCE 8.09",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl, 7.09.2026; parkiet.com"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-09-07",
+   "dn": 1,
+   "opis": "Trigon DM: Modivo na liscie spolek majacych zachowac sie gorzej niz rynek (ZGODNIE z teza short), mimo to kurs +3,91% od D0 bez ESPI i bez nowej rekomendacji spolkowej — najwiekszy ruch przeciw tezie w koszykach, ponizej progu 4%",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 7.09.2026; bankier.pl komunikaty MODIVO (brak ESPI 4-8.09)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-07",
+   "dn": 1,
+   "opis": "Trigon DM: Orlen NOWYM faworytem wrzesniowego portfela (zgodnie z teza long). Watek zakupu 40-45% akcji PGZ pozostaje na etapie analiz, bez ESPI i bez decyzji; kurs +0,38% od D0",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 7.09.2026; parkiet.com 'Orlen przejmie udzialy w PGZ, trwaja analizy'; wnp.pl"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-08",
+   "dn": 2,
+   "opis": "RPP rozpoczyna dwudniowe posiedzenie (8-9.09); decyzja 9.09, konferencja 10.09. Konsensus: stopa referencyjna bez zmian 3,75% (CPI GUS za sierpien 3,4% r/r). Termin potwierdzony w datowanych zrodlach z biezacego tygodnia",
+   "wklad_pkt": null,
+   "zrodlo": "managerplus.pl 7.09.2026; biznesinfo.pl 7.09.2026; strefainwestorow.pl 9.07.2026 (komunikat NBP o przesunieciu terminu)"
   }
  ],
  "data_quality": [

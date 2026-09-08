@@ -39,8 +39,27 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-09-07",
+  "exclude": [
+    {
+      "ticker": "CDPROJEKT",
+      "action": "REDUCE",
+      "date": "2026-09-08",
+      "reason": "Trigon DM, strategia portfelowa na wrzesien (publ. 7.09.2026): CD Projekt na liscie spolek majacych zachowac sie LEPIEJ niz rynek — swieza rekomendacja liczacego sie DM przeciw tezie short, horyzont pokrywa sie z oknem W4. Kurs +2,03% od D0 (spolka dnia 7.09). Uwaga: koszyk SHORT nie jest handlowany na rachunku (HEDGE_MODE=index), wiec redukcja jest papierowa.",
+      "price_before": 236.7,
+      "move_from_d0_pct": 2.03,
+      "trigger": "RECOMMENDATION"
+    },
+    {
+      "ticker": "MBANK",
+      "action": "REDUCE",
+      "date": "2026-09-08",
+      "reason": "Trigon DM, strategia portfelowa na wrzesien (publ. 7.09.2026): mBank wsrod spolek majacych zachowac sie GORZEJ niz rynek — swieza rekomendacja liczacego sie DM przeciw tezie long. Kurs +0,18% od D0, relatywnie -0,40 p.p. vs WIG20. Pozycja realnie na rachunku: ciecie do polowy.",
+      "price_before": 1411.0,
+      "move_from_d0_pct": 0.18,
+      "trigger": "RECOMMENDATION"
+    }
+  ],
+  "last_daily": "2026-09-08",
   "d0": {
     "date": "2026-09-04",
     "wig20": 4090.27,
