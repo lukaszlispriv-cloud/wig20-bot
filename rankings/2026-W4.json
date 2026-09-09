@@ -554,11 +554,44 @@
    "opis": "RPP rozpoczyna dwudniowe posiedzenie (8-9.09); decyzja 9.09, konferencja 10.09. Konsensus: stopa referencyjna bez zmian 3,75% (CPI GUS za sierpien 3,4% r/r). Termin potwierdzony w datowanych zrodlach z biezacego tygodnia",
    "wklad_pkt": null,
    "zrodlo": "managerplus.pl 7.09.2026; biznesinfo.pl 7.09.2026; strefainwestorow.pl 9.07.2026 (komunikat NBP o przesunieciu terminu)"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-09-08",
+   "dn": 2,
+   "opis": "ESPI 8.09 12:07 — wstepne wyniki aukcji uzupelniajacej rynku mocy na rok dostaw 2027 (uzupelnienie wyniku aukcji z 3.09 17:21); kurs PGE +4,06%, najwyzej od wrzesnia 2017, +9,21% od D0. Sektor ciagniety przez wzrost notowan energii i gazu w Europie (Tauron +6,06%, Enea ok. +7%, przychod Enei z aukcji ok. 519 mln zl). Zgodne z teza LONG",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — komunikaty ESPI/EBI PGE (8.09.2026 12:07); bankier.pl 'WIG i WIG20 srubuja rekordy. Kurs PGE najwyzej od 9 lat' 8.09.2026 17:05"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-08",
+   "dn": 2,
+   "opis": "WIG20 zamkniecie 4166,39 pkt (+1,28%, rekord), WIG 156 697,48 pkt (+1,35%), obroty 2471,56 mln zl; 14 spolek na plusie. Stawki FRA wyceniaja wzrost stop o co najmniej 50 pb w 6 miesiecy — WIG-Banki na historycznym szczycie (+41% od poczatku roku), wsparcie tez dlugich PEKAO i MBANK, przeciwwiatr dla tezy krotkiej KRUK. KGHM +4,66% (miedz blisko 15 000 USD/t, list intencyjny z BHP World Exploration)",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 8.09.2026 17:05 i 15:30; PAP/ISBnews za strefainwestorow.pl i inwestycje.pl"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-08",
+   "dn": 2,
+   "opis": "CIT 30% dla energetyki i paliw — brak nowego kroku legislacyjnego w 24 h; projekt od 20.08 na etapie zalozen w wykazie prac RM (sciezka 30%/2027 -> 26% -> 23% -> 19%/2030). Wyzwalacz tezy nie zadzialal; kurs Orlenu +0,38% od D0, watek PGZ nadal bez ESPI",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 20.08.2026, parkiet.com, rp.pl (szacunki: Orlen ok. 5 mld zl, PGE ok. 0,7 mld zl w 2027-2029)"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "Terminy makro na biezacy tydzien zweryfikowane w datowanym zrodle: decyzja RPP 9.09 (konsensus 3,75% bez zmian), EBC 10.09 14:15 + konferencja Lagarde 14:45, wystapienie prezesa NBP 10.09 15:00, CPI USA 11.09 14:30. Daty z raportu tygodniowego W4 NIE wymagaly korekty (brak RPP_DATE_ERROR w tym biegu)",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Wazny tydzien dla kredytobiorcow w zlotych i euro', publ. 2026-09-04 13:00, akt. 2026-09-06 14:17; finwire.pl (konsensus RPP)"
   }
  ],
  "data_quality": [
   "FMP_PLAN_BLOKADA",
   "KNF_SHORT_NIEDOSTEPNY",
-  "EBC_KONSENSUS_ROZBIEZNE_ZRODLA"
+  "EBC_KONSENSUS_ROZBIEZNE_ZRODLA",
+  "KURS_ZRODLO_REZERWA"
  ]
 }
