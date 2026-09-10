@@ -586,6 +586,62 @@
    "opis": "Terminy makro na biezacy tydzien zweryfikowane w datowanym zrodle: decyzja RPP 9.09 (konsensus 3,75% bez zmian), EBC 10.09 14:15 + konferencja Lagarde 14:45, wystapienie prezesa NBP 10.09 15:00, CPI USA 11.09 14:30. Daty z raportu tygodniowego W4 NIE wymagaly korekty (brak RPP_DATE_ERROR w tym biegu)",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl 'Wazny tydzien dla kredytobiorcow w zlotych i euro', publ. 2026-09-04 13:00, akt. 2026-09-06 14:17; finwire.pl (konsensus RPP)"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "RPP utrzymala stopy bez zmian: referencyjna 3,75%, lombardowa 4,25%, depozytowa 3,25%, redyskontowa 3,80%, dyskontowa 3,85%. Decyzja zgodna z konsensusem. Ekonomisci po decyzji: Rada nie zmienia retoryki mimo CPI 3,4% r/r, obnizki sie oddalaja (furtke zatrzasnely odbicie inflacji i ropa >100 USD), rynek FRA wycenia raczej podwyzki. Podtrzymuje tezy dlugie na bankach (PEKAO, MBANK), przeciwwiatr dla tezy krotkiej KRUK",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Stopy w NBP bez zmian we wrzesniu 2026...' 9.09.2026; bankier.pl 'Ekonomisci: RPP nie zmienia retoryki mimo rosnacej inflacji...' 9.09.2026; tvn24.pl, gazetaprawna.pl 9.09.2026"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "Sesja 9.09 — korekta po rekordach. WIG20 4136,46 pkt (-0,72%), WIG 155 496,80 (-0,77%), mWIG40 -1,07%, sWIG80 +0,24%; obroty 3,55 mld zl (blisko 3 mld na WIG20), 16 z 20 blue chipow na minusie. Na plusie KGHM +0,88% (miedz rekordowe 14 750 USD/t), Orlen +0,58%, PKO BP +0,34%, mBank +0,18%. Najwieksze spadki: Dino -4,20%, CD Projekt -2,97%, LPP -2,72%, Kety -2,47%, PZU -1,45%, PGE -0,91%. DAX -1,75%",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Polska gielda lapie oddech po rekordach. Miedz blyszczy na GPW' 9.09.2026 17:25"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "Orlen +0,58% na czerwonej sesji, kontynuacja serii na fali drozejacej ropy; jedna z czterech spolek WIG20 na plusie. Brak ESPI spolki, watek PGZ nadal bez decyzji. Zgodne z teza LONG",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 9.09.2026 17:25"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "Ropa Brent (listopad) 101,70 USD/b (+3,86%), WTI 96,88 USD/b (+4,14%) — najdrozej od maja 2026 po eskalacji USA-Iran w rejonie Ormuz (CENTCOM zniszczyl 5 iranskich tankowcow; IRGC zaatakowal 2 amerykanskie okrety i 8 tankowcow w Zatoce Perskiej oraz baze Al-Azrak w Jordanii). Wall Street 3. dzien spadkow: DJIA -0,77% (52 380,66), S&P500 -0,48% (7 636,36), Nasdaq -0,64% (26 253,34), VIX +4,71% do 16,46; rentownosc 10-latek USA 4,857% (najwyzej od XI 2023). Zdarzenie po 17:00 -> obciaza sesje 10.09. Dla ORLENU kierunek mieszany: plus dla wydobycia i cen paliw, minus dla marzy rafineryjnej i sentymentu — bez reakcji na tym etapie",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Ropa powyzej 100 dolarow, a Wall Street w czerwieni. Wojna o tankowce uderza w gieldy' 9.09.2026 23:58; bankier.pl 'Ropa najdrozsza od maja...' 10.09.2026 08:00"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-09",
+   "dn": 3,
+   "opis": "CD Projekt -2,97% (232,30 zl), jeden z najslabszych blue chipow sesji — ruch ZGODNY z teza short, bez ESPI i bez nowej rekomendacji. Pozycja pozostaje w REDUCE z 8.09 (regula jednokierunkowa: raz zredukowana zostaje do soboty)",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 9.09.2026 17:25; data/kursy-cache.json"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "Kalendarz dnia potwierdzony w datowanych zrodlach: EBC decyzja 14:15 (konsensus +25 pb do 2,50% dep.; 65/65 ekonomistow ankiety Reutersa 31.08-3.09; inflacja HICP VIII 3,3% r/r, najwyzej od IX 2023, energia +14,3% r/r), konferencja Lagarde 14:45, konferencja prezesa NBP 15:00, CPI USA 11.09 14:30. Daty raportu tygodniowego W4 bez korekty",
+   "wklad_pkt": null,
+   "zrodlo": "radiopin.pl, managerplus.pl, forexclub.pl (data i konsensus EBC); strefainwestorow.pl 9.07.2026 (przesuniecie posiedzenia RPP, konferencja 10.09); bankier.pl 'Wazny tydzien...' publ. 4.09, akt. 6.09"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "Kontrola zrodel 10.09: brak ESPI/EBI spolek koszykowych w oknie 9-10.09 do 8:00 (w strumieniu wylacznie raporty polroczne spoza WIG20). Brak nowych rekomendacji dla spolek koszykowych — obowiazuje strategia Trigon DM z 7.09. Rejestr krotkiej sprzedazy KNF nadal poza zasiegiem sieci (ostatnie omowienia prasowe z VI 2026, w rejestrze m.in. MODIVO i PEPCO). Zadna pozycja nie osiagnela progu 4% przeciw tezie (najgorsza PZU -1,66% od D0) -> brak nowych wpisow exclude",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl komunikaty spolek ESPI/EBI (odczyt 10.09.2026); parkiet.com (przeglady rejestru KNF); WebSearch 10.09.2026"
   }
  ],
  "data_quality": [

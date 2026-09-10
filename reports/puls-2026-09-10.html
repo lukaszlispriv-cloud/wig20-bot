@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-09-10</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#B8E0C6}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.reakcja{background:#C4372E}.tag.takt{background:#0E7C4A}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green)}.dn{color:var(--red)}.na{color:var(--muted)}
+  .flag{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.4px;padding:1px 5px;border-radius:3px;background:#FBF0DC;color:#8A5E12;border:1px solid #E3C98F;margin-left:6px}
+  .note{font-size:.78rem;color:var(--muted);margin:2px 2px 18px}
+  .result{background:var(--navy);color:#fff;border-radius:10px;padding:16px;margin:6px 0 4px}
+  .result .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.9px;opacity:.75}
+  .result .big{font-size:2rem;font-weight:800;color:#B8E0C6;line-height:1.15}
+  .result .row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .result .side{border-left:1px solid #3A4E66;padding-left:18px}
+  .result .side .val{font-size:1.05rem;font-weight:700;color:#DDE3EA}
+  .result .side .cap{font-size:.7rem;opacity:.7;max-width:230px;line-height:1.35;margin-top:3px}
+  ul.cal{list-style:none}
+  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  ul.cal .t{display:inline-block;min-width:64px;font-weight:700;color:var(--navy)}
+  .src{font-size:.75rem;color:var(--muted);margin-top:20px}
+  .warn{border-left:4px solid var(--amber);background:#FBF6EC}
+  .redu{border-left:4px solid var(--red);background:#FCF1F0}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+
+  .src-inline{display:block;font-size:.75rem;color:var(--muted);margin-top:5px;line-height:1.4}
+</style></head>
+<body>
+
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">czwartek, 10 września 2026 · bieg poranny (przed otwarciem GPW) · prognoza tygodniowa 2026-W4 · D0&nbsp;=&nbsp;4.09</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 136,46</div>
+      <div class="chg mono">zamknięcie 9.09 · &minus;0,72% dnia · +1,13% od D0</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">Aktualna</span>
+    <span class="stampnote">Werdykt dnia: prognoza 2026-W4 utrzymana, <strong>bez nowych reakcji</strong> — obowiązują REDUCE z 8.09 na MBANK (long) i CDPROJEKT (short), oba z wyzwalaczem RECOMMENDATION. Żadna pozycja nie weszła w pasmo 4–8% przeciw tezie (najgorsza: PZU &minus;1,66% od D0). Bez nowych taktycznych. Trzecia rozliczona sesja okna: <strong>wynik rachunku +0,84 p.p.</strong> — przewaga wciąż niemal w całości z PGE.</span>
+  </div>
+
+  <h2>Najważniejsze zmiany (24 h)</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag makro">MAKRO</span><strong>RPP utrzymała stopy bez zmian — referencyjna 3,75%</strong> (lombardowa 4,25%, depozytowa 3,25%). Decyzja zgodna z konsensusem, po dwudniowym posiedzeniu 8–9.09. Ekonomiści po decyzji: Rada nie zmienia retoryki mimo inflacji CPI 3,4% r/r, a furtkę do obniżek zatrzasnęły odbicie inflacji i ropa powyżej 100 USD — obniżki się oddalają, rynek FRA wycenia raczej podwyżki. To <em>podtrzymuje</em> tezy długie na bankach (PEKAO, MBANK) i pozostaje przeciwwiatrem dla tezy krótkiej na KRUK-u. <span class="src-inline">Źródło: bankier.pl „Stopy w NBP bez zmian we wrześniu 2026…”, 9.09.2026; bankier.pl „Ekonomiści: RPP nie zmienia retoryki mimo rosnącej inflacji…”, 9.09.2026; tvn24.pl, gazetaprawna.pl (9.09.2026).</span></li>
+
+      <li><span class="tag makro">MAKRO</span><strong>Ropa Brent powyżej 100 USD — najdrożej od maja</strong>. Brent (listopad) 101,70 USD/b (+3,86%), WTI 96,88 USD/b (+4,14%) po najostrzejszej od tygodni eskalacji USA–Iran w rejonie cieśniny Ormuz: CENTCOM zniszczył pięć irańskich tankowców, IRGC zaatakował dwa amerykańskie okręty i osiem tankowców w Zatoce Perskiej oraz bazę Al-Azrak w Jordanii. Wall Street trzeci dzień w dół (DJIA &minus;0,77%, S&amp;P 500 &minus;0,48%, Nasdaq &minus;0,64%, VIX +4,71% do 16,46), rentowność 10-latek USA 4,857% — najwyżej od listopada 2023. To zdarzenie po zamknięciu GPW, więc obciąża sesję <strong>10.09</strong>. Dla ORLENU (long) kierunek jest <em>zgodny z tezą</em> w części wydobywczej i cenach paliw, ale drożejąca ropa to jednocześnie presja na marżę rafineryjną i na sentyment do akcji w ogóle — obserwujemy, bez reakcji na tym etapie. <span class="src-inline">Źródło: bankier.pl „Ropa powyżej 100 dolarów, a Wall Street w czerwieni. Wojna o tankowce uderza w giełdy”, 9.09.2026 23:58; bankier.pl „Ropa najdroższa od maja…”, 10.09.2026 08:00.</span></li>
+
+      <li><span class="tag rynek">RYNEK</span><strong>GPW łapie oddech po rekordach: WIG20 4 136,46 pkt (&minus;0,72%)</strong>, WIG 155 496,80 pkt (&minus;0,77%), mWIG40 &minus;1,07%, sWIG80 +0,24%. Obroty 3,55 mld zł, z czego blisko 3 mld zł na WIG20 — <strong>16 z 20 blue chipów na minusie</strong>. Jasnym punktem KGHM +0,88% przy rekordowej cenie miedzi 14 750 USD/t, dalej Orlen +0,58% (na fali drożejącej ropy), PKO BP +0,34% (obroty ponad 463 mln zł) i mBank +0,18%. Najmocniej traciły Dino &minus;4,20%, <strong>CD Projekt &minus;2,97%</strong>, LPP &minus;2,72%, <strong>Grupa Kęty &minus;2,47%</strong>, PZU &minus;1,45%, PGE &minus;0,91%. W Europie DAX &minus;1,75%. <span class="src-inline">Źródło: bankier.pl „Polska giełda łapie oddech po rekordach. Miedź błyszczy na GPW”, 9.09.2026 17:25.</span></li>
+
+      <li><span class="tag espi">ESPI</span><strong>Brak raportów bieżących spółek koszykowych w oknie 9–10.09 do 8:00.</strong> W strumieniu komunikatów ESPI/EBI z tych dat nie pojawiły się ORLEN, PGE, PEKAO, PZU, MBANK, KRUK, PEPCO, CDPROJEKT, KĘTY ani MODIVO — są wyłącznie raporty półroczne spółek spoza WIG20 (Atal, Mangata, Relpol, Novita i in.). <span class="src-inline">Źródło: bankier.pl — komunikaty spółek ESPI/EBI, odczyt 10.09.2026 ok. 8:20.</span></li>
+
+      <li><span class="tag rekom">REKOM.</span><strong>Brak nowych rekomendacji dla spółek koszykowych w 24 h.</strong> Nadal obowiązuje wrześniowa strategia portfelowa Trigon DM z 7.09 — to ona wywołała REDUCE na MBANK-u i CD Projekcie 8.09 i nie została w tym oknie zmieniona ani powtórzona przez inny dom maklerski. <span class="src-inline">Źródło: przegląd WebSearch 10.09.2026; brak nowych publikacji datowanych 9–10.09.</span></li>
+
+      <li><span class="tag short">SHORT</span><strong>Rejestr krótkiej sprzedaży KNF — bez odczytu.</strong> Serwis rejestru pozostaje poza zasięgiem sieci środowiska, a dostępne omówienia prasowe kończą się na czerwcu 2026 (w rejestrze m.in. MODIVO i PEPCO — obie z naszego koszyka short). Nie da się dziś potwierdzić ani wykluczyć zmiany o ≥0,3 p.p. Kod <span class="mono">KNF_SHORT_NIEDOSTEPNY</span> pozostaje w <span class="mono">data_quality</span>. <span class="src-inline">Źródło: parkiet.com (przeglądy rejestru KNF, ostatni z czerwca 2026); brak dostępu do rejestru KNF.</span></li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0 (4.09)</th><th>Kurs 9.09</th><th>Zwrot pozycji</th><th>Rel. vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">PKNORLEN</td><td><span class="dir long">LONG</span></td><td class="mono">158,00</td><td class="mono">159,52</td><td class="mono up">+0,96%</td><td class="mono dn">&minus;0,17 pp</td></tr>
+        <tr><td class="name">PGE</td><td><span class="dir long">LONG</span></td><td class="mono">12,545</td><td class="mono">13,575</td><td class="mono up">+8,21%</td><td class="mono up">+7,08 pp</td></tr>
+        <tr><td class="name">PEKAO</td><td><span class="dir long">LONG</span></td><td class="mono">263,90</td><td class="mono">266,30</td><td class="mono up">+0,91%</td><td class="mono dn">&minus;0,22 pp</td></tr>
+        <tr><td class="name">PZU</td><td><span class="dir long">LONG</span></td><td class="mono">76,12</td><td class="mono">74,86</td><td class="mono dn">&minus;1,66%</td><td class="mono dn">&minus;2,78 pp</td></tr>
+        <tr><td class="name">MBANK<span class="flag">REDUCE 8.09</span></td><td><span class="dir long">LONG</span></td><td class="mono">1408,50</td><td class="mono">1428,50</td><td class="mono up">+1,42%</td><td class="mono up">+0,29 pp</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Kolejność stała, z <span class="mono">signals.json</span> — tabela nie jest rankingiem. Średnia surowa koszyka LONG: <strong>+1,97%</strong>. MBANK od 8.09 z połową wagi na rachunku (kurs odniesienia redukcji 1 411,00 zł).</div>
+
+  <h2>Koszyk SHORT</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0 (4.09)</th><th>Kurs 9.09</th><th>Zwrot pozycji</th><th>Rel. vs WIG20</th></tr></thead>
+      <tbody>
+        <tr><td class="name">KRUK</td><td><span class="dir short">SHORT</span></td><td class="mono">395,00</td><td class="mono">394,90</td><td class="mono up">+0,03%</td><td class="mono up">+1,15 pp</td></tr>
+        <tr><td class="name">PEPCO</td><td><span class="dir short">SHORT</span></td><td class="mono">41,83</td><td class="mono">41,54</td><td class="mono up">+0,69%</td><td class="mono up">+1,82 pp</td></tr>
+        <tr><td class="name">CDPROJEKT<span class="flag">REDUCE 8.09</span></td><td><span class="dir short">SHORT</span></td><td class="mono">232,00</td><td class="mono">232,30</td><td class="mono dn">&minus;0,13%</td><td class="mono up">+1,00 pp</td></tr>
+        <tr><td class="name">KETY</td><td><span class="dir short">SHORT</span></td><td class="mono">1230,00</td><td class="mono">1226,00</td><td class="mono up">+0,33%</td><td class="mono up">+1,45 pp</td></tr>
+        <tr><td class="name">MODIVO</td><td><span class="dir short">SHORT</span></td><td class="mono">87,88</td><td class="mono">87,92</td><td class="mono dn">&minus;0,05%</td><td class="mono up">+1,08 pp</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Średnia surowa koszyka SHORT: &minus;0,17%. <strong>Koszyk SHORT nie jest handlowany na rachunku</strong> (HEDGE_MODE=index — bot kupuje koszyk LONG i sprzedaje kontrakt na WIG20; tryb <span class="mono">classic</span> niedostępny, rachunek Capital.com nie pozwala shortować CFD na akcje). Cała ta tabela jest miarą selekcji, nie pozycją na koncie.</div>
+
+  <h2>Wynik okna 2026-W4 (3 sesje: 5.09 → 9.09)</h2>
+  <div class="result">
+    <div class="row">
+      <div>
+        <div class="lbl">Wynik rachunku · średnia LONG &minus; WIG20</div>
+        <div class="big mono">+0,84 p.p.</div>
+        <div class="lbl" style="opacity:.6;margin-top:4px">brutto, przed spreadem bid/ask i punktami swapowymi</div>
+      </div>
+      <div class="side">
+        <div class="lbl">Spread LONG &minus; SHORT</div>
+        <div class="val mono">+2,14 p.p.</div>
+        <div class="cap">papierowy — miara selekcji, nie wynik rachunku</div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><strong>Rozjazd +1,30 p.p.</strong> (przekracza próg 0,5 p.p.): tyle alfy siedzi po stronie krótkiej, której rachunek nie zbiera — dziś to zasługa spadków CD Projektu i Kęt oraz zerowego shorta na Kruku. Do wyniku brutto trzeba dopisać koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE na MBANK-u dwa razy — Capital.com nie ma częściowego zamknięcia), punkty swapowe za każdą dobę utrzymania i lukę między zamknięciem D0 w piątek a rotacją bota w poniedziałek 9:15. Wczoraj wynik rachunku wynosił +0,62 p.p.; przyrost o 0,22 p.p. to głównie odporność Orlenu i mBanku na czerwoną sesję, mimo cofnięcia PGE o 0,91%.</div>
+
+  <h2>Reakcje na pozycjach</h2>
+  <div class="card redu">
+    <ul class="changes">
+      <li><span class="tag reakcja">REDUCE · 8.09</span><strong>MBANK</strong> (long) — wyzwalacz <span class="mono">RECOMMENDATION</span>: Trigon DM w strategii wrześniowej umieścił mBank wśród spółek mających zachować się gorzej niż rynek. Kurs odniesienia 1 411,00 zł. Pozycja realnie na rachunku, cięta do połowy. Dziś bez zmian — kurs +1,42% od D0, relatywnie +0,29 p.p., nic nie awansuje jej do CLOSE.</li>
+      <li><span class="tag reakcja">REDUCE · 8.09</span><strong>CDPROJEKT</strong> (short) — wyzwalacz <span class="mono">RECOMMENDATION</span>: ta sama strategia Trigon DM, CD Projekt po stronie spółek lepszych od rynku. Kurs odniesienia 236,70 zł. Redukcja papierowa (koszyk short nie jest handlowany). Dziś kurs spadł o 2,97% do 232,30 zł, czyli <em>zgodnie</em> z pierwotną tezą short — ale reguła jest jednokierunkowa: raz zredukowana pozycja zostaje zredukowana do soboty.</li>
+    </ul>
+  </div>
+  <div class="note">Brak nowych wpisów. Największy ruch przeciw tezie w koszykach to PZU &minus;1,66% od D0 — poniżej progu 4%. Progi: 4–8% przeciw tezie → REDUCE, powyżej 8% lub twarde zdarzenie → CLOSE.</div>
+
+  <h2>Moduł taktyczny</h2>
+  <div class="card">
+    <div style="font-size:.92rem">Lista otwartych pozycji taktycznych: <strong>pusta</strong>. Skan spółek WIG20 spoza koszyków nie znalazł twardego świeżego wyzwalacza z 24 h: sesja 9.09 była szeroką korektą po rekordach (16 z 20 blue chipów w dół), a dwa największe ruchy — KGHM +0,88% na rekordowej miedzi i Dino &minus;4,20% — to kontynuacja i wyhamowanie wcześniejszych trendów, bez ESPI, wyniku ponad konsensus, przełomowego kontraktu ani wezwania. <strong>Bez nowej taktycznej.</strong></div>
+  </div>
+
+  <h2>Kalendarz na dziś (10.09)</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t mono">14:15</span><strong>EBC — decyzja o stopach.</strong> Konsensus: podwyżka o 25 pb do 2,50% (stopa depozytowa) — wszystkich 65 ekonomistów ankietowanych przez Reutersa 31.08–3.09. Druga podwyżka w cyklu po czerwcowej 2,00%→2,25%; inflacja w strefie euro w sierpniu 3,3% r/r, najwyżej od września 2023, ciągnięta przez energię (+14,3% r/r).</li>
+      <li><span class="t mono">14:45</span><strong>Konferencja Christine Lagarde.</strong> Ton wypowiedzi zwykle waży na notowaniach więcej niż sam komunikat — to główna niewiadoma dnia dla banków i złotego.</li>
+      <li><span class="t mono">15:00</span><strong>Konferencja prasowa prezesa NBP Adama Glapińskiego</strong> po posiedzeniu RPP 8–9.09 (termin przesunięty komunikatem NBP z 9.07).</li>
+      <li><span class="t mono">jutro</span><strong>11.09, 14:30 — CPI USA za sierpień.</strong> Przy ropie powyżej 100 USD odczyt ma podwyższoną wagę dla rentowności i sentymentu.</li>
+    </ul>
+  </div>
+  <div class="note">Wszystkie terminy potwierdzone w datowanych źródłach z bieżącego tygodnia: bankier.pl „Ważny tydzień dla kredytobiorców w złotych i euro” (publ. 4.09, akt. 6.09), strefainwestorow.pl 9.07.2026 (komunikat NBP o przesunięciu posiedzenia), radiopin.pl i managerplus.pl (data i konsensus EBC), forexclub.pl (ankieta Reutersa). Daty z raportu tygodniowego W4 nie wymagały korekty — bez <span class="mono">RPP_DATE_ERROR</span> w tym biegu.</div>
+
+  <h2>Problemy i jakość danych</h2>
+  <div class="card warn">
+    <ul class="changes">
+      <li><strong>FMP — konektor w sesji, ale abonament blokuje dane.</strong> Narzędzia <span class="mono">mcp__FMP__*</span> były dostępne, jednak endpoint świec dziennych zwrócił „ACCESS DENIED: requires a higher plan”. Ścieżka pierwszego wyboru z CLAUDE.md jest więc nieużywalna niezależnie od grantu konektora. Kod: <span class="mono">FMP_PLAN_BLOKADA</span>.</li>
+      <li><strong>Yahoo — HTTP 429 na całym biegu.</strong> Limiter odrzucił wszystkie symbole (także po ponowieniach), skrypt <span class="mono">kursy.py</span> automatycznie zszedł do rezerwy bankier.pl. <strong>Wszystkie kursy w tabelach pochodzą z tabel notowań bankier.pl</strong>, odczyty 9.09 w godz. 17:00–17:15, czyli po zamknięciu sesji. Kod: <span class="mono">KURS_ZRODLO_REZERWA</span>.</li>
+      <li><strong>Walidacja D0 przeszła w 100%.</strong> Zamknięcia z 4.09 dla wszystkich dziesięciu spółek koszykowych i dla WIG20 zgadzają się z <span class="mono">d0.prices</span> w <span class="mono">signals.json</span> co do grosza (odchylenie 0,000%). Serie są więc wiarygodne mimo rezerwowego źródła.</li>
+      <li><strong>Rejestr krótkiej sprzedaży KNF</strong> — poza zasięgiem sieci, patrz sekcja SHORT. Kod: <span class="mono">KNF_SHORT_NIEDOSTEPNY</span>.</li>
+    </ul>
+  </div>
+
+  <div class="src">Źródła kursów: <span class="mono">data/kursy-cache.json</span> zasilany przez <span class="mono">scripts/kursy.py</span> (bankier.pl, odczyty 9.09.2026 17:00–17:15). Research: bankier.pl, strefainwestorow.pl, tvn24.pl, gazetaprawna.pl, parkiet.com, radiopin.pl, managerplus.pl, forexclub.pl. Raport wygenerowany 10.09.2026 przed otwarciem GPW.</div>
+
+  <footer>
+    Materiał analityczno-edukacyjny, <strong>nie stanowi rekomendacji inwestycyjnej</strong> w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie uwzględnia sytuacji ani celów inwestycyjnych odbiorcy. Raport przygotowany automatycznie przez agenta AI (rutyna „Puls WIG20”) na podstawie publicznie dostępnych źródeł; dane mogą zawierać błędy, a kursy pochodzą ze źródła rezerwowego.
+  </footer>
+
+</div>
+</body>
+</html>
