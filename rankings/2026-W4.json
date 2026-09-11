@@ -642,12 +642,69 @@
    "opis": "Kontrola zrodel 10.09: brak ESPI/EBI spolek koszykowych w oknie 9-10.09 do 8:00 (w strumieniu wylacznie raporty polroczne spoza WIG20). Brak nowych rekomendacji dla spolek koszykowych — obowiazuje strategia Trigon DM z 7.09. Rejestr krotkiej sprzedazy KNF nadal poza zasiegiem sieci (ostatnie omowienia prasowe z VI 2026, w rejestrze m.in. MODIVO i PEPCO). Zadna pozycja nie osiagnela progu 4% przeciw tezie (najgorsza PZU -1,66% od D0) -> brak nowych wpisow exclude",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl komunikaty spolek ESPI/EBI (odczyt 10.09.2026); parkiet.com (przeglady rejestru KNF); WebSearch 10.09.2026"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "EBC podniosl stopy o 25 pb do 2,50% - druga podwyzka w cyklu, zgodna z konsensusem wpisanym do rankingu W4; Lagarde: inflacja powyzej celu do 2027. Bez zaskoczenia, zadna teza koszykowa nie naruszona",
+   "wklad_pkt": null,
+   "zrodlo": "PAP 'DZIEN NA RYNKACH: Indeksy w Europie na minusach; EBC podniosl stopy proc.' 10.09.2026; TVN24 Biznes/Forsal"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "sesja 10.09: WIG20 -0,67% do 4108,81 pkt, WIG -0,77%, obrot na calym rynku ponad 3,60 mld zl (WIG20 2,92 mld); WIG-ENERG +1,99% wbrew rynkowi",
+   "wklad_pkt": null,
+   "zrodlo": "PAP/strefainwestorow.pl, zamkniecie 10.09.2026"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "PGE +4,64% do 14,205 zl - czwarty mocny dzien energetyki w oknie W4; od D0 +13,23% (+12,78 p.p. vs WIG20), samodzielnie odpowiada za wiekszosc wyniku rachunku. Brak ESPI spolki, ruch sektorowy, zgodny z teza LONG",
+   "wklad_pkt": null,
+   "zrodlo": "PAP/strefainwestorow.pl, stockwatch.pl, bankier.pl (odczyt 10.09.2026 17:04)"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "KGHM -8,19% (378,00 -> 347,05 zl) na przecenie miedzi ok. -4,6% i srebra ok. -4,4%; spolka ciagnela indeks w dol. Spoza koszykow; ruch surowcowy, brak ESPI i brak wynikow - NIE jest twardym wyzwalaczem modulu taktycznego, wpisu SELL nie otwarto (dodatkowo rachunek nie pozwala shortowac CFD na akcje)",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl (notowania KGHM, odczyt 10.09.2026 17:01), parkiet.com, stockwatch.pl"
+  },
+  {
+   "ticker": "PEPCO",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "PEPCO -3,51% do 40,08 zl bez komunikatu spolki; kontynuacja trendu (ok. -7,8% tydzien do tygodnia). Zgodne z teza SHORT, ponizej progu jakiejkolwiek reakcji",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl (tabela notowan, odczyt 10.09.2026 17:02), biznesradar.pl"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-10",
+   "dn": 4,
+   "opis": "wyzwalacz 'CIT dla energetyki i paliw' bez zmiany etapu: min. energii M. Motyka (Forum w Karpaczu, 10.09) zapowiedzial ustawe przyspieszajaca inwestycje w energetyce do konca 2026 i podtrzymal przejsciowe podwyzszenie CIT dla grup paliwowo-energetycznych (30% od 2027). Brak nowego kroku legislacyjnego; kurs Orlenu +0,03% d/d",
+   "wklad_pkt": null,
+   "zrodlo": "wnp.pl, portalkomunalny.pl (10.09.2026); rp.pl, parkiet.com - omowienia projektu"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "CPI USA za sierpien - termin piatek 11.09 POTWIERDZONY w datowanych zrodlach z biezacego tygodnia (bankier.pl 'Wazny tydzien...', publ. 4.09 akt. 6.09; parkiet.com komentarz walutowy 7.09). Kalendarz GPW na 11.09 bez spolek koszykowych i taktycznych",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl, parkiet.com, kalendarium GPW/stockwatch.pl"
   }
  ],
  "data_quality": [
   "FMP_PLAN_BLOKADA",
   "KNF_SHORT_NIEDOSTEPNY",
   "EBC_KONSENSUS_ROZBIEZNE_ZRODLA",
-  "KURS_ZRODLO_REZERWA"
+  "KURS_ZRODLO_REZERWA",
+  "WALIDACJA_D0_Z_CACHE"
  ]
 }
