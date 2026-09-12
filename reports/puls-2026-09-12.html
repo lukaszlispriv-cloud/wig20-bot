@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-09-12</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#B8E0C6}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.reakcja{background:#C4372E}.tag.takt{background:#0E7C4A}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green)}.dn{color:var(--red)}.na{color:var(--muted)}
+  .flag{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.4px;padding:1px 5px;border-radius:3px;background:#FBF0DC;color:#8A5E12;border:1px solid #E3C98F;margin-left:6px}
+  .note{font-size:.78rem;color:var(--muted);margin:2px 2px 18px}
+  .result{background:var(--navy);color:#fff;border-radius:10px;padding:16px;margin:6px 0 4px}
+  .result .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.9px;opacity:.75}
+  .result .big{font-size:2rem;font-weight:800;color:#B8E0C6;line-height:1.15}
+  .result .row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .result .side{border-left:1px solid #3A4E66;padding-left:18px}
+  .result .side .val{font-size:1.05rem;font-weight:700;color:#DDE3EA}
+  .result .side .cap{font-size:.7rem;opacity:.7;max-width:230px;line-height:1.35;margin-top:3px}
+  ul.cal{list-style:none}
+  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  ul.cal .t{display:inline-block;min-width:64px;font-weight:700;color:var(--navy)}
+  .src{font-size:.75rem;color:var(--muted);margin-top:20px}
+  .warn{border-left:4px solid var(--amber);background:#FBF6EC}
+  .redu{border-left:4px solid var(--red);background:#FCF1F0}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+  .src-inline{display:block;font-size:.75rem;color:var(--muted);margin-top:5px;line-height:1.4}
+</style></head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>PULS WIG20</h1>
+      <div class="sub">sobota, 12 września 2026 &middot; tydzień 2026-W4 &middot; D0 = 4.09.2026 &middot; ostatnia sesja D+5 (11.09) &middot; okno tygodnia domknięte</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 139,25</div>
+      <div class="chg mono">+0,74% d/d &middot; +1,20% od D0</div>
+      <div class="sub">zamknięcie 11.09.2026</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp">PROGNOZA AKTUALNA</span>
+    <span class="stampnote">Bez nowych reakcji — żadna spółka koszykowa nie przekroczyła progu 4% przeciw tezie.<br>Okno W4 zamknięte na sesji z piątku 11.09: <strong>wynik rachunku +2,70 pp</strong>. Dwie redukcje z 8.09 (CDPROJEKT, MBANK) obowiązywały do końca okna.</span>
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag rynek">RYNEK</span><strong>Domknięcie okna W4 — wynik rachunku +2,70 pp.</strong> Koszyk LONG dał średnio +3,90% wobec +1,20% na WIG20. To najlepsze okno od początku prowadzenia metryki i, co ważniejsze, pierwsze, w którym wynik rachunku i spread papierowy wskazują w tę samą stronę. Rozliczenie mechaniczne (<span class="mono">scripts/metryki.py rozlicz</span>): hit TOP5 4/5 przy losowym 2,25, hit BOTTOM5 4/5 przy losowym 2,75, Spearman +0,64, Brier 0,2263 przy baseline 0,2500.
+        <span class="src-inline">Liczone z <span class="mono">data/kursy-cache.json</span> i <span class="mono">rankings/2026-W4.json</span>; pełne rozliczenie tygodnia wykona rutyna raportu tygodniowego.</span></li>
+      <li><span class="tag rynek">RYNEK</span><strong>Sesja 11.09: WIG20 +0,74% do 4 139,25 pkt</strong>, WIG +0,50% do 155 090,25 pkt, obroty 3,56 mld zł (ok. 3 mld zł na WIG20). Odreagowanie po nerwowym tygodniu — ropa cofnęła się po doniesieniach o negocjacjach z Iranem ws. cieśniny Ormuz, a CPI z USA nie przyniósł negatywnego zaskoczenia. WIG-Banki ustanowił nowy rekord śróddzienny po czwartkowej konferencji prezesa NBP.
+        <span class="src-inline">Źródło: bankier.pl „Oddech ulgi na rynkach i GPW. WIG20 powraca do wzrostów po nerwowym tygodniu”, 11.09.2026</span></li>
+      <li><span class="tag makro">MAKRO</span><strong>CPI USA za sierpień zgodny z oczekiwaniami: +0,4% m/m, 3,4% r/r.</strong> Inflacja bazowa +0,3% m/m i 2,4% r/r — najniżej od marca 2021. Za ponad jedną trzecią wzrostu odpowiadała benzyna (+3,9% m/m). Odczyt domknął tydzień RPP → EBC → CPI bez zaskoczeń; rynek wycenia ok. 70% szans na podwyżkę stóp przez Fed 16.09.
+        <span class="src-inline">Źródło: BLS „Consumer Price Index Summary — 2026 M08”, 11.09.2026; U.S. News, 11.09.2026; bankier.pl 11.09.2026</span></li>
+      <li><span class="tag rynek">RYNEK</span><strong>CD Projekt +2,08% do 235,40 zł — najmocniejszy blue chip sesji.</strong> Ruch przeciw tezie SHORT, ale od D0 to zaledwie +1,47%, czyli <strong>poniżej progu 4%</strong>; do tego spółka relatywnie do WIG20 jest na +0,27 pp na korzyść indeksu. Pozycja pozostaje w REDUCE z 8.09 (rekomendacja Trigon DM), bez eskalacji do CLOSE. Brak ESPI i brak nowej rekomendacji spółkowej.
+        <span class="src-inline">Źródło: bankier.pl (tabela notowań, odczyt 11.09.2026 17:04); relacja sesyjna bankier.pl 11.09.2026</span></li>
+      <li><span class="tag rynek">RYNEK</span><strong>mBank +1,46% do 1 463,50 zł</strong> na rekordzie WIG-Banki. Od D0 +3,90%, czyli +2,71 pp względem WIG20 — teza LONG obroniła się mimo redukcji pozycji po wrześniowej strategii Trigon DM, która stawiała mBank po słabszej stronie rynku. Wsparcie od strony stóp: po posiedzeniu RPP i konferencji prezesa NBP rynek FRA wycenia raczej podwyżki niż obniżki.
+        <span class="src-inline">Źródło: bankier.pl (notowania i relacja sesyjna, 11.09.2026)</span></li>
+      <li><span class="tag rynek">RYNEK</span><strong>PGE &minus;1,20% do 14,035 zł</strong> — pierwsza korekta po czterech mocnych dniach energetyki. Od D0 spółka wciąż daje +11,88% i +10,68 pp wobec WIG20, samodzielnie odpowiadając za większość wyniku rachunku w tym oknie. Brak ESPI, ruch bez powodu spółkowego.
+        <span class="src-inline">Źródło: bankier.pl (notowania 11.09.2026 17:04), relacja sesyjna 11.09.2026</span></li>
+      <li><span class="tag makro">MAKRO</span><strong>Wyzwalacz „CIT 30% dla energetyki i paliw” nie zadziałał w całym oknie W4.</strong> Projekt pozostaje na etapie założeń w wykazie prac legislacyjnych RM z 20.08.2026 (ścieżka 30% w 2027 → 26% w 2028 → 23% w 2029 → 19% w 2030). Brak nowego kroku legislacyjnego przez pięć sesji; rynek ryzyko ignoruje — Orlen od D0 +1,97%, PGE +11,88%.
+        <span class="src-inline">Źródło: bankier.pl „Duża podwyżka CIT dla energetyki i paliw…”, 20.08.2026; parkiet.com, rp.pl, wnp.pl — omówienia projektu</span></li>
+      <li><span class="tag espi">ESPI</span>Brak raportów bieżących spółek koszykowych i taktycznych z 11–12.09. W strumieniu komunikatów wyłącznie spółki spoza koszyków (m.in. Asseco Poland, Atal, Diagnostyka, Grupa Azoty, koncesje Orlen Upstream Norway — bez wpływu na tezę).
+        <span class="src-inline">Źródło: bankier.pl, komunikaty ESPI/EBI (odczyt 12.09.2026)</span></li>
+      <li><span class="tag rekom">REKOM.</span>Brak nowych rekomendacji dla spółek koszykowych w ostatnich 24 h. Nadal obowiązuje strategia portfelowa Trigon DM z 7.09 — podstawa obu redukcji.
+        <span class="src-inline">Przegląd WebSearch i strefainwestorow.pl/rekomendacje, 12.09.2026 — bez trafień z datą 11–12.09</span></li>
+      <li><span class="tag short">SHORT</span>Rejestr krótkiej sprzedaży KNF <strong>niedostępny</strong> — knf.gov.pl blokowany przez politykę sieciową środowiska. Zmian pozycji krótkich nie dało się zweryfikować w żadnym biegu tego tygodnia (kod <span class="mono">KNF_SHORT_NIEDOSTEPNY</span>).
+        <span class="src-inline">Próba odczytu 12.09.2026; prasowe omówienia rejestru bez aktualizacji z bieżącego tygodnia</span></li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table><thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs 11.09</th><th>Zwrot pozycji</th><th>Rel. vs WIG20</th></tr></thead>
+      <tbody>
+<tr>
+<td class="name">PKNORLEN</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">158,00</td>
+<td class="mono">161,12</td>
+<td class="mono up">+1,97%</td>
+<td class="mono up">+0,78 pp</td>
+</tr>
+<tr>
+<td class="name">PGE</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">12,545</td>
+<td class="mono">14,035</td>
+<td class="mono up">+11,88%</td>
+<td class="mono up">+10,68 pp</td>
+</tr>
+<tr>
+<td class="name">PEKAO</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">263,90</td>
+<td class="mono">267,40</td>
+<td class="mono up">+1,33%</td>
+<td class="mono up">+0,13 pp</td>
+</tr>
+<tr>
+<td class="name">PZU</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">76,12</td>
+<td class="mono">76,42</td>
+<td class="mono up">+0,39%</td>
+<td class="mono dn">&minus;0,80 pp</td>
+</tr>
+<tr>
+<td class="name">MBANK<span class="flag">REDUCE</span></td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">1 408,50</td>
+<td class="mono">1 463,50</td>
+<td class="mono up">+3,90%</td>
+<td class="mono up">+2,71 pp</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Kolejność stała, zgodna z <span class="mono">signals.json</span> — to nie jest ranking. Znacznik REDUCE = pozycja zredukowana do połowy 8.09 i utrzymana do końca okna. Cztery z pięciu spółek pobiły indeks; jedyna słabsza to PZU (&minus;0,80 pp). Kursy: zamknięcia z 11.09.2026, źródło rezerwowe bankier.pl (Yahoo zwróciło HTTP 429).</p>
+
+  <h2>Koszyk SHORT <span class="mono" style="font-size:.7rem;color:var(--muted)">— papierowy, nie handlowany na rachunku</span></h2>
+  <div class="tblwrap">
+    <table><thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs 11.09</th><th>Zwrot pozycji</th><th>Rel. vs WIG20</th></tr></thead>
+      <tbody>
+<tr>
+<td class="name">KRUK</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">395,00</td>
+<td class="mono">387,80</td>
+<td class="mono up">+1,82%</td>
+<td class="mono up">+3,02 pp</td>
+</tr>
+<tr>
+<td class="name">PEPCO</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">41,83</td>
+<td class="mono">40,17</td>
+<td class="mono up">+3,97%</td>
+<td class="mono up">+5,17 pp</td>
+</tr>
+<tr>
+<td class="name">CDPROJEKT<span class="flag">REDUCE</span></td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">232,00</td>
+<td class="mono">235,40</td>
+<td class="mono dn">&minus;1,47%</td>
+<td class="mono dn">&minus;0,27 pp</td>
+</tr>
+<tr>
+<td class="name">KETY</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">1 230,00</td>
+<td class="mono">1 204,00</td>
+<td class="mono up">+2,11%</td>
+<td class="mono up">+3,31 pp</td>
+</tr>
+<tr>
+<td class="name">MODIVO</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">87,88</td>
+<td class="mono">86,34</td>
+<td class="mono up">+1,75%</td>
+<td class="mono up">+2,95 pp</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Rachunek Capital.com nie pozwala otwierać pozycji krótkich na CFD na akcje, więc koszyk SHORT jest miarą selekcji, a nie pozycją. Zwrot pozycji = odwrotność zmiany kursu. Cztery z pięciu typów zadziałały; jedyny błąd to CD Projekt.</p>
+
+  <h2>Wynik</h2>
+  <div class="result">
+    <div class="row">
+      <div>
+        <div class="lbl">Wynik rachunku (średnia LONG &minus; WIG20)</div>
+        <div class="big mono">+2,70 pp</div>
+      </div>
+      <div class="side">
+        <div class="lbl">Spread LONG&minus;SHORT</div>
+        <div class="val mono">+5,53 pp</div>
+        <div class="cap">papierowy — miara selekcji, nie wynik rachunku</div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Rozjazd między spreadem papierowym a wynikiem rachunku wynosi +2,83 pp — koszyk SHORT spadł średnio o 1,64%, a tego rachunek nie realizuje, bo krótkich pozycji na akcjach nie otwiera; zamiast tego płaci za hedge kontraktem na WIG20, który od D0 wzrósł o +1,20%. Tym razem oba warianty mają ten sam znak, więc selekcja i rachunek mówią to samo — inaczej niż w W3, gdzie papier dawał +1,32 pp przy rachunku &minus;1,61 pp.<br>
+  Wynik jest brutto: nie obejmuje spreadu bid/ask przy wejściu i wyjściu (przy REDUCE i korekcie wielkości dwa razy — Capital.com nie ma częściowego zamknięcia), punktów swapowych za każdą dobę utrzymania ani luki między zamknięciem D0 a realizacją (rotacja w poniedziałek 9:15, raport liczy od zamknięcia piątku).</p>
+
+  <h2>Kalendarz — sobota 12.09 i najbliższy tydzień</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t mono">dziś</span><strong>GPW zamknięta</strong> — sobota, brak sesji i brak zdarzeń korporacyjnych. Najbliższa sesja: poniedziałek 14.09, rotacja koszyków bota o 9:15.</li>
+      <li><span class="t mono">pn 14.09</span><span class="mono">9:00</span> BIEC — wrześniowy wskaźnik przyszłej inflacji; <span class="mono">14:00</span> bilans płatniczy Polski za lipiec; <span class="mono">14:30</span> CPI Kanady.</li>
+      <li><span class="t mono">wt 15.09</span><span class="mono">9:30</span> <strong>CPI Polski za sierpień (GUS, finalny)</strong>; <span class="mono">11:00</span> ZEW; w koszyku: <strong>raport H1 PGE</strong> oraz <strong>ostatni dzień z prawem do dywidendy PZU</strong> (4,80 zł, dzień dywidendy 17.09).</li>
+      <li><span class="t mono">śr 16.09</span><span class="mono">14:00</span> NBP — inflacja bazowa za sierpień; <strong>decyzja FOMC</strong> wraz z konferencją przewodniczącego Fed Kevina Warsha. Rynek wycenia ok. 70% szans na podwyżkę o 25 pb — główne wydarzenie tygodnia.</li>
+      <li><span class="t mono">cz 17.09</span><span class="mono">13:00</span> Bank Anglii, <span class="mono">14:30</span> Narodowy Bank Czech — decyzje o stopach; raporty H1 <strong>Allegro</strong> i <strong>LPP</strong>; dzień dywidendy PZU.</li>
+      <li><span class="t mono">pt 18.09</span><span class="mono">9:30</span> produkcja przemysłowa Polski za sierpień; nad ranem Bank Japonii (oczekiwana podwyżka do 1,25%); wieczorem <strong>review ratingu Polski przez Moody's</strong>; <strong>rewizja kwartalna GPW — cap 15% dla PKO BP w WIG20</strong>.</li>
+    </ul>
+  </div>
+  <p class="note">Terminy potwierdzone w datowanym źródle z bieżącego tygodnia: bankier.pl „Tym będą żyły rynki: czy Fed zdecyduje się podnieść stopy?”, publ. 11.09.2026. Daty z rankingu W4 (PGE 15.09, Allegro i LPP 17.09, rewizja GPW 18.09) nie wymagały korekty.</p>
+
+  <h2>Problemy z danymi</h2>
+  <div class="card warn">
+    <ul class="changes">
+      <li><strong>FMP_PLAN_BLOKADA</strong> — konektor FMP jest w sesji, ale endpoint świec dziennych (<span class="mono">historical-price-eod-light</span>) zwraca „ACCESS DENIED: wymaga wyższego planu”. Kursy z rezerwy. Bez zmiany planu FMP ta ścieżka pozostaje martwa.</li>
+      <li><strong>KURS_ZRODLO_REZERWA</strong> — Yahoo Finance zwróciło HTTP 429 dla wszystkich 21 tickerów; komplet zamknięć z 11.09 pochodzi z tabel notowań bankier.pl (odczyty 17:00–17:15). Kontrola krzyżowa: WIG20 4 139,25 pkt (+0,74%), CD Projekt 235,40 zł (+2,08%), Kęty 1 204,00 zł (&minus;0,74%), mBank +1,46%, Orlen +0,98%, PGE &minus;1,20% — wszystko zgodne z relacją sesyjną bankier.pl. Seria uznana za wiarygodną.</li>
+      <li><strong>KNF_SHORT_NIEDOSTEPNY</strong> — knf.gov.pl blokowany przez politykę sieciową; brak weryfikacji zmian w rejestrze krótkiej sprzedaży przez cały tydzień W4.</li>
+      <li><strong>WALIDACJA_D0_Z_CACHE</strong> — walidacja D0 nie była możliwa na poziomie skryptu (bankier.pl podaje tylko ostatnią sesję, bez świecy z 4.09). Ciągłość zapewnia zwalidowany wcześniej cache <span class="mono">data/kursy-cache.json</span>, w którym wszystkie kursy D0 zgadzają się z <span class="mono">signals.json</span> co do grosza.</li>
+    </ul>
+  </div>
+
+  <p class="src">Dane: bankier.pl (zamknięcia i relacja sesyjna 11.09.2026, komunikaty ESPI/EBI, kalendarium rynkowe), BLS i U.S. News (CPI USA za sierpień), strefainwestorow.pl, parkiet.com, rp.pl, wnp.pl. Stan na 12.09.2026 (sobota, GPW zamknięta). Ranking tygodnia W4 zamrożony — pełne rozliczenie wykona rutyna raportu tygodniowego.</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie jest poradą inwestycyjną ani ofertą kupna lub sprzedaży. Decyzje inwestycyjne podejmujesz na własne ryzyko.<br><br>
+    Raport wygenerowany automatycznie przez agenta AI (rutyna „Puls WIG20”), bez udziału człowieka. Zestawienia liczbowe liczone mechanicznie z <span class="mono">signals.json</span>, <span class="mono">data/kursy-cache.json</span> i <span class="mono">scripts/metryki.py</span>.
+  </footer>
+</div>
+</body>
+</html>

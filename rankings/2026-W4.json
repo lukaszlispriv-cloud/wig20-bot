@@ -698,6 +698,78 @@
    "opis": "CPI USA za sierpien - termin piatek 11.09 POTWIERDZONY w datowanych zrodlach z biezacego tygodnia (bankier.pl 'Wazny tydzien...', publ. 4.09 akt. 6.09; parkiet.com komentarz walutowy 7.09). Kalendarz GPW na 11.09 bez spolek koszykowych i taktycznych",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl, parkiet.com, kalendarium GPW/stockwatch.pl"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "Sesja 11.09 (D+5, domkniecie okna W4): WIG20 +0,74% do 4139,25 pkt, WIG +0,50% do 155090,25 pkt, obroty 3,56 mld zl (ok. 3 mld zl na WIG20). Odreagowanie po nerwowym tygodniu - ropa cofnela sie po doniesieniach o negocjacjach z Iranem ws. Ormuz, CPI z USA bez negatywnego zaskoczenia. WIG-Banki nowy rekord sroddzienny po konferencji prezesa NBP. W Europie DAX +0,5%, FTSE100 +0,3%, CAC40 +0,7%",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Oddech ulgi na rynkach i GPW. WIG20 powraca do wzrostow po nerwowym tygodniu', 11.09.2026"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "CPI USA za sierpien zgodny z konsensusem: +0,4% m/m (po +0,1% w lipcu), 3,4% r/r bez zmian; bazowa +0,3% m/m i 2,4% r/r - najnizej od marca 2021. Benzyna +3,9% m/m odpowiada za ponad 1/3 wzrostu indeksu. Ostatni element ukladanki przed FOMC 16.09; rynek wycenia ok. 70% szans na podwyzke o 25 pb",
+   "wklad_pkt": null,
+   "zrodlo": "BLS 'Consumer Price Index Summary - 2026 M08', 11.09.2026; U.S. News 11.09.2026; bankier.pl 11.09.2026"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "CD Projekt +2,08% do 235,40 zl - najmocniejszy blue chip sesji, ruch PRZECIW tezie short. Od D0 +1,47% (rel. -0,27 p.p. vs WIG20) - ponizej progu 4%, brak ESPI i brak nowej rekomendacji spolkowej. Pozycja pozostaje w REDUCE z 8.09, bez eskalacji do CLOSE. Jedyny bledny typ koszyka SHORT w oknie W4",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl (tabela notowan, odczyt 11.09.2026 17:04); relacja sesyjna bankier.pl 11.09.2026"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "mBank +1,46% do 1463,50 zl przy rekordzie WIG-Banki. Od D0 +3,90% (+2,71 p.p. vs WIG20) - teza LONG obroniona mimo REDUCE z 8.09 po strategii Trigon DM stawiajacej mBank po slabszej stronie rynku. Wsparcie od stop: po RPP i konferencji prezesa NBP rynek FRA wycenia raczej podwyzki",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl (notowania i relacja sesyjna 11.09.2026)"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "PGE -1,20% do 14,035 zl - pierwsza korekta po czterech mocnych dniach energetyki, bez ESPI. Od D0 +11,88% (+10,68 p.p. vs WIG20); samodzielnie odpowiada za wiekszosc wyniku rachunku w oknie W4",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl (notowania 11.09.2026 17:04), relacja sesyjna 11.09.2026"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "Wyzwalacz 'CIT 30% dla energetyki i paliw' NIE zadzialal w calym oknie W4: projekt pozostaje na etapie zalozen w wykazie prac RM z 20.08.2026 (30%/2027 -> 26%/2028 -> 23%/2029 -> 19%/2030), brak nowego kroku legislacyjnego przez piec sesji. Orlen +0,98% na sesji, od D0 +1,97%; watek zakupu udzialow w PGZ nadal bez ESPI i bez decyzji",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Duza podwyzka CIT dla energetyki i paliw...' 20.08.2026; parkiet.com, rp.pl, wnp.pl - omowienia projektu"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-12",
+   "dn": 6,
+   "opis": "Kontrola zrodel 12.09 (sobota, GPW zamknieta): brak ESPI/EBI spolek koszykowych i taktycznych z 11-12.09 (w strumieniu wylacznie spolki spoza koszykow: Asseco Poland, Atal, Diagnostyka, Grupa Azoty, koncesje Orlen Upstream Norway). Brak nowych rekomendacji dla spolek koszykowych - obowiazuje strategia Trigon DM z 7.09. Rejestr krotkiej sprzedazy KNF nadal poza zasiegiem sieci. Zadna pozycja nie osiagnela progu 4% przeciw tezie -> brak nowych wpisow exclude, status AKTUALNA",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl komunikaty ESPI/EBI i strefainwestorow.pl/rekomendacje (odczyt 12.09.2026); WebSearch 12.09.2026"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-12",
+   "dn": 6,
+   "opis": "Kalendarz tygodnia 14-18.09 potwierdzony w datowanym zrodle z biezacego tygodnia: 15.09 9:30 CPI Polski za sierpien (finalny) + raport H1 PGE + ostatni dzien z prawem do dywidendy PZU; 16.09 decyzja FOMC i konferencja przewodniczacego Fed K. Warsha (rynek wycenia ok. 70% szans na podwyzke o 25 pb), 14:00 inflacja bazowa NBP; 17.09 Bank Anglii 13:00, CNB 14:30, raporty H1 Allegro i LPP, dzien dywidendy PZU; 18.09 produkcja przemyslowa PL 9:30, Bank Japonii (oczekiwana podwyzka do 1,25%), review ratingu Polski przez Moody's, rewizja kwartalna GPW (cap 15% dla PKO BP). Daty z rankingu W4 NIE wymagaly korekty",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Tym beda zyly rynki: czy Fed zdecyduje sie podniesc stopy?', publ. 11.09.2026"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-11",
+   "dn": 5,
+   "opis": "DOMKNIECIE OKNA W4 (D0 4.09 -> D+5 11.09): WIG20 +1,20%. Koszyk LONG srednio +3,90% -> WYNIK RACHUNKU (LONG - indeks) +2,70 p.p.; koszyk SHORT srednio -1,64% (nieosiagalny), spread papierowy LONG-SHORT +5,53 p.p., rozjazd papier-rachunek +2,83 p.p. Metryki rankingu: baza tygodnia y=0,45, hit TOP5 4/5 (losowo 2,25), hit BOTTOM5 4/5 (losowo 2,75), Brier 0,2263 (baseline 0,50: 0,2500; ex post 0,2475), Spearman +0,635. Liczone mechanicznie scripts/metryki.py rozlicz; wpis informacyjny Pulsu - rozliczenie tygodnia nalezy do rutyny raportu tygodniowego",
+   "wklad_pkt": null,
+   "zrodlo": "scripts/metryki.py rozlicz --week 2026-W4 --d0 2026-09-04 --d5 2026-09-11; data/kursy-cache.json"
   }
  ],
  "data_quality": [
