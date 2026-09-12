@@ -1,19 +1,19 @@
 {
-  "version": "2026-W4",
-  "generated": "2026-09-05",
+  "version": "2026-W5",
+  "generated": "2026-09-12",
   "status": "AKTUALNA",
   "long": [
-    "PKNORLEN",
     "PGE",
-    "PEKAO",
-    "PZU",
-    "MBANK"
+    "PKNORLEN",
+    "TAURONPE",
+    "MBANK",
+    "PEKAO"
   ],
   "short": [
+    "DINOPL",
     "KRUK",
-    "PEPCO",
-    "CDPROJEKT",
     "KETY",
+    "PEPCO",
     "MODIVO"
   ],
   "epics": {
@@ -39,41 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "CDPROJEKT",
-      "action": "REDUCE",
-      "date": "2026-09-08",
-      "reason": "Trigon DM, strategia portfelowa na wrzesien (publ. 7.09.2026): CD Projekt na liscie spolek majacych zachowac sie LEPIEJ niz rynek — swieza rekomendacja liczacego sie DM przeciw tezie short, horyzont pokrywa sie z oknem W4. Kurs +2,03% od D0 (spolka dnia 7.09). Uwaga: koszyk SHORT nie jest handlowany na rachunku (HEDGE_MODE=index), wiec redukcja jest papierowa.",
-      "price_before": 236.7,
-      "move_from_d0_pct": 2.03,
-      "trigger": "RECOMMENDATION"
-    },
-    {
-      "ticker": "MBANK",
-      "action": "REDUCE",
-      "date": "2026-09-08",
-      "reason": "Trigon DM, strategia portfelowa na wrzesien (publ. 7.09.2026): mBank wsrod spolek majacych zachowac sie GORZEJ niz rynek — swieza rekomendacja liczacego sie DM przeciw tezie long. Kurs +0,18% od D0, relatywnie -0,40 p.p. vs WIG20. Pozycja realnie na rachunku: ciecie do polowy.",
-      "price_before": 1411.0,
-      "move_from_d0_pct": 0.18,
-      "trigger": "RECOMMENDATION"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-09-12",
   "d0": {
-    "date": "2026-09-04",
-    "wig20": 4090.27,
+    "date": "2026-09-11",
+    "wig20": 4139.25,
     "prices": {
-      "PKNORLEN": 158.0,
-      "PGE": 12.545,
-      "PEKAO": 263.9,
-      "PZU": 76.12,
-      "MBANK": 1408.5,
-      "KRUK": 395.0,
-      "PEPCO": 41.83,
-      "CDPROJEKT": 232.0,
-      "KETY": 1230.0,
-      "MODIVO": 87.88
+      "PGE": 14.035,
+      "PKNORLEN": 161.12,
+      "TAURONPE": 9.4,
+      "MBANK": 1463.5,
+      "PEKAO": 267.4,
+      "DINOPL": 35.4,
+      "KRUK": 387.8,
+      "KETY": 1204.0,
+      "PEPCO": 40.17,
+      "MODIVO": 86.34
     }
   },
   "history": [
@@ -121,6 +102,26 @@
       "brier": 0.2529,
       "data_quality": [
         "RPP_DATE_ERROR"
+      ]
+    },
+    {
+      "week": "2026-W4",
+      "long_vs_index_pp": 2.7,
+      "long_abs_pct": 3.89,
+      "spread_pp": 5.53,
+      "rozjazd_pp": 2.83,
+      "hit_top": "4/5",
+      "hit_bottom": "4/5",
+      "tactical_pp": null,
+      "managed_pp": 5.09,
+      "reaction_pp": -0.45,
+      "base_rate": 0.45,
+      "spearman": 0.635,
+      "brier": 0.2263,
+      "data_quality": [
+        "KURS_ZRODLO_REZERWA",
+        "FMP_PLAN_BLOKADA",
+        "KNF_SHORT_NIEDOSTEPNY"
       ]
     }
   ],
