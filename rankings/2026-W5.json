@@ -600,6 +600,30 @@
    "opis": "następne posiedzenie decyzyjne RPP 6–7.10 — poza oknem (9.09 stopy bez zmian, 3,75%)",
    "wklad_pkt": 0,
    "zrodlo": "bankier.pl 9.09.2026; harmonogram NBP"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-12",
+   "dn": 1,
+   "opis": "Szok naftowy na Bliskim Wschodzie: po atakach w rejonie Rijadu i Medyny (czwartek 10.09) saudyjskie ministerstwo energii wstrzymało w piątek pracę strategicznego ropociągu Wschód-Zachód. Brent testował 110 USD/bbl (najwyżej od początku maja 2026), tydzień zamknął ok. 104,5 USD (+8,7% t/t). Wyższa ropa: (+) dla wydobycia i detalu Orlenu, (−) dla kosztów konsumenta i ścieżki inflacji, a więc pośrednio dla banków z koszyka LONG. Zdarzenie weekendowe — obciąża sesję 14.09",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl/PAP 11–12.09.2026; biznes.pap.pl (rynki, 12.09.2026)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-12",
+   "dn": 1,
+   "opis": "Komunikat biura prasowego Orlenu (sobota 12.09, 14:50): po prewencyjnym wyłączeniu rurociągu Wschód-Zachód dostawy surowca do rafinerii Grupy Orlen realizowane są bez zakłóceń; spółka wskazuje dywersyfikację (ok. 1/4 zapotrzebowania z kontraktu z Equinorem) i własne wydobycie (+60 mln boe po zakupie udziałów w złożu Goliat). Komunikat prasowy, nie ESPI — nie zmienia tezy LONG",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 12.09.2026 14:50 (za PAP)"
+  },
+  {
+   "ticker": "WIG20",
+   "data": "2026-09-13",
+   "dn": 1,
+   "opis": "Przypomnienie awansu Polski do rynków rozwiniętych wg S&P Dow Jones Indices (decyzja z końca sierpnia 2026, wejście do indeksów rozwiniętych we wrześniu 2027). Poza oknem W5 — przepływów pasywnych w tym tygodniu nie będzie; wkład 0",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl „Polskie akcje mocno w górę. WIG20 rośnie, a Polska awansuje”, 13.09.2026 06:00"
   }
  ],
  "data_quality": [
@@ -607,6 +631,7 @@
   "KNF_SHORT_NIEDOSTEPNY",
   "KURS_ZRODLO_REZERWA",
   "BRAK_20S",
-  "DYWIDENDA_KOREKTA_PZU"
+  "DYWIDENDA_KOREKTA_PZU",
+  "KALENDARZ_NIEPOTWIERDZONY"
  ]
 }
