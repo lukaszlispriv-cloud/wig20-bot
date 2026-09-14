@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 2026-09-14</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#B8E0C6}
+  .wigbox .when{font-size:.7rem;opacity:.7}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  .card.warn{border-left:4px solid var(--amber)}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.espi{background:#3C5A80}.tag.short{background:#7A4A9E}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.reakcja{background:#C4372E}.tag.takt{background:#0E7C4A}
+  .src-inline{display:block;font-size:.74rem;color:var(--muted);margin-top:4px}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green)}.dn{color:var(--red)}.na{color:var(--muted)}
+  .flag{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.4px;padding:1px 5px;border-radius:3px;background:#FBF0DC;color:#8A5E12;border:1px solid #E3C98F;margin-left:6px}
+  .note{font-size:.78rem;color:var(--muted);margin:2px 2px 18px}
+  .result{background:var(--navy);color:#fff;border-radius:10px;padding:16px;margin:6px 0 4px}
+  .result .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.9px;opacity:.75}
+  .result .big{font-size:2rem;font-weight:800;color:#DDE3EA;line-height:1.15}
+  .result .row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .result .side{border-left:1px solid #3A4E66;padding-left:18px}
+  .result .side .val{font-size:1.05rem;font-weight:700;color:#DDE3EA}
+  .result .side .cap{font-size:.7rem;opacity:.7;max-width:230px;line-height:1.35;margin-top:3px}
+  ul.cal{list-style:none}
+  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  ul.cal li:last-child{border-bottom:none}
+  ul.cal .t{display:inline-block;min-width:68px;font-weight:700;color:var(--navy)}
+  .src{font-size:.76rem;color:var(--muted);margin-top:18px}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.72rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Puls WIG20</h1>
+      <div class="sub">poniedziałek, 14 września 2026, 8:20 — przed otwarciem GPW · okno W5 (D0: 11.09)</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 139,25 pkt</div>
+      <div class="chg mono">+0,74%</div>
+      <div class="when">zamknięcie 11.09 — ostatnia zakończona sesja</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stampline">
+    <span class="stamp">PROGNOZA AKTUALNA</span>
+    <span class="stampnote">Raport powstaje <strong>przed otwarciem sesji</strong> (GPW startuje o 9:00), więc ostatnią zakończoną sesją nadal jest piątek 11.09 = D0. Wszystkie zwroty okna W5 to z definicji 0,00%, a wynik rachunku 0,00 pp.<br>Bez reakcji <span class="mono">exclude</span>, bez pozycji taktycznych. Rotacja koszyków bota dziś o 9:15 — pierwszy niezerowy odczyt okna pojawi się w Pulsie z 15.09.</span>
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><span class="tag makro">MAKRO</span><strong>Ropa dalej w górę — Brent otwiera tydzień blisko 109 USD.</strong> Saudyjski ropociąg Wschód-Zachód (ok. 4 mln bbl/d, ~4% światowej podaży, kierunek port Janbu) pozostaje wyłączony po czwartkowych atakach. Brent wchodzi w poniedziałek na poziomie <strong>ok. 108,95 USD/bbl</strong> wobec ok. 104,5 USD na zamknięciu piątku — <strong>ok. +4% przez weekend</strong>. HSBC podniósł prognozę Brent na 2026 z 80 do 90 USD i otwarcie opisuje scenariusz 120 USD przy trwałym zakłóceniu; jednocześnie pod presją są dwie trasy eksportowe — Ormuz i korytarz Morza Czerwonego. To najważniejsze tło dzisiejszej rotacji: wsparcie dla wydobycia i detalu Orlenu, ale wyższa ścieżka inflacji ciąży MBANK-owi i PEKAO z tego samego koszyka LONG.
+        <span class="src-inline">Źródło: invezz.com 14.09.2026 („Brent nears 108 after Saudi pipeline hit”), comparic.pl 13.09.2026; poziom odniesienia 104,5 USD za <span class="mono">rankings/2026-W5.json</span></span></li>
+      <li><span class="tag rekom">PALIWA</span><strong>Marża rafineryjna Orlenu: sygnały rozbieżne.</strong> Hurtowa cena oleju napędowego jest blisko 1500 USD/t (rekord 1588 USD/t z początku kwietnia), a w cenniku Orlenu ON kosztuje 7167 zł/m³ netto — ok. 8,82 zł/l z VAT, czyli część stacji dojdzie do 9 zł/l. W tym samym czasie hurtowa cena Pb95 <strong>spadła</strong> w ciągu tygodnia o 280 zł/m³, do 6078 zł/m³ na piątek 11.09. Netto: drogi diesel pomaga, tania benzyna nie — przy Brent 108 USD teza LONG dla PKNORLEN bez zmian, żaden próg reakcji nie został przekroczony.
+        <span class="src-inline">Źródło: bankier.pl „Ceny paliw – wrzesień 2026. Benzyna już prawie po 8 zł, a ON jest rekordowo drogi” (odczyt 14.09.2026)</span></li>
+      <li><span class="tag espi">ESPI</span><strong>Brak raportów bieżących spółek koszykowych z 12–14.09.</strong> Weekend przeszedł bez komunikatów ESPI po stronie LONG i SHORT. Ostatnie wpisy PGE to dwa zawiadomienia w trybie art. 19 MAR z 11.09 (14:06 i 19:22) — transakcje osób pełniących obowiązki zarządcze, bez wpływu na tezę; były już opisane wczoraj.
+        <span class="src-inline">Źródło: bankier.pl — komunikaty ESPI/EBI spółek koszykowych, odczyt 14.09.2026</span></li>
+      <li><span class="tag rekom">REKOM.</span><strong>Żadnej nowej rekomendacji dla spółek koszykowych.</strong> Tabela rekomendacji bankier.pl za 7–11.09 zawiera wyłącznie spółki spoza WIG20 (EUROCASH, VRG, ATREM, MIRBUD, TORPOL). Obowiązują więc sygnały z okna 13.08–12.09 wycenione w rankingu W5: DM BOŚ (18.08, 25.08) i strategia Trigon DM z 8.09 — m.in. −3 pkt dla MBANK po stronie LONG i −3 pkt dla MODIVO po stronie SHORT.
+        <span class="src-inline">Źródło: bankier.pl/gielda/rekomendacje, odczyt 14.09.2026</span></li>
+      <li><span class="tag short">SHORT</span><strong>Rejestr krótkiej sprzedaży KNF nadal nieosiągalny z sieci środowiska.</strong> Zmian pozycji krótkich nie dało się zweryfikować także w tym biegu — kod <span class="mono">KNF_SHORT_NIEDOSTEPNY</span> jest w <span class="mono">data_quality</span> tygodnia od piątku. Jedyny dostępny kontekst to omówienia prasowe: MODIVO pozostaje najchętniej shortowaną spółką GPW, co wspiera (ale nie potwierdza liczbowo) pozycję SHORT z koszyka papierowego.
+        <span class="src-inline">Próba odczytu 14.09.2026; kontekst: przegląd WebSearch</span></li>
+      <li><span class="tag makro">MAKRO</span><strong>Wyzwalacz „CIT 30% dla energetyki i paliw” — nadal bez nowego kroku legislacyjnego.</strong> Projekt pozostaje na etapie założeń: 30% od 2027, potem 26% (2028), 23% (2029), powrót do 19% w 2030; budżet liczy na ok. 7 mld zł w trzy lata. Obejmie m.in. wydobycie i handel paliwami oraz dystrybucję energii największych grup — czyli <strong>trzy z pięciu pozycji LONG</strong> (PGE, PKNORLEN, TAURONPE). Weekend nie przyniósł projektu ustawy ani konsultacji; najświeższe dostępne materiały są z 20.08.
+        <span class="src-inline">Źródło: przegląd 14.09.2026 — rp.pl/energia.rp.pl, wnp.pl, stockwatch.pl (materiały z 20.08.2026), brak publikacji z 12–14.09</span></li>
+      <li><span class="tag rynek">RYNEK</span><strong>Koszyki W5 wchodzą dziś w życie.</strong> LONG: PGE, PKNORLEN, TAURONPE, MBANK, PEKAO — kupowane realnie. SHORT (papierowy, nie handlowany): DINOPL, KRUK, KETY, PEPCO, MODIVO. Rotacja o 9:15, hedge kontraktem na WIG20. Okno 11.09 → 18.09, ranking zamrożony do soboty.
+        <span class="src-inline">Źródło: <span class="mono">signals.json</span> (2026-W5), <span class="mono">rankings/2026-W5.json</span></span></li>
+    </ul>
+  </div>
+
+  <h2>Koszyk LONG</h2>
+  <div class="tblwrap">
+    <table><thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0 (11.09)</th><th>Kurs ostatni (11.09)</th><th>Zwrot pozycji</th><th>Rel. vs WIG20</th></tr></thead>
+      <tbody>
+<tr>
+<td class="name">PGE</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">14,035</td>
+<td class="mono">14,035</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">PKNORLEN</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">161,12</td>
+<td class="mono">161,12</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">TAURONPE</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">9,40</td>
+<td class="mono">9,40</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">MBANK</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">1 463,50</td>
+<td class="mono">1 463,50</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">PEKAO</td>
+<td><span class="dir long">LONG</span></td>
+<td class="mono">267,40</td>
+<td class="mono">267,40</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Kolejność stała, zgodna z <span class="mono">signals.json</span> — to nie jest ranking. Kurs D0 i kurs ostatni są identyczne, bo raport powstaje przed otwarciem sesji 14.09: ostatnia zakończona sesja to wciąż piątek 11.09. Kursy z <span class="mono">data/kursy-cache.json</span>, zwalidowane co do grosza względem <span class="mono">d0.prices</span> w <span class="mono">signals.json</span>.</p>
+
+  <h2>Koszyk SHORT <span class="mono" style="font-size:.7rem;color:var(--muted)">— papierowy, nie handlowany na rachunku</span></h2>
+  <div class="tblwrap">
+    <table><thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0 (11.09)</th><th>Kurs ostatni (11.09)</th><th>Zwrot pozycji</th><th>Rel. vs WIG20</th></tr></thead>
+      <tbody>
+<tr>
+<td class="name">DINOPL</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">35,40</td>
+<td class="mono">35,40</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">KRUK</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">387,80</td>
+<td class="mono">387,80</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">KETY</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">1 204,00</td>
+<td class="mono">1 204,00</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">PEPCO</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">40,17</td>
+<td class="mono">40,17</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+<tr>
+<td class="name">MODIVO</td>
+<td><span class="dir short">SHORT</span></td>
+<td class="mono">86,34</td>
+<td class="mono">86,34</td>
+<td class="mono na">0,00%</td>
+<td class="mono na">0,00 pp</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Rachunek Capital.com nie pozwala otwierać pozycji krótkich na CFD na akcje, więc koszyk SHORT jest miarą selekcji, a nie pozycją. Zwrot pozycji = odwrotność zmiany kursu.</p>
+
+  <h2>Wynik</h2>
+  <div class="result">
+    <div class="row">
+      <div>
+        <div class="lbl">Wynik rachunku (średnia LONG &minus; WIG20)</div>
+        <div class="big mono">0,00 pp</div>
+      </div>
+      <div class="side">
+        <div class="lbl">Spread LONG&minus;SHORT</div>
+        <div class="val mono">0,00 pp</div>
+        <div class="cap">papierowy — miara selekcji, nie wynik rachunku</div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Obie liczby są zerowe z definicji: okno W5 liczy się od zamknięcia piątku 11.09, a pierwsza sesja okna dopiero się dziś zaczyna. Rozjazd 0,00 pp — poniżej progu 0,5 pp, więc nie ma czego komentować.<br>
+  Koszty, które obciążą wynik rachunku jeszcze dziś: spread bid/ask przy wejściu w pięć nowych pozycji LONG i w korektę hedge'u na kontrakcie WIG20, punkty swapowe za każdą dobę utrzymania oraz luka między zamknięciem D0 (piątek 17:00) a ceną realizacji rotacji (9:15). Przy weekendowym skoku Brentu o ok. 4% ta ostatnia pozycja może być dziś nietypowo szeroka — zwłaszcza na PKNORLEN, a w drugą stronę na bankach.</p>
+
+  <h2>Kalendarz — poniedziałek 14.09</h2>
+  <div class="card">
+    <ul class="cal">
+      <li><span class="t mono">9:00</span>BIEC — wskaźnik przyszłej inflacji za wrzesień.</li>
+      <li><span class="t mono">9:15</span><strong>Rotacja koszyków bota</strong> — wejście w pięć pozycji LONG okna W5 i korekta hedge'u na kontrakcie WIG20.</li>
+      <li><span class="t mono">11:15</span>Wystąpienie Isabel Schnabel (zarząd EBC).</li>
+      <li><span class="t mono">14:00</span>NBP — bilans płatniczy za lipiec.</li>
+      <li><span class="t mono">15:00</span>Wystąpienie Piero Cipollone (zarząd EBC).</li>
+      <li><span class="t mono">spółki</span>Raporty H1: <strong>GPW SA</strong> (mWIG40) i <strong>Cloud Technologies</strong> — obie spoza WIG20 i spoza koszyków. Żadna spółka koszykowa nie publikuje dziś.</li>
+      <li><span class="t mono">jutro</span><span class="mono">9:30</span> finalny CPI Polski za sierpień (szybki szacunek 3,4% r/r); <strong>raport H1 PGE</strong> — pierwsza publikacja spółki koszykowej w oknie. Poza koszykiem: ostatni dzień z prawem do dywidendy PZU (4,80 zł).</li>
+      <li><span class="t mono">śr 16.09</span><span class="mono">20:00</span> <strong>decyzja FOMC</strong>, <span class="mono">20:30</span> konferencja przewodniczącego Fed (Kevin Warsh) i pierwszy od czerwca dot plot. Rynek wyceniał 4.09 podwyżkę o 25 pb na ok. 48% — to niemal rzut monetą. Komunikat po zamknięciu GPW, więc obciąża sesję 17.09. Tego dnia też <span class="mono">14:00</span> NBP — inflacja bazowa (kons. 3,2%) i pierwszy dzień PZU bez dywidendy.</li>
+      <li><span class="t mono">cz 17.09</span><span class="mono">13:00</span> Bank Anglii (oczekiwane 3,75% bez zmian); poza koszykiem raporty H1 <strong>Allegro</strong> i <strong>LPP</strong>.</li>
+      <li><span class="t mono">pt 18.09</span><span class="mono">9:30</span> produkcja przemysłowa Polski; przegląd ratingu Polski przez <strong>Moody's</strong>; po sesji korekta kwartalna GPW Benchmark — cap 15% dla PKO BP i <strong>wypadnięcie Tauronu ze STOXX Europe 600</strong> (w życie 21.09), czyli podaż funduszy pasywnych na zamknięciu. To zarazem D+5 — dzień domknięcia okna W5.</li>
+    </ul>
+  </div>
+  <p class="note">Wszystkie terminy potwierdzone w datowanym źródle z bieżącego tygodnia: bankier.pl „Tym będą żyły rynki: czy Fed zdecyduje się podnieść stopy?” (publ. 11.09.2026 13:17), kalendarium giełdowe bankier.pl i kalendarium raportów półrocznych strefainwestorow.pl (publ. 13.09.2026), odczyt 14.09. <strong>To zamyka lukę z wczoraj</strong> — kod <span class="mono">KALENDARZ_NIEPOTWIERDZONY</span> dotyczył właśnie poniedziałku 14.09 i dziś jest nieaktualny (zostaje w rejestrze tygodnia jako ślad po problemie).</p>
+
+  <h2>Werdykt protokolarny</h2>
+  <div class="card">
+    <ul class="changes">
+      <li><strong>status: AKTUALNA</strong> — żadnego zdarzenia unieważniającego prognozę.</li>
+      <li><strong><span class="mono">exclude</span>: lista pusta.</strong> Nie mogło być inaczej: progi cenowe (4–8% i &gt;8% od D0) wymagają zakończonej sesji, a takiej w oknie jeszcze nie ma. Progi niecenowe też nie zadziałały — brak ESPI spółek koszykowych, brak nowych rekomendacji, rejestr KNF niedostępny.</li>
+      <li><strong><span class="mono">tactical</span>: bez zmian (pusta).</strong> Skan spółek WIG20 spoza koszyków nie dał twardego wyzwalacza z 24 h. Szok naftowy jest wyzwalaczem sektorowym, ale jedyna paliwowa spółka indeksu — PKNORLEN — jest już w koszyku LONG, więc pozycji taktycznej nie ma z czego otworzyć.</li>
+    </ul>
+  </div>
+
+  <h2>Problemy z danymi</h2>
+  <div class="card warn">
+    <ul class="changes">
+      <li><strong>FMP_PLAN_BLOKADA</strong> — konektor FMP jest w sesji, ale i endpoint świec dziennych (<span class="mono">chart / historical-price-eod-light</span>), i <span class="mono">quote</span> zwróciły „ACCESS DENIED: requires a higher plan”. Sprawdzone dziś na <span class="mono">PGE.WA</span>. Priorytetowa ścieżka kursów ze <span class="mono">CLAUDE.md</span> pozostaje martwa bez zmiany abonamentu FMP.</li>
+      <li><strong>KURS_ZRODLO_REZERWA</strong> — komplet zamknięć z 11.09 pochodzi z rezerwy (tabele bankier.pl, pobrane 12.09 po odmowie Yahoo HTTP 429) i leży w <span class="mono">data/kursy-cache.json</span>. Dziś <span class="mono">scripts/kursy.py</span> świadomie NIE był uruchamiany: nie ma nowej zakończonej sesji do pobrania, a każda seria zapytań ponownie uzbraja limiter Yahoo. Cache bez zmian, więc nie wchodzi do commita.</li>
+      <li><strong>KNF_SHORT_NIEDOSTEPNY</strong> — rejestr krótkiej sprzedaży KNF pozostaje nieosiągalny z sieci środowiska; brak weryfikacji pozycji krótkich także w tym biegu.</li>
+      <li><strong>Brak sesji po D0 (drugi dzień z rzędu)</strong> — to nie jest błąd danych, tylko konsekwencja kalendarza i pory uruchomienia rutyny (8:20, przed otwarciem GPW o 9:00). Pierwszy niezerowy odczyt okna W5 pojawi się w Pulsie z 15.09, po dzisiejszym zamknięciu.</li>
+    </ul>
+  </div>
+
+  <p class="src">Dane: <span class="mono">signals.json</span> i <span class="mono">data/kursy-cache.json</span> (zamknięcia 11.09.2026, zwalidowane względem <span class="mono">d0.prices</span>), <span class="mono">rankings/2026-W5.json</span>; bankier.pl (kalendarium, rekomendacje, komunikaty ESPI, ceny paliw), strefainwestorow.pl (kalendarium raportów H1, 13.09), invezz.com i comparic.pl (rynek ropy, 13–14.09). Stan na 14.09.2026, godz. 8:20 czasu warszawskiego — przed otwarciem sesji. Ranking tygodnia W5 zamrożony do soboty; dziś dopisane wyłącznie katalizatory.</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie jest poradą inwestycyjną ani ofertą kupna lub sprzedaży. Decyzje inwestycyjne podejmujesz na własne ryzyko.<br><br>
+    Raport wygenerowany automatycznie przez agenta AI (rutyna „Puls WIG20”), bez udziału człowieka. Zestawienia liczbowe liczone mechanicznie z <span class="mono">signals.json</span> i <span class="mono">data/kursy-cache.json</span>.
+  </footer>
+</div>
+</body>
+</html>
