@@ -54,7 +54,7 @@ Nie ma automatycznego przerzutu do przeciwnego koszyka; ma być tylko brak kotwi
 - **Baza tygodnia ȳ** = odsetek spółek bijących indeks. Hit rate TOP5/BOTTOM5 podaje się **obok** oczekiwania losowego 5·ȳ i 5·(1−ȳ).
 - **Brier** (binarny, 0–1) modelu wobec dwóch baseline'ów: stałe 0,50 (ex ante) i ȳ(1−ȳ) (ex post; nazywać go tak jawnie).
 - **Spearman** między opublikowaną rangą (1 = najlepsza) a rangą alfy (rangi średnie). +1 = ranking idealny.
-- Wpis `history` w `signals.json` dostaje pola: `base_rate`, `spearman`, `brier`, `data_quality` (lista kodów).
+- Wpis `history` w `signals.json` dostaje pola: `base_rate`, `spearman`, `brier`, `data_quality` (lista kodów), `metoda`.
 - Spread, managed_pp, reaction_pp, tactical_pp — bez zmian (definicje w promptach rutyn).
 
 ## 7a. Papier a rachunek — DWIE różne liczby (od 7.09.2026)
@@ -80,7 +80,12 @@ którego rachunek nie miał.
 Do wyniku rachunku **brutto** dochodzą jeszcze koszty, które w raporcie należy wymienić, a nie pomijać:
 spread bid/ask przy każdym wejściu i wyjściu (a przy `REDUCE` i korekcie wielkości — dwa razy, bo Capital.com
 nie ma częściowego zamknięcia), punkty swapowe za każdą dobę utrzymania i luka między zamknięciem D0 a ceną
-realizacji (bot rotuje w poniedziałek o 9:15, raport liczy od zamknięcia piątku).
+realizacji. **Uwaga, sprostowanie z 15.09.2026:** ten dokument podawał wcześniej rotację „w poniedziałek o 9:15”.
+Log Rendera i historia transakcji Capital.com pokazują, że `/run` odpala się o **08:01 UTC, czyli 10:01 czasu
+warszawskiego** — godzinę po otwarciu GPW, nie kwadrans. Raport liczy od zamknięcia piątku, więc luka realizacji
+obejmuje pełną pierwszą godzinę poniedziałkowej sesji. Rząd wielkości tej luki (rotacja W5, 14.09): TAURON wszedł
+po 9,298 przy zamknięciu D0 9,40 (−1,09% na korzyść), mBANK po 1469,015 przy 1463,50 (+0,38% na niekorzyść) —
+czyli ok. ±1% na nogę, porównywalnie z całą tygodniową przewagą.
 
 **Tryb `classic` (realne SELL na akcjach) jest NIEDOSTĘPNY** — rachunek Capital.com nie pozwala otwierać pozycji
 krótkich na CFD na akcje (potwierdzone przez właściciela rachunku 7.09.2026; ślad w kodzie: `Capital.open()` ma
@@ -105,6 +110,28 @@ Dlatego `metryki.py rozlicz` podaje trzy liczby i wszystkie trzy idą do `histor
 
 Hedge indeksowy ma sens **tylko wtedy, gdy selekcja długa bije indeks**. Jeżeli nie bije, hedge zamienia zwyżkę
 rynku w stratę. Decyzji o `HEDGE_RATIO` **nie podejmuje się na kilku tygodniach danych** — patrz sekcja 10.
+
+## 7b. Trzy pomiary dodane 15.09.2026 (audyt porównawczy — `docs/porownanie-chatgpt-2026-09-15.md`)
+
+Wszystkie trzy są POMIAREM, nie zmianą punktacji: nie dotykają wag, wyniku, p ani składu koszyków.
+
+1. **Benchmark naiwnego momentum.** `rozlicz` rozgrywa ten sam tydzień koszykami zbudowanymi wyłącznie
+   z rel5 na D0 (TOP5 = 5 najwyższych, BOTTOM5 = 5 najniższych, to samo uniwersum) i podaje
+   `przewaga_long_vs_indeks_pp` = model − naiwne momentum. **To jest główny test wartości dodanej.**
+   Jeśli przewaga oscyluje wokół zera, sześć uznaniowych kategorii nie robi nic, czego nie zrobiłby
+   jednolinijkowy sort po rel5 — i to ma trafić do raportu tygodniowego, a nie zostać przemilczane.
+   Benchmark wymaga 5 sesji przed D0 w cache; przy ich braku zwraca `dostepny: false` z powodem.
+2. **Przedział Wilsona 95% przy hit rate.** Hit 4/5 daje przedział 38–96%, czyli obejmuje 50% —
+   pojedynczy tydzień nigdy nie jest dowodem przewagi. Sens pojawia się dopiero na sumie tygodni.
+   Hit rate podaje się odtąd zawsze z przedziałem.
+3. **Kalibracja WIELKOŚCI alfy.** Diagnostyczna mapa `alfa_prog = 0,08 × (wynik − 50)`, obcięta do ±2,5 p.p.
+   (przeniesiona z systemu równoległego, NIE kalibrowana na naszych danych), porównywana z realizacją:
+   MAE prognozy wobec MAE prognozy zerowej i korelacja. Gdy MAE nie bije prognozy zerowej, wynik
+   przewiduje najwyżej znak alfy, nie jej wielkość. Mapa nie wpływa na nic poza tym pomiarem.
+
+**Zakaz uśredniania wersji.** Każdy wpis `history` niesie `metoda` (`v1.0 (momentum uznaniowe)` dla W1–W4,
+`v1.1 (momentum mechaniczne)` od W5). Metryk z różnych wersji NIE wolno łączyć w jedną średnią ani
+przedstawiać jako dorobku jednej strategii; licznik zamkniętych okien z §10 biegnie osobno dla wersji.
 
 ## 8. Kody `data_quality`
 
