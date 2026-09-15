@@ -648,6 +648,62 @@
       "opis": "Makro poniedziałku (kalendarz potwierdzony w datowanym źródle z bieżącego tygodnia, co zamyka lukę KALENDARZ_NIEPOTWIERDZONY z raportu 13.09): 9:00 BIEC — wskaźnik przyszłej inflacji za wrzesień, 11:15 wystąpienie Isabel Schnabel (EBC), 14:00 NBP — bilans płatniczy za lipiec, 15:00 wystąpienie Piero Cipollone (EBC). Żadnej publikacji o randze rynkotwórczej; raporty H1 tego dnia (GPW SA, Cloud Technologies) są spoza WIG20 i spoza koszyków.",
       "wklad_pkt": 0,
       "zrodlo": "bankier.pl „Tym będą żyły rynki: czy Fed zdecyduje się podnieść stopy?”, publ. 11.09.2026 13:17; kalendarium bankier.pl (odczyt 14.09.2026)"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "Sesja risk-off: WIG20 −0,43% do 4121,57 pkt, WIG −0,57%, mWIG40 −0,84%, sWIG80 −1,46%; traciło ponad 63% spółek. Złoty słabszy (ok. 4,35/EUR, 3,766/USD), rentowność polskich 10-latek na rekordowym poziomie ok. 6,4% — rynek dostosowuje się do wyceny podwyżki Fed w środę 16.09 (ok. 70% wg kontraktów)",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/strefainwestorow.pl 'DZIEŃ NA GPW' 14.09.2026; bankier.pl 14.09.2026"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "−3,04% (9,400 → 9,114 zł) — realizacja zysków po rajdzie +12,5% w dniach 2–11.09; WIG Energia zszedł do 4 904 pkt z historycznego szczytu 5 142 pkt z 9.09. Brak komunikatu spółki, filar tezy (drogi gaz, ceny hurtowe energii) nienaruszony; ruch od D0 poniżej progu 4% — bez reakcji exclude",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/strefainwestorow.pl 14.09.2026; kurs bankier.pl 14.09 17:04"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "−1,85% (14,035 → 13,775 zł) — korekta po wzroście ponad +27% w dniach 2–11.09, w przeddzień publikacji raportu H1 2026 (15.09). Ruch od D0 poniżej progu 4% — bez reakcji exclude",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/strefainwestorow.pl 14.09.2026; kurs bankier.pl 14.09 17:02"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "KNF utrzymała w mocy kary finansowe nałożone na mBank na łączną kwotę ok. 15 mln zł. Kwota nieistotna wobec skali wyniku banku, kurs −0,27% (1 463,50 → 1 459,50 zł) — poniżej rangi wyzwalacza REDUCE (news)",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/strefainwestorow.pl 14.09.2026"
+    },
+    {
+      "ticker": "KETY",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "−4,32% (1 204 → 1 152 zł), czwarta spadkowa sesja z rzędu; korekta od lipcowego rekordu 1 362 zł sięga ok. 10%. Brak komunikatu spółki — przecena na tle risk-off i spadku surowców. Najmocniejszy dodatni wkład koszyka SHORT (+3,89 p.p. relatywnie vs WIG20)",
+      "wklad_pkt": null,
+      "zrodlo": "inwestycje.pl 14.09.2026; kurs bankier.pl 14.09 17:03"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "+2,14% (40,17 → 41,03 zł) — jedyna spółka koszyka SHORT wyraźnie w górę na spadkowej sesji (obok Allegro po stronie detalu). Ruch przeciw tezie krótkiej, ale poniżej progu 4% — bez reakcji exclude",
+      "wklad_pkt": null,
+      "zrodlo": "inwestycje.pl 14.09.2026; kurs bankier.pl 14.09 17:00"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-14",
+      "dn": 1,
+      "opis": "−5,16% do ok. 333,75 zł przy największym obrocie rynku (669 mln zł) — miedź na LME poniżej 14 000 USD/t plus przecena srebra. Spółka spoza koszyków; przecena surowcowa, nie zaskoczenie wynikowe — nie spełnia warunku wejścia taktycznego SELL",
+      "wklad_pkt": null,
+      "zrodlo": "wnp.pl 14.09.2026; PAP/strefainwestorow.pl 14.09.2026; kurs bankier.pl 14.09 17:04"
     }
   ],
   "data_quality": [

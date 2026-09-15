@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puls WIG20 — 15.09.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #0E7C4A; color:#0E7C4A;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(14,124,74,.05); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">wtorek, 15 września 2026 &middot; przed otwarciem sesji &middot; okno W5 (D0 = 11.09.2026)</div>
+    <div class="wig">
+      <span class="val">4&nbsp;121,57</span>
+      <span class="chg neg">−0,43%</span>
+      <span class="lbl">WIG20, zamknięcie ostatniej zakończonej sesji: poniedziałek 14.09.2026 (źródło: bankier.pl / PAP)</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <span class="stamp">Prognoza aktualna</span>
+    <div class="stamp-note">Brak zdarzeń unieważniających tezę tygodnia. Reakcji na koszykach: brak (lista <code>exclude</code> pusta). Pozycji taktycznych: brak.</div>
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li><span class="tag t-makro">Makro</span>Risk-off na GPW: wszystkie główne indeksy w dół (WIG −0,57%, mWIG40 −0,84%, sWIG80 −1,46%), traciło ponad 63% spółek. Złoty słabszy (ok. 4,35/EUR), rentowność polskich 10-latek na rekordzie ok. 6,4%. Rynek terminowy wycenia ok. 70% szans na podwyżkę stóp przez Fed w środę 16.09.
+      <span class="src">Strefa Inwestorów / PAP „DZIEŃ NA GPW", 14.09.2026; Bankier.pl „Tym będą żyły rynki", 11.09.2026</span></li>
+    <li><span class="tag t-kurs">Kurs</span>Energetyka oddaje część rajdu: TAURON −3,04%, PGE −1,85% po wzrostach odpowiednio +12,5% i ponad +27% w dniach 2–11.09. WIG Energia zszedł do 4 904 pkt z historycznego szczytu 5 142 pkt z 9.09. To korekta pozycji, nie zmiana filaru tezy (gaz/energia hurtowa + taryfy), więc bez reakcji.
+      <span class="src">Strefa Inwestorów / PAP, 14.09.2026</span></li>
+    <li><span class="tag t-kurs">Kurs</span>KĘTY −4,32% (1 204 → 1 152 zł), czwarta spadkowa sesja z rzędu; korekta od lipcowego rekordu 1 362 zł sięga ok. 10%. Brak komunikatu spółki — spadek na tle przeceny surowców i ryzyka. Dla koszyka SHORT to najmocniejszy wkład dnia (+3,89 p.p. relatywnie).
+      <span class="src">Inwestycje.pl, 14.09.2026; kurs: bankier.pl 14.09 17:03</span></li>
+    <li><span class="tag t-espi">ESPI</span>mBANK: KNF utrzymała w mocy kary finansowe na łączną kwotę ok. 15 mln zł. Kwota nieistotna wobec skali wyniku banku, reakcja kursu minimalna (−0,27%) — poniżej rangi wyzwalacza REDUCE.
+      <span class="src">PAP / Strefa Inwestorów, 14.09.2026</span></li>
+    <li><span class="tag t-makro">Makro</span>Surowce rozeszły się w przeciwne strony: ropa Brent ok. 108 USD/bbl (wsparcie dla ORLENU, +0,92% i jedyny wyraźny plus koszyka LONG), miedź na LME poniżej 14 000 USD/t — KGHM −5,16% przy 669 mln zł obrotu (spółka spoza koszyków).
+      <span class="src">Strefa Inwestorów / PAP, 14.09.2026; WNP, 14.09.2026</span></li>
+    <li><span class="tag t-short">Short</span>Rejestr krótkiej sprzedaży KNF: brak dostępu do świeżego odczytu w tym biegu (serwis parkiet.com zablokowany przez politykę sieciową środowiska, ostatni potwierdzony odczyt z 21.08.2026). Brak podstaw do reakcji z tytułu zmiany shortów. Kod jakości: <code>KNF_SHORT_NIEDOSTEPNY</code>.
+      <span class="src">weryfikacja 15.09.2026</span></li>
+    <li><span class="tag t-rek">Rekom.</span>Brak nowych rekomendacji dla spółek koszykowych w oknie 24h (jedyna świeża pozycja z 11.09: APATOR — spoza WIG20).
+      <span class="src">Bankier.pl / Notoria, odczyt 15.09.2026</span></li>
+  </ul>
+
+  <h2>Koszyki — pozycje od D0 (11.09.2026)</h2>
+
+  <div class="basket-h">KOSZYK LONG — kupowany przez bota</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs ost.</th><th>Zwrot poz.</th><th>Rel. vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>PGE</td><td><span class="dir dir-l">LONG</span></td><td class="num">14,035</td><td class="num">13,775</td><td class="num neg">−1,85%</td><td class="num neg">−1,43 p.p.</td></tr>
+      <tr><td>PKN ORLEN</td><td><span class="dir dir-l">LONG</span></td><td class="num">161,12</td><td class="num">162,60</td><td class="num pos">+0,92%</td><td class="num pos">+1,35 p.p.</td></tr>
+      <tr><td>TAURON</td><td><span class="dir dir-l">LONG</span></td><td class="num">9,400</td><td class="num">9,114</td><td class="num neg">−3,04%</td><td class="num neg">−2,62 p.p.</td></tr>
+      <tr><td>mBANK</td><td><span class="dir dir-l">LONG</span></td><td class="num">1 463,50</td><td class="num">1 459,50</td><td class="num neg">−0,27%</td><td class="num pos">+0,15 p.p.</td></tr>
+      <tr><td>PEKAO</td><td><span class="dir dir-l">LONG</span></td><td class="num">267,40</td><td class="num">267,80</td><td class="num pos">+0,15%</td><td class="num pos">+0,58 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td>Średnia LONG</td><td></td><td></td><td></td><td class="num neg">−0,82%</td><td class="num neg">−0,39 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+
+  <div class="basket-h">KOSZYK SHORT — papierowy, bot go NIE handluje</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs ost.</th><th>Zwrot poz.</th><th>Rel. vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>DINO POLSKA</td><td><span class="dir dir-s">SHORT</span></td><td class="num">35,40</td><td class="num">35,00</td><td class="num pos">+1,13%</td><td class="num pos">+0,70 p.p.</td></tr>
+      <tr><td>KRUK</td><td><span class="dir dir-s">SHORT</span></td><td class="num">387,80</td><td class="num">386,50</td><td class="num pos">+0,34%</td><td class="num neg">−0,09 p.p.</td></tr>
+      <tr><td>GRUPA KĘTY</td><td><span class="dir dir-s">SHORT</span></td><td class="num">1 204,00</td><td class="num">1 152,00</td><td class="num pos">+4,32%</td><td class="num pos">+3,89 p.p.</td></tr>
+      <tr><td>PEPCO</td><td><span class="dir dir-s">SHORT</span></td><td class="num">40,17</td><td class="num">41,03</td><td class="num neg">−2,14%</td><td class="num neg">−2,57 p.p.</td></tr>
+      <tr><td>MODIVO</td><td><span class="dir dir-s">SHORT</span></td><td class="num">86,34</td><td class="num">85,38</td><td class="num pos">+1,11%</td><td class="num pos">+0,68 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td>Średnia SHORT (kurs)</td><td></td><td></td><td></td><td class="num neg">−0,95%</td><td class="num"></td></tr></tfoot>
+  </table>
+  </div>
+
+  <div class="score">
+    <div class="main">Wynik rachunku — średnia LONG − WIG20</div>
+    <div class="big">−0,39 p.p.</div>
+    <div class="sub">Średnia LONG −0,82% · WIG20 −0,43%. To liczba, którą realnie gra bot: kupuje 5 spółek koszyka LONG i sprzedaje kontrakt na WIG20 (<code>HEDGE_MODE=index</code>). Brutto, przed kosztami spreadu bid/ask, punktów swapowych i luki między zamknięciem D0 a rotacją.</div>
+    <div class="paper">Spread LONG−SHORT: <b>+0,13 p.p.</b> — papierowy, miara selekcji, nie wynik rachunku. Koszyka SHORT rachunek Capital.com nie może otworzyć (brak shortów na CFD na akcje).<br>
+    Rozjazd między miarami wynosi 0,52 p.p. i przekracza próg 0,5 p.p.: cały dodatni spread papierowy bierze się z koszyka SHORT (głównie z przeceny Kęt), którego bot nie handluje.</div>
+  </div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="note">Brak otwartych pozycji taktycznych. Skan spółek WIG20 spoza koszyków nie wykazał świeżych twardych wyzwalaczy z ostatnich 24h — przecena KGHM (−5,16%) wynika ze spadku miedzi na LME poniżej 14 000 USD/t, a nie z zaskoczenia wynikowego czy komunikatu spółki, więc nie spełnia warunku wejścia.</div>
+
+  <h2>Kalendarz na dziś i najbliższe dni</h2>
+  <div class="cal">
+    <ul>
+      <li><b>15.09, przed sesją:</b> <b>PGE</b> — skonsolidowany raport za I półrocze 2026 (pierwszy raport półroczny z WIG20; spółka z koszyka LONG, oczekiwane przychody ok. 14,1 mld zł). Źródło: Bankier.pl / Strefa Inwestorów, kalendarium 15.09.2026.</li>
+      <li><b>15.09, 9:30:</b> Polska — inflacja CPI za sierpień (GUS). Źródło: Bankier.pl „Tym będą żyły rynki", 11.09.2026.</li>
+      <li><b>15.09, 11:00:</b> Niemcy — indeks ZEW; w nocy dane makro z Chin za sierpień.</li>
+      <li><b>16.09:</b> odcięcie dywidendy PZU (4,80 zł/akcja); 14:00 NBP — inflacja bazowa; 14:30 USA — sprzedaż detaliczna; <b>20:00 decyzja FOMC</b> (posiedzenie 15–16.09), 20:30 konferencja Kevina Warsha.</li>
+      <li><b>17.09:</b> 9:30 GUS — koniunktura konsumencka; 13:00 decyzja Banku Anglii.</li>
+      <li><b>18.09:</b> w nocy Bank Japonii; 9:30 GUS — produkcja przemysłowa; <b>przegląd ratingu Moody's dla Polski</b>; <b>rewizja GPW</b> (cap 15% dla PKO BP i ORLENU) — podaż funduszy pasywnych na zamknięciu.</li>
+      <li><b>21.09:</b> wejście w życie zmian w STOXX Europe 600 — <b>TAURON wypada z indeksu</b> (ogłoszenie z 1.09.2026).</li>
+    </ul>
+  </div>
+
+  <h2>Problemy i jakość danych</h2>
+  <ul class="chg-list">
+    <li><b>FMP_PLAN_BLOKADA</b> — konektor FMP jest w sesji, ale plan konta nie obejmuje danych historycznych ani kwotowań (<code>ACCESS DENIED … requires a higher plan</code> zarówno dla <code>chart</code>, jak i <code>quote</code>). Pobranie kursów przez FMP jest w tej konfiguracji niemożliwe — potrzebna decyzja właściciela o planie FMP albo trwałe oparcie się na rezerwie.</li>
+    <li><b>KURS_ZRODLO_REZERWA</b> — Yahoo zwróciło HTTP 429 dla wszystkich tickerów (dławienie serii z IP chmury). Wszystkie kursy z 14.09 pochodzą z tabel notowań bankier.pl (odczyt 17:00–17:15). Kursy D0 z cache zgadzają się z <code>d0.prices</code> w <code>signals.json</code> co do grosza (odchylenie 0,000%).</li>
+    <li><b>KNF_SHORT_NIEDOSTEPNY</b> — brak świeżego odczytu rejestru krótkiej sprzedaży; parkiet.com blokowany przez politykę sieciową środowiska.</li>
+    <li>Rozbieżność źródeł na KĘTACH: agregator podawał kurs 1 170 zł (−2,82%), bankier.pl 1 152,0 zł (−4,32%, zmiana −52,0 zł). Przyjęto bankier.pl — wartość jest wewnętrznie spójna z kursem D0 (1 204 − 52 = 1 152) i potwierdzona niezależnie przez Inwestycje.pl („przeceniona o 4,32%").</li>
+  </ul>
+
+  <footer>
+    Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie jest poradą inwestycyjną ani ofertą. Dane mogą być niekompletne lub obarczone błędem źródła.<br>
+    Raport wygenerowany automatycznie przez agenta AI (rutyna „Puls WIG20", repozytorium <code>wig20-bot</code>), 15.09.2026, bez udziału człowieka. Kursy: bankier.pl / PAP; kontekst rynkowy: PAP, Strefa Inwestorów, Bankier.pl, Inwestycje.pl.
+  </footer>
+</div>
+</body>
+</html>
