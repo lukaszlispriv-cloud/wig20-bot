@@ -704,6 +704,38 @@
       "opis": "−5,16% do ok. 333,75 zł przy największym obrocie rynku (669 mln zł) — miedź na LME poniżej 14 000 USD/t plus przecena srebra. Spółka spoza koszyków; przecena surowcowa, nie zaskoczenie wynikowe — nie spełnia warunku wejścia taktycznego SELL",
       "wklad_pkt": null,
       "zrodlo": "wnp.pl 14.09.2026; PAP/strefainwestorow.pl 14.09.2026; kurs bankier.pl 14.09 17:04"
+    },
+    {
+      "ticker": "KETY",
+      "data": "2026-09-15",
+      "dn": 2,
+      "opis": "ESPI 14.09 18:15 (po sesji, obciaza sesje 15.09): warunkowa umowa nabycia 100% udzialow Fengari Holdings I B.V. (grupa Metra) — EV 645 mln EUR, cena za udzialy do 450 mln EUR, kredyt pomostowy 2 mld zl z Pekao; finalizacja I kw. 2027; spolka deklaruje TOP3 w Europie i brak zmiany polityki dywidendowej. Kurs +9,72% do 1264 zl, obrot >120 mln zl. Reakcja rutyny 16.09: CLOSE shorta (trigger SHOCK)",
+      "wklad_pkt": null,
+      "zrodlo": "ESPI KETY 14.09.2026 (bankier.pl); parkiet.com 15.09.2026; bankier.pl 15.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-15",
+      "dn": 2,
+      "opis": "Rada Ministrow przyjela projekt ustawy o podatku od nadzwyczajnych zyskow koncernow paliwowych: 60% od nadwyzki przychodow ze sprzedazy paliw cieklych III-XII 2026, odniesienie srednia marza 2025 +20%, ok. 4 mld zl wplywow; projekt blizniaczy wobec ustawy skierowanej przez prezydenta do TK. Kurs -2,48% do 158,56 zl. Reakcja rutyny 16.09: REDUCE (trigger NEWS)",
+      "wklad_pkt": null,
+      "zrodlo": "parkiet.com 15.09.2026; bankier.pl 15.09.2026; gazetaprawna.pl 15.09.2026"
+    },
+    {
+      "ticker": "PEKAO",
+      "data": "2026-09-15",
+      "dn": 2,
+      "opis": "Pekao udzielilo Grupie Kety dwuletniego kredytu pomostowego 2 mld zl na przejecie grupy Metra (zabezpieczenie: majatek rzeczowy grupy) — duza ekspozycja korporacyjna. Kurs +0,82% do 270,00 zl",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl / ISBnews 15.09.2026"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-15",
+      "dn": 2,
+      "opis": "Kurs +1,63% do 41,70 zl, ruch od D0 +3,81% przeciw tezie short — tuz ponizej progu REDUCE (4%), bez komunikatu spolki we wrzesniu (ostatni ESPI 2.09: wyniki glosowania NWZ; zaproszenie do sprzedazy akcji w skupie do 400 mln EUR pochodzi z 14.07.2026). Pozycja pod obserwacja",
+      "wklad_pkt": null,
+      "zrodlo": "komunikaty PEPCO (bankier.pl), odczyt 16.09.2026; kurs bankier.pl 15.09 17:00"
     }
   ],
   "data_quality": [

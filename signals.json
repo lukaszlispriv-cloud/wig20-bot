@@ -39,8 +39,27 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-09-15",
+  "exclude": [
+    {
+      "ticker": "KETY",
+      "action": "CLOSE",
+      "date": "2026-09-16",
+      "reason": "ESPI 14.09.2026 18:15: warunkowa umowa nabycia 100% udzialow Fengari Holdings I B.V. (wlasciciel grupy Metra, 9 zakladow we Wloszech, USA i Kanadzie), EV 645 mln EUR, cena za udzialy do 450 mln EUR, finansowanie kredytem pomostowym 2 mld zl z Pekao. Kurs 15.09 +9,72% do 1264 zl przy obrocie >120 mln zl (w szczycie >+10%). Szokowy komunikat i upadek filaru tezy short (brak katalizatorow do 24.09 + zapowiedziana normalizacja wynikow w H2). Koszyk SHORT nie jest handlowany na rachunku (HEDGE_MODE=index), wiec zamkniecie jest papierowe.",
+      "price_before": 1264.0,
+      "move_from_d0_pct": 4.98,
+      "trigger": "SHOCK"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "action": "REDUCE",
+      "date": "2026-09-16",
+      "reason": "Rada Ministrow przyjela 15.09.2026 projekt ustawy o podatku od nadzwyczajnych zyskow koncernow paliwowych: stawka 60% od nadwyzki przychodow ze sprzedazy paliw cieklych III-XII 2026 (odniesienie: srednia marza 2025 +20%), szacowane wplywy ok. 4 mld zl, ORLEN wskazany wprost jako przyklad adresata. News uderza w filar tezy long (wysoka marza paliwowa przy Brent >100 USD), kurs 15.09 -2,48% do 158,56 zl. Ranga ponizej szoku (projekt blizniaczy wobec ustawy skierowanej przez prezydenta do TK), ruch od D0 -1,59% czyli ponizej progu cenowego - stad ciecie pozycji do polowy. Pozycja realnie na rachunku.",
+      "price_before": 158.56,
+      "move_from_d0_pct": -1.59,
+      "trigger": "NEWS"
+    }
+  ],
+  "last_daily": "2026-09-16",
   "d0": {
     "date": "2026-09-11",
     "wig20": 4139.25,
