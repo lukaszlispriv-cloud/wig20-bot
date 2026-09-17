@@ -736,6 +736,70 @@
       "opis": "Kurs +1,63% do 41,70 zl, ruch od D0 +3,81% przeciw tezie short — tuz ponizej progu REDUCE (4%), bez komunikatu spolki we wrzesniu (ostatni ESPI 2.09: wyniki glosowania NWZ; zaproszenie do sprzedazy akcji w skupie do 400 mln EUR pochodzi z 14.07.2026). Pozycja pod obserwacja",
       "wklad_pkt": null,
       "zrodlo": "komunikaty PEPCO (bankier.pl), odczyt 16.09.2026; kurs bankier.pl 15.09 17:00"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-16",
+      "dn": 3,
+      "opis": "Sesja: WIG20 -0,91% do 4082,92 pkt, mWIG40 i sWIG80 lekko w gore. Spadek indeksu w duzej czesci techniczny - PZU pierwszy dzien bez dywidendy 4,80 zl (77,00 -> 72,34 zl, -6,05%, z czego ok. 6,3 p.p. to samo odciecie). Efekt zanizajacy indeks poprawia mechanicznie wynik rachunku LONG - WIG20",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/strefainwestorow.pl 'DZIEN NA GPW: WIG20 spada po odcieciu dywidendy z PZU' 16.09.2026 18:00; kursy bankier.pl 16.09 17:01-17:15"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "Fed podniosl stope funduszy federalnych o 25 pb do 3,75-4,00% - pierwsza podwyzka od lipca 2023, glosowanie jednomyslne 12-0; przewodniczacy Kevin Warsh: inflacja zbyt wysoka zbyt dlugo, ale FOMC nie planuje cyklu zaciesniania (dot plot: najwyzej +25 pb do konca 2026). Komunikat 16.09 po 17:00 (20:00 czasu polskiego) - obciaza sesje 17.09. Nastepne posiedzenie 27-28.10",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl '\"Golebia\" podwyzka stop w Fedzie. FOMC nie planuje cyklu zaciesnienia polityki', 16.09.2026"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-16",
+      "dn": 3,
+      "opis": "ESPI 37/2026 (16.09, 12:07): Sad Okregowy w Katowicach wyrokiem z 11.09 oddalil w calosci zadania pozwu Pekanino Wind Invest sp. z o.o. (wypowiedzenie dlugoterminowych umow na zakup energii i praw majatkowych przez spolke zalezna Polska Energia - Pierwsza Kompania Handlowa). Roszczenie 28,5 mln zl, rozszerzane; szacowana odpowiedzialnosc za przyszle szkody do 201,6 mln zl. Wyrok I instancji, nieprawomocny - zdejmuje istotne ryzyko bilansowe, pozytywny dla tezy LONG. Kurs mimo to -1,41% do 9,122 zl",
+      "wklad_pkt": 1,
+      "zrodlo": "ESPI TAURON 37/2026, 16.09.2026 12:07 (bankier.pl)"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "Sciezka sejmowa windfall tax: 16.09 pierwsze czytanie projektu (60% od nadwyzki przychodow ze sprzedazy paliw cieklych 1.03-31.12.2026, ok. 4 mld zl), Sejm skierowal projekt do Komisji Finansow Publicznych z poleceniem, by DRUGIE CZYTANIE odbylo sie w czwartek 17.09. Komisja przyjela poprawke posla Pawla Blizniuka (KO) - minister finansow bedzie mogl obnizyc akcyze na paliwa rozporzadzeniem; poprawki PiS i Polski 2050 odrzucone (wroca jako wnioski mniejszosci). Kontynuacja zdarzenia z 15.09, ktore uzasadnilo REDUCE - nie nowy wyzwalacz, ale ryzyko realizacji rosnie",
+      "wklad_pkt": -1,
+      "zrodlo": "bankier.pl 'Sejmowa debata nad podatkiem od nadzwyczajnych zyskow. Opozycja grzmi o prawie dzialajacym wstecz', 16.09.2026 11:23 (akt. 12:03); tvn24.pl/biznes, gazetaprawna.pl 16-17.09.2026"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-09-16",
+      "dn": 3,
+      "opis": "Dwa komunikaty ESPI (14:50 i 15:28) o transakcjach w trybie art. 19 MAR osob pelniacych obowiazki zarzadcze - bez rangi wyzwalacza. Raport H1 2026 z 15.09 19:00 (przychody 32,716 mld zl, zysk netto ponad 4 mld zl, EBITDA 8,2 mld zl, dlug netto 1,75 mld zl wobec straty 7,1 mld zl rok wczesniej) jest juz w cenach; kurs 16.09 -0,75% do 13,83 zl",
+      "wklad_pkt": null,
+      "zrodlo": "komunikaty PGE (bankier.pl), odczyt 17.09.2026; ppcg.com.pl / wnp.pl 15-16.09.2026"
+    },
+    {
+      "ticker": "KETY",
+      "data": "2026-09-16",
+      "dn": 3,
+      "opis": "-2,69% do 1230 zl, korekta czesci skoku po ogloszeniu przejecia Metry. Pozycja short zamknieta 16.09 (CLOSE, kurs odniesienia 1264,00 zl) - ten ruch nie wraca juz do wariantu zarzadzanego",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 16.09 17:04"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-16",
+      "dn": 3,
+      "opis": "-0,24% do 41,60 zl; ruch od D0 +3,56% przeciw tezie short - nadal ponizej progu REDUCE (4%). Skup akcji wlasnych za ok. 1,73 mld zl (36 462 201 akcji po 47,52 zl, redukcja 91,76%, IBEX do 66,1%) zostal rozliczony 17.08.2026 - to NIE jest zdarzenie z ostatnich 24h i nie stanowi wyzwalacza",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 16.09 17:00; bankier.pl/stockwatch.pl (rozliczenie skupu) 17-18.08.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "Kalendarz D+4 (potwierdzony w datowanych zrodlach z biezacego tygodnia): raporty H1 ALLEGRO i LPP (spolki WIG20 spoza koszykow), PZU - dzien dywidendy 4,80 zl (wyplata 8.10), 9:30 GUS/PL wskaznik ufnosci konsumenckiej (kons. -12, poprz. -11,3), 9:30 GPW Innovation Day, 10:00 wystapienie Philipa Lane'a (EBC), 11:00 finalny HICP strefy euro, 13:00 Bank Anglii (oczek. 3,75%), 14:30 CNB. W Sejmie drugie czytanie ustawy o podatku od nadzwyczajnych zyskow",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium rynku kapitalowego biznes.pap.pl 2026-09-17; bankier.pl 11.09.2026 i 16.09.2026"
     }
   ],
   "data_quality": [
