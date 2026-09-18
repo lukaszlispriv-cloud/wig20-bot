@@ -57,9 +57,18 @@
       "price_before": 158.56,
       "move_from_d0_pct": -1.59,
       "trigger": "NEWS"
+    },
+    {
+      "ticker": "PEPCO",
+      "action": "REDUCE",
+      "date": "2026-09-18",
+      "reason": "Kurs 17.09 +1,71% do 42,31 zl, ruch od D0 (40,17 zl) +5,33% przeciw tezie short - w pasmie 4-8% (miekki wyzwalacz cenowy). Bez komunikatow ESPI w oknie 24h (ostatni 2.09: wyniki glosowania NWZ); wzrost to kontynuacja popytu po rozliczonym 17.08 skupie akcji i mocnej sesji sektora konsumenckiego (Allegro +9,49%, LPP +3,23%). Koszyk SHORT nie jest handlowany na rachunku (HEDGE_MODE=index), wiec ciecie do polowy jest papierowe i liczy sie tylko do wariantu zarzadzanego.",
+      "price_before": 42.31,
+      "move_from_d0_pct": 5.33,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-09-17",
+  "last_daily": "2026-09-18",
   "d0": {
     "date": "2026-09-11",
     "wig20": 4139.25,
@@ -148,5 +157,14 @@
       "metoda": "v1.0 (momentum uznaniowe)"
     }
   ],
-  "tactical": []
+  "tactical": [
+    {
+      "ticker": "ALLEGRO",
+      "direction": "BUY",
+      "entry_date": "2026-09-18",
+      "entry_price": 49.435,
+      "entry_note": "zamkniecie 17.09 (bankier.pl, odczyt 17:04)",
+      "reason": "Twardy wyzwalacz 24h: raport H1 2026 z 17.09 (7:34) z PODNIESIENIEM prognoz na 2026 - GMV grupy +13-15% r/r (78,3-79,9 mld zl) i skoryg. EBITDA +13-17% r/r (ok. 3,9-4,1 mld zl); Q2: GMV 19,57 mld zl (+14,4%), skoryg. EBITDA 1,03 mld zl (+11,5%); zarzad: GMV za granica podwoilo sie r/r w pierwszych 10 tygodniach Q3. Pozytywna reakcja kursu na sesji 17.09: +9,49% do 49,435 zl przy obrocie 498 mln zl, lider WIG20. Ryzyko: wejscie po skoku (mean reversion), podatek cyfrowy/regulacje platform, kurs blisko rocznych maksimow."
+    }
+  ]
 }

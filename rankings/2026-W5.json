@@ -800,6 +800,78 @@
       "opis": "Kalendarz D+4 (potwierdzony w datowanych zrodlach z biezacego tygodnia): raporty H1 ALLEGRO i LPP (spolki WIG20 spoza koszykow), PZU - dzien dywidendy 4,80 zl (wyplata 8.10), 9:30 GUS/PL wskaznik ufnosci konsumenckiej (kons. -12, poprz. -11,3), 9:30 GPW Innovation Day, 10:00 wystapienie Philipa Lane'a (EBC), 11:00 finalny HICP strefy euro, 13:00 Bank Anglii (oczek. 3,75%), 14:30 CNB. W Sejmie drugie czytanie ustawy o podatku od nadzwyczajnych zyskow",
       "wklad_pkt": 0,
       "zrodlo": "kalendarium rynku kapitalowego biznes.pap.pl 2026-09-17; bankier.pl 11.09.2026 i 16.09.2026"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "Raport H1 2026 (7:34) z podniesieniem prognoz na 2026: GMV +13-15% r/r, skoryg. EBITDA +13-17% r/r; Q2 GMV 19,57 mld zl (+14,4%), skoryg. EBITDA 1,03 mld zl (+11,5%); GMV zagraniczne x2 r/r w pierwszych 10 tygodniach Q3. Kurs +9,49% do 49,435 zl, obrot 498 mln zl, lider WIG20. Od 18.09 pozycja taktyczna BUY (entry 49,435 zl)",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 17.09.2026 07:34 i 17:22 (podsumowanie sesji); wnp.pl 17.09.2026"
+    },
+    {
+      "ticker": "LPP",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "Raport H1 r.obr. 2026/27 opublikowany 17.09 o 17:46 (po sesji, obciaza sesje 18.09): zysk netto Q2 768 mln zl vs konsensus PAP 684,1 mln zl (+12%), EBITDA Q2 1 744 mln zl (+42% r/r), przychody H1 12,05 mld zl (+14,7%), marza brutto 58,0%; podniesione cele marzowe na 2026 (EBITDA 24-25%, netto 10-11%), plan sprzedazy 2027 ok. 30-31 mld zl. Kurs przed raportem +3,23% do 22 380 zl",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'LPP mocno powyzej oczekiwan', 17.09.2026 17:46; ESPI PSr/2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "-1,86% do 153,90 zl (najnizej od konca sierpnia, -6,2% od szczytu z 14.09) przy spadku cen ropy (WIG-PALIWA -1,89%); ruch od D0 -4,48% - w pasmie PRICE_4_8, pozycja juz zredukowana 16.09 (NEWS), brak awansu do CLOSE (prog 8%). Brak ESPI w oknie 24h",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 17.09.2026 17:22; strefainwestorow.pl 17.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "Windfall tax: 17.09 drugie czytanie w Sejmie; KO (posel Blizniuk) zglosila poprawke wydluzajaca okres naliczania podatku o I kwartal 2027 (projekt: 1.03-31.12.2026, stawka 60%, ok. 4 mld zl); glosowanie zapowiedziane przez marszalka Sejmu na piatek 18.09, potem Senat i prezydent (poprzednia ustawe skierowal do TK). Eskalacja znanego zdarzenia, nie nowy wyzwalacz",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'Bitwa o tansze tankowanie... KO chce zabierac nadmiarowe zyski rowniez w 2027 roku', 17.09.2026; gazetaprawna.pl 17.09.2026; parkiet.com 15.09.2026 (termin glosowania)"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "ESPI 17.09 po sesji (18:50): rada nadzorcza zgodzila sie na emisje obligacji kapitalowych AT1 do 250 mln EUR (wieczyste, z opcja wczesniejszego wykupu, termin zalezny od rynku); osobne ESPI o pismie UKNF ws. wskaznika bufora O-SII. Neutralne dla tezy long (wzmocnienie Tier 1, nie rozwodnienie). Kurs 17.09 -0,07% do 1 436 zl mimo rekordu WIG-Banki (27 732,90 pkt)",
+      "wklad_pkt": null,
+      "zrodlo": "ESPI mBank 17.09.2026; bankier.pl 17.09.2026 18:50"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "+1,71% do 42,31 zl; ruch od D0 +5,33% przeciw tezie short - przekroczony prog 4% => REDUCE 18.09 (PRICE_4_8, kurs odniesienia 42,31 zl). Bez ESPI w 24h; otwarcie 6. centrum dystrybucyjnego (Barniewice k. Gdanska) to news operacyjny bez rangi wyzwalacza",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 17.09 17:00; stockwatch.pl 17.09.2026"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "+3,04% do 14,25 zl (WIG-ENERG +2,12%), najlepsza spolka koszyka LONG; kolejny komunikat MAR art. 19 (transakcje osob zarzadzajacych) 17.09 - bez rangi wyzwalacza",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 17.09.2026 17:00; ESPI PGE 17.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-17",
+      "dn": 4,
+      "opis": "WIG20 +1,48% do 4 143,28 pkt (nowy rekord blisko), WIG +1,52% do 155 959,97, mWIG40 +1,61%, sWIG80 +0,90%, obroty 2,63 mld zl; WIG-Banki rekord wszech czasow. Bank Anglii bez zmian 3,75% (6-3, troje za podwyzka), CNB bez zmian 3,75% (7-0). Sesja po 'golebiej' podwyzce Fed z 16.09",
+      "wklad_pkt": 0,
+      "zrodlo": "strefainwestorow.pl / PAP 17.09.2026 17:34; bankier.pl 17.09.2026 (BoE); kurzy.cz 17.09.2026 (CNB)"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "Kalendarz D+5 (ostatnia sesja okna W5), potwierdzony w bankier.pl 'Tym beda zyly rynki' z 11.09.2026 i komunikacie GPW Benchmark za biznes.pap.pl: nad ranem Bank Japonii (oczek. +25 pb do 1,25%), 8:00 PPI Niemcy, 9:30 GUS produkcja przemyslowa za sierpien, 15:15 produkcja przemyslowa USA, 16:00 LEI Conference Board; w Sejmie glosowanie nad windfall tax; po sesji korekta kwartalna WIG20 (cap 15% PKO BP i ORLEN, sklad bez zmian) i wypadniecie TAURONU ze STOXX 600 (w zycie 21.09); dzien zamyka przeglad ratingu Polski przez Moody's (A2, persp. negatywna)",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl 11.09.2026 13:17; biznes.pap.pl (GPW Benchmark, korekta kwartalna); parkiet.com 15.09.2026"
     }
   ],
   "data_quality": [
