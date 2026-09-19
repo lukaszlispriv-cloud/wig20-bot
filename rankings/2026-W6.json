@@ -1,0 +1,550 @@
+{
+  "week": "2026-W6",
+  "d0": "2026-09-18",
+  "generated": "2026-09-19",
+  "momentum_method": "mechaniczne",
+  "uwaga": "momentum ze scripts/metryki.py momentum --d0 2026-09-18 (tylko rel5 — cache ma 20 sesji, do składnika 20-sesyjnego brakuje jednej, stąd BRAK_20S dla wszystkich 20 spółek); PZU liczone z kursem D0 powiększonym o dywidendę 4,80 zł odciętą 16.09 (DYWIDENDA_KOREKTA_PZU) — bez tej korekty mechaniczny wynik momentum PZU to 1,3 pkt zamiast 18,4 i jest artefaktem odcięcia dywidendy, nie ruchu kursu; DM ±3 wyłącznie za sygnały z 19.08–18.09 (DM BOŚ 25.08, Trigon 8.09, Noble Securities 17.09 — rekomendacja DM BOŚ dla ORLENU z 18.08 wypadła poza okno 30 dni); katalizatory 10 + suma wkładów za zdarzenia D+1…D+10 (21.09–2.10); remis KĘTY/PZU (60,9) rozstrzygnięty mniejszą wagą w WIG20",
+  "long": [
+    "LPP",
+    "ALLEGRO",
+    "KETY",
+    "PZU",
+    "PEPCO"
+  ],
+  "short": [
+    "ALIOR",
+    "KGHM",
+    "PKNORLEN",
+    "BUDIMEX",
+    "MBANK"
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "LPP",
+      "score": 66.5,
+      "p": 0.58,
+      "pts": {
+        "momentum": 25.0,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 7.5,
+        "rewizje": 9,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 25,0/25 (rel5 +12,46 p.p., najwyżej w uniwersum) po zwyżce +7,95% na sesji 18.09; KAT brak zdarzeń w D+1…D+10 (raport H1 z 17.09 jest przed D0, raport Q3 dopiero jesienią) → 10 neutralnie; MAKRO sprzedaż detaliczna GUS 22.09 wspiera, ale słabszy złoty po obniżce ratingu podnosi koszt zakupów przy CPI 3,4% (8); DM brak datowanego sygnału z 30 dni — obecność na liście top picks na 2026 to materiał roczny, nie świeży (7,5); REW zysk netto Q2 768 mln zł vs konsensus PAP 684,1 mln (+12%) i podniesione cele marżowe (EBITDA 24–25%, netto 10–11%), raport 17.09 (9); PRZ w rejestrze KNF wg sierpniowego obrazu, brak datowanej zmiany (5); WYC mnożnik po zwyżce najwyższy w ekspozycji konsumenckiej (2)",
+      "rel5_pct": 12.46,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 5.62
+    },
+    {
+      "rank": 2,
+      "ticker": "ALLEGRO",
+      "score": 64.2,
+      "p": 0.57,
+      "pts": {
+        "momentum": 23.7,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 9,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 23,7/25 (rel5 +11,21 p.p.) po +9,49% z 17.09; KAT brak zdarzeń D+1…D+10 (raport H1 z 17.09 przed D0) → 10; MAKRO sprzedaż detaliczna 22.09 sprzyja, ale podwyżka Fed do 3,75–4,00% i wyższe rentowności po cięciu ratingu biją w wyceny wzrostowe, w tle ryzyko regulacji platform (7); DM brak datowanego sygnału z 30 dni (7,5); REW PODNIESIENIE prognoz 2026 z 17.09: GMV +13–15% r/r (78,3–79,9 mld zł) i skoryg. EBITDA +13–17% (9); PRZ brak datowanych danych o przepływach (5); WYC kurs przy rocznych maksimach, mnożnik e-commerce (2)",
+      "rel5_pct": 11.21,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 9.22
+    },
+    {
+      "rank": 3,
+      "ticker": "KETY",
+      "score": 60.9,
+      "p": 0.55,
+      "pts": {
+        "momentum": 22.4,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 22,4/25 (rel5 +5,80 p.p.) po +9,72% z 15.09 na przejęciu grupy Metra; KAT brak zdarzeń D+1…D+10 (raport Q3 26.10, finalizacja transakcji na początku 2027) → 10; MAKRO produkcja budowlano-montażowa GUS 21.09 i Ifo 24.09 istotne dla popytu na profile, ale kredyt pomostowy 2 mld zł drożeje przy wyższych stopach (8); DM brak datowanego sygnału z 30 dni (7,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach, zapowiedziana normalizacja wyników w H2 nadal w mocy (5); PRZ brak datowanych danych (5); WYC mnożnik po skoku wciąż umiarkowany wobec skali akwizycji, EV 645 mln EUR (3); remis z PZU (60,9) rozstrzygnięty mniejszą wagą w WIG20: 2,27% vs 7,49%",
+      "rel5_pct": 5.8,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 2.27
+    },
+    {
+      "rank": 4,
+      "ticker": "PZU",
+      "score": 60.9,
+      "p": 0.55,
+      "pts": {
+        "momentum": 18.4,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 7.5,
+        "rewizje": 7,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 18,4/25 po korekcie dywidendowej (rel5 +1,48 p.p. z kursem D0 powiększonym o dywidendę 4,80 zł odciętą 16.09; bez korekty skrypt daje −4,80 p.p. i 1,3 pkt, co jest artefaktem odcięcia, nie słabością kursu); KAT wypłata dywidendy 8.10 poza oknem D+10 → 10; MAKRO wyższe rentowności po obniżce ratingu podnoszą dochód z reinwestycji portfela, ale obniżają wycenę obligacji już posiadanych; reorganizacja PZU–Pekao wciąż bez projektu ustawy (9); DM brak datowanego sygnału z 30 dni (7,5); REW Q2 +7% vs konsensus PAP (20.08, w oknie 30 dni) (7); PRZ techniczne odcięcie dywidendy rozliczone, brak datowanych przepływów (5); WYC niskie mnożniki, DY 6,3% wypłacona (4)",
+      "rel5_pct": 1.48,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 7.49
+    },
+    {
+      "rank": 5,
+      "ticker": "PEPCO",
+      "score": 59.6,
+      "p": 0.55,
+      "pts": {
+        "momentum": 21.1,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 6,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 21,1/25 (rel5 +4,64 p.p.) — czwarty tydzień popytu po rozliczonym 17.08 skupie akcji; KAT data raportu za IV kwartał roku obrotowego niepotwierdzona (źródła podają 23.09 albo 29.09), więc zgodnie z metodą bez punktów → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO sprzedaż detaliczna 22.09 i stopa bezrobocia 23.09 kluczowe dla segmentu dyskontowego, słabszy złoty podnosi koszt zakupów (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu (5); PRZ trwający efekt skupu akcji rozliczonego 17.08 (6); WYC mnożnik po restrukturyzacji nadal poniżej sektora (3)",
+      "rel5_pct": 4.64,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 1.37
+    },
+    {
+      "rank": 6,
+      "ticker": "MODIVO",
+      "score": 58.2,
+      "p": 0.54,
+      "pts": {
+        "momentum": 19.7,
+        "katalizatory": 11,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 19,7/25 (rel5 +2,40 p.p.); KAT raport półroczny 1.10 = D+9, czyli w paśmie D+6…D+10 — najwyżej połowa wkładu i tylko za oczekiwanie, nie reakcję (+1) → 11; MAKRO sprzedaż detaliczna 22.09 wspiera e-commerce modowy, ale wyższe stopy uderzają w wyceny wzrostowe (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach (5); PRZ najmniejsza waga w WIG20 (0,74%) i niska płynność, brak datowanych danych (5); WYC brak świeżych mnożników — neutralnie (3)",
+      "rel5_pct": 2.4,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 0.74
+    },
+    {
+      "rank": 7,
+      "ticker": "CDPROJEKT",
+      "score": 57.0,
+      "p": 0.54,
+      "pts": {
+        "momentum": 14.5,
+        "katalizatory": 11,
+        "makro": 6,
+        "dm": 10.5,
+        "rewizje": 8,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 14,5/25 (rel5 +0,83 p.p.); KAT premiera remastera „Wiedźmina 3” 29.09 = D+7, więc połowa wkładu (+1); aktualizacja jest darmowa dla posiadaczy gry, monetyzacja obejmuje nowe kopie i Switch 2 → 11; MAKRO podwyżka Fed i wyższe rentowności uderzają w wyceny wzrostowe (6); DM +3 za dwa datowane sygnały w oknie 30 dni: lista długich DM BOŚ (25.08) i top pick Trigon (8.09) (10,5); REW Q2 +44% vs konsensus (2.09) (8); PRZ pozycje krótkie Qube/AQR w rejestrze KNF bez datowanej zmiany (5); WYC najwyższy mnożnik w rankingu (2)",
+      "rel5_pct": 0.83,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 3.03
+    },
+    {
+      "rank": 8,
+      "ticker": "PEKAO",
+      "score": 55.3,
+      "p": 0.53,
+      "pts": {
+        "momentum": 15.8,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 6,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 15,8/25 (rel5 +1,23 p.p. — jedyna noga LONG z W5 nad kreską); KAT brak zdarzeń D+1…D+10 → 10; MAKRO obniżka ratingu Polski do A3 przez Moody's (18.09, po sesji) uderza w wycenę portfeli obligacji i koszt finansowania banków, częściowo równoważy to CIT banków 26% w 2027 i scenariusz „wyżej na dłużej” (7); DM brak datowanego sygnału z 30 dni (7,5); REW Q2 +3,1% vs konsensus, publikacja starsza niż 30 dni (5); PRZ marginalny beneficjent capu 15% na PKO BP z 18.09 oraz kredytu pomostowego 2 mld zł dla Kęt (6); WYC niskie mnożniki, DY 8,4% (4)",
+      "rel5_pct": 1.23,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 8.65
+    },
+    {
+      "rank": 9,
+      "ticker": "PGE",
+      "score": 55.0,
+      "p": 0.53,
+      "pts": {
+        "momentum": 10.5,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 10.5,
+        "rewizje": 7,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 10,5/25 (rel5 −0,34 p.p. — oddanie części zwyżki z W5); KAT raport H1 z 15.09 przed D0, brak zdarzeń D+1…D+10 → 10; MAKRO drogi gaz TTF i EUA podtrzymują ceny hurtowe energii, CIT 30% dla energetyki od 2027 wciąż na etapie założeń (9); DM +3 za listę długich DM BOŚ z 25.08, w oknie 30 dni (10,5); REW raport H1 z 15.09: zysk netto ponad 4 mld zł i EBITDA 8,2 mld zł przy szacunkach Q2 2,06 vs 1,78 mld zł konsensusu (7); PRZ trzy komunikaty ESPI o transakcjach w trybie art. 19 MAR bez treści kierunkowej (5); WYC P/BV 0,69 przy ujemnym P/E (3)",
+      "rel5_pct": -0.34,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 2.18
+    },
+    {
+      "rank": 10,
+      "ticker": "DINOPL",
+      "score": 54.6,
+      "p": 0.52,
+      "pts": {
+        "momentum": 17.1,
+        "katalizatory": 8,
+        "makro": 8,
+        "dm": 7.5,
+        "rewizje": 6,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 17,1/25 (rel5 +1,36 p.p.); KAT 24.09 = D+4 druga tura mediacji z OPZZ Konfederacja Pracy w CPS „Dialog”; związek zapowiada natychmiastowe zakończenie mediacji i strajk generalny, jeśli zarząd nie stawi się osobiście (−2) → 8; MAKRO deflacja żywności przy CPI 3,4% ściska sprzedaż porównywalną, ale model defensywny broni się w tygodniu risk-off po Moody's (8); DM wzmianka parkiet.com o portfelach fundamentalnych bez wskazania domu maklerskiego — zgodnie z metodą bez punktów (7,5); REW Q2 +2% ponad konsensus PAP (20.08, w oknie 30 dni) (6); PRZ w rejestrze KNF wg sierpniowego obrazu, brak datowanej zmiany (5); WYC premia mnożnikowa wobec sektora handlu (3)",
+      "rel5_pct": 1.36,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 3.11
+    },
+    {
+      "rank": 11,
+      "ticker": "ZABKA",
+      "score": 53.7,
+      "p": 0.52,
+      "pts": {
+        "momentum": 13.2,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 6,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 13,2/25 (rel5 +0,50 p.p.); KAT koniec zapisów w wezwaniu Couche-Tard przedłużony do 26.10, czyli poza oknem D+10 → 10; MAKRO kurs 31,49 zł przy cenie wezwania 32,00 zł czyni spółkę niemal nieczułą na rynek — atut w tygodniu po cięciu ratingu, obciążenie przy odbiciu indeksu (9); DM brak datowanego sygnału (7,5); REW raport Q2 z 30.07 starszy niż 30 dni (5); PRZ nieodwołalne zobowiązania CVC, Partners Group i menedżerów na ok. 57% akcji oraz ścieżka do delistingu (6); WYC potencjał ograniczony do +1,62% względem ceny wezwania (3)",
+      "rel5_pct": 0.5,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 3.01
+    },
+    {
+      "rank": 12,
+      "ticker": "PKOBP",
+      "score": 49.3,
+      "p": 0.5,
+      "pts": {
+        "momentum": 11.8,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 11,8/25 (rel5 −0,16 p.p.); KAT NWZ 14.10 poza oknem, cap 15% wykonany na zamknięciu 18.09 → 10; MAKRO największy bank o największej ekspozycji na dług skarbowy — obniżka ratingu Polski do A3 uderza w niego najmocniej w sektorze (6); DM brak datowanego sygnału (7,5); REW raport Q2 z 13.08 starszy niż 30 dni (5); PRZ podaż funduszy indeksowych po capie zrealizowana już na sesji 18.09 (5); WYC ROE 18% przy niskim P/E, DY 5,5% (4)",
+      "rel5_pct": -0.16,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 15.38
+    },
+    {
+      "rank": 13,
+      "ticker": "TAURONPE",
+      "score": 47.8,
+      "p": 0.49,
+      "pts": {
+        "momentum": 5.3,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 6,
+        "wycena": 5
+      },
+      "uzasadnienie": "MOM 5,3/25 (rel5 −3,81 p.p.) po podaży pasywnej na zamknięciu 18.09; KAT rewizja STOXX Europe 600 wchodzi w życie 21.09 = D+1, ale podaż wykonano już na zamknięciu 18.09, więc wkład 0 → 10; MAKRO ten sam wiatr cen energii co przy PGE, CIT 30% od 2027 wciąż w założeniach (9); DM brak datowanego sygnału (7,5); REW H1 z 9.09 zgodny z szacunkami z 24.08, bez zmiany konsensusu (5); PRZ presja pasywna zdjęta po wykonaniu rewizji indeksu (6); WYC P/E 5,8 i P/BV 0,75 — najtańsza spółka w rankingu (5)",
+      "rel5_pct": -3.81,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 1.71
+    },
+    {
+      "rank": 14,
+      "ticker": "ERSTEPL",
+      "score": 47.7,
+      "p": 0.49,
+      "pts": {
+        "momentum": 9.2,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 9,2/25 (rel5 −0,36 p.p.); KAT raport Q3 dopiero 30.10, brak zdarzeń D+1…D+10 → 10; MAKRO obniżka ratingu Polski obciąża cały sektor bankowy, spółka zależna grupy austriackiej z nieco mniejszą wrażliwością na koszt finansowania skarbowego (7); DM brak datowanego sygnału (7,5); REW Q2 +11% vs konsensus z 30.07 — poza oknem 30 dni (5); PRZ brak datowanych danych (5); WYC DY 8,1% (4)",
+      "rel5_pct": -0.36,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 5.75
+    },
+    {
+      "rank": 15,
+      "ticker": "KRUK",
+      "score": 45.4,
+      "p": 0.48,
+      "pts": {
+        "momentum": 7.9,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 7,9/25 (rel5 −0,37 p.p.); KAT raport Q3 27.10 poza oknem D+10 → 10; MAKRO wyższe rentowności obligacji po obniżce ratingu podnoszą koszt finansowania zakupów portfeli wierzytelności (6); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu (5); PRZ w rejestrze KNF wg sierpniowego obrazu, brak datowanej zmiany (5); WYC mnożniki poniżej średniej rynkowej (4)",
+      "rel5_pct": -0.37,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 1.25
+    },
+    {
+      "rank": 16,
+      "ticker": "ALIOR",
+      "score": 44.1,
+      "p": 0.47,
+      "pts": {
+        "momentum": 6.6,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 6,6/25 (rel5 −2,45 p.p.); KAT nabór w konkursie na prezesa i pięciu członków zarządu zamknięto 16.09, ale data powołań jest niepotwierdzona → bez punktów, 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO obniżka ratingu Polski uderza w banki, a nierozstrzygnięta obsada zarządu wzmacnia dyskonto (6); DM brak datowanego sygnału (7,5); REW raport Q3 dopiero 27.10, brak zmiany konsensusu (5); PRZ brak datowanych danych (5); WYC najniższe mnożniki wśród banków indeksu (4)",
+      "rel5_pct": -2.45,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 2.12
+    },
+    {
+      "rank": 17,
+      "ticker": "KGHM",
+      "score": 42.4,
+      "p": 0.46,
+      "pts": {
+        "momentum": 3.9,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 3,9/25 (rel5 −3,82 p.p.) po tąpnięciu −8,2% z 10.09; KAT brak potwierdzonego zdarzenia w D+1…D+10 — termin decyzji Białego Domu o cłach na miedź rafinowaną nieznany → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO miedź ok. 14 350 USD/t po spadku ponad 3% z rekordowych poziomów z początku września, a podwyżka Fed umacnia dolara — dwa czynniki przeciw (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ w rejestrze KNF wg sierpniowego obrazu, rozmowy z BHP bez komunikatu ESPI (5); WYC mnożniki po przecenie niskie (4)",
+      "rel5_pct": -3.82,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 8.36
+    },
+    {
+      "rank": 18,
+      "ticker": "PKNORLEN",
+      "score": 38.5,
+      "p": 0.44,
+      "pts": {
+        "momentum": 0.0,
+        "katalizatory": 10,
+        "makro": 4,
+        "dm": 10.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 0,0/25 (rel5 −5,79 p.p., najgorzej w uniwersum); KAT sam etap legislacyjny bez potwierdzonej daty posiedzenia Senatu — zgodnie z metodą bez punktów → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO Sejm uchwalił 18.09 (237 za, 202 przeciw, 1 wstrzymujący się) podatek 60% od nadwyżki przychodów ze sprzedaży paliw ciekłych, z poprawką wydłużającą naliczanie o I kwartał 2027 i wpływami ok. 4 mld zł, ORLEN wskazany wprost jako adresat; w tle CIT 30% dla paliw od 2027 i presja na marżę rafineryjną przy Brent powyżej 100 USD (4); DM +3 za top pick Trigon z 8.09 w oknie 30 dni — rekomendacja DM BOŚ „kupuj” 180 zł z 18.08 wypadła już poza 30 dni (10,5); REW Q2 EBITDA LIFO +11% vs konsensus z 6.08 poza oknem, a konsensusowa cena docelowa ok. 144 zł jest poniżej kursu (5); PRZ cap 15% wykonany, waga 13,78% poniżej limitu (5); WYC DY ok. 6,2% po przecenie (4)",
+      "rel5_pct": -5.79,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 13.78
+    },
+    {
+      "rank": 19,
+      "ticker": "BUDIMEX",
+      "score": 36.1,
+      "p": 0.43,
+      "pts": {
+        "momentum": 2.6,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 4.5,
+        "rewizje": 4,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 2,6/25 (rel5 −3,92 p.p.); KAT raport Q3 27.10 i strategia przesunięta na koniec października — oba poza oknem D+10 → 10; MAKRO produkcja budowlano-montażowa GUS 21.09 to jedyny impuls tygodnia, a wyższe rentowności po Moody's podnoszą koszt finansowania inwestycji (8); DM −3 za rekomendację „sprzedaj” Noble Securities z ceną docelową 562 zł przy kursie 698,80 zł (17.09) (4,5); REW zysk Q2 o 3,3% poniżej konsensusu (4); PRZ w rejestrze KNF wg sierpniowego obrazu (5); WYC P/E 25,6 przy backlogu 17,9 mld zł (2)",
+      "rel5_pct": -3.92,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 1.62
+    },
+    {
+      "rank": 20,
+      "ticker": "MBANK",
+      "score": 33.8,
+      "p": 0.42,
+      "pts": {
+        "momentum": 1.3,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 1,3/25 (rel5 −3,97 p.p.) — spadek −2,54% na sesji 18.09 wobec WIG-BANKI −0,98%; KAT zgoda rady nadzorczej na emisję AT1 do 250 mln EUR z 17.09 jest przed D0, a termin emisji zależy od rynku → 10; MAKRO obniżka ratingu Polski uderza w banki, a mBank wypadł słabiej od sektora dzień po jego rekordzie (6); DM −3 za dwa datowane sygnały w oknie 30 dni: Trigon „gorzej niż rynek” (8.09) i usunięcie z listy długich DM BOŚ (25.08) (4,5); REW Q2 +1,9% vs konsensus z 30.07 — poza oknem 30 dni (5); PRZ emisja AT1 wzmacnia Tier 1 bez rozwodnienia, pismo UKNF ws. bufora O-SII (5); WYC najwyższe mnożniki wśród banków indeksu, DY 1,2% (2)",
+      "rel5_pct": -3.97,
+      "momentum_flagi": [
+        "BRAK_20S"
+      ],
+      "waga_wig20_pct": 3.35
+    }
+  ],
+  "katalizatory": [
+    {
+      "ticker": "DINOPL",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "druga tura mediacji z OPZZ Konfederacja Pracy w CPS „Dialog” w Warszawie; związek zapowiada natychmiastowe zakończenie fazy mediacji i strajk generalny, jeśli zarząd nie stawi się osobiście (na sesji 2.09 spółkę reprezentowali prawnicy zewnętrzni)",
+      "wklad_pkt": -2,
+      "zrodlo": "dlahandlu.pl „Związek zaostrza spór z Dino…”; wiadomoscispozywcze.pl (list otwarty OPZZ), 09.2026"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-09-29",
+      "dn": 7,
+      "opis": "premiera „Wiedźmin 3: Dziki Gon – Remastered”; darmowa aktualizacja dla posiadaczy gry na GOG/Steam/Epic/PS5/Xbox, monetyzacja na nowych kopiach i Nintendo Switch 2",
+      "wklad_pkt": 1,
+      "zrodlo": "bankier.pl „CD Projekt RED wyda 29 września '26 remaster Wiedźmina 3”; cdprojekt.com (zapowiedź, Gamescom ONL)"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-01",
+      "dn": 9,
+      "opis": "raport półroczny 2026 — jedyny raport okresowy spółki WIG20 w oknie D+1…D+10",
+      "wklad_pkt": 1,
+      "zrodlo": "strefainwestorow.pl — kalendarium publikacji raportów okresowych WIG20, odczyt 19.09.2026"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "wejście w życie rewizji STOXX Europe 600 (wypadnięcie TAURONU, wchodzi XTB); podaż funduszy pasywnych została wykonana już na zamknięciu 18.09, więc sama data wejścia nie jest nowym impulsem",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl 2.09.2026; stoxx.com (rewizja wrześniowa)"
+    },
+    {
+      "ticker": "ZABKA",
+      "data": "2026-10-26",
+      "dn": null,
+      "opis": "przedłużony termin zapisów w wezwaniu Alimentation Couche-Tard po 32,00 zł za akcję (transakcja 29.10, rozliczenie 3.11) — poza oknem D+10, wkład 0",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Przyjmowanie zapisów w wezwaniu Alimentation Couche-Tard na Zabka Group przedłużone do 26 X 2026 r.”, 09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-18",
+      "dn": 0,
+      "opis": "Sejm uchwalił ustawę o podatku od nadzwyczajnych zysków koncernów paliwowych (237–202–1), stawka 60% od nadwyżki przychodów, poprawka wydłużająca naliczanie o I kw. 2027, wpływy ok. 4 mld zł; ustawa trafia do Senatu, a bliźniaczą prezydent skierował do TK. Data posiedzenia Senatu niepotwierdzona, więc wkład 0 — czynnik ujęty w kategorii Makro",
+      "wklad_pkt": 0,
+      "zrodlo": "rp.pl / energia.rp.pl 18.09.2026; money.pl; rmf24.pl"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": null,
+      "dn": null,
+      "opis": "raport za IV kwartał roku obrotowego 2025/26 — źródła podają rozbieżne terminy (23.09 albo 29.09), brak potwierdzenia w datowanym kalendarium; bez punktów, kod KALENDARZ_NIEPOTWIERDZONY",
+      "wklad_pkt": 0,
+      "zrodlo": "rozbieżność odnotowana już w raporcie 2026-W5; brak potwierdzenia w strefainwestorow.pl i bankier.pl, odczyt 19.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "pierwsza sesja po obniżce ratingu Polski przez Moody's do A3 z A2 (komunikat 18.09 ok. 23:14, perspektywa stabilna, rating krótkoterminowy P-2); 3:00 decyzja LPR w Chinach (kons. 3,00%), 9:30 GUS — zatrudnienie, wynagrodzenia i produkcja budowlano-montażowa za sierpień",
+      "wklad_pkt": 0,
+      "zrodlo": "TVN24 Biznes/PAP 18.09.2026; bankier.pl „Tym będą żyły rynki: Wgląd do portfeli Polaków, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026 12:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "9:30 GUS — sprzedaż detaliczna za sierpień; 9:00 Wskaźnik Dobrobytu BIEC; 14:00 podaż pieniądza M3; 14:00 decyzja banku centralnego Węgier (kons. 5,50%); 16:00 indeks Fed z Richmond",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl, publ. 18.09.2026 12:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "9:15–10:30 wstępne PMI dla strefy euro, Niemiec, Francji i Wielkiej Brytanii; 9:30 GUS — stopa bezrobocia za sierpień; 15:45 wrześniowe PMI dla USA",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl, publ. 18.09.2026 12:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "9:30 decyzja SNB; 9:30 decyzja Riksbanku; 10:00 decyzja Banku Norwegii; 10:00 niemiecki Ifo za wrzesień",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl, publ. 18.09.2026 12:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "10:00 podaż pieniądza M3 w strefie euro; 14:30 zamówienia na dobra trwałego użytku w USA za sierpień; 16:00 indeks Uniwersytetu Michigan",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl, publ. 18.09.2026 12:04"
+    }
+  ],
+  "data_quality": [
+    "KURS_ZRODLO_REZERWA",
+    "FMP_PLAN_BLOKADA",
+    "KNF_SHORT_NIEDOSTEPNY",
+    "BRAK_20S",
+    "DYWIDENDA_KOREKTA_PZU",
+    "KALENDARZ_NIEPOTWIERDZONY",
+    "WALIDACJA_D0_Z_CACHE"
+  ]
+}

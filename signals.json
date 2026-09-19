@@ -1,20 +1,20 @@
 {
-  "version": "2026-W5",
-  "generated": "2026-09-12",
+  "version": "2026-W6",
+  "generated": "2026-09-19",
   "status": "AKTUALNA",
   "long": [
-    "PGE",
-    "PKNORLEN",
-    "TAURONPE",
-    "MBANK",
-    "PEKAO"
+    "LPP",
+    "ALLEGRO",
+    "KETY",
+    "PZU",
+    "PEPCO"
   ],
   "short": [
-    "DINOPL",
-    "KRUK",
-    "KETY",
-    "PEPCO",
-    "MODIVO"
+    "ALIOR",
+    "KGHM",
+    "PKNORLEN",
+    "BUDIMEX",
+    "MBANK"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -39,50 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "KETY",
-      "action": "CLOSE",
-      "date": "2026-09-16",
-      "reason": "ESPI 14.09.2026 18:15: warunkowa umowa nabycia 100% udzialow Fengari Holdings I B.V. (wlasciciel grupy Metra, 9 zakladow we Wloszech, USA i Kanadzie), EV 645 mln EUR, cena za udzialy do 450 mln EUR, finansowanie kredytem pomostowym 2 mld zl z Pekao. Kurs 15.09 +9,72% do 1264 zl przy obrocie >120 mln zl (w szczycie >+10%). Szokowy komunikat i upadek filaru tezy short (brak katalizatorow do 24.09 + zapowiedziana normalizacja wynikow w H2). Koszyk SHORT nie jest handlowany na rachunku (HEDGE_MODE=index), wiec zamkniecie jest papierowe.",
-      "price_before": 1264.0,
-      "move_from_d0_pct": 4.98,
-      "trigger": "SHOCK"
-    },
-    {
-      "ticker": "PKNORLEN",
-      "action": "REDUCE",
-      "date": "2026-09-16",
-      "reason": "Rada Ministrow przyjela 15.09.2026 projekt ustawy o podatku od nadzwyczajnych zyskow koncernow paliwowych: stawka 60% od nadwyzki przychodow ze sprzedazy paliw cieklych III-XII 2026 (odniesienie: srednia marza 2025 +20%), szacowane wplywy ok. 4 mld zl, ORLEN wskazany wprost jako przyklad adresata. News uderza w filar tezy long (wysoka marza paliwowa przy Brent >100 USD), kurs 15.09 -2,48% do 158,56 zl. Ranga ponizej szoku (projekt blizniaczy wobec ustawy skierowanej przez prezydenta do TK), ruch od D0 -1,59% czyli ponizej progu cenowego - stad ciecie pozycji do polowy. Pozycja realnie na rachunku.",
-      "price_before": 158.56,
-      "move_from_d0_pct": -1.59,
-      "trigger": "NEWS"
-    },
-    {
-      "ticker": "PEPCO",
-      "action": "REDUCE",
-      "date": "2026-09-18",
-      "reason": "Kurs 17.09 +1,71% do 42,31 zl, ruch od D0 (40,17 zl) +5,33% przeciw tezie short - w pasmie 4-8% (miekki wyzwalacz cenowy). Bez komunikatow ESPI w oknie 24h (ostatni 2.09: wyniki glosowania NWZ); wzrost to kontynuacja popytu po rozliczonym 17.08 skupie akcji i mocnej sesji sektora konsumenckiego (Allegro +9,49%, LPP +3,23%). Koszyk SHORT nie jest handlowany na rachunku (HEDGE_MODE=index), wiec ciecie do polowy jest papierowe i liczy sie tylko do wariantu zarzadzanego.",
-      "price_before": 42.31,
-      "move_from_d0_pct": 5.33,
-      "trigger": "PRICE_4_8"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-09-19",
   "d0": {
-    "date": "2026-09-11",
-    "wig20": 4139.25,
+    "date": "2026-09-18",
+    "wig20": 4122.52,
     "prices": {
-      "PGE": 14.035,
-      "PKNORLEN": 161.12,
-      "TAURONPE": 9.4,
-      "MBANK": 1463.5,
-      "PEKAO": 267.4,
-      "DINOPL": 35.4,
-      "KRUK": 387.8,
-      "KETY": 1204.0,
-      "PEPCO": 40.17,
-      "MODIVO": 86.34
+      "LPP": 24160.0,
+      "ALLEGRO": 49.8,
+      "KETY": 1269.0,
+      "PZU": 72.44,
+      "PEPCO": 41.87,
+      "ALIOR": 131.15,
+      "KGHM": 337.05,
+      "PKNORLEN": 151.14,
+      "BUDIMEX": 698.8,
+      "MBANK": 1399.5
     }
   },
   "history": [
@@ -155,16 +127,31 @@
         "KNF_SHORT_NIEDOSTEPNY"
       ],
       "metoda": "v1.0 (momentum uznaniowe)"
+    },
+    {
+      "week": "2026-W5",
+      "long_vs_index_pp": -2.54,
+      "long_abs_pct": -2.94,
+      "spread_pp": -5.3,
+      "rozjazd_pp": -2.77,
+      "hit_top": "1/5",
+      "hit_bottom": "1/5",
+      "tactical_pp": 1.24,
+      "managed_pp": -4.84,
+      "reaction_pp": 0.47,
+      "base_rate": 0.5,
+      "spearman": -0.499,
+      "brier": 0.2765,
+      "data_quality": [
+        "KURS_ZRODLO_REZERWA",
+        "FMP_PLAN_BLOKADA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "BRAK_20S",
+        "DYWIDENDA_KOREKTA_PZU",
+        "KALENDARZ_NIEPOTWIERDZONY"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)"
     }
   ],
-  "tactical": [
-    {
-      "ticker": "ALLEGRO",
-      "direction": "BUY",
-      "entry_date": "2026-09-18",
-      "entry_price": 49.435,
-      "entry_note": "zamkniecie 17.09 (bankier.pl, odczyt 17:04)",
-      "reason": "Twardy wyzwalacz 24h: raport H1 2026 z 17.09 (7:34) z PODNIESIENIEM prognoz na 2026 - GMV grupy +13-15% r/r (78,3-79,9 mld zl) i skoryg. EBITDA +13-17% r/r (ok. 3,9-4,1 mld zl); Q2: GMV 19,57 mld zl (+14,4%), skoryg. EBITDA 1,03 mld zl (+11,5%); zarzad: GMV za granica podwoilo sie r/r w pierwszych 10 tygodniach Q3. Pozytywna reakcja kursu na sesji 17.09: +9,49% do 49,435 zl przy obrocie 498 mln zl, lider WIG20. Ryzyko: wejscie po skoku (mean reversion), podatek cyfrowy/regulacje platform, kurs blisko rocznych maksimow."
-    }
-  ]
+  "tactical": []
 }
