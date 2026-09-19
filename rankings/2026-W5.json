@@ -872,6 +872,134 @@
       "opis": "Kalendarz D+5 (ostatnia sesja okna W5), potwierdzony w bankier.pl 'Tym beda zyly rynki' z 11.09.2026 i komunikacie GPW Benchmark za biznes.pap.pl: nad ranem Bank Japonii (oczek. +25 pb do 1,25%), 8:00 PPI Niemcy, 9:30 GUS produkcja przemyslowa za sierpien, 15:15 produkcja przemyslowa USA, 16:00 LEI Conference Board; w Sejmie glosowanie nad windfall tax; po sesji korekta kwartalna WIG20 (cap 15% PKO BP i ORLEN, sklad bez zmian) i wypadniecie TAURONU ze STOXX 600 (w zycie 21.09); dzien zamyka przeglad ratingu Polski przez Moody's (A2, persp. negatywna)",
       "wklad_pkt": 0,
       "zrodlo": "bankier.pl 11.09.2026 13:17; biznes.pap.pl (GPW Benchmark, korekta kwartalna); parkiet.com 15.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "Sesja domykająca okno W5 (dzień trzech wiedźm): WIG20 −0,50% do 4122,52 pkt, WIG −0,62% do 154992,96, mWIG40 −1,19%, sWIG80 −0,34%. Presja dokładnie na sektorach koszyka LONG: WIG-ENERG −2,30% (4852,02), WIG-PALIWA −1,79% (18825,51), WIG-BANKI −0,98% (27166,92 — dzień po rekordzie wszech czasów). Lider sesji LPP +7,95% (spoza koszyków). Obroty sesji: b.d. — źródła podają wykluczające się liczby (xyz.pl: 5,75 mld zł ogółem / 4,69 mld zł na WIG20 i w tym samym tekście 1,57 mld zł na WIG20)",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania indeksów GPW, odczyt 18.09 17:15; PAP/Strefa Inwestorów „DZIEŃ NA GPW: Na giełdzie spadkowa sesja; zniżkują m. in. banki i spółki energetyczne”, 18.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "Sejm uchwalił ustawę o podatku od nadzwyczajnych zysków koncernów paliwowych: 237 za, 202 przeciw, 1 wstrzymujący się. Przyjęte poprawki: wydłużenie okresu naliczania o I kw. 2027 (projekt: 1.03–31.12.2026) oraz limit 50% zysku/dochodu netto dla podatnika nieprodukującego paliw ciekłych. Stawka 60% od nadwyżki przychodów, ok. 4 mld zł na program „Tańsze paliwa”; ustawa idzie do Senatu, poprzednią prezydent skierował do TK. Eskalacja zdarzenia z 15.09, które uzasadniło REDUCE — nie nowy wyzwalacz. Kurs −1,79% do 151,14 zł, od D0 −6,19% (pasmo PRICE_4_8, próg 8% dla CLOSE nieosiągnięty)",
+      "wklad_pkt": -1,
+      "zrodlo": "rp.pl/energia.rp.pl 18.09.2026; money.pl „Podejście drugie. Sejm zdecydował ws. nadzwyczajnych zysków z paliw”; rmf24.pl; nettg.pl; wnp.pl; kurs bankier.pl 18.09 17:03"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−2,24% do 9,004 zł; ruch od D0 −4,21% przeciw tezie LONG — PRZEKROCZONY miękki próg cenowy 4% (PRICE_4_8). REAKCJI EXCLUDE NIE ZAPISANO: 18.09 była ostatnią sesją okna, a 21.09 następuje rotacja koszyków, więc REDUCE nie jest wykonalny, a wpis z ceną odniesienia = zamknięcie D+5 miałby zerowy wpływ na wariant zarządzany i fałszywie sugerował cięcie pozycji. Przyczyna ruchu znana z rejestru: wypadnięcie ze STOXX Europe 600 (w życie 21.09, wchodzi XTB) = podaż funduszy pasywnych na zamknięciu, w dniu wygaśnięcia serii terminowych, przy WIG-ENERG −2,30%. Brak ESPI w oknie 24h (ostatni 16.09 — wyrok Pękanino Wind Invest)",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:03; bankier.pl 2.09.2026 i stoxx.com (rewizja STOXX 600); komunikaty TAURON (bankier.pl), odczyt 19.09.2026"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−2,54% do 1399,50 zł, wyraźnie słabiej od sektora (WIG-BANKI −0,98%); ruch od D0 −4,37% przeciw tezie LONG — PRZEKROCZONY próg 4% (PRICE_4_8). REAKCJI EXCLUDE NIE ZAPISANO z tego samego powodu co przy TAURONIE (koniec okna, rotacja 21.09). Tło: zgoda rady nadzorczej na emisję obligacji kapitałowych AT1 do 250 mln EUR i pismo UKNF ws. bufora O-SII (oba ESPI 17.09 po sesji), dzień trzech wiedźm, pozycjonowanie przed wieczorną decyzją Moody's. Jedyny komunikat z 18.09 (14:00) to zawiadomienie o transakcjach osoby zobowiązanej w trybie art. 19 MAR — bez rangi wyzwalacza",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:04; komunikaty mBank (bankier.pl): 17.09 18:37 (AT1), 17.09 10:00 (O-SII), 18.09 14:00 (art. 19 MAR)"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−2,25% do 13,93 zł (WIG-ENERG −2,30%); od D0 −0,75%, czyli wciąż najlepsza relatywnie noga LONG po PEKAO. ESPI 18.09 13:09 — kolejna informacja o transakcjach w trybie art. 19 MAR (trzecia w tygodniu), bez rangi wyzwalacza",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:00; komunikaty PGE (bankier.pl), odczyt 19.09.2026"
+    },
+    {
+      "ticker": "PEKAO",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−0,88% do 269,60 zł; od D0 +0,82% — JEDYNA dodatnia noga koszyka LONG w całym oknie W5 (+1,23 p.p. relatywnie vs WIG20). Bez komunikatu ESPI od 11.08.2026; ekspozycja na kredyt pomostowy 2 mld zł dla Grupy Kęty (15.09) bez dalszych informacji",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:03; komunikaty Pekao (bankier.pl), odczyt 19.09.2026"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−1,04% do 41,87 zł; ruch od D0 +4,23% przeciw tezie short — nadal pasmo PRICE_4_8, pozycja zredukowana 18.09 (cena odniesienia 42,31 zł), próg awansu do CLOSE (+8% od D0) nieosiągnięty. Bez ESPI (ostatni 2.09)",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:01; komunikaty PEPCO (bankier.pl), odczyt 19.09.2026"
+    },
+    {
+      "ticker": "KETY",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "+0,48% do 1269,00 zł — kurs wrócił powyżej poziomu z dnia ogłoszenia przejęcia grupy Metra. Pozycja short zamknięta 16.09 (CLOSE, cena odniesienia 1264,00 zł), więc ten ruch nie wraca do wariantu zarządzanego; w wariancie papierowym KĘTY to najgorsza noga okna (+5,40% ruchu kursu = −5,40% pozycji short)",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:01"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "+1,80% do 88,06 zł, druga rosnąca spółka WIG20 na spadkowej sesji (obok LPP — wspólne tło detalu odzieżowego po raporcie LPP powyżej konsensusu); ruch od D0 +1,99% przeciw tezie short, poniżej progu 4%. Bez ESPI od 7.08",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:04"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−1,13% do 35,74 zł; od D0 +0,96% przeciw tezie short, daleko poniżej progu reakcji. Bez ESPI od 20.08; mediacje z OPZZ Konfederacja Pracy zaplanowane na 24.09 (poza oknem)",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:04"
+    },
+    {
+      "ticker": "KRUK",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "−0,62% do 384,80 zł; od D0 −0,77%, czyli jedyna noga koszyka SHORT z dodatnim wkładem do wariantu papierowego (+0,37 p.p. relatywnie). Bez ESPI od 26.08",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:01"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "+0,74% do 49,80 zł — pozycja taktyczna BUY (entry 49,435 zł z 17.09) na plusie +0,74%, relatywnie +1,24 p.p. vs WIG20 od entry_date. Kurs utrzymał czwartkowy skok +9,49% wbrew spadkowej sesji. ESPI 18.09 15:50: suplement dot. zrównoważonego rozwoju klasyfikujący pożyczki pod Nadrzędną Umową Kredytową jako Sustainability-Linked Loans — zmiana warunków finansowania, neutralna dla tezy",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:04; komunikaty Allegro (bankier.pl) 18.09.2026 15:50"
+    },
+    {
+      "ticker": "LPP",
+      "data": "2026-09-18",
+      "dn": 5,
+      "opis": "+7,95% do 24160,00 zł — lider sesji, reakcja na raport H1 r.obr. 2026/27 opublikowany 17.09 o 17:46 (zysk netto Q2 768 mln zł vs konsensus PAP 684,1 mln zł). Spółka spoza koszyków i spoza listy taktycznych; limit jednej nowej taktycznej dziennie był 18.09 wykorzystany na ALLEGRO, a 19.09 nie ma sesji wejścia",
+      "wklad_pkt": null,
+      "zrodlo": "kurs bankier.pl 18.09 17:03; bankier.pl „LPP mocno powyżej oczekiwań”, 17.09.2026 17:46"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-21",
+      "dn": 6,
+      "opis": "POZA OKNEM W5. Moody's obniżył rating Polski do A3 z A2 (perspektywa z negatywnej na stabilną, rating krótkoterminowy P-2 z P-1) — pierwsza obniżka ratingu Polski w historii tej agencji. Uzasadnienie: trwałe pogorszenie kondycji fiskalnej, wysokie deficyty (ok. 6,8% PKB w 2026) i dług ok. 65,1% PKB przy rosnących kosztach obsługi. Po cięciu wszystkie trzy agencje wyceniają Polskę na jednym poziomie (A3 = A− u Fitcha i S&P). Komunikat 18.09 ok. 23:14 czasu polskiego (16:55 ET) — po sesji, obciąża sesję 21.09. Kierunkowo negatywne dla banków (portfele obligacji skarbowych, koszt finansowania)",
+      "wklad_pkt": 0,
+      "zrodlo": "TVN24 Biznes/PAP 18.09.2026; portalsamorzadowy.pl (komunikat MF); money.pl; rp.pl; finwire.pl; marketscreener.com"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-21",
+      "dn": 6,
+      "opis": "POZA OKNEM W5. Korekta kwartalna portfeli indeksów GPW Benchmark przeprowadzona po sesji 18.09: skład WIG20 i WIG20TR BEZ ZMIAN, udział PKO BP i ORLENU ograniczony do 15% każdy. Ranking sporządzono po sesji 21.08.2026, wartość akcji w wolnym obrocie z kursu zamknięcia 20.08.2026. Dla rachunku marginalne — waga ORLENU 14,63% na 11.09 była już poniżej capu",
+      "wklad_pkt": 0,
+      "zrodlo": "komunikat GPW Benchmark za biznes.pap.pl; gpwbenchmark.pl (komunikat WIG20/WIG20TR/mWIG40/sWIG80/WIG30); kalendarz inwestora GPW 2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-21",
+      "dn": 6,
+      "opis": "POZA OKNEM W5. Kalendarz tygodnia 21–25.09 potwierdzony w datowanym źródle z bieżącego tygodnia: pon. 3:00 Chiny LPR 1R (kons. 3,00%) i 9:30 GUS zatrudnienie/wynagrodzenia/produkcja budowlano-montażowa; wt. 9:00 BIEC, 9:30 GUS sprzedaż detaliczna, 14:00 NBP M3, 14:00 decyzja banku Węgier (kons. 5,50%); śr. wstępne PMI (FR 9:15, DE 9:30, EZ 10:00, UK 10:30, US 15:45) i 9:30 GUS stopa bezrobocia; czw. 9:30 SNB (kons. bez zmian), 9:30 Riksbank, 10:00 Norges Bank, 10:00 Ifo; pt. 10:00 EBC M3, 14:30 USA zamówienia na dobra trwałe, 16:00 U. Michigan finalnie. Brak posiedzeń RPP/EBC/Fed w tygodniu (najbliższe RPP 6–7.10, FOMC 27–28.10)",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki…”, publ. 18.09.2026 12:04 (Michał Misiura)"
     }
   ],
   "data_quality": [
