@@ -536,6 +536,14 @@
       "opis": "10:00 podaż pieniądza M3 w strefie euro; 14:30 zamówienia na dobra trwałego użytku w USA za sierpień; 16:00 indeks Uniwersytetu Michigan",
       "wklad_pkt": 0,
       "zrodlo": "bankier.pl, publ. 18.09.2026 12:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-19",
+      "dn": 1,
+      "opis": "sobotnia ocena ekonomistow po obnizce ratingu Polski przez Moody's do A3: decyzja nie byla dla rynku zaskoczeniem i w duzej mierze byla juz wyceniona (Fitch i S&P od dawna przy A-), perspektywa stabilna zdejmuje ryzyko kolejnego ciecia w krotkim terminie; Moody's prognozuje deficyt sektora ok. 7% PKB w 2026 i 2027 mimo mocnego wzrostu PKB; MF: decyzje traktujemy powaznie, ale spokojnie. Zdarzenie poza sesja -> obciaza sesje 21.09; doprecyzowuje wpis WIG20 z 2026-09-21, wklad 0",
+      "wklad_pkt": 0,
+      "zrodlo": "parkiet.com „Ekonomisci o decyzji Moody's: obnizka ratingu nie byla zaskoczeniem dla rynku”, 19.09.2026; pl.euronews.com 19.09.2026 (wypowiedz MF); polsatnews.pl 19.09.2026"
     }
   ],
   "data_quality": [
