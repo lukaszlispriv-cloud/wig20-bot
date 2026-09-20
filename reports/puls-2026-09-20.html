@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puls WIG20 — 20.09.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; } .flat{ color:#5C6874; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; } header .flat{ color:#C6CFD8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #0E7C4A; color:#0E7C4A;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(14,124,74,.06); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .flag{ font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px; margin-left:6px;
+         background:#FFF0D6; color:#8A4B12; letter-spacing:.04em; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  .react{ background:#fff; border:1px solid #E3E6DF; border-left:5px solid #B5651D; border-radius:8px;
+          padding:11px 13px; margin-bottom:9px; }
+  .react .hd{ font-weight:700; font-size:14px; margin-bottom:3px; }
+  .react .act{ font-size:10.5px; font-weight:800; letter-spacing:.07em; padding:2px 7px; border-radius:4px;
+               background:#B5651D; color:#fff; margin-right:8px; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">niedziela, 20 września 2026 &middot; bieg poranny (GPW zamknięta) &middot; okno W6 (D0 = 18.09.2026) <b>przed pierwszą sesją D+1</b></div>
+    <div class="wig">
+      <span class="val">4&nbsp;122,52</span>
+      <span class="chg flat">0,00%</span>
+      <span class="lbl">WIG20, zamknięcie ostatniej zakończonej sesji: <b>piątek 18.09.2026</b> — a to jest jednocześnie dzień D0 nowego okna W6. Od D0: <b>0,00%</b> (źródło: <code>data/kursy-cache.json</code>, odświeżony przez <code>scripts/kursy.py</code> 20.09 o 08:11 — bez zmiany wartości, bo od 18.09 nie było sesji; potwierdzenie wartości indeksu: PAP/Strefa Inwestorów i bankier.pl — „WIG20 −0,50% do 4 122,52 pkt”).</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <span class="stamp">Prognoza aktualna</span>
+    <div class="stamp-note">Brak zdarzenia unieważniającego tezę tygodnia — status <b>AKTUALNA</b>. <b>Lista exclude pusta, brak pozycji taktycznych</b> — i tak musi być: między D0 (piątek 18.09) a dzisiejszym biegiem <b>nie odbyła się żadna sesja</b>, więc żaden próg cenowy nie mógł zostać przekroczony, a w oknie 24h nie ma komunikatu spółki koszykowej o randze wyzwalacza. Pierwsza sesja okna W6 to <b>poniedziałek 21.09</b> — wtedy bot rotuje koszyki na nowy skład.</div>
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li><span class="tag t-makro">Makro</span><b>Obniżka ratingu Polski przez Moody's (A3 z A2, perspektywa stabilna) pozostaje jedynym istotnym czynnikiem wchodzącym w okno W6 — i według ekonomistów nie była dla rynku zaskoczeniem.</b> W sobotnich komentarzach (19.09) ekonomiści zgodnie wskazują, że decyzja była szeroko oczekiwana po wcześniejszych ruchach Fitcha i S&amp;P, a jej skutki w dużej mierze wycenione; Moody's prognozuje deficyt sektora finansów publicznych ok. <b>7% PKB w 2026 i 2027</b> mimo mocnego wzrostu gospodarczego. Minister finansów Andrzej Domański: decyzję „traktujemy poważnie, ale spokojnie”. <b>Dlaczego to ważne dla rankingu W6:</b> kategoria Makro ważyła ten czynnik jako presję na wyceny (wyższe rentowności, słabszy złoty) — ocena „bez zaskoczenia” obniża ryzyko szoku na otwarciu 21.09, ale nie zmienia kierunku. Rating jest już zdarzeniem po D0, obciąża sesję D+1.
+      <span class="src">parkiet.com „Ekonomiści o decyzji Moody's: obniżka ratingu nie była zaskoczeniem dla rynku”, 19.09.2026; pl.euronews.com 19.09.2026 (wypowiedź MF); polsatnews.pl 19.09.2026; money.pl</span></li>
+    <li><span class="tag t-makro">Makro</span><b>Kalendarz makro tygodnia 21–25.09 potwierdzony w datowanym źródle z bieżącego tygodnia — bez zmian wobec raportu tygodniowego.</b> Poniedziałek 21.09, 9:30: GUS — zatrudnienie i wynagrodzenia oraz produkcja budowlano-montażowa za sierpień. Wtorek 22.09, 9:30: sprzedaż detaliczna; 14:00 NBP — podaż pieniądza M3. Środa 23.09: wstępne PMI (strefa euro 10:00, Wielka Brytania 10:30, USA 15:45) i 9:30 GUS — stopa bezrobocia. Czwartek 24.09: SNB 9:30, Norges Bank 10:00, Ifo 10:00. Piątek 25.09: USA — zamówienia na dobra trwałego użytku. <b>W tym tygodniu NIE ma posiedzenia RPP</b> — artykuł kalendarzowy go nie wymienia, więc żadna teza nie może się na nim opierać.
+      <span class="src">bankier.pl „Tym będą żyły rynki: Wgląd do portfeli Polaków, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026 12:04 (potwierdzenie dzień po dniu); bankier.pl — kalendarium makroekonomiczne, odczyt 20.09.2026</span></li>
+    <li><span class="tag t-espi">ESPI</span><b>Zero komunikatów ESPI/EBI spółek koszykowych w oknie 24h.</b> Strumień komunikatów bankier.pl (ostatnia aktualizacja 19.09 10:50) zawiera z soboty jeden wpis — STALPROFI, „Informacja o śmierci Członka Rady Nadzorczej” (spółka spoza WIG20). Dla LPP, ALLEGRO, KĘT, PZU, PEPCO, ALIORA, KGHM, ORLENU, BUDIMEKSU i mBANKU <b>brak publikacji z 19–20.09</b>. Najświeższe komunikaty spółek koszykowych są sprzed D0 i zostały już rozliczone w rankingu W6 (m.in. raporty półroczne ALLEGRO i LPP z 17.09, przejęcie grupy Metra przez KĘTY z 14.09, kary KNF dla mBANKU utrzymane 11.09).
+      <span class="src">bankier.pl — „Komunikaty spółek ESPI/EBI”, odczyt 20.09.2026 (ostatnia aktualizacja strumienia 19.09 10:50); stockwatch.pl — komunikaty spółek</span></li>
+    <li><span class="tag t-kurs">Kurs</span><b>Brak sesji 19–20.09, więc wszystkie zwroty od D0 wynoszą dokładnie 0,00%.</b> To nie jest brak danych, tylko właściwość kalendarza: D0 okna W6 to zamknięcie piątku 18.09, a najbliższa sesja wypada dopiero w poniedziałek. Tabele poniżej pokazują więc kursy D0 w obu kolumnach — punkt startowy, wobec którego będzie liczony cały tydzień. Kontekst sesji D0 (dzień trzech wiedźm): WIG20 &minus;0,50%, WIG &minus;0,62%, mWIG40 &minus;1,19%; liderem LPP +7,95% do 24 160 zł po raporcie powyżej konsensusu — spółka wchodzi do koszyka LONG W6 z pierwszego miejsca rankingu.
+      <span class="src">kursy: <code>data/kursy-cache.json</code> (zamknięcia 18.09, zwalidowane wobec <code>signals.json</code> → <code>d0.prices</code>); xyz.pl „Dzień trzech wiedźm na warszawskim parkiecie…” 18.09.2026; strefainwestorow.pl / bankier.pl — notowania indeksów</span></li>
+    <li><span class="tag t-short">Short</span><b>Rejestr krótkiej sprzedaży KNF: brak datowanej zmiany dla spółek koszykowych</b> (kod <code>KNF_SHORT_NIEDOSTEPNY</code> — serwis rejestru pozostaje poza allowlistą sieci środowiska). Z opracowań wtórnych: w rejestrze utrzymują się pozycje m.in. na KGHM i ALLEGRO, a najmocniej shortowaną spółką WIG20 pozostaje MODIVO (ok. 5% kapitału, Qube Research); ostatnie odnotowane aktualizacje funduszy to 12–16.09, czyli <b>przed D0</b>. <b>Żadnej zmiany ≥0,3 p.p. przeciw tezie nie da się udokumentować datowanym odczytem z 19–20.09</b>, więc nie ma podstawy do reakcji.
+      <span class="src">parkiet.com / stockwatch.pl — opracowania rejestru KNF, odczyt 20.09.2026; knf.gov.pl — rejestr poza zasięgiem sieci środowiska</span></li>
+    <li><span class="tag t-rek">Rekom.</span><b>Brak nowych rekomendacji dla spółek koszykowych w oknie 24h.</b> Przegląd baz rekomendacji nie pokazuje żadnego raportu liczącego się DM z 19–20.09 dotyczącego spółek z koszyków LONG lub SHORT. Najświeższe publikacje dotyczą spółek spoza WIG20 (BM Banku Millennium dla VRG — 10.09; DM INC dla NanoGroup — 17.09; DM BOŚ dla Atremu). Sygnały DM użyte w rankingu W6 (DM BOŚ 25.08, Trigon 8.09, Noble Securities 17.09) pozostają w mocy i nie wymagają korekty.
+      <span class="src">bankier.pl / stockwatch.pl / biznesradar.pl — listy rekomendacji, odczyt 20.09.2026</span></li>
+    <li><span class="tag t-makro">Makro</span><b>Ustawa o podatku od nadzwyczajnych zysków koncernów paliwowych: bez ruchu w weekend, terminu posiedzenia Senatu wciąż nie potwierdzono.</b> Stan na dziś jest taki sam jak w piątek: Sejm uchwalił ustawę 18.09 (237–202–1, stawka 60% od nadwyżki przychodów, naliczanie wydłużone o I kw. 2027), dokument trafił do Senatu, a bliźniaczą ustawę prezydent skierował do TK. <b>Nie znalazłem datowanego źródła z terminem posiedzenia Senatu</b> — podaję go jako <b>b.d.</b>, a czynnik pozostaje ujęty w kategorii Makro dla ORLENU (pozycja SHORT w W6, czyli teza z tym ryzykiem zgodna).
+      <span class="src">rp.pl / parkiet.com — przebieg prac nad ustawą, 18–19.09.2026; senat.gov.pl — brak potwierdzonego terminu posiedzenia w wynikach, odczyt 20.09.2026</span></li>
+  </ul>
+
+  <h2>Koszyki — start okna W6 (D0 18.09, pierwsza sesja D+1 = 21.09)</h2>
+
+  <div class="basket-h">KOSZYK LONG (kolejność z signals.json, bez sortowania)</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>18.09</th><th>Kurs ostatni<br>18.09</th><th>Zwrot pozycji</th><th>Relatywnie<br>vs WIG20 (p.p.)</th></tr></thead>
+    <tbody>
+    <tr><td>LPP</td><td><span class="dir dir-l">LONG</span></td><td class="num">24 160</td><td class="num">24 160</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>ALLEGRO</td><td><span class="dir dir-l">LONG</span></td><td class="num">49,8</td><td class="num">49,8</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>KĘTY</td><td><span class="dir dir-l">LONG</span></td><td class="num">1 269</td><td class="num">1 269</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>PZU</td><td><span class="dir dir-l">LONG</span></td><td class="num">72,44</td><td class="num">72,44</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>PEPCO</td><td><span class="dir dir-l">LONG</span></td><td class="num">41,87</td><td class="num">41,87</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    </tbody>
+    <tfoot><tr><td>Średnia LONG</td><td></td><td class="num">—</td><td class="num">—</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr></tfoot>
+  </table>
+  </div>
+
+  <div class="basket-h">KOSZYK SHORT (papierowy — bot go nie handluje; kolejność z signals.json)</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0<br>18.09</th><th>Kurs ostatni<br>18.09</th><th>Zwrot pozycji</th><th>Relatywnie<br>vs WIG20 (p.p.)</th></tr></thead>
+    <tbody>
+    <tr><td>ALIOR</td><td><span class="dir dir-s">SHORT</span></td><td class="num">131,15</td><td class="num">131,15</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>KGHM</td><td><span class="dir dir-s">SHORT</span></td><td class="num">337,05</td><td class="num">337,05</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>ORLEN</td><td><span class="dir dir-s">SHORT</span></td><td class="num">151,14</td><td class="num">151,14</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>BUDIMEX</td><td><span class="dir dir-s">SHORT</span></td><td class="num">698,8</td><td class="num">698,8</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    <tr><td>mBANK</td><td><span class="dir dir-s">SHORT</span></td><td class="num">1 399,5</td><td class="num">1 399,5</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr>
+    </tbody>
+    <tfoot><tr><td>Średnia SHORT (jako pozycja)</td><td></td><td class="num">—</td><td class="num">—</td><td class="num flat">0,00%</td><td class="num flat">0,00</td></tr></tfoot>
+  </table>
+  </div>
+  <p style="font-size:12px;color:#6B7681;margin:8px 0 0">Pozycja SHORT zarabia, gdy kurs akcji spada — dlatego „zwrot pozycji” w tabeli SHORT ma znak odwrotny do ruchu kursu. Obie kolumny kursowe pokazują to samo zamknięcie 18.09, bo D0 jest jednocześnie ostatnią zakończoną sesją. Walidacja D0 wobec <code>signals.json</code>: <b>10/10 spółek i WIG20 zgodne</b> (0,000% odchylenia).</p>
+
+  <div class="score">
+    <div class="main">Wynik rachunku — średnia LONG &minus; WIG20</div>
+    <div class="big">0,00 p.p.</div>
+    <div class="sub">To realnie gra bot: kupuje 5 spółek koszyka LONG i sprzedaje kontrakt na WIG20 (<code>HEDGE_MODE=index</code>). Okno W6 jeszcze się nie otworzyło — średnia LONG 0,00%, WIG20 0,00%. Wariant bez hedge'u (czysta ekspozycja długa): <b>0,00%</b>. Pierwsza liczba z realnej treści pojawi się w raporcie po sesji poniedziałkowej 21.09.</div>
+    <div class="paper">Spread LONG&minus;SHORT: <b>0,00 p.p.</b> — <i>papierowy, miara selekcji, nie wynik rachunku</i> (rachunek Capital.com nie pozwala shortować CFD na akcje, więc ta liczba jest z definicji nieosiągalna).<br>
+    <b>Rozjazd: 0,00 p.p.</b> — poniżej progu 0,5 p.p., więc nie wymaga komentarza; przed pierwszą sesją okna obie miary są z konieczności zerowe.</div>
+  </div>
+
+  <div class="note" style="margin-top:14px"><b>Uwaga o koszcie startu okna:</b> zero w tabeli nie znaczy, że tydzień zacznie się od zera na rachunku. Rotacja koszyków odbędzie się w poniedziałek ok. 10:01 czasu warszawskiego (<code>/run</code> o 08:01 UTC), czyli godzinę po otwarciu sesji, a raport liczy od zamknięcia piątku — luka realizacji w poprzednich rotacjach wynosiła rzędu ±1% na nogę. Do tego dochodzą: spread bid/ask przy wejściu w pięć pozycji akcyjnych i krótki kontrakt na WIG20, oraz punkty swapowe za każdą dobę utrzymania. W W6 wymiana koszyka jest niemal pełna (z W5 nie zostaje żadna spółka po stronie LONG, mBANK i ORLEN przechodzą z LONG do papierowego SHORT), więc koszt wejścia będzie po stronie wyższej, a nie niższej.</div>
+
+  <h2>Pozycje taktyczne</h2>
+  <div class="react">
+    <div class="hd"><span class="act">BRAK</span>Lista taktyczna pusta — bez zmian</div>
+    Raport tygodniowy z 19.09 domknął taktyczną <b>ALLEGRO BUY</b> (+1,24 p.p. relatywnie), a sama spółka weszła do koszyka LONG W6 z drugiego miejsca rankingu — nie może więc jednocześnie być pozycją taktyczną. Nowej taktycznej nie otwieram: moduł wymaga <b>twardego, świeżego wyzwalacza z 24h potwierdzonego reakcją kursu</b>, a dziś nie ma ani komunikatu o takiej randze, ani sesji, na której kurs mógłby zareagować. Skan spółek WIG20 spoza koszyków (PEKAO, PGE, DINO, PKO BP, TAURON, ERSTE, KRUK, CD PROJEKT, MODIVO, ŻABKA) nie wykazał w weekend wezwania, zawieszenia notowań, przełomowego kontraktu ani szokowego raportu.
+  </div>
+
+  <h2>Kalendarz</h2>
+  <div class="cal">
+    <p style="font-size:13.5px"><b>Dziś, niedziela 20.09:</b> GPW zamknięta, brak sesji i brak zdarzeń korporacyjnych. Ranking W6 pozostaje zamrożony do soboty — Puls dopisuje wyłącznie katalizatory i kody jakości. <b>Najbliższa sesja: poniedziałek 21.09</b>, rotacja koszyków bota ok. 10:01 czasu warszawskiego; to pierwsza sesja pod wrażeniem obniżki ratingu przez Moody's i zarazem D+1 okna W6.</p>
+    <p style="font-size:13.5px;margin-bottom:4px"><b>Tydzień 21–25.09 — makro</b> (kalendarz potwierdzony w datowanym źródle z bieżącego tygodnia: bankier.pl „Tym będą żyły rynki…”, publ. 18.09.2026 12:04; <b>brak posiedzenia RPP</b>):</p>
+    <ul>
+      <li><b>pon. 21.09 (D+1):</b> 3:00 Chiny — LPR 1R (kons. 3,00%); <b>9:30 GUS — zatrudnienie, wynagrodzenia i produkcja budowlano-montażowa za sierpień</b> (istotne dla BUDIMEKSU po stronie SHORT i dla KĘT po stronie LONG); wejście w życie wrześniowej rewizji STOXX Europe 600.</li>
+      <li><b>wt. 22.09 (D+2):</b> 9:00 BIEC — Wskaźnik Dobrobytu; <b>9:30 GUS — sprzedaż detaliczna za sierpień</b> (kluczowa dla LPP, ALLEGRO i PEPCO); 14:00 NBP — podaż pieniądza M3; 14:00 Węgry — decyzja ws. stóp.</li>
+      <li><b>śr. 23.09 (D+3):</b> wstępne PMI za wrzesień — strefa euro 10:00, Wielka Brytania 10:30, USA 15:45; <b>9:30 GUS — stopa bezrobocia za sierpień</b>.</li>
+      <li><b>czw. 24.09 (D+4):</b> 9:30 SNB — decyzja ws. stóp; 10:00 Norges Bank; <b>10:00 niemiecki Ifo za wrzesień</b> (popyt na profile aluminiowe KĘT).</li>
+      <li><b>pt. 25.09 (D+5):</b> 10:00 EBC — podaż pieniądza M3 w strefie euro; 14:30 USA — zamówienia na dobra trwałego użytku; 16:00 U. Michigan. <b>To dzień zamknięcia okna W6.</b></li>
+    </ul>
+    <p style="font-size:13.5px;margin-bottom:4px"><b>Spółki — rejestr katalizatorów W6 (D+1…D+10):</b></p>
+    <ul>
+      <li><b>23.09 lub 29.09</b> — PEPCO (LONG): raport za IV kwartał roku obrotowego 2025/26. <b>Termin NIEPOTWIERDZONY</b> — kalendarium bankier.pl nie sięga poza 20.09, a źródła podają dwie różne daty; kod <code>KALENDARZ_NIEPOTWIERDZONY</code>, bez punktów w rankingu.</li>
+      <li><b>24.09</b> — DINO (spoza koszyków): druga tura mediacji z OPZZ Konfederacja Pracy; związek zapowiada strajk generalny, jeśli zarząd nie stawi się osobiście.</li>
+      <li><b>29.09</b> — CD PROJEKT (spoza koszyków): premiera „Wiedźmin 3 — Remastered”.</li>
+      <li><b>1.10</b> — MODIVO (spoza koszyków): raport półroczny — jedyny raport okresowy spółki WIG20 w oknie D+1…D+10.</li>
+      <li><b>26.10</b> — ŻABKA: przedłużony termin zapisów w wezwaniu Alimentation Couche-Tard po 32,00 zł (poza oknem). Osobno: <b>Senat</b> i dalsza ścieżka ustawy o podatku od nadzwyczajnych zysków — termin <b>b.d.</b></li>
+    </ul>
+  </div>
+
+  <h2>Problemy i jakość danych</h2>
+  <ul class="chg-list">
+    <li><b>FMP (konektor pierwszego wyboru) — nieużyteczny w tej sesji, szósty bieg z rzędu.</b> Narzędzia <code>mcp__FMP__*</code> są w sesji (odnalezione przez ToolSearch), ale endpoint <code>chart</code> dla <code>LPP.WA</code> odpowiada „ACCESS DENIED: requires a higher plan”. To ograniczenie abonamentu FMP, <b>nie</b> brak grantu konektora dla rutyny — kod <code>FMP_PLAN_BLOKADA</code>. Dopóki plan się nie zmieni, pierwsze źródło z <code>CLAUDE.md</code> jest martwe i każdy bieg kończy się na rezerwie.</li>
+    <li id="zrodlo-kursow"><b>Źródło kursów: rezerwa <code>scripts/kursy.py</code> — pobranie udało się, ale log biegu przepadł.</b> Skrypt uruchomiłem raz (zgodnie z ostrzeżeniem o limiterze Yahoo). <b>Dopisał do <code>data/kursy-cache.json</code> świeże znaczniki <code>aktualizacja</code> dla wszystkich 21 tickerów (20.09.2026 08:11), nie zmieniając ani jednej wartości kursu</b> — czyli źródło potwierdziło zamknięcia z 18.09 i nie dorzuciło nowej sesji, dokładnie jak powinno w weekend. Bieg <b>przekroczył jednak mój własny limit czasu (560 s), zanim wypisał tabelę</b>, więc <b>nie potrafię z logu powiedzieć, które źródło zadziałało</b> — Yahoo czy rezerwa bankier.pl; najpewniej po serii HTTP 429 z Yahoo skrypt siedział w pętli ponowień. Drugiego biegu <b>nie uruchomiłem</b>, żeby nie uzbroić limitera przed poniedziałkową sesją. Sondy kontrolne pojedynczym zapytaniem (nie serią) pokazują, że oba źródła żyją: Yahoo <code>chart/WIG20.WA</code> → HTTP 200 w 0,14 s, bankier.pl → HTTP 200 w 0,49 s. <b>Walidację D0 wykonałem niezależnie od skryptu</b>, porównując cache z <code>signals.json</code> → <code>d0.prices</code>: <b>10/10 spółek i WIG20 zgodne, odchylenie 0,0000%</b>. Kody <code>KURS_ZRODLO_REZERWA</code> i <code>WALIDACJA_D0_Z_CACHE</code> są już w <code>data_quality</code> rankingu W6, nowych nie dopisuję. Odświeżony cache commituję razem z raportem.</li>
+    <li><b>Rejestr krótkiej sprzedaży KNF poza zasięgiem</b> (<code>KNF_SHORT_NIEDOSTEPNY</code>): rejestru nie da się odczytać bezpośrednio z tego środowiska, a datowanego zrzutu nie udało się uzyskać przez WebSearch. Materiały wtórne pokazują wyłącznie stan sprzed D0 (aktualizacje funduszy 12–16.09). Brak podstawy do reakcji z tytułu zmiany shorta — tak samo jak w każdym biegu od 15.09.</li>
+    <li><b>Termin raportu PEPCO nadal niepotwierdzony</b> (<code>KALENDARZ_NIEPOTWIERDZONY</code>): kalendarium giełdowe bankier.pl w odczycie 20.09 nie zawiera wydarzeń spółek WIG20 po 20.09, a rozbieżność 23.09 vs 29.09 utrzymuje się od raportu W5. Zgodnie z metodą pozycja nie dostaje punktów katalizatora — zamiast zgadywać.</li>
+    <li><b>Serwisy blokowane przez politykę sieciową środowiska</b> (m.in. money.pl, rp.pl, tvn24.pl, investing.com, xyz.pl): treści z nich pochodzą z wyszukiwarki, nie z bezpośredniego odczytu strony. Wszystkie liczby w tym raporcie pochodzą albo ze zwalidowanego cache'u kursów, albo ze źródeł odczytanych bezpośrednio (bankier.pl), albo z wyszukiwarki z podaniem daty publikacji.</li>
+    <li><b>Zerowe zwroty nie są błędem danych.</b> Zapisuję to wprost, żeby przyszłe rozliczenie nie zinterpretowało dzisiejszego raportu jako biegu z brakiem kursów: okno W6 startuje z zamknięcia 18.09, a między D0 a tym biegiem GPW nie miała sesji. Pierwszy niezerowy odczyt powstanie w raporcie z 22.09 (po sesji D+1).</li>
+  </ul>
+
+  <footer>
+    Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie jest poradą inwestycyjną ani ofertą. Dane mogą być niekompletne lub obarczone błędem źródła.<br>
+    Raport wygenerowany automatycznie przez agenta AI (rutyna „Puls WIG20”, repozytorium <code>wig20-bot</code>), 20.09.2026, bez udziału człowieka. Kursy: <code>scripts/kursy.py</code> → <code>data/kursy-cache.json</code> (zamknięcia 18.09, odświeżone i zwalidowane 20.09, odchylenie 0,0000% wobec <code>d0.prices</code>). Kontekst rynkowy i komunikaty: Bankier.pl, PAP/Strefa Inwestorów, parkiet.com, stockwatch.pl, biznesradar.pl, euronews.pl, polsatnews.pl.
+  </footer>
+</div>
+</body>
+</html>
