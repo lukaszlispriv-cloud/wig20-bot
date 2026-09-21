@@ -544,6 +544,38 @@
       "opis": "sobotnia ocena ekonomistow po obnizce ratingu Polski przez Moody's do A3: decyzja nie byla dla rynku zaskoczeniem i w duzej mierze byla juz wyceniona (Fitch i S&P od dawna przy A-), perspektywa stabilna zdejmuje ryzyko kolejnego ciecia w krotkim terminie; Moody's prognozuje deficyt sektora ok. 7% PKB w 2026 i 2027 mimo mocnego wzrostu PKB; MF: decyzje traktujemy powaznie, ale spokojnie. Zdarzenie poza sesja -> obciaza sesje 21.09; doprecyzowuje wpis WIG20 z 2026-09-21, wklad 0",
       "wklad_pkt": 0,
       "zrodlo": "parkiet.com „Ekonomisci o decyzji Moody's: obnizka ratingu nie byla zaskoczeniem dla rynku”, 19.09.2026; pl.euronews.com 19.09.2026 (wypowiedz MF); polsatnews.pl 19.09.2026"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "miedz na LME odbila do 14 588,50 USD/t (+0,25% w poranku 21.09), ok. 1,7% powyzej poziomu ~14 350 USD/t przyjetego w uzasadnieniu W6; depesza mowi o zaciesniajacej sie sytuacji podazowej. Czynnik PRZECIW tezie SHORT, ale ponizej rangi wyzwalacza REDUCE (protokol wymaga ruchu KURSU AKCJI 4-8% od D0, rekomendacji DM, zmiany shorta KNF >=0,3 p.p. albo newsu spolkowego) - sesja D+1 jeszcze sie nie zaczela, kurs KGHM nie mial jak zareagowac",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl - notowania surowcow, miedz LME 14 588,50 USD/t, odczyt 21.09.2026 06:19; strefainwestorow.pl/PAP „Ceny miedzi w Londynie rosna; sytuacja podazowa sie zaciesnia”, 21.09.2026"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-12-09",
+      "dn": null,
+      "opis": "ROZSTRZYGNIECIE rozbieznosci terminu raportu: kalendarium emitenta podaje jeden termin - 9.12.2026, publikacja wstepnego raportu za rok obrotowy 2025/2026 (spolka raportuje calym rokiem obrachunkowym, nie IV kwartalem osobno). Wczesniejsze daty 23.09 i 29.09 sie nie potwierdzaja. W oknie D+1...D+10 NIE MA raportu PEPCO - brak zdarzenia odpowiada tym samym 10/20 pkt, ktore pozycja dostala pod kodem KALENDARZ_NIEPOTWIERDZONY, wiec korekta jest neutralna punktowo i rankingu nie zmienia",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl - kalendarium Pepco Group N.V., odczyt 21.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "KONSENSUSY do publikacji GUS o 9:30 (doprecyzowanie wpisu WIG20 z 2026-09-21): przecietne wynagrodzenie w sektorze przedsiebiorstw za sierpien kons. +6,6% r/r (poprz. +6,8%), przecietne zatrudnienie kons. -0,8% r/r (poprz. -0,8%), produkcja budowlano-montazowa kons. +7,0% r/r (poprz. -2,4%). Odczyt budowlanki dziala w przeciwnych kierunkach na dwie pozycje: wyraznie powyzej konsensusu - przeciw SHORT na BUDIMEKSIE, wyraznie ponizej - wspiera go i oslabia LONG na KETACH. Dodatkowo 17:00 wystapienie publiczne prezes EBC",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Tym beda zyly rynki…”, publ. 18.09.2026 12:04 + kalendarium makroekonomiczne bankier.pl, odczyt 21.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "ustawa o podatku od nadzwyczajnych zyskow koncernow paliwowych bez ruchu przez weekend - terminu posiedzenia Senatu nadal brak (b.d.). UWAGA METODYCZNA: wyszukiwarka zwraca na te zapytania artykuly o WCZESNIEJSZEJ, czerwcowej ustawie windfall tax (strefainwestorow.pl z 29.06.2026 o poprawce Senatu limitujacej podatek do wysokosci dochodu) - to inne postepowanie legislacyjne i nie wolno go podawac jako stanu biezacego. Bez nowych punktow",
+      "wklad_pkt": 0,
+      "zrodlo": "rp.pl / energia.rp.pl 18.09.2026 (uchwalenie przez Sejm 237-202-1); strefainwestorow.pl 29.06.2026 - dotyczy ustawy czerwcowej; brak datowanego terminu posiedzenia Senatu w odczycie 21.09.2026"
     }
   ],
   "data_quality": [
