@@ -576,6 +576,54 @@
       "opis": "ustawa o podatku od nadzwyczajnych zyskow koncernow paliwowych bez ruchu przez weekend - terminu posiedzenia Senatu nadal brak (b.d.). UWAGA METODYCZNA: wyszukiwarka zwraca na te zapytania artykuly o WCZESNIEJSZEJ, czerwcowej ustawie windfall tax (strefainwestorow.pl z 29.06.2026 o poprawce Senatu limitujacej podatek do wysokosci dochodu) - to inne postepowanie legislacyjne i nie wolno go podawac jako stanu biezacego. Bez nowych punktow",
       "wklad_pkt": 0,
       "zrodlo": "rp.pl / energia.rp.pl 18.09.2026 (uchwalenie przez Sejm 237-202-1); strefainwestorow.pl 29.06.2026 - dotyczy ustawy czerwcowej; brak datowanego terminu posiedzenia Senatu w odczycie 21.09.2026"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "Zamkniecie 1516,00 zl, +8,32% od D0 (1399,50 zl) — najmocniejsza spolka WIG20 w dniu, w ramach rajdu sektora: WIG-BANKI +4,34% do historycznego szczytu. Twardy wyzwalacz PRICE_8 przeciw tezie SHORT; reakcja CLOSE zapisana 22.09.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl notowania MBANK (odczyt 21.09.2026 17:02); strefainwestorow.pl/PAP 'DZIEN NA GPW: Indeksy na nowych szczytach; WIG20 powyzej 4.200 pkt.', 21.09.2026"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "Citi (A. Powierza) podniosl rekomendacje do 'kupuj' z 'neutralnie', cena docelowa 146,80 zl; kurs zamknal sie na 139,75 zl, +6,56% od D0. Dwa miekkie wyzwalacze naraz (RECOMMENDATION + PRICE_4_8) przeciw tezie SHORT; reakcja REDUCE zapisana 22.09.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'Citi podniosl rekomendacje Alior Banku do kupuj', 21.09.2026 07:08 (PAP Biznes/Bloomberg); bankier.pl notowania ALIOR (odczyt 21.09.2026 17:00)"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "Dwa raporty ESPI: 08:40 — podwyzszenie maksymalnej ceny nabycia w Fazie I programu skupu akcji do 50,00 zl; 18:25 — zakonczenie Fazy I (raport po 17:00, wiec skutek cenowy nalezy do sesji D+2). Kurs mimo to −0,74% do 49,43 zl przy indeksie +2,23%, czyli −2,98 p.p. relatywnie — najslabsza noga koszyka LONG. Ponizej progu reakcji (ruch od D0 mniejszy niz 4%).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — komunikaty ESPI Allegro.eu, odczyt 22.09.2026; bankier.pl notowania ALLEGRO (odczyt 21.09.2026 17:03)"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "WIG20 +2,23% do 4214,61 pkt — historyczne maksimum indeksu i szerokiego WIG (158 381,53 pkt, +2,19%). Rynek zdyskontowal piatkowa obnizke ratingu Polski przez Moody's do A3; liderem banki (WIG-BANKI +4,34%, ATH), WIG-GRY +4,37%, WIG-ENERG +2,54%. Zdarzenie makro dzialajace przeciw calemu koszykowi SHORT (3 z 5 nog to banki i surowce).",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP 'WIG20 na zamknieciu wyniosl 4214,61 pkt (2,23%)' oraz 'DZIEN NA GPW: Indeksy na nowych szczytach', 21.09.2026"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-21",
+      "dn": 1,
+      "opis": "Zamkniecie 344,90 zl, +2,33% od D0, na wzroscie miedzi o ok. 1,4%. Kierunek przeciw tezie SHORT, ale ponizej progu 4% — bez reakcji.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP 'DZIEN NA GPW…', 21.09.2026; bankier.pl notowania KGHM (odczyt 21.09.2026 17:04)"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "Kalendarz D+2: 9:00 Wskaznik Dobrobytu BIEC, 9:30 GUS — sprzedaz detaliczna za sierpien, 14:00 NBP — podaz pieniadza M3 za sierpien, 14:00 decyzja banku centralnego Wegier (kons. 5,50%), 16:00 indeks Fed z Richmond. Brak publikacji okresowej spolki koszykowej. Sprzedaz detaliczna to jedyny twardy impuls krajowy dnia — istotny dla LPP, ALLEGRO i PEPCO (koszyk LONG).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'Tym beda zyly rynki: Wglad do portfeli Polakow, kondycja budowlanki i frank szwajcarski', publ. 18.09.2026 12:04, odczyt 22.09.2026"
     }
   ],
   "data_quality": [

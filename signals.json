@@ -39,8 +39,27 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-09-21",
+  "exclude": [
+    {
+      "ticker": "MBANK",
+      "action": "CLOSE",
+      "date": "2026-09-22",
+      "reason": "Kurs mBanku wzrosl z 1399,50 zl (D0, 18.09) do 1516,00 zl na zamknieciu 21.09, tj. +8,32% od D0 PRZECIW tezie SHORT — powyzej twardego progu 8%. Napedem byl rajd sektora: WIG-BANKI +4,34% do historycznego szczytu, mBank najmocniejszy w calym indeksie (+8,3%). Filar tezy krotkiej (przecena bankow po obnizce ratingu Moody's do A3) upadl — rynek potraktowal obnizke jako zdyskontowana. Zrodlo: bankier.pl notowania MBANK, odczyt 21.09.2026 17:02; strefainwestorow.pl/PAP 'DZIEN NA GPW: Indeksy na nowych szczytach', 21.09.2026.",
+      "price_before": 1516.0,
+      "move_from_d0_pct": 8.32,
+      "trigger": "PRICE_8"
+    },
+    {
+      "ticker": "ALIOR",
+      "action": "REDUCE",
+      "date": "2026-09-22",
+      "reason": "Kurs Aliora wzrosl z 131,15 zl (D0) do 139,75 zl na zamknieciu 21.09, tj. +6,56% od D0 PRZECIW tezie SHORT — w przedziale 4-8%, czyli miekki wyzwalacz. Drugi, niezalezny wyzwalacz tego samego szczebla: Citi (Andrzej Powierza) podniosl 21.09 o 07:08 rekomendacje do 'kupuj' z 'neutralnie', cena docelowa 146,80 zl (ok. +12% od kursu odniesienia) — swieza rekomendacja przeciw tezie od liczacego sie DM. Zrodlo: bankier.pl notowania ALIOR, odczyt 21.09.2026 17:00; bankier.pl 'Citi podniosl rekomendacje Alior Banku do kupuj', 21.09.2026 07:08 (PAP Biznes/Bloomberg).",
+      "price_before": 139.75,
+      "move_from_d0_pct": 6.56,
+      "trigger": "PRICE_4_8"
+    }
+  ],
+  "last_daily": "2026-09-22",
   "d0": {
     "date": "2026-09-18",
     "wig20": 4122.52,
