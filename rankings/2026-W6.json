@@ -624,6 +624,86 @@
       "opis": "Kalendarz D+2: 9:00 Wskaznik Dobrobytu BIEC, 9:30 GUS — sprzedaz detaliczna za sierpien, 14:00 NBP — podaz pieniadza M3 za sierpien, 14:00 decyzja banku centralnego Wegier (kons. 5,50%), 16:00 indeks Fed z Richmond. Brak publikacji okresowej spolki koszykowej. Sprzedaz detaliczna to jedyny twardy impuls krajowy dnia — istotny dla LPP, ALLEGRO i PEPCO (koszyk LONG).",
       "wklad_pkt": null,
       "zrodlo": "bankier.pl 'Tym beda zyly rynki: Wglad do portfeli Polakow, kondycja budowlanki i frank szwajcarski', publ. 18.09.2026 12:04, odczyt 22.09.2026"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "ESPI: ogloszenie Fazy II programu skupu akcji wlasnych — do 800 mln zl, maks. cena 50,00 zl, maks. 42 105 263 akcje (ok. 4,1% kapitalu), start 23.09.2026, zakonczenie najpozniej 25.06.2027, prowadzi Erste Bank Polska (Erste Biuro Maklerskie), cel: umorzenie akcji i obnizenie kapitalu zakladowego. Faza I zamknieta 21.09 po 17 879 330 akcjach (1,76% kapitalu). Czynnik ZA teza LONG — popyt strony kupujacej wraca od D+3, z pulapem cenowym powyzej zamkniecia 49,65 zl. Ponizej rangi reakcji (nie jest to wyzwalacz przeciw tezie)",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP oraz bankier.pl „Allegro oglasza Faze II programu skupu akcji wlasnych za maksymalna kwote 800 mln zl”, 22.09.2026"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "ESPI: wstepne wyniki produkcyjne i sprzedazowe Grupy za sierpien 2026 — sprzedaz miedzi 53,2 tys. ton (-3% r/r), produkcja miedzi platnej 61,9 tys. ton (plasko r/r), srebro 125,5 t (+17% r/r), TPM 10,8 tys. uncji (-42% r/r); wzrost sprzedazy w Sierra Gorda, spadek w KGHM International, czesc polska bez zmian. Dane operacyjnie ZGODNE z teza SHORT (slabsza sprzedaz wolumenowa), ale kurs +0,68% d/d do 347,25 zl (+3,03% od D0) na rekordowych okolicach miedzi — ponizej progu reakcji 4%",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „KGHM POLSKA MIEDZ SA: Wstepne wyniki produkcyjne i sprzedazowe Grupy KGHM Polska Miedz S.A. za sierpien 2026 r.”, 22.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "Sesja D+2: WIG20 +0,09% do 4218,30 pkt (srodsesyjny rekord 4241,58 pkt), WIG +0,17% do 158 650,83 pkt (rekord 159 113 pkt), mWIG40 +0,44%, sWIG80 -0,17%, obroty na WIG 2,64 mld zl. Brent spadl ponizej 100 USD/bbl po doniesieniach o wznowieniu zeglugi przez ciesnine Ormuz -> WIG-PALIWA -1,92%, WIG-ENERG -3,46% (PGE -4,89%, Tauron -2,54%). Banki znow na historycznych maksimach (Pekao +1,40%, ING BSK +2,81%, mBank +0,79%, Millennium +0,78%) mimo obnizki ratingu PKO BP przez Moody's z A3 do Baa1 (PKO +0,08%). Pepco liderem wzrostow WIG20 (+4,3%)",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Przecena energetyki i Orlenu, ale WIG i WIG20 znow najwyzej w historii. Banki znow bija rekordy”, 22.09.2026 17:47; strefainwestorow.pl/PAP „Skrot wiadomosci — wtorek, 22 wrzesnia, 21.00”"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "Kurs -1,93% d/d do 149,54 zl, tj. -1,06% od D0 — jedyna noga koszyka SHORT na plusie (zwrot pozycji +1,06%). Napedem byla ropa (Brent ponizej 100 USD/bbl po wznowieniu zeglugi przez Ormuz) oraz doniesienie o badaniu windfall tax w Czechach wobec Unipetrolu, a NIE polska legislacja. Stan ustawy o podatku od nadzwyczajnych zyskow koncernow paliwowych: w komisjach senackich, termin posiedzenia Senatu nadal b.d.; prezydent Nawrocki zakwestionowal konstytucyjnosc. Stawka 60% od nadwyzki przychodow ponad poziom odniesienia 2025 +20%, wplywy ok. 4 mld zl (3,8 mld w 2026, 0,2 mld w 2027)",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl 22.09.2026 17:47; energia.rp.pl „Podatek od zyskow koncernow paliwowych wraca. Sejm przyjal ustawe po raz drugi”; money.pl; wnp.pl — odczyt 23.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "GUS: sprzedaz detaliczna za sierpien +3,8% r/r w cenach stalych wobec konsensusu PAP Biznes +4,5% — WYRAZNIE PONIZEJ oczekiwan; w cenach biezacych +6,4% r/r, m/m -0,3%, po odsezonowaniu +4,6% r/r; sprzedaz internetowa +17,5% r/r. Jedyny twardy impuls krajowy dnia, dotyczacy wprost trzech nog koszyka LONG (LPP, ALLEGRO, PEPCO). Rynek odczyt zignorowal: Pepco +4,3% (lider WIG20), LPP +1,74%, Allegro +0,45%. Ostrzezenie dla konsumenckiej czesci koszyka, ponizej rangi wyzwalacza",
+      "wklad_pkt": null,
+      "zrodlo": "GUS, publikacja 22.09.2026; konsensus PAP Biznes +4,5%; forsal.pl, rp.pl, money.pl — 22.09.2026"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "Zamkniecie 1526,50 zl (+0,79% d/d), +9,07% od D0. Pozycja juz zamknieta (CLOSE z 22.09 przy price_before 1516,00 zl) — dalszy ruch nie zmienia rozliczenia. Dodatkowo: mBank domknal subskrypcje obligacji AT1 na 250 mln EUR, co wzmacnia pozycje kapitalowa i dziala przeciw tezie krotkiej",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania MBANK, odczyt 22.09.2026 17:00; strefainwestorow.pl/PAP „Skrot wiadomosci — wtorek, 22 wrzesnia, 21.00”"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "Zamkniecie 140,85 zl (+0,79% d/d), +7,40% od D0 — nadal w przedziale miekkiego progu 4-8%, wiec BEZ awansu REDUCE -> CLOSE (protokol wymaga >8%; prog cenowy to 141,64 zl, brakuje 0,79 zl / 0,56%). Pozycja zostaje w polowie wagi do soboty",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania ALIOR, odczyt 22.09.2026 17:00; kurs D0 z data/kursy-cache.json"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Miedz na LME cofa sie o 0,7% do 14 650,00 USD/t (dostawa 3-miesieczna, odczyt 07:58) po szesciu sesjach wzrostow i po oddaleniu sie od rekordu 14 858,50 USD/t; powodem jastrzebie wypowiedzi przedstawicieli Fed (Barkin: „moze uplynac troche czasu, zanim szoki inflacyjne zaczna ustepowac”) po podwyzce stop do 3,75-4,00%. Pierwszy od tygodnia czynnik ZA teza SHORT na KGHM",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP „Ceny miedzi w Londynie wycofuja sie z poziomow bliskich rekordu”, 23.09.2026 07:58"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Kalendarz D+3 POTWIERDZONY w datowanych zrodlach: 9:15-10:30 wstepne wrzesniowe PMI dla Francji, Niemiec, strefy euro i Wielkiej Brytanii; 9:30 GUS — stopa bezrobocia rejestrowanego za sierpien (wstepny odczyt MRPiPS 5,9% wobec 5,8% w lipcu, 911,0 tys. bezrobotnych, +4,6 tys. m/m); 15:45 wstepne wrzesniowe PMI dla USA; 8:00 konferencja KNF „International Conference on Finance”. Brak publikacji okresowej spolki koszykowej. Komentarz RPP (L. Kotecki): jesli projekcja listopadowa pokaze utrwalenie inflacji powyzej 4%, RPP bedzie musiala zareagowac",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Tym beda zyly rynki…”, publ. 18.09.2026 12:04; strefainwestorow.pl/PAP „Przewidywane najwazniejsze wydarzenia gospodarcze 2026-09-23” i „Kalendarium rynku kapitalowego GPW 2026-09-23”, odczyt 23.09.2026; MRPiPS/GUS — dane wstepne za sierpien"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-22",
+      "dn": 2,
+      "opis": "Kurs +4,30% d/d do 44,12 zl — lider wzrostow calego WIG20; +5,37% od D0, czyli +3,05 p.p. relatywnie do indeksu. Jedyna noga koszyka LONG bijaca indeks i jedyny powod, dla ktorego wynik rachunku zawezil sie z -1,69 p.p. do -0,37 p.p. Ruch nastapil MIMO odczytu sprzedazy detalicznej ponizej konsensusu. Brak datowanego komunikatu ESPI — zrodlo ruchu nieustalone",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Przecena energetyki i Orlenu…”, 22.09.2026 17:47; bankier.pl — notowania PEPCO, odczyt 22.09.2026 17:01"
     }
   ],
   "data_quality": [
@@ -633,6 +713,7 @@
     "BRAK_20S",
     "DYWIDENDA_KOREKTA_PZU",
     "KALENDARZ_NIEPOTWIERDZONY",
-    "WALIDACJA_D0_Z_CACHE"
+    "WALIDACJA_D0_Z_CACHE",
+    "REKOMENDACJA_BEZ_DATY"
   ]
 }
