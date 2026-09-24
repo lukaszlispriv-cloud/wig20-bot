@@ -704,6 +704,70 @@
       "opis": "Kurs +4,30% d/d do 44,12 zl — lider wzrostow calego WIG20; +5,37% od D0, czyli +3,05 p.p. relatywnie do indeksu. Jedyna noga koszyka LONG bijaca indeks i jedyny powod, dla ktorego wynik rachunku zawezil sie z -1,69 p.p. do -0,37 p.p. Ruch nastapil MIMO odczytu sprzedazy detalicznej ponizej konsensusu. Brak datowanego komunikatu ESPI — zrodlo ruchu nieustalone",
       "wklad_pkt": null,
       "zrodlo": "bankier.pl „Przecena energetyki i Orlenu…”, 22.09.2026 17:47; bankier.pl — notowania PEPCO, odczyt 22.09.2026 17:01"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Sesja D+3: pierwsza spadkowa sesja okna po serii rekordow. WIG20 -0,75% do 4186,63 pkt, WIG -0,75% do 157 468,32 pkt, mWIG40 -0,76% do 10 571,40 pkt, sWIG80 -0,67% do 30 837,85 pkt. Przecena powszechna: spadla KAZDA z dziesieciu spolek koszykowych (LPP -0,33%, PZU -0,38%, KETY -1,64%, PEPCO -1,70%, ALLEGRO -2,05%, ALIOR -0,50%, MBANK -0,95%, PKNORLEN -0,90%, KGHM -1,32%, BUDIMEX -2,03%). Koszyk LONG spadl srednio o 1,22%, wiec mocniej niz indeks — wynik rachunku pogorszyl sie z -0,37 p.p. do -0,85 p.p. Zaden prog wyzwalacza nie zostal przekroczony",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — tabela notowan akcji i indeksow GPW, odczyt 23.09.2026 17:04; strefainwestorow.pl/PAP — zamkniecia indeksow GPW 23.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-23",
+      "dn": 4,
+      "opis": "ESPI 36/2026 po sesji (23:34): zamiar przeprowadzenia przymusowego wykupu akcji Energa S.A. po 27,60 zl za akcje, ogloszenie wykupu 30.09.2026; cena zgodna z wartoscia godziwa wyznaczona przez firme audytorska, wykup obejmie akcje wszystkich pozostalych akcjonariuszy. Domkniecie przejecia spolki, ktora Orlen juz kontroluje — skala nieistotna dla wyceny koncernu, ani wyzwalacz, ani upadek filaru tezy SHORT. Komunikat po 17:00, wiec rynkowo nalezy do sesji 24.09 (dn=4)",
+      "wklad_pkt": null,
+      "zrodlo": "biznes.pap.pl „ORLEN SA (36/2026) Zamiar przeprowadzenia wykupu przymusowego akcji Energa S.A.”, 23.09.2026 23:34; bankier.pl „Orlen wykupuje resztki Energi. Podano ostateczna kwote za akcje”"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Zamkniecie 48,63 zl (-2,05% d/d, -1,02 zl) — najslabsza noga koszyka LONG: -2,35% od D0, -3,90 p.p. relatywnie do WIG20. Spadek wypadl w PIERWSZEJ sesji Fazy II skupu akcji wlasnych (do 800 mln zl, pulap ceny 50,00 zl, prowadzi Erste Biuro Maklerskie), czyli mimo powrotu popytu strony kupujacej. Brak datowanego ESPI wyjasniajacego przecene. Do miekkiego progu REDUCE (-4% od D0 = 47,81 zl) brakuje 1,69% — najblizszy do uruchomienia wyzwalacz w calym koszyku LONG",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania ALLEGRO, odczyt 23.09.2026 17:04; bankier.pl „Allegro oglasza Faze II programu skupu akcji wlasnych za maksymalna kwote 800 mln zl”, 22.09.2026 17:04"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Zamkniecie 140,15 zl (-0,50% d/d, -0,70 zl), +6,86% od D0 — nadal w przedziale miekkiego progu 4-8%, BEZ awansu REDUCE -> CLOSE. Do progu 8% (141,64 zl) brakuje 1,49 zl / 1,06%; dystans powiekszyl sie z 0,56% po sesji D+2, bo bank cofnal sie razem z sektorem. Pozycja zostaje w polowie wagi do soboty",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania ALIOR, odczyt 23.09.2026 17:00; kurs D0 z data/kursy-cache.json"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Zamkniecie 1512,00 zl (-0,95% d/d), +8,04% od D0 — pierwszy spadek od otwarcia okna. Pozycja zamknieta 22.09 przy 1516,00 zl, CLOSE jest nieodwracalne i rozliczenie wariantu zarzadzanego liczy od tego kursu; bez zamkniecia strata wynosilaby dzis -8,04% zamiast zaksiegowanych -8,32%",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — tabela notowan akcji, odczyt 23.09.2026 17:04"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "Zamkniecie 342,65 zl (-1,32% d/d, -4,60 zl), +1,66% od D0 — o 2,30% ponizej progu 4% przeciw tezie (350,53 zl). KIERUNEK MIEDZI na LME w sesji 23.09: b.d. — poranna depesza PAP (07:58) mowi o -0,7% do 14 650,00 USD/t, pozniejsza depesza o +0,4% do 14 562,00 USD/t i szostej sesji wzrostow, ale BEZ potwierdzonej daty publikacji. Zgodnie z docs/metoda.md sekcja 9.3 przy konflikcie zrodel obowiazuje b.d. i zadna deklaracja o miedzi nie moze sie na tym oprzec",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP „Ceny miedzi w Londynie wycofuja sie z poziomow bliskich rekordu”, 23.09.2026 07:58; biznes.pap.pl „Cena miedzi na LME rosnie i zmierza ku rekordowi zamkniecia” — depesza bez potwierdzonej daty w odczycie 24.09.2026; bankier.pl — notowania KGHM 23.09.2026 17:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-23",
+      "dn": 3,
+      "opis": "OECD podniosla szacunek dynamiki wzrostu globalnego PKB w 2026 r. do 2,9% z 2,8% w projekcji czerwcowej. Jedyny twardy impuls makro doby; dla koszyka niemal neutralny, minimalnie przeciw tezie SHORT na spolkach cyklicznych (KGHM, Budimex)",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP „Skrot wiadomosci — sroda, 23 wrzesnia, 21.00”, 23.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Kalendarz D+4 POTWIERDZONY w datowanych zrodlach (uzupelnienie wpisu z 2026-09-24 o czesc krajowa): dzien decyzji bankow centralnych — 9:30 SNB (konsensus: bez zmian), 9:30 Riksbank, 10:00 Norges Bank; 10:00 wrzesniowy indeks Ifo dla Niemiec; 14:30 USA wnioski o zasilek i saldo obrotow biezacych za II kw.; 16:00 USA sprzedaz nowych domow za sierpien; 16:30 zapasy gazu; 17:00 wskaznik przemyslu Fed z Kansas City. Polska: 9:00 konferencja wynikowa Sniezki za I polrocze, 11:00 webinar GPW nt. nowego systemu transakcyjnego WATS, 11:00 konferencja Votum, 14:00 podpisanie umowy Bechtel Polska dot. infrastruktury dla elektrowni jadrowej w Choczewie. BRAK publikacji okresowej spolki koszykowej. Status wyzwalacza tezy SHORT na Orlenie: ustawa o podatku od nadzwyczajnych zyskow koncernow paliwowych (Sejm 18.09, 237-202-1; 60% producenci / 50% dystrybutorzy; III 2026-31.03.2027) nadal w Senacie, termin posiedzenia niepotwierdzony w datowanym zrodle",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Tym beda zyly rynki: Wglad do portfeli Polakow, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026; strefainwestorow.pl/PAP „Przewidywane najwazniejsze wydarzenia gospodarcze 2026-09-24”, publ. 24.09.2026 07:01; bankier.pl „Windfall tax wraca. Sejm ponownie uchwalil podatek od koncernow paliwowych”, 18.09.2026 12:40"
     }
   ],
   "data_quality": [

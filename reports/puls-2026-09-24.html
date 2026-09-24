@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 24.09.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; } .flat{ color:#5C6874; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; } header .flat{ color:#C6CFD8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #B5651D; color:#B5651D;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(181,101,29,.07); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .badge-x{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#C4372E; color:#fff; margin-left:6px; }
+  .badge-r{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#B5651D; color:#fff; margin-left:6px; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  .react{ background:#fff; border:1px solid #E3E6DF; border-left:5px solid #C4372E; border-radius:8px;
+          padding:11px 13px; margin-bottom:9px; }
+  .react.soft{ border-left-color:#B5651D; }
+  .react .hd{ font-weight:700; font-size:14px; margin-bottom:3px; }
+  .react .act{ font-size:10.5px; font-weight:800; letter-spacing:.07em; padding:2px 7px; border-radius:4px;
+               background:#C4372E; color:#fff; margin-right:8px; }
+  .react.soft .act{ background:#B5651D; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">czwartek, 24 września 2026 &middot; bieg poranny 08:17 &middot; okno W6 (D0 = 18.09.2026), za nami sesje D+1, D+2 i D+3</div>
+    <div class="wig">
+      <span class="val">4&nbsp;186,63</span>
+      <span class="chg neg">&minus;0,75%</span>
+      <span class="lbl">WIG20, zamknięcie ostatniej zakończonej sesji: środa 23.09.2026. Pierwsza spadkowa sesja okna — szeroki WIG &minus;0,75% do 157&nbsp;468,32 pkt, mWIG40 &minus;0,76%, sWIG80 &minus;0,67%. Od D0 (18.09, 4&nbsp;122,52 pkt) indeks jest wciąż <b>+1,56%</b>. Źródło: strefainwestorow.pl/PAP — zamknięcia indeksów GPW 23.09.2026; kursy spółek z rezerwy bankier.pl przez <code>scripts/kursy.py</code> (Yahoo HTTP 429, FMP zablokowany abonamentem).</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <div class="stamp" style="border-color:#0E7C4A;color:#0E7C4A;background:rgba(14,124,74,.07);">Prognoza aktualna &middot; bez reakcji</div>
+    <div class="stamp-note">Teza tygodnia nie została unieważniona — status <b>AKTUALNA</b>. Sesja D+3 była szeroką korektą po rekordach i nie uruchomiła żadnego nowego wyzwalacza: <b>ani jedna spółka koszykowa nie przekroczyła progu 4% od D0 przeciw tezie</b> poza tymi, na które reakcja już jest. Lista <code>exclude</code> zostaje bez zmian: <b>mBank CLOSE</b> i <b>Alior REDUCE</b> (obie z 22.09). Moduł taktyczny: bez zmian, lista pusta.</div>
+  </div>
+
+  <h2>Stan reakcji — bez zmian, pierwszy dzień odwrotu</h2>
+
+  <div class="react">
+    <div class="hd"><span class="act">CLOSE</span>mBank (SHORT) — <b>+8,04%</b> od D0 (wczoraj +9,07%)</div>
+    <p>Kurs cofnął się o 0,95% do <b>1&nbsp;512,00 zł</b> — pierwszy spadek od otwarcia okna. Dla rozliczenia nie ma to znaczenia: pozycja została zamknięta 22.09 przy 1&nbsp;516,00 zł i <b>CLOSE jest nieodwracalne</b>; wariant zarządzany liczy od tego kursu, dalsze ruchy nic nie zmieniają. Gdyby pozycji nie zamknięto, strata wynosiłaby dziś &minus;8,04% zamiast zaksięgowanych &minus;8,32%.</p>
+    <span class="src">bankier.pl — tabela notowań akcji, odczyt 23.09.2026 17:04; kurs D0 z <code>data/kursy-cache.json</code></span>
+  </div>
+
+  <div class="react soft">
+    <div class="hd"><span class="act">REDUCE</span>Alior Bank (SHORT) — <b>+6,86%</b> od D0, drugi dzień poniżej twardego progu 8%</div>
+    <p>Zamknięcie <b>140,15 zł</b> (&minus;0,50% d/d) daje +6,86% od D0 — nadal przedział miękki 4–8%, więc <b>awansu REDUCE → CLOSE nie ma</b>. Do progu 8% brakuje 1,49 zł, czyli 1,06% kursu (poziom graniczny <b>141,64 zł</b>). Wczorajszy dystans wynosił 0,56%, dziś się powiększył: bank cofnął się razem z całym sektorem. Pozycja zostaje w połowie wagi do soboty.</p>
+    <span class="src">bankier.pl — notowania ALIOR 140,15 zł (&minus;0,50%, &minus;0,70 zł), odczyt 23.09.2026 17:00</span>
+  </div>
+
+  <div class="note">
+    <b>Co to znaczy na rachunku.</b> Bot pracuje w trybie <code>HEDGE_MODE=index</code> — kupuje pięć spółek koszyka LONG i sprzedaje kontrakt na WIG20, a koszyka SHORT <b>nie handluje wcale</b> (rachunek Capital.com nie pozwala shortować CFD na akcje). Obie reakcje z 22.09 dotyczą więc wyłącznie <b>papierowego wariantu zarządzanego</b> rozliczanego w sobotę. Realny portfel nie zmienia dziś żadnej nogi.
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li>
+      <span class="tag t-kurs">Kurs</span><b>Pierwsza spadkowa sesja okna: WIG20 &minus;0,75% do 4&nbsp;186,63 pkt, a przecena była powszechna — spadła każda z dziesięciu spółek koszykowych.</b> Dla koszyka LONG to strata na wszystkich pięciu nogach (LPP &minus;0,33%, PZU &minus;0,38%, Kęty &minus;1,64%, Pepco &minus;1,70%, Allegro &minus;2,05%), dla papierowego koszyka SHORT — zysk na wszystkich pięciu. Ponieważ LONG spadał średnio mocniej niż indeks, <b>wynik rachunku pogorszył się z &minus;0,37 p.p. do &minus;0,85 p.p.</b> Korekta przyszła po serii, w której WIG20 i WIG wielokrotnie biły rekordy; indeks jest od D0 wciąż na plusie.
+      <span class="src">bankier.pl — tabela notowań akcji i indeksów GPW, odczyt 23.09.2026 17:04; strefainwestorow.pl/PAP — zamknięcia indeksów 23.09.2026 (WIG20 4186,63 pkt &minus;0,75%; WIG 157&nbsp;468,32 &minus;0,75%; mWIG40 10&nbsp;571,40 &minus;0,76%; sWIG80 30&nbsp;837,85 &minus;0,67%)</span>
+    </li>
+    <li>
+      <span class="tag t-espi">ESPI</span><b>Orlen (SHORT), raport 36/2026 po sesji: zamiar przeprowadzenia przymusowego wykupu akcji Energi po 27,60 zł za akcję, ogłoszenie wykupu 30.09.</b> Cena odpowiada wartości godziwej wyznaczonej przez firmę audytorską, wykup obejmie akcje wszystkich pozostałych akcjonariuszy — to domknięcie przejęcia spółki, którą Orlen już kontroluje. <b>Ani wyzwalacz, ani upadek filaru tezy</b>: zdarzenie o skali nieistotnej dla wyceny koncernu, bez wpływu na kierunek pozycji. Komunikat wyszedł 23.09 o 23:34, więc rynkowo należy do dzisiejszej sesji (D+4).
+      <span class="src">biznes.pap.pl „ORLEN SA (36/2026) Zamiar przeprowadzenia wykupu przymusowego akcji Energa S.A.”, 23.09.2026 23:34; bankier.pl „Orlen wykupuje resztki Energi. Podano ostateczną kwotę za akcję”</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>OECD podniosła prognozę wzrostu globalnego PKB na 2026 r. do 2,9% z 2,8% w projekcji czerwcowej.</b> Sygnał lekko pro-ryzykowny, dla koszyka neutralny — nie dotyczy wprost żadnej nogi, ale jest jedynym twardym impulsem makro doby sprzyjającym cyklicznym spółkom (KGHM, Budimex są w koszyku SHORT, więc działa minimalnie przeciw tezie).
+      <span class="src">strefainwestorow.pl/PAP „Skrót wiadomości — środa, 23 września, 21.00”, 23.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>Podatek od nadzwyczajnych zysków koncernów paliwowych: ustawa po drugim uchwaleniu przez Sejm (18.09, 237–202–1) wciąż jest w Senacie, a daty posiedzenia nadal nie da się potwierdzić w datowanym źródle.</b> Stawki: 60% dla producentów paliw, 50% dla dystrybutorów nieprodukujących; okres marzec 2026 – 31.03.2027; marża referencyjna = historyczna z 2025 r. +20%, minimum 2%; wpływy ok. 4 mld zł na program „Ceny Paliwa Niżej”. Prezydent Karol Nawrocki zakwestionował poprzednią wersję w Trybunale Konstytucyjnym. <b>Wyzwalacz tezy SHORT na Orlenie pozostaje niezrealizowany</b> — kurs schodzi (&minus;1,95% od D0) z powodu ropy, nie legislacji. Kod <code>KALENDARZ_NIEPOTWIERDZONY</code> podtrzymany.
+      <span class="src">bankier.pl „Windfall tax wraca. Sejm ponownie uchwalił podatek od koncernów paliwowych”, 18.09.2026 12:40; biznes.pap.pl — brak datowanego terminu posiedzenia Senatu w odczycie 24.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-rek">Rekom.</span><b>Drugi dzień z rzędu bez nowej, datowanej rekomendacji dla którejkolwiek z dziesięciu spółek koszykowych.</b> Najświeższe pozycje na liście rekomendacji z 23.09 dotyczą spółek spoza koszyków: UNIMOT — „sprzedaj” BM Banku Pekao, cena docelowa 142,10 zł, oraz DIGITANET — „sprzedaj” DM BOŚ, 326,00 zł. <b>Wyzwalacz RECOMMENDATION nie ma dziś podstawy.</b> Najświeższe potwierdzone sygnały to nadal Citi „kupuj” dla Aliora z 21.09 (już zaksięgowany jako REDUCE) i „sprzedaj” Noble Securities dla Budimeksu z 18.09 (cena docelowa 562,00 zł — zgodny z tezą SHORT).
+      <span class="src">strefainwestorow.pl — lista rekomendacji, odczyt 24.09.2026; brak pozycji dla spółek koszykowych z 22–24.09</span>
+    </li>
+    <li>
+      <span class="tag t-short">Short</span><b>Rejestr krótkiej sprzedaży KNF: czwarty dzień bez dostępu — kod <code>KNF_SHORT_NIEDOSTEPNY</code>.</b> Publikator <code>rss.knf.gov.pl</code> zwraca komunikat „Wystąpił błąd! Prosimy skontaktować się z administratorem!”. <b>Zmiany ≥0,3 p.p. przeciw tezie nie da się udokumentować</b>, więc wyzwalacz <code>KNF_SHORT</code> pozostaje w tym oknie martwy — wszystkie reakcje okna opierają się wyłącznie na kursie i rekomendacji.
+      <span class="src">rss.knf.gov.pl/RssOuterView — błąd aplikacji, próba 24.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-kurs">Kurs</span><b>Allegro (LONG) najsłabszą nogą okna: &minus;2,05% do 48,63 zł, czyli &minus;2,35% od D0 i &minus;3,90 p.p. relatywnie do indeksu.</b> Spadek wypadł w <b>pierwszej sesji Fazy II skupu akcji własnych</b> (do 800 mln zł, pułap ceny 50,00 zł, prowadzi Erste Biuro Maklerskie) — popyt strony kupującej wrócił, a kurs i tak oddał grunt. Brak datowanego komunikatu ESPI wyjaśniającego przecenę. Do miękkiego progu REDUCE (&minus;4% od D0, czyli <b>47,81 zł</b>) brakuje 1,69%; to najbliższy do uruchomienia wyzwalacz w całym koszyku LONG.
+      <span class="src">bankier.pl — notowania ALLEGRO 48,63 zł (&minus;2,05%, &minus;1,02 zł), odczyt 23.09.2026 17:04; bankier.pl „Allegro ogłasza Fazę II programu skupu akcji własnych za maksymalną kwotę 800 mln zł”, 22.09.2026 17:04</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>Kierunek miedzi na LME w sesji 23.09 — <code>b.d.</code></b> Wczorajszy poranny odczyt (&minus;0,7% do 14&nbsp;650,00 USD/t, PAP 23.09 07:58) jest sprzeczny z późniejszą depeszą mówiącą o +0,4% do 14&nbsp;562,00 USD/t i szóstej wzrostowej sesji, której <b>nie udało się potwierdzić datą publikacji</b>. Zgodnie z sekcją 9.3 <code>docs/metoda.md</code> przy konflikcie źródeł obowiązuje <code>b.d.</code> — żadna deklaracja o miedzi nie może się na tym oprzeć. Faktem pozostaje sam kurs: <b>KGHM &minus;1,32% do 342,65 zł</b>, +1,66% od D0, czyli o 2,30% poniżej progu 4% przeciw tezie (350,53 zł).
+      <span class="src">strefainwestorow.pl/PAP „Ceny miedzi w Londynie wycofują się z poziomów bliskich rekordu”, 23.09.2026 07:58; biznes.pap.pl „Cena miedzi na LME rośnie i zmierza ku rekordowi zamknięcia” — depesza bez potwierdzonej daty w odczycie 24.09.2026</span>
+    </li>
+  </ul>
+
+  <h2>Koszyk LONG — to handluje bot</h2>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs ost.</th><th>Zwrot poz.</th><th>Rel. vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>LPP</td><td><span class="dir dir-l">LONG</span></td><td class="num">24&nbsp;160,00</td><td class="num">24&nbsp;520,00</td><td class="num pos">+1,49%</td><td class="num neg">&minus;0,07 p.p.</td></tr>
+      <tr><td>ALLEGRO</td><td><span class="dir dir-l">LONG</span></td><td class="num">49,80</td><td class="num">48,63</td><td class="num neg">&minus;2,35%</td><td class="num neg">&minus;3,90 p.p.</td></tr>
+      <tr><td>GRUPA KĘTY</td><td><span class="dir dir-l">LONG</span></td><td class="num">1&nbsp;269,00</td><td class="num">1&nbsp;263,00</td><td class="num neg">&minus;0,47%</td><td class="num neg">&minus;2,03 p.p.</td></tr>
+      <tr><td>PZU</td><td><span class="dir dir-l">LONG</span></td><td class="num">72,44</td><td class="num">73,38</td><td class="num pos">+1,30%</td><td class="num neg">&minus;0,26 p.p.</td></tr>
+      <tr><td>PEPCO</td><td><span class="dir dir-l">LONG</span></td><td class="num">41,87</td><td class="num">43,37</td><td class="num pos">+3,58%</td><td class="num pos">+2,03 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia LONG</td><td class="num pos">+0,71%</td><td class="num neg">&minus;0,85 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+
+  <div class="basket-h">KOSZYK SHORT — papierowy, bot go NIE handluje</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs ost.</th><th>Zwrot poz.</th><th>Rel. vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>ALIOR BANK<span class="badge-r">REDUCE 22.09</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">131,15</td><td class="num">140,15</td><td class="num neg">&minus;6,86%</td><td class="num neg">&minus;5,31 p.p.</td></tr>
+      <tr><td>KGHM</td><td><span class="dir dir-s">SHORT</span></td><td class="num">337,05</td><td class="num">342,65</td><td class="num neg">&minus;1,66%</td><td class="num neg">&minus;0,11 p.p.</td></tr>
+      <tr><td>ORLEN</td><td><span class="dir dir-s">SHORT</span></td><td class="num">151,14</td><td class="num">148,20</td><td class="num pos">+1,95%</td><td class="num pos">+3,50 p.p.</td></tr>
+      <tr><td>BUDIMEX</td><td><span class="dir dir-s">SHORT</span></td><td class="num">698,80</td><td class="num">703,00</td><td class="num neg">&minus;0,60%</td><td class="num pos">+0,95 p.p.</td></tr>
+      <tr><td>mBANK<span class="badge-x">CLOSE 22.09</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">1&nbsp;399,50</td><td class="num">1&nbsp;512,00</td><td class="num neg">&minus;8,04%</td><td class="num neg">&minus;6,48 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia SHORT (pozycja)</td><td class="num neg">&minus;3,04%</td><td class="num neg">&minus;1,49 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+  <p style="font-size:12px;color:#6B7681;margin-top:6px;">Kolumna „Zwrot poz.” dla koszyka SHORT to zwrot <i>pozycji krótkiej</i>, czyli odwrotność zmiany kursu; kolumna „Rel. vs WIG20” dla pozycji krótkiej to zwrot pozycji minus (&minus;1)&times;zwrot indeksu. Kolejność spółek jest stała, zgodna z <code>signals.json</code> — tabele <b>nie są</b> rankingiem. Wiersze mBanku i Aliora pokazują pełną wagę; w rozliczeniu wariantu zarządzanego mBank liczy się do 1&nbsp;516,00 zł, a Alior od 139,75 zł w połowie wagi. Wszystkie kursy ostatnie: zamknięcie 23.09.2026 z tabel notowań bankier.pl (rezerwa po HTTP 429 z Yahoo — kod <code>KURS_ZRODLO_REZERWA</code>); kursy D0 z <code>data/kursy-cache.json</code>, zgodne z <code>d0.prices</code> w <code>signals.json</code> co do grosza (kod <code>WALIDACJA_D0_Z_CACHE</code>).</p>
+
+  <div class="score">
+    <div class="main">Wynik rachunku &middot; średnia LONG &minus; WIG20</div>
+    <div class="big neg">&minus;0,85 p.p.</div>
+    <div class="sub">Średnia LONG +0,71% wobec WIG20 +1,56% od D0 (18.09). To liczba, którą realnie robi bot: kupione pięć spółek LONG plus sprzedany kontrakt na indeks. Strata pogłębiła się z &minus;0,37 p.p. po sesji D+2 — koszyk LONG spadł w środę średnio o 1,22%, mocniej niż indeks. Jedyną nogą bijącą WIG20 pozostaje Pepco (+2,03 p.p.).</div>
+    <div class="paper">Spread papierowy (LONG &minus; SHORT): <b>&minus;2,33 p.p.</b> — <i>miara selekcji, nie wynik rachunku.</i><br>
+    Rozjazd między spreadem papierowym a wynikiem rachunku to <b>&minus;1,49 p.p.</b> i przekracza próg 0,5 p.p.: papier jest gorszy od rachunku, bo koszyk SHORT rośnie od D0 (+3,04%) szybciej niż indeks (+1,56%) — ciągną go Alior i mBank. Bota to nie dotyczy, on koszyka SHORT nie handluje.</div>
+  </div>
+
+  <h2>Kalendarz na dziś — czwartek 24.09.2026 (sesja D+4)</h2>
+  <div class="cal">
+    <ul>
+      <li><b>Dzień decyzji banków centralnych w Europie:</b> <b>9:30</b> SNB (Szwajcaria) — ekonomiści nie przewidują zmian; <b>9:30</b> Riksbank (Szwecja); <b>10:00</b> Norges Bank (Norwegia).</li>
+      <li><b>10:00</b> — wrześniowy indeks Instytutu Ifo dla Niemiec, główny odczyt nastrojów niemieckiego biznesu.</li>
+      <li><b>14:30</b> — USA: tygodniowe wnioski o zasiłek dla bezrobotnych oraz saldo obrotów bieżących za II kw.</li>
+      <li><b>16:00</b> — USA: sierpniowa sprzedaż nowych domów. <b>16:30</b> — zmiana zapasów gazu. <b>17:00</b> — wskaźnik przemysłu Fed z Kansas City.</li>
+      <li><b>Polska, wydarzenia korporacyjne:</b> 9:00 konferencja wynikowa Śnieżki za I półrocze; 11:00 webinar GPW o nowym systemie transakcyjnym WATS; 11:00 konferencja Votum; 14:00 podpisanie umowy Bechtel Polska dot. infrastruktury dla elektrowni jądrowej w Choczewie.</li>
+      <li><b>Brak publikacji okresowej spółki koszykowej.</b> Najbliższe zdarzenia spółkowe w oknie: premiera „Wiedźmin 3: Dziki Gon — Remastered” CD Projektu 29.09 i raport półroczny Modivo 1.10 (obie spoza koszyków).</li>
+      <li><b>Dziś rynkowo księguje się ESPI Orlenu</b> o przymusowym wykupie Energi po 27,60 zł (ogłoszenie wykupu 30.09).</li>
+    </ul>
+    <p style="font-size:11.5px;color:#6B7681;margin:0 0 10px;">Źródła dat — <b>każda pozycja potwierdzona w datowanym źródle</b>: bankier.pl „Tym będą żyły rynki: Wgląd do portfeli Polaków, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026 (kalendarz bieżącego tygodnia — decyzje SNB/Riksbank/Norges, Ifo, dane z USA); strefainwestorow.pl/PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-09-24”, publ. 24.09.2026 07:01 (część krajowa). Brak konfliktu źródeł — kodu <code>KALENDARZ_NIEPOTWIERDZONY</code> dla dzisiejszych dat nie podnosimy (podtrzymany osobno dla terminu posiedzenia Senatu).</p>
+  </div>
+
+  <h2>Czego pilnować dziś</h2>
+  <div class="note">
+    <b>Allegro 47,81 zł</b> — poniżej tego kursu ruch od D0 przekracza &minus;4% przeciw tezie LONG i uruchamia miękki wyzwalacz REDUCE. Dystans: 1,69% — najbliższy próg w całym koszyku.<br>
+    <b>Alior 141,64 zł</b> — powyżej tego kursu miękki REDUCE awansuje do twardego CLOSE. Dystans wzrósł z 0,56% do 1,06%.<br>
+    <b>Pepco 42,52 zł</b> — poniżej tego poziomu Pepco przestaje bić indeks i wynik rachunku spada w okolice &minus;1,3 p.p. Bufor: 2,0%.<br>
+    <b>KGHM 350,53 zł</b> i <b>Budimex 726,75 zł</b> — progi 4% przeciw tezie SHORT; dystans 2,30% i 3,38%.
+  </div>
+
+  <h2>Problemy z danymi</h2>
+  <div class="note">
+    <b>FMP:</b> konektor jest w sesji (narzędzia <code>mcp__FMP__*</code> widoczne), ale endpoint <code>chart</code> zwraca „ACCESS DENIED — requires a higher plan”. Kurs D0 i notowań z FMP pobrać nie można — kod <code>FMP_PLAN_BLOKADA</code> utrzymany. Grant konektora dla rutyny jest, ogranicza abonament.<br>
+    <b>Yahoo:</b> HTTP 429 z IP chmury na wszystkich symbolach — kursy z rezerwy bankier.pl (<code>KURS_ZRODLO_REZERWA</code>). Bankier podaje tylko ostatnią sesję, bez świecy D0, więc walidację D0 wykonano wobec <code>data/kursy-cache.json</code>, który zgadza się z <code>d0.prices</code> co do grosza (<code>WALIDACJA_D0_Z_CACHE</code>).<br>
+    <b>KNF:</b> rejestr krótkiej sprzedaży niedostępny (<code>KNF_SHORT_NIEDOSTEPNY</code>).<br>
+    <b>Miedź:</b> kierunek w sesji 23.09 <code>b.d.</code> — sprzeczne źródła, jedno bez daty.
+  </div>
+
+  <footer>
+    Materiał analityczno-edukacyjny, <b>nie stanowi rekomendacji inwestycyjnej</b> w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie jest też doradztwem inwestycyjnym ani ofertą. Dane mogą zawierać błędy — każdą liczbę należy zweryfikować u źródła.<br>
+    Raport wygenerowany automatycznie przez asystenta AI (rutyna „Puls WIG20”, repozytorium <code>wig20-bot</code>), bieg 24.09.2026 08:17. Kursy: bankier.pl przez <code>scripts/kursy.py</code>; research: PAP/strefainwestorow.pl, bankier.pl, OECD, KNF.
+  </footer>
+
+</div>
+</body>
+</html>
