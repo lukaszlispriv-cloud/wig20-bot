@@ -768,6 +768,78 @@
       "opis": "Kalendarz D+4 POTWIERDZONY w datowanych zrodlach (uzupelnienie wpisu z 2026-09-24 o czesc krajowa): dzien decyzji bankow centralnych — 9:30 SNB (konsensus: bez zmian), 9:30 Riksbank, 10:00 Norges Bank; 10:00 wrzesniowy indeks Ifo dla Niemiec; 14:30 USA wnioski o zasilek i saldo obrotow biezacych za II kw.; 16:00 USA sprzedaz nowych domow za sierpien; 16:30 zapasy gazu; 17:00 wskaznik przemyslu Fed z Kansas City. Polska: 9:00 konferencja wynikowa Sniezki za I polrocze, 11:00 webinar GPW nt. nowego systemu transakcyjnego WATS, 11:00 konferencja Votum, 14:00 podpisanie umowy Bechtel Polska dot. infrastruktury dla elektrowni jadrowej w Choczewie. BRAK publikacji okresowej spolki koszykowej. Status wyzwalacza tezy SHORT na Orlenie: ustawa o podatku od nadzwyczajnych zyskow koncernow paliwowych (Sejm 18.09, 237-202-1; 60% producenci / 50% dystrybutorzy; III 2026-31.03.2027) nadal w Senacie, termin posiedzenia niepotwierdzony w datowanym zrodle",
       "wklad_pkt": null,
       "zrodlo": "bankier.pl „Tym beda zyly rynki: Wglad do portfeli Polakow, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026; strefainwestorow.pl/PAP „Przewidywane najwazniejsze wydarzenia gospodarcze 2026-09-24”, publ. 24.09.2026 07:01; bankier.pl „Windfall tax wraca. Sejm ponownie uchwalil podatek od koncernow paliwowych”, 18.09.2026 12:40"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Sesja D+4: odbicie wąskie i wybiórcze. WIG20 +0,15% do 4192,90 pkt, WIG +0,06% do 157 555,42 pkt, ale mWIG40 -0,31% do 10 538,12 pkt i sWIG80 -0,37% do 30 722,49 pkt — indeks dużych spółek utrzymał się dzięki kilku nogom, nie szerokości rynku. Indeksy sektorowe: WIG-PALIWA +1,34%, WIG-BANKI +0,59%, WIG-BUDOW +0,57%. W koszyku LONG zyskały cztery z pięciu nóg (ALLEGRO +1,31%, KETY +0,87%, LPP +0,49%, PZU +0,14%), spadło Pepco (-1,50%); w koszyku SHORT spadły KGHM (-1,98%), ALIOR (-1,50%) i MBANK (-0,46%), wzrosły PKNORLEN (+1,34%) i BUDIMEX (+0,23%). Koszyk LONG zyskał średnio 0,26% wobec +0,15% indeksu, więc wynik rachunku poprawił się z -0,85 p.p. do -0,75 p.p. Największe spadki w WIG20: MODIVO -4,23%, PGE -3,15%, DINOPL -2,40% — wszystkie spoza koszyków. Żaden próg wyzwalacza nie został przekroczony",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — tabela notowań akcji i indeksów GPW, odczyt 24.09.2026 17:00–17:15; bankier.pl „Przymusowy wykup Energi i kontrakt Polimeksu w świetle giełdowych reflektorów”, 24.09.2026 17:19"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "WYZWALACZ TEZY SHORT ZREALIZOWANY LEGISLACYJNIE: Senat przyjął bez poprawek ustawę o podatku od nadzwyczajnych zysków koncernów paliwowych — 59 za, 31 przeciw, 0 wstrzymujących się. Ustawa trafia do prezydenta Karola Nawrockiego. Stawki 60% dla producentów i 50% dla dystrybutorów, okres marzec 2026 – marzec 2027, marża referencyjna = wynik 2025 r. +20%, wpływy szacowane ok. 4 mld zł na program „Ceny Paliwa Niżej”. TERMIN POSIEDZENIA SENATU POTWIERDZONY DATOWANYM ŹRÓDŁEM — kod KALENDARZ_NIEPOTWIERDZONY dla tej pozycji zdjęty (pozostaje dla terminu decyzji prezydenta). REAKCJA KURSU ODWROTNA DO TEZY: Orlen zamknął +1,34% na 150,18 zł, WIG-PALIWA najmocniejszym indeksem sektorowym dnia (+1,34%) — rynek wycenia ryzyko weta lub kolejnego wniosku do TK (prezydent skierował poprzednią wersję ustawy do Trybunału, zarzucając retroaktywność). Zdarzenie potwierdza tezę, kurs jej nie potwierdza; ani wyzwalacz reakcji (progi dotyczą kursu), ani upadek filaru tezy. Pozycja SHORT od D0 na plusie +0,64%",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Drugie podejście do windfall tax. Senat odrzuca poprawki PiS”, 24.09.2026 10:04 (akt. 11:16); bankier.pl — notowania PKNORLEN 150,18 zł (+1,34%, +1,98 zł), odczyt 24.09.2026 17:04; bankier.pl — indeks WIG-PALIWA 18 699,83 pkt (+1,34%), odczyt 24.09.2026 17:15"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Najmocniejsza spółka WIG20: +1,31% do 49,265 zł (+0,635 zł) — odrobienie większości środowej przeceny. Od D0 już tylko -1,07% (poprzednio -2,35%), relatywnie -2,78 p.p. vs WIG20. Do miękkiego progu REDUCE (-4% od D0 = 47,81 zł) dystans wzrósł z 1,69% do 2,95%, więc ALLEGRO PRZESTAŁO BYĆ NAJBLIŻSZYM PROGIEM W KOSZYKU. Odbicie w drugiej sesji Fazy II skupu akcji własnych (do 800 mln zł, pułap 50,00 zł, Erste Biuro Maklerskie, program do 25.06.2027; Faza I zamknięta na 17 879 330 akcjach po średnio 44,74 zł). Brak datowanego ESPI z 24.09 — ruch przypisany popytowi ze skupu, bez twardego potwierdzenia. Nadal najsłabsza noga koszyka LONG w ujęciu relatywnym",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania ALLEGRO 49,265 zł (+1,31%, +0,635 zł), odczyt 24.09.2026 17:04; bankier.pl „Allegro ogłasza Fazę II programu skupu akcji własnych za maksymalną kwotę 800 mln zł”, 22.09.2026 17:04"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Zamknięcie 138,05 zł (-1,50% d/d, -2,10 zł), +5,26% od D0 — nadal przedział miękkiego progu 4-8%, BEZ awansu REDUCE -> CLOSE. Do progu 8% (141,64 zł) brakuje 3,59 zł / 2,60%; dystans rośnie trzeci dzień z rzędu: 0,56% (D+2) -> 1,06% (D+3) -> 2,60% (D+4). Alior był jedną z najsłabszych spółek WIG20 w czwartek MIMO wzrostu WIG-BANKI o 0,59%, co osłabia tezę o sektorowym charakterze rajdu, który wywołał reakcję REDUCE. Pozycja zostaje w połowie wagi do soboty",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania ALIOR 138,05 zł (-1,50%, -2,10 zł), odczyt 24.09.2026 17:02; bankier.pl — indeks WIG-BANKI 28 592,99 pkt (+0,59%), odczyt 24.09.2026 17:15"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Zamknięcie 335,85 zł (-1,98% d/d, -6,80 zł), -0,36% od D0 — PIERWSZY RAZ W OKNIE PONIŻEJ KURSU D0, czyli noga zaczyna pracować zgodnie z tezą SHORT (zwrot pozycji +0,36%, relatywnie +2,06 p.p.). Razem z Orlenem jedyne dwie nogi papierowego koszyka SHORT na plusie. Do progu 4% przeciw tezie (350,53 zł) jest 4,37%. KIERUNEK MIEDZI W SESJI 24.09: b.d. — ostatnia depesza o miedzi z POTWIERDZONĄ datą jest z 22.09.2026 08:08 (LME +0,6% do 14 745,00 USD/t, szósta sesja wzrostów, rekord miesiąca 14 858,50 USD/t, zapasy w Szanghaju 43 900 t — najmniej od 2023 r.). Zgodnie z docs/metoda.md sekcja 9.3 przy braku datowanego źródła obowiązuje b.d. i żadna deklaracja o miedzi nie może się na tym oprzeć; spadek kursu KGHM wypadł przy wzrostowym tle surowcowym",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania KGHM 335,85 zł (-1,98%, -6,80 zł), odczyt 24.09.2026 17:04; bankier.pl „Miedź bije historyczne rekordy. Cena idzie w górę szóstą sesję z rzędu”, 22.09.2026 08:08"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Zamknięcie 1505,00 zł (-0,46% d/d, -7,00 zł), +7,54% od D0 — drugi spadek z rzędu i ZEJŚCIE PONIŻEJ twardego progu 8% (1511,46 zł). Pozycja zamknięta 22.09 przy 1516,00 zł, CLOSE jest nieodwracalne i rozliczenie wariantu zarządzanego liczy od tego kursu; bez zamknięcia strata wynosiłaby dziś -7,54% zamiast zaksięgowanych -8,32%, więc reakcja kosztowała 0,78 p.p. na tej nodze (wczoraj 0,28 p.p.). To materiał do oceny szczebla CLOSE w rozliczeniu tygodniowym",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania MBANK 1505,00 zł (-0,46%, -7,00 zł), odczyt 24.09.2026 17:00"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "Zamknięcie 42,72 zł (-1,50% d/d) — jedyna spadkowa noga koszyka LONG i utrata prawie całej przewagi nad indeksem: relatywnie +0,32 p.p. wobec +2,03 p.p. po sesji D+3. Poziom, poniżej którego Pepco przestaje bić WIG20, to 42,58 zł — bufor 0,33%. Drugą i ostatnią nogą powyżej indeksu jest LPP (24 640,00 zł, +0,49% d/d, relatywnie +0,28 p.p., poziom graniczny ok. 24 572 zł, bufor 0,27%). Wynik rachunku w zamykającej okno sesji D+5 jest więc wrażliwy na kilkugroszowe ruchy tych dwóch spółek",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania PEPCO 42,72 zł (-1,50%) i LPP 24 640,00 zł (+0,49%, +120,00 zł), odczyt 24.09.2026 17:03–17:04"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-24",
+      "dn": 4,
+      "opis": "REKOMENDACJE: trzeci dzień z rzędu bez nowej, datowanej rekomendacji dla którejkolwiek z dziesięciu spółek koszykowych — wyzwalacz RECOMMENDATION bez podstawy. Najświeższe pozycje na liście to DIGITANET („sprzedaj”, DM BOŚ, cena docelowa 326,00 zł) i UNIMOT („sprzedaj”, BM Pekao, 142,10 zł), obie z 23.09 i obie spoza koszyków. Ostatnie potwierdzone sygnały dla koszyków: Citi „kupuj” dla ALIOR z 21.09 (zaksięgowany jako REDUCE, cena docelowa 146,80 zł) i „sprzedaj” Noble Securities dla BUDIMEX z 17-18.09 (zgodny z tezą SHORT). REJESTR KRÓTKIEJ SPRZEDAŻY KNF: piąty dzień bez dostępu — rss.knf.gov.pl odpowiada HTTP 302 bez treści, knf.gov.pl blokowany przez politykę sieciową (CONNECT 403). Wyzwalacz KNF_SHORT pozostaje martwy w całym oknie W6",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — lista rekomendacji maklerskich, odczyt 25.09.2026; rss.knf.gov.pl HTTP 302 i knf.gov.pl CONNECT 403, próby 25.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "Kalendarz D+5 (OSTATNIA SESJA OKNA W6). CZĘŚĆ KRAJOWA POTWIERDZONA: 11:00 konferencja wynikowa Wittchena za II kw. i I półrocze 2026 (spotkanie prasowe online) — jedyna pozycja krajowa w kalendarzu, spółka spoza koszyków i spoza WIG20. BRAK publikacji okresowej spółki koszykowej. CZĘŚĆ ZAGRANICZNA NIEPOTWIERDZONA w datowanym źródle z allowlisty sieci (kalendarz ISBnews niedostępny: biznes24.pl zablokowany przez egress proxy, pl.investing.com poza allowlistą) — kod KALENDARZ_NIEPOTWIERDZONY: 8:00 Niemcy GfK na X (konsensus -27,4), 10:00 strefa euro podaż pieniądza M3 za VIII (+3,5% r/r), 14:30 USA wstępne zamówienia na dobra trwałego użytku za VIII (-0,3% m/m), 16:00 USA oczekiwania inflacyjne Uniwersytetu Michigan (krótkoterminowe 4,6%, długoterminowe 3,4%). Tygodniowy przegląd bankier.pl z 18.09 potwierdza, że punkty ciężkości tygodnia wypadły w poniedziałek/wtorek (dane GUS) i w czwartek (decyzje SNB/Riksbank/Norges, Ifo), a piątek jest bez kluczowej publikacji. STATUS WYZWALACZA TEZY SHORT NA ORLENIE: ustawa o windfall tax po Senacie (24.09) jest u prezydenta; terminu podpisu, weta lub wniosku do TK nie da się potwierdzić datowanym źródłem",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl/PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-09-25”, publ. 25.09.2026; bankier.pl „Tym będą żyły rynki: Wgląd do portfeli Polaków, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026"
     }
   ],
   "data_quality": [
