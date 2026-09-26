@@ -840,6 +840,86 @@
       "opis": "Kalendarz D+5 (OSTATNIA SESJA OKNA W6). CZĘŚĆ KRAJOWA POTWIERDZONA: 11:00 konferencja wynikowa Wittchena za II kw. i I półrocze 2026 (spotkanie prasowe online) — jedyna pozycja krajowa w kalendarzu, spółka spoza koszyków i spoza WIG20. BRAK publikacji okresowej spółki koszykowej. CZĘŚĆ ZAGRANICZNA NIEPOTWIERDZONA w datowanym źródle z allowlisty sieci (kalendarz ISBnews niedostępny: biznes24.pl zablokowany przez egress proxy, pl.investing.com poza allowlistą) — kod KALENDARZ_NIEPOTWIERDZONY: 8:00 Niemcy GfK na X (konsensus -27,4), 10:00 strefa euro podaż pieniądza M3 za VIII (+3,5% r/r), 14:30 USA wstępne zamówienia na dobra trwałego użytku za VIII (-0,3% m/m), 16:00 USA oczekiwania inflacyjne Uniwersytetu Michigan (krótkoterminowe 4,6%, długoterminowe 3,4%). Tygodniowy przegląd bankier.pl z 18.09 potwierdza, że punkty ciężkości tygodnia wypadły w poniedziałek/wtorek (dane GUS) i w czwartek (decyzje SNB/Riksbank/Norges, Ifo), a piątek jest bez kluczowej publikacji. STATUS WYZWALACZA TEZY SHORT NA ORLENIE: ustawa o windfall tax po Senacie (24.09) jest u prezydenta; terminu podpisu, weta lub wniosku do TK nie da się potwierdzić datowanym źródłem",
       "wklad_pkt": null,
       "zrodlo": "strefainwestorow.pl/PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-09-25”, publ. 25.09.2026; bankier.pl „Tym będą żyły rynki: Wgląd do portfeli Polaków, kondycja budowlanki i frank szwajcarski”, publ. 18.09.2026"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "ZAMKNIĘCIE OKNA W6. WIG20 4180,26 pkt (-0,30% d/d), +1,40% od D0. WIG -0,24% do 157173,62, mWIG40 -0,12% do 10525,11, sWIG80 +0,11% do 30756,19; obrót 1,7 mld zł, w tym 1,38 mld zł na spółkach WIG20. Najsłabsze indeksy sektorowe: WIG-ENERG -1,63%, WIG-GORNIC -1,54%, WIG-BUDOW -1,00%. WYNIK RACHUNKU (średnia LONG +1,28% − indeks +1,40%) = -0,12 p.p. — najlepszy odczyt całego okna, poprawa z -0,75 p.p. po D+4. Spread papierowy -0,41 p.p., rozjazd -0,29 p.p. (pierwszy raz w oknie PONIŻEJ progu 0,5 p.p.). Wariant zarządzany (mBank CLOSE @1516,00, Alior REDUCE @139,75 w połowie wagi) daje spread -0,76 p.p., czyli obie reakcje razem KOSZTOWAŁY 0,35 p.p.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/strefainwestorow.pl „WIG20 na zamknięciu wyniósł 4180,26 pkt (-0,30%)”, 25.09.2026; bankier.pl — podsumowanie sesji, 25.09.2026 17:12; scripts/metryki.py rozlicz --week 2026-W6 --d0 2026-09-18 --d5 2026-09-25, sekcja KOSZYKI"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "Zamknięcie 43,50 zł (+1,83% d/d) — NAJWIĘKSZY WZROST W WIG20 w sesji domykającej okno. Od D0 +3,89%, relatywnie +2,49 p.p. — najlepsza noga koszyka LONG i główny powód, dla którego wynik rachunku poprawił się z -0,75 p.p. do -0,12 p.p. Ostrzeżenie z D+4 (poziom 42,58 zł, poniżej którego Pepco przestaje bić indeks, bufor 0,33%) nie zmaterializowało się — kurs odbił zamiast spaść. ZDARZENIE POZA OKNEM: 29.09 (dn 7) spółka publikuje wybrane wyniki operacyjne za IV kw. roku obrotowego 2025/2026 — twardy katalizator do rankingu W7.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — podsumowanie sesji 25.09.2026 17:12 (Pepco +1,83%, największy wzrost w WIG20); bankier.pl — kalendarium spółki PEPCO, pozycja z datą 29.09.2026"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "Zamknięcie 1495,50 zł (-0,63% d/d), +6,86% od D0 — trzeci spadek z rzędu i drugi dzień wyraźnie pod twardym progiem 8% (1511,46 zł). ROZLICZENIE SZCZEBLA CLOSE: pozycja zamknięta 22.09 przy 1516,00 zł księguje -8,32%, trzymanie do końca okna dałoby -6,86%, więc reakcja CLOSE KOSZTOWAŁA 1,46 p.p. na tej nodze (po D+4 szacowano 0,78 p.p.). Próg 8% został przebity na jedną sesję i natychmiast oddany — materiał do oceny, czy twardy szczebel nie reaguje na szum.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania MBANK 1495,50 zł (-0,63%), odczyt 25.09.2026 17:00; kurs reakcji 1516,00 zł z signals.json"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "Zamknięcie 139,05 zł (+0,72% d/d), +6,02% od D0 — okno zamknięte w przedziale miękkim 4-8%, BEZ awansu REDUCE -> CLOSE na żadnej sesji (do progu 141,64 zł zabrakło 1,86%). ROZLICZENIE SZCZEBLA REDUCE: cięcie wykonano przy 139,75 zł, okno zamknęło się niżej, więc połowa wagi zarobiła 0,50% — reakcja KOSZTOWAŁA 0,28 p.p. na tej nodze. Łącznie z mBankiem protokół reakcji odjął w tym oknie 0,35 p.p.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania ALIOR 139,05 zł (+0,72%), odczyt 25.09.2026 17:00; kurs reakcji 139,75 zł z signals.json"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "Zamknięcie 330,50 zł (-1,59% d/d), -1,94% od D0 — druga sesja z rzędu poniżej kursu D0 i NAJLEPSZA noga papierowego koszyka SHORT w ujęciu relatywnym: zwrot pozycji +1,94%, relatywnie +3,34 p.p. Spadek wpisał się w przecenę sektora (WIG-GORNIC -1,54%). Kierunku notowań miedzi w sesji 25.09: b.d. — brak datowanej depeszy, zgodnie z docs/metoda.md sekcja 9.3 żadna deklaracja o miedzi nie może się na tym oprzeć.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — notowania KGHM 330,50 zł (-1,59%), odczyt 25.09.2026 17:04; PAP/strefainwestorow.pl — tabela indeksów sektorowych, 25.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "Zamknięcie 148,84 zł (-0,89% d/d), -1,52% od D0, relatywnie +2,92 p.p. — druga najlepsza noga papierowego koszyka SHORT. WYZWALACZ TEZY NIEROZSTRZYGNIĘTY NA KONIEC OKNA: ustawa o windfall tax (60% nadwyżki zysku dla producentów paliw, 50% dla sprzedawców bez produkcji, marża referencyjna 2025 +20% przy minimum 2%, okres III.2026-III.2027) przeszła Senat 24.09 bez poprawek (59-31) i leży u prezydenta NIEPODPISANA. Terminu podpisu, weta ani wniosku do TK nie potwierdza żadne datowane źródło — kod KALENDARZ_NIEPOTWIERDZONY. Okno W6 zamknęło się z tezą potwierdzoną legislacyjnie, ale bez rozstrzygnięcia.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Drugie podejście do windfall tax. Senat odrzuca poprawki PiS”, 24.09.2026 10:04 (aktual. 11:16); bankier.pl — notowania PKNORLEN 148,84 zł, odczyt 25.09.2026 17:02"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-09-25",
+      "dn": 6,
+      "opis": "ESPI po sesji (25.09, 19:38): odrzucenie oferty Budimeksu w postępowaniu na modernizację Oczyszczalni Ścieków „Czajka” w zakresie gospodarki osadowej (budowa zespołu Wydzielonych Komór Fermentacyjnych wraz z infrastrukturą). Zdarzenie ZGODNE z tezą SHORT (utrata potencjalnego portfela), więc żadnej reakcji nie uruchamia — protokół reaguje wyłącznie na zdarzenia przeciw tezie. Komunikat po 17:00, więc rynkowo należy do sesji 28.09: dn=6, czyli POZA oknem wyniku D+1..D+5 — co najwyżej połowa wkładu i dopiero w rankingu W7. Sam kurs zamknął okno na 692,00 zł (-1,79% d/d), -0,97% od D0, relatywnie +2,37 p.p.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — komunikaty spółek ESPI/EBI, wpis BUDIMEX 25.09.2026 19:38; bankier.pl — notowania BUDIMEX 692,00 zł (-1,79%), odczyt 25.09.2026 17:00"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-25",
+      "dn": 5,
+      "opis": "SKAN TAKTYCZNY (spółka spoza koszyków i spoza listy tactical): Tauron największym spadkiem w WIG20 (-1,87%) po decyzji Fitch — rating BBB- POTWIERDZONY, ale perspektywa zmieniona z pozytywnej na stabilną; uzasadnienie to wskaźnik dług netto/FFO utrzymujący się w przedziale wrażliwości 3,5x-4,5x. To NIE jest szokowo zły wynik ani upadek tezy, więc wyzwalacz taktyczny SELL nie powstaje; dodatkowo pozycja krótka na akcji jest na rachunku niewykonalna. Lista tactical zostaje pusta. Kontekst: czwarta spadkowa sesja z rzędu PGE (-1,51%), WIG-ENERG -1,63%.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Fitch zmienił perspektywę ratingową Tauronu do stabilnej z pozytywnej”, 25.09.2026; PAP „TAURON PE SA (38/2026) Potwierdzenie ocen ratingowych przez Fitch Ratings”, 25.09.2026; bankier.pl — podsumowanie sesji 25.09.2026 17:12"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-26",
+      "dn": 6,
+      "opis": "SOBOTA — SESJI NIE MA, żaden wyzwalacz kursowy nie mógł się uruchomić; status AKTUALNA, exclude i tactical bez zmian. KALENDARZ TYGODNIA 28.09-2.10 z datowanego przeglądu: pon. 28.09 protokół BoJ 1:50, produkcja przemysłowa Indii 14:00, Dallas Fed 16:30; wt. 29.09 WYNIKI OPERACYJNE PEPCO za IV kw. r.obr. 2025/2026, decyzja banku Australii 6:30, wstępny HICP Hiszpanii i WWK Polska 9:00, koniunktury KE 11:00, Conference Board i JOLTS 16:00; śr. 30.09 WSTĘPNY CPI GUS ZA WRZESIEŃ 9:30, PMI Chin nocą, inflacja Francji 8:45 / Włoch 11:00 / Niemiec 14:00, deflator PCE USA 14:30, Chicago PMI 15:45, EIA 16:30, ogłoszenie przymusowego wykupu Energi przez Orlen; czw. 1.10 PMI od 9:00, finalny PMI strefy euro i Bailey 10:00, bezrobocie BAEL 11:00, wnioski o zasiłek 14:30, ISM przemysł 16:00, wystąpienie Lagarde; pt. 2.10 PAYROLLS USA, wstępny HICP strefy euro 11:00, zamówienia w przemyśle USA. POSIEDZENIE RPP W TYM TYGODNIU: b.d. — datowany przegląd bankier.pl z 25.09 13:38 NIE wymienia ani posiedzenia RPP, ani konferencji prezesa NBP; podsumowanie wyszukiwarki sugerowało czwartkową decyzję, ale nie potwierdza go żadne datowane źródło z allowlisty. Żadna deklaracja makro w rankingu W7 nie może się na tym oprzeć.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026 13:38 (pobrany bezpośrednio); bankier.pl — kalendarium spółki PEPCO"
+    },
+    {
+      "ticker": "WIG20",
+      "data": "2026-09-26",
+      "dn": 6,
+      "opis": "BILANS WYZWALACZY I ŹRÓDEŁ NA KONIEC OKNA W6. RECOMMENDATION: czwarty dzień bez nowej datowanej rekomendacji dla spółek koszykowych; w całym oknie padła DOKŁADNIE JEDNA (Citi „kupuj” dla ALIOR, 21.09, cena docelowa 146,80 zł) i to ona współtworzyła REDUCE. Najświeższe pozycje listy to UNIMOT (BM Pekao, „sprzedaj”, 142,10 zł) i DIGITANET (DM BOŚ, „sprzedaj”, 326,00 zł), obie z 23.09 i spoza koszyków. KNF_SHORT: szósty dzień bez dostępu — rss.knf.gov.pl zwraca HTTP 404 (wcześniej 302), knf.gov.pl blokowany przez politykę sieciową (CONNECT 403); wyzwalacz był w CAŁYM oknie W6 martwy, więc wszystkie reakcje okna opierały się na kursie i jednej rekomendacji. FMP: chart „requires a higher plan”, quote „requires the Premium, Ultimate, or Enterprise plan” — konektor w sesji, blokuje abonament (jedyna pozycja możliwa do odblokowania przez właściciela). Yahoo: HTTP 429 na wszystkich 21 symbolach, kursy z rezerwy bankier.pl, walidacja D0 wobec cache (zgodność co do grosza).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — lista rekomendacji maklerskich, odczyt 26.09.2026; rss.knf.gov.pl HTTP 404 i knf.gov.pl CONNECT 403, próby 26.09.2026; mcp__FMP__chart i mcp__FMP__quote — ACCESS DENIED, 26.09.2026; scripts/kursy.py — bieg 26.09.2026 08:12"
     }
   ],
   "data_quality": [
