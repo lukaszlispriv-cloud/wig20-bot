@@ -1,20 +1,20 @@
 {
-  "version": "2026-W6",
-  "generated": "2026-09-19",
+  "version": "2026-W7",
+  "generated": "2026-09-26",
   "status": "AKTUALNA",
   "long": [
+    "ERSTEPL",
+    "ALIOR",
     "LPP",
-    "ALLEGRO",
-    "KETY",
-    "PZU",
-    "PEPCO"
+    "CDPROJEKT",
+    "PKOBP"
   ],
   "short": [
-    "ALIOR",
-    "KGHM",
     "PKNORLEN",
     "BUDIMEX",
-    "MBANK"
+    "KGHM",
+    "TAURONPE",
+    "DINOPL"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -39,41 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "MBANK",
-      "action": "CLOSE",
-      "date": "2026-09-22",
-      "reason": "Kurs mBanku wzrosl z 1399,50 zl (D0, 18.09) do 1516,00 zl na zamknieciu 21.09, tj. +8,32% od D0 PRZECIW tezie SHORT — powyzej twardego progu 8%. Napedem byl rajd sektora: WIG-BANKI +4,34% do historycznego szczytu, mBank najmocniejszy w calym indeksie (+8,3%). Filar tezy krotkiej (przecena bankow po obnizce ratingu Moody's do A3) upadl — rynek potraktowal obnizke jako zdyskontowana. Zrodlo: bankier.pl notowania MBANK, odczyt 21.09.2026 17:02; strefainwestorow.pl/PAP 'DZIEN NA GPW: Indeksy na nowych szczytach', 21.09.2026.",
-      "price_before": 1516.0,
-      "move_from_d0_pct": 8.32,
-      "trigger": "PRICE_8"
-    },
-    {
-      "ticker": "ALIOR",
-      "action": "REDUCE",
-      "date": "2026-09-22",
-      "reason": "Kurs Aliora wzrosl z 131,15 zl (D0) do 139,75 zl na zamknieciu 21.09, tj. +6,56% od D0 PRZECIW tezie SHORT — w przedziale 4-8%, czyli miekki wyzwalacz. Drugi, niezalezny wyzwalacz tego samego szczebla: Citi (Andrzej Powierza) podniosl 21.09 o 07:08 rekomendacje do 'kupuj' z 'neutralnie', cena docelowa 146,80 zl (ok. +12% od kursu odniesienia) — swieza rekomendacja przeciw tezie od liczacego sie DM. Zrodlo: bankier.pl notowania ALIOR, odczyt 21.09.2026 17:00; bankier.pl 'Citi podniosl rekomendacje Alior Banku do kupuj', 21.09.2026 07:08 (PAP Biznes/Bloomberg).",
-      "price_before": 139.75,
-      "move_from_d0_pct": 6.56,
-      "trigger": "PRICE_4_8"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-09-26",
   "d0": {
-    "date": "2026-09-18",
-    "wig20": 4122.52,
+    "date": "2026-09-25",
+    "wig20": 4180.26,
     "prices": {
-      "LPP": 24160.0,
-      "ALLEGRO": 49.8,
-      "KETY": 1269.0,
-      "PZU": 72.44,
-      "PEPCO": 41.87,
-      "ALIOR": 131.15,
-      "KGHM": 337.05,
-      "PKNORLEN": 151.14,
-      "BUDIMEX": 698.8,
-      "MBANK": 1399.5
+      "ERSTEPL": 807.6,
+      "ALIOR": 139.05,
+      "LPP": 24900.0,
+      "CDPROJEKT": 244.6,
+      "PKOBP": 124.54,
+      "PKNORLEN": 148.84,
+      "BUDIMEX": 692.0,
+      "KGHM": 330.5,
+      "TAURONPE": 8.73,
+      "DINOPL": 34.44
     }
   },
   "history": [
@@ -166,6 +147,29 @@
         "FMP_PLAN_BLOKADA",
         "KNF_SHORT_NIEDOSTEPNY",
         "BRAK_20S",
+        "DYWIDENDA_KOREKTA_PZU",
+        "KALENDARZ_NIEPOTWIERDZONY"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)"
+    },
+    {
+      "week": "2026-W6",
+      "long_vs_index_pp": -0.12,
+      "long_abs_pct": 1.28,
+      "spread_pp": -0.41,
+      "rozjazd_pp": -0.29,
+      "hit_top": "2/5",
+      "hit_bottom": "3/5",
+      "tactical_pp": null,
+      "managed_pp": -1.0,
+      "reaction_pp": -0.59,
+      "base_rate": 0.45,
+      "spearman": 0.008,
+      "brier": 0.2481,
+      "data_quality": [
+        "FMP_PLAN_BLOKADA",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
         "DYWIDENDA_KOREKTA_PZU",
         "KALENDARZ_NIEPOTWIERDZONY"
       ],

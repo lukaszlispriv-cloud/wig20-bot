@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raport tygodniowy WIG20 — 2026-W7</title>
+<style>
+  :root{
+    --bg:#F6F7F4; --navy:#10243E; --green:#0E7C4A; --red:#C4372E; --amber:#B07B22;
+    --ink:#1C2530; --muted:#5B6774; --card:#FFFFFF; --line:#E3E6E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;font-size:16px}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
+  header{background:var(--navy);color:#fff;padding:22px 14px 26px;}
+  header .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+  header h1{font-size:1.35rem;letter-spacing:.4px}
+  header .sub{font-size:.8rem;opacity:.75;margin-top:2px}
+  .wigbox{text-align:right}
+  .wigbox .val{font-size:1.5rem;font-weight:700}
+  .wigbox .chg{font-size:.85rem;color:#B8E0C6}
+  .stamp{display:inline-block;transform:rotate(-2.5deg);border:3px solid var(--green);color:var(--green);
+    padding:6px 16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;border-radius:4px;background:rgba(14,124,74,.06)}
+  .stampline{margin:22px 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .stampnote{font-size:.8rem;color:var(--muted)}
+  h2{font-size:1.02rem;margin:26px 0 10px;color:var(--navy);text-transform:uppercase;letter-spacing:.8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+  ul.changes{list-style:none}
+  ul.changes li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  ul.changes li:last-child{border-bottom:none}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;color:#fff;background:var(--navy);margin-right:7px;vertical-align:1px}
+  .tag.out{background:#7A4A9E}.tag.in{background:#0E7C4A}.tag.espi{background:#3C5A80}.tag.rekom{background:#B07B22}.tag.makro{background:#3E7A6E}.tag.rynek{background:#5B6774}.tag.takt{background:#0E7C4A}.tag.reakcja{background:#C4372E}
+  .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:.88rem}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:right;padding:10px 10px;border-bottom:2px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:600}
+  td.left,th.left{text-align:left}
+  .dir{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:3px}
+  .dir.long{color:var(--green);border:1px solid var(--green)}
+  .dir.short{color:var(--red);border:1px solid var(--red)}
+  .up{color:var(--green);font-weight:600}.down{color:var(--red);font-weight:600}.na{color:var(--muted)}
+  .hit{font-weight:700}.hit.y{color:var(--green)}.hit.n{color:var(--red)}
+  .badge-red{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.5px;padding:2px 6px;border-radius:3px;color:#fff;background:#B07B22;margin-left:6px;vertical-align:1px}
+  .note{font-size:.76rem;color:var(--muted);margin:4px 2px 14px}
+  .result{background:var(--navy);color:#fff;border-radius:10px;padding:16px;margin:6px 0 4px}
+  .result .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.9px;opacity:.75}
+  .result .big{font-size:2.1rem;font-weight:800;color:#B8E0C6;line-height:1.15}
+  .result .row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .result .side{border-left:1px solid #3A4E66;padding-left:18px}
+  .result .side .val{font-size:1.05rem;font-weight:700;color:#DDE3EA}
+  .result .side .cap{font-size:.7rem;opacity:.7;max-width:230px;line-height:1.35;margin-top:3px}
+  .kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  .kpi .box{flex:1 1 130px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .kpi .box .l{font-size:.68rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+  .kpi .box .v{font-size:1.15rem;font-weight:800;margin-top:2px}
+  .kpi .box .s{font-size:.7rem;color:var(--muted)}
+  .decl{list-style:none}
+  .decl li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  .decl li:last-child{border-bottom:none}
+  .decl b{color:var(--navy)}
+  .warn{border-left:4px solid var(--amber);background:#FBF6EC}
+  footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+  .src{font-size:.72rem;color:var(--muted)}
+  code{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:.85em}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="inner">
+    <div>
+      <h1>Raport tygodniowy WIG20</h1>
+      <div class="sub">sobota, 26 września 2026 · rozliczenie tygodnia 2026-W6 (pełne okno D0 18.09 → D+5 25.09) · nowa prognoza 2026-W7, D0 = 25.09.2026</div>
+    </div>
+    <div class="wigbox">
+      <div class="val mono">4 180,26</div>
+      <div class="chg mono">+1,40% od D0 (18.09 → 25.09) · −0,30% w piątek</div>
+      <div class="sub">WIG20 — zamknięcie 25.09 (bankier.pl 17:15; zgodne z depeszą PAP „WIG20 na zamknięciu wyniósł 4180,26 pkt”)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stampline">
+    <span class="stamp" style="border-color:#C4372E;color:#C4372E;background:rgba(196,55,46,.06)">Rachunek −0,12 p.p.</span>
+    <span class="stampnote">Tydzień 2026-W6 rozliczony w pełnym oknie pięciu sesji. <b>Wynik rachunku (średnia LONG − WIG20): −0,12 p.p. brutto</b> — strata, ale najmniejsza od W4 (W2 −2,02, W3 −1,61, W4 +2,70, W5 −2,54). Koszyk LONG zarobił <b>+1,28%</b>, tylko że WIG20 urósł o +1,40%, więc hedge indeksowy zabrał całą zwyżkę i jeszcze drobinę więcej. To drugie zamknięte okno metody v1.1.</span>
+  </div>
+
+  <h2>Wynik rozliczonego tygodnia 2026-W6</h2>
+  <div class="result">
+    <div class="row">
+      <div>
+        <div class="lbl">Wynik rachunku (średnia LONG − WIG20), brutto</div>
+        <div class="big mono" style="color:#F2A79C">−0,12 p.p.</div>
+      </div>
+      <div class="side">
+        <div class="lbl">LONG bez hedge'u</div>
+        <div class="val mono">+1,28%</div>
+        <div class="cap">wariant HEDGE_RATIO=0 — sama średnia koszyka LONG</div>
+      </div>
+      <div class="side">
+        <div class="lbl">Spread LONG−SHORT</div>
+        <div class="val mono">−0,41 p.p.</div>
+        <div class="cap">papierowy (miara selekcji, nie wynik rachunku) · rozjazd papier − rachunek: −0,29 p.p.</div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Rachunek Capital.com kupuje 5 spółek LONG i sprzedaje kontrakt na WIG20 (<code>HEDGE_MODE=index</code>); koszyka SHORT nie handluje, bo rachunek nie pozwala otwierać pozycji krótkich na CFD na akcje — spread papierowy jest z definicji nieosiągalny i nie jest celem ani punktem odniesienia. Rozjazd wynosi −0,29 p.p., czyli <b>nie przekracza progu 0,5 p.p.</b>, ale podajemy go dla porządku: jest ujemny, więc hipotetyczna noga krótka pogłębiłaby stratę (koszyk SHORT wzrósł średnio o +1,69%, mocniej niż LONG). To najmniejszy rozjazd w całej historii — obie strony selekcji wypadły w tym tygodniu niemal identycznie, czyli ranking praktycznie nie różnicował spółek. Wynik −0,12 p.p. jest <b>brutto</b>: obniżają go dodatkowo spread bid/ask przy wejściu i wyjściu każdej nogi (przy CLOSE na mBANKU i REDUCE na ALIORZE oraz korekcie wielkości — dwa razy, bo Capital.com nie ma częściowego zamknięcia), punkty swapowe za każdą dobę utrzymania pięciu pozycji akcyjnych i krótkiego kontraktu oraz luka realizacji: raport liczy od zamknięcia piątku, a <code>/run</code> odpala się o 08:01 UTC (10:01 czasu warszawskiego), czyli godzinę po otwarciu poniedziałkowej sesji, co historycznie daje ok. ±1% na nogę. Przy wyniku brutto −0,12 p.p. <b>koszty transakcyjne same wystarczą, żeby tydzień był realnie ujemny</b> — nie należy czytać tej liczby jako „prawie zero”. Reguła <code>HEDGE_RATIO</code> bez zmian: w wersji v1.1 zamknięte są 2 z 12 okien potrzebnych do jakiejkolwiek decyzji (<code>docs/metoda.md</code> §10), a metryk z v1.0 i v1.1 nie wolno uśredniać.</p>
+
+  <div class="kpi">
+    <div class="box"><div class="l">baza tygodnia ȳ</div><div class="v mono">0,45</div><div class="s">9 z 20 spółek pobiło WIG20</div></div>
+    <div class="box"><div class="l">hit TOP5</div><div class="v mono">2/5</div><div class="s">losowo 5·ȳ = 2,25 · Wilson 95%: 12–77%</div></div>
+    <div class="box"><div class="l">hit BOTTOM5</div><div class="v mono up">3/5</div><div class="s">losowo 5·(1−ȳ) = 2,75 · Wilson 95%: 23–88%</div></div>
+    <div class="box"><div class="l">Brier modelu</div><div class="v mono">0,2481</div><div class="s">baseline 0,50 (ex ante): 0,2500 — model minimalnie lepszy · ȳ(1−ȳ) ex post: 0,2475 — model minimalnie gorszy</div></div>
+    <div class="box"><div class="l">Spearman</div><div class="v mono">+0,008</div><div class="s">ranga publikowana vs ranga alfy — zero informacji porządkującej</div></div>
+    <div class="box"><div class="l">managed_pp</div><div class="v mono down">−1,00</div><div class="s">spread zarządzany (papierowy)</div></div>
+    <div class="box"><div class="l">reaction_pp</div><div class="v mono down">−0,59</div><div class="s">wkład reakcji dziennych · Σ historia −0,57</div></div>
+    <div class="box"><div class="l">tactical_pp</div><div class="v mono na">brak</div><div class="s">żadnej pozycji taktycznej w oknie · Σ historia +5,35</div></div>
+  </div>
+  <p class="note">Hit rate'y trzeba czytać razem z bazą tygodnia i przedziałem Wilsona: 2/5 przy oczekiwaniu losowym 2,25 i 3/5 przy 2,75 to <b>dokładnie tyle, ile dałoby losowanie</b>. Oba przedziały obejmują 50%, więc ten tydzień niczego nie dowodzi w żadną stronę. Spearman +0,008 jest tu istotniejszy od hit rate'ów: opublikowana kolejność 20 spółek nie miała żadnego związku z faktyczną kolejnością alfy. Brier 0,2481 bije baseline 0,50 o 0,0019 — to szum, nie przewaga; wobec baseline ex post ȳ(1−ȳ) = 0,2475 model jest o włos gorszy, i tak trzeba to nazwać.</p>
+
+  <h2>Benchmark naiwnego momentum — test wartości dodanej modelu</h2>
+  <div class="card warn">
+    <p style="font-size:.92rem">Ten sam tydzień rozegrany koszykami zbudowanymi wyłącznie z rel5 na D0 (TOP5 = pięć najwyższych, BOTTOM5 = pięć najniższych, to samo uniwersum 20 spółek) dał <b class="mono">+0,58 p.p.</b> na wyniku rachunku i <b class="mono">+1,29 p.p.</b> na spreadzie. <b>Przewaga modelu nad naiwnym momentum: −0,70 p.p. na wyniku rachunku i −1,70 p.p. na spreadzie.</b> Koszyk momentum LONG to LPP, ALLEGRO, KĘTY, PEPCO, MODIVO; momentum SHORT — KGHM, BUDIMEX, mBANK, PZU, ORLEN. Podajemy to tak samo, jak podalibyśmy wynik korzystny: <b>jednolinijkowy sort po rel5 zarobiłby w tym tygodniu +0,58 p.p., a pełny model stracił 0,12 p.p.</b> Różnica powstała na jednej pozycji — naiwne momentum miało MODIVO (alfa +3,12 p.p.) tam, gdzie model postawił PZU (−0,38 p.p.) — ale to nie zmienia wniosku. Trzeci pomiar w historii: +0,02 p.p. (04.09→11.09), −0,10 p.p. (11.09→18.09), −0,70 p.p. (18.09→25.09). Trzy punkty to nie trend, jednak wszystkie trzy leżą na albo poniżej zera i <b>żaden nie pokazuje, żeby sześć uznaniowych kategorii dodawało cokolwiek ponad mechaniczne momentum</b>.</p>
+    <p class="note" style="margin-bottom:0">KALIBRACJA WIELKOŚCI ALFY (diagnostyka spoza zamrożonej metody, mapa <code>alfa_prog = 0,08 × (wynik − 50)</code>): MAE prognozy 3,22 p.p. wobec MAE prognozy zerowej 3,26 p.p., korelacja −0,054. MAE bije prognozę zerową o 0,04 p.p., a korelacja jest bliska zera z niewłaściwym znakiem — wynik nie przewiduje wielkości alfy, a w tym oknie nie przewidział też jej znaku.</p>
+  </div>
+  <h2>Najważniejsze zmiany tygodnia</h2>
+  <ul class="changes card">
+    <li><span class="tag out">WYPADA</span><b>ALLEGRO, KĘTY, PZU, PEPCO — cztery z pięciu nóg LONG opuszczają pierwszą piątkę; zostaje tylko LPP.</b> KĘTY spadły z 3. na 14. miejsce (rel5 −2,50 p.p., w piątek jedna z najsłabszych spółek w WIG20 po oddaniu całej zwyżki z przejęcia grupy Metra), PZU z 4. na 11. (obniżka rekomendacji Wood &amp; Company z 24.09), ALLEGRO z 2. na 8. (momentum zawróciło), PEPCO z 5. na 10. Ekspozycja konsumencka, która w W6 stanowiła cztery piąte koszyka, wypada niemal w całości.</li>
+    <li><span class="tag in">WCHODZI</span><b>ERSTE PL, ALIOR, CD PROJEKT, PKO BP — trzy z pięciu nóg LONG to teraz banki.</b> Napędem jest jeden tydzień: WIG-BANKI zyskał ponad 5,2% i ustanowił rekord, a WIG pierwszy raz w historii przebił 130 tys. pkt. ERSTE PL ma najwyższe momentum w uniwersum w OBU składnikach (rel5 +6,42, rel20 +7,53 p.p.). <b>ALIOR przechodzi z pozycji 16 (koszyk SHORT, REDUCE 22.09) na pozycję 2</b> — pełne odwrócenie w jednym oknie, wyłącznie siłą mechanicznego momentum; §6 metody wymaga oceny od zera po twardym zdarzeniu i to właśnie widać, ale trzeba to nazwać po imieniu: model kupuje ruch, który się już odbył.</li>
+    <li><span class="tag rynek">KONSTRUKCJA</span><b>Ostrzeżenie o hedge'u: banki to 36,25% WIG20, a trzy z nich są w koszyku LONG.</b> Wagi w indeksie na 25.09: PKO BP 15,67%, PEKAO 8,80%, ERSTE PL 6,07%, mBANK 3,51%, ALIOR 2,20%. Rachunek kupuje ERSTE PL, ALIOR i PKO BP po 20% koszyka i jednocześnie sprzedaje kontrakt na WIG20, w którym te same trzy spółki mają razem 23,94%. <b>Netto zakład na banki jest więc bliski zeru</b> — szczególnie na PKO BP, gdzie 20% długiej nogi spotyka 15,67% krótkiej ekspozycji indeksowej. Jeżeli teza „banki pobiją rynek” jest słuszna, ten koszyk zarobi na niej znacznie mniej, niż sugeruje ranking; jeżeli jest błędna, hedge też ją częściowo osłoni.</li>
+    <li><span class="tag reakcja">REAKCJE</span><b>Wariant zarządzany gorszy od pasywnego: −0,59 p.p.</b> Oba wyzwalacze z 22.09 wypadły niekorzystnie, bo kurs zawrócił po dniu reakcji. CLOSE na mBANKU zamknął pozycję krótką przy +9,07% od D0, a tydzień skończył się na +6,86% — reakcja utrwaliła stratę o 2,21 p.p. większą, niż dałoby przetrzymanie (wkład −0,44 p.p. na średnią koszyka). REDUCE na ALIORZE (waga 50% od 22.09) dał −0,15 p.p., bo i tu kurs cofnął się ze +7,40% do +6,02%. Spread zarządzany: −1,00 p.p. zamiast −0,41 p.p. Skumulowane <code>reaction_pp</code> z całej historii: <b>−0,57 p.p.</b> (W1 0,00, W2 +0,17, W3 −0,17, W4 −0,45, W5 +0,47, W6 −0,59). <b>Po sześciu tygodniach reakcje dzienne mają ujemny bilans</b> — twarde progi cenowe wycinają pozycje w chwilach lokalnego ekstremum. To obserwacja, nie decyzja: reguły reakcji zostają bez zmian, bo §10 metody zabrania tuningu przed 12 oknami.</li>
+    <li><span class="tag takt">TAKTYCZNA</span><b>Brak pozycji taktycznych w oknie</b> — <code>tactical</code> było puste przez cały tydzień, więc <code>tactical_pp</code> = brak. Σ z historii pozostaje +5,35 p.p. (W3 +4,11, W5 +1,24).</li>
+    <li><span class="tag rynek">RYNEK</span><b>Rekordowy tydzień, ale nie dla wszystkich:</b> WIG20 +1,40% do 4 180,26 pkt, WIG powyżej 130 tys. pkt pierwszy raz w historii, WIG-BANKI +5,2% i rekord (kapitalizacja PKO BP 154 mld zł, PEKAO 81 mld zł, ERSTE PL 74,3 mld zł; sektor bankowy +50% od początku roku). Po drugiej stronie energetyka: PGE −6,53% w oknie, TAURON −4,44 p.p. relatywnie, a przecena zaczęła się po ujawnieniu WACC dystrybucji na 8,5% na 2026 wobec ok. 12% w tym roku i zapowiedzi CIT 19% → 30% od 2027 dla największych spółek energetycznych i paliwowych. Piątek sam w sobie był spokojny: WIG20 −0,30%, najsłabsze ORLEN, TAURON i KĘTY.</li>
+    <li><span class="tag rekom">REKOM.</span><b>Cztery datowane sygnały DM w tygodniu, trzy negatywne.</b> Citi podniosło 21.09 ALIOR do „kupuj” (cel 146,80 zł), a 24.09 Wood &amp; Company obniżyło ALIOR i PEKAO z „kupuj” do „trzymaj” oraz obniżyło rekomendację PZU. Na ALIORZE dwa przeciwstawne sygnały zniosły się do zera. Osobno: lista długich DM BOŚ z 25.08 wypadła z okna 30 dni, co zabrało +3 spółce PGE (stąd DM 7,5 zamiast 10,5). Wrześniowe listy Trigon DM z 8.09 nadal działają: top picks ORLEN, CD PROJEKT, ALLEGRO i BUDIMEX (+3), „gorzej niż rynek” mBANK i MODIVO (−3).</li>
+    <li><span class="tag espi">ESPI</span><b>ORLEN ogłosił 24.09 przymusowy wykup akcji Energi po 27,60 zł</b> — 32,8 mln akcji od akcjonariuszy mniejszościowych, ok. 907 mln zł, start 30.09 (D+3). Spółka ma już 95,23% Energi; operacja domyka konsolidację i prowadzi do delistingu Energi. Zdarzenie jest w oknie, ale ogłoszone przed D0, więc zgodnie z §3 metody jest „znane” i nie nosi wkładu punktowego.</li>
+    <li><span class="tag makro">MAKRO</span><b>Senat przyjął 24.09 bez poprawek ustawę o podatku od nadzwyczajnych zysków koncernów paliwowych</b> (59 za, 31 przeciw, 0 wstrzymujących): 60% od nadwyżki przychodów ze sprzedaży paliw ciekłych za okres III 2026 – III 2027, wpływy mają sfinansować program „Ceny Paliwa Niżej”. Ustawa czeka na podpis prezydenta, który w lipcu skierował bliźniaczą wersję do TK w trybie kontroli prewencyjnej i złożył własny projekt. <b>Termin decyzji jest nieznany</b>, więc zgodnie z metodą nie punktuje jako katalizator — czynnik trafił do Makro (ORLEN 3/15, najniżej w rankingu).</li>
+    <li><span class="tag makro">MAKRO</span><b>Fitch obniżył 25.09 perspektywę ratingu TAURONU z pozytywnej na stabilną</b> (BBB− potwierdzony), zapowiadając, że dźwignia dług netto/FFO zostanie w pasmie 3,5–4,5x zamiast spadać, a EBITDA z dystrybucji i ze sprzedaży wypadnie niżej niż w jego poprzednich prognozach po normalizacji WACC ze szczytów 2024–2025. To <b>jedyna udokumentowana rewizja w dół w całym nowym rankingu</b> (REW 3/10) i główny powód 19. miejsca.</li>
+    <li><span class="tag makro">MAKRO</span><b>Kalendarz na nowe okno potwierdzony w datowanym źródle z bieżącego tygodnia</b> (bankier.pl „Tym będą żyły rynki: Tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026): CPI flash GUS za wrzesień <b>30.09 o 9:30</b>, konsensus 3,6% wobec 3,4% poprzednio; PCE USA 30.09 o 14:30; PMI 1.10 (Polska 9:00) i ISM przemysł USA 1.10 o 16:00; HICP flash strefy euro 2.10 o 11:00; <b>payrolls USA 2.10 o 13:30</b>. <b>Data posiedzenia RPP (6–7.10) NIE jest potwierdzona</b>: nbp.pl jest zablokowany przez politykę sieciową środowiska, a datowany kalendarz z bieżącego tygodnia sięga tylko do 2.10 — zgodnie z §9 metody wchodzi jako <code>b.d.</code> i <code>KALENDARZ_NIEPOTWIERDZONY</code>, więc żadna deklaracja się na niej nie opiera.</li>
+    <li><span class="tag rynek">SKŁAD</span><b>Skład WIG20 bez zmian</b> po korekcie kwartalnej z 18.09; udział PKO BP i ORLENU ograniczony do 15% (faktyczne wagi na 25.09: 15,67% i 13,94%). Uniwersum 20 spółek jest więc identyczne jak w W6.</li>
+  </ul>
+  <h2>Rozliczenie 2026-W6 — koszyk LONG (D0 18.09 → D+5 25.09)</h2>
+  <div class="tblwrap"><table>
+    <tr><th class="left">Spółka</th><th>Kurs D0</th><th>Kurs 25.09</th><th>Zwrot</th><th>Relatywnie</th><th>Traf.</th></tr>
+    <tr><td class="name">LPP</td><td class="mono">24 160,00</td><td class="mono">24 900,00</td><td class="mono up">+3,06%</td><td class="mono up">+1,66 p.p.</td><td class="hit y">✔</td></tr>
+    <tr><td class="name">ALLEGRO</td><td class="mono">49,80</td><td class="mono">49,55</td><td class="mono down">−0,49%</td><td class="mono down">−1,89 p.p.</td><td class="hit n">✘</td></tr>
+    <tr><td class="name">KĘTY</td><td class="mono">1 269,00</td><td class="mono">1 255,00</td><td class="mono down">−1,10%</td><td class="mono down">−2,50 p.p.</td><td class="hit n">✘</td></tr>
+    <tr><td class="name">PZU</td><td class="mono">72,44</td><td class="mono">73,18</td><td class="mono up">+1,02%</td><td class="mono down">−0,38 p.p.</td><td class="hit n">✘</td></tr>
+    <tr><td class="name">PEPCO</td><td class="mono">41,87</td><td class="mono">43,50</td><td class="mono up">+3,89%</td><td class="mono up">+2,49 p.p.</td><td class="hit y">✔</td></tr>
+    <tr><td class="name">ŚREDNIA LONG</td><td class="mono na">—</td><td class="mono na">—</td><td class="mono up">+1,28%</td><td class="mono down">−0,12 p.p.</td><td class="hit">2/5</td></tr>
+    <tr><td class="name">WIG20</td><td class="mono">4 122,52</td><td class="mono">4 180,26</td><td class="mono up">+1,40%</td><td class="mono na">—</td><td class="na">—</td></tr>
+  </table></div>
+  <p class="note">Koszyk LONG zarobił, ale mniej niż indeks — i to jest cała historia tego tygodnia. Dwie nogi na pięć pobiły WIG20 (LPP +1,66, PEPCO +2,49 p.p.), trzy przegrały, przy czym KĘTY (−2,50 p.p.) oddały całą zwyżkę po przejęciu grupy Metra. W oknie 21–25.09 nie było dnia prawa do dywidendy dla żadnej spółki WIG20, więc rozliczenie nie wymagało korekty dywidendowej (odcięcie 4,80 zł na PZU wypadło 15/16.09, czyli przed D0).</p>
+  <h2>Rozliczenie 2026-W6 — koszyk SHORT (papierowy, rachunek go nie handluje)</h2>
+  <div class="tblwrap"><table>
+    <tr><th class="left">Spółka</th><th>Kurs D0</th><th>Kurs 25.09</th><th>Zwrot</th><th>Relatywnie</th><th>Traf.</th></tr>
+    <tr><td class="name">ALIOR <span class="badge-red">REDUCE 22.09</span></td><td class="mono">131,15</td><td class="mono">139,05</td><td class="mono up">+6,02%</td><td class="mono up">+4,62 p.p.</td><td class="hit n">✘</td></tr>
+    <tr><td class="name">KGHM</td><td class="mono">337,05</td><td class="mono">330,50</td><td class="mono down">−1,94%</td><td class="mono down">−3,34 p.p.</td><td class="hit y">✔</td></tr>
+    <tr><td class="name">ORLEN</td><td class="mono">151,14</td><td class="mono">148,84</td><td class="mono down">−1,52%</td><td class="mono down">−2,92 p.p.</td><td class="hit y">✔</td></tr>
+    <tr><td class="name">BUDIMEX</td><td class="mono">698,80</td><td class="mono">692,00</td><td class="mono down">−0,97%</td><td class="mono down">−2,37 p.p.</td><td class="hit y">✔</td></tr>
+    <tr><td class="name">mBANK <span class="badge-red">CLOSE 22.09</span></td><td class="mono">1 399,50</td><td class="mono">1 495,50</td><td class="mono up">+6,86%</td><td class="mono up">+5,46 p.p.</td><td class="hit n">✘</td></tr>
+    <tr><td class="name">ŚREDNIA SHORT</td><td class="mono na">—</td><td class="mono na">—</td><td class="mono up">+1,69%</td><td class="mono down">+0,29 p.p. ponad indeks</td><td class="hit">3/5</td></tr>
+  </table></div>
+  <p class="note">Trafienie po stronie krótkiej oznacza kurs SŁABSZY od WIG20. Koszyk SHORT jako całość wzrósł o +1,69%, czyli o 0,29 p.p. mocniej od indeksu — stąd ujemny rozjazd. Dwie nogi wyłamały się do góry i to one zjadły wynik: mBANK +6,86% (CLOSE 22.09 po przekroczeniu twardego progu 8%) i ALIOR +6,02% (REDUCE 22.09) w tygodniu rekordu sektora bankowego. <b>Rachunek Capital.com nie handluje tego koszyka</b> — pozostaje listą, której nie wolno trzymać długo, i diagnostyką jakości modelu.</p>
+  <h2>Rozliczenie deklaracji z raportu 2026-W6</h2>
+  <ul class="decl card">
+    <li><b>„LPP pobije WIG20”</b> — <span class="hit y">TAK</span>. Relatywnie <b class="mono">+1,66 p.p.</b> (kurs +3,06% do 24 900 zł wobec WIG20 +1,40%). Rekord notowań padł 22–23.09, a napędem był raport z 17.09: zysk netto Q2 768 mln zł wobec 684,1 mln konsensusu PAP i podniesione cele marżowe. Jedyna trafiona deklaracja tygodnia.</li>
+    <li><b>„mBANK zachowa się gorzej od WIG20 o co najmniej 1 p.p.”</b> — <span class="hit n">NIE</span>, i to w drugą stronę: relatywnie <b class="mono">+5,46 p.p.</b> (kurs +6,86%). Teza krótka padła już w pierwszy dzień okna — 21.09 mBANK był najmocniejszą spółką indeksu, kurs przebił +8% od D0 i 22.09 zadziałał twardy wyzwalacz CLOSE. Filar tezy (przecena banków po obniżce ratingu Polski do A3 przez Moody's) okazał się całkowicie chybiony: rynek uznał obniżkę za zdyskontowaną i wysłał WIG-BANKI na rekord.</li>
+    <li><b>„Sprzedaż detaliczna GUS za sierpień (22.09, 9:30) wypadnie dodatnio r/r w cenach stałych — i przy tym scenariuszu wynik rachunku nowego koszyka będzie dodatni”</b> — <span class="hit n">NIE</span> (warunek makro spełniony, koszykowy nie). GUS podał +3,8% r/r w cenach stałych, czyli dodatnio, choć poniżej konsensusu +4,5%; termin zweryfikowany poprawnie, czwarty tydzień z rzędu bez błędu kalendarza. Wynik rachunku wyniósł jednak <b class="mono">−0,12 p.p.</b> <b>To trzeci tydzień z rzędu, w którym deklaracja wiążąca dane makro z wynikiem koszyka rozlicza się jako NIE</b> — i trzeci raz z tego samego powodu, który §7b metody nazywa wprost: makro jest wspólne dla wszystkich 20 spółek, więc nie tłumaczy selekcji. Wniosek operacyjny na ten raport: przestajemy budować deklaracje typu „warunek makro ⇒ wynik całego koszyka”. Trzecia deklaracja poniżej ma warunek makro, ale jej konsekwencja jest zawężona do trzech konkretnych nóg, których teza wprost zależy od stóp.</li>
+  </ul>
+  <p class="note">Bilans deklaracji: W6 <b>1/3</b>. Suma w wersji v1.1: 2 z 6 (W5 0/3, W6 1/3). W wersji v1.0 (W1–W4) bilansu nie wolno z tym łączyć.</p>
+  <h2>Dorobek metody v1.1 po dwóch zamkniętych oknach</h2>
+  <div class="card">
+    <div class="tblwrap"><table style="min-width:420px">
+      <tr><th class="left">Wariant</th><th>W5</th><th>W6</th><th>razem v1.1</th></tr>
+      <tr><td class="name">LONG bez hedge'u</td><td class="mono down">−2,94%</td><td class="mono up">+1,28%</td><td class="mono down">−1,66%</td></tr>
+      <tr><td class="name">Wynik rachunku (LONG − indeks)</td><td class="mono down">−2,54 p.p.</td><td class="mono down">−0,12 p.p.</td><td class="mono down">−2,66 p.p.</td></tr>
+      <tr><td class="name">Spread papierowy (nieosiągalny)</td><td class="mono down">−5,30 p.p.</td><td class="mono down">−0,41 p.p.</td><td class="mono down">−5,71 p.p.</td></tr>
+      <tr><td class="name">Trafienia TOP5</td><td class="mono">1/5</td><td class="mono">2/5</td><td class="mono">3/10</td></tr>
+      <tr><td class="name">Trafienia BOTTOM5</td><td class="mono">1/5</td><td class="mono">3/5</td><td class="mono">4/10</td></tr>
+      <tr><td class="name">Przewaga nad naiwnym momentum</td><td class="mono down">−0,10 p.p.</td><td class="mono down">−0,70 p.p.</td><td class="mono down">−0,80 p.p.</td></tr>
+    </table></div>
+    <p class="note" style="margin-bottom:0">Oczekiwanie losowe dla TOP5 po dwóch oknach to 5·(0,50+0,45) = 4,75 trafienia; padło 3. Dla BOTTOM5: 5·(0,50+0,55) = 5,25; padło 4. Obie liczby są <b>poniżej losowania</b>, a skumulowany wynik rachunku jest ujemny — ale to dwa tygodnie i n=20 spółkotygodni na stronę, więc zgodnie z §10 metody nie zmieniamy ani wag, ani <code>HEDGE_RATIO</code>, ani reguł reakcji. Do jakiejkolwiek decyzji brakuje 10 okien. <b>Metryk z v1.0 (W1–W4: wynik rachunku za W2–W4 −0,93 p.p., TOP5 5/15, BOTTOM5 11/15) nie wolno z tym uśredniać.</b></p>
+  </div>
+  <h2>Nowy ranking — 2026-W7 (kursy z 25.09, katalizatory 28.09–9.10)</h2>
+  <div class="tblwrap"><table style="min-width:660px">
+    <tr><th class="left">#</th><th class="left">Ticker</th><th>Wynik</th><th>p</th><th class="left">Teza</th><th class="left">Ryzyko</th></tr>
+    <tr><td class="mono">1</td><td class="name">ERSTE PL <span class="dir long">LONG</span></td><td class="mono">63,6</td><td class="mono">57%</td><td class="left" style="font-size:.84rem">Momentum 24,1/25 — najwyższe w uniwersum w obu składnikach (rel5 +6,42, rel20 +7,53 p.p.). Konsensus CPI 3,6% na 30.09 zamyka drogę do obniżek stóp, a spółka jako podmiot zależny grupy austriackiej ma mniejszą wrażliwość na koszt finansowania skarbowego niż banki z dużym portfelem SPW.</td><td class="left" style="font-size:.84rem">Kurs po +7,82% w tygodniu i na historycznym rekordzie, po +50% w sektorze od początku roku — DY 8,1% przestaje być poduszką. Brak jakiegokolwiek katalizatora w oknie (raport Q3 dopiero 30.10), więc cała teza opiera się na kontynuacji ruchu.</td></tr>
+    <tr><td class="mono">2</td><td class="name">ALIOR <span class="dir long">LONG</span></td><td class="mono">58,8</td><td class="mono">54%</td><td class="left" style="font-size:.84rem">Momentum 19,3/25 i najmniejszy w indeksie portfel obligacji skarbowych — scenariusz „wyżej na dłużej” wchodzi tu w marżę odsetkową najbardziej bezpośrednio. Citi 21.09 podniosło rekomendację do „kupuj” (cel 146,80 zł).</td><td class="left" style="font-size:.84rem">Tydzień temu spółka była w koszyku SHORT (pozycja 16) i trafiła pod REDUCE 22.09 — pełne odwrócenie w jednym oknie napędza samo momentum. Wood & Company obniżyło rekomendację 24.09, a cena docelowa Citi jest tylko ok. 5% nad kursem. Data powołań zarządu nadal niepotwierdzona.</td></tr>
+    <tr><td class="mono">3</td><td class="name">LPP <span class="dir long">LONG</span></td><td class="mono">58,0</td><td class="mono">54%</td><td class="left" style="font-size:.84rem">Najwyższy w indeksie składnik 20-sesyjny (rel20 +13,90 p.p.) i jedna z dwóch udokumentowanych liczbowo rewizji w górę: zysk Q2 768 mln zł wobec 684,1 mln konsensusu PAP (+12%) plus podniesione cele marżowe z raportu 17.09.</td><td class="left" style="font-size:.84rem">Kurs 24 900 zł to historyczne maksimum, a mnożnik jest najwyższy w koszyku LONG. Sprzedaż detaliczna wypadła poniżej konsensusu (+3,8% wobec +4,5%), słabszy złoty podnosi koszt zakupów, brak katalizatora w oknie.</td></tr>
+    <tr><td class="mono">4</td><td class="name">CD PROJEKT <span class="dir long">LONG</span></td><td class="mono">57,5</td><td class="mono">54%</td><td class="left" style="font-size:.84rem">Jedyna spółka z pełnym wkładem katalizatora: premiera remastera „Wiedźmina 3” 29.09 (D+2) wpada w okno wyniku. Do tego top pick Trigon DM z 8.09 i zysk Q2 +44% ponad konsensus (2.09).</td><td class="left" style="font-size:.84rem">Aktualizacja jest DARMOWA dla posiadaczy gry — monetyzacja ogranicza się do nowych kopii i Switcha 2, więc reakcja może być żadna. Najwyższy mnożnik w całym rankingu, a brak obniżek stóp bije w wyceny wzrostowe.</td></tr>
+    <tr><td class="mono">5</td><td class="name">PKO BP <span class="dir long">LONG</span></td><td class="mono">57,4</td><td class="mono">54%</td><td class="left" style="font-size:.84rem">Momentum 18,9/25, ROE ok. 18% i to samo wsparcie ze strony stóp co dla reszty sektora; cap 15% w WIG20 został wykonany na zamknięciu 18.09, więc podaż pasywna jest za nami.</td><td class="left" style="font-size:.84rem">Największa w indeksie ekspozycja na dług skarbowy — obniżka ratingu Polski do A3 uderza tu najmocniej (dlatego MAKRO 8, a nie 9). Kurs na rekordzie przy kapitalizacji 154 mld zł. UWAGA KONSTRUKCYJNA: waga PKO BP w WIG20 to 15,67%, a hedge indeksowy sprzedaje tę wagę, więc netto rachunek jest na tej nodze długi tylko w niewielkim stopniu.</td></tr>
+    <tr><td class="mono">6</td><td class="name">mBANK</td><td class="mono">57,3</td><td class="mono">54%</td><td class="left" style="font-size:.84rem">Momentum 22,8/25, drugie w uniwersum.</td><td class="left" style="font-size:.84rem">Trigon widzi spółkę poniżej rynku, mnożniki najwyższe w sektorze po dwóch tygodniach rajdu (+8,3% i +6,9%) — pozycja 6 to zbyt drogie momentum.</td></tr>
+    <tr><td class="mono">7</td><td class="name">PEKAO</td><td class="mono">55,8</td><td class="mono">53%</td><td class="left" style="font-size:.84rem">Momentum 19,3/25, DY ok. 8,4%, wsparcie makro jak dla sektora.</td><td class="left" style="font-size:.84rem">Wood & Company obniżyło rekomendację 24.09 z „kupuj” do „trzymaj”; brak katalizatora w oknie.</td></tr>
+    <tr><td class="mono">8</td><td class="name">ALLEGRO</td><td class="mono">55,2</td><td class="mono">53%</td><td class="left" style="font-size:.84rem">Top pick Trigon i podniesione prognozy roczne z 17.09 (GMV +13–15%, EBITDA +13–17%).</td><td class="left" style="font-size:.84rem">Momentum już zawróciło (rel5 −1,89 p.p.), wysoki mnożnik, brak obniżek stóp bije w wyceny wzrostowe.</td></tr>
+    <tr><td class="mono">9</td><td class="name">MODIVO</td><td class="mono">53,4</td><td class="mono">52%</td><td class="left" style="font-size:.84rem">Momentum 18,9/25 i raport półroczny 1.10 w oknie wyniku.</td><td class="left" style="font-size:.84rem">Trigon na liście „gorzej niż rynek”; najmniejsza waga i najniższa płynność w indeksie (0,84%).</td></tr>
+    <tr><td class="mono">10</td><td class="name">PEPCO</td><td class="mono">53,0</td><td class="mono">52%</td><td class="left" style="font-size:.84rem">Potwierdzony komunikat o wstępnych wynikach rocznych 29.09 (D+2) i dodatnie momentum 5-sesyjne.</td><td class="left" style="font-size:.84rem">Składnik 20-sesyjny ujemny (−3,98 p.p.), efekt skupu akcji wygasł, słabszy złoty podnosi koszt zakupów.</td></tr>
+    <tr><td class="mono">11</td><td class="name">PZU</td><td class="mono">51,5</td><td class="mono">51%</td><td class="left" style="font-size:.84rem">Wyższe rentowności podnoszą dochód z reinwestycji portfela; po korekcie total return momentum 14,0/25.</td><td class="left" style="font-size:.84rem">Wood & Company obniżyło rekomendację 24.09; punkt momentum zależy od ręcznej korekty o dywidendę 4,80 zł.</td></tr>
+    <tr><td class="mono">12</td><td class="name">ŻABKA</td><td class="mono">49,1</td><td class="mono">50%</td><td class="left" style="font-size:.84rem">Kurs 31,48 zł przy cenie wezwania 32,00 zł — niemal zerowa beta i ścieżka do delistingu.</td><td class="left" style="font-size:.84rem">Cały potencjał to +1,65% do ceny wezwania; przy zwyżce indeksu spółka zostaje z tyłu, a zapisy kończą się 26.10, za oknem.</td></tr>
+    <tr><td class="mono">13</td><td class="name">PGE</td><td class="mono">44,8</td><td class="mono">47%</td><td class="left" style="font-size:.84rem">Najwyższy składnik 20-sesyjny po LPP (+14,89 p.p.) i P/BV ok. 0,69 po przecenie.</td><td class="left" style="font-size:.84rem">Jeden tydzień (−7,93 p.p.) zmazał miesiąc: WACC dystrybucji 8,5% na 2026 wobec ok. 12% i CIT 30% od 2027 to ryzyko kolejnego zawieszenia dywidendy.</td></tr>
+    <tr><td class="mono">14</td><td class="name">KĘTY</td><td class="mono">44,5</td><td class="mono">47%</td><td class="left" style="font-size:.84rem">Przejęcie grupy Metra (EV 645 mln EUR) nadal zmienia skalę spółki.</td><td class="left" style="font-size:.84rem">Oddała całość zwyżki i w piątek była jedną z najsłabszych w WIG20; żadnego zdarzenia w oknie, kredyt pomostowy 2 mld zł drożeje.</td></tr>
+    <tr><td class="mono">15</td><td class="name">KRUK</td><td class="mono">44,1</td><td class="mono">47%</td><td class="left" style="font-size:.84rem">Mnożniki poniżej średniej rynkowej po czterech tygodniach słabości.</td><td class="left" style="font-size:.84rem">Drugi najgorszy składnik 20-sesyjny (−10,58 p.p.); stopy bez obniżek podnoszą koszt finansowania zakupów portfeli.</td></tr>
+    <tr><td class="mono">16</td><td class="name">ORLEN <span class="dir short">SHORT</span></td><td class="mono">43,2</td><td class="mono">47%</td><td class="left" style="font-size:.84rem">Najgorsze tło regulacyjne w indeksie (MAKRO 3/15): ustawa o 60-procentowym podatku od nadwyżki przychodów z paliw ciekłych przeszła Senat bez poprawek 24.09 i czeka na podpis prezydenta, a w tle jest CIT 19% → 30% od 2027. Momentum ujemne w obu składnikach.</td><td class="left" style="font-size:.84rem">Spółka jest top pickiem Trigon DM z 8.09 (DM 10,5/15) — to jedyny datowany sygnał przeciw tezie krótkiej i powód, dla którego jest na 16., a nie na 20. miejscu. Prezydent może ustawę zawetować lub skierować do TK, jak zrobił w lipcu z poprzednią wersją; tania wycena i 15-procentowy cap już wykonany też działają na korzyść kursu.</td></tr>
+    <tr><td class="mono">17</td><td class="name">BUDIMEX <span class="dir short">SHORT</span></td><td class="mono">43,1</td><td class="mono">47%</td><td class="left" style="font-size:.84rem">Momentum ujemne w obu składnikach (rel5 −2,37, rel20 −6,43 p.p.) przy najwyższym P/E w koszyku SHORT (ok. 25,6) i rekomendacji „sprzedaj” Noble Securities z 17.09 (cel 562 zł przy kursie 698,80 zł).</td><td class="left" style="font-size:.84rem">Spółka jest jednocześnie na liście top picks Trigon DM z 8.09, więc punkt DM wyszedł neutralny — dwa liczące się domy stoją po przeciwnych stronach. Program inwestycji publicznych i backlog 17,9 mld zł mogą w każdej chwili odwrócić momentum.</td></tr>
+    <tr><td class="mono">18</td><td class="name">KGHM <span class="dir short">SHORT</span></td><td class="mono">43,1</td><td class="mono">47%</td><td class="left" style="font-size:.84rem">Najgorszy składnik 20-sesyjny w uniwersum (−13,37 p.p.) i momentum 2,6/25 — cztery tygodnie relatywnej słabości bez przerwy.</td><td class="left" style="font-size:.84rem">TEZA STOI WBREW SUROWCOWI: miedź na LME ok. 14 694 USD/t w okolicy historycznych maksimów i wyżej niż tydzień wcześniej (MAKRO 9/15). Decyzja Białego Domu o cłach na miedź rafinowaną nie ma daty, ale może paść w oknie i jest jednostronnym ryzykiem dla pozycji krótkiej. Waga 8,03% w indeksie oznacza, że hedge i tak część tej pozycji zbiera.</td></tr>
+    <tr><td class="mono">19</td><td class="name">TAURON <span class="dir short">SHORT</span></td><td class="mono">40,2</td><td class="mono">45%</td><td class="left" style="font-size:.84rem">Jedyna udokumentowana rewizja W DÓŁ w całym rankingu: Fitch 25.09 obniżył perspektywę BBB− z pozytywnej na stabilną i zapowiedział, że EBITDA z dystrybucji i sprzedaży wypadnie niżej niż w jego poprzednich prognozach, a dźwignia zostanie w pasmie 3,5–4,5x zamiast spadać. Do tego ten sam pakiet CIT 30% i WACC 8,5% co przy PGE.</td><td class="left" style="font-size:.84rem">Najtańsza spółka rankingu (P/E ok. 5,8, P/BV ok. 0,75) — jeśli rynek uzna pakiet regulacyjny za rozliczony w cenie, jest tu dużo miejsca na odbicie. Presja pasywna po rewizji STOXX jest już zdjęta, więc zniknął czynnik, który ciągnął kurs w dół w poprzednim oknie.</td></tr>
+    <tr><td class="mono">20</td><td class="name">DINO PL <span class="dir short">SHORT</span></td><td class="mono">39,3</td><td class="mono">45%</td><td class="left" style="font-size:.84rem">Najniższe momentum w całym uniwersum (1,8/25; rel5 −5,04, rel20 −7,82 p.p.) przy utrzymanej premii do spółek porównywalnych i deflacji żywności ściskającej sprzedaż porównywalną.</td><td class="left" style="font-size:.84rem">Zapowiedziany strajk generalny po mediacjach 24.09 NIE MA DATY — gdyby do niego nie doszło, zniknie nawis, który ciążył kursowi. Model defensywny działa na korzyść spółki, gdyby tydzień wypadł risk-off; waga 2,94% w indeksie.</td></tr>
+  </table></div>
+  <p class="note">p = 50% + 0,5×(wynik−50), obcięte do 38–62% — przy takim rozrzucie wyników cały ranking mieści się w pasmie 45–57%, czyli model nie twierdzi, że którakolwiek spółka jest pewniakiem. Wagi kategorii zamrożone: Momentum 25 / Katalizatory 20 / Makro 15 / DM 15 / Rewizje 10 / Przepływy 10 / Wycena 5. Punkty per kategoria i jednozdaniowe uzasadnienia dla każdej z 20 spółek są w <code>rankings/2026-W7.json</code>.</p>
+  <h2>TOP5 — koszyk LONG na okno 25.09 → 2.10</h2>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">1. ERSTE PL</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 63,6 · p 57% · waga w WIG20 6,07% · kurs D0 807,60 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 24,1/25 (rel5 +6,42 p.p., rel20 +7,53 p.p. — najwyżej w uniwersum) po tygodniu, w którym WIG-BANKI zyskał ponad 5,2% i ustanowił rekord; KAT raport Q3 dopiero 30.10, brak zdarzeń w D+1…D+10 (28.09–9.10) → 10 neutralnie; MAKRO konsensus CPI flash GUS na 30.09 to 3,6% wobec 3,4% poprzednio, czyli brak przestrzeni na obniżki stóp i wsparcie dla marży odsetkowej, a spółka zależna grupy austriackiej ma mniejszą wrażliwość na koszt finansowania skarbowego niż banki z dużym portfelem SPW (9); DM brak datowanego sygnału w oknie 26.08–25.09 (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach — raport Q2 z 30.07 poza oknem (5); PRZ rejestr krótkiej sprzedaży KNF niedostępny, brak datowanych danych o przepływach (5); WYC DY ok. 8,1%, ale kurs po +7,82% w tygodniu i na rekordzie — mnożnik przestał być argumentem (3).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Kurs po +7,82% w tygodniu i na historycznym rekordzie, po +50% w sektorze od początku roku — DY 8,1% przestaje być poduszką. Brak jakiegokolwiek katalizatora w oknie (raport Q3 dopiero 30.10), więc cała teza opiera się na kontynuacji ruchu.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">2. ALIOR</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 58,8 · p 54% · waga w WIG20 2,20% · kurs D0 139,05 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 19,3/25 (rel5 +4,62 p.p., rel20 +0,31 p.p.); KAT nabór w konkursie na prezesa i pięcioro członków zarządu zamknięty 16.09, data powołań nadal niepotwierdzona → bez punktów, 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO wyższy konsensus CPI (3,6% na 30.09) utrwala scenariusz „wyżej na dłużej”, który podnosi marżę odsetkową, a najmniejszy w indeksie portfel SPW ogranicza skutki obniżki ratingu Polski do A3 (9); DM netto 0: Citi podniosło 21.09 rekomendację do „kupuj” z ceną docelową 146,80 zł (+3), ale Wood & Company obniżyło ją 24.09 z „kupuj” do „trzymaj” (−3) — dwa przeciwstawne, datowane sygnały w oknie 30 dni (7,5); REW raport Q3 dopiero 27.10, brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC najniższe mnożniki wśród banków indeksu, ale po +6,02% w tygodniu cena docelowa Citi jest tylko ok. 5% nad kursem (3).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Tydzień temu spółka była w koszyku SHORT (pozycja 16) i trafiła pod REDUCE 22.09 — pełne odwrócenie w jednym oknie napędza samo momentum. Wood & Company obniżyło rekomendację 24.09, a cena docelowa Citi jest tylko ok. 5% nad kursem. Data powołań zarządu nadal niepotwierdzona.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">3. LPP</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 58,0 · p 54% · waga w WIG20 5,67% · kurs D0 24 900,00 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 17,5/25 (rel5 +1,66 p.p., rel20 +13,90 p.p. — najwyższy składnik 20-sesyjny w uniwersum); KAT brak zdarzeń w D+1…D+10 (raport H1 z 17.09 przed D0, raport Q3 dopiero jesienią) → 10; MAKRO sprzedaż detaliczna GUS za sierpień +3,8% r/r w cenach stałych (22.09) potwierdza popyt, ale wypadła poniżej konsensusu +4,5%, a słabszy złoty po obniżce ratingu podnosi koszt zakupów przy CPI idącym w stronę 3,6% (7); DM brak datowanego sygnału w oknie 30 dni (7,5); REW zysk netto Q2 768 mln zł wobec 684,1 mln konsensusu PAP (+12%) i podniesione cele marżowe, raport 17.09 — jedna z dwóch udokumentowanych liczbowo rewizji w górę w całym indeksie (9); PRZ rejestr KNF niedostępny (5); WYC kurs 24 900 zł to historyczne maksimum, najdroższy mnożnik w koszyku LONG (2).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Kurs 24 900 zł to historyczne maksimum, a mnożnik jest najwyższy w koszyku LONG. Sprzedaż detaliczna wypadła poniżej konsensusu (+3,8% wobec +4,5%), słabszy złoty podnosi koszt zakupów, brak katalizatora w oknie.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">4. CD PROJEKT</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 57,5 · p 54% · waga w WIG20 3,07% · kurs D0 244,60 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 14,0/25 (rel5 +2,07 p.p., rel20 −1,25 p.p.); KAT premiera „Wiedźmin 3: Dziki Gon – Remastered” 29.09 = D+2, czyli w oknie wyniku i w paśmie pełnego wkładu (+2); aktualizacja jest darmowa dla posiadaczy gry, monetyzacja obejmuje nowe kopie i Nintendo Switch 2, więc wkład jest ograniczony → 12; MAKRO wyższe rentowności i scenariusz bez obniżek stóp biją w wyceny wzrostowe, przychody w USD tylko częściowo to równoważą (6); DM +3 za top pick Trigon DM z 8.09 (lista wrześniowa, w oknie 30 dni) (10,5); REW zysk Q2 +44% wobec konsensusu (2.09, w oknie 30 dni) (8); PRZ rejestr KNF niedostępny, pozycje krótkie bez datowanej zmiany (5); WYC najwyższy mnożnik w rankingu (2).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Aktualizacja jest DARMOWA dla posiadaczy gry — monetyzacja ogranicza się do nowych kopii i Switcha 2, więc reakcja może być żadna. Najwyższy mnożnik w całym rankingu, a brak obniżek stóp bije w wyceny wzrostowe.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">5. PKO BP</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 57,4 · p 54% · waga w WIG20 15,67% · kurs D0 124,54 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 18,9/25 (rel5 +2,52 p.p., rel20 +5,06 p.p.); KAT NWZ 14.10 wypada za oknem D+10 (9.10), cap 15% w WIG20 wykonany na zamknięciu 18.09 → 10; MAKRO konsensus CPI 3,6% na 30.09 wspiera marżę, ale to największy bank indeksu o największej ekspozycji na dług skarbowy, więc obniżka ratingu Polski do A3 (18.09) uderza w niego najmocniej w sektorze — dlatego punkt niżej niż pozostałe banki (8); DM brak datowanego sygnału w oknie 30 dni (7,5); REW raport Q2 z 13.08 poza oknem 30 dni, brak udokumentowanej zmiany konsensusu (5); PRZ podaż funduszy indeksowych po capie 15% zrealizowana 18.09, rejestr KNF niedostępny (5); WYC ROE ok. 18% i DY ok. 5,5%, ale kurs na historycznym maksimum przy rekordowej kapitalizacji 154 mld zł (3).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Największa w indeksie ekspozycja na dług skarbowy — obniżka ratingu Polski do A3 uderza tu najmocniej (dlatego MAKRO 8, a nie 9). Kurs na rekordzie przy kapitalizacji 154 mld zł. UWAGA KONSTRUKCYJNA: waga PKO BP w WIG20 to 15,67%, a hedge indeksowy sprzedaje tę wagę, więc netto rachunek jest na tej nodze długi tylko w niewielkim stopniu.</p>
+  </div>
+  <h2>BOTTOM5 — koszyk SHORT (papierowy; rachunek nie shortuje akcji)</h2>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">16. ORLEN</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 43,2 · p 47% · waga w WIG20 13,94% · kurs D0 148,84 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 5,7/25 (rel5 −2,92 p.p., rel20 −4,77 p.p.); KAT przymusowy wykup akcji Energi po 27,60 zł startuje 30.09 = D+3, ale zamiar ogłoszono 24.09 i kwota ok. 907 mln zł jest znana, więc zgodnie z sekcją 3 metody to zdarzenie „znane” bez wkładu (0); data decyzji prezydenta w sprawie ustawy o podatku od nadzwyczajnych zysków nieznana → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO najgorsze tło regulacyjne w indeksie: Senat przyjął 24.09 bez poprawek (59 za, 31 przeciw) ustawę o 60-procentowym podatku od nadwyżki przychodów ze sprzedaży paliw ciekłych za okres III 2026 – III 2027, ustawa czeka na podpis prezydenta, a w tle jest podniesienie CIT z 19% do 30% od 2027 i Brent powyżej 100 USD po stronie kosztu wsadu (3); DM +3 za top pick Trigon DM z 8.09 — jedyny sygnał DM przeciw tezie krótkiej w tym koszyku i powód, dla którego spółka jest na 16., a nie na 20. miejscu (10,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ cap 15% w WIG20 wykonany 18.09, rejestr KNF niedostępny; wykup Energi to odpływ ok. 907 mln zł gotówki (5); WYC mnożniki niskie, ale z nierozliczonym ryzykiem podatkowym w liczniku (4).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Spółka jest top pickiem Trigon DM z 8.09 (DM 10,5/15) — to jedyny datowany sygnał przeciw tezie krótkiej i powód, dla którego jest na 16., a nie na 20. miejscu. Prezydent może ustawę zawetować lub skierować do TK, jak zrobił w lipcu z poprzednią wersją; tania wycena i 15-procentowy cap już wykonany też działają na korzyść kursu.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">17. BUDIMEX</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 43,1 · p 47% · waga w WIG20 1,57% · kurs D0 692,00 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 6,6/25 (rel5 −2,37 p.p., rel20 −6,43 p.p.); KAT raport Q3 27.10 i strategia przesunięta na koniec października — oba za oknem D+10 → 10; MAKRO produkcja budowlano-montażowa i program inwestycji publicznych po stronie popytu, ale stopy bez obniżek podnoszą koszt finansowania inwestycji (7); DM netto 0: Noble Securities utrzymało 17.09 rekomendację „sprzedaj” z ceną docelową 562 zł przy kursie 698,80 zł (−3), ale spółka jest na wrześniowej liście top picks Trigon DM z 8.09 (+3) — dwa datowane, przeciwstawne sygnały w oknie 30 dni, więc punkt neutralny (7,5); REW zysk Q2 o 3,3% poniżej konsensusu, ale raport starszy niż 30 dni, więc bez punktów karnych (5); PRZ rejestr KNF niedostępny (5); WYC P/E ok. 25,6 przy backlogu 17,9 mld zł — najdroższa spółka koszyka SHORT (2). Remis 43,1 pkt z KGHM rozstrzygnięty mniejszą wagą w WIG20 (1,57% wobec 8,03%), zgodnie z sekcją 5 metody.</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Spółka jest jednocześnie na liście top picks Trigon DM z 8.09, więc punkt DM wyszedł neutralny — dwa liczące się domy stoją po przeciwnych stronach. Program inwestycji publicznych i backlog 17,9 mld zł mogą w każdej chwili odwrócić momentum.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">18. KGHM</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 43,1 · p 47% · waga w WIG20 8,03% · kurs D0 330,50 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 2,6/25 (rel5 −3,34 p.p., rel20 −13,37 p.p. — najgorszy składnik 20-sesyjny w uniwersum); KAT brak potwierdzonej daty decyzji Białego Domu o cłach na miedź rafinowaną (procedura sekcji 232 nadal otwarta) → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO jedyna mocna kategoria: miedź na LME ok. 14 694 USD/t w piątek 25.09, w okolicy historycznych maksimów i wyżej niż tydzień wcześniej, choć mocny dolar działa w drugą stronę (9); DM brak datowanego sygnału (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ rejestr KNF niedostępny (5); WYC mnożniki po przecenie niskie (4). Spółka jest w BOTTOM5 WBREW mocnej miedzi: mechaniczne momentum waży 25 pkt i daje jej 2,6, czego żadna inna kategoria nie odrabia. Remis 43,1 pkt z BUDIMEX-em rozstrzygnięty na niekorzyść KGHM większą wagą w WIG20 (8,03% wobec 1,57%).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> TEZA STOI WBREW SUROWCOWI: miedź na LME ok. 14 694 USD/t w okolicy historycznych maksimów i wyżej niż tydzień wcześniej (MAKRO 9/15). Decyzja Białego Domu o cłach na miedź rafinowaną nie ma daty, ale może paść w oknie i jest jednostronnym ryzykiem dla pozycji krótkiej. Waga 8,03% w indeksie oznacza, że hedge i tak część tej pozycji zbiera.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">19. TAURON</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 40,2 · p 45% · waga w WIG20 1,62% · kurs D0 8,73 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 5,7/25 (rel5 −4,44 p.p., rel20 −0,59 p.p.); KAT Fitch zmienił perspektywę ratingu BBB− z pozytywnej na stabilną 25.09, czyli w dniu D0 (dn=0), a nie w oknie D+1…D+10 → 10; MAKRO ten sam pakiet regulacyjny co przy PGE — CIT 19% → 30% od 2027 dla spółek dystrybucyjnych i WACC 8,5% na 2026 wobec ok. 12% w bieżącym roku (4); DM brak datowanego sygnału (7,5); REW jedyna udokumentowana rewizja W DÓŁ w całym rankingu: Fitch zapowiedział 25.09, że EBITDA z dystrybucji i z segmentu sprzedaży wypadnie NIŻEJ niż w jego poprzednich prognozach, a dźwignia dług netto/FFO zostanie w pasmie 3,5–4,5x zamiast spadać (3); PRZ presja pasywna zdjęta po wejściu w życie rewizji STOXX Europe 600 (21.09) (6); WYC P/E ok. 5,8 i P/BV ok. 0,75 — najtańsza spółka rankingu, ale mnożnik liczony od wyniku, który Fitch właśnie obniżył (4).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Najtańsza spółka rankingu (P/E ok. 5,8, P/BV ok. 0,75) — jeśli rynek uzna pakiet regulacyjny za rozliczony w cenie, jest tu dużo miejsca na odbicie. Presja pasywna po rewizji STOXX jest już zdjęta, więc zniknął czynnik, który ciągnął kurs w dół w poprzednim oknie.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <b style="color:var(--navy)">20. DINO PL</b>
+      <span class="mono" style="font-size:.82rem;color:var(--muted)">wynik 39,3 · p 45% · waga w WIG20 2,94% · kurs D0 34,44 zł</span>
+    </div>
+    <p style="font-size:.88rem;margin-top:8px">MOM 1,8/25 (rel5 −5,04 p.p., rel20 −7,82 p.p. — najniższe momentum w uniwersum); KAT druga tura mediacji z OPZZ Konfederacja Pracy odbyła się 24.09, czyli PRZED nowym D0, a związek zapowiedział strajk generalny bez podania daty → zgodnie z sekcją 3 metody brak punktów, 10 + KALENDARZ_NIEPOTWIERDZONY (ryzyko jest realne, ale niedatowane, więc nie wchodzi do punktacji); MAKRO sprzedaż detaliczna +3,8% r/r i model defensywny broniłyby się w scenariuszu wyższych stóp, ale deflacja żywności przy CPI idącym do 3,6% ściska sprzedaż porównywalną (7); DM brak datowanego sygnału w oknie 26.08–25.09 (7,5); REW Q2 +2% ponad konsensus z 20.08 wypadł poza okno 30 dni (5); PRZ rejestr KNF niedostępny (5); WYC premia do spółek porównywalnych utrzymana mimo −3,64% w tygodniu (3).</p>
+    <p class="note" style="margin:8px 0 0"><b>Co może złamać tezę:</b> Zapowiedziany strajk generalny po mediacjach 24.09 NIE MA DATY — gdyby do niego nie doszło, zniknie nawis, który ciążył kursowi. Model defensywny działa na korzyść spółki, gdyby tydzień wypadł risk-off; waga 2,94% w indeksie.</p>
+  </div>
+  <h2>Trzy falsyfikowalne deklaracje na okno 2026-W7 (D0 25.09 → D+5 2.10)</h2>
+  <ul class="decl card">
+    <li><b>ERSTE PL pobije WIG20:</b> zwrot relatywny [D+5/D0−1] − [WIG20 D+5/D0−1] będzie dodatni na zamknięciu 2.10 (D0: 807,60 zł; WIG20 4 180,26 pkt). Test spółki z najwyższym momentum w uniwersum w obu składnikach — jeśli mechaniczne momentum ma jakąkolwiek wartość predykcyjną, powinno się pokazać właśnie tutaj.</li>
+    <li><b>DINO PL zachowa się gorzej od WIG20 o co najmniej 1 p.p.</b> w tym samym ujęciu relatywnym (D0: 34,44 zł). Spółka ma najniższe momentum w uniwersum (1,8/25) i utrzymaną premię do spółek porównywalnych; nawis strajkowy po mediacjach z 24.09 jest realny, ale niedatowany, więc do punktacji nie wszedł.</li>
+    <li><b>CPI flash GUS za wrzesień, publikowany w środę 30.09 o 9:30, wyjdzie nie niżej niż 3,4% r/r</b> (konsensus 3,6%; termin zweryfikowany w datowanym kalendarzu z bieżącego tygodnia: bankier.pl „Tym będą żyły rynki: Tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026) — <b>i przy tym scenariuszu trzy bankowe nogi LONG (ERSTE PL, ALIOR, PKO BP) dadzą RAZEM dodatnią alfę wobec WIG20</b> na zamknięciu 2.10. Deklaracja jest wiążąca w obie strony: jeśli CPI wyjdzie ≥3,4%, a suma alf trzech banków będzie ≤0, rozliczymy ją jako NIE. Świadomie zawężamy konsekwencję do trzech nóg zamiast do całego koszyka, bo poprzednie trzy tygodnie pokazały, że warunek makro nie ma nic do powiedzenia o selekcji jako całości; teza bankowa jest jedyną w tym koszyku, która wprost zależy od ścieżki stóp.</li>
+  </ul>
+  <p class="note">Każda deklaracja ma jednoznaczny warunek liczbowy i termin — zostanie rozliczona w kolejnym raporcie tygodniowym. <b>W oknie 28.09–2.10 nie ma dnia prawa do dywidendy dla żadnej spółki WIG20</b>, więc rozliczenie W7 nie będzie wymagało korekty dywidendowej (wypłata PZU 8.10 to sama płatność, dzień prawa minął 15.09).</p>
+  <h2>Problemy z danymi</h2>
+  <div class="card">
+    <p style="font-size:.9rem"><b><code>FMP_PLAN_BLOKADA</code></b> — konektor FMP jest w sesji (narzędzia <code>mcp__FMP__*</code> widoczne), ale endpoint świec dziennych <code>historical-price-eod-light</code> zwrócił dziś ponownie „ACCESS DENIED: requires a higher plan”. FMP nadal nie może pełnić roli priorytetowego źródła kursów — grant/plan konektora dla rutyny wciąż nie jest ustawiony.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b><code>KURS_ZRODLO_REZERWA</code></b> — Yahoo chart API zwrócił HTTP 429 dla całej serii (budżet ponowień wyczerpany na spółkach koszykowych, pozostałe pominięte zgodnie z ochroną limitera). Komplet zamknięć 25.09 dla 21 symboli pochodzi z tabel notowań bankier.pl przez <code>scripts/kursy.py</code> (odczyty 17:00–17:15) i <b>zgadza się co do grosza</b> z zawartością <code>data/kursy-cache.json</code> zapisaną przez dzisiejszy Puls, a wartość indeksu — z depeszą PAP „WIG20 na zamknięciu wyniósł 4180,26 pkt (−0,30%)”. Uwaga metodyczna do poprawienia w <code>docs/metoda.md</code> §8: definicja tego kodu mówi „kurs D0/D+5 spoza bankier/Yahoo”, a bankier.pl jest przecież jednym z dwóch dopuszczonych źródeł — kod jest tu użyty dla zgodności z W4–W6, ale jego opis powinien zostać przeformułowany na „awaryjne zejście z priorytetowego źródła”, inaczej historia przestanie być porównywalna.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b>Walidacja D0</b> — zamknięcia z 18.09 dla wszystkich 10 spółek koszykowych i WIG20 zgadzają się z <code>d0.prices</code> w <code>signals.json</code> co do grosza (odchylenie 0,000%), co potwierdziło niezależnie zarówno <code>metryki.py rozlicz</code>, jak i dzisiejsze pobranie z bankier.pl. Metryki policzone z pełnego zestawu <b>20 z 20</b> spółek, więc kod <code>METRYKI_Nk_Z_20</code> nie występuje.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b><code>KNF_SHORT_NIEDOSTEPNY</code></b> — rejestr krótkiej sprzedaży KNF pozostaje poza zasięgiem: <code>rss.knf.gov.pl</code> ładuje się, ale zwraca „Wystąpił błąd! Prosimy skontaktować się z administratorem!”. Dlatego 18 z 20 spółek ma w kategorii Przepływy neutralne 5/10 — kategoria jest faktycznie martwa i nie różnicuje rankingu.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b><code>DYWIDENDA_KOREKTA_PZU</code></b> — 16.09 był pierwszym dniem notowań PZU bez prawa do dywidendy 4,80 zł. Dzień prawa wypada w oknie 20-sesyjnym nowego momentum (28.08–25.09), więc punkty PZU policzono na kopii cache z serią skorygowaną o dywidendę (rel20 +1,73 p.p., momentum 14,0 pkt); bez korekty byłoby rel20 −5,21 p.p. i 10,5 pkt, co jest artefaktem odcięcia. Skrypt nie robi tego automatycznie. <b>Rozliczenie W6 korekty nie wymagało</b> — okno 18.09→25.09 nie zawiera dnia prawa.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b><code>KALENDARZ_NIEPOTWIERDZONY</code></b> — cztery pozycje: (1) data posiedzenia RPP 6–7.10 — nbp.pl jest zablokowany przez politykę sieciową środowiska, a datowany kalendarz z bieżącego tygodnia sięga tylko 2.10, więc termin pochodzi wyłącznie z wtórnych agregatorów i <b>żadna deklaracja się na nim nie opiera</b>; (2) termin decyzji prezydenta w sprawie ustawy o podatku od nadzwyczajnych zysków (ORLEN); (3) termin decyzji Białego Domu o cłach na miedź rafinowaną (KGHM); (4) data zapowiedzianego strajku generalnego w Dino i data powołań zarządu Aliora. Żadna nie dostała punktów katalizatora. Kalendarz 28.09–2.10 jest natomiast potwierdzony w datowanym źródle z bieżącego tygodnia.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b>Kontrola pokrycia rachunku</b> — ten bieg nie miał dostępu do odpowiedzi <code>/run</code> (pola <code>ekspozycja_dluga</code>, <code>hedge</code>, <code>pominiete</code>), więc <b>nie dało się sprawdzić, czy rachunek faktycznie odwzorował koszyk W6</b>. Rozliczenie modelowe jest niezależne od tego, ale czytelnik powinien wiedzieć, że zgodność rachunku z koszykiem nie została w tym raporcie potwierdzona. Kodu <code>EKSPOZYCJA_NIEPELNA</code> nie dopisujemy, bo brak dostępu do <code>/status</code> nie jest dowodem niepełnej ekspozycji.</p>
+    <p style="font-size:.9rem;margin-top:8px"><b>Pierwszy tydzień bez <code>BRAK_20S</code></b> — cache ma już komplet 20 sesji przed D0, więc momentum jest liczone z obu składników (rel5 waga 2/3, rel20 waga 1/3) zgodnie z pełną definicją z §1 metody. To pierwsze takie okno od wprowadzenia v1.1.</p>
+  </div>
+  <h2>Zastrzeżenie</h2>
+  <div class="card warn">
+    <p style="font-size:.9rem">To nie jest rekomendacja inwestycyjna ani doradztwo. Zwroty z pięciu sesji są w dużej mierze losowe: przy pięciu pozycjach 95-procentowy przedział Wilsona dla 2/5 rozciąga się od 12% do 77%, więc pojedynczy tydzień nie dowodzi niczego w żadną stronę. Długoterminowy cel skuteczności to 55–60% i nie mamy podstaw twierdzić, że jest osiągany — po dwóch zamkniętych oknach metody v1.1 skumulowany wynik rachunku jest <b>ujemny (−2,66 p.p.)</b>, trafienia są <b>poniżej oczekiwania losowego</b>, Spearman w tym tygodniu wyniósł +0,008, a przewaga nad jednolinijkowym sortem po rel5 jest ujemna w obu zamkniętych oknach. Liczba nagłówkowa jest zawsze <b>wynikiem rachunku (średnia LONG − WIG20)</b>, podawanym brutto; spread LONG−SHORT jest metryką papierową i z definicji nieosiągalną, bo rachunek Capital.com nie pozwala otwierać pozycji krótkich na CFD na akcje. Nic w tym raporcie nie jest propozycją zmiany strategii: zgodnie z <code>docs/metoda.md</code> §10 do 12 zamkniętych okien nie zmieniamy ani wag, ani <code>HEDGE_RATIO</code>, ani progów reakcji, żeby nie dopasowywać metody do szumu.</p>
+  </div>
+
+  <footer>
+    Raport wygenerowany automatycznie 26.09.2026 · rozliczenie 2026-W6, prognoza 2026-W7 · metoda v1.1 (momentum mechaniczne), reguły w <code>docs/metoda.md</code> · pełny ranking i rejestr katalizatorów w <code>rankings/2026-W7.json</code> · źródło kursów: bankier.pl przez <code>scripts/kursy.py</code> (Yahoo HTTP 429), indeks potwierdzony depeszą PAP.
+  </footer>
+</div>
+</body>
+</html>
