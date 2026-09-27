@@ -496,6 +496,62 @@
    "opis": "powołania prezesa i pięciorga członków zarządu po konkursie zamkniętym 16.09 — data nieznana, KALENDARZ_NIEPOTWIERDZONY",
    "wklad_pkt": 0,
    "zrodlo": "komunikaty spółki, nabór zamknięty 16.09.2026"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-09-25",
+   "dn": 1,
+   "opis": "Erste Group Bank AG oglosil zamiar DOBROWOLNEGO WEZWANIA na akcje Erste Bank Polska po ok. 713 zl za akcje — 11,72% PONIZEJ zamkniecia D0 (807,60 zl). Oferent ma 49% i chce przejsc powyzej 50%, maksymalnie do 75%, nabywajac pakiet od ok. 1% do 26% kapitalu; zobowiazanie inwestycyjne wobec KNF nakazuje utrzymac min. 25% w free float, wiec delistingu NIE bedzie. Warunek zawieszajacy: zgoda KNF na przekroczenie 50% glosow oraz zobowiazania akcjonariuszy z >=25% do niesksladania zapisow. Ogloszenie wezwania planowane na poczatek listopada 2026, zapisy 30 dni. Podawana premia 22,1% odnosi sie do ceny referencyjnej 584 zl z maja 2025, NIE do kursu biezacego. Komunikat o 21:06, czyli po zamknieciu sesji D0 — zdarzenie nalezy do sesji poniedzialkowej 28.09 (dn=1). ZDARZENIE POMINIETE W RANKINGU W7 (wygenerowanym 26.09), ktory przy ERSTEPL na 1. miejscu zapisal \"brak zdarzen w D+1...D+10\"; punkty pozostaja zamrozone do soboty, reakcja protokolu: CLOSE/TENDER z 27.09.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Erste Group Bank zamierza wezwac do sprzedazy akcji Erste Bank Polska po ok. 713 zl za szt. (opis)', 25.09.2026 21:06; bankier.pl 'Erste Group oglasza zamiar przeprowadzenia dobrowolnego wezwania...', 25.09.2026"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-09-26",
+   "dn": 1,
+   "opis": "Erste Bank Polska od 26.09.2026 oprocentowuje NOWE kredyty hipoteczne wskaznikiem POLSTR 1M Stopa Skladana w miejsce WIBOR 3M (takze po zakonczeniu 5-letniego okresu stalej stopy); klienci z formularzem informacyjnym na WIBOR 3M wydanym do 25.09 zachowuja stara podstawe. Zmiana produktowa, bez bezposredniego wplywu na wynik krotkiego okna; odnotowana dla kompletnosci rejestru.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Nowe hipoteki juz z POLSTR. Erste Bank Polska zmienia zasady oprocentowania', 25/26.09.2026; biznes.pap.pl 'Erste Bank Polska od 26 IX wprowadzi POLSTR do oferty nowych kredytow hipotecznych'"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-09-24",
+   "dn": -1,
+   "opis": "DM BOS w miesiecznym portfelu (Polish Equities Monthly 10/2026, publ. 24.09.2026 16:12) wpisal ALIOR na liste spolek majacych zachowywac sie GORZEJ od rynku (\"powrocil na liste shortow po kilku miesiacach\"). Zgodnie z sekcja 2 metody to datowany wpis na liste portfelowa liczacego sie DM w oknie 30 dni PRZECIW tezie LONG, wart -3 pkt w kategorii DM — a ranking W7 przyznal Aliorowi 7,5 pkt, uwzgledniajac tylko Citi z 21.09 (+3) i Wood & Company z 24.09 (-3). Sygnal jest sprzed zamkniecia D0, wiec nie jest wyzwalaczem reakcji dziennej, tylko POMINIETYM wkladem do zamrozonego rankingu (DM_SYGNAL_POMINIETY_W7).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12 (raport DM BOS Polish Equities Monthly 10/2026)"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-24",
+   "dn": -1,
+   "opis": "DM BOS USUNAL CD Projekt z listy top picks w portfelu na pazdziernik 2026 (publ. 24.09.2026 16:12), uzasadniajac to nieudanym zakladem na spolke w zwiazku z przesunieciem premiery Wiedzmina 4 na 2028 rok. Ranking W7 przyznal CDPROJEKT 10,5 pkt w kategorii DM wylacznie za top pick Trigon DM z 8.09, nie uwzgledniajac przeciwnego, swiezszego sygnalu DM BOS. Sygnal sprzed D0 — wklad do rankingu, nie wyzwalacz reakcji (DM_SYGNAL_POMINIETY_W7).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-09-24",
+   "dn": -1,
+   "opis": "DM BOS DODAL PKO BP do listy top picks na pazdziernik 2026 (publ. 24.09.2026 16:12), nazywajac spolke \"koniem pociagowym calej hossy na GPW\". Datowany wpis ZGODNY z teza LONG, wart +3 pkt w kategorii DM; ranking W7 przyznal PKOBP 7,5 pkt z adnotacja \"brak datowanego sygnalu w oknie 30 dni\" (DM_SYGNAL_POMINIETY_W7). Reakcji nie uruchamia — protokol reaguje wylacznie na zdarzenia PRZECIW tezie.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-24",
+   "dn": -1,
+   "opis": "ORLEN pozostaje na liscie DM BOS spolek majacych zachowywac sie LEPIEJ od rynku w portfelu na pazdziernik 2026 (publ. 24.09.2026 16:12) — wpis kontynuowany, nie nowy; obok Orlenu na liscie jest PGE. Sygnal dziala PRZECIW tezie SHORT; ranking W7 przyznal Orlenowi 10,5 pkt tylko za Trigon DM z 8.09. Sprzed D0, wiec nie jest wyzwalaczem reakcji dziennej.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-25",
+   "dn": 0,
+   "opis": "Windfall tax — stan wyzwalacza tezy SHORT na 27.09: ustawa po Senacie (24.09, bez poprawek, 59:31) czeka na podpis prezydenta, ktory 25.09 przebywal w Stanach Zjednoczonych; rzad oczekuje podpisu \"niezwlocznie po powrocie\", ale ZADNEGO terminu ustawowego ani daty decyzji nie podano w datowanym zrodle. Ministrowie energii (Motyka) i infrastruktury (Klimczak) zaapelowali 25.09 o podpis. Kancelaria Prezydenta (szef KPRP Zbigniew Bogucki) ocenia ustawe jako niekonstytucyjna (naruszenie lex retro non agit: podatek od przychodow od 1.03.2026 przy wejsciu ustawy w zycie 1.11.2026) i proponuje rozwazenie poprawek. Pierwsza wersje ustawy prezydent skierowal w lipcu do TK w trybie kontroli prewencyjnej. Termin rozstrzygniecia: b.d. — KALENDARZ_NIEPOTWIERDZONY utrzymany.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Ministrowie apeluja: Prezydencie, podpisz ustawe paliwowa', 25.09.2026 12:35; bankier.pl 'Senat zapalil zielone swiatlo. Ustawa paliwowa czeka na podpis Nawrockiego', 24.09.2026 10:04 (aktual. 11:16); biznes.pap.pl 'Prezydent ocenia, ze ustawa dot. windfall tax jest niekonstytucyjna, proponuje wprowadzenie poprawek (opis)'"
   }
  ],
  "data_quality": [
@@ -503,6 +559,8 @@
   "KURS_ZRODLO_REZERWA",
   "KNF_SHORT_NIEDOSTEPNY",
   "DYWIDENDA_KOREKTA_PZU",
-  "KALENDARZ_NIEPOTWIERDZONY"
+  "KALENDARZ_NIEPOTWIERDZONY",
+  "WEZWANIE_ERSTEPL_POMINIETE_W7",
+  "DM_SYGNAL_POMINIETY_W7"
  ]
 }

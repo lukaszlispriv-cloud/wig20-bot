@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 27.09.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; } .flat{ color:#5C6874; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; } header .flat{ color:#C6CFD8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #B5651D; color:#B5651D;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(181,101,29,.07); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .badge-x{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#C4372E; color:#fff; margin-left:6px; }
+  .badge-r{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#B5651D; color:#fff; margin-left:6px; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  .react{ background:#fff; border:1px solid #E3E6DF; border-left:5px solid #C4372E; border-radius:8px;
+          padding:11px 13px; margin-bottom:9px; }
+  .react.soft{ border-left-color:#B5651D; }
+  .react .hd{ font-weight:700; font-size:14px; margin-bottom:3px; }
+  .react .act{ font-size:10.5px; font-weight:800; letter-spacing:.07em; padding:2px 7px; border-radius:4px;
+               background:#C4372E; color:#fff; margin-right:8px; }
+  .react.soft .act{ background:#B5651D; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">niedziela, 27 września 2026 &middot; bieg poranny 08:12 &middot; okno W7 (D0 = 25.09.2026) <b>OTWARTE</b> — do pierwszej sesji jeszcze nie doszło</div>
+    <div class="wig">
+      <span class="val">4&nbsp;180,26</span>
+      <span class="chg flat">0,00%</span>
+      <span class="lbl">WIG20, zamknięcie ostatniej zakończonej sesji: piątek 25.09.2026 — a to jest jednocześnie <b>D0 nowego okna</b>, więc od bazy nie minęła ani jedna sesja i wszystkie zwroty poniżej są zerowe z definicji, nie z wyliczenia. <b>Dziś sesji nie ma</b>; GPW pracuje od poniedziałku 28.09, wtedy o 9:15 bot rotuje portfel na ranking W7. Pierwszy niezerowy odczyt wyniku będzie możliwy w poniedziałkowym biegu. Źródło: bankier.pl — tabela notowań indeksów, zamknięcie 25.09.2026 17:15, pobrane przez <code>scripts/kursy.py</code>; wartość zgodna z <code>d0.wig20</code> w <code>signals.json</code>.</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <div class="stamp" style="border-color:#B5651D;color:#B5651D;background:rgba(181,101,29,.07);">Prognoza aktualna &middot; jedna noga wycofana</div>
+    <div class="stamp-note">Status <b>AKTUALNA</b> — nic nie unieważniło całej prognozy W7. Ale <b>jedna reakcja jest nowa i twarda</b>: <b>ERSTE BANK POLSKA &mdash; CLOSE</b>, bo w piątek o 21:06, już po zamknięciu sesji D0, Erste Group ogłosił zamiar wezwania po <b>ok. 713 zł</b>, czyli <b>11,72% pod kursem D0</b> (807,60 zł). Wpis wchodzi do <code>exclude</code> przed poniedziałkową rotacją, więc <code>desired_book()</code> tej nogi <b>w ogóle nie otworzy</b>. Moduł taktyczny: lista pusta, bez zmian. Koszyków ani kierunków nie zmieniamy — ranking W7 jest zamrożony do soboty.</div>
+  </div>
+
+  <h2>Wynik rachunku — okno W7 dopiero startuje</h2>
+
+  <div class="score">
+    <div class="main">Wynik rachunku &middot; średnia LONG &minus; WIG20 &middot; D0 → dziś</div>
+    <div class="big flat" style="color:#C6CFD8;">0,00 p.p.</div>
+    <div class="sub">Średnia LONG <b>0,00%</b> wobec WIG20 <b>0,00%</b>. To nie jest wynik, to <b>brak wyniku</b>: ostatnia zakończona sesja (25.09) jest tą samą sesją, która wyznacza bazę D0, więc licznik stoi na zerze z definicji. Bot nie ma jeszcze otwartej ani jednej nogi koszyka W7 — rotacja wypada w poniedziałek 28.09 o 9:15. Pierwsza liczba z treścią pojawi się po sesji D+1.</div>
+    <div class="paper">Spread papierowy (LONG &minus; SHORT): <b>0,00 p.p.</b> — <i>papierowy, miara selekcji, nie wynik rachunku.</i><br>
+    Rozjazd papier &minus; rachunek: <b>0,00 p.p.</b> — poniżej progu 0,5 p.p., bo obie liczby są zerowe. Przypomnienie: koszyka SHORT bot <b>nie handluje</b> — rachunek Capital.com nie pozwala shortować CFD na akcje, więc spread LONG&minus;SHORT jest metryką z definicji nieosiągalną.</div>
+  </div>
+
+  <p style="font-size:12.5px;color:#5C6874;margin-top:10px;">Wszystkie trzy warianty pochodzą z sekcji KOSZYKI w <code>python3 scripts/metryki.py rozlicz --week 2026-W7 --d0 2026-09-25 --d5 2026-09-25</code>, nie z ręcznego liczenia. Do wyniku każdego zamkniętego okna trzeba będzie doliczyć koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE i korekcie wielkości <b>dwa razy</b> — Capital.com nie ma częściowego zamknięcia), punkty swapowe za dobę utrzymania oraz lukę między zamknięciem D0 w piątek a realizacją w poniedziałek o 9:15. <b>Przy Erste ta luka jest dziś najważniejszą pozycją kosztową całego okna</b> — i właśnie dlatego tej nogi nie otwieramy.</p>
+
+  <h2>Nowa reakcja — Erste Bank Polska</h2>
+
+  <div class="react">
+    <div class="hd"><span class="act">CLOSE</span>ERSTE BANK POLSKA (LONG, 1. miejsce rankingu W7) — wezwanie po ok. <b>713 zł</b> przy kursie D0 <b>807,60 zł</b></div>
+    <p>W piątek <b>25.09 o 21:06</b>, cztery godziny po zamknięciu sesji D0, Erste Group Bank AG ogłosił zamiar przeprowadzenia <b>dobrowolnego wezwania</b> na akcje swojej polskiej spółki. Cena: <b>ok. 713 zł za akcję</b>. Kurs zamknięcia D0: <b>807,60 zł</b>. Oferta jest więc <b>11,72% PONIŻEJ rynku</b> — nie premią, a dyskontem. Premia „+22,1%”, którą podaje komunikat, liczona jest wobec ceny referencyjnej <b>584 zł z maja 2025</b>, a nie wobec kursu bieżącego; kto zestawi ją z piątkowym zamknięciem, przeczyta ją odwrotnie niż jest.</p>
+    <p><b>Parametry:</b> oferent ma dziś <b>49%</b> i chce przejść <b>powyżej 50%, maksymalnie do 75%</b>, nabywając pakiet od ok. 1% do <b>26%</b> kapitału. Wezwanie jest warunkowe: wymaga <b>zgody KNF</b> na przekroczenie progu 50% głosów oraz zobowiązań akcjonariuszy posiadających łącznie <b>≥25%</b> do nieskładania zapisów. Erste Group jest wobec KNF zobowiązany utrzymać <b>co najmniej 25% akcji w free floacie</b>, więc <b>delistingu nie będzie</b> — to nie jest ścieżka wyjścia z giełdy w stylu Żabki. Ogłoszenie formalnego wezwania planowane na <b>początek listopada 2026</b>, zapisy przez 30 dni.</p>
+    <p><b>Dlaczego to CLOSE, a nie REDUCE.</b> Protokół wymienia „wezwanie/delisting” wprost na liście twardych wyzwalaczy, bez dodatkowego warunku kursowego — i tu ekonomia idzie w tę samą stronę co litera. Teza LONG dla Erste stała na momentum: <b>rel5 +6,42 p.p.</b> i <b>rel20 +7,53 p.p.</b>, najwyżej w całym uniwersum, po tygodniu, w którym WIG-BANKI ustanowił rekord, a sama spółka urosła o 7,82% na historyczne maksimum. Formalna oferta większościowego akcjonariusza <b>12% pod tym maksimum</b> jest kotwicą wyceny w drugą stronę i zdejmuje ze stołu spekulację na premię za przejęcie, która część tego rajdu mogła napędzać. <b>Filar tezy padł, zanim pozycja została otwarta.</b></p>
+    <p><b>Czego ta reakcja nie kosztuje.</b> W przeciwieństwie do reakcji z okna W6, ta nie płaci spreadu bid/ask ani razu: pozycji jeszcze nie ma, rotacja jest dopiero w poniedziałek, a <code>desired_book()</code> pomija tickery z <code>action=CLOSE</code>. Wpis nie zamyka pozycji — <b>nie dopuszcza do jej otwarcia</b>. Pola liczbowe wpisu: <code>price_before = 807,60</code> (zamknięcie sesji sprzed reakcji, bo od D0 nie było innej), <code>move_from_d0_pct = 0,00</code> (nie było sesji, więc kurs nie mógł się ruszyć), <code>trigger = TENDER</code>.</p>
+    <span class="src">bankier.pl „Erste Group Bank zamierza wezwać do sprzedaży akcji Erste Bank Polska po ok. 713 zł za szt. (opis)”, 25.09.2026 21:06; bankier.pl „Erste Group ogłasza zamiar przeprowadzenia dobrowolnego wezwania do zapisywania się na sprzedaż akcji w celu zwiększenia udziału w Erste Bank Polska”, 25.09.2026; kurs D0 807,60 zł z <code>d0.prices</code> w <code>signals.json</code>, zgodny z <code>data/kursy-cache.json</code></span>
+  </div>
+
+  <div class="note">
+    <b>To zdarzenie zostało pominięte w rankingu W7</b>, wygenerowanym 26.09, czyli <b>dzień po</b> komunikacie. Ranking stawia ERSTEPL na 1. miejscu (63,6 pkt) z adnotacją „KAT raport Q3 dopiero 30.10, <i>brak zdarzeń w D+1…D+10</i> → 10 neutralnie”. Wezwanie ogłoszone po 17:00 należy rynkowo do sesji poniedziałkowej, czyli <b>dn = 1</b> — jest w samym środku okna wyniku i w paśmie pełnego wkładu. Punktów <b>nie zmieniam</b>: ranking jest zamrożony do soboty i zmienianie go ex post zniszczyłoby rozliczenie. Zdarzenie wchodzi do rejestru katalizatorów w <code>rankings/2026-W7.json</code>, a do <code>data_quality</code> dopisany jest kod <code>WEZWANIE_ERSTEPL_POMINIETE_W7</code>. To materiał dla sobotniego raportu, nie pretekst do przestawiania wag.
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li>
+      <span class="tag t-espi">ESPI</span><b>Wezwanie na Erste Bank Polska po ok. 713 zł — opisane wyżej, jedyne zdarzenie tej doby, które zmienia stan portfela.</b> Warto dodać jedną liczbę kontekstową: pakiet do 26% kapitału przy cenie 713 zł to rzędu 2,3 mld zł, a warunek „≥25% akcji zobowiązane do nieskładania zapisów” oznacza, że <b>wezwanie może nie dojść do skutku nawet po zgodzie KNF</b>. Rynek w poniedziałek wycenia więc nie tylko cenę, ale i prawdopodobieństwo. Dla nas to nie ma już znaczenia kierunkowego — nogi nie otwieramy.
+      <span class="src">bankier.pl „Erste Group Bank zamierza wezwać…”, 25.09.2026 21:06; bankier.pl „UPDATE: Erste Group to launch tender offer to increase stake in Erste Bank Polska”, 25.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-rek">Rekom.</span><b>Drugie pominięcie w rankingu W7, tym razem po stronie kategorii DM: portfel DM BOŚ na październik z 24.09 (16:12) nie wszedł do punktacji, choć mieści się w oknie 30 dni.</b> Skutki są konkretne i idą w obie strony: <b>Alior wrócił na listę spółek „gorzej niż rynek”</b> („po kilku miesiącach”) — a ranking postawił go na <b>2. miejscu koszyka LONG</b> z DM 7,5 pkt liczonym wyłącznie z Citi (+3, 21.09) i Wood &amp; Company (−3, 24.09); <b>CD Projekt został usunięty z top picks</b> (broker tłumaczy to nieudanym zakładem po przesunięciu premiery „Wiedźmina 4” na 2028) — a ranking dał mu <b>10,5 pkt</b> za top pick Trigon DM z 8.09, nie widząc świeższego sygnału przeciwnego; <b>PKO BP został dodany do top picks</b> jako „koń pociągowy całej hossy na GPW” — a ranking zapisał mu „brak datowanego sygnału w oknie 30 dni” (7,5 pkt). Na liście spółek „lepiej niż rynek” są też <b>Orlen i PGE</b> (wpisy kontynuowane, nie nowe) — przy Orlenie to sygnał przeciw tezie SHORT. <b>Żaden z tych sygnałów nie uruchamia reakcji</b>: wszystkie są z 24.09, czyli sprzed zamknięcia D0, więc były w cenie D0 i należą do rankingu, nie do protokołu dziennego. Kod <code>DM_SYGNAL_POMINIETY_W7</code> dopisany do <code>data_quality</code>.
+      <span class="src">strefainwestorow.pl „5 nowych spółek w Top Picks DM BOŚ na październik”, publ. 24.09.2026 16:12 (raport DM BOŚ Polish Equities Monthly 10/2026); pełna lista „lepiej niż rynek”: AB, Action, Asbis, Atrem, Cloud Technologies, Cyfrowy Polsat, Decora, Enea, Grupa Pracuj, LPP, Modivo, Orlen, PKO BP, PGE, Toya, Vercom, Voxel; „gorzej niż rynek”: Alior, Arctic Paper, JSW</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>Wyzwalacz tezy SHORT na Orlenie: ustawa o windfall tax leży u prezydenta, a nowa informacja dnia jest proceduralna — prezydent w piątek przebywał w Stanach Zjednoczonych.</b> Rząd oczekuje podpisu „niezwłocznie po powrocie”, ale <b>żadnego terminu ustawowego ani daty decyzji nie podaje żadne datowane źródło</b>. Ministrowie energii (Miłosz Motyka) i infrastruktury (Dariusz Klimczak) zaapelowali 25.09 o podpis — „nie ma żadnego merytorycznego uzasadnienia ku temu, by blokował”. Po drugiej stronie Kancelaria Prezydenta (szef KPRP Zbigniew Bogucki) ocenia ustawę jako <b>niekonstytucyjną</b> i proponuje rozważenie poprawek: podatek obejmuje przychody <b>od 1.03.2026</b>, gdy ustawa ma wejść w życie <b>1.11.2026</b>, co KPRP czyta jako naruszenie <i>lex retro non agit</i> — ten sam zarzut, z którym pierwszą wersję ustawy prezydent skierował w lipcu do TK w trybie kontroli prewencyjnej. <b>Dla pozycji krótkiej na Orlenie oznacza to ryzyko dwustronne i niedatowane</b>: podpis realizuje tezę, weto albo wniosek do TK ją podcina. Kod <code>KALENDARZ_NIEPOTWIERDZONY</code> utrzymany.
+      <span class="src">bankier.pl „Ministrowie apelują: Prezydencie, podpisz ustawę paliwową”, 25.09.2026 12:35; bankier.pl „Senat zapalił zielone światło. Ustawa paliwowa czeka na podpis Nawrockiego”, 24.09.2026 10:04 (aktual. 11:16); biznes.pap.pl „Prezydent ocenia, że ustawa dot. windfall tax jest niekonstytucyjna, proponuje wprowadzenie poprawek (opis)”</span>
+    </li>
+    <li>
+      <span class="tag t-espi">ESPI</span><b>Erste Bank Polska od 26.09 oprocentowuje nowe hipoteki wskaźnikiem POLSTR 1M Stopa Składana w miejsce WIBOR 3M.</b> Zmiana dotyczy <b>wyłącznie nowych</b> wniosków oraz okresu po zakończeniu 5-letniej stałej stopy; klienci, którzy do 25.09 dostali formularz informacyjny z WIBOR 3M, zachowują starą podstawę. To zdarzenie produktowe, bez rangi wyzwalacza — odnotowane, bo dotyczy spółki, którą dziś wycofujemy z koszyka, i bo jest to <b>jedyny komunikat spółkowy z 26.09 w całym uniwersum koszykowym</b>. Cała sobotnia lista ESPI/EBI dotyczyła spółek spoza WIG20 (Novavis Group 22:55, Werth-Holz 10:43, Ecnology Group 08:20).
+      <span class="src">bankier.pl „Nowe hipoteki już z POLSTR. Erste Bank Polska zmienia zasady oprocentowania”; biznes.pap.pl „Erste Bank Polska od 26 IX wprowadzi POLSTR do oferty nowych kredytów hipotecznych”; bankier.pl — lista komunikatów ESPI/EBI, odczyt 27.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-rek">Rekom.</span><b>W tabeli rekomendacji bankier.pl nadal ani jednej nowej pozycji dla spółek koszykowych — piąty dzień z rzędu.</b> Najświeższy wpis to HUUUGE (Noble Securities, „akumuluj”, 27,10 zł) z 24.09, przed nim DIGITANET i UNIMOT z 23.09 — wszystkie spoza koszyków. Ostatnia rekomendacja koszykowa w tabeli to Citi „kupuj” dla Aliora z 21.09 (146,80 zł). Warto zauważyć, że <b>tabela rekomendacji nie pokazuje miesięcznych portfeli domów maklerskich</b> — i właśnie dlatego portfel DM BOŚ z 24.09 umknął rankingowi. To luka w procedurze pozyskiwania danych, nie luka w źródle.
+      <span class="src">bankier.pl — lista rekomendacji maklerskich, odczyt 27.09.2026; brak pozycji dla ERSTEPL, ALIOR, LPP, CDPROJEKT, PKOBP, PKNORLEN, BUDIMEX, KGHM, TAURONPE, DINOPL z 25–27.09</span>
+    </li>
+    <li>
+      <span class="tag t-short">Short</span><b>Rejestr krótkiej sprzedaży KNF: siódmy dzień bez dostępu, dziś z inną awarią niż wczoraj.</b> Wczoraj publikator <code>rss.knf.gov.pl</code> zwracał HTTP 404; dziś strona rejestru <b>otwiera się</b>, ale zamiast tabeli pokazuje komunikat „Wystąpił błąd! Prosimy skontaktować się za administratorem!” i pasek „Proszę czekać…”. Sam <code>knf.gov.pl</code> pozostaje blokowany przez politykę sieciową środowiska. Wyzwalacz <code>KNF_SHORT</code> wchodzi w okno W7 <b>martwy, tak jak przeszedł całe okno W6</b> — żadna reakcja tego tygodnia nie będzie mogła się na nim oprzeć.
+      <span class="src">rss.knf.gov.pl — strona rejestru krótkiej sprzedaży z błędem aplikacji, odczyt 27.09.2026; knf.gov.pl — CONNECT 403 (egress proxy)</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>Kalendarz tygodnia potwierdzony w datowanym źródle z bieżącego tygodnia — i nie ma w nim posiedzenia RPP.</b> Przegląd bankier.pl opublikowany <b>25.09 o 13:38</b> wymienia wstępny CPI GUS na <b>środę 30.09 o 9:30</b> (oczekiwane przyspieszenie z 3,4% do 3,6%), wyniki <b>Pepco we wtorek 29.09</b> i raport półroczny <b>Modivo w czwartek 1.10</b>, ale <b>nie wymienia ani posiedzenia RPP, ani konferencji prezesa NBP</b>. Ranking W7 zapisał datę posiedzenia 6–7.10 jako niepotwierdzoną i <b>to się dziś nie zmienia</b>: <code>nbp.pl</code> jest zablokowany przez politykę sieciową, więc źródła pierwotnego nie da się sprawdzić. Zgodnie z <code>docs/metoda.md</code> sekcja 9 obowiązuje <code>b.d.</code> — <b>żadna deklaracja makro w tym tygodniu nie może się opierać na wrześniowym ani październikowym posiedzeniu RPP.</b>
+      <span class="src">bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026 13:38 — datowany przegląd bieżącego tygodnia, pobrany bezpośrednio</span>
+    </li>
+  </ul>
+
+  <h2>Koszyk LONG — to handluje bot</h2>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs ostatni</th><th>Zwrot poz.</th><th>Rel. vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>ERSTE BANK POLSKA<span class="badge-x">CLOSE 27.09</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">807,60</td><td class="num">807,60</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>ALIOR BANK</td><td><span class="dir dir-l">LONG</span></td><td class="num">139,05</td><td class="num">139,05</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>LPP</td><td><span class="dir dir-l">LONG</span></td><td class="num">24&nbsp;900,00</td><td class="num">24&nbsp;900,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>CD PROJEKT</td><td><span class="dir dir-l">LONG</span></td><td class="num">244,60</td><td class="num">244,60</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>PKO BP</td><td><span class="dir dir-l">LONG</span></td><td class="num">124,54</td><td class="num">124,54</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia LONG</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+
+  <div class="basket-h">KOSZYK SHORT — papierowy, bot go NIE handluje</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kier.</th><th>Kurs D0</th><th>Kurs ostatni</th><th>Zwrot poz.</th><th>Rel. vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>ORLEN</td><td><span class="dir dir-s">SHORT</span></td><td class="num">148,84</td><td class="num">148,84</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>BUDIMEX</td><td><span class="dir dir-s">SHORT</span></td><td class="num">692,00</td><td class="num">692,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>KGHM</td><td><span class="dir dir-s">SHORT</span></td><td class="num">330,50</td><td class="num">330,50</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>TAURON PE</td><td><span class="dir dir-s">SHORT</span></td><td class="num">8,73</td><td class="num">8,73</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>DINO POLSKA</td><td><span class="dir dir-s">SHORT</span></td><td class="num">34,44</td><td class="num">34,44</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia SHORT (pozycja)</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+  <p style="font-size:12px;color:#6B7681;margin-top:6px;">Kolejność spółek jest stała, zgodna z <code>signals.json</code> — tabele <b>nie są</b> rankingiem najlepszych i najgorszych pozycji. Kolumna „Zwrot poz.” dla koszyka SHORT to zwrot <i>pozycji krótkiej</i>, czyli odwrotność zmiany kursu. Wszystkie zwroty są zerowe, bo <b>kurs ostatni jest kursem D0</b>: ostatnia zakończona sesja GPW (25.09) wyznacza jednocześnie bazę okna. Kursy z tabel notowań bankier.pl przez <code>scripts/kursy.py</code> (rezerwa po HTTP 429 z Yahoo — kod <code>KURS_ZRODLO_REZERWA</code>), zgodne co do grosza z <code>d0.prices</code> w <code>signals.json</code> i z <code>data/kursy-cache.json</code>. Wiersz Erste pokazuje pozycję, która <b>nie zostanie otwarta</b> — po wpisie CLOSE koszyk rachunku wchodzi w tydzień z czterema nogami, nie pięcioma.</p>
+
+  <h2>Moduł taktyczny</h2>
+  <div class="note">
+    <b>Bez zmian — lista pusta.</b> Przeskanowane spółki WIG20 spoza koszyków i spoza listy taktycznej (mBank, Pekao, Allegro, Modivo, Pepco, PZU, Żabka, PGE, Kęty, Kruk) pod kątem twardych świeżych wyzwalaczy z ostatniej doby: <b>żadna nie ma wyniku powyżej konsensusu z reakcją kursu, przełomowego kontraktu ani wezwania</b>, i żadna nie ma szokowo złych wyników. Jedyne zdarzenie o randze wezwania w tej dobie dotyczy Erste, a to spółka <i>koszykowa</i>, więc obsługuje ją protokół <code>exclude</code>, nie moduł taktyczny. Dodanie Modivo do top picks DM BOŚ (24.09) to wpis na listę portfelową sprzed D0 — <b>nie jest to twardy wyzwalacz</b> w rozumieniu modułu, a raport półroczny Modivo wypada w czwartek 1.10 i jest zdarzeniem o nieznanym kierunku, nie wyzwalaczem. Nic do otwarcia.
+  </div>
+
+  <h2>Kalendarz — dziś i nadchodzący tydzień</h2>
+  <div class="cal">
+    <p style="margin:12px 0 4px;"><b>Niedziela 27.09 — sesji nie ma.</b> GPW nie pracuje, rynki bazowe też. Dziś referendum w Szwajcarii (neutralność, żywność). Najbliższa sesja: <b>poniedziałek 28.09</b> — wtedy o 9:15 bot rotuje portfel na ranking W7, <b>bez nogi Erste</b>.</p>
+    <ul>
+      <li><b>Pon. 28.09</b> — 1:50 protokół z lipcowego posiedzenia Banku Japonii; 14:00 indeks Fedu z Dallas (przemysł); 16:30 produkcja przemysłowa (Indie). GPW: raporty półroczne spółek spoza WIG20 (PKP Cargo, XTPL). <b>Brak publikacji spółki koszykowej.</b> Pierwsza sesja okna W7 — i pierwsza sesja, w której rynek wycenia wezwanie na Erste.</li>
+      <li><b>Wt. 29.09</b> — 6:30 decyzja RBA (Australia) ws. stóp; 9:00 wstępny HICP Hiszpanii i Wskaźnik Wyprzedzający Koniunktury BIEC (Polska); 11:00 koniunktury gospodarcze KE; 12:00 wystąpienie Joachima Nagela (Bundesbank); 15:00 indeksy cen domów S&amp;P/Case-Shiller i FHFA; 16:00 zaufanie konsumentów Conference Board i ankieta JOLTS. GPW: <b>Pepco — wstępne wyniki za cały rok obrotowy 2025/26</b> (spoza koszyków W7, ale D+2 i potwierdzone w dwóch źródłach) oraz raporty półroczne (Enter Air, JSW, Scanway, Sunex). Tego dnia <b>premiera „Wiedźmin 3: Dziki Gon — Remastered”</b> CD Projektu — jedyny katalizator z niezerowym wkładem w koszyku LONG (D+2, +2 pkt w rankingu; aktualizacja darmowa dla posiadaczy gry, monetyzacja na nowych kopiach i Nintendo Switch 2).</li>
+      <li><b>Śr. 30.09</b> — <b>9:30 wstępny odczyt CPI GUS za wrzesień</b> (konsensus 3,6% wobec 3,4% poprzednio) — najważniejsza pozycja krajowa tygodnia i filar kategorii MAKRO dla całego koszyka bankowego; nocą oficjalne PMI z Chin (przemysł, usługi); 8:45 inflacja Francji, 11:00 Włoch, 14:00 Niemiec; 14:30 deflator PCE za sierpień i rewizja PKB II kw. (USA); 15:45 Chicago PMI; 16:30 raport EIA o zapasach ropy. GPW: ostateczny termin raportów półrocznych. Tego dnia <b>Orlen startuje z przymusowym wykupem akcji Energi</b> po 27,60 zł (32,8 mln akcji, ok. 907 mln zł) — zdarzenie „znane” od 24.09, w rankingu bez wkładu.</li>
+      <li><b>Czw. 1.10</b> — 8:30 CPI Szwajcarii; od 9:00 wrześniowe PMI przemysłu (Australia, Japonia, Indie, Szwecja, <b>Polska</b>, Węgry); 10:00 finalny PMI strefy euro i wystąpienie Andrew Baileya (BoE); 10:30 PMI Wielkiej Brytanii; 11:00 bezrobocie BAEL (UE); 11:30 Challenger (zwolnienia w USA); 14:30 wnioski o zasiłek (USA); 15:30 PMI Kanady; <b>16:00 ISM dla przemysłu USA</b>; w ciągu dnia wystąpienie Christine Lagarde (EBC) i konferencja G20 ministrów finansów. GPW: <b>raport półroczny Modivo</b> (D+4, spoza koszyków W7). Wall Street: Micron Technology, Nike.</li>
+      <li><b>Pt. 2.10</b> — <b>wrześniowe dane z amerykańskiego rynku pracy (payrolls)</b>; nocą inflacja bazowa CPI Tokio; 11:00 wstępny HICP strefy euro; sierpniowe zamówienia w przemyśle i na środki trwałe (USA); początek świąt jesiennych w Chinach (powrót 8.10) — istotne dla miedzi, czyli dla nogi KGHM.</li>
+      <li><b>Posiedzenie RPP w tym tygodniu: <code>b.d.</code></b> — datowany przegląd tygodnia z 25.09 <b>nie wymienia ani posiedzenia RPP, ani konferencji prezesa NBP</b>. Data 6–7.10 z rankingu W7 pozostaje <b>niepotwierdzona w źródle pierwotnym</b> (<code>nbp.pl</code> blokowany przez politykę sieciową). Kod <code>KALENDARZ_NIEPOTWIERDZONY</code>.</li>
+      <li><b>Wyzwalacz tezy SHORT na Orlenie:</b> ustawa o windfall tax u prezydenta; termin podpisu, weta albo wniosku do TK <code>b.d.</code></li>
+      <li><b>Wezwanie na Erste:</b> formalne ogłoszenie planowane na <b>początek listopada 2026</b>, zapisy 30 dni, warunek zgody KNF — wszystko daleko za oknem D+10 (9.10). Dla okna W7 liczy się wyłącznie poniedziałkowa reakcja kursu.</li>
+    </ul>
+    <p style="font-size:11.5px;color:#6B7681;margin:0 0 10px;">Źródło kalendarza tygodnia: bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026 13:38 — <b>datowany przegląd bieżącego tygodnia, pobrany bezpośrednio</b>, nie z pamięci ani z rocznego harmonogramu. Daty publikacji spółkowych: kalendarium bankier.pl i rejestr katalizatorów w <code>rankings/2026-W7.json</code>.</p>
+  </div>
+
+  <h2>Czego pilnować w poniedziałek</h2>
+  <div class="note">
+    <b>Rotacja 9:15 na cztery nogi.</b> Bot zamknie pozycje okna W6 i otworzy koszyk W7 <b>bez Erste</b>: Alior, LPP, CD Projekt, PKO BP plus sprzedany kontrakt na WIG20. To pierwszy raz, gdy wpis <code>CLOSE</code> działa <i>przed</i> otwarciem, a nie po. Warto sprawdzić w <code>/status</code> sekcję <code>diagnostyka_instrumentow</code>, czy cztery nogi wchodzą w docelowej wielkości. Hedge <b>sam się do tego dopasuje</b>: <code>sync()</code> liczy <code>hedge_cel = long_cel * HEDGE_RATIO</code> z <i>faktycznej</i> wartości otwartych pozycji długich, więc krótsza noga indeksu zejdzie proporcjonalnie i <b>ekspozycja netto zostanie zbilansowana</b>. Realny skutek reakcji jest inny: rachunek wchodzi w tydzień z około czterema piątymi planowanej ekspozycji brutto, czyli z mniejszą pozycją, a nie z przekrzywionym hedge'em.<br>
+    <b>Kurs Erste.</b> Nie dla pozycji — dla oceny protokołu. Jeśli w poniedziałek kurs zejdzie w stronę 713 zł, szczebel CLOSE obroni się sam. Jeśli rynek zignoruje ofertę i utrzyma 800 zł, sobotnie rozliczenie dostanie mocny argument, że twardy wyzwalacz „wezwanie” trzeba warunkować relacją ceny oferty do kursu, a nie stosować mechanicznie.<br>
+    <b>Alior i CD Projekt.</b> Dwie nogi LONG, którym ranking dał punkty DM wyższe, niż wyszłoby po uwzględnieniu portfela DM BOŚ z 24.09. Jeśli obie będą w poniedziałek słabe, to nie przypadek do zignorowania — to sygnał, że procedura pozyskiwania sygnałów DM ma dziurę wielkości miesięcznych portfeli domów maklerskich.<br>
+    <b>Środowe CPI.</b> Cała kategoria MAKRO koszyka bankowego (Alior 9 pkt, PKO BP 8 pkt) stoi na konsensusie 3,6%, czyli na scenariuszu „wyżej na dłużej”. Odczyt wyraźnie niższy podcina ten filar w dwóch z czterech otwartych nóg jednocześnie.
+  </div>
+
+  <h2>Problemy z danymi</h2>
+  <div class="note">
+    <b>FMP:</b> konektor jest w sesji (narzędzia <code>mcp__FMP__*</code> znalezione przez ToolSearch), ale endpoint <code>chart</code> zwraca „ACCESS DENIED — requires a higher plan”. Notowań GPW z FMP pobrać się nie da — <code>FMP_PLAN_BLOKADA</code> siódmy dzień. <b>To jedyna pozycja na tej liście, którą właściciel może odblokować sam</b> (podniesienie planu FMP); grant konektora dla rutyny działa poprawnie.<br>
+    <b>Yahoo:</b> HTTP 429 z IP chmury na wszystkich 21 symbolach — kursy z rezerwy bankier.pl (<code>KURS_ZRODLO_REZERWA</code>). Bankier podaje tylko ostatnią sesję, bez świecy historycznej, ale dziś to bez znaczenia: ostatnia sesja <i>jest</i> sesją D0, a jej kursy zgadzają się z <code>d0.prices</code> co do grosza (<code>WALIDACJA_D0_Z_CACHE</code>). Skrypt uruchomiony <b>raz</b>, zgodnie z ochroną przed limiterem.<br>
+    <b>KNF:</b> rejestr krótkiej sprzedaży niedostępny siódmy dzień (<code>KNF_SHORT_NIEDOSTEPNY</code>) — dziś strona otwiera się, ale zwraca błąd aplikacji zamiast tabeli pozycji.<br>
+    <b>Kalendarz:</b> data posiedzenia RPP i termin decyzji prezydenta w sprawie windfall tax bez potwierdzenia w datowanym źródle (<code>KALENDARZ_NIEPOTWIERDZONY</code>).<br>
+    <b>Nowe dziś — dwa pominięcia w zamrożonym rankingu W7:</b> <code>WEZWANIE_ERSTEPL_POMINIETE_W7</code> (wezwanie z 25.09 21:06 nieuwzględnione w rankingu z 26.09, choć wypada w paśmie D+1) i <code>DM_SYGNAL_POMINIETY_W7</code> (portfel DM BOŚ z 24.09 w oknie 30 dni nieuwzględniony w kategorii DM dla Aliora, CD Projektu, PKO BP i Orlenu). Oba kody dopisane do <code>data_quality</code> w <code>rankings/2026-W7.json</code>; <b>punktów ani kolejności rankingu nie zmieniono</b> — ranking jest zamrożony do soboty.
+  </div>
+
+  <footer>
+    Materiał analityczno-edukacyjny, <b>nie stanowi rekomendacji inwestycyjnej</b> w rozumieniu przepisów o rekomendacjach dotyczących instrumentów finansowych. Nie jest też doradztwem inwestycyjnym ani ofertą. Dane mogą zawierać błędy — każdą liczbę należy zweryfikować u źródła.<br>
+    Raport wygenerowany automatycznie przez asystenta AI (rutyna „Puls WIG20”, repozytorium <code>wig20-bot</code>), bieg 27.09.2026 08:12. Kursy: bankier.pl przez <code>scripts/kursy.py</code>; research: bankier.pl, biznes.pap.pl, strefainwestorow.pl. Okno W7 otwarte, D0 = 25.09.2026, pierwsza sesja okna: poniedziałek 28.09.
+  </footer>
+
+</div>
+</body>
+</html>

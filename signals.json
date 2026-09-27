@@ -39,8 +39,18 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-09-26",
+  "exclude": [
+    {
+      "ticker": "ERSTEPL",
+      "action": "CLOSE",
+      "date": "2026-09-27",
+      "reason": "Erste Group Bank AG oglosila 25.09.2026 o 21:06 (po zamknieciu sesji D0) zamiar dobrowolnego wezwania na akcje Erste Bank Polska po ok. 713 zl za sztuke, czyli 11,72% PONIZEJ zamkniecia D0 (807,60 zl). Wezwanie jest twardym wyzwalaczem protokolu (TENDER): oferent podnosi udzial z 49% do powyzej 50%, maksymalnie 75%, kupujac pakiet do 26%, i jest zobowiazany wobec KNF utrzymac co najmniej 25% w free float, wiec delistingu nie bedzie, a cena wezwania staje sie kotwica wyceny ok. 12% pod rynkiem. Premia 22,1% liczona jest wobec ceny referencyjnej 584 zl z maja 2025, nie wobec kursu biezacego. Filar tezy LONG (momentum rel5 +6,42 p.p. i rekord sektora bankowego) zostal podciety przez formalna oferte glownego akcjonariusza ponizej rynku. Ogloszenie wezwania planowane na poczatek listopada 2026, zapisy 30 dni, warunek zgody KNF na przekroczenie 50%. Zdarzenie po 17:00 nalezy do sesji poniedzialkowej 28.09 (dn=1), a rotacja portfela wypada 28.09 o 9:15 - wpis CLOSE sprawia, ze desired_book() nie otworzy tej nogi. Zdarzenie zostalo POMINIETE w rankingu W7 (wygenerowanym 26.09), ktory stawia ERSTEPL na 1. miejscu z adnotacja o braku zdarzen w D+1...D+10. Zrodlo: bankier.pl 'Erste Group Bank zamierza wezwac do sprzedazy akcji Erste Bank Polska po ok. 713 zl za szt. (opis)', 25.09.2026 21:06; bankier.pl 'Erste Group oglasza zamiar przeprowadzenia dobrowolnego wezwania do zapisywania sie na sprzedaz akcji w celu zwiekszenia udzialu w Erste Bank Polska', 25.09.2026; kurs D0 807,60 zl z d0.prices w signals.json i z data/kursy-cache.json.",
+      "price_before": 807.6,
+      "move_from_d0_pct": 0.0,
+      "trigger": "TENDER"
+    }
+  ],
+  "last_daily": "2026-09-27",
   "d0": {
     "date": "2026-09-25",
     "wig20": 4180.26,
