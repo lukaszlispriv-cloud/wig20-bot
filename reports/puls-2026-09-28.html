@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 28.09.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; } .flat{ color:#5C6874; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; } header .flat{ color:#C6CFD8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #B5651D; color:#B5651D;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(181,101,29,.07); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .badge-x{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#C4372E; color:#fff; margin-left:6px; }
+  .badge-r{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#B5651D; color:#fff; margin-left:6px; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  .react{ background:#fff; border:1px solid #E3E6DF; border-left:5px solid #C4372E; border-radius:8px;
+          padding:11px 13px; margin-bottom:9px; }
+  .react.soft{ border-left-color:#B5651D; }
+  .react .hd{ font-weight:700; font-size:14px; margin-bottom:3px; }
+  .react .act{ font-size:10.5px; font-weight:800; letter-spacing:.07em; padding:2px 7px; border-radius:4px;
+               background:#C4372E; color:#fff; margin-right:8px; }
+  .react.soft .act{ background:#B5651D; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style></head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">poniedziałek, 28 września 2026 — raport poranny, przed otwarciem sesji</div>
+    <div class="wig">
+      <span class="val">4&nbsp;180,26</span>
+      <span class="chg neg">−0,30%</span>
+      <span class="lbl">zamknięcie ostatniej zakończonej sesji: piątek 25.09.2026 — ta sama sesja wyznacza bazę D0 okna W7. Źródło: biznes.pap.pl / strefainwestorow.pl „WIG20 na zamknięciu wyniósł 4180,26 pkt (−0,30%)”, 25.09.2026.</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <span class="stamp" style="border-color:#0E7C4A;color:#0E7C4A;background:rgba(14,124,74,.07);">Prognoza aktualna</span>
+    <div class="stamp-note">Brak zdarzenia unieważniającego prognozę tygodnia. Lista <code>exclude</code> bez zmian: <b>ERSTEPL — CLOSE</b> (wpis z 27.09). <b>Zero nowych reakcji</b>, zero nowych taktycznych.</div>
+  </div>
+
+  <div class="note">
+    <b>Uwaga metodyczna do wszystkich liczb w tym raporcie.</b> Dziś jest poniedziałek rano, a ostatnia zakończona sesja GPW to <b>piątek 25.09</b> — czyli dokładnie ta sesja, której zamknięcia stanowią bazę <code>D0</code>. Kurs ostatni jest więc równy kursowi D0 dla każdej spółki, a wszystkie zwroty wynoszą <b>0,00%</b> <i>z definicji</i>, nie dlatego, że rynek stał w miejscu. Bot nie ma jeszcze otwartej ani jednej nogi koszyka W7: rotacja wypada <b>dziś o 9:15</b>. Pierwsza liczba z treścią pojawi się w jutrzejszym Pulsie, po sesji D+1.
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li>
+      <span class="tag t-espi">ESPI</span><b>Budimex (SHORT): oferta odrzucona w przetargu na modernizację „Czajki”.</b> Komunikat poszedł w piątek <b>25.09 o 19:38</b>, dwie i pół godziny po zamknięciu D0, więc rynkowo należy do dzisiejszej sesji (<code>dn = 1</code>). Przetarg dotyczy gospodarki osadowej warszawskiej oczyszczalni — budowy zespołu Wydzielonych Komór Fermentacyjnych. Oferta Budimeksu <b>3.07.2026 była oceniona najwyżej</b> i ostatecznie nie została wybrana; wartości postępowania komunikat nie podaje. To nie jest odosobniony przypadek: <b>7.09</b> spółka raportowała unieważnienie czynności wyboru jej oferty na obwodnicę Brzostku i Kołaczyc w ciągu DK 73, gdzie wygrała 6.07. <b>Reakcji protokołu nie ma i nie powinno być</b> — to news przeciw spółce, a Budimex stoi po stronie <b>krótkiej</b> (4. miejsce od dołu w rankingu W7, rel5 −3,15 p.p.). Wpisy <code>exclude</code> chronią pozycję przed ruchem <i>przeciw</i> tezie, nie nagradzają jej potwierdzenia.
+      <span class="src">bankier.pl — komunikaty ESPI Budimex SA, 25.09.2026 19:38; dla kontekstu ESPI 07.09.2026 16:55 (unieważnienie wyboru oferty, DK 73)</span>
+    </li>
+    <li>
+      <span class="tag t-espi">ESPI</span><b>Modivo (spoza koszyków): odpisy 287,6 mln zł na Worldboksie i 269,8 mln zł na Modivo.com — niegotówkowe, zapowiedziane przed raportem.</b> Komunikat z soboty <b>26.09</b>. Rozróżnienie jest istotne dla wagi zdarzenia: odpis na Worldboksie (287,6 mln zł) obciąża wynik <b>skonsolidowany</b>, a odpis na akcjach Modivo.com (269,8 mln zł) — <b>wyłącznie jednostkowy</b> za I półrocze 2026, bez wpływu na skonsolidowany. Przyczyny: wyhamowanie ekspansji sklepów Worldbox i zwrot na wysokomarżowy off-price oraz słabsza od oczekiwań poprawa wyników marek eobuwie i Modivo. Kwoty są szacunkowe; ostateczne wejdą do raportu półrocznego <b>1.10</b>, który jest już w rejestrze katalizatorów W7 jako <code>dn = 4</code>. <b>Moduł taktyczny nie otwiera tu pozycji</b>, z czterech niezależnych powodów: odpisy są niegotówkowe i ogłoszone <i>z wyprzedzeniem</i>, więc nie mają rangi szoku; sygnały są sprzeczne, bo ten sam Modivo DM BOŚ dodał 24.09 do top picks na październik; po komunikacie nie było sesji, więc reakcji kursu nie da się zmierzyć; a taktyczna SELL i tak nie weszłaby na rachunek — <code>desired_book()</code> odrzuca ją z powodem „taktyczna SELL — rachunek LONG_ONLY”.
+      <span class="src">strefainwestorow.pl „Modivo dokona odpisów z tytułu utraty wartości aktywów Worldbox i Modivo.com”, 26.09.2026; bankier.pl „MODIVO S.A.: Niegotówkowe odpisy związane z inwestycją w Worldbox sp. z o.o. oraz Modivo.com S.A.”, 26.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>KGHM (SHORT): miedź w Londynie tanieje przed Złotym Tygodniem w Chinach.</b> Znaczenie kalendarzowe jest większe niż sam ruch ceny: chińska przerwa świąteczna trwa do <b>8 października</b>, czyli praktycznie cały odcinek D+1…D+8 okna W7 przypada na zamkniętego odbiorcę numer jeden światowego rynku miedzi. Poziomu ceny nie podaje dziś rano żadne datowane źródło w allowliście środowiska — zostaje <b>b.d.</b>, notuję sam kierunek z nagłówka depeszy. Kierunek jest zgodny z tezą krótką (KGHM 5. od dołu w W7, rel5 −4,83 p.p.), więc bez reakcji. Osobna, wciąż otwarta sprawa <b>ceł sekcji 232</b> na miedź rafinowaną pozostaje bez daty decyzji — kod <code>KALENDARZ_NIEPOTWIERDZONY</code> utrzymany.
+      <span class="src">strefainwestorow.pl — nagłówek depeszy „Ceny miedzi w Londynie spadają przed świąteczną przerwą w Chinach”, 28.09.2026</span>
+    </li>
+    <li>
+      <span class="tag t-makro">Makro</span><b>Orlen (SHORT): wyzwalacz tezy bez ruchu — prezydent nadal nie podjął decyzji w sprawie ustawy o windfall tax.</b> Stan na dziś rano jest identyczny jak wczoraj: ustawa przyjęta przez Sejm 18.09, Senat 24.09 odrzucił poprawki PiS (59 za / 31 przeciw), dokument leży u prezydenta. Kancelaria Prezydenta podtrzymuje zarzut <b>niekonstytucyjności</b> — podatek obejmuje przychody <b>od 1.03.2026</b>, a ustawa ma wejść w życie <b>1.11.2026</b>, co KPRP czyta jako naruszenie <i>lex retro non agit</i>; z tym samym zarzutem pierwszą wersję ustawy prezydent skierował w lipcu do TK w kontroli prewencyjnej. <b>Żadne datowane źródło nie podaje terminu decyzji</b>, a rozstrzygnięcie jest dwustronne: podpis realizuje tezę krótką, weto albo wniosek do TK ją podcina. Kod <code>KALENDARZ_NIEPOTWIERDZONY</code> utrzymany, bez nowego wpisu do rejestru — to ten sam otwarty katalizator, nie nowe zdarzenie.
+      <span class="src">bankier.pl „Senat zapalił zielone światło. Ustawa paliwowa czeka na podpis Nawrockiego” (publ. 24.09.2026); biznes.pap.pl „Prezydent ocenia, że ustawa dot. windfall tax jest niekonstytucyjna, proponuje wprowadzenie poprawek (opis)”; stan zweryfikowany ponownie 28.09.2026 — brak nowej depeszy</span>
+    </li>
+    <li>
+      <span class="tag t-rek">Rekom.</span><b>Bez nowych rekomendacji dla spółek koszykowych w ostatniej dobie.</b> Jedyny świeży sygnał domów maklerskich to wciąż portfel <b>DM BOŚ na październik z 24.09 (16:12)</b>, opisany w Pulsie z 27.09: Alior wrócił na listę „gorzej niż rynek”, CD Projekt wypadł z top picks, PKO BP został dodany, Orlen i PGE zostały na liście „lepiej niż rynek”. <b>Dziś to duplikat, nie nowa informacja</b> — sygnał jest z dnia poprzedzającego zamknięcie D0, więc siedzi w cenie D0 i należy do rankingu, a nie do protokołu dziennego. Reakcji nie uruchamia ani wczoraj, ani dziś. Kod <code>DM_SYGNAL_POMINIETY_W7</code> pozostaje w <code>data_quality</code> jako materiał dla sobotniego rozliczenia.
+      <span class="src">strefainwestorow.pl „5 nowych spółek w Top Picks DM BOŚ na październik”, publ. 24.09.2026 16:12; parkiet.com „DM BOŚ: 17 spółek na październik, które mogą sobie radzić lepiej niż rynek”</span>
+    </li>
+    <li>
+      <span class="tag t-short">Short</span><b>Rejestr krótkiej sprzedaży KNF — bez odczytu, trzeci tydzień z rzędu.</b> Serwis publikacyjny <code>rss.knf.gov.pl</code> nie jest w allowliście sieciowej środowiska, a pośredniki (shorty.pl, rksgpw.com) też są poza nią. Ostatni potwierdzony stan ogólny: ok. <b>21 otwartych pozycji</b> w rejestrze, próg publikacji 0,50% kapitału i co 0,10% powyżej. <b>Zmian per spółka koszykowa nie da się dziś zweryfikować</b>, więc wyzwalacz „zmiana shorta KNF ≥0,3 p.p. przeciw tezie” jest w tym biegu <b>niemierzalny</b> — nie „nie wystąpił”. Kod <code>KNF_SHORT_NIEDOSTEPNY</code> utrzymany.
+      <span class="src">knf.gov.pl — Rejestr krótkiej sprzedaży (opis systemu, dostęp zablokowany przez politykę sieciową); ostatni odczyt liczby pozycji: parkiet.com, materiał o 21 pozycjach w rejestrze</span>
+    </li>
+  </ul>
+
+  <h2>Koszyki — stan na ostatnią zakończoną sesję</h2>
+  <p style="font-size:12.5px;color:#5C6874;margin:0 0 6px;">Kolejność spółek stała, zgodna z <code>signals.json</code> — to nie jest ranking najlepszych i najgorszych pozycji. Kursy: <b>bankier.pl, tabele notowań, zamknięcie 25.09.2026</b> (Yahoo oddał HTTP 429 dla wszystkich 21 symboli — kod <code>KURS_ZRODLO_REZERWA</code>). Komplet zamknięć D0 zgodny co do grosza z <code>d0.prices</code> w <code>signals.json</code>, walidacja przeszła dla 10/10 spółek i indeksu.</p>
+
+  <div class="basket-h">KOSZYK LONG — bot kupuje te spółki</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0</th><th>Kurs ostatni</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>Erste Bank Polska<span class="badge-x">CLOSE</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">807,60</td><td class="num">807,60</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>Alior Bank</td><td><span class="dir dir-l">LONG</span></td><td class="num">139,05</td><td class="num">139,05</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>LPP</td><td><span class="dir dir-l">LONG</span></td><td class="num">24&nbsp;900,00</td><td class="num">24&nbsp;900,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>CD Projekt</td><td><span class="dir dir-l">LONG</span></td><td class="num">244,60</td><td class="num">244,60</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>PKO BP</td><td><span class="dir dir-l">LONG</span></td><td class="num">124,54</td><td class="num">124,54</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia koszyka LONG</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+  <p style="font-size:12px;color:#6B7681;margin:6px 0 0;">Erste zostaje w tabeli, bo <b>jest</b> w koszyku rankingu W7 (1. miejsce, 63,6 pkt) i tak będzie rozliczony w sobotnim wariancie papierowym. Znacznik <b>CLOSE</b> oznacza, że <code>desired_book()</code> pominie tę nogę przy dzisiejszej rotacji — pozycja nie zostanie otwarta.</p>
+
+  <div class="basket-h">KOSZYK SHORT — papierowy, bot go NIE handluje</div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0</th><th>Kurs ostatni</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>PKN Orlen</td><td><span class="dir dir-s">SHORT</span></td><td class="num">148,84</td><td class="num">148,84</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>Budimex</td><td><span class="dir dir-s">SHORT</span></td><td class="num">692,00</td><td class="num">692,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>KGHM</td><td><span class="dir dir-s">SHORT</span></td><td class="num">330,50</td><td class="num">330,50</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>Tauron PE</td><td><span class="dir dir-s">SHORT</span></td><td class="num">8,730</td><td class="num">8,730</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+      <tr><td>Dino Polska</td><td><span class="dir dir-s">SHORT</span></td><td class="num">34,44</td><td class="num">34,44</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia koszyka SHORT</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr></tfoot>
+  </table>
+  </div>
+  <p style="font-size:12px;color:#6B7681;margin:6px 0 0;">Zwrot pozycji w tabeli SHORT to zwrot kursu akcji, nie wynik krótkiej pozycji. Rachunek Capital.com <b>nie pozwala shortować CFD na akcje</b> (potwierdzone 7.09.2026, zapisane w <code>OGRANICZENIA_RACHUNKU</code> w <code>app.py</code>), więc stronę krótką realizuje wyłącznie sprzedaż kontraktu na indeks.</p>
+
+  <div class="score">
+    <div class="main">Wynik rachunku &middot; średnia LONG &minus; WIG20 &middot; D0 → dziś</div>
+    <div class="big flat" style="color:#C6CFD8;">0,00 p.p.</div>
+    <div class="sub">Średnia LONG <b>0,00%</b> wobec WIG20 <b>0,00%</b>. To nie jest wynik, to <b>brak wyniku</b>: ostatnia zakończona sesja (25.09) jest tą samą sesją, która wyznacza bazę D0, więc licznik stoi na zerze z definicji. Drugi dzień z rzędu — weekend nie generuje sesji. Rotacja wypada dziś o 9:15; pierwsza liczba z treścią to jutrzejszy Puls.</div>
+    <div class="paper">Spread papierowy (LONG &minus; SHORT): <b>0,00 p.p.</b> — <i>papierowy, miara selekcji, nie wynik rachunku.</i><br>
+    Rozjazd papier &minus; rachunek: <b>0,00 p.p.</b> — poniżej progu 0,5 p.p., bo obie liczby są zerowe. Przypomnienie: koszyka SHORT bot <b>nie handluje</b>, więc spread LONG&minus;SHORT jest metryką z definicji nieosiągalną.</div>
+  </div>
+
+  <p style="font-size:12.5px;color:#5C6874;margin-top:10px;">Wszystkie trzy warianty pochodzą z sekcji KOSZYKI w <code>python3 scripts/metryki.py rozlicz --week 2026-W7 --d0 2026-09-25 --d5 2026-09-25</code>, nie z ręcznego liczenia. Benchmark naiwnego momentum w tym biegu również stoi na zerze (przewaga modelu <b>+0,00 p.p.</b> na wyniku rachunku i <b>+0,00 p.p.</b> na spreadzie) — to odczyt pusty, nie ocena metody; koszyk momentum na D0 to ERSTEPL, MBANK, ALIOR, MODIVO, PEKAO przeciw PKNORLEN, KGHM, TAURONPE, DINOPL, PGE. Do wyniku zamkniętego okna trzeba będzie doliczyć koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE i korekcie wielkości <b>dwa razy</b> — Capital.com nie ma częściowego zamknięcia), punkty swapowe za dobę utrzymania oraz lukę między zamknięciem D0 w piątek a realizacją dziś o 9:15.</p>
+
+  <h2>Rotacja o 9:15 — co bot faktycznie otworzy</h2>
+  <div class="note">
+    Koszyk LONG wejdzie w <b>czterech nogach</b>: ALIOR, LPP, CDPROJEKT, PKOBP. ERSTEPL odpada na wpisie <code>action = CLOSE</code>, więc noga nie zostanie otwarta ani razu — wpis nie zamyka pozycji, tylko <b>nie dopuszcza do jej otwarcia</b>, i dlatego nie kosztuje spreadu bid/ask. Hedge indeksowy liczy się jako <code>hedge_cel = long_cel &times; HEDGE_RATIO</code>, czyli od <b>rzeczywiście otwartej</b> ekspozycji długiej — wypadnięcie Erste proporcjonalnie zmniejsza short na WIG20 i nie zostawia rachunku per saldo krótkiego. Zgodnie z <code>docs/metoda.md</code> sekcja 10 <code>HEDGE_RATIO</code> zostaje bez zmian do <b>12 zamkniętych okien</b>; W7 jest siódme. Kontrola po biegu: log Rendera, prefiks <code>BOT |</code>, oraz <code>/status</code> — pola <code>diagnostyka_instrumentow</code> i <code>ekspozycja</code>.
+  </div>
+
+  <h2>Kalendarz na dziś — poniedziałek 28.09.2026</h2>
+  <div class="cal">
+    <ul>
+      <li><b>1:50</b> — protokół z lipcowego posiedzenia Banku Japonii <i>(już opublikowany)</i></li>
+      <li><b>14:00</b> — wrześniowy indeks Fedu z Dallas (przemysł), USA</li>
+      <li><b>16:30</b> — produkcja przemysłowa, Indie</li>
+      <li><b>GPW</b> — raporty półroczne, m.in. PKP Cargo i XTPL. <b>Żadnej spółki z WIG20</b> w kalendarium korporacyjnym GPW na dziś; pierwsze wydarzenia zaczynają się jutro.</li>
+      <li><b>Kontekst tygodnia:</b> środa 30.09 <b>9:30 — flash CPI GUS za wrzesień</b> (konsensus: wzrost z 3,4% do <b>3,6%</b> r/r, czyli powyżej górnego pasma odchyleń 3,5%), tego samego dnia 14:30 deflator PCE z USA; czwartek 1.10 wysyp PMI (Polska 9:00) i <b>raport półroczny Modivo</b>; piątek 2.10 wstępny HICP strefy euro i wrześniowe <b>payrolls z USA</b>.</li>
+      <li><b>Chiny</b> — Złoty Tydzień, powrót do pracy <b>8 października</b>; istotne dla miedzi, a więc dla KGHM.</li>
+    </ul>
+    <p style="font-size:12px;color:#6B7681;">Kalendarz w całości z datowanego źródła z bieżącego tygodnia: bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. <b>25.09.2026</b>, oraz kalendarium rynku kapitałowego GPW na 28.09.2026 (strefainwestorow.pl). <b>Data najbliższego posiedzenia RPP pozostaje niepotwierdzona</b> w źródle pierwotnym — <code>nbp.pl</code> jest zablokowany przez politykę sieciową środowiska, a żaden datowany kalendarz z tego tygodnia jej nie podaje. Na tej dacie nie opiera się w tym raporcie żadna deklaracja; kod <code>KALENDARZ_NIEPOTWIERDZONY</code>.</p>
+  </div>
+
+  <h2>Moduł taktyczny</h2>
+  <div class="note">
+    Lista taktycznych jest <b>pusta</b> i dziś się nie zmienia. Przeskanowałem spółki WIG20 spoza koszyków (Allegro, Pekao, mBank, PGE, Pepco, PZU, Żabka, Kęty, Kruk, Modivo) pod kątem twardych wyzwalaczy z ostatniej doby. Jedyne zdarzenie spółkowe to <b>odpisy Modivo</b> — powody odmowy otwarcia pozycji opisane wyżej, z czego jeden jest rozstrzygający sam w sobie: taktyczna SELL nie wchodzi na ten rachunek. Pozostałe pozycje kalendarza (Pepco 29.09, Modivo 1.10) to zdarzenia o <b>nieznanym kierunku</b>, a nie wyzwalacze.
+  </div>
+
+  <h2>Problemy i jakość danych</h2>
+  <ul class="chg-list">
+    <li><b>FMP_PLAN_BLOKADA</b> — konektor Financial Modeling Prep jest w sesji (narzędzia <code>mcp__FMP__*</code> widoczne), ale wywołanie <code>chart / historical-price-eod-light</code> dla <code>KGH.WA</code> zwróciło <b>ACCESS DENIED: wymaga wyższego planu</b>. To nie jest brak grantu konektora dla rutyny — to ograniczenie <b>planu taryfowego FMP</b>. Dopóki plan się nie zmieni, ścieżka nr 1 ze źródeł kursów jest martwa i każdy bieg schodzi na rezerwę.</li>
+    <li><b>KURS_ZRODLO_REZERWA</b> — Yahoo oddał <b>HTTP 429 dla wszystkich 21 symboli</b> (limiter na IP chmury). Komplet kursów pochodzi z tabel notowań <b>bankier.pl</b>, znaczniki czasu odczytu 25.09 w przedziale 17:00–17:15, czyli po zamknięciu i po dogrywce. Walidacja D0 wobec <code>signals.json</code>: <b>zgodność 10/10 spółek + indeks</b>, odchylenie zerowe, nie tylko w tolerancji 0,5%.</li>
+    <li><b>KNF_SHORT_NIEDOSTEPNY</b> — jak wyżej: rejestr krótkiej sprzedaży poza zasięgiem sieciowym, wyzwalacz shortowy niemierzalny w tym biegu.</li>
+    <li><b>KALENDARZ_NIEPOTWIERDZONY</b> — dotyczy trzech otwartych spraw bez daty: decyzji prezydenta ws. windfall tax (Orlen), ceł sekcji 232 na miedź (KGHM) oraz terminu strajku generalnego w Dino, którego związek wciąż nie podał publicznie mimo zapowiedzi. Utrzymany też wobec daty posiedzenia RPP.</li>
+    <li><b>Bez nowych kodów w tym biegu.</b> Do <code>rankings/2026-W7.json</code> dopisane zostały wyłącznie <b>trzy nowe katalizatory</b> (Budimex, Modivo, KGHM); punktacja, ranking, <code>long</code>, <code>short</code>, <code>score</code> i <code>p</code> pozostają <b>zamrożone do soboty</b>.</li>
+  </ul>
+
+  <footer>
+    Puls WIG20 — automatyczna rutyna poranna, wygenerowana 28.09.2026 przez agenta AI (Claude Code) na podstawie publicznych źródeł: bankier.pl, biznes.pap.pl, strefainwestorow.pl, parkiet.com, knf.gov.pl.<br><br>
+    <b>Materiał analityczno-edukacyjny. Nie stanowi rekomendacji inwestycyjnej</b> w rozumieniu rozporządzenia MAR ani usługi doradztwa inwestycyjnego. Nie jest ofertą ani zachętą do nabycia lub zbycia jakiegokolwiek instrumentu finansowego. Dane mogą zawierać błędy i pochodzą ze źródeł rezerwowych; przed decyzją inwestycyjną zweryfikuj je samodzielnie. Inwestowanie w instrumenty pochodne z dźwignią wiąże się z ryzykiem utraty całości zainwestowanego kapitału.
+  </footer>
+
+</div>
+</body>
+</html>
