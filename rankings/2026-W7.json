@@ -552,6 +552,30 @@
    "opis": "Windfall tax — stan wyzwalacza tezy SHORT na 27.09: ustawa po Senacie (24.09, bez poprawek, 59:31) czeka na podpis prezydenta, ktory 25.09 przebywal w Stanach Zjednoczonych; rzad oczekuje podpisu \"niezwlocznie po powrocie\", ale ZADNEGO terminu ustawowego ani daty decyzji nie podano w datowanym zrodle. Ministrowie energii (Motyka) i infrastruktury (Klimczak) zaapelowali 25.09 o podpis. Kancelaria Prezydenta (szef KPRP Zbigniew Bogucki) ocenia ustawe jako niekonstytucyjna (naruszenie lex retro non agit: podatek od przychodow od 1.03.2026 przy wejsciu ustawy w zycie 1.11.2026) i proponuje rozwazenie poprawek. Pierwsza wersje ustawy prezydent skierowal w lipcu do TK w trybie kontroli prewencyjnej. Termin rozstrzygniecia: b.d. — KALENDARZ_NIEPOTWIERDZONY utrzymany.",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl 'Ministrowie apeluja: Prezydencie, podpisz ustawe paliwowa', 25.09.2026 12:35; bankier.pl 'Senat zapalil zielone swiatlo. Ustawa paliwowa czeka na podpis Nawrockiego', 24.09.2026 10:04 (aktual. 11:16); biznes.pap.pl 'Prezydent ocenia, ze ustawa dot. windfall tax jest niekonstytucyjna, proponuje wprowadzenie poprawek (opis)'"
+  },
+  {
+   "ticker": "BUDIMEX",
+   "data": "2026-09-25",
+   "dn": 1,
+   "opis": "ESPI 25.09 o 19:38 (po zamknieciu sesji D0, wiec rynkowo dn=1): odrzucenie oferty Budimeksu w przetargu na modernizacje Oczyszczalni Sciekow 'Czajka' w zakresie gospodarki osadowej (budowa zespolu Wydzielonych Komor Fermentacyjnych). Oferta spolki byla 3.07.2026 oceniona najwyzej, ostatecznie nie zostala wybrana. To juz trzecie w tym kwartale postepowanie, w ktorym oferta Budimeksu odpada albo wybor jest uniewazniany (7.09 uniewazniono wybor oferty na obwodnice Brzostku i Kolaczyc w ciagu DK73). Kierunek zgodny z teza SHORT (Budimex 4. w rankingu W7 od dolu, rel5 -3,15 p.p.), wiec protokol NIE wymaga reakcji — reakcje exclude sluza ochronie pozycji przed ruchem PRZECIW tezie, a nie potwierdzaniu tezy. Wartosc przetargu nie podana w komunikacie.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — komunikaty ESPI Budimex SA, 25.09.2026 19:38 ('Modernizacja Oczyszczalni Sciekow Czajka ... odrzucenie oferty Budimex SA'); dla kontekstu ESPI 07.09.2026 16:55 (uniewaznienie wyboru oferty, DK73)"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-09-26",
+   "dn": 1,
+   "opis": "Niegotowkowe odpisy z tytulu utraty wartosci: 287,6 mln zl na aktywach Worldbox (obciaza wynik SKONSOLIDOWANY) oraz 269,8 mln zl na inwestycji w akcje Modivo.com (obciaza wylacznie wynik JEDNOSTKOWY za I polrocze 2026, bez wplywu na skonsolidowany). Powod: spowolnienie tempa ekspansji sieci Worldbox i zwrot strategiczny na wysokomarzowy segment off-price, a przy Modivo.com — slabsza od oczekiwan poprawa wynikow marek eobuwie i Modivo. Kwoty sa szacunkowe, ostateczne dane wejda do raportu polrocznego 1.10 (dn=4), ktory juz jest w rejestrze. Spolka WIG20 SPOZA koszykow i spoza listy tactical. Modul taktyczny NIE otwiera pozycji: (1) odpisy sa niegotowkowe i zapowiedziane przed raportem, wiec nie maja rangi szoku, (2) sygnaly sa sprzeczne — DM BOS dodal Modivo do top picks 24.09, (3) nie bylo sesji po komunikacie, wiec reakcji kursu nie da sie zmierzyc, (4) taktyczna SELL i tak nie weszlaby na rachunek: desired_book() pomija ja z powodem 'taktyczna SELL — rachunek LONG_ONLY'.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl 'Modivo dokona odpisow z tytulu utraty wartosci aktywow Worldbox i Modivo.com', 26.09.2026; bankier.pl 'MODIVO S.A.: Niegotowkowe odpisy zwiazane z inwestycja w Worldbox sp. z o.o. oraz Modivo.com S.A.', 26.09.2026"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "Kontekst surowcowy pierwszej sesji okna: ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach (Zloty Tydzien, powrot do pracy 8.10 — czyli praktycznie caly odcinek D+1...D+8 okna W7 przypada na zamknietego odbiorce numer jeden). Kierunek zgodny z teza SHORT na KGHM (5. miejsce od dolu w rankingu W7, rel5 -4,83 p.p.), wiec bez reakcji protokolu. Poziomu ceny nie podaje zadne datowane zrodlo w allowliscie na dzis rano — 'b.d.'. Odrebna, wciaz otwarta sprawa cel sekcji 232 na miedz rafinowana pozostaje bez daty (KALENDARZ_NIEPOTWIERDZONY).",
+   "wklad_pkt": 0,
+   "zrodlo": "strefainwestorow.pl — naglowek depeszy 'Ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach', 28.09.2026 (wartosc ceny nieodczytana — b.d.)"
   }
  ],
  "data_quality": [
