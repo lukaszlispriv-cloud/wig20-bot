@@ -576,6 +576,62 @@
    "opis": "Kontekst surowcowy pierwszej sesji okna: ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach (Zloty Tydzien, powrot do pracy 8.10 — czyli praktycznie caly odcinek D+1...D+8 okna W7 przypada na zamknietego odbiorce numer jeden). Kierunek zgodny z teza SHORT na KGHM (5. miejsce od dolu w rankingu W7, rel5 -4,83 p.p.), wiec bez reakcji protokolu. Poziomu ceny nie podaje zadne datowane zrodlo w allowliscie na dzis rano — 'b.d.'. Odrebna, wciaz otwarta sprawa cel sekcji 232 na miedz rafinowana pozostaje bez daty (KALENDARZ_NIEPOTWIERDZONY).",
    "wklad_pkt": 0,
    "zrodlo": "strefainwestorow.pl — naglowek depeszy 'Ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach', 28.09.2026 (wartosc ceny nieodczytana — b.d.)"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "Pierwsza sesja po ogłoszeniu zamiaru wezwania (25.09 po sesji): kurs −2,40% do 788,20 zł, wciąż 10,5% powyżej ceny wezwania 713,60 zł. KNF nie sprzeciwił się przejęciu przez Erste Asset Management akcji Erste TFI (przekroczenie 50%). Noga nie została otwarta przy rotacji 28.09 (wpis CLOSE z 27.09) — spadek obciąża tylko wariant papierowy.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „WIG20 kończy pod kreską. Orlen i energetyka nie dały rady”, 28.09.2026 17:12; strefainwestorow.pl „Skrót wiadomości — poniedziałek, 28 września, 21.00”; tabela notowań bankier.pl 28.09 17:00"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "Najsłabsza spółka WIG20: −2,72% do 321,50 zł przy miedzi na LME −1,8% (14 364 USD/t o 11:13, najniżej od 17.09) i taniejącym srebrze; słabsze dane z Chin (zyski przemysłowe za sierpień), mocniejszy dolar, Złoty Tydzień od 1.10. Zgodne z tezą SHORT — bez reakcji.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; poziom LME z depeszy agencyjnej 28.09.2026 (przez WebSearch, serwis poza allowlistą)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "+1,21% do 150,64 zł (komentarz sesyjny bankier.pl podawał +2,5% w trakcie sesji; liczy się tabela zamknięć) przy Brent powyżej 100 USD. Przeciw tezie SHORT, poniżej progu 4%. Windfall tax 2.0: bez decyzji prezydenta, komunikat KPRP z 22.09 podtrzymuje zarzut retroaktywności — termin nieznany.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; energetyka24.com „Windfall tax dla koncernów paliwowych przeszedł przez Senat. Co zrobi prezydent?”; klubjagiellonski.pl 28.09.2026"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "+1,15% do 8,83 zł razem z sektorem energetycznym: PGE +4,1% (lider WIG20) na oczekiwaniu na aktualizację strategii (październik) i przy wysokich cenach gazu. Przeciw tezie SHORT, poniżej progu 4%.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; bankier.pl „PGE w październiku planuje przedstawić zaktualizowaną strategię (opis)”"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "Prezes Szymon Midera: wzrost dynamiki przyrostu portfela korporacyjnego; makro dla banków: Fitch podniósł prognozę PKB Polski na 2026 do 3,5%, kredyty mieszkaniowe +51,1% r/r do 13,54 mld zł. Kurs −0,14% od D0 (sektor bankowy w poniedziałek słabszy). Bez reakcji.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl „Skrót wiadomości — poniedziałek, 28 września, 21.00”"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-28",
+   "dn": 1,
+   "opis": "Sesja przed premierą remastera Wiedźmina 3 (29.09, 12:00): +0,25% do 245,20 zł, w trakcie sesji +1% do 247,10 zł. Reakcja na premierę do oceny po sesji 29.09.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl „DZIEŃ NA GPW: Kolejna sesja z niewielką zmiennością; Modivo najsłabsze w WIG20”, 28.09.2026 11:19; gra.pl / gry-online.pl — godzina premiery"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "Kalendarz D+2 potwierdzony w datowanych źródłach: Pepco — aktualizacja handlowa FY26 opublikowana 7:22 (prognozy w górę: zysk netto bazowy >+60%, FCF >350 mln EUR; spoza koszyków, kandydat taktyczny po ocenie reakcji kursu); RBA 6:30; BIEC 9:00; ESI UE 11:00; JOLTS i Conference Board 16:00. Data posiedzenia RPP nadal niepotwierdzona w źródle z bieżącego tygodnia.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Tym będą żyły rynki…”, 25.09.2026 13:38; strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-09-29”, 29.09.2026 07:01; bankier.pl „Pepco spodziewa się w FY2026 wzrostu przychodów o ok. 8 proc. …”, 29.09.2026 07:22"
   }
  ],
  "data_quality": [
