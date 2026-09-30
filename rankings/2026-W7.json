@@ -632,6 +632,78 @@
    "opis": "Kalendarz D+2 potwierdzony w datowanych źródłach: Pepco — aktualizacja handlowa FY26 opublikowana 7:22 (prognozy w górę: zysk netto bazowy >+60%, FCF >350 mln EUR; spoza koszyków, kandydat taktyczny po ocenie reakcji kursu); RBA 6:30; BIEC 9:00; ESI UE 11:00; JOLTS i Conference Board 16:00. Data posiedzenia RPP nadal niepotwierdzona w źródle z bieżącego tygodnia.",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl „Tym będą żyły rynki…”, 25.09.2026 13:38; strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-09-29”, 29.09.2026 07:01; bankier.pl „Pepco spodziewa się w FY2026 wzrostu przychodów o ok. 8 proc. …”, 29.09.2026 07:22"
+  },
+  {
+   "ticker": "BUDIMEX",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "Najsłabsza spółka WIG20: −3,15% do 670,00 zł (w trakcie sesji −3,8%), od D0 −3,18% (−2,63 p.p. vs indeks) — zgodnie z tezą SHORT. Bez nowego komunikatu spółki; tło: odrzucenie oferty na Czajkę (ESPI 25.09 19:38), Noble Securities „sprzedaj” 562 zł (17.09), 28.09 pięciu wykonawców w dialogu konkurencyjnym KDP Warszawa–Łódź (neutralne).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Mocny rajd PGE i rekordowy »Wiedźmin« to za mało. WIG20 oddaje pole sprzedającym”, 29.09.2026 17:15; PAP „DZIEŃ NA GPW: WIG20 poniżej 4.150 pkt.; rynkowi ciążą spadki banków i Orlenu”, 29.09.2026; bankier.pl — wiadomości Budimeksu 28.09"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "Premiera „Wiedźmin 3: Dziki Gon — Remaster” (12:00): kurs +1,43% do 248,70 zł, od D0 +1,68% (+2,22 p.p.) — najlepsza noga LONG. Rekord jednoczesnych graczy na Steam: >111 tys. o 17:15, ok. 120 tys. wieczorem; analitycy szacują ok. 3 mln sprzedanych kopii do końca 2026. Katalizator z rejestru (dn=2, wkład 2 pkt) zrealizowany zgodnie z kierunkiem.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „W »Wiedźmin 3 — Remaster« na platformie Steam gra jednocześnie ok. 120 tys. osób”, 29.09.2026 19:20; bankier.pl „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”, 29.09.2026 09:58; bankier.pl komentarz sesyjny 29.09.2026 17:15"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "−2,70% do 146,58 zł (WIG-Paliwa −2,69%) przy Brent poniżej 97 USD i WTI ok. 90 USD; od D0 −1,52% (−0,97 p.p.) — zgodnie z tezą SHORT, poniedziałkowy ruch przeciw tezie oddany. Sąd w Warszawie zarejestrował sprawę trzech osób z Orlen Trading Switzerland (zarzut szkody ok. 1,5 mld zł). Windfall tax: prezydent bez decyzji, termin nieznany (KALENDARZ_NIEPOTWIERDZONY).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl komentarz sesyjny 29.09.2026 17:15; strefainwestorow.pl „W poszukiwaniu sygnałów — 29 września 2026”; bankier.pl „Sprawa OTS w sądzie. Premier mówi o »skandalu na cały świat«”, 29.09.2026"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "+1,72% do 8,982 zł po umowie kredytowej z PKO BP na 900 mln zł (refinansowanie kredytu konsorcjalnego z X 2024) i na fali sektora: PGE +5,31% (kredyt 3,05 mld zł BGK/PKO BP na CCGT Gryfino), Enea +3,59%, WIG-Energia +3,46%. Od D0 +2,89% (+3,43 p.p.) przeciw tezie SHORT — poniżej progu 4% (9,079 zł), bez reakcji; noga najbliżej progu w koszyku.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — wiadomości Tauronu 29.09.2026 14:48; bankier.pl — wiadomości PGE 29.09.2026; bankier.pl komentarz sesyjny 29.09.2026 17:15; strefainwestorow.pl (ENA, WIG-ENERG)"
+  },
+  {
+   "ticker": "DINOPL",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "+2,37% do 35,41 zł bez komunikatu spółki; od D0 +2,82% (+3,36 p.p.) przeciw tezie SHORT — poniżej progu 4% (35,82 zł), bez reakcji. Strajk generalny OPZZ nadal niedatowany (związek deklaruje 5-dniowe wyprzedzenie wobec zarządu) — KALENDARZ_NIEPOTWIERDZONY.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl, odczyt 29.09.2026 17:03; bankier.pl — wiadomości Dino (brak wpisów 26–30.09); portalspozywczy.pl „Związkowcy podają termin strajku generalnego w Dino” (przez WebSearch, niezweryfikowane)"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "−1,41% do 136,80 zł przy WIG-Banki −0,92%; od D0 −1,62% (−1,07 p.p.) przeciw tezie LONG — poniżej progu 4% (133,49 zł), bez reakcji. Komunikat neutralny: plan emisji senioralnych euroobligacji do 500 mln EUR w programie EMTN. Brak nowych rekomendacji (ostatnia Citi 21.09 „kupuj” 146,80 zł, przed D0).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Alior Bank planuje emisję senioralnych euroobligacji o wartości nominalnej do 500 mln euro”, 29.09.2026; bankier.pl komentarz sesyjny 29.09.2026 17:15; bankier.pl/gielda/rekomendacje — przegląd 30.09.2026"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "−0,79% do 123,38 zł; od D0 −0,93% (−0,38 p.p.), bez reakcji. Zamknięta emisja obligacji senior non-preferred na 1,35 mld zł (18:50). Ekonomiści banku: CPI za wrzesień powyżej 4%, stopy bez zmian, pierwsza obniżka o 25 pb w II kw. 2027; PKB 2026 3,5%, 2027 2,8% — tło zgodne z tezą marżową.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — wiadomości PKO BP, 29.09.2026 (11:16, 11:30, 18:50); bankier.pl komentarz sesyjny 29.09.2026 17:15"
+  },
+  {
+   "ticker": "PEPCO",
+   "data": "2026-09-29",
+   "dn": 2,
+   "opis": "Reakcja kursu na aktualizację handlową FY26 (prognozy w górę: bazowy zysk netto >+60%, FCF >350 mln EUR) i zatwierdzony wieloletni skup akcji do 400 mln EUR (7:30): +1,87% do 44,57 zł (+2,3 p.p. vs indeks), druga najmocniejsza spółka WIG20. Moduł taktyczny: BEZ wpisu — brak publikowanego konsensusu do porównania, a reakcja o rząd słabsza niż przy poprzednich wejściach (PGE +7,78% 2.09, Allegro +9,49% 17.09). Pełne wyniki FY26 9.12.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Zarząd Pepco zatwierdził utworzenie nowego programu skupu akcji własnych o wartości do 400 mln euro”, 29.09.2026 07:30; bankier.pl „Pepco przygotowane do sezonu świątecznego; liczy na dalszy wzrost LFL”, 29.09.2026 13:44; bankier.pl komentarz sesyjny 29.09.2026 17:15"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "Kalendarz D+3 potwierdzony w datowanych źródłach z bieżącego tygodnia: 9:30 GUS szybki szacunek CPI za wrzesień (konsensus ISBnews 4,1% r/r, strefainwestorow.pl ok. 4,0%, ekonomiści PKO BP >4%; poprzednio 3,4%; paliwa ok. +10% m/m); 9:00 BIEC rynek pracy; 14:00 NBP bilans płatniczy II kw.; 15:00 MF plan podaży SPW IV kw.; Orlen ogłasza przymusowy wykup Energi po 27,60 zł. Sesja 29.09: WIG20 −0,44% do 4157,40 (obroty 2,36 mld zł), od D0 −0,55%; wynik rachunku −0,06 p.p., spread papierowy −0,36 p.p.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl „TYDZIEŃ W KRAJU: Flash inflacji za IX, wskaźnik PMI, podaż SPW na IV kw.”, publ. 28.09.2026; ISBnews „Kalendarium wydarzeń makroekonomicznych na środę” (przez WebSearch); bankier.pl — wiadomości PKO BP 29.09.2026 11:16; bankier.pl 24.09.2026 (wykup Energi); scripts/metryki.py rozlicz --d5 2026-09-29"
   }
  ],
  "data_quality": [
