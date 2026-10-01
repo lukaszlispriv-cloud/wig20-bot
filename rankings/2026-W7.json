@@ -704,6 +704,102 @@
    "opis": "Kalendarz D+3 potwierdzony w datowanych źródłach z bieżącego tygodnia: 9:30 GUS szybki szacunek CPI za wrzesień (konsensus ISBnews 4,1% r/r, strefainwestorow.pl ok. 4,0%, ekonomiści PKO BP >4%; poprzednio 3,4%; paliwa ok. +10% m/m); 9:00 BIEC rynek pracy; 14:00 NBP bilans płatniczy II kw.; 15:00 MF plan podaży SPW IV kw.; Orlen ogłasza przymusowy wykup Energi po 27,60 zł. Sesja 29.09: WIG20 −0,44% do 4157,40 (obroty 2,36 mld zł), od D0 −0,55%; wynik rachunku −0,06 p.p., spread papierowy −0,36 p.p.",
    "wklad_pkt": null,
    "zrodlo": "strefainwestorow.pl „TYDZIEŃ W KRAJU: Flash inflacji za IX, wskaźnik PMI, podaż SPW na IV kw.”, publ. 28.09.2026; ISBnews „Kalendarium wydarzeń makroekonomicznych na środę” (przez WebSearch); bankier.pl — wiadomości PKO BP 29.09.2026 11:16; bankier.pl 24.09.2026 (wykup Energi); scripts/metryki.py rozlicz --d5 2026-09-29"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "+2,65% do 9,22 zł (max 9,272) na fali sektora: WIG-Energia +4,61% blisko historycznego szczytu, PGE +6,10% najwyżej od 2015 r. Od D0 +5,61% (+5,58 p.p.) PRZECIW tezie SHORT — przekroczony próg miękki 4%: reakcja REDUCE/PRICE_4_8 z 1.10 (price_before 9,22). Próg CLOSE 8% = 9,428 zł. Bez komunikatu spółki 30.09.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl „Kurs PGE najwyżej od 11 lat. Energetyka dalej mocna na warszawskim parkiecie”, 30.09.2026 17:20 (WIG-Energia +4,61%, Tauron +2,65%, PGE +6,1%)"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "Fitch podniósł rating długoterminowy Alior Banku do BBB− z BB+ (perspektywa stabilna) — komunikat 16:52, w trakcie sesji; kurs +0,66% do 137,70 zł, od D0 −0,97%. Sygnał ZGODNY z tezą LONG (pierwszy rating inwestycyjny od Fitch), bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — wiadomości Alior Banku „Fitch podniósł rating Alior Banku do 'BBB-' z 'BB+'”, 30.09.2026 16:52; tabela notowań bankier.pl 30.09 17:00"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "+2,13% do 254,00 zł (max 254,0) po rekordzie Steam remastera Wiedźmina 3 (ok. 120 tys. graczy jednocześnie, 9. miejsce globalnych bestsellerów Steam wg przychodów); analitycy Erste Group: ok. 3 mln kopii i do 125 mln zł przychodów w II poł. 2026. Od D0 +3,84% (+3,81 p.p.) — najlepsza noga LONG. Komentarz sesyjny bankier.pl podał błędny znak (−2,13%); tabela notowań 17:03 rozstrzyga: 254,0 zł, +2,13%.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:03 (254,0; +2,13%; 5,3 zł); strefainwestorow.pl „Premiera »Wiedźmin 3: Dziki Gon — Remaster« przyniosła rekord liczby graczy na Steam. Jaką sprzedaż prognozują analitycy?”; bankier.pl 29.09.2026 19:20"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "GUS, szybki szacunek CPI za wrzesień: 4,0% r/r (konsensus PAP 4,1%; sierpień 3,4%), 0,7% m/m; paliwa +36,1% r/r (+9,2% m/m). Pełne dane 14.10. Sesja D+3: WIG20 +0,59% do 4181,83 (w ciągu dnia ok. +1%, test 4200), obroty 2,9 mld zł (2,4 mld na WIG20); WIG-Banki +0,76%, WIG-Energia +4,61%. Od D0 WIG20 +0,04%; wynik rachunku +0,16 p.p., spread papierowy −0,20 p.p.",
+   "wklad_pkt": null,
+   "zrodlo": "GUS szybki szacunek 30.09.2026 9:30 (przez WebSearch: portalspozywczy.pl/PAP „Inflacja CPI we wrześniu rdr wyniosła 4,0 proc., a mdm 0,7 proc.”, gazetaprawna.pl); bankier.pl „Kurs PGE najwyżej od 11 lat…”, 30.09.2026 17:20; strefainwestorow.pl „DZIEŃ NA GPW: WIG20 rośnie do 4.200 pkt…”, 30.09.2026 11:15; scripts/metryki.py rozlicz --d5 2026-09-30"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "Ogłoszenie przymusowego wykupu 32 299 946 akcji Energi (ok. 3,87% głosów) po 27,60 zł; dzień wykupu 5.10 (zdarzenie „znane” od 24.09). Kurs −0,35% do 146,06 zł, od D0 −1,87% (−1,91 p.p.) zgodnie z tezą SHORT. Windfall tax 2.0: nadal bez decyzji prezydenta, żadne datowane źródło nie podaje terminu — KALENDARZ_NIEPOTWIERDZONY.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — wiadomości Orlenu 30.09.2026 08:44 (wykup Energi); tabela notowań bankier.pl 30.09; bankier.pl „Senat zapalił zielone światło…”, 24.09.2026 (bez terminu decyzji)"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "+1,50% do 798,00 zł (max 808,8) bez nowych komunikatów; 11,8% powyżej ceny wezwania 713,60 zł. Od D0 −1,19% (−1,23 p.p.); noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — spadek obciąża tylko wariant papierowy.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl — wiadomości Erste Bank Polska (ostatnie: 28.09 07:56 wezwanie 713,6 zł; 28.09 18:42 KNF/Erste TFI)"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "+6,10% do 15,14 zł — najwyżej od jesieni 2015; od D0 +16,28%. Komunikat 13:06: „Projekt MOC” — pozyskiwanie z rynku projektów OZE, magazynów energii i infrastruktury sieciowej (akwizycje); aktualizacja strategii zapowiedziana na październik (bez daty). Spółka spoza koszyków; moduł taktyczny BEZ wpisu — brak twardego wyzwalacza z listy (wynik ponad konsensus / przełomowy kontrakt / wezwanie), ruch sektorowy.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:03; bankier.pl — wiadomości PGE 30.09.2026 13:06 (Projekt MOC) i 16.09.2026 12:36 (strategia w październiku); bankier.pl „Kurs PGE najwyżej od 11 lat…”, 30.09.2026 17:20"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "+2,03% do 329,55 zł bez komunikatu spółki (ostatni 24.09, projekt Victoria w Ontario); od D0 −0,29% (−0,33 p.p.), zgodnie z tezą, ale przewaga prawie wyczerpana. Poziom miedzi LME na 30.09: b.d. (brak datowanego źródła w allowliście). Chiny: Złoty Tydzień od 1.10 do 8.10.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026; bankier.pl — wiadomości KGHM (brak wpisów 25–30.09)"
+  },
+  {
+   "ticker": "BUDIMEX",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "−0,09% do 669,40 zł, od D0 −3,27% (−3,30 p.p.) — najlepsza noga SHORT; bez komunikatów spółki 29–30.09.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:00; bankier.pl — wiadomości Budimeksu (ostatni wpis 28.09, KDP)"
+  },
+  {
+   "ticker": "DINOPL",
+   "data": "2026-09-30",
+   "dn": 3,
+   "opis": "−0,96% do 35,07 zł bez komunikatu spółki; od D0 +1,83% (+1,79 p.p.) przeciw tezie, z powrotem wyraźnie poniżej progu 4% (35,82 zł). Strajk OPZZ nadal niedatowany.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl — wiadomości Dino (brak wpisów 19–30.09)"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "Dziś raport półroczny (po odpisach zapowiedzianych 25.09: 287,6 mln zł Worldbox w skonsolidowanym, 269,8 mln zł Modivo.com w jednostkowym). 30.09 kurs −2,72% do 85,90 zł, od D0 −6,67% — najsłabsza spółka WIG20 w oknie. Spoza koszyków; taktyczna SELL i tak nie weszłaby na rachunek (LONG_ONLY). Do rana 1.10 (8:20) raport jeszcze nieopublikowany na bankier.pl.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl/gielda/kalendarium (1.10: MODIVO — raport za I półrocze 2026); bankier.pl — wiadomości Modivo (ostatni wpis 25.09 23:34); tabela notowań bankier.pl 30.09"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "Kalendarz D+4 potwierdzony w źródłach z bieżącego tygodnia: 9:00 PMI przemysłu Polska (także Węgry, Szwecja, Japonia, Indie), 10:00 PMI strefa euro, 10:30 PMI W. Brytania, 11:00 bezrobocie UE, 11:30 Challenger (USA), 14:30 wnioski o zasiłek USA, 16:00 ISM przemysłu USA; wystąpienia Lagarde i Baileya; GPW: raport półroczny Modivo. Chiny: początek Złotego Tygodnia (do 8.10) — rynek miedzi bez pierwszego odbiorcy (KGHM). Posiedzenie RPP: nadal bez datowanego potwierdzenia.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026; bankier.pl/gielda/kalendarium — odczyt 1.10.2026 8:20; strefainwestorow.pl „TYDZIEŃ W KRAJU…”, publ. 28.09.2026 (PMI 9:00, Modivo)"
   }
  ],
  "data_quality": [
