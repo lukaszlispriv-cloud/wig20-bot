@@ -48,9 +48,18 @@
       "price_before": 807.6,
       "move_from_d0_pct": 0.0,
       "trigger": "TENDER"
+    },
+    {
+      "ticker": "TAURONPE",
+      "action": "REDUCE",
+      "date": "2026-10-01",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 30.09.2026 9,22 zl wobec D0 8,73 zl = +5,61% (+5,58 p.p. wobec WIG20 +0,04%). Sroda +2,65% na fali sektora: WIG-Energia +4,61% (blisko historycznego szczytu), PGE +6,10% do 15,14 zl (najwyzej od jesieni 2015), po wtorkowej umowie kredytowej z PKO BP na 900 mln zl i przy wysokich cenach gazu i energii. Brak komunikatu spolki 30.09 (ostatni ESPI 29.09 14:48); sygnaly spolkowe (Fitch 25.09: perspektywa stabilna zamiast pozytywnej) nadal zgodne z teza, wiec to wyzwalacz cenowy, nie fundamentalny. Prog twardy CLOSE (PRICE_8) = 9,428 zl. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index. Zrodlo: tabela notowan bankier.pl 30.09.2026 17:04 (9,22 zl, +2,65%); bankier.pl 'Kurs PGE najwyzej od 11 lat. Energetyka dalej mocna na warszawskim parkiecie', 30.09.2026 17:20; d0.prices w signals.json.",
+      "price_before": 9.22,
+      "move_from_d0_pct": 5.61,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-09-30",
+  "last_daily": "2026-10-01",
   "d0": {
     "date": "2026-09-25",
     "wig20": 4180.26,
