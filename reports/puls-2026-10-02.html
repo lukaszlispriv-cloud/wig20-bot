@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 02.10.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; } .flat{ color:#5C6874; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; } header .flat{ color:#C6CFD8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #B5651D; color:#B5651D;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(181,101,29,.06); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .badge-x{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#C4372E; color:#fff; margin-left:6px; }
+  .badge-r{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#B5651D; color:#fff; margin-left:6px; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  .react{ background:#fff; border:1px solid #E3E6DF; border-left:5px solid #C4372E; border-radius:8px;
+          padding:11px 13px; margin-bottom:9px; }
+  .react.soft{ border-left-color:#B5651D; }
+  .react .hd{ font-weight:700; font-size:14px; margin-bottom:3px; }
+  .react .act{ font-size:10.5px; font-weight:800; letter-spacing:.07em; padding:2px 7px; border-radius:4px;
+               background:#C4372E; color:#fff; margin-right:8px; }
+  .react.soft .act{ background:#B5651D; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style></head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">piątek, 2 października 2026 — raport poranny, przed otwarciem sesji</div>
+    <div class="wig">
+      <span class="val">4&nbsp;102,20</span>
+      <span class="chg neg">−1,90%</span>
+      <span class="lbl">zamknięcie ostatniej zakończonej sesji: czwartek 1.10.2026 (sesja D+4 okna W7; dzisiejsza sesja to D+5 — ostatnia w oknie, sobota rozlicza tydzień); od D0 (25.09, 4&nbsp;180,26) −1,87%. Najgorsza sesja WIG20 od 27.08: 17 z 20 spółek na minusie, obroty 2,79 mld zł (2,38 mld zł na WIG20). Źródło: tabela indeksów bankier.pl, odczyt 1.10 17:15; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca. Akcje banków wyprzedawane”, 1.10.2026 17:29; strefainwestorow.pl „WIG20 na zamknięciu wyniósł 4102,20 pkt (−1,90%)”, 1.10.2026 17:41.</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <div class="stamp">Prognoza aktualna</div>
+    <div class="stamp-note">Brak zdarzenia unieważniającego prognozę tygodnia. <b>Jedna nowa reakcja: ALIOR — REDUCE</b> (wyzwalacz cenowy PRICE_4_8: −4,71% od D0 przeciw tezie LONG, w sektorowej wyprzedaży banków) — to noga <b>faktycznie otwarta na rachunku</b>, więc bot przy najbliższym biegu tnie ją do połowy. Lista <code>exclude</code> po dopisaniu: <b>ERSTEPL — CLOSE</b> (27.09, TENDER), <b>TAURONPE — REDUCE</b> (1.10) i <b>ALIOR — REDUCE</b> (2.10). <b>Zero nowych taktycznych.</b> Pieczątka bursztynowa — reakcja miękka.</div>
+  </div>
+
+  <h2>Reakcje protokołu</h2>
+  <div class="react soft">
+    <div class="hd"><span class="act">REDUCE</span>Alior Bank (LONG) — wyzwalacz PRICE_4_8, 2.10.2026 — NOWA</div>
+    Zamknięcie 1.10: <b>132,50 zł</b> (−3,78% d/d, zakres 131,55–138,95, obrót 49,6 mln zł) wobec D0 139,05 zł = <b>−4,71% od D0 przeciw tezie długiej</b> (−2,84 p.p. wobec WIG20 −1,87%). Próg miękki 4% (133,49 zł) przebity w czwartek; próg twardy CLOSE (PRICE_8) to <b>127,93 zł</b>. Ruch jest sektorowy, nie spółkowy: WIG-Banki −3,64% (mBank −4,15%, Pekao −3,60%, PKO BP −3,48%, Erste −3,26%, żaden bank WIG20 na plusie), a impuls przyszedł z zewnątrz — kolejna fala wyprzedaży obligacji (rentowność 10-latek USA 5,34%, najwyżej od 2002 r.) i gwałtowne osłabienie złotego (USD/PLN 3,8848, najsłabiej od kwietnia 2025). Sygnały spółkowe pozostają <b>zgodne z tezą</b>: Fitch 30.09 podniósł rating do BBB− (pierwszy inwestycyjny), Citi 21.09 „kupuj” 146,80 zł, brak komunikatu spółki 1.10 — dlatego szczebel miękki, nie CLOSE. Pola rozliczeniowe: <code>price_before</code> 132,50, <code>move_from_d0_pct</code> −4,71, <code>trigger</code> PRICE_4_8. <b>Skutek na rachunku:</b> <code>/run</code> tnie pozycję ALIOR do połowy (REDUCE_FACTOR 0,5) — raz zredukowana zostaje do soboty; przy cięciu dochodzi spread bid/ask (Capital.com nie ma częściowego zamknięcia, więc pozycja jest zamykana i otwierana w połowie wielkości).
+    <span class="src">tabela notowań bankier.pl, 1.10.2026 17:00 (ALIOR 132,50; −3,78%; −5,20); bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca. Akcje banków wyprzedawane”, 1.10.2026 17:29; bankier.pl — wiadomości Alior Banku (ostatni wpis 30.09 16:52, Fitch); bankier.pl/gielda/rekomendacje (Citi 21.09); <code>d0.prices</code> w <code>signals.json</code></span>
+  </div>
+  <div class="react soft">
+    <div class="hd"><span class="act">REDUCE</span>Tauron PE (SHORT) — wpis z 1.10 (PRICE_4_8), utrzymany</div>
+    Czwartek −1,04% do <b>9,124 zł</b>; od D0 <b>+4,51%</b> (+6,38 p.p.) — ruch przeciw tezie zmalał z 5,61%, ale pozostaje w pasmie 4–8%, a REDUCE i tak trwa do soboty; próg CLOSE 9,428 zł. Dzień pełen komunikatów spółki (ESPI 11:00: zawieszenie arbitrażu z ArcelorMittal; 12:58: bloki 200 MW mogą pracować po 2028 r.; 14:02: plan transformacji Jaworzna, Sierszy, Łazisk i Łagiszy — OCGT 2×315 MW w Jaworznie z pozwoleniem w II kw. 2027, OCGT do 630 MW w Sierszy na 2031/32, magazyny, PV; każdy duży projekt gazowy w osobnej spółce z partnerem kapitałowym, gdy dług dojdzie do limitu). Rynek przyjął to neutralnie. Wpis dotyczy wariantu papierowego — koszyka SHORT bot nie handluje.
+    <span class="src">tabela notowań bankier.pl 1.10.2026 17:02; bankier.pl — wiadomości Tauronu 1.10.2026 11:00 / 12:58 / 14:02; bankier.pl „Tauron przedstawia plan transformacji czterech lokalizacji…”, 1.10.2026 14:02</span>
+  </div>
+  <div class="react">
+    <div class="hd"><span class="act">CLOSE</span>Erste Bank Polska (LONG) — wpis z 27.09 (TENDER), utrzymany</div>
+    Czwartek −3,26% do <b>772,00 zł</b> (min 768,4; obrót 98,3 mln zł) razem z sektorem; od D0 −4,41% (−2,54 p.p.); kurs nadal <b>8,2% powyżej ceny wezwania 713,60 zł</b>. Bez nowych komunikatów (ostatnie 28.09). Noga nieotwarta na rachunku — spadek obciąża tylko wariant papierowy.
+    <span class="src">tabela notowań bankier.pl, 1.10.2026 17:00; bankier.pl — wiadomości Erste Bank Polska</span>
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li><span class="tag t-makro">Makro</span><b>Najgorsza sesja od 27.08: WIG20 −1,90% do 4&nbsp;102,20, WIG −1,64%, mWIG40 −1,11%; WIG-Banki −3,64%, WIG-Górnictwo −2,53%; WIG-Energia +0,10% i WIG-Paliwa +0,02% jako jedyne na plusie.</b> Impuls globalny: wyprzedaż obligacji skorelowana z ropą — rentowność 10-letnich obligacji USA 5,34% (najwyżej od 2002 r.), USD/PLN 3,8848 (najsłabszy złoty od kwietnia 2025); FTSE 100 −1,7%, DAX −0,9%, CAC 40 −1,6%, Wall Street w okolicach zera. Rano PMI polskiego przemysłu za wrzesień <b>49,0 pkt</b> (konsensus 48,0; sierpień 48,3) — 17. miesiąc poniżej 50, ale najwyżej od kwietnia; rynek odczyt zignorował. Dla koszyka LONG (trzy banki) to najgorszy możliwy układ dnia: cała strata koszyka od D0 to banki, a CD Projekt ją prawie w całości odrabia.
+      <span class="src">bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca. Akcje banków wyprzedawane”, 1.10.2026 17:29; tabela indeksów bankier.pl 1.10 17:15; bankier.pl „Polski przemysł wciąż pod kreską, ale spadek wyhamowuje. PMI powyżej oczekiwań”, 1.10.2026; strefainwestorow.pl 1.10 17:41</span></li>
+
+    <li><span class="tag t-kurs">Kurs</span><b>Alior (LONG): −3,78% do 132,50 zł; od D0 −4,71% — próg miękki przebity, <u>reakcja REDUCE</u> (szczegóły wyżej). PKO BP (LONG): −3,48% do 119,68 zł (największe obroty rynku, 647,9 mln zł); od D0 −3,90% — <b>0,12 zł nad progiem 4% (119,56 zł)</b>, bez reakcji.</b> Gdyby dzisiejsza sesja zepchnęła PKO BP poniżej 119,56 zł, protokół i tak nie zareaguje przed sobotnim rozliczeniem (reakcje liczą się na zamknięciu, a dziś jest D+5) — to informacja dla raportu tygodniowego, nie dla bota. Komunikaty obu banków z 1.10: brak (PKO BP ostatni 29.09 18:50 — emisja SNP 1,35 mld zł).
+      <span class="src">tabela notowań bankier.pl 1.10.2026 17:00–17:03; bankier.pl — wiadomości PKO BP i Alior Banku; <code>d0.prices</code></span></li>
+
+    <li><span class="tag t-makro">Makro</span><b>Orlen (SHORT): WYZWALACZ TEZY ZREALIZOWANY — prezydent Nawrocki podpisał w czwartek o 20:09 (orędzie) ustawę o podatku od nadwyżki przychodów ze sprzedaży paliw i równocześnie skierował ją do TK w trybie kontroli następczej.</b> Producenci paliw oddają 60% zysku ponad zwykłą marżę, sprzedawcy 50%; okres 1.03.2026–31.03.2027; wpływy ok. 4 mld zł idą na program „Ceny Paliw Niżej”, a minister finansów zapowiada niższe ceny na stacjach już w przyszłym tygodniu (Reflex: benzyna poniżej 7 zł/l, diesel poniżej 8 zł/l). Zdarzenie po 17:00 należy do dzisiejszej sesji (dn = 5) — czwartkowe +0,07% do 146,16 zł (od D0 −1,80%, +0,07 p.p.) było jeszcze sprzed decyzji. Pozycja KALENDARZ_NIEPOTWIERDZONY dla tego zdarzenia zostaje zamknięta w rejestrze katalizatorów.
+      <span class="src">bankier.pl „Koncerny paliwowe zapłacą większy podatek. Jest podpis prezydenta”, 1.10.2026 (orędzie 20:09); polsatnews.pl / tvn24.pl / polskieradio24.pl 1.10.2026 (przez WebSearch, zgodne); tabela notowań bankier.pl 1.10 17:03</span></li>
+
+    <li><span class="tag t-espi">ESPI</span><b>CD Projekt (LONG): +0,20% do 254,50 zł (maksimum dnia 258,10, obrót 111,4 mln zł) wbrew rynkowi; od D0 +4,05%, +5,91 p.p. wobec indeksu — jedyna noga LONG na plusie i najlepsza w koszyku.</b> Remaster Wiedźmina 3 utrzymuje ok. 120 tys. jednoczesnych graczy na Steam; analitycy mówią o milionach sprzedanych kopii. Bez komunikatów ESPI. Bez reakcji protokołu.
+      <span class="src">tabela notowań bankier.pl 1.10.2026 17:01; bankier.pl 1.10.2026 „W »Wiedźmin 3 – Remaster« na Steam gra jednocześnie ok. 120 tys. osób”; bankier.pl „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”</span></li>
+
+    <li><span class="tag t-espi">ESPI</span><b>KGHM (SHORT): −2,53% do 321,20 zł (obrót 269 mln zł, drugi na rynku), od D0 −2,81% (−0,95 p.p.) — zgodnie z tezą; dziś rano komunikat o rozbudowie Sierra Gorda za 725 mln USD.</b> Czwarta linia mielenia podniesie przerób rudy z ok. 48 do ok. 60 mln t rocznie i produkcję miedzi o ok. 20%; budowa do końca 2029, pełna moc w II poł. 2030; KGHM ma 55% (South32 45%). Capex rozłożony na lata, bez wpływu na wynik okna; dla pozycji krótkiej neutralny do lekko negatywnego w długim terminie (więcej miedzi od 2030). Chiny zamknięte do 8.10. Poziom miedzi LME: b.d. (brak datowanego źródła w allowliście).
+      <span class="src">bankier.pl „KGHM rozpoczyna rozbudowę kopalni Sierra Gorda w Chile”, 2.10.2026 07:14; strefainwestorow.pl 2.10.2026; tabela notowań bankier.pl 1.10 17:03</span></li>
+
+    <li><span class="tag t-kurs">Kurs</span><b>Budimex (SHORT): −1,22% do 661,20 zł (min 653,0); od D0 −4,45% (−2,58 p.p.) — najlepsza noga krótka, próg 4% przebity w stronę tezy. Dino (SHORT): −1,43% do 34,57 zł; od D0 +0,38% (+2,24 p.p.), daleko od progu 35,82 zł.</b> Obie spółki bez komunikatów (Budimex ostatni 25.09 — odrzucenie oferty na „Czajkę”; Dino — strajk OPZZ nadal niedatowany). Bez reakcji.
+      <span class="src">tabela notowań bankier.pl 1.10.2026 17:00 / 17:04; bankier.pl — wiadomości Budimeksu i Dino</span></li>
+
+    <li><span class="tag t-kurs">Kurs</span><b>LPP (LONG): −0,40% do 24&nbsp;740 zł; od D0 −0,64% (+1,22 p.p.).</b> Jedyny komunikat to wtorkowe transakcje na akcjach emitenta (art. 19 MAR, 30.09). Bez reakcji.
+      <span class="src">tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl — wiadomości LPP</span></li>
+
+    <li><span class="tag t-rek">Rekom.</span><b>Rekomendacje: żadnej nowej dla spółek koszykowych.</b> Tabela bankier.pl z 30.09 ma tylko Mostostal Zabrze (Millennium, kupuj 9,91) i Unibep (Noble, kupuj 19,60); ostatnie koszykowe to Citi/Alior „kupuj” 146,80 (21.09) i Noble/Budimex „sprzedaj” 562 (17.09) — obie sprzed D0 i obie zgodne z tezami. Wyzwalacz RECOMMENDATION nie uruchomiony.
+      <span class="src">bankier.pl/gielda/rekomendacje — przegląd 2.10.2026 ok. 8:20</span></li>
+
+    <li><span class="tag t-short">Short</span><b>Rejestr krótkiej sprzedaży KNF — bez odczytu.</b> <code>rss.knf.gov.pl</code> ponownie odpowiada stroną błędu aplikacji („Wystąpił błąd! Prosimy skontaktować się z administratorem”), pośrednicy (parkiet.com, stockwatch.pl) poza allowlistą. Wyzwalacz „zmiana shorta ≥0,3 p.p. przeciw tezie” pozostaje niemierzalny; kod <b>KNF_SHORT_NIEDOSTEPNY</b> utrzymany.
+      <span class="src">rss.knf.gov.pl — próba odczytu 2.10.2026 ok. 8:20</span></li>
+
+    <li><span class="tag t-espi">ESPI</span><b>Modivo (spoza koszyków): raport półroczny opublikowany dziś rano — II kw. 2026/27 ze stratą netto j.d. 204 mln zł (rok wcześniej +60 mln zł zysku), stratą operacyjną 215,3 mln zł, EBITDA 31,7 mln zł przy przychodach 3&nbsp;045,5 mln zł (+5,2% r/r).</b> Cała strata to zapowiedziane 25.09 odpisy (Worldbox 287,6 mln zł: goodwill 116,8 + aktywa trwałe 170,8; Modivo.com 269,8 mln zł). Sierpień–wrzesień: sprzedaż +13% (HalfPrice +38%, CCC +5%, Modivo.com −7%). Kurs 1.10 (przed raportem) +0,70% do 86,50 zł; od D0 −6,02%. <b>Moduł taktyczny nie reaguje:</b> liczby nie są szokiem ponad to, co spółka ogłosiła tydzień temu, a SELL i tak nie wchodzi na rachunek LONG_ONLY.
+      <span class="src">bankier.pl „Grupa Modivo miała w II kw. 2026/27 r. 204 mln zł straty netto j.d. wobec 60 mln zł zysku rok wcześniej”, 2.10.2026 06:22; bankier.pl „MODIVO S.A.: Wyniki finansowe PSr /2026” (ESPI 2.10); tabela notowań bankier.pl 1.10 17:02</span></li>
+  </ul>
+
+  <h2>Koszyki — stan na ostatnią zakończoną sesję (1.10.2026, D+4)</h2>
+  <p class="note">Kolejność spółek stała, zgodna z <code>signals.json</code> — to nie jest ranking najlepszych i najgorszych pozycji. Kursy: <b>bankier.pl, tabele notowań, zamknięcie 1.10.2026</b> (odczyty 17:00–17:15, po dogrywce; Yahoo oddał HTTP 429 dla wszystkich 21 symboli, FMP zablokowany planem — kod <b>KURS_ZRODLO_REZERWA</b>). Bankier podaje tylko ostatnią sesję, więc walidacja D0 opiera się na <code>data/kursy-cache.json</code>, którego zamknięcia z 25.09 są co do grosza zgodne z <code>d0.prices</code> (10/10 spółek + indeks). Dzisiejsza sesja (2.10) jest ostatnią w oknie W7 — sobotni raport tygodniowy rozlicza D0→D+5.</p>
+
+  <div class="basket-h">KOSZYK LONG — bot kupuje te spółki</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0</th><th>Kurs ostatni</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>Erste Bank Polska<span class="badge-x">CLOSE</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">807,60</td><td class="num">772,00</td><td class="num neg">−4,41%</td><td class="num neg">−2,54 p.p.</td></tr>
+      <tr><td>Alior Bank<span class="badge-r">REDUCE</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">139,05</td><td class="num">132,50</td><td class="num neg">−4,71%</td><td class="num neg">−2,84 p.p.</td></tr>
+      <tr><td>LPP</td><td><span class="dir dir-l">LONG</span></td><td class="num">24&nbsp;900,00</td><td class="num">24&nbsp;740,00</td><td class="num neg">−0,64%</td><td class="num pos">+1,22 p.p.</td></tr>
+      <tr><td>CD Projekt</td><td><span class="dir dir-l">LONG</span></td><td class="num">244,60</td><td class="num">254,50</td><td class="num pos">+4,05%</td><td class="num pos">+5,91 p.p.</td></tr>
+      <tr><td>PKO BP</td><td><span class="dir dir-l">LONG</span></td><td class="num">124,54</td><td class="num">119,68</td><td class="num neg">−3,90%</td><td class="num neg">−2,04 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia koszyka LONG</td><td class="num neg">−1,92%</td><td class="num neg">−0,05 p.p.</td></tr></tfoot>
+  </table></div>
+  <p class="note" style="margin-top:8px">Erste zostaje w tabeli, bo <i>jest</i> w koszyku rankingu W7 (1. miejsce) i tak będzie rozliczony w sobotnim wariancie papierowym; znacznik <b>CLOSE</b> oznacza, że noga nie została otwarta przy rotacji 28.09. Znacznik <b>REDUCE</b> przy Aliorze: od dziś noga liczona z wagą 50% od kursu 132,50 zł (wariant zarządzany), a na rachunku bot tnie pozycję do połowy. Faktycznie otwarte nogi: ALIOR (po cięciu ½), LPP, CDPROJEKT, PKOBP.</p>
+
+  <div class="basket-h">KOSZYK SHORT — papierowy, bot go NIE handluje</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0</th><th>Kurs ostatni</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr></thead>
+    <tbody>
+      <tr><td>PKN Orlen</td><td><span class="dir dir-s">SHORT</span></td><td class="num">148,84</td><td class="num">146,16</td><td class="num neg">−1,80%</td><td class="num pos">+0,07 p.p.</td></tr>
+      <tr><td>Budimex</td><td><span class="dir dir-s">SHORT</span></td><td class="num">692,00</td><td class="num">661,20</td><td class="num neg">−4,45%</td><td class="num neg">−2,58 p.p.</td></tr>
+      <tr><td>KGHM</td><td><span class="dir dir-s">SHORT</span></td><td class="num">330,50</td><td class="num">321,20</td><td class="num neg">−2,81%</td><td class="num neg">−0,95 p.p.</td></tr>
+      <tr><td>Tauron PE<span class="badge-r">REDUCE</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">8,730</td><td class="num">9,124</td><td class="num pos">+4,51%</td><td class="num pos">+6,38 p.p.</td></tr>
+      <tr><td>Dino Polska</td><td><span class="dir dir-s">SHORT</span></td><td class="num">34,44</td><td class="num">34,57</td><td class="num pos">+0,38%</td><td class="num pos">+2,24 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia koszyka SHORT</td><td class="num neg">−0,83%</td><td class="num pos">+1,03 p.p.</td></tr></tfoot>
+  </table></div>
+  <p class="note" style="margin-top:8px">Zwrot pozycji w tabeli SHORT to zwrot kursu akcji, nie wynik krótkiej pozycji. Rachunek Capital.com <b>nie pozwala shortować CFD na akcje</b> (potwierdzone 7.09.2026, <code>OGRANICZENIA_RACHUNKU</code> w <code>app.py</code>), więc stronę krótką realizuje wyłącznie sprzedaż kontraktu na indeks. Koszyk SHORT spadł w czwartek mniej niż rynek (−0,83% od D0 wobec −1,87% indeksu) — Tauron i Dino rosną wbrew tezie, a tylko Budimex i KGHM biją indeks w dół.</p>
+
+  <div class="score">
+    <div class="main">Wynik rachunku &middot; średnia LONG &minus; WIG20 &middot; D0 → 1.10</div>
+    <div class="big neg">−0,05 p.p.</div>
+    <div class="sub">Średnia LONG <b>−1,92%</b> wobec WIG20 <b>−1,87%</b>. Po wczorajszym +0,16 p.p. koszyk wrócił pod kreskę, ale tylko o włos: trzy banki (Erste −4,41%, Alior −4,71%, PKO BP −3,90%) straciły więcej niż indeks, CD Projekt (+4,05%) i LPP (+1,22 p.p.) prawie to odrobiły. Wariant z czterema faktycznie otwartymi nogami (bez Erste, którego bot nie otworzył): średnio <b>−1,30%</b>, czyli <b>+0,57 p.p.</b> wobec indeksu — tak liczony jest sobotni <code>managed_pp</code>; dzisiejsze cięcie Aliora do połowy wejdzie do niego od dnia reakcji. Liczba nagłówkowa pozostaje wynikiem pełnego koszyka LONG ze skryptu.</div>
+    <div class="paper">Spread papierowy (LONG &minus; SHORT): <b>−1,09 p.p.</b> — <i>papierowy, miara selekcji, nie wynik rachunku.</i><br>
+    Rozjazd papier &minus; rachunek: <b>−1,03 p.p.</b> — powyżej progu 0,5 p.p.: koszyk SHORT spadł mniej niż indeks (−0,83% wobec −1,87%), więc spread papierowy jest wyraźnie gorszy od tego, co realnie gra rachunek. Przypomnienie: koszyka SHORT bot <b>nie handluje</b>, więc spread LONG&minus;SHORT jest metryką z definicji nieosiągalną.</div>
+  </div>
+  <p class="note" style="margin-top:10px">Wszystkie trzy warianty pochodzą z sekcji KOSZYKI w <code>python3 scripts/metryki.py rozlicz --week 2026-W7 --d0 2026-09-25 --d5 2026-10-01</code>: LONG bez hedge'u −1,92%, LONG − indeks −0,05 p.p., SHORT −0,83% (vs indeks +1,03 p.p.), spread −1,09 p.p., rozjazd −1,03 p.p. Benchmark naiwnego momentum po czterech sesjach: LONG − indeks −3,00 p.p., spread −8,68 p.p.; <b>przewaga modelu +2,95 p.p. na wyniku rachunku i +7,59 p.p. na spreadzie</b> — koszyk momentum ma w LONG Erste, mBank, Alior, Modivo i Pekao (wszystkie pod kreską, mBank −5,82%, Modivo −6,02%), a w SHORT PGE (+18,78%); nadal szum, nie ocena metody. Hit rate TOP5 2/5, BOTTOM5 2/5 (losowo 2,5 i 2,5; przedziały Wilsona 12–77% obejmują 50%); Spearman −0,33 (n=20); Brier 0,262 wobec baseline 0,250. Do wyniku zamkniętego okna dojdą koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE Aliora dwa razy), punkty swapowe za każdą dobę oraz luka między zamknięciem D0 (piątek) a realizacją w poniedziałek o 9:15.</p>
+
+  <h2>Kalendarz na dziś — piątek 2.10.2026 (D+5, ostatnia sesja okna W7)</h2>
+  <div class="cal"><ul>
+    <li><b>11:00</b> — <b>wstępny HICP strefy euro za wrzesień</b></li>
+    <li><b>14:30</b> — <b>raport z rynku pracy USA (NFP) za wrzesień</b> — pierwszy piątek miesiąca; przy rentownościach 10-latek na 5,34% odczyt rozstrzygnie o kierunku obligacji, a więc i banków</li>
+    <li><b>16:00</b> — zamówienia w przemyśle USA za sierpień (w tym na dobra trwałe)</li>
+    <li><b>Orlen</b> — pierwsza sesja po podpisaniu ustawy o podatku od nadwyżki przychodów paliwowych (orędzie 1.10, 20:09); BM Reflex — cotygodniowe ceny paliw</li>
+    <li><b>KGHM</b> — komunikat o rozbudowie Sierra Gorda (725 mln USD) przed sesją</li>
+    <li><b>Modivo</b> — pierwsza sesja po raporcie półrocznym (strata netto 204 mln zł w II kw.)</li>
+    <li><b>GPW</b> — bez wydarzeń spółek WIG20 (Kernel — raport roczny 2025/26; Bioplanet — wprowadzenie akcji serii E)</li>
+    <li><b>Chiny</b> — Złoty Tydzień, rynek zamknięty do czwartku 8.10 (miedź bez pierwszego odbiorcy)</li>
+    <li><b>Jutro (sobota 3.10)</b> — raport tygodniowy: rozliczenie W7 (D0 25.09 → D+5 2.10) i nowy ranking W8</li>
+    <li><b>Wtorek–środa 6–7.10</b> — posiedzenie decyzyjne RPP (komunikat ok. 15:00 w środę) — pierwsze z wrześniowym CPI 4,0% na stole</li>
+  </ul></div>
+  <p class="src" style="display:block;margin-top:8px">Źródła datowane: bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026 13:38 (piątek: HICP 11:00, NFP, zamówienia w przemyśle, Chiny zamknięte do 8.10); bankier.pl/gielda/kalendarium — odczyt 2.10.2026 ok. 8:20 (Kernel, Bioplanet); strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-10-02” (bez wydarzeń WIG20 na piątek; PZU dywidenda 8.10); biznes.pap.pl kalendarium 2.10 (BM Reflex). <b>Posiedzenie RPP 6–7.10:</b> potwierdzone w datowanym źródle — komunikat po posiedzeniu wrześniowym cytowany w bankier.pl „Stopy w NBP bez zmian we wrześniu 2026…”, 9.09.2026 („następne decyzyjne posiedzenie Rady zostało zaplanowane na 6–7 października”) — ale to źródło sprzed bieżącego tygodnia (nbp.pl poza allowlistą), więc kod <b>KALENDARZ_NIEPOTWIERDZONY</b> dla tej daty utrzymany; nic w tym raporcie się na niej nie opiera.</p>
+
+  <h2>Moduł taktyczny</h2>
+  <p>Lista taktycznych jest <b>pusta</b> i dziś się nie zmienia. Przeskanowane spółki WIG20 spoza koszyków (zmiana 1.10): PGE +2,15% (15,465 zł; od D0 +18,78%), Modivo +0,70%, Żabka −0,09%, Pepco −0,60%, Kruk −1,60%, PZU −1,63%, Allegro −2,02%, Kęty −2,53%, Pekao −3,60%, mBank −4,15%. <b>Żadna nie spełnia twardego wyzwalacza</b> (wynik wyraźnie powyżej konsensusu z pozytywną reakcją / przełomowy kontrakt / wezwanie): PGE rośnie na fali sektorowo-makro (kredyt 3,05 mld zł na CCGT Gryfino z 29.09 to refinansowanie, strategia zapowiedziana na październik bez daty); Pepco (prognozy w górę 29.09) pozostaje odrzucone z wcześniejszym uzasadnieniem; Modivo — raport bez szoku ponad znane odpisy, a SELL nie wchodzi na rachunek LONG_ONLY; PZU 30.09 wniosek do WZ o emisję obligacji podporządkowanych do 3 mld zł — neutralne. Bez kandydatów.</p>
+
+  <h2>Problemy i jakość danych</h2>
+  <ul>
+    <li><b>FMP_PLAN_BLOKADA</b> — konektor FMP jest w sesji (narzędzia <code>mcp__FMP__*</code> widoczne, grant rutyny działa), ale <code>chart / historical-price-eod-light</code> zwrócił <i>ACCESS DENIED: wymaga wyższego planu</i> już dla WIG20.WA i CDR.WA — ścieżka nr 1 źródeł kursów nadal martwa (ograniczenie planu FMP, nie grantu).</li>
+    <li><b>KURS_ZRODLO_REZERWA</b> — Yahoo: HTTP 429 dla wszystkich 21 symboli (jeden bieg <code>kursy.py</code>, ponowienia w budżecie). Komplet zamknięć 1.10 z tabel bankier.pl (odczyty 17:00–17:15, po dogrywce; spójne z komentarzem sesyjnym bankier.pl i depeszą strefainwestorow.pl). Walidacja D0 przez cache: zgodność 10/10 + indeks. Cache zaktualizowany o sesję 1.10 (21 symboli) i scommitowany.</li>
+    <li><b>KNF_SHORT_NIEDOSTEPNY</b> — rejestr krótkiej sprzedaży: strona błędu aplikacji; wyzwalacz shortowy niemierzalny.</li>
+    <li><b>KALENDARZ_NIEPOTWIERDZONY</b> — data RPP 6–7.10 potwierdzona tylko w źródle z 9.09 (nie z bieżącego tygodnia); cła sekcji 232 na miedź (KGHM), termin strajku w Dino, data powołań zarządu Aliora, data strategii PGE. Pozycja „decyzja prezydenta ws. windfall tax” (Orlen) <b>zamknięta</b> — ustawa podpisana 1.10.</li>
+    <li><b>Źródła poza allowlistą w tym biegu</b> — polsatnews.pl, tvn24.pl, parkiet.com, stockwatch.pl, wnp.pl, money.pl (tylko snippety WebSearch, użyte wyłącznie jako potwierdzenie liczb z bankier.pl); biznes.pap.pl — strona harmonogramu RPP zwróciła pustą treść.</li>
+    <li><b>Bez nowych kodów w tym biegu.</b> Do <code>rankings/2026-W7.json</code> dopisano 14 katalizatorów z 1.10 i 2.10 (MAKRO ×2, ALIOR, PKOBP, ERSTEPL, CDPROJEKT, LPP, PKNORLEN, TAURONPE, KGHM, BUDIMEX, DINOPL, MODIVO, PGE); ranking, <code>long</code>, <code>short</code>, <code>score</code> i <code>p</code> pozostają <b>zamrożone do soboty</b>.</li>
+  </ul>
+
+  <footer>
+    <p>Puls WIG20 — automatyczna rutyna poranna, wygenerowana 2.10.2026 przez agenta AI (Claude Code) na podstawie publicznych źródeł: bankier.pl, strefainwestorow.pl, biznes.pap.pl, S&amp;P Global PMI (przez WebSearch), komunikaty spółek (ESPI).</p>
+    <p><b>Materiał analityczno-edukacyjny. Nie stanowi rekomendacji inwestycyjnej</b> w rozumieniu rozporządzenia MAR ani usługi doradztwa inwestycyjnego. Nie jest ofertą ani zachętą do nabycia lub zbycia jakiegokolwiek instrumentu finansowego. Dane mogą zawierać błędy i pochodzą ze źródeł rezerwowych; przed decyzją inwestycyjną zweryfikuj je samodzielnie. Inwestowanie w instrumenty pochodne z dźwignią wiąże się z ryzykiem utraty całości zainwestowanego kapitału.</p>
+  </footer>
+</div>
+</body>
+</html>

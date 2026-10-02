@@ -57,9 +57,18 @@
       "price_before": 9.22,
       "move_from_d0_pct": 5.61,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "ALIOR",
+      "action": "REDUCE",
+      "date": "2026-10-02",
+      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8%: zamkniecie 1.10.2026 132,50 zl wobec D0 139,05 zl = -4,71% (-2,84 p.p. wobec WIG20 -1,87%); prog miekki 4% = 133,49 zl przebity w czwartek, prog twardy CLOSE (PRICE_8) = 127,93 zl. Czwartek -3,78% (min 131,55) w wyprzedazy calego sektora: WIG-Banki -3,64%, mBank -4,15%, Pekao -3,60%, PKO BP -3,48%, Erste -3,26%; impuls globalny - rentownosc 10-letnich obligacji USA 5,34% (najwyzej od 2002 r.), USD/PLN 3,8848 (najslabszy zloty od kwietnia 2025), WIG20 -1,90% (najgorsza sesja od 27.08). Sygnaly spolkowe pozostaja ZGODNE z teza: Fitch 30.09 podniosl rating do BBB- (pierwszy inwestycyjny), Citi 21.09 'kupuj' 146,80 zl, brak komunikatu spolki 1.10 - to wyzwalacz cenowy sektorowy, nie fundamentalny, dlatego szczebel miekki. Wpis dotyczy nogi FAKTYCZNIE OTWARTEJ na rachunku (koszyk LONG): /run tnie pozycje do polowy (REDUCE_FACTOR 0,5) od kursu 132,50 zl; w rozliczeniu zarzadzanym od 2.10 waga 50%. Zrodlo: tabela notowan bankier.pl 1.10.2026 17:00 (ALIOR 132,50; -3,78%; -5,20; zakres 131,55-138,95; obrot 49,6 mln zl); bankier.pl 'Najgorsza sesja WIG20 od ponad miesiaca. Akcje bankow wyprzedawane', 1.10.2026 17:29; d0.prices w signals.json.",
+      "price_before": 132.5,
+      "move_from_d0_pct": -4.71,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-10-01",
+  "last_daily": "2026-10-02",
   "d0": {
     "date": "2026-09-25",
     "wig20": 4180.26,
