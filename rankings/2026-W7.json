@@ -800,6 +800,118 @@
    "opis": "Kalendarz D+4 potwierdzony w źródłach z bieżącego tygodnia: 9:00 PMI przemysłu Polska (także Węgry, Szwecja, Japonia, Indie), 10:00 PMI strefa euro, 10:30 PMI W. Brytania, 11:00 bezrobocie UE, 11:30 Challenger (USA), 14:30 wnioski o zasiłek USA, 16:00 ISM przemysłu USA; wystąpienia Lagarde i Baileya; GPW: raport półroczny Modivo. Chiny: początek Złotego Tygodnia (do 8.10) — rynek miedzi bez pierwszego odbiorcy (KGHM). Posiedzenie RPP: nadal bez datowanego potwierdzenia.",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026; bankier.pl/gielda/kalendarium — odczyt 1.10.2026 8:20; strefainwestorow.pl „TYDZIEŃ W KRAJU…”, publ. 28.09.2026 (PMI 9:00, Modivo)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "PMI przemysłu Polska za wrzesień 49,0 pkt (konsensus 48,0; sierpień 48,3) — 17. miesiąc poniżej 50, ale najwyżej od kwietnia. Sesja D+4: WIG20 −1,90% do 4 102,20 (najgorsza od 27.08; 17 z 20 spółek na minusie, obroty 2,79 mld zł), WIG-Banki −3,64%, WIG-Górnictwo −2,53%, WIG-Energia +0,10%, WIG-Paliwa +0,02%. Impuls: kolejna fala wyprzedaży obligacji — rentowność 10-latek USA 5,34% (najwyżej od 2002 r.), USD/PLN 3,8848 (najsłabszy złoty od kwietnia 2025); FTSE 100 −1,7%, DAX −0,9%, CAC 40 −1,6%.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Polski przemysł wciąż pod kreską, ale spadek wyhamowuje. PMI powyżej oczekiwań”, 1.10.2026; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca. Akcje banków wyprzedawane”, 1.10.2026 17:29; strefainwestorow.pl „WIG20 na zamknięciu wyniósł 4102,20 pkt (−1,90%)”, 1.10.2026 17:41; tabela indeksów bankier.pl 1.10 17:15"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−3,78% do 132,50 zł (zakres 131,55–138,95; obrót 49,6 mln zł) w sektorowej wyprzedaży banków; od D0 −4,71% (−2,84 p.p.) — próg miękki 4% (133,49 zł) przebity → REAKCJA PROTOKOŁU 2.10: REDUCE (PRICE_4_8), noga faktycznie otwarta na rachunku, cięcie do 50% od 132,50 zł. Próg twardy CLOSE 127,93 zł. Bez komunikatu spółki 1.10; sygnały spółkowe (Fitch BBB− 30.09, Citi „kupuj” 21.09) nadal zgodne z tezą.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca…”, 1.10.2026 17:29; bankier.pl — wiadomości Alior Banku (ostatni wpis 30.09, Fitch)"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−3,48% do 119,68 zł (największe obroty rynku: 647,9 mln zł); od D0 −3,90% (−2,04 p.p.) — 0,12 zł NAD progiem miękkim 4% (119,56 zł), bez reakcji protokołu. Brak komunikatów spółki 1.10 (ostatni 29.09 18:50: emisja SNP 1,35 mld zł).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca…”, 1.10.2026 17:29; bankier.pl — wiadomości PKO BP"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−3,26% do 772,00 zł (zakres 768,4–798,0; obrót 98,3 mln zł) razem z sektorem; od D0 −4,41% (−2,54 p.p.); kurs 8,2% powyżej ceny wezwania 713,60 zł. Brak nowych komunikatów (ostatnie 28.09). Noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — spadek obciąża tylko wariant papierowy.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl — wiadomości Erste Bank Polska"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "+0,20% do 254,50 zł (max 258,10, obrót 111,4 mln zł) wbrew rynkowi −1,90%; od D0 +4,05% (+5,91 p.p.) — najlepsza noga LONG. Remaster Wiedźmina 3 nadal ok. 120 tys. jednoczesnych graczy na Steam; analitycy mówią o milionach sprzedanych kopii.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:01; bankier.pl 1.10.2026 „W »Wiedźmin 3 – Remaster« na Steam gra jednocześnie ok. 120 tys. osób”; „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”"
+  },
+  {
+   "ticker": "LPP",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−0,40% do 24 740 zł; od D0 −0,64% (+1,22 p.p.). Jedyny komunikat: 30.09 transakcje na akcjach emitenta (art. 19 MAR). Bez reakcji.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl — wiadomości LPP"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-10-01",
+   "dn": 5,
+   "opis": "WYZWALACZ TEZY ZREALIZOWANY: prezydent Nawrocki podpisał 1.10 o 20:09 (orędzie) ustawę o podatku od nadwyżki przychodów ze sprzedaży paliw (producenci oddają 60% nadwyżki ponad zwykłą marżę, sprzedawcy 50%; okres 1.03.2026–31.03.2027; wpływy ok. 4 mld zł na program „Ceny Paliw Niżej”), kierując ją równocześnie do TK w trybie kontroli następczej. Minister finansów: ceny na stacjach niższe już w przyszłym tygodniu. Zdarzenie po 17:00 → sesja 2.10 (dn=5). Kurs 1.10 (przed decyzją) +0,07% do 146,16 zł; od D0 −1,80% (+0,07 p.p.). Zamyka pozycję KALENDARZ_NIEPOTWIERDZONY dla tego zdarzenia.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Koncerny paliwowe zapłacą większy podatek. Jest podpis prezydenta”, 1.10.2026 (orędzie 20:09); polsatnews.pl / tvn24.pl 1.10.2026 (przez WebSearch); tabela notowań bankier.pl 1.10 17:03"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−1,04% do 9,124 zł; od D0 +4,51% (+6,38 p.p.) — nadal w pasmie 4–8%, REDUCE z 1.10 utrzymany (próg CLOSE 9,428 zł). Trzy zdarzenia spółkowe: ESPI 11:00 zawieszenie postępowania arbitrażowego z AM Global Holding / ArcelorMittal Poland; 12:58 zarząd widzi „duże szanse”, by bloki węglowe 200 MW pracowały po 2028 r.; 14:02 plan transformacji czterech lokalizacji (Jaworzno: OCGT 2×315 MW, pozwolenie na budowę II kw. 2027; Siersza: OCGT do 630 MW na 2031/32, magazyny, PV; Łaziska/Łagisza: 7 projektów) — każdy duży projekt gazowy w osobnej spółce z możliwym partnerem kapitałowym przy limicie długu; ambicja dywidendy. Rynek: neutralnie (spadek mniejszy niż indeks).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl — wiadomości Tauronu 1.10.2026 11:00 / 12:58 / 14:02; bankier.pl „Tauron przedstawia plan transformacji czterech lokalizacji…”, 1.10.2026 14:02; tabela notowań bankier.pl 1.10 17:02; strefainwestorow.pl 1.10 17:41 (TPE −1,04%)"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-10-02",
+   "dn": 5,
+   "opis": "Komunikat 2.10 07:14: start rozbudowy Sierra Gorda (Chile, 55% KGHM / 45% South32) za 725 mln USD — czwarta linia mielenia, przerób rudy z ok. 48 do ok. 60 mln t rocznie, produkcja miedzi +ok. 20%, budowa do końca 2029, pełna moc II poł. 2030 (zdarzenie przed sesją → dn=5). Capex rozłożony na lata, bez wpływu na wyniki okna. Sesja 1.10: −2,53% do 321,20 zł (obrót 269 mln zł, WIG-Górnictwo −2,53%); od D0 −2,81% (−0,95 p.p.) — zgodnie z tezą. Chiny zamknięte do 8.10.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „KGHM rozpoczyna rozbudowę kopalni Sierra Gorda w Chile”, 2.10.2026 07:14; strefainwestorow.pl 2.10.2026; tabela notowań bankier.pl 1.10 17:03"
+  },
+  {
+   "ticker": "BUDIMEX",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−1,22% do 661,20 zł (min 653,0); od D0 −4,45% (−2,58 p.p.) — najlepsza noga SHORT, przebity próg 4% W STRONĘ tezy. Bez komunikatów spółki (ostatni 25.09: odrzucenie oferty na „Czajkę”).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl — wiadomości Budimeksu"
+  },
+  {
+   "ticker": "DINOPL",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "−1,43% do 34,57 zł (obrót 103 mln zł); od D0 +0,38% (+2,24 p.p.), daleko od progu 4% (35,82 zł). Bez komunikatów spółki; strajk OPZZ nadal niedatowany.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:04; bankier.pl — wiadomości Dino"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-10-02",
+   "dn": 5,
+   "opis": "Raport półroczny (ESPI datowany 2.10, depesza 06:22): II kw. 2026/27 przychody 3 045,5 mln zł (+5,2% r/r), EBITDA 31,7 mln zł, strata operacyjna −215,3 mln zł (rok wcześniej +277,1 mln zł zysku), strata netto j.d. −204 mln zł (rok wcześniej +60 mln zł) — w całości efekt zapowiedzianych 25.09 odpisów (Worldbox 287,6 mln zł: goodwill 116,8 + aktywa trwałe 170,8; Modivo.com 269,8 mln zł). Sierpień–wrzesień: sprzedaż +13% (HalfPrice +38%, CCC +5%, Modivo.com −7%). Kurs 1.10 (przed raportem) +0,70% do 86,50 zł; od D0 −6,02%. Moduł taktyczny: brak SELL — odpisy znane od 25.09, a SELL i tak nie wchodzi na rachunek LONG_ONLY.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Grupa Modivo miała w II kw. 2026/27 r. 204 mln zł straty netto j.d. wobec 60 mln zł zysku rok wcześniej”, 2.10.2026 06:22; bankier.pl „MODIVO S.A.: Wyniki finansowe PSr /2026” (ESPI 2.10); tabela notowań bankier.pl 1.10 17:02"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-01",
+   "dn": 4,
+   "opis": "+2,15% do 15,465 zł wbrew rynkowi; od D0 +18,78% (+20,65 p.p.) — najmocniejsza spółka WIG20 okna. Komunikaty: 1.10 transakcje art. 19 MAR; 29.09 kredyt terminowy 3,05 mld zł na refinansowanie CCGT Gryfino. Moduł taktyczny: brak twardego wyzwalacza (ruch sektorowo-makro, strategia zapowiedziana na październik bez daty).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:04; bankier.pl — wiadomości PGE; strefainwestorow.pl 1.10 17:41"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-02",
+   "dn": 5,
+   "opis": "Kalendarz D+5 (ostatnia sesja okna W7) potwierdzony w datowanych źródłach: 11:00 wstępny HICP strefy euro za wrzesień; 14:30 raport z rynku pracy USA (NFP) za wrzesień; 16:00 zamówienia w przemyśle USA za sierpień; Chiny zamknięte do 8.10; GPW bez wydarzeń WIG20 (Kernel — raport roczny; BM Reflex — ceny paliw). RPP: następne posiedzenie decyzyjne 6–7.10 wg komunikatu po posiedzeniu wrześniowym (bankier.pl 9.09.2026) — źródło datowane, ale sprzed bieżącego tygodnia, więc kod KALENDARZ_NIEPOTWIERDZONY utrzymany dla tej daty.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy…”, 25.09.2026 13:38; bankier.pl/gielda/kalendarium (odczyt 2.10 ok. 8:20); strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-10-02”; bankier.pl „Stopy w NBP bez zmian we wrześniu 2026…”, 9.09.2026"
   }
  ],
  "data_quality": [
