@@ -1,20 +1,20 @@
 {
-  "version": "2026-W7",
-  "generated": "2026-09-26",
+  "version": "2026-W8",
+  "generated": "2026-10-03",
   "status": "AKTUALNA",
   "long": [
-    "ERSTEPL",
-    "ALIOR",
-    "LPP",
+    "PGE",
+    "TAURONPE",
     "CDPROJEKT",
-    "PKOBP"
+    "ALLEGRO",
+    "PEPCO"
   ],
   "short": [
-    "PKNORLEN",
-    "BUDIMEX",
-    "KGHM",
-    "TAURONPE",
-    "DINOPL"
+    "MODIVO",
+    "PZU",
+    "KRUK",
+    "ALIOR",
+    "MBANK"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -39,50 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "ERSTEPL",
-      "action": "CLOSE",
-      "date": "2026-09-27",
-      "reason": "Erste Group Bank AG oglosila 25.09.2026 o 21:06 (po zamknieciu sesji D0) zamiar dobrowolnego wezwania na akcje Erste Bank Polska po ok. 713 zl za sztuke, czyli 11,72% PONIZEJ zamkniecia D0 (807,60 zl). Wezwanie jest twardym wyzwalaczem protokolu (TENDER): oferent podnosi udzial z 49% do powyzej 50%, maksymalnie 75%, kupujac pakiet do 26%, i jest zobowiazany wobec KNF utrzymac co najmniej 25% w free float, wiec delistingu nie bedzie, a cena wezwania staje sie kotwica wyceny ok. 12% pod rynkiem. Premia 22,1% liczona jest wobec ceny referencyjnej 584 zl z maja 2025, nie wobec kursu biezacego. Filar tezy LONG (momentum rel5 +6,42 p.p. i rekord sektora bankowego) zostal podciety przez formalna oferte glownego akcjonariusza ponizej rynku. Ogloszenie wezwania planowane na poczatek listopada 2026, zapisy 30 dni, warunek zgody KNF na przekroczenie 50%. Zdarzenie po 17:00 nalezy do sesji poniedzialkowej 28.09 (dn=1), a rotacja portfela wypada 28.09 o 9:15 - wpis CLOSE sprawia, ze desired_book() nie otworzy tej nogi. Zdarzenie zostalo POMINIETE w rankingu W7 (wygenerowanym 26.09), ktory stawia ERSTEPL na 1. miejscu z adnotacja o braku zdarzen w D+1...D+10. Zrodlo: bankier.pl 'Erste Group Bank zamierza wezwac do sprzedazy akcji Erste Bank Polska po ok. 713 zl za szt. (opis)', 25.09.2026 21:06; bankier.pl 'Erste Group oglasza zamiar przeprowadzenia dobrowolnego wezwania do zapisywania sie na sprzedaz akcji w celu zwiekszenia udzialu w Erste Bank Polska', 25.09.2026; kurs D0 807,60 zl z d0.prices w signals.json i z data/kursy-cache.json.",
-      "price_before": 807.6,
-      "move_from_d0_pct": 0.0,
-      "trigger": "TENDER"
-    },
-    {
-      "ticker": "TAURONPE",
-      "action": "REDUCE",
-      "date": "2026-10-01",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 30.09.2026 9,22 zl wobec D0 8,73 zl = +5,61% (+5,58 p.p. wobec WIG20 +0,04%). Sroda +2,65% na fali sektora: WIG-Energia +4,61% (blisko historycznego szczytu), PGE +6,10% do 15,14 zl (najwyzej od jesieni 2015), po wtorkowej umowie kredytowej z PKO BP na 900 mln zl i przy wysokich cenach gazu i energii. Brak komunikatu spolki 30.09 (ostatni ESPI 29.09 14:48); sygnaly spolkowe (Fitch 25.09: perspektywa stabilna zamiast pozytywnej) nadal zgodne z teza, wiec to wyzwalacz cenowy, nie fundamentalny. Prog twardy CLOSE (PRICE_8) = 9,428 zl. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index. Zrodlo: tabela notowan bankier.pl 30.09.2026 17:04 (9,22 zl, +2,65%); bankier.pl 'Kurs PGE najwyzej od 11 lat. Energetyka dalej mocna na warszawskim parkiecie', 30.09.2026 17:20; d0.prices w signals.json.",
-      "price_before": 9.22,
-      "move_from_d0_pct": 5.61,
-      "trigger": "PRICE_4_8"
-    },
-    {
-      "ticker": "ALIOR",
-      "action": "REDUCE",
-      "date": "2026-10-02",
-      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8%: zamkniecie 1.10.2026 132,50 zl wobec D0 139,05 zl = -4,71% (-2,84 p.p. wobec WIG20 -1,87%); prog miekki 4% = 133,49 zl przebity w czwartek, prog twardy CLOSE (PRICE_8) = 127,93 zl. Czwartek -3,78% (min 131,55) w wyprzedazy calego sektora: WIG-Banki -3,64%, mBank -4,15%, Pekao -3,60%, PKO BP -3,48%, Erste -3,26%; impuls globalny - rentownosc 10-letnich obligacji USA 5,34% (najwyzej od 2002 r.), USD/PLN 3,8848 (najslabszy zloty od kwietnia 2025), WIG20 -1,90% (najgorsza sesja od 27.08). Sygnaly spolkowe pozostaja ZGODNE z teza: Fitch 30.09 podniosl rating do BBB- (pierwszy inwestycyjny), Citi 21.09 'kupuj' 146,80 zl, brak komunikatu spolki 1.10 - to wyzwalacz cenowy sektorowy, nie fundamentalny, dlatego szczebel miekki. Wpis dotyczy nogi FAKTYCZNIE OTWARTEJ na rachunku (koszyk LONG): /run tnie pozycje do polowy (REDUCE_FACTOR 0,5) od kursu 132,50 zl; w rozliczeniu zarzadzanym od 2.10 waga 50%. Zrodlo: tabela notowan bankier.pl 1.10.2026 17:00 (ALIOR 132,50; -3,78%; -5,20; zakres 131,55-138,95; obrot 49,6 mln zl); bankier.pl 'Najgorsza sesja WIG20 od ponad miesiaca. Akcje bankow wyprzedawane', 1.10.2026 17:29; d0.prices w signals.json.",
-      "price_before": 132.5,
-      "move_from_d0_pct": -4.71,
-      "trigger": "PRICE_4_8"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-10-02",
   "d0": {
-    "date": "2026-09-25",
-    "wig20": 4180.26,
+    "date": "2026-10-02",
+    "wig20": 4084.31,
     "prices": {
-      "ERSTEPL": 807.6,
-      "ALIOR": 139.05,
-      "LPP": 24900.0,
-      "CDPROJEKT": 244.6,
-      "PKOBP": 124.54,
-      "PKNORLEN": 148.84,
-      "BUDIMEX": 692.0,
-      "KGHM": 330.5,
-      "TAURONPE": 8.73,
-      "DINOPL": 34.44
+      "PGE": 15.025,
+      "TAURONPE": 9.14,
+      "CDPROJEKT": 253.5,
+      "ALLEGRO": 50.39,
+      "PEPCO": 43.78,
+      "MODIVO": 88.8,
+      "PZU": 69.82,
+      "KRUK": 366.4,
+      "ALIOR": 130.0,
+      "MBANK": 1391.0
     }
   },
   "history": [
@@ -200,6 +172,31 @@
         "KNF_SHORT_NIEDOSTEPNY",
         "DYWIDENDA_KOREKTA_PZU",
         "KALENDARZ_NIEPOTWIERDZONY"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)"
+    },
+    {
+      "week": "2026-W7",
+      "long_vs_index_pp": -1.16,
+      "long_abs_pct": -3.46,
+      "spread_pp": -3.08,
+      "rozjazd_pp": -1.92,
+      "hit_top": "1/5",
+      "hit_bottom": "2/5",
+      "tactical_pp": null,
+      "managed_pp": -1.83,
+      "reaction_pp": 1.25,
+      "base_rate": 0.45,
+      "spearman": -0.51,
+      "brier": 0.2663,
+      "data_quality": [
+        "FMP_PLAN_BLOKADA",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "DYWIDENDA_KOREKTA_PZU",
+        "KALENDARZ_NIEPOTWIERDZONY",
+        "WEZWANIE_ERSTEPL_POMINIETE_W7",
+        "DM_SYGNAL_POMINIETY_W7"
       ],
       "metoda": "v1.1 (momentum mechaniczne)"
     }
