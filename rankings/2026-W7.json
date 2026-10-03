@@ -1,926 +1,1022 @@
 {
- "week": "2026-W7",
- "d0": "2026-09-25",
- "generated": "2026-09-26",
- "momentum_method": "mechaniczne",
- "uwaga": "momentum ze scripts/metryki.py momentum --d0 2026-09-25, komplet 20 sesji w cache (BRAK_20S NIE występuje w tym tygodniu — pierwszy raz od wprowadzenia metody v1.1); PZU liczone na kopii cache skorygowanej o dywidendę 4,80 zł odciętą 16.09 (DYWIDENDA_KOREKTA_PZU) — dzień prawa wypada w oknie 20-sesyjnym, więc bez korekty rel20 wynosi −5,21 p.p. i momentum 10,5 pkt, co jest artefaktem odcięcia, nie ruchem kursu; DM ±3 wyłącznie za datowane sygnały z okna 26.08–25.09 (Trigon DM 8.09 — top picks i lista „gorzej niż rynek”; Noble Securities 17.09; Citi 21.09; Wood & Company 24.09) — lista długich DM BOŚ z 25.08 wypadła z okna 30 dni, co zabrało +3 spółce PGE; katalizatory 10 + suma wkładów za zdarzenia D+1…D+10 (28.09–9.10); remis 43,1 pkt BUDIMEX/KGHM rozstrzygnięty mniejszą wagą w WIG20 (1,57% wobec 8,03%), wagi z profilu WIG20 na bankier.pl, portfel z 25.09.2026 17:15; data posiedzenia RPP 6–7.10 NIE została potwierdzona w źródle pierwotnym (nbp.pl jest zablokowany przez politykę sieciową środowiska) ani w datowanym kalendarzu z bieżącego tygodnia, więc nie opiera się na niej żadna deklaracja",
- "long": [
-  "ERSTEPL",
-  "ALIOR",
-  "LPP",
-  "CDPROJEKT",
-  "PKOBP"
- ],
- "short": [
-  "PKNORLEN",
-  "BUDIMEX",
-  "KGHM",
-  "TAURONPE",
-  "DINOPL"
- ],
- "ranking": [
-  {
-   "rank": 1,
-   "ticker": "ERSTEPL",
-   "score": 63.6,
-   "p": 0.57,
-   "waga_wig20_pct": 6.07,
-   "rel5_pp": 6.42,
-   "rel20_pp": 7.53,
-   "pts": {
-    "momentum": 24.1,
-    "katalizatory": 10,
-    "makro": 9,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 24,1/25 (rel5 +6,42 p.p., rel20 +7,53 p.p. — najwyżej w uniwersum) po tygodniu, w którym WIG-BANKI zyskał ponad 5,2% i ustanowił rekord; KAT raport Q3 dopiero 30.10, brak zdarzeń w D+1…D+10 (28.09–9.10) → 10 neutralnie; MAKRO konsensus CPI flash GUS na 30.09 to 3,6% wobec 3,4% poprzednio, czyli brak przestrzeni na obniżki stóp i wsparcie dla marży odsetkowej, a spółka zależna grupy austriackiej ma mniejszą wrażliwość na koszt finansowania skarbowego niż banki z dużym portfelem SPW (9); DM brak datowanego sygnału w oknie 26.08–25.09 (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach — raport Q2 z 30.07 poza oknem (5); PRZ rejestr krótkiej sprzedaży KNF niedostępny, brak datowanych danych o przepływach (5); WYC DY ok. 8,1%, ale kurs po +7,82% w tygodniu i na rekordzie — mnożnik przestał być argumentem (3)."
-  },
-  {
-   "rank": 2,
-   "ticker": "ALIOR",
-   "score": 58.8,
-   "p": 0.54,
-   "waga_wig20_pct": 2.2,
-   "rel5_pp": 4.62,
-   "rel20_pp": 0.31,
-   "pts": {
-    "momentum": 19.3,
-    "katalizatory": 10,
-    "makro": 9,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 19,3/25 (rel5 +4,62 p.p., rel20 +0,31 p.p.); KAT nabór w konkursie na prezesa i pięcioro członków zarządu zamknięty 16.09, data powołań nadal niepotwierdzona → bez punktów, 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO wyższy konsensus CPI (3,6% na 30.09) utrwala scenariusz „wyżej na dłużej”, który podnosi marżę odsetkową, a najmniejszy w indeksie portfel SPW ogranicza skutki obniżki ratingu Polski do A3 (9); DM netto 0: Citi podniosło 21.09 rekomendację do „kupuj” z ceną docelową 146,80 zł (+3), ale Wood & Company obniżyło ją 24.09 z „kupuj” do „trzymaj” (−3) — dwa przeciwstawne, datowane sygnały w oknie 30 dni (7,5); REW raport Q3 dopiero 27.10, brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC najniższe mnożniki wśród banków indeksu, ale po +6,02% w tygodniu cena docelowa Citi jest tylko ok. 5% nad kursem (3)."
-  },
-  {
-   "rank": 3,
-   "ticker": "LPP",
-   "score": 58.0,
-   "p": 0.54,
-   "waga_wig20_pct": 5.67,
-   "rel5_pp": 1.66,
-   "rel20_pp": 13.9,
-   "pts": {
-    "momentum": 17.5,
-    "katalizatory": 10,
-    "makro": 7,
-    "dm": 7.5,
-    "rewizje": 9,
-    "przeplywy": 5,
-    "wycena": 2
-   },
-   "uzasadnienie": "MOM 17,5/25 (rel5 +1,66 p.p., rel20 +13,90 p.p. — najwyższy składnik 20-sesyjny w uniwersum); KAT brak zdarzeń w D+1…D+10 (raport H1 z 17.09 przed D0, raport Q3 dopiero jesienią) → 10; MAKRO sprzedaż detaliczna GUS za sierpień +3,8% r/r w cenach stałych (22.09) potwierdza popyt, ale wypadła poniżej konsensusu +4,5%, a słabszy złoty po obniżce ratingu podnosi koszt zakupów przy CPI idącym w stronę 3,6% (7); DM brak datowanego sygnału w oknie 30 dni (7,5); REW zysk netto Q2 768 mln zł wobec 684,1 mln konsensusu PAP (+12%) i podniesione cele marżowe, raport 17.09 — jedna z dwóch udokumentowanych liczbowo rewizji w górę w całym indeksie (9); PRZ rejestr KNF niedostępny (5); WYC kurs 24 900 zł to historyczne maksimum, najdroższy mnożnik w koszyku LONG (2)."
-  },
-  {
-   "rank": 4,
-   "ticker": "CDPROJEKT",
-   "score": 57.5,
-   "p": 0.54,
-   "waga_wig20_pct": 3.07,
-   "rel5_pp": 2.07,
-   "rel20_pp": -1.25,
-   "pts": {
-    "momentum": 14.0,
-    "katalizatory": 12,
-    "makro": 6,
-    "dm": 10.5,
-    "rewizje": 8,
-    "przeplywy": 5,
-    "wycena": 2
-   },
-   "uzasadnienie": "MOM 14,0/25 (rel5 +2,07 p.p., rel20 −1,25 p.p.); KAT premiera „Wiedźmin 3: Dziki Gon – Remastered” 29.09 = D+2, czyli w oknie wyniku i w paśmie pełnego wkładu (+2); aktualizacja jest darmowa dla posiadaczy gry, monetyzacja obejmuje nowe kopie i Nintendo Switch 2, więc wkład jest ograniczony → 12; MAKRO wyższe rentowności i scenariusz bez obniżek stóp biją w wyceny wzrostowe, przychody w USD tylko częściowo to równoważą (6); DM +3 za top pick Trigon DM z 8.09 (lista wrześniowa, w oknie 30 dni) (10,5); REW zysk Q2 +44% wobec konsensusu (2.09, w oknie 30 dni) (8); PRZ rejestr KNF niedostępny, pozycje krótkie bez datowanej zmiany (5); WYC najwyższy mnożnik w rankingu (2)."
-  },
-  {
-   "rank": 5,
-   "ticker": "PKOBP",
-   "score": 57.4,
-   "p": 0.54,
-   "waga_wig20_pct": 15.67,
-   "rel5_pp": 2.52,
-   "rel20_pp": 5.06,
-   "pts": {
-    "momentum": 18.9,
-    "katalizatory": 10,
-    "makro": 8,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 18,9/25 (rel5 +2,52 p.p., rel20 +5,06 p.p.); KAT NWZ 14.10 wypada za oknem D+10 (9.10), cap 15% w WIG20 wykonany na zamknięciu 18.09 → 10; MAKRO konsensus CPI 3,6% na 30.09 wspiera marżę, ale to największy bank indeksu o największej ekspozycji na dług skarbowy, więc obniżka ratingu Polski do A3 (18.09) uderza w niego najmocniej w sektorze — dlatego punkt niżej niż pozostałe banki (8); DM brak datowanego sygnału w oknie 30 dni (7,5); REW raport Q2 z 13.08 poza oknem 30 dni, brak udokumentowanej zmiany konsensusu (5); PRZ podaż funduszy indeksowych po capie 15% zrealizowana 18.09, rejestr KNF niedostępny (5); WYC ROE ok. 18% i DY ok. 5,5%, ale kurs na historycznym maksimum przy rekordowej kapitalizacji 154 mld zł (3)."
-  },
-  {
-   "rank": 6,
-   "ticker": "MBANK",
-   "score": 57.3,
-   "p": 0.54,
-   "waga_wig20_pct": 3.51,
-   "rel5_pp": 5.46,
-   "rel20_pp": 5.78,
-   "pts": {
-    "momentum": 22.8,
-    "katalizatory": 10,
-    "makro": 9,
-    "dm": 4.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 1
-   },
-   "uzasadnienie": "MOM 22,8/25 (rel5 +5,46 p.p., rel20 +5,78 p.p.) — spółka wyszła z koszyka SHORT po twardym zdarzeniu (+8,32% przeciw tezie, CLOSE 22.09) i zgodnie z sekcją 6 metody jest oceniana od zera, bez kotwiczenia na pozycji 20; KAT zgoda rady nadzorczej na emisję AT1 do 250 mln EUR z 17.09 jest przed D0 i bez terminu, brak zdarzeń w D+1…D+10 → 10; MAKRO to samo wsparcie ze strony stóp co dla całego sektora (9); DM −3 za Trigon DM z 8.09 — spółka na wrześniowej liście „gorzej niż rynek” (4,5); REW raport Q2 z 30.07 poza oknem 30 dni (5); PRZ rejestr KNF niedostępny; emisja AT1 wzmacnia Tier 1 bez rozwodnienia (5); WYC najwyższe mnożniki w sektorze po +6,86% w tym tygodniu i +8,3% w poprzednim — jedyna jedynka w tej kategorii w całym rankingu (1)."
-  },
-  {
-   "rank": 7,
-   "ticker": "PEKAO",
-   "score": 55.8,
-   "p": 0.53,
-   "waga_wig20_pct": 8.8,
-   "rel5_pp": 2.57,
-   "rel20_pp": 5.04,
-   "pts": {
-    "momentum": 19.3,
-    "katalizatory": 10,
-    "makro": 9,
-    "dm": 4.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 19,3/25 (rel5 +2,57 p.p., rel20 +5,04 p.p.); KAT brak zdarzeń w D+1…D+10 → 10; MAKRO wsparcie ze strony stóp jak dla sektora, kapitalizacja 81 mld zł po rekordzie (9); DM −3 za obniżkę rekomendacji przez Wood & Company z „kupuj” do „trzymaj” 24.09 (4,5); REW raport Q2 starszy niż 30 dni, brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC niskie mnożniki i DY ok. 8,4%, ale kurs 280,30 zł po rekordzie sektora (3)."
-  },
-  {
-   "rank": 8,
-   "ticker": "ALLEGRO",
-   "score": 55.2,
-   "p": 0.53,
-   "waga_wig20_pct": 8.98,
-   "rel5_pp": -1.89,
-   "rel20_pp": 4.6,
-   "pts": {
-    "momentum": 12.7,
-    "katalizatory": 10,
-    "makro": 6,
-    "dm": 10.5,
-    "rewizje": 9,
-    "przeplywy": 5,
-    "wycena": 2
-   },
-   "uzasadnienie": "MOM 12,7/25 (rel5 −1,89 p.p. — oddanie części zwyżki z poprzedniego okna, rel20 +4,60 p.p.); KAT brak zdarzeń w D+1…D+10 (raport H1 z 17.09 przed D0) → 10; MAKRO sprzedaż detaliczna +3,8% r/r sprzyja e-commerce, ale konsensus CPI 3,6% i brak obniżek stóp biją w wyceny wzrostowe, w tle ryzyko regulacji platform (6); DM +3 za top pick Trigon DM z 8.09 (10,5); REW podniesienie prognoz rocznych 17.09: GMV +13–15% r/r (78,3–79,9 mld zł) i skoryg. EBITDA +13–17% — druga z dwóch udokumentowanych rewizji w górę (9); PRZ rejestr KNF niedostępny (5); WYC mnożnik e-commerce po wzroście ok. 84% od kwietnia (2)."
-  },
-  {
-   "rank": 9,
-   "ticker": "MODIVO",
-   "score": 53.4,
-   "p": 0.52,
-   "waga_wig20_pct": 0.84,
-   "rel5_pp": 3.12,
-   "rel20_pp": 1.12,
-   "pts": {
-    "momentum": 18.9,
-    "katalizatory": 11,
-    "makro": 6,
-    "dm": 4.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 18,9/25 (rel5 +3,12 p.p., rel20 +1,12 p.p.); KAT raport półroczny 1.10 = D+4, czyli w oknie wyniku — jedyny raport okresowy spółki WIG20 w tym paśmie; kierunek nieznany, więc wkład symboliczny (+1) → 11; MAKRO wyższe stopy i CPI 3,6% uderzają w wyceny wzrostowe i w wydatki na modę (6); DM −3 za Trigon DM z 8.09 — spółka na liście „gorzej niż rynek” (4,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach (5); PRZ najmniejsza waga w WIG20 (0,84%) i niska płynność, brak datowanych danych (5); WYC brak świeżych mnożników — neutralnie (3)."
-  },
-  {
-   "rank": 10,
-   "ticker": "PEPCO",
-   "score": 53.0,
-   "p": 0.52,
-   "waga_wig20_pct": 1.34,
-   "rel5_pp": 2.49,
-   "rel20_pp": -3.98,
-   "pts": {
-    "momentum": 14.5,
-    "katalizatory": 11,
-    "makro": 7,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 14,5/25 (rel5 +2,49 p.p., rel20 −3,98 p.p.); KAT komunikat o wstępnych wynikach za cały rok obrotowy 2025/26 w dniu 29.09 = D+2 — data POTWIERDZONA w dwóch źródłach (datowany kalendarz bankier.pl z 25.09 oraz kalendarium raportów), czyli znika ubiegłotygodniowa niepewność 23.09 vs 29.09 (+1) → 11; MAKRO sprzedaż detaliczna +3,8% r/r i niskie bezrobocie sprzyjają dyskontom, ale słabszy złoty podnosi koszt zakupów (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach — prognoza wzrostu przychodów 6–8% na r.obr. 2026 pochodzi z grudnia 2025 (5); PRZ efekt skupu akcji rozliczonego 17.08 już wygasł, rejestr KNF niedostępny (5); WYC mnożnik po restrukturyzacji i wyjściu z FMCG nadal poniżej sektora (3)."
-  },
-  {
-   "rank": 11,
-   "ticker": "PZU",
-   "score": 51.5,
-   "p": 0.51,
-   "waga_wig20_pct": 7.4,
-   "rel5_pp": -0.38,
-   "rel20_pp": 1.73,
-   "pts": {
-    "momentum": 14.0,
-    "katalizatory": 10,
-    "makro": 9,
-    "dm": 4.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 4
-   },
-   "uzasadnienie": "MOM 14,0/25 po korekcie total return (rel5 −0,38 p.p., rel20 +1,73 p.p. z serią skorygowaną o dywidendę 4,80 zł odciętą 16.09; bez korekty skrypt daje rel20 −5,21 p.p. i 10,5 pkt, co jest artefaktem odcięcia, nie ruchem kursu — DYWIDENDA_KOREKTA_PZU); KAT wypłata dywidendy 8.10 wypada w oknie D+9, ale dzień prawa minął 15.09, więc zdarzenie nie ma wpływu na kurs → 10; MAKRO wyższe rentowności podnoszą dochód z reinwestycji portfela, reorganizacja PZU–Pekao wciąż bez projektu ustawy (9); DM −3 za obniżkę rekomendacji przez Wood & Company 24.09 (4,5); REW Q2 +7% wobec konsensusu z 20.08 wypadł poza okno 30 dni (5); PRZ rejestr KNF niedostępny (5); WYC niskie mnożniki i wysoka DY przy wadze 7,40% w indeksie (4)."
-  },
-  {
-   "rank": 12,
-   "ticker": "ZABKA",
-   "score": 49.1,
-   "p": 0.5,
-   "waga_wig20_pct": 2.94,
-   "rel5_pp": -1.43,
-   "rel20_pp": -4.77,
-   "pts": {
-    "momentum": 9.6,
-    "katalizatory": 10,
-    "makro": 8,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 6,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 9,6/25 (rel5 −1,43 p.p., rel20 −4,77 p.p.) — kurs przyklejony do ceny wezwania; KAT zapisy w wezwaniu Alimentation Couche-Tard po 32,00 zł przedłużone do 26.10, transakcja 29.10, rozliczenie 3.11 — wszystko za oknem D+10 → 10; MAKRO kurs 31,48 zł przy cenie wezwania 32,00 zł czyni spółkę niemal nieczułą na rynek: atut przy przecenie, obciążenie przy zwyżce indeksu (8); DM brak datowanego sygnału (7,5); REW raport Q2 z 30.07 poza oknem (5); PRZ nieodwołalne zobowiązania CVC, Partners Group i menedżerów na ok. 57% akcji oraz ścieżka do delistingu (6); WYC potencjał ograniczony do +1,65% względem ceny wezwania (3)."
-  },
-  {
-   "rank": 13,
-   "ticker": "PGE",
-   "score": 44.8,
-   "p": 0.47,
-   "waga_wig20_pct": 1.99,
-   "rel5_pp": -7.93,
-   "rel20_pp": 14.89,
-   "pts": {
-    "momentum": 8.3,
-    "katalizatory": 10,
-    "makro": 4,
-    "dm": 7.5,
-    "rewizje": 6,
-    "przeplywy": 5,
-    "wycena": 4
-   },
-   "uzasadnienie": "MOM 8,3/25 (rel5 −7,93 p.p. — najgorszy składnik 5-sesyjny w uniwersum, rel20 +14,89 p.p. — najwyższy; rozjazd obu składników pokazuje, że jeden tydzień zmazał miesiąc); KAT raport H1 z 15.09 przed D0, brak zdarzeń w D+1…D+10 → 10; MAKRO dwa nierozstrzygnięte uderzenia regulacyjne: podniesienie CIT dla największych spółek energetycznych i paliwowych z 19% do 30% od 2027 oraz WACC dla dystrybucji na poziomie 8,5% na 2026 wobec ok. 12% w tym roku, co rynek czyta jako nadzwyczajną interwencję i co rodzi ryzyko kolejnego zawieszenia dywidendy (4); DM brak datowanego sygnału w oknie 26.08–25.09 — lista długich DM BOŚ z 25.08 wypadła z okna 30 dni (7,5); REW raport H1 z 15.09: zysk netto ponad 4 mld zł i EBITDA 8,2 mld zł, ale bez zmiany konsensusu po ogłoszeniu parametrów WACC (6); PRZ rejestr KNF niedostępny (5); WYC P/BV ok. 0,69 po przecenie −6,53% w tygodniu (4)."
-  },
-  {
-   "rank": 14,
-   "ticker": "KETY",
-   "score": 44.5,
-   "p": 0.47,
-   "waga_wig20_pct": 2.2,
-   "rel5_pp": -2.5,
-   "rel20_pp": -4.03,
-   "pts": {
-    "momentum": 7.0,
-    "katalizatory": 10,
-    "makro": 7,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 7,0/25 (rel5 −2,50 p.p., rel20 −4,03 p.p.) — spółka była w koszyku LONG i oddała całość zwyżki po przejęciu grupy Metra, w piątek jedna z najsłabszych w WIG20; KAT raport Q3 26.10 i finalizacja transakcji na początku 2027 — oba za oknem D+10 → 10; MAKRO produkcja budowlano-montażowa i popyt niemiecki ważne dla profili, ale kredyt pomostowy 2 mld zł drożeje przy stopach bez obniżek (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach, zapowiedziana normalizacja wyników w H2 nadal w mocy (5); PRZ rejestr KNF niedostępny (5); WYC mnożnik po korekcie kursu umiarkowany wobec skali akwizycji (EV 645 mln EUR) (3)."
-  },
-  {
-   "rank": 15,
-   "ticker": "KRUK",
-   "score": 44.1,
-   "p": 0.47,
-   "waga_wig20_pct": 1.21,
-   "rel5_pp": -2.13,
-   "rel20_pp": -10.58,
-   "pts": {
-    "momentum": 6.6,
-    "katalizatory": 10,
-    "makro": 6,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 4
-   },
-   "uzasadnienie": "MOM 6,6/25 (rel5 −2,13 p.p., rel20 −10,58 p.p. — drugi najgorszy składnik 20-sesyjny); KAT raport Q3 27.10 za oknem D+10 → 10; MAKRO scenariusz stóp bez obniżek podnosi koszt finansowania zakupów portfeli wierzytelności, a wyższe rentowności obniżają wycenę już posiadanych aktywów (6); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC mnożniki poniżej średniej rynkowej po czterech tygodniach słabości (4)."
-  },
-  {
-   "rank": 16,
-   "ticker": "PKNORLEN",
-   "score": 43.2,
-   "p": 0.47,
-   "waga_wig20_pct": 13.94,
-   "rel5_pp": -2.92,
-   "rel20_pp": -4.77,
-   "pts": {
-    "momentum": 5.7,
-    "katalizatory": 10,
-    "makro": 3,
-    "dm": 10.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 4
-   },
-   "uzasadnienie": "MOM 5,7/25 (rel5 −2,92 p.p., rel20 −4,77 p.p.); KAT przymusowy wykup akcji Energi po 27,60 zł startuje 30.09 = D+3, ale zamiar ogłoszono 24.09 i kwota ok. 907 mln zł jest znana, więc zgodnie z sekcją 3 metody to zdarzenie „znane” bez wkładu (0); data decyzji prezydenta w sprawie ustawy o podatku od nadzwyczajnych zysków nieznana → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO najgorsze tło regulacyjne w indeksie: Senat przyjął 24.09 bez poprawek (59 za, 31 przeciw) ustawę o 60-procentowym podatku od nadwyżki przychodów ze sprzedaży paliw ciekłych za okres III 2026 – III 2027, ustawa czeka na podpis prezydenta, a w tle jest podniesienie CIT z 19% do 30% od 2027 i Brent powyżej 100 USD po stronie kosztu wsadu (3); DM +3 za top pick Trigon DM z 8.09 — jedyny sygnał DM przeciw tezie krótkiej w tym koszyku i powód, dla którego spółka jest na 16., a nie na 20. miejscu (10,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ cap 15% w WIG20 wykonany 18.09, rejestr KNF niedostępny; wykup Energi to odpływ ok. 907 mln zł gotówki (5); WYC mnożniki niskie, ale z nierozliczonym ryzykiem podatkowym w liczniku (4)."
-  },
-  {
-   "rank": 17,
-   "ticker": "BUDIMEX",
-   "score": 43.1,
-   "p": 0.47,
-   "waga_wig20_pct": 1.57,
-   "rel5_pp": -2.37,
-   "rel20_pp": -6.43,
-   "pts": {
-    "momentum": 6.6,
-    "katalizatory": 10,
-    "makro": 7,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 2
-   },
-   "uzasadnienie": "MOM 6,6/25 (rel5 −2,37 p.p., rel20 −6,43 p.p.); KAT raport Q3 27.10 i strategia przesunięta na koniec października — oba za oknem D+10 → 10; MAKRO produkcja budowlano-montażowa i program inwestycji publicznych po stronie popytu, ale stopy bez obniżek podnoszą koszt finansowania inwestycji (7); DM netto 0: Noble Securities utrzymało 17.09 rekomendację „sprzedaj” z ceną docelową 562 zł przy kursie 698,80 zł (−3), ale spółka jest na wrześniowej liście top picks Trigon DM z 8.09 (+3) — dwa datowane, przeciwstawne sygnały w oknie 30 dni, więc punkt neutralny (7,5); REW zysk Q2 o 3,3% poniżej konsensusu, ale raport starszy niż 30 dni, więc bez punktów karnych (5); PRZ rejestr KNF niedostępny (5); WYC P/E ok. 25,6 przy backlogu 17,9 mld zł — najdroższa spółka koszyka SHORT (2). Remis 43,1 pkt z KGHM rozstrzygnięty mniejszą wagą w WIG20 (1,57% wobec 8,03%), zgodnie z sekcją 5 metody."
-  },
-  {
-   "rank": 18,
-   "ticker": "KGHM",
-   "score": 43.1,
-   "p": 0.47,
-   "waga_wig20_pct": 8.03,
-   "rel5_pp": -3.34,
-   "rel20_pp": -13.37,
-   "pts": {
-    "momentum": 2.6,
-    "katalizatory": 10,
-    "makro": 9,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 4
-   },
-   "uzasadnienie": "MOM 2,6/25 (rel5 −3,34 p.p., rel20 −13,37 p.p. — najgorszy składnik 20-sesyjny w uniwersum); KAT brak potwierdzonej daty decyzji Białego Domu o cłach na miedź rafinowaną (procedura sekcji 232 nadal otwarta) → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO jedyna mocna kategoria: miedź na LME ok. 14 694 USD/t w piątek 25.09, w okolicy historycznych maksimów i wyżej niż tydzień wcześniej, choć mocny dolar działa w drugą stronę (9); DM brak datowanego sygnału (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ rejestr KNF niedostępny (5); WYC mnożniki po przecenie niskie (4). Spółka jest w BOTTOM5 WBREW mocnej miedzi: mechaniczne momentum waży 25 pkt i daje jej 2,6, czego żadna inna kategoria nie odrabia. Remis 43,1 pkt z BUDIMEX-em rozstrzygnięty na niekorzyść KGHM większą wagą w WIG20 (8,03% wobec 1,57%)."
-  },
-  {
-   "rank": 19,
-   "ticker": "TAURONPE",
-   "score": 40.2,
-   "p": 0.45,
-   "waga_wig20_pct": 1.62,
-   "rel5_pp": -4.44,
-   "rel20_pp": -0.59,
-   "pts": {
-    "momentum": 5.7,
-    "katalizatory": 10,
-    "makro": 4,
-    "dm": 7.5,
-    "rewizje": 3,
-    "przeplywy": 6,
-    "wycena": 4
-   },
-   "uzasadnienie": "MOM 5,7/25 (rel5 −4,44 p.p., rel20 −0,59 p.p.); KAT Fitch zmienił perspektywę ratingu BBB− z pozytywnej na stabilną 25.09, czyli w dniu D0 (dn=0), a nie w oknie D+1…D+10 → 10; MAKRO ten sam pakiet regulacyjny co przy PGE — CIT 19% → 30% od 2027 dla spółek dystrybucyjnych i WACC 8,5% na 2026 wobec ok. 12% w bieżącym roku (4); DM brak datowanego sygnału (7,5); REW jedyna udokumentowana rewizja W DÓŁ w całym rankingu: Fitch zapowiedział 25.09, że EBITDA z dystrybucji i z segmentu sprzedaży wypadnie NIŻEJ niż w jego poprzednich prognozach, a dźwignia dług netto/FFO zostanie w pasmie 3,5–4,5x zamiast spadać (3); PRZ presja pasywna zdjęta po wejściu w życie rewizji STOXX Europe 600 (21.09) (6); WYC P/E ok. 5,8 i P/BV ok. 0,75 — najtańsza spółka rankingu, ale mnożnik liczony od wyniku, który Fitch właśnie obniżył (4)."
-  },
-  {
-   "rank": 20,
-   "ticker": "DINOPL",
-   "score": 39.3,
-   "p": 0.45,
-   "waga_wig20_pct": 2.94,
-   "rel5_pp": -5.04,
-   "rel20_pp": -7.82,
-   "pts": {
-    "momentum": 1.8,
-    "katalizatory": 10,
-    "makro": 7,
-    "dm": 7.5,
-    "rewizje": 5,
-    "przeplywy": 5,
-    "wycena": 3
-   },
-   "uzasadnienie": "MOM 1,8/25 (rel5 −5,04 p.p., rel20 −7,82 p.p. — najniższe momentum w uniwersum); KAT druga tura mediacji z OPZZ Konfederacja Pracy odbyła się 24.09, czyli PRZED nowym D0, a związek zapowiedział strajk generalny bez podania daty → zgodnie z sekcją 3 metody brak punktów, 10 + KALENDARZ_NIEPOTWIERDZONY (ryzyko jest realne, ale niedatowane, więc nie wchodzi do punktacji); MAKRO sprzedaż detaliczna +3,8% r/r i model defensywny broniłyby się w scenariuszu wyższych stóp, ale deflacja żywności przy CPI idącym do 3,6% ściska sprzedaż porównywalną (7); DM brak datowanego sygnału w oknie 26.08–25.09 (7,5); REW Q2 +2% ponad konsensus z 20.08 wypadł poza okno 30 dni (5); PRZ rejestr KNF niedostępny (5); WYC premia do spółek porównywalnych utrzymana mimo −3,64% w tygodniu (3)."
-  }
- ],
- "katalizatory": [
-  {
-   "ticker": "CDPROJEKT",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "premiera „Wiedźmin 3: Dziki Gon – Remastered”; aktualizacja darmowa dla posiadaczy gry na GOG/Steam/Epic/PS5/Xbox, monetyzacja na nowych kopiach i Nintendo Switch 2",
-   "wklad_pkt": 2,
-   "zrodlo": "bankier.pl „CD Projekt RED wyda 29 września '26 remaster Wiedźmina 3”; cdprojekt.com"
-  },
-  {
-   "ticker": "PEPCO",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "komunikat o wstępnych wynikach za cały rok obrotowy 2025/26 (rok obrotowy kończy się we wrześniu); data potwierdzona w dwóch źródłach, co zamyka ubiegłotygodniową rozbieżność 23.09 vs 29.09",
-   "wklad_pkt": 1,
-   "zrodlo": "bankier.pl „Tym będą żyły rynki: Tydzień z inflacją i rynkiem pracy…”, publ. 25.09.2026 (kalendarz GPW na 29.09); pepcogroup.eu — regulatory filings"
-  },
-  {
-   "ticker": "MODIVO",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "raport półroczny — jedyny raport okresowy spółki WIG20 w oknie D+1…D+5; kierunek nieznany, brak udokumentowanego konsensusu",
-   "wklad_pkt": 1,
-   "zrodlo": "bankier.pl „Tym będą żyły rynki…”, publ. 25.09.2026 (GPW — raport Modivo 1.10)"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "start przymusowego wykupu akcji Energi po 27,60 zł (32,8 mln akcji, ok. 907 mln zł); zamiar ogłoszony 24.09, więc zdarzenie jest „znane” i nie nosi nowej informacji",
-   "wklad_pkt": 0,
-   "zrodlo": "bankier.pl „ORLEN zamierza przeprowadzić przymusowy wykup akcji Energi po 27,60 zł za sztukę”, 24.09.2026; strefainwestorow.pl 24.09.2026"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": null,
-   "dn": null,
-   "opis": "decyzja prezydenta w sprawie ustawy o 60-procentowym podatku od nadwyżki przychodów ze sprzedaży paliw ciekłych (Senat bez poprawek 24.09, 59 za / 31 przeciw); termin podpisu, weta albo skierowania do TK nieznany — KALENDARZ_NIEPOTWIERDZONY",
-   "wklad_pkt": 0,
-   "zrodlo": "bankier.pl „Drugie podejście do windfall tax. Senat odrzuca poprawki PiS”, 24.09.2026"
-  },
-  {
-   "ticker": "DINOPL",
-   "data": "2026-09-24",
-   "dn": -1,
-   "opis": "druga tura mediacji z OPZZ Konfederacja Pracy; związek zapowiedział strajk generalny, jeśli zarząd nie stawi się osobiście, ale DATY strajku nie podał — zdarzenie przed D0, groźba niedatowana, więc bez punktów (KALENDARZ_NIEPOTWIERDZONY)",
-   "wklad_pkt": 0,
-   "zrodlo": "bankier.pl „Jutro mediacje w Dino. Możliwy strajk generalny”; wiadomoscispozywcze.pl (list otwarty OPZZ), 09.2026"
-  },
-  {
-   "ticker": "TAURONPE",
-   "data": "2026-09-25",
-   "dn": 0,
-   "opis": "Fitch potwierdził rating BBB− i zmienił perspektywę z pozytywnej na stabilną; agencja oczekuje, że dług netto/FFO zostanie w pasmie 3,5–4,5x, a EBITDA z dystrybucji i sprzedaży wypadnie niżej niż w poprzednich prognozach (normalizacja WACC po szczytach 2024–2025) — zdarzenie w dniu D0, nie w oknie",
-   "wklad_pkt": 0,
-   "zrodlo": "bankier.pl „Fitch zmienił perspektywę ratingową Tauronu do stabilnej z pozytywnej”, 25.09.2026; biznes.pap.pl raport bieżący 38/2026"
-  },
-  {
-   "ticker": "KGHM",
-   "data": null,
-   "dn": null,
-   "opis": "decyzja Białego Domu o cłach na miedź rafinowaną w procedurze sekcji 232 — procedura otwarta, termin nieznany; jednostronne ryzyko dla pozycji krótkiej — KALENDARZ_NIEPOTWIERDZONY",
-   "wklad_pkt": 0,
-   "zrodlo": "stockwatch.pl „Cła na miedź zawisły w powietrzu…”; energetyka24.com (ceny miedzi, oczekiwanie na decyzję)"
-  },
-  {
-   "ticker": "ZABKA",
-   "data": "2026-10-26",
-   "dn": null,
-   "opis": "koniec zapisów w wezwaniu Alimentation Couche-Tard po 32,00 zł (transakcja 29.10, rozliczenie 3.11) — poza oknem D+10",
-   "wklad_pkt": 0,
-   "zrodlo": "bankier.pl „Przyjmowanie zapisów w wezwaniu Alimentation Couche-Tard na Zabka Group przedłużone do 26 X 2026 r.”"
-  },
-  {
-   "ticker": "PKOBP",
-   "data": "2026-10-14",
-   "dn": null,
-   "opis": "NWZ — poza oknem D+10 (9.10); cap 15% w WIG20 wykonany na zamknięciu 18.09",
-   "wklad_pkt": 0,
-   "zrodlo": "strefainwestorow.pl — kalendarium WIG20"
-  },
-  {
-   "ticker": "PZU",
-   "data": "2026-10-08",
-   "dn": 9,
-   "opis": "wypłata dywidendy 4,80 zł na akcję; dzień prawa minął 15.09, więc sama wypłata nie ma wpływu na kurs",
-   "wklad_pkt": 0,
-   "zrodlo": "strefainwestorow.pl / stockwatch.pl — kalendarz dywidend 2026"
-  },
-  {
-   "ticker": "ALIOR",
-   "data": null,
-   "dn": null,
-   "opis": "powołania prezesa i pięciorga członków zarządu po konkursie zamkniętym 16.09 — data nieznana, KALENDARZ_NIEPOTWIERDZONY",
-   "wklad_pkt": 0,
-   "zrodlo": "komunikaty spółki, nabór zamknięty 16.09.2026"
-  },
-  {
-   "ticker": "ERSTEPL",
-   "data": "2026-09-25",
-   "dn": 1,
-   "opis": "Erste Group Bank AG oglosil zamiar DOBROWOLNEGO WEZWANIA na akcje Erste Bank Polska po ok. 713 zl za akcje — 11,72% PONIZEJ zamkniecia D0 (807,60 zl). Oferent ma 49% i chce przejsc powyzej 50%, maksymalnie do 75%, nabywajac pakiet od ok. 1% do 26% kapitalu; zobowiazanie inwestycyjne wobec KNF nakazuje utrzymac min. 25% w free float, wiec delistingu NIE bedzie. Warunek zawieszajacy: zgoda KNF na przekroczenie 50% glosow oraz zobowiazania akcjonariuszy z >=25% do niesksladania zapisow. Ogloszenie wezwania planowane na poczatek listopada 2026, zapisy 30 dni. Podawana premia 22,1% odnosi sie do ceny referencyjnej 584 zl z maja 2025, NIE do kursu biezacego. Komunikat o 21:06, czyli po zamknieciu sesji D0 — zdarzenie nalezy do sesji poniedzialkowej 28.09 (dn=1). ZDARZENIE POMINIETE W RANKINGU W7 (wygenerowanym 26.09), ktory przy ERSTEPL na 1. miejscu zapisal \"brak zdarzen w D+1...D+10\"; punkty pozostaja zamrozone do soboty, reakcja protokolu: CLOSE/TENDER z 27.09.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl 'Erste Group Bank zamierza wezwac do sprzedazy akcji Erste Bank Polska po ok. 713 zl za szt. (opis)', 25.09.2026 21:06; bankier.pl 'Erste Group oglasza zamiar przeprowadzenia dobrowolnego wezwania...', 25.09.2026"
-  },
-  {
-   "ticker": "ERSTEPL",
-   "data": "2026-09-26",
-   "dn": 1,
-   "opis": "Erste Bank Polska od 26.09.2026 oprocentowuje NOWE kredyty hipoteczne wskaznikiem POLSTR 1M Stopa Skladana w miejsce WIBOR 3M (takze po zakonczeniu 5-letniego okresu stalej stopy); klienci z formularzem informacyjnym na WIBOR 3M wydanym do 25.09 zachowuja stara podstawe. Zmiana produktowa, bez bezposredniego wplywu na wynik krotkiego okna; odnotowana dla kompletnosci rejestru.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl 'Nowe hipoteki juz z POLSTR. Erste Bank Polska zmienia zasady oprocentowania', 25/26.09.2026; biznes.pap.pl 'Erste Bank Polska od 26 IX wprowadzi POLSTR do oferty nowych kredytow hipotecznych'"
-  },
-  {
-   "ticker": "ALIOR",
-   "data": "2026-09-24",
-   "dn": -1,
-   "opis": "DM BOS w miesiecznym portfelu (Polish Equities Monthly 10/2026, publ. 24.09.2026 16:12) wpisal ALIOR na liste spolek majacych zachowywac sie GORZEJ od rynku (\"powrocil na liste shortow po kilku miesiacach\"). Zgodnie z sekcja 2 metody to datowany wpis na liste portfelowa liczacego sie DM w oknie 30 dni PRZECIW tezie LONG, wart -3 pkt w kategorii DM — a ranking W7 przyznal Aliorowi 7,5 pkt, uwzgledniajac tylko Citi z 21.09 (+3) i Wood & Company z 24.09 (-3). Sygnal jest sprzed zamkniecia D0, wiec nie jest wyzwalaczem reakcji dziennej, tylko POMINIETYM wkladem do zamrozonego rankingu (DM_SYGNAL_POMINIETY_W7).",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12 (raport DM BOS Polish Equities Monthly 10/2026)"
-  },
-  {
-   "ticker": "CDPROJEKT",
-   "data": "2026-09-24",
-   "dn": -1,
-   "opis": "DM BOS USUNAL CD Projekt z listy top picks w portfelu na pazdziernik 2026 (publ. 24.09.2026 16:12), uzasadniajac to nieudanym zakladem na spolke w zwiazku z przesunieciem premiery Wiedzmina 4 na 2028 rok. Ranking W7 przyznal CDPROJEKT 10,5 pkt w kategorii DM wylacznie za top pick Trigon DM z 8.09, nie uwzgledniajac przeciwnego, swiezszego sygnalu DM BOS. Sygnal sprzed D0 — wklad do rankingu, nie wyzwalacz reakcji (DM_SYGNAL_POMINIETY_W7).",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
-  },
-  {
-   "ticker": "PKOBP",
-   "data": "2026-09-24",
-   "dn": -1,
-   "opis": "DM BOS DODAL PKO BP do listy top picks na pazdziernik 2026 (publ. 24.09.2026 16:12), nazywajac spolke \"koniem pociagowym calej hossy na GPW\". Datowany wpis ZGODNY z teza LONG, wart +3 pkt w kategorii DM; ranking W7 przyznal PKOBP 7,5 pkt z adnotacja \"brak datowanego sygnalu w oknie 30 dni\" (DM_SYGNAL_POMINIETY_W7). Reakcji nie uruchamia — protokol reaguje wylacznie na zdarzenia PRZECIW tezie.",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-09-24",
-   "dn": -1,
-   "opis": "ORLEN pozostaje na liscie DM BOS spolek majacych zachowywac sie LEPIEJ od rynku w portfelu na pazdziernik 2026 (publ. 24.09.2026 16:12) — wpis kontynuowany, nie nowy; obok Orlenu na liscie jest PGE. Sygnal dziala PRZECIW tezie SHORT; ranking W7 przyznal Orlenowi 10,5 pkt tylko za Trigon DM z 8.09. Sprzed D0, wiec nie jest wyzwalaczem reakcji dziennej.",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-09-25",
-   "dn": 0,
-   "opis": "Windfall tax — stan wyzwalacza tezy SHORT na 27.09: ustawa po Senacie (24.09, bez poprawek, 59:31) czeka na podpis prezydenta, ktory 25.09 przebywal w Stanach Zjednoczonych; rzad oczekuje podpisu \"niezwlocznie po powrocie\", ale ZADNEGO terminu ustawowego ani daty decyzji nie podano w datowanym zrodle. Ministrowie energii (Motyka) i infrastruktury (Klimczak) zaapelowali 25.09 o podpis. Kancelaria Prezydenta (szef KPRP Zbigniew Bogucki) ocenia ustawe jako niekonstytucyjna (naruszenie lex retro non agit: podatek od przychodow od 1.03.2026 przy wejsciu ustawy w zycie 1.11.2026) i proponuje rozwazenie poprawek. Pierwsza wersje ustawy prezydent skierowal w lipcu do TK w trybie kontroli prewencyjnej. Termin rozstrzygniecia: b.d. — KALENDARZ_NIEPOTWIERDZONY utrzymany.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl 'Ministrowie apeluja: Prezydencie, podpisz ustawe paliwowa', 25.09.2026 12:35; bankier.pl 'Senat zapalil zielone swiatlo. Ustawa paliwowa czeka na podpis Nawrockiego', 24.09.2026 10:04 (aktual. 11:16); biznes.pap.pl 'Prezydent ocenia, ze ustawa dot. windfall tax jest niekonstytucyjna, proponuje wprowadzenie poprawek (opis)'"
-  },
-  {
-   "ticker": "BUDIMEX",
-   "data": "2026-09-25",
-   "dn": 1,
-   "opis": "ESPI 25.09 o 19:38 (po zamknieciu sesji D0, wiec rynkowo dn=1): odrzucenie oferty Budimeksu w przetargu na modernizacje Oczyszczalni Sciekow 'Czajka' w zakresie gospodarki osadowej (budowa zespolu Wydzielonych Komor Fermentacyjnych). Oferta spolki byla 3.07.2026 oceniona najwyzej, ostatecznie nie zostala wybrana. To juz trzecie w tym kwartale postepowanie, w ktorym oferta Budimeksu odpada albo wybor jest uniewazniany (7.09 uniewazniono wybor oferty na obwodnice Brzostku i Kolaczyc w ciagu DK73). Kierunek zgodny z teza SHORT (Budimex 4. w rankingu W7 od dolu, rel5 -3,15 p.p.), wiec protokol NIE wymaga reakcji — reakcje exclude sluza ochronie pozycji przed ruchem PRZECIW tezie, a nie potwierdzaniu tezy. Wartosc przetargu nie podana w komunikacie.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl — komunikaty ESPI Budimex SA, 25.09.2026 19:38 ('Modernizacja Oczyszczalni Sciekow Czajka ... odrzucenie oferty Budimex SA'); dla kontekstu ESPI 07.09.2026 16:55 (uniewaznienie wyboru oferty, DK73)"
-  },
-  {
-   "ticker": "MODIVO",
-   "data": "2026-09-26",
-   "dn": 1,
-   "opis": "Niegotowkowe odpisy z tytulu utraty wartosci: 287,6 mln zl na aktywach Worldbox (obciaza wynik SKONSOLIDOWANY) oraz 269,8 mln zl na inwestycji w akcje Modivo.com (obciaza wylacznie wynik JEDNOSTKOWY za I polrocze 2026, bez wplywu na skonsolidowany). Powod: spowolnienie tempa ekspansji sieci Worldbox i zwrot strategiczny na wysokomarzowy segment off-price, a przy Modivo.com — slabsza od oczekiwan poprawa wynikow marek eobuwie i Modivo. Kwoty sa szacunkowe, ostateczne dane wejda do raportu polrocznego 1.10 (dn=4), ktory juz jest w rejestrze. Spolka WIG20 SPOZA koszykow i spoza listy tactical. Modul taktyczny NIE otwiera pozycji: (1) odpisy sa niegotowkowe i zapowiedziane przed raportem, wiec nie maja rangi szoku, (2) sygnaly sa sprzeczne — DM BOS dodal Modivo do top picks 24.09, (3) nie bylo sesji po komunikacie, wiec reakcji kursu nie da sie zmierzyc, (4) taktyczna SELL i tak nie weszlaby na rachunek: desired_book() pomija ja z powodem 'taktyczna SELL — rachunek LONG_ONLY'.",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl 'Modivo dokona odpisow z tytulu utraty wartosci aktywow Worldbox i Modivo.com', 26.09.2026; bankier.pl 'MODIVO S.A.: Niegotowkowe odpisy zwiazane z inwestycja w Worldbox sp. z o.o. oraz Modivo.com S.A.', 26.09.2026"
-  },
-  {
-   "ticker": "KGHM",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "Kontekst surowcowy pierwszej sesji okna: ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach (Zloty Tydzien, powrot do pracy 8.10 — czyli praktycznie caly odcinek D+1...D+8 okna W7 przypada na zamknietego odbiorce numer jeden). Kierunek zgodny z teza SHORT na KGHM (5. miejsce od dolu w rankingu W7, rel5 -4,83 p.p.), wiec bez reakcji protokolu. Poziomu ceny nie podaje zadne datowane zrodlo w allowliscie na dzis rano — 'b.d.'. Odrebna, wciaz otwarta sprawa cel sekcji 232 na miedz rafinowana pozostaje bez daty (KALENDARZ_NIEPOTWIERDZONY).",
-   "wklad_pkt": 0,
-   "zrodlo": "strefainwestorow.pl — naglowek depeszy 'Ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach', 28.09.2026 (wartosc ceny nieodczytana — b.d.)"
-  },
-  {
-   "ticker": "ERSTEPL",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "Pierwsza sesja po ogłoszeniu zamiaru wezwania (25.09 po sesji): kurs −2,40% do 788,20 zł, wciąż 10,5% powyżej ceny wezwania 713,60 zł. KNF nie sprzeciwił się przejęciu przez Erste Asset Management akcji Erste TFI (przekroczenie 50%). Noga nie została otwarta przy rotacji 28.09 (wpis CLOSE z 27.09) — spadek obciąża tylko wariant papierowy.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „WIG20 kończy pod kreską. Orlen i energetyka nie dały rady”, 28.09.2026 17:12; strefainwestorow.pl „Skrót wiadomości — poniedziałek, 28 września, 21.00”; tabela notowań bankier.pl 28.09 17:00"
-  },
-  {
-   "ticker": "KGHM",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "Najsłabsza spółka WIG20: −2,72% do 321,50 zł przy miedzi na LME −1,8% (14 364 USD/t o 11:13, najniżej od 17.09) i taniejącym srebrze; słabsze dane z Chin (zyski przemysłowe za sierpień), mocniejszy dolar, Złoty Tydzień od 1.10. Zgodne z tezą SHORT — bez reakcji.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; poziom LME z depeszy agencyjnej 28.09.2026 (przez WebSearch, serwis poza allowlistą)"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "+1,21% do 150,64 zł (komentarz sesyjny bankier.pl podawał +2,5% w trakcie sesji; liczy się tabela zamknięć) przy Brent powyżej 100 USD. Przeciw tezie SHORT, poniżej progu 4%. Windfall tax 2.0: bez decyzji prezydenta, komunikat KPRP z 22.09 podtrzymuje zarzut retroaktywności — termin nieznany.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; energetyka24.com „Windfall tax dla koncernów paliwowych przeszedł przez Senat. Co zrobi prezydent?”; klubjagiellonski.pl 28.09.2026"
-  },
-  {
-   "ticker": "TAURONPE",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "+1,15% do 8,83 zł razem z sektorem energetycznym: PGE +4,1% (lider WIG20) na oczekiwaniu na aktualizację strategii (październik) i przy wysokich cenach gazu. Przeciw tezie SHORT, poniżej progu 4%.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; bankier.pl „PGE w październiku planuje przedstawić zaktualizowaną strategię (opis)”"
-  },
-  {
-   "ticker": "PKOBP",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "Prezes Szymon Midera: wzrost dynamiki przyrostu portfela korporacyjnego; makro dla banków: Fitch podniósł prognozę PKB Polski na 2026 do 3,5%, kredyty mieszkaniowe +51,1% r/r do 13,54 mld zł. Kurs −0,14% od D0 (sektor bankowy w poniedziałek słabszy). Bez reakcji.",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl „Skrót wiadomości — poniedziałek, 28 września, 21.00”"
-  },
-  {
-   "ticker": "CDPROJEKT",
-   "data": "2026-09-28",
-   "dn": 1,
-   "opis": "Sesja przed premierą remastera Wiedźmina 3 (29.09, 12:00): +0,25% do 245,20 zł, w trakcie sesji +1% do 247,10 zł. Reakcja na premierę do oceny po sesji 29.09.",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl „DZIEŃ NA GPW: Kolejna sesja z niewielką zmiennością; Modivo najsłabsze w WIG20”, 28.09.2026 11:19; gra.pl / gry-online.pl — godzina premiery"
-  },
-  {
-   "ticker": "MAKRO",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "Kalendarz D+2 potwierdzony w datowanych źródłach: Pepco — aktualizacja handlowa FY26 opublikowana 7:22 (prognozy w górę: zysk netto bazowy >+60%, FCF >350 mln EUR; spoza koszyków, kandydat taktyczny po ocenie reakcji kursu); RBA 6:30; BIEC 9:00; ESI UE 11:00; JOLTS i Conference Board 16:00. Data posiedzenia RPP nadal niepotwierdzona w źródle z bieżącego tygodnia.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Tym będą żyły rynki…”, 25.09.2026 13:38; strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-09-29”, 29.09.2026 07:01; bankier.pl „Pepco spodziewa się w FY2026 wzrostu przychodów o ok. 8 proc. …”, 29.09.2026 07:22"
-  },
-  {
-   "ticker": "BUDIMEX",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "Najsłabsza spółka WIG20: −3,15% do 670,00 zł (w trakcie sesji −3,8%), od D0 −3,18% (−2,63 p.p. vs indeks) — zgodnie z tezą SHORT. Bez nowego komunikatu spółki; tło: odrzucenie oferty na Czajkę (ESPI 25.09 19:38), Noble Securities „sprzedaj” 562 zł (17.09), 28.09 pięciu wykonawców w dialogu konkurencyjnym KDP Warszawa–Łódź (neutralne).",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Mocny rajd PGE i rekordowy »Wiedźmin« to za mało. WIG20 oddaje pole sprzedającym”, 29.09.2026 17:15; PAP „DZIEŃ NA GPW: WIG20 poniżej 4.150 pkt.; rynkowi ciążą spadki banków i Orlenu”, 29.09.2026; bankier.pl — wiadomości Budimeksu 28.09"
-  },
-  {
-   "ticker": "CDPROJEKT",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "Premiera „Wiedźmin 3: Dziki Gon — Remaster” (12:00): kurs +1,43% do 248,70 zł, od D0 +1,68% (+2,22 p.p.) — najlepsza noga LONG. Rekord jednoczesnych graczy na Steam: >111 tys. o 17:15, ok. 120 tys. wieczorem; analitycy szacują ok. 3 mln sprzedanych kopii do końca 2026. Katalizator z rejestru (dn=2, wkład 2 pkt) zrealizowany zgodnie z kierunkiem.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „W »Wiedźmin 3 — Remaster« na platformie Steam gra jednocześnie ok. 120 tys. osób”, 29.09.2026 19:20; bankier.pl „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”, 29.09.2026 09:58; bankier.pl komentarz sesyjny 29.09.2026 17:15"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "−2,70% do 146,58 zł (WIG-Paliwa −2,69%) przy Brent poniżej 97 USD i WTI ok. 90 USD; od D0 −1,52% (−0,97 p.p.) — zgodnie z tezą SHORT, poniedziałkowy ruch przeciw tezie oddany. Sąd w Warszawie zarejestrował sprawę trzech osób z Orlen Trading Switzerland (zarzut szkody ok. 1,5 mld zł). Windfall tax: prezydent bez decyzji, termin nieznany (KALENDARZ_NIEPOTWIERDZONY).",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl komentarz sesyjny 29.09.2026 17:15; strefainwestorow.pl „W poszukiwaniu sygnałów — 29 września 2026”; bankier.pl „Sprawa OTS w sądzie. Premier mówi o »skandalu na cały świat«”, 29.09.2026"
-  },
-  {
-   "ticker": "TAURONPE",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "+1,72% do 8,982 zł po umowie kredytowej z PKO BP na 900 mln zł (refinansowanie kredytu konsorcjalnego z X 2024) i na fali sektora: PGE +5,31% (kredyt 3,05 mld zł BGK/PKO BP na CCGT Gryfino), Enea +3,59%, WIG-Energia +3,46%. Od D0 +2,89% (+3,43 p.p.) przeciw tezie SHORT — poniżej progu 4% (9,079 zł), bez reakcji; noga najbliżej progu w koszyku.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl — wiadomości Tauronu 29.09.2026 14:48; bankier.pl — wiadomości PGE 29.09.2026; bankier.pl komentarz sesyjny 29.09.2026 17:15; strefainwestorow.pl (ENA, WIG-ENERG)"
-  },
-  {
-   "ticker": "DINOPL",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "+2,37% do 35,41 zł bez komunikatu spółki; od D0 +2,82% (+3,36 p.p.) przeciw tezie SHORT — poniżej progu 4% (35,82 zł), bez reakcji. Strajk generalny OPZZ nadal niedatowany (związek deklaruje 5-dniowe wyprzedzenie wobec zarządu) — KALENDARZ_NIEPOTWIERDZONY.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl, odczyt 29.09.2026 17:03; bankier.pl — wiadomości Dino (brak wpisów 26–30.09); portalspozywczy.pl „Związkowcy podają termin strajku generalnego w Dino” (przez WebSearch, niezweryfikowane)"
-  },
-  {
-   "ticker": "ALIOR",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "−1,41% do 136,80 zł przy WIG-Banki −0,92%; od D0 −1,62% (−1,07 p.p.) przeciw tezie LONG — poniżej progu 4% (133,49 zł), bez reakcji. Komunikat neutralny: plan emisji senioralnych euroobligacji do 500 mln EUR w programie EMTN. Brak nowych rekomendacji (ostatnia Citi 21.09 „kupuj” 146,80 zł, przed D0).",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Alior Bank planuje emisję senioralnych euroobligacji o wartości nominalnej do 500 mln euro”, 29.09.2026; bankier.pl komentarz sesyjny 29.09.2026 17:15; bankier.pl/gielda/rekomendacje — przegląd 30.09.2026"
-  },
-  {
-   "ticker": "PKOBP",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "−0,79% do 123,38 zł; od D0 −0,93% (−0,38 p.p.), bez reakcji. Zamknięta emisja obligacji senior non-preferred na 1,35 mld zł (18:50). Ekonomiści banku: CPI za wrzesień powyżej 4%, stopy bez zmian, pierwsza obniżka o 25 pb w II kw. 2027; PKB 2026 3,5%, 2027 2,8% — tło zgodne z tezą marżową.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl — wiadomości PKO BP, 29.09.2026 (11:16, 11:30, 18:50); bankier.pl komentarz sesyjny 29.09.2026 17:15"
-  },
-  {
-   "ticker": "PEPCO",
-   "data": "2026-09-29",
-   "dn": 2,
-   "opis": "Reakcja kursu na aktualizację handlową FY26 (prognozy w górę: bazowy zysk netto >+60%, FCF >350 mln EUR) i zatwierdzony wieloletni skup akcji do 400 mln EUR (7:30): +1,87% do 44,57 zł (+2,3 p.p. vs indeks), druga najmocniejsza spółka WIG20. Moduł taktyczny: BEZ wpisu — brak publikowanego konsensusu do porównania, a reakcja o rząd słabsza niż przy poprzednich wejściach (PGE +7,78% 2.09, Allegro +9,49% 17.09). Pełne wyniki FY26 9.12.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Zarząd Pepco zatwierdził utworzenie nowego programu skupu akcji własnych o wartości do 400 mln euro”, 29.09.2026 07:30; bankier.pl „Pepco przygotowane do sezonu świątecznego; liczy na dalszy wzrost LFL”, 29.09.2026 13:44; bankier.pl komentarz sesyjny 29.09.2026 17:15"
-  },
-  {
-   "ticker": "MAKRO",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "Kalendarz D+3 potwierdzony w datowanych źródłach z bieżącego tygodnia: 9:30 GUS szybki szacunek CPI za wrzesień (konsensus ISBnews 4,1% r/r, strefainwestorow.pl ok. 4,0%, ekonomiści PKO BP >4%; poprzednio 3,4%; paliwa ok. +10% m/m); 9:00 BIEC rynek pracy; 14:00 NBP bilans płatniczy II kw.; 15:00 MF plan podaży SPW IV kw.; Orlen ogłasza przymusowy wykup Energi po 27,60 zł. Sesja 29.09: WIG20 −0,44% do 4157,40 (obroty 2,36 mld zł), od D0 −0,55%; wynik rachunku −0,06 p.p., spread papierowy −0,36 p.p.",
-   "wklad_pkt": null,
-   "zrodlo": "strefainwestorow.pl „TYDZIEŃ W KRAJU: Flash inflacji za IX, wskaźnik PMI, podaż SPW na IV kw.”, publ. 28.09.2026; ISBnews „Kalendarium wydarzeń makroekonomicznych na środę” (przez WebSearch); bankier.pl — wiadomości PKO BP 29.09.2026 11:16; bankier.pl 24.09.2026 (wykup Energi); scripts/metryki.py rozlicz --d5 2026-09-29"
-  },
-  {
-   "ticker": "TAURONPE",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "+2,65% do 9,22 zł (max 9,272) na fali sektora: WIG-Energia +4,61% blisko historycznego szczytu, PGE +6,10% najwyżej od 2015 r. Od D0 +5,61% (+5,58 p.p.) PRZECIW tezie SHORT — przekroczony próg miękki 4%: reakcja REDUCE/PRICE_4_8 z 1.10 (price_before 9,22). Próg CLOSE 8% = 9,428 zł. Bez komunikatu spółki 30.09.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl „Kurs PGE najwyżej od 11 lat. Energetyka dalej mocna na warszawskim parkiecie”, 30.09.2026 17:20 (WIG-Energia +4,61%, Tauron +2,65%, PGE +6,1%)"
-  },
-  {
-   "ticker": "ALIOR",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "Fitch podniósł rating długoterminowy Alior Banku do BBB− z BB+ (perspektywa stabilna) — komunikat 16:52, w trakcie sesji; kurs +0,66% do 137,70 zł, od D0 −0,97%. Sygnał ZGODNY z tezą LONG (pierwszy rating inwestycyjny od Fitch), bez reakcji protokołu.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl — wiadomości Alior Banku „Fitch podniósł rating Alior Banku do 'BBB-' z 'BB+'”, 30.09.2026 16:52; tabela notowań bankier.pl 30.09 17:00"
-  },
-  {
-   "ticker": "CDPROJEKT",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "+2,13% do 254,00 zł (max 254,0) po rekordzie Steam remastera Wiedźmina 3 (ok. 120 tys. graczy jednocześnie, 9. miejsce globalnych bestsellerów Steam wg przychodów); analitycy Erste Group: ok. 3 mln kopii i do 125 mln zł przychodów w II poł. 2026. Od D0 +3,84% (+3,81 p.p.) — najlepsza noga LONG. Komentarz sesyjny bankier.pl podał błędny znak (−2,13%); tabela notowań 17:03 rozstrzyga: 254,0 zł, +2,13%.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:03 (254,0; +2,13%; 5,3 zł); strefainwestorow.pl „Premiera »Wiedźmin 3: Dziki Gon — Remaster« przyniosła rekord liczby graczy na Steam. Jaką sprzedaż prognozują analitycy?”; bankier.pl 29.09.2026 19:20"
-  },
-  {
-   "ticker": "MAKRO",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "GUS, szybki szacunek CPI za wrzesień: 4,0% r/r (konsensus PAP 4,1%; sierpień 3,4%), 0,7% m/m; paliwa +36,1% r/r (+9,2% m/m). Pełne dane 14.10. Sesja D+3: WIG20 +0,59% do 4181,83 (w ciągu dnia ok. +1%, test 4200), obroty 2,9 mld zł (2,4 mld na WIG20); WIG-Banki +0,76%, WIG-Energia +4,61%. Od D0 WIG20 +0,04%; wynik rachunku +0,16 p.p., spread papierowy −0,20 p.p.",
-   "wklad_pkt": null,
-   "zrodlo": "GUS szybki szacunek 30.09.2026 9:30 (przez WebSearch: portalspozywczy.pl/PAP „Inflacja CPI we wrześniu rdr wyniosła 4,0 proc., a mdm 0,7 proc.”, gazetaprawna.pl); bankier.pl „Kurs PGE najwyżej od 11 lat…”, 30.09.2026 17:20; strefainwestorow.pl „DZIEŃ NA GPW: WIG20 rośnie do 4.200 pkt…”, 30.09.2026 11:15; scripts/metryki.py rozlicz --d5 2026-09-30"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "Ogłoszenie przymusowego wykupu 32 299 946 akcji Energi (ok. 3,87% głosów) po 27,60 zł; dzień wykupu 5.10 (zdarzenie „znane” od 24.09). Kurs −0,35% do 146,06 zł, od D0 −1,87% (−1,91 p.p.) zgodnie z tezą SHORT. Windfall tax 2.0: nadal bez decyzji prezydenta, żadne datowane źródło nie podaje terminu — KALENDARZ_NIEPOTWIERDZONY.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl — wiadomości Orlenu 30.09.2026 08:44 (wykup Energi); tabela notowań bankier.pl 30.09; bankier.pl „Senat zapalił zielone światło…”, 24.09.2026 (bez terminu decyzji)"
-  },
-  {
-   "ticker": "ERSTEPL",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "+1,50% do 798,00 zł (max 808,8) bez nowych komunikatów; 11,8% powyżej ceny wezwania 713,60 zł. Od D0 −1,19% (−1,23 p.p.); noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — spadek obciąża tylko wariant papierowy.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl — wiadomości Erste Bank Polska (ostatnie: 28.09 07:56 wezwanie 713,6 zł; 28.09 18:42 KNF/Erste TFI)"
-  },
-  {
-   "ticker": "PGE",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "+6,10% do 15,14 zł — najwyżej od jesieni 2015; od D0 +16,28%. Komunikat 13:06: „Projekt MOC” — pozyskiwanie z rynku projektów OZE, magazynów energii i infrastruktury sieciowej (akwizycje); aktualizacja strategii zapowiedziana na październik (bez daty). Spółka spoza koszyków; moduł taktyczny BEZ wpisu — brak twardego wyzwalacza z listy (wynik ponad konsensus / przełomowy kontrakt / wezwanie), ruch sektorowy.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:03; bankier.pl — wiadomości PGE 30.09.2026 13:06 (Projekt MOC) i 16.09.2026 12:36 (strategia w październiku); bankier.pl „Kurs PGE najwyżej od 11 lat…”, 30.09.2026 17:20"
-  },
-  {
-   "ticker": "KGHM",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "+2,03% do 329,55 zł bez komunikatu spółki (ostatni 24.09, projekt Victoria w Ontario); od D0 −0,29% (−0,33 p.p.), zgodnie z tezą, ale przewaga prawie wyczerpana. Poziom miedzi LME na 30.09: b.d. (brak datowanego źródła w allowliście). Chiny: Złoty Tydzień od 1.10 do 8.10.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026; bankier.pl — wiadomości KGHM (brak wpisów 25–30.09)"
-  },
-  {
-   "ticker": "BUDIMEX",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "−0,09% do 669,40 zł, od D0 −3,27% (−3,30 p.p.) — najlepsza noga SHORT; bez komunikatów spółki 29–30.09.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:00; bankier.pl — wiadomości Budimeksu (ostatni wpis 28.09, KDP)"
-  },
-  {
-   "ticker": "DINOPL",
-   "data": "2026-09-30",
-   "dn": 3,
-   "opis": "−0,96% do 35,07 zł bez komunikatu spółki; od D0 +1,83% (+1,79 p.p.) przeciw tezie, z powrotem wyraźnie poniżej progu 4% (35,82 zł). Strajk OPZZ nadal niedatowany.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl — wiadomości Dino (brak wpisów 19–30.09)"
-  },
-  {
-   "ticker": "MODIVO",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "Dziś raport półroczny (po odpisach zapowiedzianych 25.09: 287,6 mln zł Worldbox w skonsolidowanym, 269,8 mln zł Modivo.com w jednostkowym). 30.09 kurs −2,72% do 85,90 zł, od D0 −6,67% — najsłabsza spółka WIG20 w oknie. Spoza koszyków; taktyczna SELL i tak nie weszłaby na rachunek (LONG_ONLY). Do rana 1.10 (8:20) raport jeszcze nieopublikowany na bankier.pl.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl/gielda/kalendarium (1.10: MODIVO — raport za I półrocze 2026); bankier.pl — wiadomości Modivo (ostatni wpis 25.09 23:34); tabela notowań bankier.pl 30.09"
-  },
-  {
-   "ticker": "MAKRO",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "Kalendarz D+4 potwierdzony w źródłach z bieżącego tygodnia: 9:00 PMI przemysłu Polska (także Węgry, Szwecja, Japonia, Indie), 10:00 PMI strefa euro, 10:30 PMI W. Brytania, 11:00 bezrobocie UE, 11:30 Challenger (USA), 14:30 wnioski o zasiłek USA, 16:00 ISM przemysłu USA; wystąpienia Lagarde i Baileya; GPW: raport półroczny Modivo. Chiny: początek Złotego Tygodnia (do 8.10) — rynek miedzi bez pierwszego odbiorcy (KGHM). Posiedzenie RPP: nadal bez datowanego potwierdzenia.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026; bankier.pl/gielda/kalendarium — odczyt 1.10.2026 8:20; strefainwestorow.pl „TYDZIEŃ W KRAJU…”, publ. 28.09.2026 (PMI 9:00, Modivo)"
-  },
-  {
-   "ticker": "MAKRO",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "PMI przemysłu Polska za wrzesień 49,0 pkt (konsensus 48,0; sierpień 48,3) — 17. miesiąc poniżej 50, ale najwyżej od kwietnia. Sesja D+4: WIG20 −1,90% do 4 102,20 (najgorsza od 27.08; 17 z 20 spółek na minusie, obroty 2,79 mld zł), WIG-Banki −3,64%, WIG-Górnictwo −2,53%, WIG-Energia +0,10%, WIG-Paliwa +0,02%. Impuls: kolejna fala wyprzedaży obligacji — rentowność 10-latek USA 5,34% (najwyżej od 2002 r.), USD/PLN 3,8848 (najsłabszy złoty od kwietnia 2025); FTSE 100 −1,7%, DAX −0,9%, CAC 40 −1,6%.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Polski przemysł wciąż pod kreską, ale spadek wyhamowuje. PMI powyżej oczekiwań”, 1.10.2026; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca. Akcje banków wyprzedawane”, 1.10.2026 17:29; strefainwestorow.pl „WIG20 na zamknięciu wyniósł 4102,20 pkt (−1,90%)”, 1.10.2026 17:41; tabela indeksów bankier.pl 1.10 17:15"
-  },
-  {
-   "ticker": "ALIOR",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−3,78% do 132,50 zł (zakres 131,55–138,95; obrót 49,6 mln zł) w sektorowej wyprzedaży banków; od D0 −4,71% (−2,84 p.p.) — próg miękki 4% (133,49 zł) przebity → REAKCJA PROTOKOŁU 2.10: REDUCE (PRICE_4_8), noga faktycznie otwarta na rachunku, cięcie do 50% od 132,50 zł. Próg twardy CLOSE 127,93 zł. Bez komunikatu spółki 1.10; sygnały spółkowe (Fitch BBB− 30.09, Citi „kupuj” 21.09) nadal zgodne z tezą.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca…”, 1.10.2026 17:29; bankier.pl — wiadomości Alior Banku (ostatni wpis 30.09, Fitch)"
-  },
-  {
-   "ticker": "PKOBP",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−3,48% do 119,68 zł (największe obroty rynku: 647,9 mln zł); od D0 −3,90% (−2,04 p.p.) — 0,12 zł NAD progiem miękkim 4% (119,56 zł), bez reakcji protokołu. Brak komunikatów spółki 1.10 (ostatni 29.09 18:50: emisja SNP 1,35 mld zł).",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca…”, 1.10.2026 17:29; bankier.pl — wiadomości PKO BP"
-  },
-  {
-   "ticker": "ERSTEPL",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−3,26% do 772,00 zł (zakres 768,4–798,0; obrót 98,3 mln zł) razem z sektorem; od D0 −4,41% (−2,54 p.p.); kurs 8,2% powyżej ceny wezwania 713,60 zł. Brak nowych komunikatów (ostatnie 28.09). Noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — spadek obciąża tylko wariant papierowy.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl — wiadomości Erste Bank Polska"
-  },
-  {
-   "ticker": "CDPROJEKT",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "+0,20% do 254,50 zł (max 258,10, obrót 111,4 mln zł) wbrew rynkowi −1,90%; od D0 +4,05% (+5,91 p.p.) — najlepsza noga LONG. Remaster Wiedźmina 3 nadal ok. 120 tys. jednoczesnych graczy na Steam; analitycy mówią o milionach sprzedanych kopii.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:01; bankier.pl 1.10.2026 „W »Wiedźmin 3 – Remaster« na Steam gra jednocześnie ok. 120 tys. osób”; „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”"
-  },
-  {
-   "ticker": "LPP",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−0,40% do 24 740 zł; od D0 −0,64% (+1,22 p.p.). Jedyny komunikat: 30.09 transakcje na akcjach emitenta (art. 19 MAR). Bez reakcji.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl — wiadomości LPP"
-  },
-  {
-   "ticker": "PKNORLEN",
-   "data": "2026-10-01",
-   "dn": 5,
-   "opis": "WYZWALACZ TEZY ZREALIZOWANY: prezydent Nawrocki podpisał 1.10 o 20:09 (orędzie) ustawę o podatku od nadwyżki przychodów ze sprzedaży paliw (producenci oddają 60% nadwyżki ponad zwykłą marżę, sprzedawcy 50%; okres 1.03.2026–31.03.2027; wpływy ok. 4 mld zł na program „Ceny Paliw Niżej”), kierując ją równocześnie do TK w trybie kontroli następczej. Minister finansów: ceny na stacjach niższe już w przyszłym tygodniu. Zdarzenie po 17:00 → sesja 2.10 (dn=5). Kurs 1.10 (przed decyzją) +0,07% do 146,16 zł; od D0 −1,80% (+0,07 p.p.). Zamyka pozycję KALENDARZ_NIEPOTWIERDZONY dla tego zdarzenia.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Koncerny paliwowe zapłacą większy podatek. Jest podpis prezydenta”, 1.10.2026 (orędzie 20:09); polsatnews.pl / tvn24.pl 1.10.2026 (przez WebSearch); tabela notowań bankier.pl 1.10 17:03"
-  },
-  {
-   "ticker": "TAURONPE",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−1,04% do 9,124 zł; od D0 +4,51% (+6,38 p.p.) — nadal w pasmie 4–8%, REDUCE z 1.10 utrzymany (próg CLOSE 9,428 zł). Trzy zdarzenia spółkowe: ESPI 11:00 zawieszenie postępowania arbitrażowego z AM Global Holding / ArcelorMittal Poland; 12:58 zarząd widzi „duże szanse”, by bloki węglowe 200 MW pracowały po 2028 r.; 14:02 plan transformacji czterech lokalizacji (Jaworzno: OCGT 2×315 MW, pozwolenie na budowę II kw. 2027; Siersza: OCGT do 630 MW na 2031/32, magazyny, PV; Łaziska/Łagisza: 7 projektów) — każdy duży projekt gazowy w osobnej spółce z możliwym partnerem kapitałowym przy limicie długu; ambicja dywidendy. Rynek: neutralnie (spadek mniejszy niż indeks).",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl — wiadomości Tauronu 1.10.2026 11:00 / 12:58 / 14:02; bankier.pl „Tauron przedstawia plan transformacji czterech lokalizacji…”, 1.10.2026 14:02; tabela notowań bankier.pl 1.10 17:02; strefainwestorow.pl 1.10 17:41 (TPE −1,04%)"
-  },
-  {
-   "ticker": "KGHM",
-   "data": "2026-10-02",
-   "dn": 5,
-   "opis": "Komunikat 2.10 07:14: start rozbudowy Sierra Gorda (Chile, 55% KGHM / 45% South32) za 725 mln USD — czwarta linia mielenia, przerób rudy z ok. 48 do ok. 60 mln t rocznie, produkcja miedzi +ok. 20%, budowa do końca 2029, pełna moc II poł. 2030 (zdarzenie przed sesją → dn=5). Capex rozłożony na lata, bez wpływu na wyniki okna. Sesja 1.10: −2,53% do 321,20 zł (obrót 269 mln zł, WIG-Górnictwo −2,53%); od D0 −2,81% (−0,95 p.p.) — zgodnie z tezą. Chiny zamknięte do 8.10.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „KGHM rozpoczyna rozbudowę kopalni Sierra Gorda w Chile”, 2.10.2026 07:14; strefainwestorow.pl 2.10.2026; tabela notowań bankier.pl 1.10 17:03"
-  },
-  {
-   "ticker": "BUDIMEX",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−1,22% do 661,20 zł (min 653,0); od D0 −4,45% (−2,58 p.p.) — najlepsza noga SHORT, przebity próg 4% W STRONĘ tezy. Bez komunikatów spółki (ostatni 25.09: odrzucenie oferty na „Czajkę”).",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl — wiadomości Budimeksu"
-  },
-  {
-   "ticker": "DINOPL",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "−1,43% do 34,57 zł (obrót 103 mln zł); od D0 +0,38% (+2,24 p.p.), daleko od progu 4% (35,82 zł). Bez komunikatów spółki; strajk OPZZ nadal niedatowany.",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:04; bankier.pl — wiadomości Dino"
-  },
-  {
-   "ticker": "MODIVO",
-   "data": "2026-10-02",
-   "dn": 5,
-   "opis": "Raport półroczny (ESPI datowany 2.10, depesza 06:22): II kw. 2026/27 przychody 3 045,5 mln zł (+5,2% r/r), EBITDA 31,7 mln zł, strata operacyjna −215,3 mln zł (rok wcześniej +277,1 mln zł zysku), strata netto j.d. −204 mln zł (rok wcześniej +60 mln zł) — w całości efekt zapowiedzianych 25.09 odpisów (Worldbox 287,6 mln zł: goodwill 116,8 + aktywa trwałe 170,8; Modivo.com 269,8 mln zł). Sierpień–wrzesień: sprzedaż +13% (HalfPrice +38%, CCC +5%, Modivo.com −7%). Kurs 1.10 (przed raportem) +0,70% do 86,50 zł; od D0 −6,02%. Moduł taktyczny: brak SELL — odpisy znane od 25.09, a SELL i tak nie wchodzi na rachunek LONG_ONLY.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Grupa Modivo miała w II kw. 2026/27 r. 204 mln zł straty netto j.d. wobec 60 mln zł zysku rok wcześniej”, 2.10.2026 06:22; bankier.pl „MODIVO S.A.: Wyniki finansowe PSr /2026” (ESPI 2.10); tabela notowań bankier.pl 1.10 17:02"
-  },
-  {
-   "ticker": "PGE",
-   "data": "2026-10-01",
-   "dn": 4,
-   "opis": "+2,15% do 15,465 zł wbrew rynkowi; od D0 +18,78% (+20,65 p.p.) — najmocniejsza spółka WIG20 okna. Komunikaty: 1.10 transakcje art. 19 MAR; 29.09 kredyt terminowy 3,05 mld zł na refinansowanie CCGT Gryfino. Moduł taktyczny: brak twardego wyzwalacza (ruch sektorowo-makro, strategia zapowiedziana na październik bez daty).",
-   "wklad_pkt": null,
-   "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:04; bankier.pl — wiadomości PGE; strefainwestorow.pl 1.10 17:41"
-  },
-  {
-   "ticker": "MAKRO",
-   "data": "2026-10-02",
-   "dn": 5,
-   "opis": "Kalendarz D+5 (ostatnia sesja okna W7) potwierdzony w datowanych źródłach: 11:00 wstępny HICP strefy euro za wrzesień; 14:30 raport z rynku pracy USA (NFP) za wrzesień; 16:00 zamówienia w przemyśle USA za sierpień; Chiny zamknięte do 8.10; GPW bez wydarzeń WIG20 (Kernel — raport roczny; BM Reflex — ceny paliw). RPP: następne posiedzenie decyzyjne 6–7.10 wg komunikatu po posiedzeniu wrześniowym (bankier.pl 9.09.2026) — źródło datowane, ale sprzed bieżącego tygodnia, więc kod KALENDARZ_NIEPOTWIERDZONY utrzymany dla tej daty.",
-   "wklad_pkt": null,
-   "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy…”, 25.09.2026 13:38; bankier.pl/gielda/kalendarium (odczyt 2.10 ok. 8:20); strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-10-02”; bankier.pl „Stopy w NBP bez zmian we wrześniu 2026…”, 9.09.2026"
-  }
- ],
- "data_quality": [
-  "FMP_PLAN_BLOKADA",
-  "KURS_ZRODLO_REZERWA",
-  "KNF_SHORT_NIEDOSTEPNY",
-  "DYWIDENDA_KOREKTA_PZU",
-  "KALENDARZ_NIEPOTWIERDZONY",
-  "WEZWANIE_ERSTEPL_POMINIETE_W7",
-  "DM_SYGNAL_POMINIETY_W7"
- ]
+  "week": "2026-W7",
+  "d0": "2026-09-25",
+  "generated": "2026-09-26",
+  "momentum_method": "mechaniczne",
+  "uwaga": "momentum ze scripts/metryki.py momentum --d0 2026-09-25, komplet 20 sesji w cache (BRAK_20S NIE występuje w tym tygodniu — pierwszy raz od wprowadzenia metody v1.1); PZU liczone na kopii cache skorygowanej o dywidendę 4,80 zł odciętą 16.09 (DYWIDENDA_KOREKTA_PZU) — dzień prawa wypada w oknie 20-sesyjnym, więc bez korekty rel20 wynosi −5,21 p.p. i momentum 10,5 pkt, co jest artefaktem odcięcia, nie ruchem kursu; DM ±3 wyłącznie za datowane sygnały z okna 26.08–25.09 (Trigon DM 8.09 — top picks i lista „gorzej niż rynek”; Noble Securities 17.09; Citi 21.09; Wood & Company 24.09) — lista długich DM BOŚ z 25.08 wypadła z okna 30 dni, co zabrało +3 spółce PGE; katalizatory 10 + suma wkładów za zdarzenia D+1…D+10 (28.09–9.10); remis 43,1 pkt BUDIMEX/KGHM rozstrzygnięty mniejszą wagą w WIG20 (1,57% wobec 8,03%), wagi z profilu WIG20 na bankier.pl, portfel z 25.09.2026 17:15; data posiedzenia RPP 6–7.10 NIE została potwierdzona w źródle pierwotnym (nbp.pl jest zablokowany przez politykę sieciową środowiska) ani w datowanym kalendarzu z bieżącego tygodnia, więc nie opiera się na niej żadna deklaracja",
+  "long": [
+    "ERSTEPL",
+    "ALIOR",
+    "LPP",
+    "CDPROJEKT",
+    "PKOBP"
+  ],
+  "short": [
+    "PKNORLEN",
+    "BUDIMEX",
+    "KGHM",
+    "TAURONPE",
+    "DINOPL"
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "ERSTEPL",
+      "score": 63.6,
+      "p": 0.57,
+      "waga_wig20_pct": 6.07,
+      "rel5_pp": 6.42,
+      "rel20_pp": 7.53,
+      "pts": {
+        "momentum": 24.1,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 24,1/25 (rel5 +6,42 p.p., rel20 +7,53 p.p. — najwyżej w uniwersum) po tygodniu, w którym WIG-BANKI zyskał ponad 5,2% i ustanowił rekord; KAT raport Q3 dopiero 30.10, brak zdarzeń w D+1…D+10 (28.09–9.10) → 10 neutralnie; MAKRO konsensus CPI flash GUS na 30.09 to 3,6% wobec 3,4% poprzednio, czyli brak przestrzeni na obniżki stóp i wsparcie dla marży odsetkowej, a spółka zależna grupy austriackiej ma mniejszą wrażliwość na koszt finansowania skarbowego niż banki z dużym portfelem SPW (9); DM brak datowanego sygnału w oknie 26.08–25.09 (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach — raport Q2 z 30.07 poza oknem (5); PRZ rejestr krótkiej sprzedaży KNF niedostępny, brak datowanych danych o przepływach (5); WYC DY ok. 8,1%, ale kurs po +7,82% w tygodniu i na rekordzie — mnożnik przestał być argumentem (3)."
+    },
+    {
+      "rank": 2,
+      "ticker": "ALIOR",
+      "score": 58.8,
+      "p": 0.54,
+      "waga_wig20_pct": 2.2,
+      "rel5_pp": 4.62,
+      "rel20_pp": 0.31,
+      "pts": {
+        "momentum": 19.3,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 19,3/25 (rel5 +4,62 p.p., rel20 +0,31 p.p.); KAT nabór w konkursie na prezesa i pięcioro członków zarządu zamknięty 16.09, data powołań nadal niepotwierdzona → bez punktów, 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO wyższy konsensus CPI (3,6% na 30.09) utrwala scenariusz „wyżej na dłużej”, który podnosi marżę odsetkową, a najmniejszy w indeksie portfel SPW ogranicza skutki obniżki ratingu Polski do A3 (9); DM netto 0: Citi podniosło 21.09 rekomendację do „kupuj” z ceną docelową 146,80 zł (+3), ale Wood & Company obniżyło ją 24.09 z „kupuj” do „trzymaj” (−3) — dwa przeciwstawne, datowane sygnały w oknie 30 dni (7,5); REW raport Q3 dopiero 27.10, brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC najniższe mnożniki wśród banków indeksu, ale po +6,02% w tygodniu cena docelowa Citi jest tylko ok. 5% nad kursem (3)."
+    },
+    {
+      "rank": 3,
+      "ticker": "LPP",
+      "score": 58.0,
+      "p": 0.54,
+      "waga_wig20_pct": 5.67,
+      "rel5_pp": 1.66,
+      "rel20_pp": 13.9,
+      "pts": {
+        "momentum": 17.5,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 9,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 17,5/25 (rel5 +1,66 p.p., rel20 +13,90 p.p. — najwyższy składnik 20-sesyjny w uniwersum); KAT brak zdarzeń w D+1…D+10 (raport H1 z 17.09 przed D0, raport Q3 dopiero jesienią) → 10; MAKRO sprzedaż detaliczna GUS za sierpień +3,8% r/r w cenach stałych (22.09) potwierdza popyt, ale wypadła poniżej konsensusu +4,5%, a słabszy złoty po obniżce ratingu podnosi koszt zakupów przy CPI idącym w stronę 3,6% (7); DM brak datowanego sygnału w oknie 30 dni (7,5); REW zysk netto Q2 768 mln zł wobec 684,1 mln konsensusu PAP (+12%) i podniesione cele marżowe, raport 17.09 — jedna z dwóch udokumentowanych liczbowo rewizji w górę w całym indeksie (9); PRZ rejestr KNF niedostępny (5); WYC kurs 24 900 zł to historyczne maksimum, najdroższy mnożnik w koszyku LONG (2)."
+    },
+    {
+      "rank": 4,
+      "ticker": "CDPROJEKT",
+      "score": 57.5,
+      "p": 0.54,
+      "waga_wig20_pct": 3.07,
+      "rel5_pp": 2.07,
+      "rel20_pp": -1.25,
+      "pts": {
+        "momentum": 14.0,
+        "katalizatory": 12,
+        "makro": 6,
+        "dm": 10.5,
+        "rewizje": 8,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 14,0/25 (rel5 +2,07 p.p., rel20 −1,25 p.p.); KAT premiera „Wiedźmin 3: Dziki Gon – Remastered” 29.09 = D+2, czyli w oknie wyniku i w paśmie pełnego wkładu (+2); aktualizacja jest darmowa dla posiadaczy gry, monetyzacja obejmuje nowe kopie i Nintendo Switch 2, więc wkład jest ograniczony → 12; MAKRO wyższe rentowności i scenariusz bez obniżek stóp biją w wyceny wzrostowe, przychody w USD tylko częściowo to równoważą (6); DM +3 za top pick Trigon DM z 8.09 (lista wrześniowa, w oknie 30 dni) (10,5); REW zysk Q2 +44% wobec konsensusu (2.09, w oknie 30 dni) (8); PRZ rejestr KNF niedostępny, pozycje krótkie bez datowanej zmiany (5); WYC najwyższy mnożnik w rankingu (2)."
+    },
+    {
+      "rank": 5,
+      "ticker": "PKOBP",
+      "score": 57.4,
+      "p": 0.54,
+      "waga_wig20_pct": 15.67,
+      "rel5_pp": 2.52,
+      "rel20_pp": 5.06,
+      "pts": {
+        "momentum": 18.9,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 18,9/25 (rel5 +2,52 p.p., rel20 +5,06 p.p.); KAT NWZ 14.10 wypada za oknem D+10 (9.10), cap 15% w WIG20 wykonany na zamknięciu 18.09 → 10; MAKRO konsensus CPI 3,6% na 30.09 wspiera marżę, ale to największy bank indeksu o największej ekspozycji na dług skarbowy, więc obniżka ratingu Polski do A3 (18.09) uderza w niego najmocniej w sektorze — dlatego punkt niżej niż pozostałe banki (8); DM brak datowanego sygnału w oknie 30 dni (7,5); REW raport Q2 z 13.08 poza oknem 30 dni, brak udokumentowanej zmiany konsensusu (5); PRZ podaż funduszy indeksowych po capie 15% zrealizowana 18.09, rejestr KNF niedostępny (5); WYC ROE ok. 18% i DY ok. 5,5%, ale kurs na historycznym maksimum przy rekordowej kapitalizacji 154 mld zł (3)."
+    },
+    {
+      "rank": 6,
+      "ticker": "MBANK",
+      "score": 57.3,
+      "p": 0.54,
+      "waga_wig20_pct": 3.51,
+      "rel5_pp": 5.46,
+      "rel20_pp": 5.78,
+      "pts": {
+        "momentum": 22.8,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 1
+      },
+      "uzasadnienie": "MOM 22,8/25 (rel5 +5,46 p.p., rel20 +5,78 p.p.) — spółka wyszła z koszyka SHORT po twardym zdarzeniu (+8,32% przeciw tezie, CLOSE 22.09) i zgodnie z sekcją 6 metody jest oceniana od zera, bez kotwiczenia na pozycji 20; KAT zgoda rady nadzorczej na emisję AT1 do 250 mln EUR z 17.09 jest przed D0 i bez terminu, brak zdarzeń w D+1…D+10 → 10; MAKRO to samo wsparcie ze strony stóp co dla całego sektora (9); DM −3 za Trigon DM z 8.09 — spółka na wrześniowej liście „gorzej niż rynek” (4,5); REW raport Q2 z 30.07 poza oknem 30 dni (5); PRZ rejestr KNF niedostępny; emisja AT1 wzmacnia Tier 1 bez rozwodnienia (5); WYC najwyższe mnożniki w sektorze po +6,86% w tym tygodniu i +8,3% w poprzednim — jedyna jedynka w tej kategorii w całym rankingu (1)."
+    },
+    {
+      "rank": 7,
+      "ticker": "PEKAO",
+      "score": 55.8,
+      "p": 0.53,
+      "waga_wig20_pct": 8.8,
+      "rel5_pp": 2.57,
+      "rel20_pp": 5.04,
+      "pts": {
+        "momentum": 19.3,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 19,3/25 (rel5 +2,57 p.p., rel20 +5,04 p.p.); KAT brak zdarzeń w D+1…D+10 → 10; MAKRO wsparcie ze strony stóp jak dla sektora, kapitalizacja 81 mld zł po rekordzie (9); DM −3 za obniżkę rekomendacji przez Wood & Company z „kupuj” do „trzymaj” 24.09 (4,5); REW raport Q2 starszy niż 30 dni, brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC niskie mnożniki i DY ok. 8,4%, ale kurs 280,30 zł po rekordzie sektora (3)."
+    },
+    {
+      "rank": 8,
+      "ticker": "ALLEGRO",
+      "score": 55.2,
+      "p": 0.53,
+      "waga_wig20_pct": 8.98,
+      "rel5_pp": -1.89,
+      "rel20_pp": 4.6,
+      "pts": {
+        "momentum": 12.7,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 10.5,
+        "rewizje": 9,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 12,7/25 (rel5 −1,89 p.p. — oddanie części zwyżki z poprzedniego okna, rel20 +4,60 p.p.); KAT brak zdarzeń w D+1…D+10 (raport H1 z 17.09 przed D0) → 10; MAKRO sprzedaż detaliczna +3,8% r/r sprzyja e-commerce, ale konsensus CPI 3,6% i brak obniżek stóp biją w wyceny wzrostowe, w tle ryzyko regulacji platform (6); DM +3 za top pick Trigon DM z 8.09 (10,5); REW podniesienie prognoz rocznych 17.09: GMV +13–15% r/r (78,3–79,9 mld zł) i skoryg. EBITDA +13–17% — druga z dwóch udokumentowanych rewizji w górę (9); PRZ rejestr KNF niedostępny (5); WYC mnożnik e-commerce po wzroście ok. 84% od kwietnia (2)."
+    },
+    {
+      "rank": 9,
+      "ticker": "MODIVO",
+      "score": 53.4,
+      "p": 0.52,
+      "waga_wig20_pct": 0.84,
+      "rel5_pp": 3.12,
+      "rel20_pp": 1.12,
+      "pts": {
+        "momentum": 18.9,
+        "katalizatory": 11,
+        "makro": 6,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 18,9/25 (rel5 +3,12 p.p., rel20 +1,12 p.p.); KAT raport półroczny 1.10 = D+4, czyli w oknie wyniku — jedyny raport okresowy spółki WIG20 w tym paśmie; kierunek nieznany, więc wkład symboliczny (+1) → 11; MAKRO wyższe stopy i CPI 3,6% uderzają w wyceny wzrostowe i w wydatki na modę (6); DM −3 za Trigon DM z 8.09 — spółka na liście „gorzej niż rynek” (4,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach (5); PRZ najmniejsza waga w WIG20 (0,84%) i niska płynność, brak datowanych danych (5); WYC brak świeżych mnożników — neutralnie (3)."
+    },
+    {
+      "rank": 10,
+      "ticker": "PEPCO",
+      "score": 53.0,
+      "p": 0.52,
+      "waga_wig20_pct": 1.34,
+      "rel5_pp": 2.49,
+      "rel20_pp": -3.98,
+      "pts": {
+        "momentum": 14.5,
+        "katalizatory": 11,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 14,5/25 (rel5 +2,49 p.p., rel20 −3,98 p.p.); KAT komunikat o wstępnych wynikach za cały rok obrotowy 2025/26 w dniu 29.09 = D+2 — data POTWIERDZONA w dwóch źródłach (datowany kalendarz bankier.pl z 25.09 oraz kalendarium raportów), czyli znika ubiegłotygodniowa niepewność 23.09 vs 29.09 (+1) → 11; MAKRO sprzedaż detaliczna +3,8% r/r i niskie bezrobocie sprzyjają dyskontom, ale słabszy złoty podnosi koszt zakupów (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach — prognoza wzrostu przychodów 6–8% na r.obr. 2026 pochodzi z grudnia 2025 (5); PRZ efekt skupu akcji rozliczonego 17.08 już wygasł, rejestr KNF niedostępny (5); WYC mnożnik po restrukturyzacji i wyjściu z FMCG nadal poniżej sektora (3)."
+    },
+    {
+      "rank": 11,
+      "ticker": "PZU",
+      "score": 51.5,
+      "p": 0.51,
+      "waga_wig20_pct": 7.4,
+      "rel5_pp": -0.38,
+      "rel20_pp": 1.73,
+      "pts": {
+        "momentum": 14.0,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 14,0/25 po korekcie total return (rel5 −0,38 p.p., rel20 +1,73 p.p. z serią skorygowaną o dywidendę 4,80 zł odciętą 16.09; bez korekty skrypt daje rel20 −5,21 p.p. i 10,5 pkt, co jest artefaktem odcięcia, nie ruchem kursu — DYWIDENDA_KOREKTA_PZU); KAT wypłata dywidendy 8.10 wypada w oknie D+9, ale dzień prawa minął 15.09, więc zdarzenie nie ma wpływu na kurs → 10; MAKRO wyższe rentowności podnoszą dochód z reinwestycji portfela, reorganizacja PZU–Pekao wciąż bez projektu ustawy (9); DM −3 za obniżkę rekomendacji przez Wood & Company 24.09 (4,5); REW Q2 +7% wobec konsensusu z 20.08 wypadł poza okno 30 dni (5); PRZ rejestr KNF niedostępny (5); WYC niskie mnożniki i wysoka DY przy wadze 7,40% w indeksie (4)."
+    },
+    {
+      "rank": 12,
+      "ticker": "ZABKA",
+      "score": 49.1,
+      "p": 0.5,
+      "waga_wig20_pct": 2.94,
+      "rel5_pp": -1.43,
+      "rel20_pp": -4.77,
+      "pts": {
+        "momentum": 9.6,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 6,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 9,6/25 (rel5 −1,43 p.p., rel20 −4,77 p.p.) — kurs przyklejony do ceny wezwania; KAT zapisy w wezwaniu Alimentation Couche-Tard po 32,00 zł przedłużone do 26.10, transakcja 29.10, rozliczenie 3.11 — wszystko za oknem D+10 → 10; MAKRO kurs 31,48 zł przy cenie wezwania 32,00 zł czyni spółkę niemal nieczułą na rynek: atut przy przecenie, obciążenie przy zwyżce indeksu (8); DM brak datowanego sygnału (7,5); REW raport Q2 z 30.07 poza oknem (5); PRZ nieodwołalne zobowiązania CVC, Partners Group i menedżerów na ok. 57% akcji oraz ścieżka do delistingu (6); WYC potencjał ograniczony do +1,65% względem ceny wezwania (3)."
+    },
+    {
+      "rank": 13,
+      "ticker": "PGE",
+      "score": 44.8,
+      "p": 0.47,
+      "waga_wig20_pct": 1.99,
+      "rel5_pp": -7.93,
+      "rel20_pp": 14.89,
+      "pts": {
+        "momentum": 8.3,
+        "katalizatory": 10,
+        "makro": 4,
+        "dm": 7.5,
+        "rewizje": 6,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 8,3/25 (rel5 −7,93 p.p. — najgorszy składnik 5-sesyjny w uniwersum, rel20 +14,89 p.p. — najwyższy; rozjazd obu składników pokazuje, że jeden tydzień zmazał miesiąc); KAT raport H1 z 15.09 przed D0, brak zdarzeń w D+1…D+10 → 10; MAKRO dwa nierozstrzygnięte uderzenia regulacyjne: podniesienie CIT dla największych spółek energetycznych i paliwowych z 19% do 30% od 2027 oraz WACC dla dystrybucji na poziomie 8,5% na 2026 wobec ok. 12% w tym roku, co rynek czyta jako nadzwyczajną interwencję i co rodzi ryzyko kolejnego zawieszenia dywidendy (4); DM brak datowanego sygnału w oknie 26.08–25.09 — lista długich DM BOŚ z 25.08 wypadła z okna 30 dni (7,5); REW raport H1 z 15.09: zysk netto ponad 4 mld zł i EBITDA 8,2 mld zł, ale bez zmiany konsensusu po ogłoszeniu parametrów WACC (6); PRZ rejestr KNF niedostępny (5); WYC P/BV ok. 0,69 po przecenie −6,53% w tygodniu (4)."
+    },
+    {
+      "rank": 14,
+      "ticker": "KETY",
+      "score": 44.5,
+      "p": 0.47,
+      "waga_wig20_pct": 2.2,
+      "rel5_pp": -2.5,
+      "rel20_pp": -4.03,
+      "pts": {
+        "momentum": 7.0,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 7,0/25 (rel5 −2,50 p.p., rel20 −4,03 p.p.) — spółka była w koszyku LONG i oddała całość zwyżki po przejęciu grupy Metra, w piątek jedna z najsłabszych w WIG20; KAT raport Q3 26.10 i finalizacja transakcji na początku 2027 — oba za oknem D+10 → 10; MAKRO produkcja budowlano-montażowa i popyt niemiecki ważne dla profili, ale kredyt pomostowy 2 mld zł drożeje przy stopach bez obniżek (7); DM brak datowanego sygnału (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach, zapowiedziana normalizacja wyników w H2 nadal w mocy (5); PRZ rejestr KNF niedostępny (5); WYC mnożnik po korekcie kursu umiarkowany wobec skali akwizycji (EV 645 mln EUR) (3)."
+    },
+    {
+      "rank": 15,
+      "ticker": "KRUK",
+      "score": 44.1,
+      "p": 0.47,
+      "waga_wig20_pct": 1.21,
+      "rel5_pp": -2.13,
+      "rel20_pp": -10.58,
+      "pts": {
+        "momentum": 6.6,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 6,6/25 (rel5 −2,13 p.p., rel20 −10,58 p.p. — drugi najgorszy składnik 20-sesyjny); KAT raport Q3 27.10 za oknem D+10 → 10; MAKRO scenariusz stóp bez obniżek podnosi koszt finansowania zakupów portfeli wierzytelności, a wyższe rentowności obniżają wycenę już posiadanych aktywów (6); DM brak datowanego sygnału (7,5); REW brak udokumentowanej zmiany konsensusu (5); PRZ rejestr KNF niedostępny (5); WYC mnożniki poniżej średniej rynkowej po czterech tygodniach słabości (4)."
+    },
+    {
+      "rank": 16,
+      "ticker": "PKNORLEN",
+      "score": 43.2,
+      "p": 0.47,
+      "waga_wig20_pct": 13.94,
+      "rel5_pp": -2.92,
+      "rel20_pp": -4.77,
+      "pts": {
+        "momentum": 5.7,
+        "katalizatory": 10,
+        "makro": 3,
+        "dm": 10.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 5,7/25 (rel5 −2,92 p.p., rel20 −4,77 p.p.); KAT przymusowy wykup akcji Energi po 27,60 zł startuje 30.09 = D+3, ale zamiar ogłoszono 24.09 i kwota ok. 907 mln zł jest znana, więc zgodnie z sekcją 3 metody to zdarzenie „znane” bez wkładu (0); data decyzji prezydenta w sprawie ustawy o podatku od nadzwyczajnych zysków nieznana → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO najgorsze tło regulacyjne w indeksie: Senat przyjął 24.09 bez poprawek (59 za, 31 przeciw) ustawę o 60-procentowym podatku od nadwyżki przychodów ze sprzedaży paliw ciekłych za okres III 2026 – III 2027, ustawa czeka na podpis prezydenta, a w tle jest podniesienie CIT z 19% do 30% od 2027 i Brent powyżej 100 USD po stronie kosztu wsadu (3); DM +3 za top pick Trigon DM z 8.09 — jedyny sygnał DM przeciw tezie krótkiej w tym koszyku i powód, dla którego spółka jest na 16., a nie na 20. miejscu (10,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ cap 15% w WIG20 wykonany 18.09, rejestr KNF niedostępny; wykup Energi to odpływ ok. 907 mln zł gotówki (5); WYC mnożniki niskie, ale z nierozliczonym ryzykiem podatkowym w liczniku (4)."
+    },
+    {
+      "rank": 17,
+      "ticker": "BUDIMEX",
+      "score": 43.1,
+      "p": 0.47,
+      "waga_wig20_pct": 1.57,
+      "rel5_pp": -2.37,
+      "rel20_pp": -6.43,
+      "pts": {
+        "momentum": 6.6,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "uzasadnienie": "MOM 6,6/25 (rel5 −2,37 p.p., rel20 −6,43 p.p.); KAT raport Q3 27.10 i strategia przesunięta na koniec października — oba za oknem D+10 → 10; MAKRO produkcja budowlano-montażowa i program inwestycji publicznych po stronie popytu, ale stopy bez obniżek podnoszą koszt finansowania inwestycji (7); DM netto 0: Noble Securities utrzymało 17.09 rekomendację „sprzedaj” z ceną docelową 562 zł przy kursie 698,80 zł (−3), ale spółka jest na wrześniowej liście top picks Trigon DM z 8.09 (+3) — dwa datowane, przeciwstawne sygnały w oknie 30 dni, więc punkt neutralny (7,5); REW zysk Q2 o 3,3% poniżej konsensusu, ale raport starszy niż 30 dni, więc bez punktów karnych (5); PRZ rejestr KNF niedostępny (5); WYC P/E ok. 25,6 przy backlogu 17,9 mld zł — najdroższa spółka koszyka SHORT (2). Remis 43,1 pkt z KGHM rozstrzygnięty mniejszą wagą w WIG20 (1,57% wobec 8,03%), zgodnie z sekcją 5 metody."
+    },
+    {
+      "rank": 18,
+      "ticker": "KGHM",
+      "score": 43.1,
+      "p": 0.47,
+      "waga_wig20_pct": 8.03,
+      "rel5_pp": -3.34,
+      "rel20_pp": -13.37,
+      "pts": {
+        "momentum": 2.6,
+        "katalizatory": 10,
+        "makro": 9,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 2,6/25 (rel5 −3,34 p.p., rel20 −13,37 p.p. — najgorszy składnik 20-sesyjny w uniwersum); KAT brak potwierdzonej daty decyzji Białego Domu o cłach na miedź rafinowaną (procedura sekcji 232 nadal otwarta) → 10 + KALENDARZ_NIEPOTWIERDZONY; MAKRO jedyna mocna kategoria: miedź na LME ok. 14 694 USD/t w piątek 25.09, w okolicy historycznych maksimów i wyżej niż tydzień wcześniej, choć mocny dolar działa w drugą stronę (9); DM brak datowanego sygnału (7,5); REW brak udokumentowanej liczbowo zmiany konsensusu w 30 dniach (5); PRZ rejestr KNF niedostępny (5); WYC mnożniki po przecenie niskie (4). Spółka jest w BOTTOM5 WBREW mocnej miedzi: mechaniczne momentum waży 25 pkt i daje jej 2,6, czego żadna inna kategoria nie odrabia. Remis 43,1 pkt z BUDIMEX-em rozstrzygnięty na niekorzyść KGHM większą wagą w WIG20 (8,03% wobec 1,57%)."
+    },
+    {
+      "rank": 19,
+      "ticker": "TAURONPE",
+      "score": 40.2,
+      "p": 0.45,
+      "waga_wig20_pct": 1.62,
+      "rel5_pp": -4.44,
+      "rel20_pp": -0.59,
+      "pts": {
+        "momentum": 5.7,
+        "katalizatory": 10,
+        "makro": 4,
+        "dm": 7.5,
+        "rewizje": 3,
+        "przeplywy": 6,
+        "wycena": 4
+      },
+      "uzasadnienie": "MOM 5,7/25 (rel5 −4,44 p.p., rel20 −0,59 p.p.); KAT Fitch zmienił perspektywę ratingu BBB− z pozytywnej na stabilną 25.09, czyli w dniu D0 (dn=0), a nie w oknie D+1…D+10 → 10; MAKRO ten sam pakiet regulacyjny co przy PGE — CIT 19% → 30% od 2027 dla spółek dystrybucyjnych i WACC 8,5% na 2026 wobec ok. 12% w bieżącym roku (4); DM brak datowanego sygnału (7,5); REW jedyna udokumentowana rewizja W DÓŁ w całym rankingu: Fitch zapowiedział 25.09, że EBITDA z dystrybucji i z segmentu sprzedaży wypadnie NIŻEJ niż w jego poprzednich prognozach, a dźwignia dług netto/FFO zostanie w pasmie 3,5–4,5x zamiast spadać (3); PRZ presja pasywna zdjęta po wejściu w życie rewizji STOXX Europe 600 (21.09) (6); WYC P/E ok. 5,8 i P/BV ok. 0,75 — najtańsza spółka rankingu, ale mnożnik liczony od wyniku, który Fitch właśnie obniżył (4)."
+    },
+    {
+      "rank": 20,
+      "ticker": "DINOPL",
+      "score": 39.3,
+      "p": 0.45,
+      "waga_wig20_pct": 2.94,
+      "rel5_pp": -5.04,
+      "rel20_pp": -7.82,
+      "pts": {
+        "momentum": 1.8,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "uzasadnienie": "MOM 1,8/25 (rel5 −5,04 p.p., rel20 −7,82 p.p. — najniższe momentum w uniwersum); KAT druga tura mediacji z OPZZ Konfederacja Pracy odbyła się 24.09, czyli PRZED nowym D0, a związek zapowiedział strajk generalny bez podania daty → zgodnie z sekcją 3 metody brak punktów, 10 + KALENDARZ_NIEPOTWIERDZONY (ryzyko jest realne, ale niedatowane, więc nie wchodzi do punktacji); MAKRO sprzedaż detaliczna +3,8% r/r i model defensywny broniłyby się w scenariuszu wyższych stóp, ale deflacja żywności przy CPI idącym do 3,6% ściska sprzedaż porównywalną (7); DM brak datowanego sygnału w oknie 26.08–25.09 (7,5); REW Q2 +2% ponad konsensus z 20.08 wypadł poza okno 30 dni (5); PRZ rejestr KNF niedostępny (5); WYC premia do spółek porównywalnych utrzymana mimo −3,64% w tygodniu (3)."
+    }
+  ],
+  "katalizatory": [
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "premiera „Wiedźmin 3: Dziki Gon – Remastered”; aktualizacja darmowa dla posiadaczy gry na GOG/Steam/Epic/PS5/Xbox, monetyzacja na nowych kopiach i Nintendo Switch 2",
+      "wklad_pkt": 2,
+      "zrodlo": "bankier.pl „CD Projekt RED wyda 29 września '26 remaster Wiedźmina 3”; cdprojekt.com"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "komunikat o wstępnych wynikach za cały rok obrotowy 2025/26 (rok obrotowy kończy się we wrześniu); data potwierdzona w dwóch źródłach, co zamyka ubiegłotygodniową rozbieżność 23.09 vs 29.09",
+      "wklad_pkt": 1,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki: Tydzień z inflacją i rynkiem pracy…”, publ. 25.09.2026 (kalendarz GPW na 29.09); pepcogroup.eu — regulatory filings"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "raport półroczny — jedyny raport okresowy spółki WIG20 w oknie D+1…D+5; kierunek nieznany, brak udokumentowanego konsensusu",
+      "wklad_pkt": 1,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki…”, publ. 25.09.2026 (GPW — raport Modivo 1.10)"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "start przymusowego wykupu akcji Energi po 27,60 zł (32,8 mln akcji, ok. 907 mln zł); zamiar ogłoszony 24.09, więc zdarzenie jest „znane” i nie nosi nowej informacji",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „ORLEN zamierza przeprowadzić przymusowy wykup akcji Energi po 27,60 zł za sztukę”, 24.09.2026; strefainwestorow.pl 24.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": null,
+      "dn": null,
+      "opis": "decyzja prezydenta w sprawie ustawy o 60-procentowym podatku od nadwyżki przychodów ze sprzedaży paliw ciekłych (Senat bez poprawek 24.09, 59 za / 31 przeciw); termin podpisu, weta albo skierowania do TK nieznany — KALENDARZ_NIEPOTWIERDZONY",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Drugie podejście do windfall tax. Senat odrzuca poprawki PiS”, 24.09.2026"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-09-24",
+      "dn": -1,
+      "opis": "druga tura mediacji z OPZZ Konfederacja Pracy; związek zapowiedział strajk generalny, jeśli zarząd nie stawi się osobiście, ale DATY strajku nie podał — zdarzenie przed D0, groźba niedatowana, więc bez punktów (KALENDARZ_NIEPOTWIERDZONY)",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Jutro mediacje w Dino. Możliwy strajk generalny”; wiadomoscispozywcze.pl (list otwarty OPZZ), 09.2026"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-25",
+      "dn": 0,
+      "opis": "Fitch potwierdził rating BBB− i zmienił perspektywę z pozytywnej na stabilną; agencja oczekuje, że dług netto/FFO zostanie w pasmie 3,5–4,5x, a EBITDA z dystrybucji i sprzedaży wypadnie niżej niż w poprzednich prognozach (normalizacja WACC po szczytach 2024–2025) — zdarzenie w dniu D0, nie w oknie",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Fitch zmienił perspektywę ratingową Tauronu do stabilnej z pozytywnej”, 25.09.2026; biznes.pap.pl raport bieżący 38/2026"
+    },
+    {
+      "ticker": "KGHM",
+      "data": null,
+      "dn": null,
+      "opis": "decyzja Białego Domu o cłach na miedź rafinowaną w procedurze sekcji 232 — procedura otwarta, termin nieznany; jednostronne ryzyko dla pozycji krótkiej — KALENDARZ_NIEPOTWIERDZONY",
+      "wklad_pkt": 0,
+      "zrodlo": "stockwatch.pl „Cła na miedź zawisły w powietrzu…”; energetyka24.com (ceny miedzi, oczekiwanie na decyzję)"
+    },
+    {
+      "ticker": "ZABKA",
+      "data": "2026-10-26",
+      "dn": null,
+      "opis": "koniec zapisów w wezwaniu Alimentation Couche-Tard po 32,00 zł (transakcja 29.10, rozliczenie 3.11) — poza oknem D+10",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl „Przyjmowanie zapisów w wezwaniu Alimentation Couche-Tard na Zabka Group przedłużone do 26 X 2026 r.”"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-10-14",
+      "dn": null,
+      "opis": "NWZ — poza oknem D+10 (9.10); cap 15% w WIG20 wykonany na zamknięciu 18.09",
+      "wklad_pkt": 0,
+      "zrodlo": "strefainwestorow.pl — kalendarium WIG20"
+    },
+    {
+      "ticker": "PZU",
+      "data": "2026-10-08",
+      "dn": 9,
+      "opis": "wypłata dywidendy 4,80 zł na akcję; dzień prawa minął 15.09, więc sama wypłata nie ma wpływu na kurs",
+      "wklad_pkt": 0,
+      "zrodlo": "strefainwestorow.pl / stockwatch.pl — kalendarz dywidend 2026"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": null,
+      "dn": null,
+      "opis": "powołania prezesa i pięciorga członków zarządu po konkursie zamkniętym 16.09 — data nieznana, KALENDARZ_NIEPOTWIERDZONY",
+      "wklad_pkt": 0,
+      "zrodlo": "komunikaty spółki, nabór zamknięty 16.09.2026"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-09-25",
+      "dn": 1,
+      "opis": "Erste Group Bank AG oglosil zamiar DOBROWOLNEGO WEZWANIA na akcje Erste Bank Polska po ok. 713 zl za akcje — 11,72% PONIZEJ zamkniecia D0 (807,60 zl). Oferent ma 49% i chce przejsc powyzej 50%, maksymalnie do 75%, nabywajac pakiet od ok. 1% do 26% kapitalu; zobowiazanie inwestycyjne wobec KNF nakazuje utrzymac min. 25% w free float, wiec delistingu NIE bedzie. Warunek zawieszajacy: zgoda KNF na przekroczenie 50% glosow oraz zobowiazania akcjonariuszy z >=25% do niesksladania zapisow. Ogloszenie wezwania planowane na poczatek listopada 2026, zapisy 30 dni. Podawana premia 22,1% odnosi sie do ceny referencyjnej 584 zl z maja 2025, NIE do kursu biezacego. Komunikat o 21:06, czyli po zamknieciu sesji D0 — zdarzenie nalezy do sesji poniedzialkowej 28.09 (dn=1). ZDARZENIE POMINIETE W RANKINGU W7 (wygenerowanym 26.09), ktory przy ERSTEPL na 1. miejscu zapisal \"brak zdarzen w D+1...D+10\"; punkty pozostaja zamrozone do soboty, reakcja protokolu: CLOSE/TENDER z 27.09.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'Erste Group Bank zamierza wezwac do sprzedazy akcji Erste Bank Polska po ok. 713 zl za szt. (opis)', 25.09.2026 21:06; bankier.pl 'Erste Group oglasza zamiar przeprowadzenia dobrowolnego wezwania...', 25.09.2026"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-09-26",
+      "dn": 1,
+      "opis": "Erste Bank Polska od 26.09.2026 oprocentowuje NOWE kredyty hipoteczne wskaznikiem POLSTR 1M Stopa Skladana w miejsce WIBOR 3M (takze po zakonczeniu 5-letniego okresu stalej stopy); klienci z formularzem informacyjnym na WIBOR 3M wydanym do 25.09 zachowuja stara podstawe. Zmiana produktowa, bez bezposredniego wplywu na wynik krotkiego okna; odnotowana dla kompletnosci rejestru.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'Nowe hipoteki juz z POLSTR. Erste Bank Polska zmienia zasady oprocentowania', 25/26.09.2026; biznes.pap.pl 'Erste Bank Polska od 26 IX wprowadzi POLSTR do oferty nowych kredytow hipotecznych'"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-24",
+      "dn": -1,
+      "opis": "DM BOS w miesiecznym portfelu (Polish Equities Monthly 10/2026, publ. 24.09.2026 16:12) wpisal ALIOR na liste spolek majacych zachowywac sie GORZEJ od rynku (\"powrocil na liste shortow po kilku miesiacach\"). Zgodnie z sekcja 2 metody to datowany wpis na liste portfelowa liczacego sie DM w oknie 30 dni PRZECIW tezie LONG, wart -3 pkt w kategorii DM — a ranking W7 przyznal Aliorowi 7,5 pkt, uwzgledniajac tylko Citi z 21.09 (+3) i Wood & Company z 24.09 (-3). Sygnal jest sprzed zamkniecia D0, wiec nie jest wyzwalaczem reakcji dziennej, tylko POMINIETYM wkladem do zamrozonego rankingu (DM_SYGNAL_POMINIETY_W7).",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12 (raport DM BOS Polish Equities Monthly 10/2026)"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-09-24",
+      "dn": -1,
+      "opis": "DM BOS USUNAL CD Projekt z listy top picks w portfelu na pazdziernik 2026 (publ. 24.09.2026 16:12), uzasadniajac to nieudanym zakladem na spolke w zwiazku z przesunieciem premiery Wiedzmina 4 na 2028 rok. Ranking W7 przyznal CDPROJEKT 10,5 pkt w kategorii DM wylacznie za top pick Trigon DM z 8.09, nie uwzgledniajac przeciwnego, swiezszego sygnalu DM BOS. Sygnal sprzed D0 — wklad do rankingu, nie wyzwalacz reakcji (DM_SYGNAL_POMINIETY_W7).",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-09-24",
+      "dn": -1,
+      "opis": "DM BOS DODAL PKO BP do listy top picks na pazdziernik 2026 (publ. 24.09.2026 16:12), nazywajac spolke \"koniem pociagowym calej hossy na GPW\". Datowany wpis ZGODNY z teza LONG, wart +3 pkt w kategorii DM; ranking W7 przyznal PKOBP 7,5 pkt z adnotacja \"brak datowanego sygnalu w oknie 30 dni\" (DM_SYGNAL_POMINIETY_W7). Reakcji nie uruchamia — protokol reaguje wylacznie na zdarzenia PRZECIW tezie.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-24",
+      "dn": -1,
+      "opis": "ORLEN pozostaje na liscie DM BOS spolek majacych zachowywac sie LEPIEJ od rynku w portfelu na pazdziernik 2026 (publ. 24.09.2026 16:12) — wpis kontynuowany, nie nowy; obok Orlenu na liscie jest PGE. Sygnal dziala PRZECIW tezie SHORT; ranking W7 przyznal Orlenowi 10,5 pkt tylko za Trigon DM z 8.09. Sprzed D0, wiec nie jest wyzwalaczem reakcji dziennej.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl '5 nowych spolek w Top Picks DM BOS na pazdziernik', publ. 24.09.2026 16:12"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-25",
+      "dn": 0,
+      "opis": "Windfall tax — stan wyzwalacza tezy SHORT na 27.09: ustawa po Senacie (24.09, bez poprawek, 59:31) czeka na podpis prezydenta, ktory 25.09 przebywal w Stanach Zjednoczonych; rzad oczekuje podpisu \"niezwlocznie po powrocie\", ale ZADNEGO terminu ustawowego ani daty decyzji nie podano w datowanym zrodle. Ministrowie energii (Motyka) i infrastruktury (Klimczak) zaapelowali 25.09 o podpis. Kancelaria Prezydenta (szef KPRP Zbigniew Bogucki) ocenia ustawe jako niekonstytucyjna (naruszenie lex retro non agit: podatek od przychodow od 1.03.2026 przy wejsciu ustawy w zycie 1.11.2026) i proponuje rozwazenie poprawek. Pierwsza wersje ustawy prezydent skierowal w lipcu do TK w trybie kontroli prewencyjnej. Termin rozstrzygniecia: b.d. — KALENDARZ_NIEPOTWIERDZONY utrzymany.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 'Ministrowie apeluja: Prezydencie, podpisz ustawe paliwowa', 25.09.2026 12:35; bankier.pl 'Senat zapalil zielone swiatlo. Ustawa paliwowa czeka na podpis Nawrockiego', 24.09.2026 10:04 (aktual. 11:16); biznes.pap.pl 'Prezydent ocenia, ze ustawa dot. windfall tax jest niekonstytucyjna, proponuje wprowadzenie poprawek (opis)'"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-09-25",
+      "dn": 1,
+      "opis": "ESPI 25.09 o 19:38 (po zamknieciu sesji D0, wiec rynkowo dn=1): odrzucenie oferty Budimeksu w przetargu na modernizacje Oczyszczalni Sciekow 'Czajka' w zakresie gospodarki osadowej (budowa zespolu Wydzielonych Komor Fermentacyjnych). Oferta spolki byla 3.07.2026 oceniona najwyzej, ostatecznie nie zostala wybrana. To juz trzecie w tym kwartale postepowanie, w ktorym oferta Budimeksu odpada albo wybor jest uniewazniany (7.09 uniewazniono wybor oferty na obwodnice Brzostku i Kolaczyc w ciagu DK73). Kierunek zgodny z teza SHORT (Budimex 4. w rankingu W7 od dolu, rel5 -3,15 p.p.), wiec protokol NIE wymaga reakcji — reakcje exclude sluza ochronie pozycji przed ruchem PRZECIW tezie, a nie potwierdzaniu tezy. Wartosc przetargu nie podana w komunikacie.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — komunikaty ESPI Budimex SA, 25.09.2026 19:38 ('Modernizacja Oczyszczalni Sciekow Czajka ... odrzucenie oferty Budimex SA'); dla kontekstu ESPI 07.09.2026 16:55 (uniewaznienie wyboru oferty, DK73)"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-09-26",
+      "dn": 1,
+      "opis": "Niegotowkowe odpisy z tytulu utraty wartosci: 287,6 mln zl na aktywach Worldbox (obciaza wynik SKONSOLIDOWANY) oraz 269,8 mln zl na inwestycji w akcje Modivo.com (obciaza wylacznie wynik JEDNOSTKOWY za I polrocze 2026, bez wplywu na skonsolidowany). Powod: spowolnienie tempa ekspansji sieci Worldbox i zwrot strategiczny na wysokomarzowy segment off-price, a przy Modivo.com — slabsza od oczekiwan poprawa wynikow marek eobuwie i Modivo. Kwoty sa szacunkowe, ostateczne dane wejda do raportu polrocznego 1.10 (dn=4), ktory juz jest w rejestrze. Spolka WIG20 SPOZA koszykow i spoza listy tactical. Modul taktyczny NIE otwiera pozycji: (1) odpisy sa niegotowkowe i zapowiedziane przed raportem, wiec nie maja rangi szoku, (2) sygnaly sa sprzeczne — DM BOS dodal Modivo do top picks 24.09, (3) nie bylo sesji po komunikacie, wiec reakcji kursu nie da sie zmierzyc, (4) taktyczna SELL i tak nie weszlaby na rachunek: desired_book() pomija ja z powodem 'taktyczna SELL — rachunek LONG_ONLY'.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl 'Modivo dokona odpisow z tytulu utraty wartosci aktywow Worldbox i Modivo.com', 26.09.2026; bankier.pl 'MODIVO S.A.: Niegotowkowe odpisy zwiazane z inwestycja w Worldbox sp. z o.o. oraz Modivo.com S.A.', 26.09.2026"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "Kontekst surowcowy pierwszej sesji okna: ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach (Zloty Tydzien, powrot do pracy 8.10 — czyli praktycznie caly odcinek D+1...D+8 okna W7 przypada na zamknietego odbiorce numer jeden). Kierunek zgodny z teza SHORT na KGHM (5. miejsce od dolu w rankingu W7, rel5 -4,83 p.p.), wiec bez reakcji protokolu. Poziomu ceny nie podaje zadne datowane zrodlo w allowliscie na dzis rano — 'b.d.'. Odrebna, wciaz otwarta sprawa cel sekcji 232 na miedz rafinowana pozostaje bez daty (KALENDARZ_NIEPOTWIERDZONY).",
+      "wklad_pkt": 0,
+      "zrodlo": "strefainwestorow.pl — naglowek depeszy 'Ceny miedzi w Londynie spadaja przed swiateczna przerwa w Chinach', 28.09.2026 (wartosc ceny nieodczytana — b.d.)"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "Pierwsza sesja po ogłoszeniu zamiaru wezwania (25.09 po sesji): kurs −2,40% do 788,20 zł, wciąż 10,5% powyżej ceny wezwania 713,60 zł. KNF nie sprzeciwił się przejęciu przez Erste Asset Management akcji Erste TFI (przekroczenie 50%). Noga nie została otwarta przy rotacji 28.09 (wpis CLOSE z 27.09) — spadek obciąża tylko wariant papierowy.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „WIG20 kończy pod kreską. Orlen i energetyka nie dały rady”, 28.09.2026 17:12; strefainwestorow.pl „Skrót wiadomości — poniedziałek, 28 września, 21.00”; tabela notowań bankier.pl 28.09 17:00"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "Najsłabsza spółka WIG20: −2,72% do 321,50 zł przy miedzi na LME −1,8% (14 364 USD/t o 11:13, najniżej od 17.09) i taniejącym srebrze; słabsze dane z Chin (zyski przemysłowe za sierpień), mocniejszy dolar, Złoty Tydzień od 1.10. Zgodne z tezą SHORT — bez reakcji.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; poziom LME z depeszy agencyjnej 28.09.2026 (przez WebSearch, serwis poza allowlistą)"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "+1,21% do 150,64 zł (komentarz sesyjny bankier.pl podawał +2,5% w trakcie sesji; liczy się tabela zamknięć) przy Brent powyżej 100 USD. Przeciw tezie SHORT, poniżej progu 4%. Windfall tax 2.0: bez decyzji prezydenta, komunikat KPRP z 22.09 podtrzymuje zarzut retroaktywności — termin nieznany.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; energetyka24.com „Windfall tax dla koncernów paliwowych przeszedł przez Senat. Co zrobi prezydent?”; klubjagiellonski.pl 28.09.2026"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "+1,15% do 8,83 zł razem z sektorem energetycznym: PGE +4,1% (lider WIG20) na oczekiwaniu na aktualizację strategii (październik) i przy wysokich cenach gazu. Przeciw tezie SHORT, poniżej progu 4%.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „WIG20 kończy pod kreską…”, 28.09.2026 17:12; bankier.pl „PGE w październiku planuje przedstawić zaktualizowaną strategię (opis)”"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "Prezes Szymon Midera: wzrost dynamiki przyrostu portfela korporacyjnego; makro dla banków: Fitch podniósł prognozę PKB Polski na 2026 do 3,5%, kredyty mieszkaniowe +51,1% r/r do 13,54 mld zł. Kurs −0,14% od D0 (sektor bankowy w poniedziałek słabszy). Bez reakcji.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl „Skrót wiadomości — poniedziałek, 28 września, 21.00”"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-09-28",
+      "dn": 1,
+      "opis": "Sesja przed premierą remastera Wiedźmina 3 (29.09, 12:00): +0,25% do 245,20 zł, w trakcie sesji +1% do 247,10 zł. Reakcja na premierę do oceny po sesji 29.09.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl „DZIEŃ NA GPW: Kolejna sesja z niewielką zmiennością; Modivo najsłabsze w WIG20”, 28.09.2026 11:19; gra.pl / gry-online.pl — godzina premiery"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "Kalendarz D+2 potwierdzony w datowanych źródłach: Pepco — aktualizacja handlowa FY26 opublikowana 7:22 (prognozy w górę: zysk netto bazowy >+60%, FCF >350 mln EUR; spoza koszyków, kandydat taktyczny po ocenie reakcji kursu); RBA 6:30; BIEC 9:00; ESI UE 11:00; JOLTS i Conference Board 16:00. Data posiedzenia RPP nadal niepotwierdzona w źródle z bieżącego tygodnia.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki…”, 25.09.2026 13:38; strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-09-29”, 29.09.2026 07:01; bankier.pl „Pepco spodziewa się w FY2026 wzrostu przychodów o ok. 8 proc. …”, 29.09.2026 07:22"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "Najsłabsza spółka WIG20: −3,15% do 670,00 zł (w trakcie sesji −3,8%), od D0 −3,18% (−2,63 p.p. vs indeks) — zgodnie z tezą SHORT. Bez nowego komunikatu spółki; tło: odrzucenie oferty na Czajkę (ESPI 25.09 19:38), Noble Securities „sprzedaj” 562 zł (17.09), 28.09 pięciu wykonawców w dialogu konkurencyjnym KDP Warszawa–Łódź (neutralne).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Mocny rajd PGE i rekordowy »Wiedźmin« to za mało. WIG20 oddaje pole sprzedającym”, 29.09.2026 17:15; PAP „DZIEŃ NA GPW: WIG20 poniżej 4.150 pkt.; rynkowi ciążą spadki banków i Orlenu”, 29.09.2026; bankier.pl — wiadomości Budimeksu 28.09"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "Premiera „Wiedźmin 3: Dziki Gon — Remaster” (12:00): kurs +1,43% do 248,70 zł, od D0 +1,68% (+2,22 p.p.) — najlepsza noga LONG. Rekord jednoczesnych graczy na Steam: >111 tys. o 17:15, ok. 120 tys. wieczorem; analitycy szacują ok. 3 mln sprzedanych kopii do końca 2026. Katalizator z rejestru (dn=2, wkład 2 pkt) zrealizowany zgodnie z kierunkiem.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „W »Wiedźmin 3 — Remaster« na platformie Steam gra jednocześnie ok. 120 tys. osób”, 29.09.2026 19:20; bankier.pl „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”, 29.09.2026 09:58; bankier.pl komentarz sesyjny 29.09.2026 17:15"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "−2,70% do 146,58 zł (WIG-Paliwa −2,69%) przy Brent poniżej 97 USD i WTI ok. 90 USD; od D0 −1,52% (−0,97 p.p.) — zgodnie z tezą SHORT, poniedziałkowy ruch przeciw tezie oddany. Sąd w Warszawie zarejestrował sprawę trzech osób z Orlen Trading Switzerland (zarzut szkody ok. 1,5 mld zł). Windfall tax: prezydent bez decyzji, termin nieznany (KALENDARZ_NIEPOTWIERDZONY).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl komentarz sesyjny 29.09.2026 17:15; strefainwestorow.pl „W poszukiwaniu sygnałów — 29 września 2026”; bankier.pl „Sprawa OTS w sądzie. Premier mówi o »skandalu na cały świat«”, 29.09.2026"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "+1,72% do 8,982 zł po umowie kredytowej z PKO BP na 900 mln zł (refinansowanie kredytu konsorcjalnego z X 2024) i na fali sektora: PGE +5,31% (kredyt 3,05 mld zł BGK/PKO BP na CCGT Gryfino), Enea +3,59%, WIG-Energia +3,46%. Od D0 +2,89% (+3,43 p.p.) przeciw tezie SHORT — poniżej progu 4% (9,079 zł), bez reakcji; noga najbliżej progu w koszyku.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — wiadomości Tauronu 29.09.2026 14:48; bankier.pl — wiadomości PGE 29.09.2026; bankier.pl komentarz sesyjny 29.09.2026 17:15; strefainwestorow.pl (ENA, WIG-ENERG)"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "+2,37% do 35,41 zł bez komunikatu spółki; od D0 +2,82% (+3,36 p.p.) przeciw tezie SHORT — poniżej progu 4% (35,82 zł), bez reakcji. Strajk generalny OPZZ nadal niedatowany (związek deklaruje 5-dniowe wyprzedzenie wobec zarządu) — KALENDARZ_NIEPOTWIERDZONY.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl, odczyt 29.09.2026 17:03; bankier.pl — wiadomości Dino (brak wpisów 26–30.09); portalspozywczy.pl „Związkowcy podają termin strajku generalnego w Dino” (przez WebSearch, niezweryfikowane)"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "−1,41% do 136,80 zł przy WIG-Banki −0,92%; od D0 −1,62% (−1,07 p.p.) przeciw tezie LONG — poniżej progu 4% (133,49 zł), bez reakcji. Komunikat neutralny: plan emisji senioralnych euroobligacji do 500 mln EUR w programie EMTN. Brak nowych rekomendacji (ostatnia Citi 21.09 „kupuj” 146,80 zł, przed D0).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Alior Bank planuje emisję senioralnych euroobligacji o wartości nominalnej do 500 mln euro”, 29.09.2026; bankier.pl komentarz sesyjny 29.09.2026 17:15; bankier.pl/gielda/rekomendacje — przegląd 30.09.2026"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "−0,79% do 123,38 zł; od D0 −0,93% (−0,38 p.p.), bez reakcji. Zamknięta emisja obligacji senior non-preferred na 1,35 mld zł (18:50). Ekonomiści banku: CPI za wrzesień powyżej 4%, stopy bez zmian, pierwsza obniżka o 25 pb w II kw. 2027; PKB 2026 3,5%, 2027 2,8% — tło zgodne z tezą marżową.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — wiadomości PKO BP, 29.09.2026 (11:16, 11:30, 18:50); bankier.pl komentarz sesyjny 29.09.2026 17:15"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-09-29",
+      "dn": 2,
+      "opis": "Reakcja kursu na aktualizację handlową FY26 (prognozy w górę: bazowy zysk netto >+60%, FCF >350 mln EUR) i zatwierdzony wieloletni skup akcji do 400 mln EUR (7:30): +1,87% do 44,57 zł (+2,3 p.p. vs indeks), druga najmocniejsza spółka WIG20. Moduł taktyczny: BEZ wpisu — brak publikowanego konsensusu do porównania, a reakcja o rząd słabsza niż przy poprzednich wejściach (PGE +7,78% 2.09, Allegro +9,49% 17.09). Pełne wyniki FY26 9.12.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Zarząd Pepco zatwierdził utworzenie nowego programu skupu akcji własnych o wartości do 400 mln euro”, 29.09.2026 07:30; bankier.pl „Pepco przygotowane do sezonu świątecznego; liczy na dalszy wzrost LFL”, 29.09.2026 13:44; bankier.pl komentarz sesyjny 29.09.2026 17:15"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "Kalendarz D+3 potwierdzony w datowanych źródłach z bieżącego tygodnia: 9:30 GUS szybki szacunek CPI za wrzesień (konsensus ISBnews 4,1% r/r, strefainwestorow.pl ok. 4,0%, ekonomiści PKO BP >4%; poprzednio 3,4%; paliwa ok. +10% m/m); 9:00 BIEC rynek pracy; 14:00 NBP bilans płatniczy II kw.; 15:00 MF plan podaży SPW IV kw.; Orlen ogłasza przymusowy wykup Energi po 27,60 zł. Sesja 29.09: WIG20 −0,44% do 4157,40 (obroty 2,36 mld zł), od D0 −0,55%; wynik rachunku −0,06 p.p., spread papierowy −0,36 p.p.",
+      "wklad_pkt": null,
+      "zrodlo": "strefainwestorow.pl „TYDZIEŃ W KRAJU: Flash inflacji za IX, wskaźnik PMI, podaż SPW na IV kw.”, publ. 28.09.2026; ISBnews „Kalendarium wydarzeń makroekonomicznych na środę” (przez WebSearch); bankier.pl — wiadomości PKO BP 29.09.2026 11:16; bankier.pl 24.09.2026 (wykup Energi); scripts/metryki.py rozlicz --d5 2026-09-29"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "+2,65% do 9,22 zł (max 9,272) na fali sektora: WIG-Energia +4,61% blisko historycznego szczytu, PGE +6,10% najwyżej od 2015 r. Od D0 +5,61% (+5,58 p.p.) PRZECIW tezie SHORT — przekroczony próg miękki 4%: reakcja REDUCE/PRICE_4_8 z 1.10 (price_before 9,22). Próg CLOSE 8% = 9,428 zł. Bez komunikatu spółki 30.09.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl „Kurs PGE najwyżej od 11 lat. Energetyka dalej mocna na warszawskim parkiecie”, 30.09.2026 17:20 (WIG-Energia +4,61%, Tauron +2,65%, PGE +6,1%)"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "Fitch podniósł rating długoterminowy Alior Banku do BBB− z BB+ (perspektywa stabilna) — komunikat 16:52, w trakcie sesji; kurs +0,66% do 137,70 zł, od D0 −0,97%. Sygnał ZGODNY z tezą LONG (pierwszy rating inwestycyjny od Fitch), bez reakcji protokołu.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — wiadomości Alior Banku „Fitch podniósł rating Alior Banku do 'BBB-' z 'BB+'”, 30.09.2026 16:52; tabela notowań bankier.pl 30.09 17:00"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "+2,13% do 254,00 zł (max 254,0) po rekordzie Steam remastera Wiedźmina 3 (ok. 120 tys. graczy jednocześnie, 9. miejsce globalnych bestsellerów Steam wg przychodów); analitycy Erste Group: ok. 3 mln kopii i do 125 mln zł przychodów w II poł. 2026. Od D0 +3,84% (+3,81 p.p.) — najlepsza noga LONG. Komentarz sesyjny bankier.pl podał błędny znak (−2,13%); tabela notowań 17:03 rozstrzyga: 254,0 zł, +2,13%.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:03 (254,0; +2,13%; 5,3 zł); strefainwestorow.pl „Premiera »Wiedźmin 3: Dziki Gon — Remaster« przyniosła rekord liczby graczy na Steam. Jaką sprzedaż prognozują analitycy?”; bankier.pl 29.09.2026 19:20"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "GUS, szybki szacunek CPI za wrzesień: 4,0% r/r (konsensus PAP 4,1%; sierpień 3,4%), 0,7% m/m; paliwa +36,1% r/r (+9,2% m/m). Pełne dane 14.10. Sesja D+3: WIG20 +0,59% do 4181,83 (w ciągu dnia ok. +1%, test 4200), obroty 2,9 mld zł (2,4 mld na WIG20); WIG-Banki +0,76%, WIG-Energia +4,61%. Od D0 WIG20 +0,04%; wynik rachunku +0,16 p.p., spread papierowy −0,20 p.p.",
+      "wklad_pkt": null,
+      "zrodlo": "GUS szybki szacunek 30.09.2026 9:30 (przez WebSearch: portalspozywczy.pl/PAP „Inflacja CPI we wrześniu rdr wyniosła 4,0 proc., a mdm 0,7 proc.”, gazetaprawna.pl); bankier.pl „Kurs PGE najwyżej od 11 lat…”, 30.09.2026 17:20; strefainwestorow.pl „DZIEŃ NA GPW: WIG20 rośnie do 4.200 pkt…”, 30.09.2026 11:15; scripts/metryki.py rozlicz --d5 2026-09-30"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "Ogłoszenie przymusowego wykupu 32 299 946 akcji Energi (ok. 3,87% głosów) po 27,60 zł; dzień wykupu 5.10 (zdarzenie „znane” od 24.09). Kurs −0,35% do 146,06 zł, od D0 −1,87% (−1,91 p.p.) zgodnie z tezą SHORT. Windfall tax 2.0: nadal bez decyzji prezydenta, żadne datowane źródło nie podaje terminu — KALENDARZ_NIEPOTWIERDZONY.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — wiadomości Orlenu 30.09.2026 08:44 (wykup Energi); tabela notowań bankier.pl 30.09; bankier.pl „Senat zapalił zielone światło…”, 24.09.2026 (bez terminu decyzji)"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "+1,50% do 798,00 zł (max 808,8) bez nowych komunikatów; 11,8% powyżej ceny wezwania 713,60 zł. Od D0 −1,19% (−1,23 p.p.); noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — spadek obciąża tylko wariant papierowy.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl — wiadomości Erste Bank Polska (ostatnie: 28.09 07:56 wezwanie 713,6 zł; 28.09 18:42 KNF/Erste TFI)"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "+6,10% do 15,14 zł — najwyżej od jesieni 2015; od D0 +16,28%. Komunikat 13:06: „Projekt MOC” — pozyskiwanie z rynku projektów OZE, magazynów energii i infrastruktury sieciowej (akwizycje); aktualizacja strategii zapowiedziana na październik (bez daty). Spółka spoza koszyków; moduł taktyczny BEZ wpisu — brak twardego wyzwalacza z listy (wynik ponad konsensus / przełomowy kontrakt / wezwanie), ruch sektorowy.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:03; bankier.pl — wiadomości PGE 30.09.2026 13:06 (Projekt MOC) i 16.09.2026 12:36 (strategia w październiku); bankier.pl „Kurs PGE najwyżej od 11 lat…”, 30.09.2026 17:20"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "+2,03% do 329,55 zł bez komunikatu spółki (ostatni 24.09, projekt Victoria w Ontario); od D0 −0,29% (−0,33 p.p.), zgodnie z tezą, ale przewaga prawie wyczerpana. Poziom miedzi LME na 30.09: b.d. (brak datowanego źródła w allowliście). Chiny: Złoty Tydzień od 1.10 do 8.10.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026; bankier.pl — wiadomości KGHM (brak wpisów 25–30.09)"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "−0,09% do 669,40 zł, od D0 −3,27% (−3,30 p.p.) — najlepsza noga SHORT; bez komunikatów spółki 29–30.09.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:00; bankier.pl — wiadomości Budimeksu (ostatni wpis 28.09, KDP)"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-09-30",
+      "dn": 3,
+      "opis": "−0,96% do 35,07 zł bez komunikatu spółki; od D0 +1,83% (+1,79 p.p.) przeciw tezie, z powrotem wyraźnie poniżej progu 4% (35,82 zł). Strajk OPZZ nadal niedatowany.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 30.09.2026 17:04; bankier.pl — wiadomości Dino (brak wpisów 19–30.09)"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "Dziś raport półroczny (po odpisach zapowiedzianych 25.09: 287,6 mln zł Worldbox w skonsolidowanym, 269,8 mln zł Modivo.com w jednostkowym). 30.09 kurs −2,72% do 85,90 zł, od D0 −6,67% — najsłabsza spółka WIG20 w oknie. Spoza koszyków; taktyczna SELL i tak nie weszłaby na rachunek (LONG_ONLY). Do rana 1.10 (8:20) raport jeszcze nieopublikowany na bankier.pl.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl/gielda/kalendarium (1.10: MODIVO — raport za I półrocze 2026); bankier.pl — wiadomości Modivo (ostatni wpis 25.09 23:34); tabela notowań bankier.pl 30.09"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "Kalendarz D+4 potwierdzony w źródłach z bieżącego tygodnia: 9:00 PMI przemysłu Polska (także Węgry, Szwecja, Japonia, Indie), 10:00 PMI strefa euro, 10:30 PMI W. Brytania, 11:00 bezrobocie UE, 11:30 Challenger (USA), 14:30 wnioski o zasiłek USA, 16:00 ISM przemysłu USA; wystąpienia Lagarde i Baileya; GPW: raport półroczny Modivo. Chiny: początek Złotego Tygodnia (do 8.10) — rynek miedzi bez pierwszego odbiorcy (KGHM). Posiedzenie RPP: nadal bez datowanego potwierdzenia.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy oraz czas giełdowych maruderów”, publ. 25.09.2026; bankier.pl/gielda/kalendarium — odczyt 1.10.2026 8:20; strefainwestorow.pl „TYDZIEŃ W KRAJU…”, publ. 28.09.2026 (PMI 9:00, Modivo)"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "PMI przemysłu Polska za wrzesień 49,0 pkt (konsensus 48,0; sierpień 48,3) — 17. miesiąc poniżej 50, ale najwyżej od kwietnia. Sesja D+4: WIG20 −1,90% do 4 102,20 (najgorsza od 27.08; 17 z 20 spółek na minusie, obroty 2,79 mld zł), WIG-Banki −3,64%, WIG-Górnictwo −2,53%, WIG-Energia +0,10%, WIG-Paliwa +0,02%. Impuls: kolejna fala wyprzedaży obligacji — rentowność 10-latek USA 5,34% (najwyżej od 2002 r.), USD/PLN 3,8848 (najsłabszy złoty od kwietnia 2025); FTSE 100 −1,7%, DAX −0,9%, CAC 40 −1,6%.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Polski przemysł wciąż pod kreską, ale spadek wyhamowuje. PMI powyżej oczekiwań”, 1.10.2026; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca. Akcje banków wyprzedawane”, 1.10.2026 17:29; strefainwestorow.pl „WIG20 na zamknięciu wyniósł 4102,20 pkt (−1,90%)”, 1.10.2026 17:41; tabela indeksów bankier.pl 1.10 17:15"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−3,78% do 132,50 zł (zakres 131,55–138,95; obrót 49,6 mln zł) w sektorowej wyprzedaży banków; od D0 −4,71% (−2,84 p.p.) — próg miękki 4% (133,49 zł) przebity → REAKCJA PROTOKOŁU 2.10: REDUCE (PRICE_4_8), noga faktycznie otwarta na rachunku, cięcie do 50% od 132,50 zł. Próg twardy CLOSE 127,93 zł. Bez komunikatu spółki 1.10; sygnały spółkowe (Fitch BBB− 30.09, Citi „kupuj” 21.09) nadal zgodne z tezą.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca…”, 1.10.2026 17:29; bankier.pl — wiadomości Alior Banku (ostatni wpis 30.09, Fitch)"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−3,48% do 119,68 zł (największe obroty rynku: 647,9 mln zł); od D0 −3,90% (−2,04 p.p.) — 0,12 zł NAD progiem miękkim 4% (119,56 zł), bez reakcji protokołu. Brak komunikatów spółki 1.10 (ostatni 29.09 18:50: emisja SNP 1,35 mld zł).",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl „Najgorsza sesja WIG20 od ponad miesiąca…”, 1.10.2026 17:29; bankier.pl — wiadomości PKO BP"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−3,26% do 772,00 zł (zakres 768,4–798,0; obrót 98,3 mln zł) razem z sektorem; od D0 −4,41% (−2,54 p.p.); kurs 8,2% powyżej ceny wezwania 713,60 zł. Brak nowych komunikatów (ostatnie 28.09). Noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — spadek obciąża tylko wariant papierowy.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl — wiadomości Erste Bank Polska"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "+0,20% do 254,50 zł (max 258,10, obrót 111,4 mln zł) wbrew rynkowi −1,90%; od D0 +4,05% (+5,91 p.p.) — najlepsza noga LONG. Remaster Wiedźmina 3 nadal ok. 120 tys. jednoczesnych graczy na Steam; analitycy mówią o milionach sprzedanych kopii.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:01; bankier.pl 1.10.2026 „W »Wiedźmin 3 – Remaster« na Steam gra jednocześnie ok. 120 tys. osób”; „CD Projekt RED odpala darmowy hit. Analitycy wieszczą miliony sprzedanych kopii”"
+    },
+    {
+      "ticker": "LPP",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−0,40% do 24 740 zł; od D0 −0,64% (+1,22 p.p.). Jedyny komunikat: 30.09 transakcje na akcjach emitenta (art. 19 MAR). Bez reakcji.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:03; bankier.pl — wiadomości LPP"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-10-01",
+      "dn": 5,
+      "opis": "WYZWALACZ TEZY ZREALIZOWANY: prezydent Nawrocki podpisał 1.10 o 20:09 (orędzie) ustawę o podatku od nadwyżki przychodów ze sprzedaży paliw (producenci oddają 60% nadwyżki ponad zwykłą marżę, sprzedawcy 50%; okres 1.03.2026–31.03.2027; wpływy ok. 4 mld zł na program „Ceny Paliw Niżej”), kierując ją równocześnie do TK w trybie kontroli następczej. Minister finansów: ceny na stacjach niższe już w przyszłym tygodniu. Zdarzenie po 17:00 → sesja 2.10 (dn=5). Kurs 1.10 (przed decyzją) +0,07% do 146,16 zł; od D0 −1,80% (+0,07 p.p.). Zamyka pozycję KALENDARZ_NIEPOTWIERDZONY dla tego zdarzenia.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Koncerny paliwowe zapłacą większy podatek. Jest podpis prezydenta”, 1.10.2026 (orędzie 20:09); polsatnews.pl / tvn24.pl 1.10.2026 (przez WebSearch); tabela notowań bankier.pl 1.10 17:03"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−1,04% do 9,124 zł; od D0 +4,51% (+6,38 p.p.) — nadal w pasmie 4–8%, REDUCE z 1.10 utrzymany (próg CLOSE 9,428 zł). Trzy zdarzenia spółkowe: ESPI 11:00 zawieszenie postępowania arbitrażowego z AM Global Holding / ArcelorMittal Poland; 12:58 zarząd widzi „duże szanse”, by bloki węglowe 200 MW pracowały po 2028 r.; 14:02 plan transformacji czterech lokalizacji (Jaworzno: OCGT 2×315 MW, pozwolenie na budowę II kw. 2027; Siersza: OCGT do 630 MW na 2031/32, magazyny, PV; Łaziska/Łagisza: 7 projektów) — każdy duży projekt gazowy w osobnej spółce z możliwym partnerem kapitałowym przy limicie długu; ambicja dywidendy. Rynek: neutralnie (spadek mniejszy niż indeks).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl — wiadomości Tauronu 1.10.2026 11:00 / 12:58 / 14:02; bankier.pl „Tauron przedstawia plan transformacji czterech lokalizacji…”, 1.10.2026 14:02; tabela notowań bankier.pl 1.10 17:02; strefainwestorow.pl 1.10 17:41 (TPE −1,04%)"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "Komunikat 2.10 07:14: start rozbudowy Sierra Gorda (Chile, 55% KGHM / 45% South32) za 725 mln USD — czwarta linia mielenia, przerób rudy z ok. 48 do ok. 60 mln t rocznie, produkcja miedzi +ok. 20%, budowa do końca 2029, pełna moc II poł. 2030 (zdarzenie przed sesją → dn=5). Capex rozłożony na lata, bez wpływu na wyniki okna. Sesja 1.10: −2,53% do 321,20 zł (obrót 269 mln zł, WIG-Górnictwo −2,53%); od D0 −2,81% (−0,95 p.p.) — zgodnie z tezą. Chiny zamknięte do 8.10.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „KGHM rozpoczyna rozbudowę kopalni Sierra Gorda w Chile”, 2.10.2026 07:14; strefainwestorow.pl 2.10.2026; tabela notowań bankier.pl 1.10 17:03"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−1,22% do 661,20 zł (min 653,0); od D0 −4,45% (−2,58 p.p.) — najlepsza noga SHORT, przebity próg 4% W STRONĘ tezy. Bez komunikatów spółki (ostatni 25.09: odrzucenie oferty na „Czajkę”).",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:00; bankier.pl — wiadomości Budimeksu"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "−1,43% do 34,57 zł (obrót 103 mln zł); od D0 +0,38% (+2,24 p.p.), daleko od progu 4% (35,82 zł). Bez komunikatów spółki; strajk OPZZ nadal niedatowany.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:04; bankier.pl — wiadomości Dino"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "Raport półroczny (ESPI datowany 2.10, depesza 06:22): II kw. 2026/27 przychody 3 045,5 mln zł (+5,2% r/r), EBITDA 31,7 mln zł, strata operacyjna −215,3 mln zł (rok wcześniej +277,1 mln zł zysku), strata netto j.d. −204 mln zł (rok wcześniej +60 mln zł) — w całości efekt zapowiedzianych 25.09 odpisów (Worldbox 287,6 mln zł: goodwill 116,8 + aktywa trwałe 170,8; Modivo.com 269,8 mln zł). Sierpień–wrzesień: sprzedaż +13% (HalfPrice +38%, CCC +5%, Modivo.com −7%). Kurs 1.10 (przed raportem) +0,70% do 86,50 zł; od D0 −6,02%. Moduł taktyczny: brak SELL — odpisy znane od 25.09, a SELL i tak nie wchodzi na rachunek LONG_ONLY.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Grupa Modivo miała w II kw. 2026/27 r. 204 mln zł straty netto j.d. wobec 60 mln zł zysku rok wcześniej”, 2.10.2026 06:22; bankier.pl „MODIVO S.A.: Wyniki finansowe PSr /2026” (ESPI 2.10); tabela notowań bankier.pl 1.10 17:02"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-10-01",
+      "dn": 4,
+      "opis": "+2,15% do 15,465 zł wbrew rynkowi; od D0 +18,78% (+20,65 p.p.) — najmocniejsza spółka WIG20 okna. Komunikaty: 1.10 transakcje art. 19 MAR; 29.09 kredyt terminowy 3,05 mld zł na refinansowanie CCGT Gryfino. Moduł taktyczny: brak twardego wyzwalacza (ruch sektorowo-makro, strategia zapowiedziana na październik bez daty).",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 1.10.2026 17:04; bankier.pl — wiadomości PGE; strefainwestorow.pl 1.10 17:41"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "Kalendarz D+5 (ostatnia sesja okna W7) potwierdzony w datowanych źródłach: 11:00 wstępny HICP strefy euro za wrzesień; 14:30 raport z rynku pracy USA (NFP) za wrzesień; 16:00 zamówienia w przemyśle USA za sierpień; Chiny zamknięte do 8.10; GPW bez wydarzeń WIG20 (Kernel — raport roczny; BM Reflex — ceny paliw). RPP: następne posiedzenie decyzyjne 6–7.10 wg komunikatu po posiedzeniu wrześniowym (bankier.pl 9.09.2026) — źródło datowane, ale sprzed bieżącego tygodnia, więc kod KALENDARZ_NIEPOTWIERDZONY utrzymany dla tej daty.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Tym będą żyły rynki: tydzień z inflacją i rynkiem pracy…”, 25.09.2026 13:38; bankier.pl/gielda/kalendarium (odczyt 2.10 ok. 8:20); strefainwestorow.pl „Kalendarium rynku kapitałowego GPW 2026-10-02”; bankier.pl „Stopy w NBP bez zmian we wrześniu 2026…”, 9.09.2026"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "WYZWALACZ TEZY SHORT — ciąg dalszy: komunikat spółki (depesza bankier.pl 12:48, aktualizacja 13:17) — wstępny szacunek zobowiązania z podatku od nadzwyczajnych zysków za marzec–sierpień 2026 to ok. 2 mld zł (rząd szacuje wpływy z całej ustawy na ok. 4 mld zł); od 2.10 VAT na paliwa 8% i limity cen na stacjach (Pb95 maks. 6,73 zł/l, diesel 7,88 zł/l). Kurs −1,26% do 144,32 zł (w trakcie sesji −2,8% do 142 zł, obrót ok. 62 mln zł), WIG-Paliwa −1,24%, Unimot −2,80%. Od D0 -3.04% kursu (+0.74 p.p. dla pozycji krótkiej) — zgodnie z tezą; okno W7 zamknięte. Pozycja KALENDARZ_NIEPOTWIERDZONY dla tego zdarzenia pozostaje zamknięta (podpis 1.10 20:09).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Rachunek za podatek wystawiony. Orlen szacuje koszt nowej daniny na 2 miliardy złotych”, 2.10.2026 12:48; bankier.pl „Spadki na Orlenie. Giełda reaguje na nowe podatki paliwowe”, 2.10.2026 10:04; bankier.pl „Limity cen paliw wchodzą w życie…”, 2.10.2026 13:48; tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce)"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "Lider WIG20: +4,39% do 335,30 zł (WIG-Górnictwo +4,24%, najmocniejszy indeks sektorowy dnia) po komunikacie o rozbudowie Sierra Gorda za 725 mln USD (czwarta linia mielenia, przerób 48→60 mln t rudy rocznie, koniec budowy 2029; Sierra Gorda ma spłacić dług w ok. 4 lata przy obecnych cenach miedzi — wiceprezes Krzyżewski, 1.10 19:04). Od D0 +1.45% (-3.75 p.p. dla pozycji krótkiej) — PRZECIW tezie SHORT, ale poniżej progu 4% (343,72 zł), bez reakcji; okno W7 zamknięte. Cena miedzi LME z 2.10: b.d. (brak datowanego źródła w allowliście; Chiny zamknięte do 8.10).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Dawniej »polityczna wpadka«, dziś kura znosząca złote jaja. KGHM rozbudowuje chilijską potęgę”, 2.10.2026 08:36; bankier.pl „Sierra Gorda zwiększy moce i produkcję miedzi. Spłaci zadłużenie za ok. 4 lata”, 1.10.2026 19:04; tabela indeksów bankier.pl 2.10 17:15; tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce)"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "−1,20% do 118,24 zł; od D0 -5.06% (-2.76 p.p.) — próg miękki 4% (119,56 zł), który 1.10 ocalał o 0,12 zł, przebity na zamknięciu D+5 → reakcja REDUCE (PRICE_4_8) z 3.10, EWIDENCYJNA: bez wpływu na rozliczenie zarządzane W7 (brak sesji po dacie reakcji). Sektor: WIG-Banki −0,92% (najsłabszy dnia), pięć banków WIG20 na minusie; presja po danych NBP o zysku netto sektora za I–VIII 2026: 29,3 mld zł, −11,9% r/r. Bez komunikatu spółki 1–2.10.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „100% premii w wezwaniu i kurs cały dzień na widłach. Dobra sesja spółek kosmicznych”, 2.10.2026 17:29; tabela indeksów bankier.pl 2.10 17:15; tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości PKO BP (ostatni komunikat 29.09 18:50)"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "−1,89% do 130,00 zł (najsłabszy bank WIG20 w piątek); od D0 -6.51% (-4.21 p.p.) — najgorsza noga LONG okna. REDUCE z 2.10 utrzymany, bez awansu: do progu twardego CLOSE (127,93 zł) zabrakło 1,59%. Bez komunikatu spółki 1–2.10 (ostatnie: Fitch BBB− 30.09 16:52, plan euroobligacji do 500 mln EUR 29.09 15:08). Kurs reakcji 132,50 zł → od cięcia −1,89% na połowie wagi.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości Alior Banku; bankier.pl „100% premii w wezwaniu i kurs cały dzień na widłach. Dobra sesja spółek kosmicznych”, 2.10.2026 17:29"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "−1,48% do 760,60 zł; od D0 -5.82% (-3.52 p.p.); kurs 6,6% powyżej ceny wezwania 713,60 zł (28.09: 10,5%, 1.10: 8,2% — luka domyka się od góry). Noga nieotwarta na rachunku (CLOSE/TENDER z 27.09) — reakcja oszczędziła rachunkowi −5,82% na tej nodze. Bez nowych komunikatów 1–2.10.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości Erste Bank Polska"
+    },
+    {
+      "ticker": "LPP",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "−2,91% do 24 020 zł (WIG-Odzież −2,12%; LPP to ok. 82% indeksu) bez komunikatu spółki ani rekomendacji — ruch sektorowo-techniczny po sesji z globalnym odbiciem; od D0 -3.53% (-1.24 p.p.), 0,47 p.p. NAD progiem miękkim 4% (23 904 zł) — bez reakcji; okno zamknięte.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości LPP (brak pozycji 30.09–3.10); tabela indeksów bankier.pl 2.10 17:15"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "−0,39% do 253,50 zł (WIG-Gry −0,27%); od D0 +3.64% (+5.93 p.p.) — jedyna noga LONG na plusie i najlepsza w koszyku; katalizator (remaster Wiedźmina 3, 29.09, rekord ok. 120 tys. graczy na Steam, prognoza Erste ok. 3 mln kopii do końca 2026) zadziałał zgodnie z rankingiem W7 (wklad_pkt 2). Bez komunikatów 1–2.10.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości CD Projekt (29.09 09:58 i 19:20)"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "+0,18% do 9,14 zł WBREW korekcie sektora (WIG-Energia −1,66%, PGE −2,85%, Enea −2,5%); od D0 +4.70% (-6.99 p.p. dla pozycji krótkiej) — najgorsza noga papierowego SHORT, REDUCE z 1.10 utrzymany, bez awansu (próg CLOSE 9,428 zł). Komunikaty 1.10: zawieszenie arbitrażu z ArcelorMittal (11:00), prezes Lot o blokach 200 MW po 2028 (12:58), plan transformacji Jaworzna/Sierszy/Łazisk/Łagiszy (14:02). Koszyka SHORT bot nie handluje.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); tabela indeksów bankier.pl 2.10 17:15; bankier.pl — wiadomości Tauronu 1.10.2026; bankier.pl „100% premii w wezwaniu i kurs cały dzień na widłach. Dobra sesja spółek kosmicznych”, 2.10.2026 17:29"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "+1,81% do 673,20 zł (WIG-Budownictwo +1,22%) bez komunikatu spółki — odbicie po trzech sesjach spadku; od D0 -2.72% (+0.42 p.p. dla pozycji krótkiej) — nadal zgodnie z tezą, ale piątek oddał 1,8 p.p. przewagi. Okno zamknięte.",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości Budimeksu (ostatnia pozycja 28.09)"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "−2,63% do 33,66 zł bez komunikatu spółki (WIG-Spożywczy +1,01% — ruch spółkowy, nie sektorowy); od D0 -2.26% (-0.03 p.p. dla pozycji krótkiej) — okno zamknięte praktycznie na poziomie indeksu. Strajk generalny OPZZ nadal niedatowany (KALENDARZ_NIEPOTWIERDZONY).",
+      "wklad_pkt": null,
+      "zrodlo": "tabela notowań bankier.pl 2.10.2026 17:00–17:15 (zamknięcia po dogrywce); bankier.pl — wiadomości Dino (brak pozycji 1–3.10); tabela indeksów bankier.pl 2.10 17:15"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-02",
+      "dn": 5,
+      "opis": "Sesja D+5 zamyka okno W7: WIG20 −0,44% do 4 084,31 (od D0 -2.30%), WIG −0,32%, mWIG40 −0,17%, sWIG80 +0,29%; obroty 2,43 mld zł (1,92 mld zł w WIG20). Polska giełda słaba mimo odbicia globalnego: Nasdaq +1,6% (rekord), S&P 500 +0,6%, DAX +1,3%, CAC 40 +1,1%. Impuls: raport z rynku pracy USA za wrzesień — payrolls +29 tys. (konsensus +84 tys.), bezrobocie 4,2% (oczek. 4,1%), płace +3,0% r/r (najniżej od 2021) i rewizje w dół za VII–VIII — mniejsze obawy o podwyżki Fed. Brent poniżej 100 USD, USD/PLN 3,89. Rano HICP flash strefy euro (11:00) zgodnie z kalendarzem. Wrześniowe obroty GPW 61,5 mld zł, +60,1% r/r (GPW, 15:24).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „100% premii w wezwaniu i kurs cały dzień na widłach. Dobra sesja spółek kosmicznych”, 2.10.2026 17:29; tabela indeksów bankier.pl 2.10 17:15; cnbc.com / finance.yahoo.com — raport BLS za wrzesień 2026 (2.10.2026 14:30, przez WebSearch); bankier.pl „Giełda — wiadomości” 2.10.2026 (NFP 14:30, obroty GPW 15:24)"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-07",
+      "dn": 8,
+      "opis": "KALENDARZ TYGODNIA 5–9.10 POTWIERDZONY w datowanym źródle z bieżącego tygodnia (bankier.pl, publ. 2.10.2026): pon. 5.10 — GPW przechodzi z UTP na własny system transakcyjny WATS (pierwsza sesja na nowym systemie = dzień rotacji bota 9:15), PMI usług (strefa euro, Niemcy, USA), ISM usług USA; wt. 6.10 — zamówienia w przemyśle Niemiec, sprzedaż detaliczna strefy euro, bilans handlowy USA; śr. 7.10 — DECYZJA RPP (konsensus: stopy bez zmian, referencyjna 3,75%), 20:00 protokół FOMC, CPI Węgier i Szwecji; czw. 8.10 — 15:00 konferencja prezesa NBP A. Glapińskiego, protokół EBC, powrót Chin po Złotym Tygodniu; pt. 9.10 — 14:00 protokół z wrześniowego posiedzenia RPP, Michigan (USA). Data RPP 6–7.10 z raportu W7 (wpisana tam jako b.d./KALENDARZ_NIEPOTWIERDZONY, bo nbp.pl zablokowany) okazała się POPRAWNA — pozycja (1) kodu KALENDARZ_NIEPOTWIERDZONY zamknięta, RPP_DATE_ERROR nie dotyczy. Zdarzenia poza oknem wyniku W7 (D+6…D+10), istotne dla rankingu W8.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Zmiana systemu i decyzja w sprawie kosztu kredytów. Arcyciekawy tydzień w Polsce”, publ. 2.10.2026"
+    }
+  ],
+  "data_quality": [
+    "FMP_PLAN_BLOKADA",
+    "KURS_ZRODLO_REZERWA",
+    "KNF_SHORT_NIEDOSTEPNY",
+    "DYWIDENDA_KOREKTA_PZU",
+    "KALENDARZ_NIEPOTWIERDZONY",
+    "WEZWANIE_ERSTEPL_POMINIETE_W7",
+    "DM_SYGNAL_POMINIETY_W7"
+  ]
 }

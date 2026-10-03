@@ -66,9 +66,18 @@
       "price_before": 132.5,
       "move_from_d0_pct": -4.71,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "PKOBP",
+      "action": "REDUCE",
+      "date": "2026-10-03",
+      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8%: zamkniecie 2.10.2026 (sesja D+5, ostatnia w oknie W7) 118,24 zl wobec D0 124,54 zl = -5,06% (-2,76 p.p. wobec WIG20 -2,30%); prog miekki 4% = 119,56 zl, ktory w czwartek 1.10 (119,68 zl) ocalal o 0,12 zl, zostal przebity w piatek (-1,20% d/d); prog twardy CLOSE (PRICE_8) = 114,58 zl. Piatek -1,20% przy WIG-Banki -0,92% (najslabszy sektor dnia, 5 z 5 bankow WIG20 na minusie: Alior -1,89%, Erste -1,48%, mBank -1,24%, Pekao -0,78%) po danych NBP o zysku sektora za I-VIII 2026: 29,3 mld zl, -11,9% r/r. Brak komunikatu spolki 1-2.10 (ostatni 29.09 18:50 - emisja SNP 1,35 mld zl); DM BOS 24.09 trzyma PKO BP na liscie top picks - sygnaly spolkowe ZGODNE z teza, wiec wyzwalacz cenowy sektorowy, szczebel miekki. UWAGA EWIDENCYJNA: wyzwalacz uruchomil sie na zamknieciu D+5, wiec reakcja nie ma wplywu na rozliczenie zarzadzane okna W7 (zadnej sesji po dacie reakcji); wpis jest zapisem mechanicznym protokolu i obowiazuje tylko do sobotniej rotacji - raport tygodniowy W8 zeruje liste exclude, a przy ewentualnym ponownym wejsciu PKOBP do koszyka liczy sie nowe D0. Gdyby rotacja na W8 nie nastapila, /run w poniedzialek 9:15 tnie noge do polowy (REDUCE_FACTOR 0,5) od kursu 118,24 zl. Zrodlo: tabela notowan bankier.pl 2.10.2026 17:04 (PKOBP 118,24; -1,20%); tabela indeksow bankier.pl 2.10 17:15 (WIG-BANKI 27 140,80; -0,92%); bankier.pl '100% premii w wezwaniu i kurs caly dzien na widlach. Dobra sesja spolek kosmicznych', 2.10.2026 17:29 (dane NBP o zysku sektora); d0.prices w signals.json.",
+      "price_before": 118.24,
+      "move_from_d0_pct": -5.06,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-10-02",
+  "last_daily": "2026-10-03",
   "d0": {
     "date": "2026-09-25",
     "wig20": 4180.26,
