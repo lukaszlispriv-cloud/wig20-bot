@@ -76,7 +76,8 @@ import time
 import hmac
 import base64
 import logging
-from datetime import datetime, timezone, date
+from datetime import datetime, timezone, date, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 from flask import Flask, request, jsonify
@@ -142,9 +143,95 @@ REDUCE_FACTOR      = float(os.environ.get("REDUCE_FACTOR", "0.5"))
 #     "OFF" = czysty long-only (świadoma ekspozycja kierunkowa).
 HEDGE_EPIC  = os.environ.get("HEDGE_EPIC", "").strip()
 HEDGE_RATIO = float(os.environ.get("HEDGE_RATIO", "1.0"))
-HEDGE_TOL   = float(os.environ.get("HEDGE_TOL", "0.30"))
+# Tolerancja hedge'u wobec ekspozycji długiej. Przy 0.30 rachunek potrafił
+# tygodniami być o 8% kapitału krótki (28.09-1.10.2026: longi 888 PLN wobec
+# shorta 1136 PLN = odchyłka 28%, czyli "w normie"). Hedge to kontrakt na
+# indeks z krokiem 0.01 (~40 PLN), więc korekta przy 10% nie goni szumu,
+# a kosztuje ~2 spready indeksu. Zmienna środowiskowa nadal wygrywa.
+HEDGE_TOL   = float(os.environ.get("HEDGE_TOL", "0.10"))
+# Kontrakt terminowy wygasa (FW2020U2026 -> 18.09.2026 16:13 UTC) i broker
+# zamyka go sam; bez przejścia na następny rachunek jechał bez hedge'u od
+# piątkowego wieczoru do poniedziałku 21.09 rano. Auto-roll wybiera kontrakt
+# kwartalny (H/M/U/Z) na podstawie daty i HEDGE_ROLL_DAYS dni przed
+# wygaśnięciem. Wyłączenie: HEDGE_AUTO_ROLL=false (wtedy tylko ostrzeżenie).
+HEDGE_AUTO_ROLL = os.environ.get("HEDGE_AUTO_ROLL", "true").lower() == "true"
+HEDGE_ROLL_DAYS = int(os.environ.get("HEDGE_ROLL_DAYS", "2"))
+# GPW i CFD na polskie akcje nie notują w weekendy; cron odpala się 7 dni
+# w tygodniu i generował odrzucone zlecenia oraz ostrzeżenia (12-13.09,
+# 27.09, 3.10.2026). W sobotę/niedzielę /run nie robi nic.
+SKIP_WEEKEND_RUNS = os.environ.get("SKIP_WEEKEND_RUNS", "true").lower() == "true"
+# Ponowienia zapytań GET/logowania po timeoucie lub zerwaniu połączenia
+# (9.09.2026 08:01: ReadTimeout przerwał cały bieg).
+NET_RETRIES = int(os.environ.get("NET_RETRIES", "3"))
 HEDGE_MODE  = ("classic" if not HEDGE_EPIC
                else ("off" if HEDGE_EPIC.upper() == "OFF" else "index"))
+
+# --- Kontrakty terminowe na WIG20 (Capital.com: FW2020 + kod miesiąca + rok,
+#     np. FW2020U2026 = wrzesień 2026). Wygasają w trzeci piątek H/M/U/Z.
+_KONTRAKT_RE = re.compile(r"^(?P<root>[A-Z0-9]+?)(?P<m>[HMUZ])(?P<y>\d{4})$")
+_KOD_MIESIACA = {"H": 3, "M": 6, "U": 9, "Z": 12}
+_MIESIAC_KOD = {v: k for k, v in _KOD_MIESIACA.items()}
+_WARSZAWA = ZoneInfo("Europe/Warsaw")
+
+
+def trzeci_piatek(rok: int, miesiac: int) -> date:
+    d = date(rok, miesiac, 1)
+    pierwszy_piatek = d + timedelta(days=(4 - d.weekday()) % 7)
+    return pierwszy_piatek + timedelta(days=14)
+
+
+def parsuj_kontrakt(epic):
+    """'FW2020U2026' -> ('FW2020', 9, 2026); inny epic -> None."""
+    m = _KONTRAKT_RE.match(epic or "")
+    if not m:
+        return None
+    return m.group("root"), _KOD_MIESIACA[m.group("m")], int(m.group("y"))
+
+
+def wygasniecie_kontraktu(epic):
+    p = parsuj_kontrakt(epic)
+    return trzeci_piatek(p[2], p[1]) if p else None
+
+
+def nastepny_kontrakt(epic):
+    root, mies, rok = parsuj_kontrakt(epic)
+    nowy_mies = {3: 6, 6: 9, 9: 12, 12: 3}[mies]
+    nowy_rok = rok + 1 if mies == 12 else rok
+    return f"{root}{_MIESIAC_KOD[nowy_mies]}{nowy_rok}"
+
+
+def kontrakt_obowiazujacy(bazowy, dzis, dni_przed=None):
+    """Kontrakt, którym handlujemy DZIŚ.
+
+    Bierzemy kontrakt z konfiguracji i przesuwamy go na kolejne kwartały, aż
+    do wygaśnięcia zostanie więcej niż `dni_przed` dni kalendarzowych.
+    Zwraca (epic, poprzedni_epic_lub_None). Epic niebędący kontraktem
+    (np. indeks CFD bez terminu) zwraca bez zmian.
+    """
+    dni_przed = HEDGE_ROLL_DAYS if dni_przed is None else dni_przed
+    if not parsuj_kontrakt(bazowy):
+        return bazowy, None
+    biezacy = bazowy
+    for _ in range(8):                        # bezpiecznik przed pętlą
+        wyg = wygasniecie_kontraktu(biezacy)
+        if dzis < wyg - timedelta(days=dni_przed):
+            break
+        biezacy = nastepny_kontrakt(biezacy)
+    return biezacy, (bazowy if biezacy != bazowy else None)
+
+
+def jest_hedge(epic):
+    """Czy epic należy do rodziny kontraktów hedge'u (dowolny termin)."""
+    if not epic or HEDGE_MODE != "index":
+        return False
+    if epic == HEDGE_EPIC:
+        return True
+    a, b = parsuj_kontrakt(epic), parsuj_kontrakt(HEDGE_EPIC)
+    return bool(a and b and a[0] == b[0])
+
+
+def teraz_warszawa():
+    return datetime.now(_WARSZAWA)
 
 # Telegram usunięty w v1.8.1 — kanał nigdy nie był podłączony, a cała treść
 # powiadomień i tak szła najpierw do logu. Jedynym kanałem raportowania jest
@@ -492,10 +579,31 @@ class Capital:
         self.s.headers.update({"X-CAP-API-KEY": CAPITAL_API_KEY,
                                "Content-Type": "application/json"})
 
+    def _siec(self, fn, opis):
+        """Wywołanie sieciowe z ponowieniami po timeoucie/zerwaniu połączenia.
+
+        Tylko dla operacji IDEMPOTENTNYCH (GET, logowanie). Zlecenia
+        otwarcia/zamknięcia NIE przechodzą tędy — powtórzone po timeoucie
+        mogłyby otworzyć pozycję dwa razy."""
+        proby = max(1, NET_RETRIES)
+        for proba in range(proby):
+            try:
+                return fn()
+            except (requests.exceptions.Timeout,
+                    requests.exceptions.ConnectionError) as e:
+                if proba + 1 >= proby:
+                    raise
+                pauza = 2.0 * (proba + 1)
+                log.warning("Błąd sieci przy %s (%s) — ponawiam za %.0fs "
+                            "(próba %d/%d)", opis, type(e).__name__, pauza,
+                            proba + 2, proby)
+                time.sleep(pauza)
+
     def login(self):
-        r = self.s.post(f"{BASE_URL}/api/v1/session",
-                        json={"identifier": CAPITAL_IDENT,
-                              "password": CAPITAL_PASSWORD}, timeout=20)
+        r = self._siec(lambda: self.s.post(
+            f"{BASE_URL}/api/v1/session",
+            json={"identifier": CAPITAL_IDENT, "password": CAPITAL_PASSWORD},
+            timeout=20), "logowaniu")
         if r.status_code != 200:
             raise RuntimeError(f"Logowanie nieudane ({r.status_code}): {r.text[:200]}")
         self.s.headers.update({"CST": r.headers.get("CST"),
@@ -533,7 +641,9 @@ class Capital:
         # wygląda potem jak "long nie wszedł" — czyli dokładnie ten objaw,
         # ktory diagnozowaliśmy 7.09. Dlatego krótkie ponowienia z odczekaniem.
         for proba in range(3):
-            r = self.s.get(f"{BASE_URL}{path}", timeout=20, **kw)
+            r = self._siec(lambda: self.s.get(f"{BASE_URL}{path}",
+                                              timeout=20, **kw),
+                           f"GET {path}")
             if r.status_code == 429 and proba < 2:
                 pauza = 1.5 * (proba + 1)
                 log.warning("429 z Capital.com na %s — czekam %.1fs (próba %d/3)",
@@ -608,9 +718,17 @@ class Capital:
                 for m in d.get("markets", [])][:15]
 
     def open(self, epic, direction, size):
-        r = self.s.post(f"{BASE_URL}/api/v1/positions",
-                        json={"epic": epic, "direction": direction,
-                              "size": size, "guaranteedStop": False}, timeout=20)
+        try:
+            r = self.s.post(f"{BASE_URL}/api/v1/positions",
+                            json={"epic": epic, "direction": direction,
+                                  "size": size, "guaranteedStop": False},
+                            timeout=20)
+        except requests.exceptions.RequestException as e:
+            # Timeout przy POST jest DWUZNACZNY: zlecenie mogło dojść. Nie
+            # ponawiamy (ryzyko podwójnej pozycji) i nie przerywamy biegu —
+            # następny /run uzgodni stan z listą pozycji na rachunku.
+            return False, None, (f"BŁĄD SIECI przy otwarciu ({type(e).__name__})"
+                                 " — stan niepewny, uzgodni następny bieg")
         if not r.ok:
             return False, None, r.text[:200]
         ref = r.json().get("dealReference")
@@ -623,7 +741,7 @@ class Capital:
             time.sleep(0.5)
             try:
                 c = self._get(f"/api/v1/confirms/{ref}")
-            except requests.HTTPError:
+            except (requests.HTTPError, requests.exceptions.RequestException):
                 continue
             st = str(c.get("dealStatus") or c.get("status") or "").upper()
             if st in ("ACCEPTED", "OPEN", "OPENED"):
@@ -636,7 +754,12 @@ class Capital:
                             "jako otwartej; zweryfikuj w aplikacji")
 
     def close(self, deal_id):
-        r = self.s.delete(f"{BASE_URL}/api/v1/positions/{deal_id}", timeout=20)
+        try:
+            r = self.s.delete(f"{BASE_URL}/api/v1/positions/{deal_id}",
+                              timeout=20)
+        except requests.exceptions.RequestException as e:
+            return False, (f"BŁĄD SIECI przy zamykaniu ({type(e).__name__}) — "
+                           "stan niepewny, uzgodni następny bieg")
         return r.ok, r.text[:200]
 
     def usd_pln(self):
@@ -659,6 +782,76 @@ class Capital:
         log.warning("Nieobsługiwana para walut %s→%s — przyjmuję 1.0",
                     from_ccy, to_ccy)
         return 1.0
+
+
+def rozstrzygnij_hedge(cap, dzis=None):
+    """Którym kontraktem hedge'ujemy DZIŚ i czy da się nim handlować.
+
+    Zwraca (epic, info); `info` trafia do raportu (kontrakt z konfiguracji,
+    kontrakt z kalendarza, dni do wygaśnięcia, fallback). Epic None = nie ma
+    czym hedge'ować — hedge zostaje nietknięty, a błąd jest głośny.
+    """
+    dzis = dzis or teraz_warszawa().date()
+    info = {"konfiguracja": HEDGE_EPIC, "auto_roll": HEDGE_AUTO_ROLL}
+    if HEDGE_MODE != "index":
+        return None, info
+    wyg_cfg = wygasniecie_kontraktu(HEDGE_EPIC)
+    if not HEDGE_AUTO_ROLL or not wyg_cfg:
+        info["epic"] = HEDGE_EPIC
+        if wyg_cfg:
+            info["dni_do_wygasniecia"] = (wyg_cfg - dzis).days
+            if (wyg_cfg - dzis).days <= HEDGE_ROLL_DAYS + 3:
+                info["ostrzezenie"] = (
+                    f"{HEDGE_EPIC} wygasa {wyg_cfg} (HEDGE_AUTO_ROLL=false) — "
+                    f"przestaw HEDGE_EPIC na następny kontrakt, inaczej "
+                    f"rachunek zostanie bez hedge'u")
+        return HEDGE_EPIC, info
+    cel, poprzedni = kontrakt_obowiazujacy(HEDGE_EPIC, dzis)
+    info["epic"] = cel
+    info["wygasniecie"] = str(wygasniecie_kontraktu(cel))
+    info["dni_do_wygasniecia"] = (wygasniecie_kontraktu(cel) - dzis).days
+    if poprzedni:
+        info["rolowany_z"] = poprzedni
+    kandydaci = [cel]
+    # Fallback: nowy kontrakt jeszcze niedostępny w API, a stary żyje.
+    if poprzedni and wyg_cfg >= dzis:
+        kandydaci.append(HEDGE_EPIC)
+    for epic in kandydaci:
+        try:
+            m = cap.market(epic)
+        except (requests.HTTPError, requests.exceptions.RequestException) as e:
+            info.setdefault("odrzucone", {})[epic] = f"brak rynku w API ({e})"
+            continue
+        if not m.get("mid"):
+            info.setdefault("odrzucone", {})[epic] = "brak ceny"
+            continue
+        if epic != cel:
+            info["fallback"] = epic
+            info["ostrzezenie"] = (f"kontrakt {cel} niedostępny — hedge zostaje "
+                                   f"na {epic} (wygasa {wyg_cfg})")
+        info["epic"] = epic
+        return epic, info
+    info["epic"] = None
+    return None, info
+
+
+def pokrycie_koszyka(sig, epics_na_rachunku, ekspozycja_dluga, equity):
+    """Ile nóg koszyka LONG faktycznie jest na rachunku.
+
+    Wprowadzone po tym, jak LPP (minimalna pozycja ~2 470 PLN przy celu
+    ~295 PLN) w W6 i W7 cicho nie wchodziło, a ekspozycja długa spadała z 50%
+    do 30% kapitału bez żadnego alarmu poza wierszem „pominięte".
+    """
+    nogi = list(sig.get("long", []))
+    brak = [t for t in nogi
+            if sig.get("epics", {}).get(t) not in epics_na_rachunku]
+    return {"nogi_koszyka": len(nogi),
+            "nogi_na_rachunku": len(nogi) - len(brak),
+            "brakujace": brak,
+            "ekspozycja_dluga": round(ekspozycja_dluga, 2),
+            "ekspozycja_dluga_pct": (round(ekspozycja_dluga / equity * 100, 1)
+                                     if equity else None),
+            "cel_pct": round(ALLOC_PCT * len(nogi) * 100, 1)}
 
 
 def calc_size(cap, target_acc, epic, acc_ccy):
@@ -823,6 +1016,10 @@ def desired_book(sig):
 
 
 def sync():
+    if SKIP_WEEKEND_RUNS and teraz_warszawa().weekday() >= 5:
+        log.info("BOT | /run pominięty: weekend (giełda zamknięta)")
+        return {"pominięto": "weekend — giełda zamknięta, brak zleceń",
+                "czas_warszawa": teraz_warszawa().isoformat(timespec="seconds")}
     rep_uwaga_live = (None if LIVE_ODBLOKOWANY else
                       "TRYB LIVE NIEUZBROJONY (brak LIVE_POTWIERDZENIE) — "
                       "to wyłącznie plan na sucho; realny handel wymaga "
@@ -858,8 +1055,21 @@ def sync():
                if e and not e.upper().startswith("UZUP")}
     if HEDGE_MODE == "index" and HEDGE_EPIC:
         managed.add(HEDGE_EPIC)
+    h_epic, h_info = rozstrzygnij_hedge(cap)
+    if HEDGE_MODE == "index":
+        rep["hedge_kontrakt"] = h_info
+        if h_epic:
+            managed.add(h_epic)
+        if h_info.get("ostrzezenie"):
+            rep["błędy"].append("hedge: " + h_info["ostrzezenie"])
+        if not h_epic:
+            rep["błędy"].append(
+                "hedge: brak dostępnego kontraktu (" + json.dumps(
+                    h_info.get("odrzucone", {}), ensure_ascii=False)
+                + ") — pozycje hedge'u NIETKNIĘTE")
     epic2tic = {v: k for k, v in sig["epics"].items()}
-    positions = [p for p in cap.positions() if p["epic"] in managed]
+    positions = [p for p in cap.positions()
+                 if p["epic"] in managed or jest_hedge(p["epic"])]
     rep["pozycje_przed"] = positions
 
     # Księga faktycznej ekspozycji tego biegu. Hedge MUSI się opierać na tym,
@@ -904,7 +1114,7 @@ def sync():
     book, skipped, closed = desired_book(sig)
     rep["pominiete"] += skipped
     for p in positions:
-        if p["epic"] == HEDGE_EPIC:
+        if jest_hedge(p["epic"]):
             continue  # pozycją hedge zarządza osobny blok niżej
         want = book.get(p["epic"])
         tic = epic2tic.get(p["epic"], p["epic"])
@@ -944,6 +1154,23 @@ def sync():
             continue
         powod = ("redukcja" if want.get("reduced")
                  else f"korekta wielkości ({cur_acc:.0f}→{cel_acc:.0f} {ccy})")
+        # WYKONALNOŚĆ PRZED ZAMKNIĘCIEM. Capital.com nie ma częściowego
+        # zamknięcia, więc przeskalowanie to zamknij+otwórz. Gdy nowa wielkość
+        # nie wejdzie (min. wielkość ponad tolerancję, rynek nie TRADEABLE),
+        # zamknięcie zostawiłoby pozycję ZEROWĄ zamiast zmniejszonej —
+        # wtedy zostawiamy pozycję bez zmian i mówimy o tym głośno.
+        try:
+            size, m2, info = calc_size(cap, cel_acc, p["epic"], ccy)
+        except (requests.HTTPError, requests.exceptions.RequestException) as e:
+            rep["pominiete"].append(f"{want['ticker']}: {powod} odłożone "
+                                    f"(rynek niedostępny: {e}) — pozycja bez zmian")
+            continue
+        if not size or m2["status"] != "TRADEABLE":
+            rep["pominiete"].append(
+                f"{want['ticker']}: {powod} NIEWYKONALNE "
+                f"({info if not size else 'rynek ' + str(m2['status'])}) "
+                f"— pozycja bez zmian")
+            continue
         if DRY_RUN:
             rep["akcje"].append(f"[DRY] PRZESKALUJ {want['ticker']} "
                                 f"z ~{cur_acc:.0f} do ~{cel_acc:.0f} {ccy} "
@@ -958,16 +1185,6 @@ def sync():
             rep["błędy"].append(f"{powod} {want['ticker']}: {msg}")
             continue
         zamkniete.add(p["epic"])
-        size, m2, info = calc_size(cap, cel_acc, p["epic"], ccy)
-        if not size or m2["status"] != "TRADEABLE":
-            # Pozycja została ZAMKNIĘTA, a nowa nie weszła — to musi być
-            # głośne, bo koszyk cichnie o jedną nogę (hedge policzy się
-            # z faktycznego stanu, więc ekspozycja zostanie spójna).
-            rep["błędy"].append(
-                f"{want['ticker']}: po zamknięciu do korekty NIE udało się "
-                f"otworzyć na nowo ({info if not size else m2['status']}) — "
-                f"pozycja jest teraz ZEROWA")
-            continue
         ok2, ref, msg2 = cap.open(p["epic"], want["direction"], size)
         rep["akcje"].append(f"PRZESKALOWANO {want['ticker']} do size {size} "
                             f"({powod})" if ok2
@@ -1041,7 +1258,7 @@ def sync():
         long_cel = 0.0
         rozbicie = {}
         for p in positions:
-            if (p["direction"] != "BUY" or p["epic"] == HEDGE_EPIC
+            if (p["direction"] != "BUY" or jest_hedge(p["epic"])
                     or p["epic"] in zamkniete):
                 continue
             w = wartosc_pozycji(cap, p, ccy)
@@ -1054,56 +1271,91 @@ def sync():
         hedge_cel = long_cel * HEDGE_RATIO
         rep["ekspozycja_dluga"] = {"razem": round(long_cel, 2),
                                    "pozycje": rozbicie, "waluta": ccy}
-        hpos = [p for p in positions if p["epic"] == HEDGE_EPIC
+        hpos = [p for p in positions if jest_hedge(p["epic"])
                 and p["direction"] == "SELL"]
-        try:
-            hm = cap.market(HEDGE_EPIC)
-        except requests.HTTPError as e:
-            hm, _ = None, rep["błędy"].append(f"hedge: brak rynku {HEDGE_EPIC}: {e}")
+        hpos_stare = [p for p in hpos if p["epic"] != h_epic]
+        hpos_biezace = [p for p in hpos if p["epic"] == h_epic]
+        hm = None
+        if h_epic:
+            try:
+                hm = cap.market(h_epic)
+            except (requests.HTTPError,
+                    requests.exceptions.RequestException) as e:
+                rep["błędy"].append(f"hedge: brak rynku {h_epic}: {e}")
         if hm and hm["mid"]:
             fx = cap.fx_rate(ccy, hm["currency"])
-            cur_acc = sum(p["size"] for p in hpos) * hm["mid"] / fx
-            rep["hedge"] = {"epic": HEDGE_EPIC, "cel": round(hedge_cel, 2),
+            cur_acc = sum(p["size"] for p in hpos_biezace) * hm["mid"] / fx
+            rep["hedge"] = {"epic": h_epic, "cel": round(hedge_cel, 2),
                             "biezacy": round(cur_acc, 2),
                             "po_korekcie": round(cur_acc, 2), "waluta": ccy}
+            if hpos_stare:
+                rep["hedge"]["stare_kontrakty"] = [
+                    p["epic"] for p in hpos_stare]
             if hedge_cel <= 0 and hpos:
                 for p in hpos:
                     do_close(p, "hedge zbędny — brak aktywnych longów")
                 rep["hedge"]["po_korekcie"] = 0.0
-            elif hedge_cel > 0 and abs(cur_acc - hedge_cel) > hedge_cel * HEDGE_TOL:
+            elif hedge_cel > 0 and (
+                    hpos_stare
+                    or abs(cur_acc - hedge_cel) > hedge_cel * HEDGE_TOL):
                 for p in hpos:
-                    do_close(p, "hedge — dopasowanie wielkości")
-                step = hm["min"] if hm["min"] > 0 else 0.1
-                size = round(math.floor((hedge_cel * fx / hm["mid"]) / step)
-                             * step, 4)
-                if size >= step:
-                    if DRY_RUN:
-                        rep["akcje"].append(f"[DRY] HEDGE SELL {HEDGE_EPIC} "
-                                            f"size {size} (~{hedge_cel:.0f} {ccy})")
-                        rep["hedge"]["po_korekcie"] = round(
-                            size * hm["mid"] / fx, 2)
-                    else:
-                        ok, ref, msg = cap.open(HEDGE_EPIC, "SELL", size)
-                        rep["akcje"].append(f"HEDGE SELL {HEDGE_EPIC} size {size}"
-                                            f" — {msg}")
-                        # Stary hedge jest już zamknięty. Jeśli nowy nie wszedł,
-                        # rachunek został BEZ zabezpieczenia — to musi być widać
-                        # w powiadomieniu, a nie tylko w JSON-ie.
-                        rep["hedge"]["po_korekcie"] = (
-                            round(size * hm["mid"] / fx, 2) if ok else 0.0)
-                        if not ok:
-                            rep["błędy"].append(
-                                f"hedge: {msg} — stare zabezpieczenie ZAMKNIĘTE, "
-                                f"nowe NIE weszło, rachunek jest teraz "
-                                f"NIEZABEZPIECZONY (longi {long_cel:.0f} {ccy})")
-                    time.sleep(0.3)
-                else:
-                    rep["hedge"]["po_korekcie"] = 0.0
+                    do_close(p, (f"hedge — przejście na kontrakt {h_epic}"
+                                 if p["epic"] != h_epic
+                                 else "hedge — dopasowanie wielkości"))
+                nie_zamkniete = [p for p in hpos if p["epic"] not in zamkniete]
+                if nie_zamkniete:
+                    # Otwarcie nowego hedge'u przy żywym starym = podwójny
+                    # short indeksu. Czekamy na kolejny bieg.
+                    rep["hedge"]["po_korekcie"] = round(sum(
+                        p["size"] for p in nie_zamkniete
+                        if p["epic"] == h_epic) * hm["mid"] / fx, 2)
                     rep["błędy"].append(
-                        f"hedge: minimalna wielkość {step} × kurs "
-                        f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} {ccy} "
-                        f"przekracza cel {hedge_cel:.0f} {ccy} — hedge "
-                        f"NIEOTWARTY; rozważ inny instrument albo HEDGE_RATIO")
+                        "hedge: nie udało się zamknąć "
+                        f"{len(nie_zamkniete)} poz. starego zabezpieczenia — "
+                        "nowego NIE otwieram (uniknięcie podwójnego shorta), "
+                        "powtórzę w następnym biegu")
+                    step = None
+                else:
+                    step = hm["min"] if hm["min"] > 0 else 0.1
+                if step:
+                    size = round(math.floor((hedge_cel * fx / hm["mid"]) / step)
+                                 * step, 4)
+                    if size >= step:
+                        if DRY_RUN:
+                            rep["akcje"].append(
+                                f"[DRY] HEDGE SELL {h_epic} "
+                                f"size {size} (~{hedge_cel:.0f} {ccy})")
+                            rep["hedge"]["po_korekcie"] = round(
+                                size * hm["mid"] / fx, 2)
+                        else:
+                            ok, ref, msg = cap.open(h_epic, "SELL", size)
+                            rep["akcje"].append(
+                                f"HEDGE SELL {h_epic} size {size} — {msg}")
+                            # Stary hedge jest już zamknięty. Jeśli nowy nie
+                            # wszedł, rachunek został BEZ zabezpieczenia — to
+                            # musi być widać w powiadomieniu, a nie tylko w
+                            # JSON-ie.
+                            rep["hedge"]["po_korekcie"] = (
+                                round(size * hm["mid"] / fx, 2) if ok else 0.0)
+                            if not ok:
+                                rep["błędy"].append(
+                                    f"hedge: {msg} — stare zabezpieczenie "
+                                    f"ZAMKNIĘTE, nowe NIE weszło, rachunek "
+                                    f"jest teraz NIEZABEZPIECZONY (longi "
+                                    f"{long_cel:.0f} {ccy})")
+                        time.sleep(0.3)
+                    else:
+                        rep["hedge"]["po_korekcie"] = 0.0
+                        rep["błędy"].append(
+                            f"hedge: minimalna wielkość {step} × kurs "
+                            f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} {ccy} "
+                            f"przekracza cel {hedge_cel:.0f} {ccy} — hedge "
+                            f"NIEOTWARTY; rozważ inny instrument albo "
+                            f"HEDGE_RATIO")
+
+        rep["pokrycie_koszyka"] = pokrycie_koszyka(
+            sig, {e for e, d in held.items() if d == "BUY"} | set(otwarte_acc),
+            long_cel, equity)
 
     # Powiadomienie NA KOŃCU — wcześniej szło przed blokiem hedge'u, więc
     # licznik "akcje" nie obejmował ani otwarcia, ani korekty zabezpieczenia.
@@ -1120,6 +1372,13 @@ def sync():
         linie.append(f"longi {rep['ekspozycja_dluga']['razem']:.0f} / hedge "
                      f"{h.get('biezacy', 0):.0f} → netto {netto:+.0f} {ccy} "
                      f"({netto / equity * 100:+.1f}% kapitału)")
+    pk = rep.get("pokrycie_koszyka")
+    if pk and pk["brakujace"]:
+        linie.append(f"⚠ pokrycie koszyka LONG: {pk['nogi_na_rachunku']}/"
+                     f"{pk['nogi_koszyka']} nóg (brak: "
+                     f"{', '.join(pk['brakujace'])}), ekspozycja długa "
+                     f"{pk['ekspozycja_dluga_pct']}% kapitału wobec celu "
+                     f"{pk['cel_pct']}%")
     for x in rep["pominiete"][:6]:
         linie.append(f"• pominięte: {x}")
     for x in rep["błędy"][:6]:
@@ -1216,9 +1475,10 @@ def status_ep():
                    if e and not e.upper().startswith("UZUP")}
         if HEDGE_MODE == "index" and HEDGE_EPIC:
             managed.add(HEDGE_EPIC)
-        pozycje = [p for p in cap.positions() if p["epic"] in managed]
+        pozycje = [p for p in cap.positions()
+                   if p["epic"] in managed or jest_hedge(p["epic"])]
         dlugie = sum(wartosc_pozycji(cap, p, ccy) or 0.0 for p in pozycje
-                     if p["direction"] == "BUY" and p["epic"] != HEDGE_EPIC)
+                     if p["direction"] == "BUY" and not jest_hedge(p["epic"]))
         krotkie = sum(wartosc_pozycji(cap, p, ccy) or 0.0 for p in pozycje
                       if p["direction"] == "SELL")
         netto = dlugie - krotkie
@@ -1240,6 +1500,13 @@ def status_ep():
                                              "jest per saldo KRÓTKI")},
                        ograniczenia_rachunku=OGRANICZENIA_RACHUNKU,
                        tryb_hedge=HEDGE_MODE,
+                       hedge_kontrakt=(rozstrzygnij_hedge(cap)[1]
+                                       if HEDGE_MODE == "index" else None),
+                       pokrycie_koszyka=pokrycie_koszyka(
+                           sig, {p["epic"] for p in pozycje
+                                 if p["direction"] == "BUY"
+                                 and not jest_hedge(p["epic"])},
+                           dlugie, eq),
                        diagnostyka_instrumentow=diagnostyka_instrumentow(
                            cap, sig, eq, ccy),
                        dry_run=DRY_RUN)
@@ -1267,7 +1534,7 @@ def close_all_ep():
         managed.add(HEDGE_EPIC)
     out = []
     for p in cap.positions():
-        if p["epic"] in managed:
+        if p["epic"] in managed or jest_hedge(p["epic"]):
             if DRY_RUN:
                 out.append(f"[DRY] zamknąłbym {p['epic']}")
             else:

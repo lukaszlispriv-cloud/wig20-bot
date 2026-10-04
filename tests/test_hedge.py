@@ -21,6 +21,7 @@ os.environ.update({
     "HEDGE_EPIC": "FW2020U2026", "HEDGE_RATIO": "1.0", "HEDGE_TOL": "0.30",
     "ALLOC_PCT": "0.10", "TACTICAL_ALLOC_PCT": "0.05", "SIZE_TOL": "0.35",
     "START_EQUITY": "1000", "KILL_LEVEL": "0.75", "TELEGRAM_BOT_TOKEN": "",
+    "SKIP_WEEKEND_RUNS": "false", "HEDGE_AUTO_ROLL": "false",
 })
 import app  # noqa: E402
 
