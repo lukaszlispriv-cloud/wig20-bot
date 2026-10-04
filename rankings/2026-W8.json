@@ -552,6 +552,14 @@
    "opis": "ZWZ/NWZ (podniesienie limitu ceny w skupie z 50 do 65 zł) i raport Q3 12.11 — poza oknem. Faza II skupu (do 800 mln zł, limit 50 zł) jest przy kursie 50,39 zł faktycznie zablokowana. Citi ok. 1.10 obniżyło rekomendację do „neutralnie” (cena docelowa 52 zł).",
    "wklad_pkt": 0,
    "zrodlo": "bankier.pl „ALLEGRO.EU S.A.: Ogłoszenie o Zwyczajnym Walnym Zgromadzeniu oraz Nadzwyczajnym Walnym Zgromadzeniu…”, 1.10.2026; bankier.pl „ALLEGRO.EU S.A.: Allegro.eu ogłasza przyjęcie Fazy II programu skupu…”, 23.09.2026"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-05",
+   "dn": 1,
+   "opis": "GPW potwierdziła w sobotę 3.10 (22:08) zakończenie migracji UTP→WATS: 5.10 pierwszy produkcyjny dzień notowań w GPW WATS, wszystkie niezrealizowane zlecenia z 2.10 anulowane, sesje 5–8.10 pod szczególnym monitoringiem z dwoma scenariuszami awaryjnymi, po 8.10 powrót do UTP niemożliwy. Zdarzenie operacyjne dla całego koszyka W8 — rotacja bota 5.10 wypada na pierwszą sesję nowego systemu. Wkład 0 (znane, bez kierunku).",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl „Giełda — wiadomości” 3.10.2026 22:08 (GPW zakończyła proces migracji do WATS); biznes.pap.pl „GPW zakończyła proces migracji do WATS; 5 X będzie pierwszym dniem notowań w systemie GPW WATS” (depesza z 3.10.2026); bankier.pl „Zmiana systemu i decyzja w sprawie kosztu kredytów. Arcyciekawy tydzień w Polsce”, 2.10.2026 15:04"
   }
  ],
  "data_quality": [
