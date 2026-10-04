@@ -167,6 +167,10 @@ NET_RETRIES = int(os.environ.get("NET_RETRIES", "3"))
 # zawodzi szybko (worker gunicorna ma --timeout 120; zabity w środku sekwencji
 # DELETE->POST hedge'u zostawiłby rachunek bez zabezpieczenia).
 NET_BUDGET_S = float(os.environ.get("NET_BUDGET_S", "60"))
+# Po tylu sekundach od startu biegu NIE zaczynamy nowych sekwencji zleceń
+# (zamknij+otwórz): worker zabity w środku zostawiłby rachunek bez nogi albo
+# bez hedge'u. Reszta poczeka na następny bieg.
+NET_DEADLINE_S = float(os.environ.get("NET_DEADLINE_S", "70"))
 HEDGE_MODE  = ("classic" if not HEDGE_EPIC
                else ("off" if HEDGE_EPIC.upper() == "OFF" else "index"))
 
@@ -238,15 +242,25 @@ def poprzedni_kontrakt(epic):
 
 def rodzina_hedge(dzis=None):
     """Kontrakty, którymi BOT mógł handlować jako hedge: od kontraktu z
-    konfiguracji do obowiązującego dziś. Pozycje na innych terminach (np.
-    ręczne) nie należą do bota i nie wolno ich ruszać."""
+    konfiguracji do obowiązującego dziś, PLUS niewygasłe kontrakty wcześniejsze
+    (właściciel mógł przestawić HEDGE_EPIC przed wygaśnięciem starego — bez
+    tego stary short zostawał bez opieki obok nowego). Pozycje na innych
+    terminach (np. ręczne, późniejsze niż obowiązujący) nie należą do bota."""
     if HEDGE_MODE != "index":
         return set()
-    if not HEDGE_AUTO_ROLL or not parsuj_kontrakt(HEDGE_EPIC):
+    if not parsuj_kontrakt(HEDGE_EPIC):
         return {HEDGE_EPIC}
     dzis = dzis or teraz_warszawa().date()
-    cel, _ = kontrakt_obowiazujacy(HEDGE_EPIC, dzis)
     rodzina, e = {HEDGE_EPIC}, HEDGE_EPIC
+    for _ in range(4):                       # niewygasłe kontrakty wcześniejsze
+        e = poprzedni_kontrakt(e)
+        if wygasniecie_kontraktu(e) < dzis:
+            break
+        rodzina.add(e)
+    if not HEDGE_AUTO_ROLL:
+        return rodzina
+    cel, _ = kontrakt_obowiazujacy(HEDGE_EPIC, dzis)
+    e = HEDGE_EPIC
     for _ in range(24):
         if e == cel:
             break
@@ -708,9 +722,13 @@ class Capital:
         return (float(b.get("balance", 0) + b.get("profitLoss", 0)),
                 pick.get("currency", "?"), pick.get("accountId"))
 
-    def positions(self):
+    def czas_biegu(self):
+        return time.monotonic() - getattr(self, "_t0", time.monotonic())
+
+    def positions(self, retry=True):
         out = []
-        for p in self._get("/api/v1/positions").get("positions", []):
+        for p in self._get("/api/v1/positions",
+                           retry=retry).get("positions", []):
             pos, mkt = p.get("position", {}), p.get("market", {})
             out.append({"dealId": pos.get("dealId"), "epic": mkt.get("epic"),
                         "name": mkt.get("instrumentName"),
@@ -755,7 +773,8 @@ class Capital:
 
     def _ids_pozycji(self, epic):
         try:
-            return {p["dealId"] for p in self.positions() if p["epic"] == epic}
+            return {p["dealId"] for p in self.positions(retry=False)
+                    if p["epic"] == epic}
         except Exception:
             return None
 
@@ -772,16 +791,20 @@ class Capital:
             try:
                 weszlo = any(p["epic"] == epic and p["direction"] == direction
                              and p["dealId"] not in przed
-                             for p in self.positions())
+                             for p in self.positions(retry=False))
             except Exception:
                 weszlo = None
         if weszlo:
             return True, ref, f"potwierdzono po uzgodnieniu z rachunkiem ({opis})"
-        if weszlo is None:
-            self.__dict__.setdefault("niepewne", set()).add(epic)
-            return False, ref, (f"{opis} — stan NIEPEWNY, nie ponawiam w tym "
-                                f"biegu; uzgodni następny")
-        return False, ref, f"{opis} — pozycji na rachunku nie ma"
+        # Brak pozycji na liście NIE dowodzi, że zlecenie nie doszło: broker
+        # potrafi pokazać pozycję z opóźnieniem. Dlatego również „nie widać"
+        # = stan niepewny i brak ponowienia w tym biegu (lepiej spóźnić
+        # się o jeden bieg niż podwoić pozycję).
+        self.__dict__.setdefault("niepewne", set()).add(epic)
+        return False, ref, (f"{opis} — "
+                            f"{'pozycji jeszcze nie widać' if weszlo is False else 'nie da się sprawdzić rachunku'}"
+                            f", stan NIEPEWNY, nie ponawiam w tym biegu; "
+                            f"uzgodni następny")
 
     def open(self, epic, direction, size):
         przed = self._ids_pozycji(epic)
@@ -829,7 +852,8 @@ class Capital:
 
     def _pozycja_zniknela(self, deal_id):
         try:
-            return deal_id not in {p["dealId"] for p in self.positions()}
+            return deal_id not in {p["dealId"]
+                                   for p in self.positions(retry=False)}
         except Exception:
             return None
 
@@ -908,9 +932,13 @@ def rozstrzygnij_hedge(cap, dzis=None, trzymane=()):
             m = cap.market(epic)
         except (requests.HTTPError, requests.exceptions.RequestException) as e:
             info.setdefault("odrzucone", {})[epic] = f"brak rynku w API ({e})"
+            if epic == cel and cel in trzymane:
+                break          # hedge już stoi na celu: nie cofamy na stary
             continue
         if not m.get("mid"):
             info.setdefault("odrzucone", {})[epic] = "brak ceny"
+            if epic == cel and cel in trzymane:
+                break
             continue
         # TRADEABLE wymagamy tylko przy PRZEJŚCIU na nowy kontrakt (nie gdy
         # już na nim siedzimy, nie gdy zostajemy na dotychczasowym).
@@ -1198,6 +1226,16 @@ def sync():
     odtworzone = set()     # epiki zamknięte i od razu otwarte na nowo (korekta wielkości)
     otwarte_acc = {}       # epic -> wartość NOWO otwartej pozycji BUY (waluta rachunku)
 
+    def po_terminie(co):
+        """True, gdy minął NET_DEADLINE_S — nie zaczynamy nowych sekwencji."""
+        czas = getattr(cap, "czas_biegu", None)
+        if czas and czas() > NET_DEADLINE_S:
+            rep["błędy"].append(f"{co}: budżet czasu biegu wyczerpany "
+                                f"(>{NET_DEADLINE_S:.0f} s) — odłożone do "
+                                f"następnego biegu")
+            return True
+        return False
+
     def do_close(p, powod):
         if DRY_RUN:
             rep["akcje"].append(f"[DRY] ZAMKNIJ {p['direction']} "
@@ -1273,6 +1311,8 @@ def sync():
             continue
         powod = ("redukcja" if want.get("reduced")
                  else f"korekta wielkości ({cur_acc:.0f}→{cel_acc:.0f} {ccy})")
+        if po_terminie(f"{want['ticker']}: {powod}"):
+            continue
         # WYKONALNOŚĆ PRZED ZAMKNIĘCIEM. Capital.com nie ma częściowego
         # zamknięcia, więc przeskalowanie to zamknij+otwórz. Gdy nowa wielkość
         # nie wejdzie (min. wielkość ponad tolerancję, rynek nie TRADEABLE),
@@ -1338,6 +1378,8 @@ def sync():
             rep["pominiete"].append(
                 f"{want['ticker']}: poprzednie otwarcie niejednoznaczne — "
                 f"nie ponawiam w tym biegu (uzgodni następny)")
+            continue
+        if po_terminie(f"{want['ticker']}: otwarcie"):
             continue
         try:
             size, m, info = calc_size(cap, target, epic, ccy)
@@ -1435,17 +1477,89 @@ def sync():
             step = hm["min"] if hm["min"] > 0 else 0.1
             size = (round(math.floor((hedge_cel * fx / hm["mid"]) / step)
                           * step, 4) if hedge_cel > 0 else 0.0)
+
+            def przebuduj_hedge(size_docelowy):
+                """Zamknij stare kontrakty, potem bieżące, potem otwórz hedge
+                na `size_docelowy`. Przy porażce zamykania nie otwiera nic
+                (podwójny short); stare kontrakty zamykane PIERWSZE, żeby
+                nieudane zamknięcie starego nie niszczyło działającego."""
+                if po_terminie("hedge"):
+                    return
+                for p in hpos_stare:
+                    do_close(p, f"hedge — przejście na kontrakt {h_epic}")
+                if any(p["dealId"] not in zamkniete_deal for p in hpos_stare):
+                    rep["błędy"].append(
+                        "hedge: nie udało się zamknąć starego kontraktu — "
+                        "obecnego nie ruszam, powtórzę w następnym biegu")
+                    return
+                for p in hpos_biezace:
+                    do_close(p, "hedge — dopasowanie wielkości")
+                zostalo = [p for p in hpos
+                           if p["dealId"] not in zamkniete_deal]
+                if zostalo:
+                    rep["hedge"]["po_korekcie"] = round(
+                        wartosc_hedge(zostalo), 2)
+                    rep["błędy"].append(
+                        f"hedge: nie udało się zamknąć {len(zostalo)} poz. "
+                        f"zabezpieczenia — nowego NIE otwieram (uniknięcie "
+                        f"podwójnego shorta), powtórzę w następnym biegu")
+                elif size_docelowy >= step:
+                    if DRY_RUN:
+                        rep["akcje"].append(
+                            f"[DRY] HEDGE SELL {h_epic} size {size_docelowy} "
+                            f"(~{size_docelowy * hm['mid'] / fx:.0f} {ccy})")
+                        rep["hedge"]["po_korekcie"] = round(
+                            size_docelowy * hm["mid"] / fx, 2)
+                    else:
+                        ok, ref, msg = cap.open(h_epic, "SELL", size_docelowy)
+                        rep["akcje"].append(
+                            f"HEDGE SELL {h_epic} size {size_docelowy} — {msg}")
+                        # Stary hedge jest już zamknięty. Jeśli nowy nie wszedł,
+                        # rachunek został BEZ zabezpieczenia — to musi być
+                        # widać w powiadomieniu.
+                        rep["hedge"]["po_korekcie"] = (
+                            round(size_docelowy * hm["mid"] / fx, 2) if ok
+                            else 0.0)
+                        if not ok:
+                            rep["błędy"].append(
+                                f"hedge: {msg} — stare zabezpieczenie "
+                                f"ZAMKNIĘTE, nowe NIE weszło, rachunek jest "
+                                f"teraz NIEZABEZPIECZONY (longi "
+                                f"{long_cel:.0f} {ccy})")
+                    time.sleep(0.3)
+                else:
+                    rep["hedge"]["po_korekcie"] = 0.0
+                    rep["błędy"].append(
+                        f"hedge: minimalna wielkość {step} × kurs "
+                        f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} {ccy} "
+                        f"przekracza cel {hedge_cel:.0f} {ccy} — hedge "
+                        f"NIEOTWARTY; rozważ inny instrument albo HEDGE_RATIO")
+
+            handel_mozliwy = hm.get("status") == "TRADEABLE"
             if wycena_niepelna:
                 # Brak wyceny trzymanej nogi zaniża ekspozycję długą, więc
-                # hedge skurczyłby się albo zniknął przy otwartych longach.
+                # nie zmieniamy WIELKOŚCI hedge'u. Samo przejście wygasającego
+                # kontraktu (ta sama wielkość) wykonujemy mimo to — inaczej
+                # stary kontrakt wygasłby bez następcy.
                 rep["błędy"].append(
                     f"hedge: brak wyceny nóg {', '.join(wycena_niepelna)} — "
-                    f"hedge NIETKNIĘTY w tym biegu")
+                    f"wielkość hedge'u NIETKNIĘTA w tym biegu")
+                if hpos_stare and handel_mozliwy:
+                    razem = round(round(sum(p["size"] for p in hpos) / step)
+                                  * step, 4)
+                    przebuduj_hedge(razem)
             elif hedge_cel <= 0 and hpos:
                 for p in hpos:
                     do_close(p, "hedge zbędny — brak aktywnych longów")
                 rep["hedge"]["po_korekcie"] = round(wartosc_hedge(
                     [p for p in hpos if p["dealId"] not in zamkniete_deal]), 2)
+            elif hedge_cel > 0 and not hpos and size < step:
+                rep["hedge"]["po_korekcie"] = 0.0
+                rep["błędy"].append(
+                    f"hedge: minimalna wielkość {step} × kurs {hm['mid']} ≈ "
+                    f"{step * hm['mid'] / fx:.0f} {ccy} przekracza cel "
+                    f"{hedge_cel:.0f} {ccy} — hedge NIEOTWARTY (rachunek bez "
+                    f"zabezpieczenia)")
             elif hedge_cel > 0 and (
                     hpos_stare
                     or (abs(cur_acc - hedge_cel) > hedge_cel * HEDGE_TOL
@@ -1453,64 +1567,16 @@ def sync():
                         # bez tego warunku hedge zamykał się i otwierał na tę
                         # samą wielkość przy każdym biegu
                         and abs(cur_size - size) >= step / 2)):
-                if hm.get("status") != "TRADEABLE":
-                    rep["pominiete"].append(
-                        f"hedge: rynek {hm.get('status')} — korekta odłożona")
-                else:
-                    for p in hpos_stare:
-                        do_close(p, f"hedge — przejście na kontrakt {h_epic}")
-                    if any(p["dealId"] not in zamkniete_deal
-                           for p in hpos_stare):
-                        # Stary kontrakt żyje: obecnego nie ruszamy, nowego
-                        # nie otwieramy (podwójny short indeksu).
+                if not handel_mozliwy:
+                    komunikat = (f"hedge: rynek {hm.get('status')} — korekta "
+                                 f"odłożona")
+                    if not hpos:      # brak jakiegokolwiek zabezpieczenia
                         rep["błędy"].append(
-                            "hedge: nie udało się zamknąć starego kontraktu — "
-                            "obecnego nie ruszam, powtórzę w następnym biegu")
+                            komunikat + "; rachunek jest BEZ hedge'u")
                     else:
-                        for p in hpos_biezace:
-                            do_close(p, "hedge — dopasowanie wielkości")
-                        zostalo = [p for p in hpos
-                                   if p["dealId"] not in zamkniete_deal]
-                        if zostalo:
-                            rep["hedge"]["po_korekcie"] = round(
-                                wartosc_hedge(zostalo), 2)
-                            rep["błędy"].append(
-                                f"hedge: nie udało się zamknąć "
-                                f"{len(zostalo)} poz. zabezpieczenia — nowego "
-                                f"NIE otwieram (uniknięcie podwójnego shorta), "
-                                f"powtórzę w następnym biegu")
-                        elif size >= step:
-                            if DRY_RUN:
-                                rep["akcje"].append(
-                                    f"[DRY] HEDGE SELL {h_epic} "
-                                    f"size {size} (~{hedge_cel:.0f} {ccy})")
-                                rep["hedge"]["po_korekcie"] = round(
-                                    size * hm["mid"] / fx, 2)
-                            else:
-                                ok, ref, msg = cap.open(h_epic, "SELL", size)
-                                rep["akcje"].append(
-                                    f"HEDGE SELL {h_epic} size {size} — {msg}")
-                                # Stary hedge jest już zamknięty. Jeśli nowy nie
-                                # wszedł, rachunek został BEZ zabezpieczenia —
-                                # to musi być widać w powiadomieniu.
-                                rep["hedge"]["po_korekcie"] = (
-                                    round(size * hm["mid"] / fx, 2) if ok
-                                    else 0.0)
-                                if not ok:
-                                    rep["błędy"].append(
-                                        f"hedge: {msg} — stare zabezpieczenie "
-                                        f"ZAMKNIĘTE, nowe NIE weszło, rachunek "
-                                        f"jest teraz NIEZABEZPIECZONY (longi "
-                                        f"{long_cel:.0f} {ccy})")
-                            time.sleep(0.3)
-                        else:
-                            rep["hedge"]["po_korekcie"] = 0.0
-                            rep["błędy"].append(
-                                f"hedge: minimalna wielkość {step} × kurs "
-                                f"{hm['mid']} ≈ {step * hm['mid'] / fx:.0f} "
-                                f"{ccy} przekracza cel {hedge_cel:.0f} {ccy} — "
-                                f"hedge NIEOTWARTY; rozważ inny instrument "
-                                f"albo HEDGE_RATIO")
+                        rep["pominiete"].append(komunikat)
+                else:
+                    przebuduj_hedge(size)
 
         rep["pokrycie_koszyka"] = pokrycie_koszyka(
             sig, {e for e, d in held.items() if d == "BUY"} | set(otwarte_acc),

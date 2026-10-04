@@ -1222,14 +1222,28 @@ class TestPoPrzegladzie(unittest.TestCase):
         self.assertEqual(cap.s.post.call_count, 1)    # bez ponowienia POST
         self.assertNotIn("PGE", cap.niepewne)
 
-    def test_klient_gdy_pozycji_na_pewno_nie_ma_to_porazka_bez_niepewnosci(self):
+    def test_klient_gdy_pozycji_jeszcze_nie_widac_to_niepewne_a_nie_ponowienie(self):
+        """Broker potrafi pokazać pozycję z opóźnieniem — brak na liście nie
+        dowodzi, że zlecenie nie doszło, więc nie wolno ponawiać w tym biegu."""
         cap = self._klient()
         cap.s.post.side_effect = requests.exceptions.ReadTimeout("t")
         cap.positions = mock.Mock(side_effect=[[], []])
         ok, _, msg = cap.open("PGE", "BUY", 22.6)
         self.assertFalse(ok)
-        self.assertNotIn("PGE", cap.niepewne)
-        self.assertIn("nie ma", msg)
+        self.assertIn("PGE", cap.niepewne)
+        self.assertIn("jeszcze nie widać", msg)
+
+    def test_uzgadnianie_nie_ponawia_zapytan_o_pozycje(self):
+        cap = self._klient()
+        cap.s.post.side_effect = requests.exceptions.ReadTimeout("t")
+        cap.s.get.side_effect = requests.exceptions.ReadTimeout("g")
+        with mock.patch.object(app.time, "sleep", lambda *_: None):
+            ok, _, _ = cap.open("PGE", "BUY", 22.6)
+        self.assertFalse(ok)
+        # GET przed zleceniem pada raz (bez ponowień); skoro brak migawki
+        # „przed", uzgadnianie nie odpytuje rachunku drugi raz
+        self.assertEqual(cap.s.get.call_count, 1)
+        self.assertIn("PGE", cap.niepewne)
 
     def test_klient_gdy_nie_da_sie_sprawdzic_epic_trafia_do_niepewnych(self):
         cap = self._klient()
@@ -1339,6 +1353,97 @@ class TestPoPrzegladzie(unittest.TestCase):
             m = importlib.reload(app)
             self.assertIs(m._WARSZAWA, dt.timezone.utc)
         importlib.reload(app)                          # przywróć stan modułu
+
+
+# ----------------------------------------------------------------------------
+# 13. DRUGI PRZEGLĄD: kontrakty przed HEDGE_EPIC, brak cofania na stary, termin
+# ----------------------------------------------------------------------------
+class TestDrugiPrzeglad(unittest.TestCase):
+
+    def test_hedge_na_nowym_kontrakcie_nie_wraca_na_stary_przy_awarii_notowan(self):
+        for wyjatek in (requests.exceptions.ReadTimeout("t"),
+                        requests.exceptions.ConnectionError("c"),
+                        requests.HTTPError("503")):
+            with self.subTest(blad=type(wyjatek).__name__):
+                cap = FakeCapital(pelny_koszyk() + [poz(Z26, "SELL", 0.35)],
+                                  blad_rynku={Z26: wyjatek})
+                rep, _ = uruchom(cap, data=dt.date(2026, 9, 17), auto_roll=True)
+                self.assertEqual((cap.zamkniete, cap.otwarte), ([], []))
+                self.assertEqual([p["epic"] for p in hedge_stan(cap)], [Z26])
+        cap = FakeCapital(pelny_koszyk() + [poz(Z26, "SELL", 0.35)],
+                          ceny={Z26: None})
+        uruchom(cap, data=dt.date(2026, 9, 17), auto_roll=True)
+        self.assertEqual((cap.zamkniete, cap.otwarte), ([], []))
+
+    def test_wczesne_przestawienie_HEDGE_EPIC_nie_zostawia_starego_shorta(self):
+        """Właściciel przestawia HEDGE_EPIC na Z2026, a stary short na U2026
+        jeszcze żyje. Wcześniej stary był „niczyj” i powstawał podwójny short."""
+        cap = FakeCapital(pelny_koszyk() + [poz(U26, "SELL", 0.35, deal="d-U")])
+        for auto in (True, False):
+            with self.subTest(auto_roll=auto):
+                cap2 = FakeCapital(pelny_koszyk()
+                                   + [poz(U26, "SELL", 0.35, deal="d-U")])
+                uruchom(cap2, data=dt.date(2026, 9, 10), auto_roll=auto,
+                        hedge_epic=Z26)
+                self.assertEqual([p["epic"] for p in hedge_stan(cap2)], [Z26])
+                self.assertEqual(sum(p["size"] for p in hedge_stan(cap2)), 0.35)
+
+    def test_rodzina_obejmuje_niewygasle_kontrakty_przed_konfiguracja(self):
+        with mock.patch.object(app, "HEDGE_AUTO_ROLL", True), \
+             mock.patch.object(app, "HEDGE_EPIC", Z26):
+            self.assertEqual(app.rodzina_hedge(dt.date(2026, 9, 10)), {U26, Z26})
+            # po wygaśnięciu września nie ma go w rodzinie
+            self.assertEqual(app.rodzina_hedge(dt.date(2026, 9, 21)), {Z26})
+            self.assertFalse(app.jest_hedge("FW2020M2027"))
+
+    def test_brak_wyceny_nogi_nie_blokuje_przejscia_wygasajacego_kontraktu(self):
+        cap = FakeCapital(pelny_koszyk() + [poz(U26, "SELL", 0.35)],
+                          blad_rynku={"PGE": requests.HTTPError("429")})
+        rep, _ = uruchom(cap, data=D_ROLL, auto_roll=True)
+        self.assertEqual([(p["epic"], p["size"]) for p in hedge_stan(cap)],
+                         [(Z26, 0.35)])
+        self.assertTrue(any("NIETKNIĘTA" in b for b in rep["błędy"]))
+
+    def test_brak_wyceny_nogi_bez_rollu_nie_zmienia_wielkosci_hedgeu(self):
+        cap = FakeCapital(pelny_koszyk() + [poz(U26, "SELL", 0.10)],
+                          blad_rynku={"PGE": requests.HTTPError("429")})
+        uruchom(cap)
+        self.assertEqual((cap.zamkniete, cap.otwarte), ([], []))
+
+    def test_rachunek_bez_hedgeu_i_rynek_nietradeable_to_blad_a_nie_cisza(self):
+        cap = FakeCapital(pelny_koszyk(), status={U26: "CLOSED"})
+        rep, pow_ = uruchom(cap)
+        self.assertTrue(any("BEZ hedge'u" in b for b in rep["błędy"]),
+                        rep["błędy"])
+        self.assertEqual(pow_[-1][0], "warning")
+
+    def test_cel_ponizej_kroku_kontraktu_bez_hedgeu_to_blad(self):
+        sygn = dict(SYGNALY, long=[], short=[],
+                    tactical=[{"ticker": "PGE", "direction": "BUY"}])
+        cap = FakeCapital([poz("PGE", "BUY", 11.3)],
+                          min_deal={U26: 0.5})            # krok ~2 000 PLN
+        rep, _ = uruchom(cap, sygnaly=sygn)
+        self.assertTrue(any("NIEOTWARTY" in b for b in rep["błędy"]),
+                        rep["błędy"])
+
+    def test_po_terminie_biegu_nie_zaczyna_nowych_sekwencji(self):
+        class Wolny(FakeCapital):
+            def czas_biegu(self):
+                return 1000.0
+        koszyk = [p for p in pelny_koszyk() if p["epic"] != "PGE"]
+        cap = Wolny(koszyk + [poz("PGE", "BUY", 12), poz(U26, "SELL", 0.35)])
+        rep, _ = uruchom(cap)
+        self.assertEqual(cap.zamkniete, [])            # przeskalowanie odłożone
+        self.assertTrue(any("budżet czasu" in b for b in rep["błędy"]),
+                        rep["błędy"])
+
+    def test_po_terminie_biegu_hedge_nie_jest_przebudowywany(self):
+        class Wolny(FakeCapital):
+            def czas_biegu(self):
+                return 1000.0
+        cap = Wolny(pelny_koszyk() + [poz(U26, "SELL", 0.35)])
+        uruchom(cap, data=D_ROLL, auto_roll=True)
+        self.assertEqual((cap.zamkniete, cap.otwarte), ([], []))
 
 
 if __name__ == "__main__":

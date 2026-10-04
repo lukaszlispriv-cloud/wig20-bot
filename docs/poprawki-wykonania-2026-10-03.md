@@ -15,8 +15,10 @@
 | Token cron-job.org w logu dostępu gunicorna | `gunicorn.conf.py`: log bez query stringu (**token już ujawniony — zmień go**) |
 
 ## Własność pozycji hedge'u
-Bot zarządza tylko kontraktami od `HEDGE_EPIC` do kontraktu obowiązującego dziś (`rodzina_hedge`). Pozycje na innych
-terminach (np. ręczne) nie są ruszane. Hedge nie jest zmieniany, gdy: brakuje wyceny którejś trzymanej nogi, rynek hedge'u
+Bot zarządza kontraktami od `HEDGE_EPIC` do kontraktu obowiązującego dziś oraz niewygasłymi kontraktami wcześniejszymi
+(`rodzina_hedge`) — dzięki temu wcześniejsze przestawienie `HEDGE_EPIC` nie zostawia starego shorta bez opieki. Pozycje na
+innych terminach (np. ręczne, późniejsze niż obowiązujący) nie są ruszane. Hedge stojący na nowym kontrakcie nigdy nie
+wraca na stary, nawet przy chwilowej awarii notowań. Hedge nie jest zmieniany, gdy: brakuje wyceny którejś trzymanej nogi, rynek hedge'u
 nie jest TRADEABLE, albo stary kontrakt nie dał się zamknąć (unikamy podwójnego shorta).
 
 ## Do decyzji właściciela (poza zakresem poprawek wykonania)
@@ -26,5 +28,11 @@ nie jest TRADEABLE, albo stary kontrakt nie dał się zamknąć (unikamy podwój
 * Przegląd `HEDGE_RATIO` po 12 zamkniętych oknach — bez zmian (sekcja 10 metody).
 
 ## Nowe zmienne środowiskowe
-`HEDGE_AUTO_ROLL` (true), `HEDGE_ROLL_DAYS` (2), `SKIP_WEEKEND_RUNS` (true), `NET_RETRIES` (3), `NET_BUDGET_S` (60);
+`HEDGE_AUTO_ROLL` (true), `HEDGE_ROLL_DAYS` (2), `SKIP_WEEKEND_RUNS` (true), `NET_RETRIES` (3), `NET_BUDGET_S` (60),
+`NET_DEADLINE_S` (70 — po tylu sekundach od startu biegu nie zaczynamy nowych sekwencji zleceń);
 zmieniony domyślny `HEDGE_TOL` (0,10). Testy: `python3 tests/test_hedge.py` i `python3 tests/test_roll.py`.
+
+## Niejednoznaczne zlecenia
+Brak nowej pozycji na liście po timeoucie nie dowodzi, że zlecenie nie doszło (broker pokazuje pozycje z opóźnieniem), więc
+taki epic jest „niepewny” i nie jest ponawiany w tym biegu — następny bieg uzgodni stan z rachunkiem. Koszt: nogę, która
+faktycznie nie weszła, bot otworzy bieg później; zysk: brak zdublowanych pozycji.
