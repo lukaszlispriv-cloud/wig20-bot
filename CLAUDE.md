@@ -29,7 +29,7 @@ Do wyniku brutto dopisuj koszty: spread bid/ask przy wejściu i wyjściu (przy R
 Capital.com nie ma częściowego zamknięcia), punkty swapowe za dobę utrzymania, luka między zamknięciem D0
 a realizacją (rotacja w poniedziałek 9:15, raport liczy od zamknięcia piątku).
 
-Testy logiki portfela: `python3 tests/test_hedge.py` (stdlib, bez pytest). Uruchom po każdej zmianie w `app.py`.
+Testy logiki portfela: `python3 tests/test_hedge.py` i `python3 tests/test_roll.py` (stdlib, bez pytest; wymagają `pip install -r requirements.txt`). Uruchom oba po każdej zmianie w `app.py`. Zmiany wykonania z 3.10.2026 (auto-roll hedge'u, uzgadnianie zleceń, pokrycie koszyka): `docs/poprawki-wykonania-2026-10-03.md`.
 
 **Raportowanie bota: wyłącznie log Rendera** (Telegram odcięty w v1.8.1 — nigdy nie był podłączony).
 Filtruj po prefiksie `BOT |`; awarie lecą jako ERROR, bieg z błędami jako WARNING. Nie dodawaj wysyłki
