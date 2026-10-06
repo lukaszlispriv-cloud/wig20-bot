@@ -568,6 +568,22 @@
    "opis": "Poranek przed pierwszą sesją w systemie GPW WATS (przyjmowanie zleceń od 6:00, otwarcie 9:00 bez zmian; strefainwestorow.pl 4.10: „System GPW WATS gotowy do startu w poniedziałek”). Tło: Azja na plusie (Nikkei +2,35%, Topix +1,23%, TAIEX +2,55%, Hang Seng +0,03%; Chiny i Korea zamknięte), futures na Europę mieszane (DAX +0,15%, Stoxx 50 −0,06%), na USA −0,05…−0,11%; piątkowe zamknięcie Wall Street: S&P 500 +0,73% (7 722,72), Nasdaq +1,19%, DJIA +0,49%; UST 10Y 5,26%, EUR/USD 1,1172, złoto 4 153 USD/oz; po NFP +29 tys. rynek wycenia ok. 20% szans na podwyżkę Fed w październiku (wcześniej 70%). Ropa tanieje po obniżce cen przez Arabię Saudyjską, miedź na LME rośnie po danych z USA. Brak komunikatów ESPI spółek koszykowych 3–5.10. Zdarzenie makro bez kierunku dla rankingu — wkład 0.",
    "wklad_pkt": 0,
    "zrodlo": "strefainwestorow.pl / PAP „DZIEŃ NA RYNKACH: W Azji na giełdach przewaga wzrostów indeksów”, 5.10.2026 08:26; strefainwestorow.pl „System GPW WATS gotowy do startu w poniedziałek. Giełda zakończyła przygotowania”, 4.10.2026; bankier.pl „Ropa na globalnych rynkach tanieje w reakcji na obniżenie przez Arabię Saudyjską cen swojego surowca”, 5.10.2026 07:53; bankier.pl „Notowania miedzi na giełdzie metali LME w Londynie rosną w reakcji na dane makro z USA”, 5.10.2026 08:10; stockwatch.pl „GPW WATS: start 5 października, monitoring i plan awaryjny” (przez WebSearch)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-05",
+   "dn": 1,
+   "opis": "Pierwsza produkcyjna sesja GPW WATS przebiegła bez zakłóceń: WIG20 +1,74% do 4 155,28 pkt (otwarcie 4 103,48), WIG +1,44%, mWIG40 +0,77%; obroty rynku 1,9 mld zł (WIG20 1,41 mld zł), 8,1 mln zleceń; GPW potwierdziła wieczorem stabilne działanie, monitoring do 8.10. Sektory: WIG-PALIWA +3,61%, WIG-ODZIEŻ +3,03%, WIG-ENERG +2,92%. Liderzy WIG20: PGE +4,56%, LPP +3,66%, Orlen +3,64%, mBank +2,70%, KGHM +2,52%; najsłabsi Dino −1,66%, Budimex −0,42%. Rotacja bota 9:15 wykonana na tej sesji (luka wejścia ok. +0,5% nad D0). Zdarzenie operacyjne bez kierunku — wkład 0.",
+   "wklad_pkt": 0,
+   "zrodlo": "strefainwestorow.pl / PAP „WIG20 na zamknięciu wyniósł 4155,28 pkt (1,74%)”, 5.10.2026 17:34; strefainwestorow.pl „Notowania GPW WATS zaliczają udany start. Giełda potwierdza działanie nowego systemu”, 5.10.2026 19:37; bankier.pl „Orlen, KGHM i PKO szarpnęły indeksem WIG20. Wyborcze wzrosty w Europie i Ameryce”, 5.10.2026 17:00"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-06",
+   "dn": 2,
+   "opis": "Poranek D+2: pierwszy dzień posiedzenia RPP (decyzja 7.10 ok. 15:00, konsensus bez zmian 3,75%; komentarz Pekao na bankier.pl: podwyżka najwcześniej w listopadzie po projekcji, jako dostosowanie, nie cykl). Raport Grant Thornton: efektywna stopa podatkowa spółek GPW rekordowe 38% (SSP 45%), zapowiadany CIT 22% od 2027 dla podmiotów >50 mln EUR — tło dla tezy CIT energetycznego (projekt 30% nadal bez daty RM/Sejm). Wall Street 5.10: S&P 500 +0,66%, Nasdaq +1,05% (rekord), DJIA +0,18%; miedź LME 14 438 USD/t (trzecia sesja wzrostu, +16,1% YTD); Brent ok. 100 USD; USD/PLN 3,91. Brak ESPI spółek koszykowych 3–6.10, brak nowych rekomendacji dla WIG20. Bez kierunku dla rankingu — wkład 0.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl „RPP poczeka do listopada. Wtedy może podnieść stopy procentowe”, 6.10.2026; bankier.pl „Firmy na GPW płacą coraz więcej podatku. Efektywna stawka sięgnęła 38 proc.”, 6.10.2026 07:20; strefainwestorow.pl / PAP „Ceny miedzi w Londynie rosną trzecią sesję”, 6.10.2026 07:56; strefainwestorow.pl / PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-06” i „Kalendarium rynku kapitałowego GPW 2026-10-06”, 6.10.2026"
   }
  ],
  "data_quality": [
