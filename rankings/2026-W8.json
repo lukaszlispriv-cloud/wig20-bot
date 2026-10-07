@@ -584,6 +584,54 @@
    "opis": "Poranek D+2: pierwszy dzień posiedzenia RPP (decyzja 7.10 ok. 15:00, konsensus bez zmian 3,75%; komentarz Pekao na bankier.pl: podwyżka najwcześniej w listopadzie po projekcji, jako dostosowanie, nie cykl). Raport Grant Thornton: efektywna stopa podatkowa spółek GPW rekordowe 38% (SSP 45%), zapowiadany CIT 22% od 2027 dla podmiotów >50 mln EUR — tło dla tezy CIT energetycznego (projekt 30% nadal bez daty RM/Sejm). Wall Street 5.10: S&P 500 +0,66%, Nasdaq +1,05% (rekord), DJIA +0,18%; miedź LME 14 438 USD/t (trzecia sesja wzrostu, +16,1% YTD); Brent ok. 100 USD; USD/PLN 3,91. Brak ESPI spółek koszykowych 3–6.10, brak nowych rekomendacji dla WIG20. Bez kierunku dla rankingu — wkład 0.",
    "wklad_pkt": 0,
    "zrodlo": "bankier.pl „RPP poczeka do listopada. Wtedy może podnieść stopy procentowe”, 6.10.2026; bankier.pl „Firmy na GPW płacą coraz więcej podatku. Efektywna stawka sięgnęła 38 proc.”, 6.10.2026 07:20; strefainwestorow.pl / PAP „Ceny miedzi w Londynie rosną trzecią sesję”, 6.10.2026 07:56; strefainwestorow.pl / PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-06” i „Kalendarium rynku kapitałowego GPW 2026-10-06”, 6.10.2026"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-06",
+   "dn": 2,
+   "opis": "Druga sesja GPW WATS: WIG20 +1,61% do 4 222,36 pkt (najwyzsze zamkniecie w historii; otwarcie 4 163,62, max 4 233,61), WIG +1,58% do 159 012,30 (rekord), mWIG40 +1,82%, sWIG80 +0,24%; obroty rynku 2,3 mld zl (WIG20 ok. 1,7 mld zl). Motor: WIG-Banki +2,93% (mBank +4,10%, Alior +3,68%, Erste +3,25%, PKO BP +2,67%, Pekao +2,26%) i slabszy dolar (USD/PLN 3,90) dzien przed decyzja RPP; WIG-Energ +0,02% (PGE -1,02% po realizacji zyskow). Dla koszykow: LONG srednio +2,39% od D0 wobec WIG20 +3,38% (wynik rachunku -0,99 p.p.), SHORT srednio +3,85% - Alior (+4,15%) i mBank (+6,90%) przebily prog REDUCE (PRICE_4_8).",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl - tabela indeksow 6.10.2026 17:15 i tabela notowan akcji 16:59-17:04; bankier.pl 'Na polskiej gieldzie caly czas gra muzyka. Nowe rekordy i mocne wzrosty', 6.10.2026 17:32; strefainwestorow.pl / PAP 'WIG20 na zamknieciu wyniosl 4222,36 pkt (1,61%)', 6.10.2026 17:41"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-10-06",
+   "dn": 2,
+   "opis": "Komunikat 11:52: koszty ryzyka prawnego kredytow walutowych za III kw. 2026 szacowane na 78 mln zl (rutynowa aktualizacja parametrow modelu) - rynek odebral jako koniec duzych rezerw frankowych; 15:26: od 7.10 nowe hipoteki na POLSTR 1M, oferta na WIBOR wycofana. Kurs +4,10% do 1 487,00 zl (lider WIG20), +6,90% od D0 przeciw tezie SHORT -> REDUCE (PRICE_4_8) od 7.10; prog CLOSE 1 502,28 zl.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl 'Koszty walutowe mBanku. Prawie 80 mln zl uderzy w zyski za trzeci kwartal', 6.10.2026 11:52; bankier.pl 'mBank od 7 X wdrozy POLSTR do nowych kredytow hipotecznych', 6.10.2026 15:26; tabela notowan bankier.pl 6.10.2026 16:59"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-10-06",
+   "dn": 2,
+   "opis": "Bez komunikatu spolki; kurs +3,68% do 135,40 zl w rajdzie sektora (WIG-Banki +2,93%), +4,15% od D0 przeciw tezie SHORT - prog miekki 135,20 zl przebity o 0,20 zl -> REDUCE (PRICE_4_8) od 7.10; prog CLOSE 140,40 zl.",
+   "wklad_pkt": 0,
+   "zrodlo": "tabela notowan bankier.pl 6.10.2026 17:01 (ALIOR 135,40; +3,68%; +4,80); bankier.pl - zakladka wiadomosci ALIOR, odczyt 7.10.2026 ok. 8:25"
+  },
+  {
+   "ticker": "PZU",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "ESPI 6.10 17:20 (po sesji -> sesja 7.10): zwolanie NWZ na 3.11.2026 - zgoda na emisje podporzadkowanych obligacji kapitalowych na rynku krajowym do 3 mld zl (min. 10 lat, zmienne oprocentowanie, wykup najwczesniej po 5 latach; cel: struktura kapitalowa i wyplacalnosc wg polityki kapitalowo-dywidendowej), zmiany statutu oraz dochodzenie roszczen odszkodowawczych za szkody wyrzadzone przy sprawowaniu zarzadu. Zdarzenie poza oknem (3.11), neutralne dla kursu w oknie; PZU +2,98% od D0, 0,99% pod progiem REDUCE (72,61 zl). Wyplata dywidendy 4,80 zl 8.10 bez zmian.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl 'PZU SA: Ogloszenie o zwolaniu Nadzwyczajnego Walnego Zgromadzenia PZU SA oraz projekty uchwal' (raport biezacy 25/2026), 6.10.2026; strefainwestorow.pl / PAP 'Akcjonariusze PZU 3 XI zdecyduja ws. emisji obligacji kapitalowych o wartosci do 3 mld zl', 6.10.2026 17:20"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "Dotyczy tez PGE i TAURONPE (LONG): depesza PAP 7.10 07:46 - Ministerstwo Energii proponuje (projekt w konsultacjach od polowy wrzesnia) wzrost stawek oplat przedkoncesyjnych i koncesyjnych o ponad 1000% i likwidacje ustawowego limitu 2,5 mln zl rocznie (ok. 3,5 mld zl dodatkowych wplywow budzetu); MAP w uwagach: skala 'dalece wykracza poza zwykla aktualizacje' i 'bedzie wywierala nadmierna presje na wzrost ceny energii', proponuje limity 5 tys.-5 mln zl. Drugi, obok CIT 30% od 2027 (UD459, w RM od 2.09, bez datowanego postepu), niedatowany nawis regulacyjny dla energetyki - KALENDARZ_NIEPOTWIERDZONY.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl / PAP Biznes 'Oplaty koncesyjne w gore o ponad 1000 proc. MAP: To wywinduje rachunki za prad', 7.10.2026 07:46; strefainwestorow.pl / PAP 'Proponowany wzrost oplat koncesyjnych moze wywierac presje na ceny energii - MAP', 7.10.2026"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "Poranek D+3, dzien decyzji RPP (ok. 15:00, konsensus bez zmian 3,75%; rynek dyskontuje jastrzebi komunikat - banki +2,93% dzien wczesniej); 20:00 protokol FOMC. FTSE Russell w przegladzie pazdziernikowym utrzymal Polske w gronie rynkow rozwinietych (komunikat 7.10 07:38; kolejny przeglad 6.04.2027). Azja na minusie (Nikkei -0,53%, Hang Seng -0,48%, Kospi -1,93% po -10% LG Electronics), kontrakty na S&P 500 ok. 0, UST10Y 5,30% (+3 pb), EUR/USD 1,1238, zloto 4 143 USD (-0,5%), ropa Brent ok. 101,5 USD (+0,9%), miedz LME stabilna; Wall Street 6.10: S&P 500 7 818,93 (+0,58%, pierwszy raz ponad 7 800), Nasdaq +0,45%. Orlen (poza koszykami): 6.10 17:08 ABW zatrzymala 5 bylych i obecnych menedzerow (zarzut zanizania cen paliw VIII-XI 2023, szkoda wg PK 4,1 mld zl); 11:00 briefing o inwestycji energetycznej na Baltyku; 14:30 konferencja MAP o porozumieniu spolek Skarbu Panstwa.",
+   "wklad_pkt": 0,
+   "zrodlo": "strefainwestorow.pl / PAP 'DZIEN NA RYNKACH: W Azji na gieldach przewaga spadkow indeksow', 7.10.2026 08:23; bankier.pl 'Podczas pazdziernikowego przegladu rynkow FTSE Russell Polska utrzymala status rynku rozwinietego', 7.10.2026 07:38; strefainwestorow.pl / PAP 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-07'; bankier.pl - zakladka wiadomosci PKNORLEN (6.10.2026 17:08, 18:54); biznes.wprost.pl 'Podwyzka stop procentowych jeszcze nie teraz? 7 pazdziernika decyzja RPP' (6.10.2026)"
   }
  ],
  "data_quality": [

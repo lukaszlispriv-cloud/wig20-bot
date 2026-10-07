@@ -39,8 +39,27 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-10-06",
+  "exclude": [
+    {
+      "ticker": "ALIOR",
+      "action": "REDUCE",
+      "date": "2026-10-07",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 6.10.2026 135,40 zl wobec D0 130,00 zl = +4,15% (+0,77 p.p. wobec WIG20 +3,38%); prog miekki 4% = 135,20 zl przebity o 0,20 zl na drugiej sesji okna, prog twardy CLOSE (PRICE_8) = 140,40 zl. Wtorek +3,68% (+4,80 zl, obrot 35,9 mln zl) w rajdzie calego sektora: WIG-Banki +2,93% do 28 338,29 pkt, mBank +4,10%, Erste +3,25%, PKO BP +2,67%, Pekao +2,26%; WIG na historycznym rekordzie (159 012,30), WIG20 +1,61% do 4 222,36 - najwyzsze zamkniecie w historii. Brak komunikatu spolki 5-6.10 (najnowszy wpis na bankier.pl to material promocyjny o koncie z 7.10 06:00); ostatnie sygnaly spolkowe (Citi 21.09 'kupuj' 146,80 zl, Fitch 30.09 BBB-) sa przeciw tezie, ale znane rankingowi - to wyzwalacz cenowy sektorowy (dzien przed decyzja RPP, konsensus bez zmian 3,75%, rynek gra jastrzebi przekaz), nie fundamentalny, dlatego szczebel miekki. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 7.10 waga 50% od kursu 135,40 zl. Zrodlo: tabela notowan bankier.pl 6.10.2026 17:01 (ALIOR 135,40; +3,68%; +4,80); tabela indeksow bankier.pl 6.10 17:15 (WIG-BANKI 28 338,29; +2,93%); bankier.pl 'Na polskiej gieldzie caly czas gra muzyka. Nowe rekordy i mocne wzrosty', 6.10.2026 17:32; d0.prices w signals.json.",
+      "price_before": 135.4,
+      "move_from_d0_pct": 4.15,
+      "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "MBANK",
+      "action": "REDUCE",
+      "date": "2026-10-07",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 6.10.2026 1 487,00 zl wobec D0 1 391,00 zl = +6,90% (+3,52 p.p. wobec WIG20 +3,38%); prog miekki 4% = 1 446,64 zl przebity we wtorek (poniedzialek 1 428,50 zl byl 1,27% pod progiem), prog twardy CLOSE (PRICE_8) = 1 502,28 zl - brakuje juz tylko +1,03%. Wtorek +4,10% (+58,50 zl), lider WIG20, przy WIG-Banki +2,93% i rekordzie WIG; impuls spolkowy: komunikat z 6.10 11:52 - koszty ryzyka prawnego kredytow walutowych za III kw. 2026 szacowane na 78 mln zl (rutynowa aktualizacja parametrow modelu), przyjety przez rynek z ulga jako koniec duzych rezerw frankowych; 15:26 - od 7.10 bank wdraza POLSTR 1M do nowych hipotek i wycofuje oferte na WIBOR. Oba sygnaly sa przeciw tezie SHORT, ale ponizej rangi szoku; glowny napad to sektor przed decyzja RPP (7.10, konsensus bez zmian 3,75%). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 7.10 waga 50% od kursu 1 487,00 zl. Przy zamknieciu powyzej 1 502,28 zl wpis awansuje do CLOSE (PRICE_8). Zrodlo: tabela notowan bankier.pl 6.10.2026 16:59 (MBANK 1 487,00; +4,10%); bankier.pl 'Koszty walutowe mBanku. Prawie 80 mln zl uderzy w zyski za trzeci kwartal', 6.10.2026 11:52; bankier.pl 'mBank od 7 X wdrozy POLSTR do nowych kredytow hipotecznych', 6.10.2026 15:26; bankier.pl 'Na polskiej gieldzie caly czas gra muzyka. Nowe rekordy i mocne wzrosty', 6.10.2026 17:32; d0.prices w signals.json.",
+      "price_before": 1487.0,
+      "move_from_d0_pct": 6.9,
+      "trigger": "PRICE_4_8"
+    }
+  ],
+  "last_daily": "2026-10-07",
   "d0": {
     "date": "2026-10-02",
     "wig20": 4084.31,
