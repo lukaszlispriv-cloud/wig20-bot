@@ -57,9 +57,18 @@
       "price_before": 1487.0,
       "move_from_d0_pct": 6.9,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "MODIVO",
+      "action": "REDUCE",
+      "date": "2026-10-08",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 7.10.2026 92,82 zl wobec D0 88,80 zl = +4,53% (+2,79 p.p. wobec WIG20 +1,73%); prog miekki 4% = 92,35 zl przebity o 0,47 zl (0,51%) na trzeciej sesji okna, prog twardy CLOSE (PRICE_8) = 95,90 zl (+3,32% od kursu). Sroda +2,90% (+2,62 zl) - jedna z dwoch rosnacych spolek WIG20 (obok Orlenu +0,17%) przy WIG20 -1,59% i szerokim odwrocie (WIG-Banki -2,41%, KGHM -2,62%); odrabianie strat po -24,6% od poczatku roku do wtorku, spolka opisywana jako najmocniej shortowana na GPW (ryzyko domykania shortow). Brak komunikatu spolki od raportu PSr z 2.10 (strata netto -319 mln zl za I polrocze, odpis Worldbox 287,6 mln zl - znane rankingowi), brak datowanej rekomendacji w biezacym tygodniu - wyzwalacz cenowy bez impulsu fundamentalnego, dlatego szczebel miekki. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 8.10 waga 50% od kursu 92,82 zl. Przy zamknieciu powyzej 95,90 zl wpis awansuje do CLOSE (PRICE_8). Zrodlo: tabela notowan bankier.pl 7.10.2026 17:04 (MODIVO 92,82; +2,90%; +2,62); bankier.pl 'Odwrot na gieldzie. Szerokie spadki duzych spolek i odbicie na gwiazdach hossy OZE', 7.10.2026 17:28; bankier.pl - profil MODIVO, zakladki komunikaty/wiadomosci, odczyt 8.10.2026 ok. 8:15; d0.prices w signals.json.",
+      "price_before": 92.82,
+      "move_from_d0_pct": 4.53,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-10-07",
+  "last_daily": "2026-10-08",
   "d0": {
     "date": "2026-10-02",
     "wig20": 4084.31,

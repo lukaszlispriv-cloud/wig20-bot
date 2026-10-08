@@ -632,6 +632,54 @@
    "opis": "Poranek D+3, dzien decyzji RPP (ok. 15:00, konsensus bez zmian 3,75%; rynek dyskontuje jastrzebi komunikat - banki +2,93% dzien wczesniej); 20:00 protokol FOMC. FTSE Russell w przegladzie pazdziernikowym utrzymal Polske w gronie rynkow rozwinietych (komunikat 7.10 07:38; kolejny przeglad 6.04.2027). Azja na minusie (Nikkei -0,53%, Hang Seng -0,48%, Kospi -1,93% po -10% LG Electronics), kontrakty na S&P 500 ok. 0, UST10Y 5,30% (+3 pb), EUR/USD 1,1238, zloto 4 143 USD (-0,5%), ropa Brent ok. 101,5 USD (+0,9%), miedz LME stabilna; Wall Street 6.10: S&P 500 7 818,93 (+0,58%, pierwszy raz ponad 7 800), Nasdaq +0,45%. Orlen (poza koszykami): 6.10 17:08 ABW zatrzymala 5 bylych i obecnych menedzerow (zarzut zanizania cen paliw VIII-XI 2023, szkoda wg PK 4,1 mld zl); 11:00 briefing o inwestycji energetycznej na Baltyku; 14:30 konferencja MAP o porozumieniu spolek Skarbu Panstwa.",
    "wklad_pkt": 0,
    "zrodlo": "strefainwestorow.pl / PAP 'DZIEN NA RYNKACH: W Azji na gieldach przewaga spadkow indeksow', 7.10.2026 08:23; bankier.pl 'Podczas pazdziernikowego przegladu rynkow FTSE Russell Polska utrzymala status rynku rozwinietego', 7.10.2026 07:38; strefainwestorow.pl / PAP 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-07'; bankier.pl - zakladka wiadomosci PKNORLEN (6.10.2026 17:08, 18:54); biznes.wprost.pl 'Podwyzka stop procentowych jeszcze nie teraz? 7 pazdziernika decyzja RPP' (6.10.2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "Trzecia sesja GPW WATS, odwrot po wtorkowych rekordach: WIG20 -1,59% do 4 155,11 pkt (otwarcie 4 220,72), WIG -1,46% (156 686,10), mWIG40 -1,30%, sWIG80 -0,43%; obroty 2,19 mld zl (WIG20 1,81 mld zl). Liderzy spadkow: banki (WIG-Banki -2,41%: PKO BP -3,27%, mBank -2,22%, Pekao -2,13%, Alior -1,26%, Erste -1,07%; BNP -5,03% w mWIG40) i KGHM -2,62% za srebrem (-2,5%); WIG-Energ -0,97% (PGE -1,06%, Tauron -1,94%), WIG-Odziez -1,24%, WIG-Paliwa +0,17%. W WIG20 najslabiej Pepco -3,33%, rosly tylko Modivo +2,90% i Orlen +0,17%. Tlo: wyprzedaz obligacji (UST10Y 5,36% - najwyzej od VI 2007, 30Y 5,73%), Brent >101 USD po atakach Iranu na tankowce w Ormuz, EUR/USD ok. 1,12; DAX -1,36%, Euro Stoxx 50 -1,47%; S&P 500 7 801,72 (-0,22%). Dla koszykow: LONG srednio -2,04% w dniu, +0,31% od D0 wobec WIG20 +1,73% (wynik rachunku -1,42 p.p.), SHORT srednio -0,71% w dniu, +3,42% od D0 (spread papierowy -3,11 p.p., rozjazd -1,69 p.p.).",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl 'Odwrot na gieldzie. Szerokie spadki duzych spolek i odbicie na gwiazdach hossy OZE', 7.10.2026 17:28; strefainwestorow.pl / PAP 'WIG20 na zamknieciu wyniosl 4155,11 pkt (-1,59%)', 7.10.2026 17:34; bankier.pl - tabela indeksow 7.10.2026 17:15 i tabela notowan akcji 16:59-17:04; bankier.pl 'S&P 500 odpadl od szczytu hossy. Rentownosci obligacji najwyzej od 2007 roku', 7.10.2026 22:05"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "RPP (posiedzenie 6-7.10) utrzymala stopy bez zmian: referencyjna 3,75%, lombardowa 4,25%, depozytowa 3,25%, redyskontowa 3,80%, dyskontowa 3,85% - zgodnie z konsensusem (20/20 ekonomistow). Komunikat: CPI 4,0% we wrzesniu pierwszy raz od ponad roku poza pasmem +/-1 p.p. wokol celu; bazowa 3,3% w sierpniu, 'najprawdopodobniej nieznacznie spadla we wrzesniu'; slabnaca dynamika plac, zatrudnienie spada r/r; NOWY czynnik ryzyka: 'decyzje regulacyjne dotyczace cen energii' (istotne dla tez PGE/Tauron); zmiana frazy z 'utrzymania' na 'zapewnienie' stabilnosci cen. Pekao: pierwsza podwyzka mozliwa w listopadzie po projekcji; FRA wycenia stope >4,50% w 2-3 kwartaly; PKO BP: rynek rozjezdza sie z prognozami ekonomistow. Zloty i SPW bez reakcji na komunikat, ale slabsze przez otoczenie: USD/PLN 3,9131 (+0,77%), EUR/PLN 4,3791, DS0436 6,27%. Konferencja prezesa NBP 8.10 15:00 (potwierdzona w kalendarzu PAP z 8.10), kolejne posiedzenie 3-4.11. 20:00 protokol FOMC: wiekszosc za kolejna podwyzka do konca roku (wrzesniowa 19/19), rynek ok. 80% na +25 pb do konca 2026; Fed 27-28.10. Zdarzenie zgodne z oczekiwaniami - wklad 0.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl 'Rada stop jeszcze nie rusza. Czy bedzie podwyzka w listopadzie?', 7.10.2026 15:55/16:54; strefainwestorow.pl / PAP 'Komunikat RPP bez nowosci, rynek czeka na konferencje prezesa NBP i listopadowa projekcje (opinia)', 7.10.2026; strefainwestorow.pl / PAP 'DZIEN NA FX/FI: PLN powrocil do oslabienia...', 7.10.2026 17:06; strefainwestorow.pl / PAP 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-08'; bankier.pl 'S&P 500 odpadl od szczytu hossy...', 7.10.2026 22:05"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "Bez komunikatu spolki; kurs +2,90% do 92,82 zl (jedna z dwoch rosnacych spolek WIG20 przy indeksie -1,59%), +4,53% od D0 przeciw tezie SHORT - prog miekki 92,35 zl przebity o 0,47 zl -> REDUCE (PRICE_4_8) od 8.10; prog CLOSE 95,90 zl. Kontekst: odrabianie strat po -24,6% YTD do wtorku; spolka opisywana jako najmocniej shortowana na GPW (ryzyko short squeeze); DM BOS 'kupuj' 136,90 zl bez daty w wynikach wyszukiwania.",
+   "wklad_pkt": 0,
+   "zrodlo": "tabela notowan bankier.pl 7.10.2026 17:04 (MODIVO 92,82; +2,90%; +2,62); bankier.pl 'Odwrot na gieldzie...', 7.10.2026 17:28; bankier.pl - profil MODIVO, zakladki komunikaty/wiadomosci, odczyt 8.10.2026 ok. 8:15"
+  },
+  {
+   "ticker": "PEPCO",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "Bez komunikatu spolki (ostatni ESPI: trading update 29.09); kurs -3,33% do 42,95 zl - najslabsza spolka WIG20, przez wiekszosc sesji nad poziomem odniesienia, mocna podaz w ostatniej godzinie; -1,90% od D0 (rel. -3,63 p.p.), 2,14% nad progiem REDUCE 42,03 zl. WIG-Odziez -1,24% (LPP -1,90% w ostatnim dniu z prawem do dywidendy 500 zl). Ruch bez impulsu fundamentalnego - bez reakcji protokolu.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl 'Odwrot na gieldzie...', 7.10.2026 17:28; bankier.pl - profil PEPCO, zakladki komunikaty/wiadomosci, odczyt 8.10.2026 ok. 8:15; tabela notowan bankier.pl 7.10.2026 17:00"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-07",
+   "dn": 3,
+   "opis": "Dotyczy tez TAURONPE (LONG): 15:08 Orlen, Enea, PGE, Tauron i KGHM podpisaly porozumienie o wymianie informacji o zagrozeniach dla infrastruktury krytycznej (przedmiot zapowiadanej konferencji MAP z 14:30 - bez wplywu na wyniki); PGE: dwa raporty 'Informacja o transakcjach w trybie art. 19 MAR' (6.10 i 7.10; tresc bez dostepu do pelnego ESPI). Komunikat RPP wymienil 'decyzje regulacyjne dotyczace cen energii' jako nowy czynnik ryzyka inflacyjnego - sygnal, ze projekty CIT 30% (UD459) i oplat koncesyjnych (UD457) sa na agendzie; oba bez datowanego postepu w 24h (KALENDARZ_NIEPOTWIERDZONY). Kursy: PGE -1,06% (15,385; +2,40% od D0), Tauron -1,94% (9,12; -0,22% od D0), WIG-Energ -0,97%.",
+   "wklad_pkt": 0,
+   "zrodlo": "bankier.pl 'Spolki Skarbu Panstwa maja porozumienie ws. wymiany informacji dot. ochrony infrastruktury krytycznej', 7.10.2026 15:08; bankier.pl - profil PGE, zakladka komunikaty (art. 19 MAR 6.10 i 7.10), odczyt 8.10.2026 ok. 8:15; bankier.pl 'Rada stop jeszcze nie rusza...', 7.10.2026; WebSearch 'projekt CIT 30% energetyka paliwa Rada Ministrow pazdziernik 2026' (bez nowszych datowanych doniesien)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Poranek D+4: wyprzedaz w Azji (Nikkei -1,11%, Shanghai -1,09%, CSI 300 -1,37%, Hang Seng -1,00%, Kospi -2,00%), kontrakty na Europe -0,2...-0,3%, na USA -0,1...-0,2%; UST10Y 5,31%, EUR/USD 1,1204, zloto 4 137 USD (+0,6%). Brent 102,78 USD (+2,57%, +68,8% YTD), WTI 90,30 (+2,29%) - doniesienia, ze Bialy Dom zlecil Pentagonowi plan ataku na Iran przed wyborami polowkowymi; Huti ostrzelali lotnisko w Rijadzie; huragan Isaias wstrzymal ok. 510 tys. b/d w Zatoce Meksykanskiej; zapasy ropy w USA -3,19 mln b. Miedz LME 14 617,50 USD/t (+1,0%, +16,5% YTD) po powrocie Chin ze Zlotego Tygodnia i strajkach w Antofagasta. Kalendarz dnia (PAP): 15:00 konferencja prasowa NBP; GPW: PZU dzien wyplaty dywidendy 4,80 zl, LPP pierwszy dzien bez prawa do dywidendy 500 zl (dzien dywidendy 9.10), Ferro i Text wyplaty, NWZ Greenlane; 14.10 10:00 NWZ PKO BP; 13.10 11:30 Dzien Inwestora MCI. Brak ESPI spolek koszykowych 7.10 po sesji - 8.10 rano, brak nowych rekomendacji dla WIG20, rejestr KNF niedostepny (blad serwera). Bez kierunku dla rankingu - wklad 0.",
+   "wklad_pkt": 0,
+   "zrodlo": "strefainwestorow.pl / PAP 'DZIEN NA RYNKACH: W Azji na gieldach trwa wyprzedaz akcji', 8.10.2026 08:24; strefainwestorow.pl / PAP 'Ceny ropy znow mocno w gore. Bialy Dom zwrocil sie do Pentagonu', 8.10.2026 08:13; strefainwestorow.pl / PAP 'Ceny miedzi w Londynie rosna po powrocie chinskich inwestorow ze swiatecznej przerwy', 8.10.2026 08:07; strefainwestorow.pl / PAP 'Kalendarium rynku kapitalowego GPW 2026-10-08' i 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-08', 8.10.2026; bankier.pl - profil LPP (dywidenda); WebFetch rss.knf.gov.pl/RssOuterView 8.10.2026 (blad serwera)"
   }
  ],
  "data_quality": [
