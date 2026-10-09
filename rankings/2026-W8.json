@@ -680,6 +680,78 @@
    "opis": "Poranek D+4: wyprzedaz w Azji (Nikkei -1,11%, Shanghai -1,09%, CSI 300 -1,37%, Hang Seng -1,00%, Kospi -2,00%), kontrakty na Europe -0,2...-0,3%, na USA -0,1...-0,2%; UST10Y 5,31%, EUR/USD 1,1204, zloto 4 137 USD (+0,6%). Brent 102,78 USD (+2,57%, +68,8% YTD), WTI 90,30 (+2,29%) - doniesienia, ze Bialy Dom zlecil Pentagonowi plan ataku na Iran przed wyborami polowkowymi; Huti ostrzelali lotnisko w Rijadzie; huragan Isaias wstrzymal ok. 510 tys. b/d w Zatoce Meksykanskiej; zapasy ropy w USA -3,19 mln b. Miedz LME 14 617,50 USD/t (+1,0%, +16,5% YTD) po powrocie Chin ze Zlotego Tygodnia i strajkach w Antofagasta. Kalendarz dnia (PAP): 15:00 konferencja prasowa NBP; GPW: PZU dzien wyplaty dywidendy 4,80 zl, LPP pierwszy dzien bez prawa do dywidendy 500 zl (dzien dywidendy 9.10), Ferro i Text wyplaty, NWZ Greenlane; 14.10 10:00 NWZ PKO BP; 13.10 11:30 Dzien Inwestora MCI. Brak ESPI spolek koszykowych 7.10 po sesji - 8.10 rano, brak nowych rekomendacji dla WIG20, rejestr KNF niedostepny (blad serwera). Bez kierunku dla rankingu - wklad 0.",
    "wklad_pkt": 0,
    "zrodlo": "strefainwestorow.pl / PAP 'DZIEN NA RYNKACH: W Azji na gieldach trwa wyprzedaz akcji', 8.10.2026 08:24; strefainwestorow.pl / PAP 'Ceny ropy znow mocno w gore. Bialy Dom zwrocil sie do Pentagonu', 8.10.2026 08:13; strefainwestorow.pl / PAP 'Ceny miedzi w Londynie rosna po powrocie chinskich inwestorow ze swiatecznej przerwy', 8.10.2026 08:07; strefainwestorow.pl / PAP 'Kalendarium rynku kapitalowego GPW 2026-10-08' i 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-08', 8.10.2026; bankier.pl - profil LPP (dywidenda); WebFetch rss.knf.gov.pl/RssOuterView 8.10.2026 (blad serwera)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Czwarta sesja WATS, wyprzedaz bankow: WIG20 -0,63% do 4 128,78 pkt, WIG -0,59% (155 764,56), mWIG40 -0,83%, sWIG80 -0,32%, WIG30 -0,70%; obroty 2,6 mld zl (WIG20 2,22 mld zl). WIG-Banki -3,05% (mBank -4,33%, PKO BP -3,33%, Alior -3,03%, Pekao -2,81%, Erste -2,50%) po konferencji NBP odsuwajacej podwyzke i przy presji politycznej na opodatkowanie bankow; WIG-Energia +1,31% - nowy rekord ok. 5 240 pkt (PGE +2,18%, Tauron +1,07%); Orlen +3,49% (czwarta zwyzka, Brent ok. 104 USD - Ormuz, ataki na tankowce); KGHM -1,87%, Modivo -2,87%, Dino +6,35% bez komunikatu. DAX -0,75%, CAC 40 -0,2%; rosnace rentownosci w Europie i USA.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Wyprzedaz na bankach. Na podwyzki stop trzeba bedzie poczekac?', 8.10.2026 17:26; tabele notowan/indeksow bankier.pl 8.10 16:59-17:15"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Konferencja prezesa NBP 15:00: podwyzki w listopadzie 'na ten moment nie przewiduje' - po projekcji RPP moze zdecydowac o podwyzce, ale dane 'nie wskazuja na potrzebe zmiany poziomu stop w listopadzie'; CPI 4,0% (14 miesiecy nad celem, energia 60% dynamiki), 'nic nie wskazuje, aby ceny surowcow w najblizszym czasie istotnie spadly', obnizony VAT/akcyza na paliwa tylko do konca roku, deficyt sektora 7,1% PKB w projekcie budzetu, 'bank centralny nie podda sie zadnej presji politycznej'. Nastepne posiedzenie RPP 3-4.11. Wall Street 8.10: Nasdaq -1,25% (27 193,34; SOX -3,3%), S&P 500 -0,47% (7 765,36), DJIA +0,1% (51 231,64); ok. 84% na podwyzke Fed w grudniu.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Prezes Glapinski grzmi: bank centralny nie podda sie zadnej presji politycznej', 8.10.2026 15:00/15:27; strefainwestorow.pl 'Stopy procentowe bez zmian. Adam Glapinski tlumaczy wzrost inflacji i ocenia ryzyka', 8.10.2026 15:58; bankier.pl 'Przecena polprzewodnikow. Nasdaq mocno pod kreska, ale Dow Jones na plusie', 8.10.2026 22:05"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Bez komunikatu spolki; kurs -4,33% do 1 391,00 zl (najslabsza spolka WIG20) = dokladnie kurs D0 (0,00% od D0) w sektorowej wyprzedazy po konferencji NBP. Wpis REDUCE z 7.10 utrzymany (protokol: do soboty); prog CLOSE 1 502,28 zl oddalony o +8,00%.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 8.10.2026 17:03; bankier.pl 'Wyprzedaz na bankach...', 8.10.2026 17:26; profil MBANK (ostatni ESPI 6.10 11:45), odczyt 9.10 ok. 8:25"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Bez komunikatu spolki (ostatni ESPI 30.09); kurs -3,03% do 129,65 zl = -0,27% od D0 (teza SHORT pracuje), WIG-Banki -3,05%. Wpis REDUCE z 7.10 utrzymany; prog CLOSE 140,40 zl oddalony o +8,29%.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 8.10.2026 16:59; bankier.pl 'Wyprzedaz na bankach...', 8.10.2026 17:26; profil ALIOR, odczyt 9.10 ok. 8:25"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Kurs +2,18% do 15,72 zl (+4,63% od D0, jedyna noga LONG nad indeksem), WIG-Energia +1,31% - rekord ok. 5 240 pkt; ESPI 15:41 'Informacja o transakcjach w trybie art. 19 MAR' (trzeci z rzedu, tresc bez dostepu). Brak datowanego postepu projektow CIT 30% (UD459) i oplat koncesyjnych.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 8.10.2026 17:03; profil PGE - komunikaty (8.10 15:41), odczyt 9.10 ok. 8:25; bankier.pl 'Wyprzedaz na bankach...', 8.10.2026 17:26"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Komunikat prasowy 10:02 (bez ESPI): zakonczona modernizacja bloku 910 MW w Elektrowni Nowe Jaworzno za 290 mln zl - pierwszy remont kapitalny, blok zsynchronizowany z KSE, ok. 6,5 TWh rocznie, kontrakt mocowy; bez wplywu na wyniki w oknie. Kurs +1,07% do 9,218 zl (+0,85% od D0).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP Biznes 'Tauron zainwestowal 290 mln zl w modernizacje bloku 910 MW w Jaworznie', 8.10.2026 10:02; tabela notowan bankier.pl 8.10 17:00"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Bez komunikatu spolki; kurs -2,87% do 90,16 zl (bankier w podsumowaniu sesji: -2,7%) = +1,53% od D0 - powrot pod prog miekki 92,35 zl po jednej sesji; wpis REDUCE z 8.10 utrzymany (do soboty), prog CLOSE 95,90 zl oddalony o +6,37%.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 8.10.2026 16:59; bankier.pl 'Wyprzedaz na bankach...', 8.10.2026 17:26; profil MODIVO, odczyt 9.10 ok. 8:25"
+  },
+  {
+   "ticker": "PZU",
+   "data": "2026-10-08",
+   "dn": 4,
+   "opis": "Dzien wyplaty dywidendy 4,80 zl (dzien prawa minal 17.09); kurs +1,01% do 72,22 zl = +3,44% od D0 przeciw tezie SHORT, 0,54% pod progiem REDUCE 72,61 zl; bez nowego ESPI (ostatni 6.10 17:08 NWZ 3.11).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 8.10.2026 17:02; profil PZU - komunikaty, odczyt 9.10 ok. 8:25"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Publikacja 7:45 (przed sesja -> D+5): Paramount Pictures pracuje nad filmem w uniwersum Cyberpunka (Deadline; potwierdzenie joint CEO Michala Nowakowskiego na X: 'Jestesmy podekscytowani mozliwoscia wspolpracy z Paramount jako przyszlym partnerem'; producent Lorenzo di Bonaventura). Bez ESPI, bez danych o udziale finansowym spolki - katalizator wizerunkowy. Kurs 8.10: 252,50 zl (-1,37%), -0,39% od D0.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP Biznes 'Cyberpunk zmierza na wielki ekran. Paramount zekranizuje polski hit', 9.10.2026 07:45; profil CDPROJEKT - komunikaty (ostatni ESPI 2.09), odczyt 9.10 ok. 8:25"
   }
  ],
  "data_quality": [
