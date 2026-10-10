@@ -1,20 +1,20 @@
 {
-  "version": "2026-W8",
-  "generated": "2026-10-03",
+  "version": "2026-W9",
+  "generated": "2026-10-10",
   "status": "AKTUALNA",
   "long": [
     "PGE",
+    "LPP",
     "TAURONPE",
     "CDPROJEKT",
-    "ALLEGRO",
-    "PEPCO"
+    "KETY"
   ],
   "short": [
-    "MODIVO",
-    "PZU",
-    "KRUK",
     "ALIOR",
-    "MBANK"
+    "PKOBP",
+    "MBANK",
+    "PEKAO",
+    "KRUK"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -39,50 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "ALIOR",
-      "action": "REDUCE",
-      "date": "2026-10-07",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 6.10.2026 135,40 zl wobec D0 130,00 zl = +4,15% (+0,77 p.p. wobec WIG20 +3,38%); prog miekki 4% = 135,20 zl przebity o 0,20 zl na drugiej sesji okna, prog twardy CLOSE (PRICE_8) = 140,40 zl. Wtorek +3,68% (+4,80 zl, obrot 35,9 mln zl) w rajdzie calego sektora: WIG-Banki +2,93% do 28 338,29 pkt, mBank +4,10%, Erste +3,25%, PKO BP +2,67%, Pekao +2,26%; WIG na historycznym rekordzie (159 012,30), WIG20 +1,61% do 4 222,36 - najwyzsze zamkniecie w historii. Brak komunikatu spolki 5-6.10 (najnowszy wpis na bankier.pl to material promocyjny o koncie z 7.10 06:00); ostatnie sygnaly spolkowe (Citi 21.09 'kupuj' 146,80 zl, Fitch 30.09 BBB-) sa przeciw tezie, ale znane rankingowi - to wyzwalacz cenowy sektorowy (dzien przed decyzja RPP, konsensus bez zmian 3,75%, rynek gra jastrzebi przekaz), nie fundamentalny, dlatego szczebel miekki. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 7.10 waga 50% od kursu 135,40 zl. Zrodlo: tabela notowan bankier.pl 6.10.2026 17:01 (ALIOR 135,40; +3,68%; +4,80); tabela indeksow bankier.pl 6.10 17:15 (WIG-BANKI 28 338,29; +2,93%); bankier.pl 'Na polskiej gieldzie caly czas gra muzyka. Nowe rekordy i mocne wzrosty', 6.10.2026 17:32; d0.prices w signals.json.",
-      "price_before": 135.4,
-      "move_from_d0_pct": 4.15,
-      "trigger": "PRICE_4_8"
-    },
-    {
-      "ticker": "MBANK",
-      "action": "REDUCE",
-      "date": "2026-10-07",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 6.10.2026 1 487,00 zl wobec D0 1 391,00 zl = +6,90% (+3,52 p.p. wobec WIG20 +3,38%); prog miekki 4% = 1 446,64 zl przebity we wtorek (poniedzialek 1 428,50 zl byl 1,27% pod progiem), prog twardy CLOSE (PRICE_8) = 1 502,28 zl - brakuje juz tylko +1,03%. Wtorek +4,10% (+58,50 zl), lider WIG20, przy WIG-Banki +2,93% i rekordzie WIG; impuls spolkowy: komunikat z 6.10 11:52 - koszty ryzyka prawnego kredytow walutowych za III kw. 2026 szacowane na 78 mln zl (rutynowa aktualizacja parametrow modelu), przyjety przez rynek z ulga jako koniec duzych rezerw frankowych; 15:26 - od 7.10 bank wdraza POLSTR 1M do nowych hipotek i wycofuje oferte na WIBOR. Oba sygnaly sa przeciw tezie SHORT, ale ponizej rangi szoku; glowny napad to sektor przed decyzja RPP (7.10, konsensus bez zmian 3,75%). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 7.10 waga 50% od kursu 1 487,00 zl. Przy zamknieciu powyzej 1 502,28 zl wpis awansuje do CLOSE (PRICE_8). Zrodlo: tabela notowan bankier.pl 6.10.2026 16:59 (MBANK 1 487,00; +4,10%); bankier.pl 'Koszty walutowe mBanku. Prawie 80 mln zl uderzy w zyski za trzeci kwartal', 6.10.2026 11:52; bankier.pl 'mBank od 7 X wdrozy POLSTR do nowych kredytow hipotecznych', 6.10.2026 15:26; bankier.pl 'Na polskiej gieldzie caly czas gra muzyka. Nowe rekordy i mocne wzrosty', 6.10.2026 17:32; d0.prices w signals.json.",
-      "price_before": 1487.0,
-      "move_from_d0_pct": 6.9,
-      "trigger": "PRICE_4_8"
-    },
-    {
-      "ticker": "MODIVO",
-      "action": "REDUCE",
-      "date": "2026-10-08",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8%: zamkniecie 7.10.2026 92,82 zl wobec D0 88,80 zl = +4,53% (+2,79 p.p. wobec WIG20 +1,73%); prog miekki 4% = 92,35 zl przebity o 0,47 zl (0,51%) na trzeciej sesji okna, prog twardy CLOSE (PRICE_8) = 95,90 zl (+3,32% od kursu). Sroda +2,90% (+2,62 zl) - jedna z dwoch rosnacych spolek WIG20 (obok Orlenu +0,17%) przy WIG20 -1,59% i szerokim odwrocie (WIG-Banki -2,41%, KGHM -2,62%); odrabianie strat po -24,6% od poczatku roku do wtorku, spolka opisywana jako najmocniej shortowana na GPW (ryzyko domykania shortow). Brak komunikatu spolki od raportu PSr z 2.10 (strata netto -319 mln zl za I polrocze, odpis Worldbox 287,6 mln zl - znane rankingowi), brak datowanej rekomendacji w biezacym tygodniu - wyzwalacz cenowy bez impulsu fundamentalnego, dlatego szczebel miekki. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 8.10 waga 50% od kursu 92,82 zl. Przy zamknieciu powyzej 95,90 zl wpis awansuje do CLOSE (PRICE_8). Zrodlo: tabela notowan bankier.pl 7.10.2026 17:04 (MODIVO 92,82; +2,90%; +2,62); bankier.pl 'Odwrot na gieldzie. Szerokie spadki duzych spolek i odbicie na gwiazdach hossy OZE', 7.10.2026 17:28; bankier.pl - profil MODIVO, zakladki komunikaty/wiadomosci, odczyt 8.10.2026 ok. 8:15; d0.prices w signals.json.",
-      "price_before": 92.82,
-      "move_from_d0_pct": 4.53,
-      "trigger": "PRICE_4_8"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-10-10",
   "d0": {
-    "date": "2026-10-02",
-    "wig20": 4084.31,
+    "date": "2026-10-09",
+    "wig20": 4185.52,
     "prices": {
-      "PGE": 15.025,
-      "TAURONPE": 9.14,
-      "CDPROJEKT": 253.5,
-      "ALLEGRO": 50.39,
-      "PEPCO": 43.78,
-      "MODIVO": 88.8,
-      "PZU": 69.82,
-      "KRUK": 366.4,
-      "ALIOR": 130.0,
-      "MBANK": 1391.0
+      "PGE": 16.7,
+      "LPP": 25040.0,
+      "TAURONPE": 9.642,
+      "CDPROJEKT": 263.0,
+      "KETY": 1282.0,
+      "ALIOR": 130.15,
+      "PKOBP": 113.94,
+      "MBANK": 1401.5,
+      "PEKAO": 261.1,
+      "KRUK": 347.9
     }
   },
   "history": [
@@ -225,6 +197,30 @@
         "KALENDARZ_NIEPOTWIERDZONY",
         "WEZWANIE_ERSTEPL_POMINIETE_W7",
         "DM_SYGNAL_POMINIETY_W7"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)"
+    },
+    {
+      "week": "2026-W8",
+      "long_vs_index_pp": 2.16,
+      "long_abs_pct": 4.64,
+      "spread_pp": 3.98,
+      "rozjazd_pp": 1.82,
+      "hit_top": "4/5",
+      "hit_bottom": "3/5",
+      "tactical_pp": null,
+      "managed_pp": 2.98,
+      "reaction_pp": -1.0,
+      "base_rate": 0.6,
+      "spearman": 0.376,
+      "brier": 0.2331,
+      "data_quality": [
+        "FMP_PLAN_BLOKADA",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "DYWIDENDA_KOREKTA_PZU",
+        "DYWIDENDA_KOREKTA_LPP",
+        "KALENDARZ_NIEPOTWIERDZONY"
       ],
       "metoda": "v1.1 (momentum mechaniczne)"
     }
