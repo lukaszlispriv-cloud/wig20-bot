@@ -752,6 +752,110 @@
    "opis": "Publikacja 7:45 (przed sesja -> D+5): Paramount Pictures pracuje nad filmem w uniwersum Cyberpunka (Deadline; potwierdzenie joint CEO Michala Nowakowskiego na X: 'Jestesmy podekscytowani mozliwoscia wspolpracy z Paramount jako przyszlym partnerem'; producent Lorenzo di Bonaventura). Bez ESPI, bez danych o udziale finansowym spolki - katalizator wizerunkowy. Kurs 8.10: 252,50 zl (-1,37%), -0,39% od D0.",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl / PAP Biznes 'Cyberpunk zmierza na wielki ekran. Paramount zekranizuje polski hit', 9.10.2026 07:45; profil CDPROJEKT - komunikaty (ostatni ESPI 2.09), odczyt 9.10 ok. 8:25"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Piata sesja WATS, zamkniecie okna W8 (D+5): WIG20 +1,37% do 4 185,52 pkt (+2,48% od D0), WIG +1,37% (157 901,42), mWIG40 +1,58% (10 651,44), sWIG80 +0,43%; obroty 3,28 mld zl (WIG20 2,8 mld zl) - najwyzsze w tygodniu. Lider: WIG-Energia +4,8% (nowe maksima historyczne w trakcie sesji, ok. 5 486 pkt): PGE +6,23% (ponad +21% od 28.09), Enea +5,4%, Tauron +4,60%; BM mBank: trend Tauronu nienaruszony, dopoki tygodniowe zamkniecie > 8,70 zl. WIG-Banki -0,51% (PKO BP -0,85%, Pekao -0,72%, Erste -0,32%; mBank, ING, Erste w PAP +0,3-0,5%). KGHM +5,68% (status projektow strategicznych KE dla Retkow-Grodziszcze i Huty Legnica; miedz +1,4%, srebro +2,8%), CD Projekt +4,16% (Paramount/Cyberpunk), Orlen +2,50% (piata zwyzka), Kruk -7,72% najslabszy w WIG20 (slabe nakłady na portfele w III kw.), JSW +6,44%, GPW +2,75% (pelne przejscie na WATS). Zagranica: Trump - brak wznowienia atakow na Iran przed wyborami 3.11, rozmowy z Teheranem; DAX +1,4%, FTSE +1%, CAC +0,9%.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Energetyka lakomym kaskiem na gieldzie. Hollywood interesuje sie tytulem od CD Projekt Red', 9.10.2026 17:18 (M. Kubicki); strefainwestorow.pl / PAP Biznes 'DZIEN NA GPW: Glowne indeksy koncza tydzien wzrostem; trwa hossa na WIG Energia', 9.10.2026 15:52; tabele notowan/indeksow bankier.pl 9.10 16:59-17:15 (przez scripts/kursy.py)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Opis dyskusji RPP z wrzesniowego posiedzenia (NBP, 14:00): wysoka niepewnosc co do inflacji, wplyw drozszych paliw na inflacje bazowa trudny do przewidzenia, czesc czlonkow odnotowala wzrost miar oczekiwan inflacyjnych. Kotecki (RPP): jesli listopadowa projekcja nie pokaze powrotu CPI w poblize 2,5% na koniec 2027/poczatek 2028, w listopadzie potrzebny wniosek o podwyzke o 25 pb. KNF: ROE sektora bankowego na koniec sierpnia 14,19% (14,50% miesiac wczesniej, 15,70% rok wczesniej). Zloty: EUR/PLN ok. 4,39 (najslabszy od ponad 2 lat), USD/PLN ok. 3,92 (najwyzej od 1,5 roku). UMich USA 46,3 pkt (ocz. 47,6; poprz. 48,1). Minister energii Motyka: pakiet CPN obniza inflacje o 1 pkt proc. Bez datowanego postepu projektow CIT 30% (UD459) i oplat koncesyjnych (UD457) - KALENDARZ_NIEPOTWIERDZONY.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl / PAP 'Skrot wiadomosci - piatek, 9 pazdziernika, 17.00' i '21.00', 9.10.2026; WebSearch 'projekt CIT 30% energetyka paliwa UD459 pazdziernik 2026' (najnowszy datowany dokument: pismo Lewiatana 31.08.2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-09",
+   "dn": 6,
+   "opis": "Wall Street 9.10 (po 17:00 -> sesja 12.10): DJIA +0,83% (51 654,95), S&P 500 +0,59% (7 811,54), Nasdaq +0,64% (27 366,17) - tydzien na plusie; Trump: brak wznowienia atakow na Iran przed wyborami 3.11, rozmowy z Teheranem (mniej obaw o rope i inflacje); telekomy w dol, technologie w gore. Brent (XII) 103,98 USD (-0,29%), WTI (XI) 91,29 USD (-0,23%). Od 13.10 sezon wynikow w USA (JPMorgan, Citi, Wells Fargo, Goldman, J&J, UNH). Trump powolal komisje sledcza ws. czlonkini Fed Lisy Cook. Wyniki Trigon DM (15:25): top picks na pazdziernik m.in. CD Projekt i Allegro (LONG), 'gorzej niz rynek' m.in. mBank i Modivo (SHORT) - sygnaly zgodne z tezami, ostroznosc do wyborow w USA.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl / PAP 'DZIEN NA RYNKACH: Na Wall Street wzrosty, Dow Jones w gore ponad 400 pkt', 9.10.2026 22:13; strefainwestorow.pl / PAP 'Trigon DM przedstawia top picks na pazdziernik...', 9.10.2026 15:25; bankier.pl 'Tym beda zyly rynki: Sezon wynikowy czas zaczac', 9.10.2026 11:37"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +6,23% do 16,70 zl (+11,15% od D0, rel. +8,67 p.p. - najlepsza spolka rankingu W8), lokomotywa WIG-Energia +4,8% (rekord historyczny w trakcie sesji); ponad +21% od 28.09. Impuls sektorowy bez komunikatu spolki (ESPI 9.10 15:38 'Informacja o transakcjach w trybie art. 19 MAR' - czwarty z rzedu, tresc bez dostepu). Bez datowanego postepu projektow CIT 30%/oplat koncesyjnych.",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:04; bankier.pl 'Energetyka lakomym kaskiem...', 9.10.2026 17:18; profil PGE - komunikaty (9.10 15:38), odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +4,60% do 9,642 zl (+5,49% od D0, rel. +3,01 p.p.) w sektorowym rajdzie energetyki; BM mBank (PAP 15:52): trend wzrostowy nienaruszony, dopoki tygodniowe zamkniecie > 8,70 zl. Bez komunikatu spolki (ostatni ESPI 2.10 - Goldman Sachs, prog udzialu).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 16:59; strefainwestorow.pl / PAP 'DZIEN NA GPW...', 9.10.2026 15:52; profil TAURONPE - komunikaty, odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Reakcja kursu na Paramount/Cyberpunk (publikacja 7:45): +4,16% do 263,00 zl (+3,75% od D0, rel. +1,27 p.p.); Trigon DM top pick na pazdziernik (15:25). Bez ESPI (ostatni 2.09).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:02; bankier.pl 'Energetyka lakomym kaskiem...', 9.10.2026 17:18; PAP 'Trigon DM...', 9.10.2026 15:25"
+  },
+  {
+   "ticker": "ALLEGRO",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +2,62% do 51,75 zl (+2,70% od D0, rel. +0,22 p.p.); Trigon DM top pick na pazdziernik (15:25). Bez ESPI (ostatni 5.10 skup akcji).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:04; PAP 'Trigon DM...', 9.10.2026 15:25; profil ALLEGRO - komunikaty, odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "PEPCO",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +0,32% do 43,82 zl (+0,09% od D0, rel. -2,39 p.p. - jedyna noga LONG pod indeksem w W8). Bez komunikatu (ostatni ESPI 29.09 trading update).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:01; profil PEPCO - komunikaty, odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "KRUK",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "ESPI 13:15 'Informacja o nakladach oraz wplatach dotyczacych portfeli wierzytelnosci' (oczekiwany od pierwszej dekady pazdziernika): naklady na portfele w III kw. 347 mln zl wobec 622 mln zl rok wczesniej (nominal 1,40 mld zl wobec 2,77 mld zl), splaty 960 mln zl (-5% r/r; 1% nad zalozeniami ksiegowymi, ponizej oczekiwan operacyjnych), za 9 mies. splaty 2 971 mln zl (+2% r/r), naklady 1 212 mln zl; Rumunia slabnie, 80% nakladow poza Polska (Hiszpania 38%). Kurs -7,72% do 347,90 zl - najslabsza spolka WIG20; -5,05% od D0 (rel. -7,53 p.p.) - teza SHORT potwierdzona, bez reakcji protokolu (ruch zgodny z teza). Pelne wyniki Q3 27.10.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP Biznes 'Kruk zainwestowal 347 mln zl w portfele wierzytelnosci w III kwartale', 9.10.2026 13:22; profil KRUK - komunikaty (ESPI 9.10 13:15 'Wazny'); tabela notowan bankier.pl 9.10.2026 17:03"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +3,11% do 92,96 zl (+4,68% od D0, rel. +2,21 p.p. przeciw tezie SHORT) - ponownie nad progiem miekkim 92,35 zl, 3,07% pod progiem CLOSE 95,90 zl; wpis REDUCE z 8.10 utrzymany do konca okna. Trigon DM (15:25): Modivo na liscie 'gorzej niz rynek' - sygnal zgodny z teza. Bez komunikatu spolki (ostatni ESPI 2.10).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:02; PAP 'Trigon DM...', 9.10.2026 15:25; profil MODIVO - komunikaty, odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +0,75% do 1 401,50 zl (+0,75% od D0, rel. -1,72 p.p. - teza SHORT relatywnie pracuje) przy WIG-Banki -0,51%; wpis REDUCE z 7.10 (od 1 487,00 zl) utrzymany, prog CLOSE 1 502,28 zl oddalony o +7,19%. Trigon DM (15:25): mBank na liscie 'gorzej niz rynek'. KNF: ROE sektora 14,19% na koniec sierpnia (spadek). Bez komunikatu spolki (ostatni ESPI 6.10).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 16:59; PAP 'Trigon DM...', 9.10.2026 15:25; PAP skrot 17:00 (KNF ROE); profil MBANK - komunikaty, odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs +0,39% do 130,15 zl (+0,12% od D0, rel. -2,36 p.p.); wpis REDUCE z 7.10 (od 135,40 zl) utrzymany, prog CLOSE 140,40 zl oddalony o +7,88%. Bez komunikatu spolki (ostatni ESPI 30.09 Fitch).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:04; profil ALIOR - komunikaty, odczyt 10.10.2026 ok. 8:20"
+  },
+  {
+   "ticker": "PZU",
+   "data": "2026-10-09",
+   "dn": 5,
+   "opis": "Kurs -0,64% do 71,76 zl (+2,78% od D0, rel. +0,30 p.p. przeciw tezie SHORT), 1,19% pod progiem REDUCE 72,61 zl - bez reakcji. Bez komunikatu (ostatni ESPI 6.10 NWZ 3.11).",
+   "wklad_pkt": null,
+   "zrodlo": "tabela notowan bankier.pl 9.10.2026 17:03; profil PZU - komunikaty, odczyt 10.10.2026 ok. 8:20"
   }
  ],
  "data_quality": [
