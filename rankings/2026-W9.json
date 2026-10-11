@@ -608,6 +608,22 @@
    "opis": "Wstępny raport FY26 poza oknem; skup do 400 mln EUR na FY27–29 bez harmonogramu transz (trading update 29.09 — „znane”).",
    "wklad_pkt": 0,
    "zrodlo": "stockwatch.pl / bankier.pl 29.09.2026; kalendarium bankier.pl"
+  },
+  {
+   "ticker": "ZABKA",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "Komunikat Alimentation Couche-Tard z soboty 10.10 10:27: spełniony warunek prawny wezwania — brak sprzeciwu organu FSR (subsydia zagraniczne); wcześniej 30.09 zgoda FDI. Cena 32,00 zł, zapisy do 26.10 (dn=11), kurs D0 31,70 zł (dyskonto 0,94%). Zgody antymonopolowe KE/UOKiK nadal niewydane. Zdarzenie weekendowe → sesja 12.10; spółka poza koszykami, bez wpisu taktycznego (arbitraż <1%, nie alfa).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Zielone światło z Brukseli. Właściciel Circle K coraz bliżej przejęcia Żabki”, 10.10.2026 10:50 (Ipopema); komunikat ACT 10.10.2026 10:27; strefainwestorow.pl / PAP 10.10 10:49"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "Tło weekendu przed pierwszą sesją okna: Trump ogłosił 9.10 porozumienie z Putinem o dostawach rosyjskiego oleju napędowego (≥300 tys. t, kolejne 500 tys. t w listopadzie; sankcje na rosyjski diesel zawieszone) — presja na ceny paliw w dół przed wyborami 3.11 (ryzyko pośrednie dla tez LONG PGE/Tauron przy drogim hurcie energii); Wall Street 9.10: Dow Jones +400 pkt. Kotecki (RPP) 10.10 09:41 „Sytuacja wokół NBP bez precedensu” — tylko nagłówek. Brak ESPI i rekomendacji dla spółek koszykowych 10–11.10; kalendarz 12.10 pusty (Tokio i Toronto zamknięte).",
+   "wklad_pkt": null,
+   "zrodlo": "money.pl „Paliwowy deal Trumpa z Putinem…” 9–10.10.2026; tvp.info 9.10.2026; bankier.pl „Wall Street ze wzrostami” 9.10.2026 23:09; strefainwestorow.pl / PAP 10.10.2026 09:41; bankier.pl zakładki wiadomości 10 spółek koszykowych, odczyt 11.10 ok. 8:20"
   }
  ],
  "data_quality": [
