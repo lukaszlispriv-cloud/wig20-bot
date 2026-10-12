@@ -39,6 +39,7 @@ do zewnętrznych serwisów bez wyraźnej decyzji właściciela — to wynoszenie
 rachunek Capital.com NIE pozwala shortować CFD na akcje, a API nie ma pola, które by o tym mówiło.
 Nie próbuj „naprawiać" `HEDGE_MODE` na `classic`. `/status` zwraca też `diagnostyka_instrumentow`
 (czy każda noga koszyka może wejść w docelowej wielkości) i `ekspozycja` (netto; ujemne = rachunek per saldo krótki).
+**Wyjątek minimalnej wielkości (od 12.10.2026):** `MIN_SIZE_EXCEPTIONS` (domyślnie `LPPP`) pozwala otworzyć nogę w minimalnej wielkości brokera ponad tolerancję `ALLOC_PCT × MAX_OVERSHOOT` — LPP wchodzi jako 0,1 akcji (ok. 2 500 PLN, ~2/3 koszyka LONG przy kapitale ~3 000 PLN). Hedge rośnie razem z ekspozycją, REDUCE takiej nogi nic nie zmienia (poniżej minimum nie ma nic), pozycja na minimum nie jest przeskalowywana. W raportach pisz wprost o tej koncentracji; rozliczenie modelowe (równe wagi) zostaje bez zmian.
 
 ## Kontrola rachunku przez `/status` (od 12.10.2026 — rutyny mają dostęp)
 

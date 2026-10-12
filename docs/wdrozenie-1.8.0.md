@@ -72,6 +72,7 @@ Kroki 1–3 i 4 muszą iść w tej kolejności, inaczej bot zamilknie w locie.
 |---|---|---|
 | `SIZE_TOL` | `0.35` | dopuszczalne odchylenie wielkości otwartej pozycji od celu, zanim bot ją przeskaluje (zamknij+otwórz, drugi spread) |
 | `ALLOW_TOKEN_IN_URL` | `true` | czy `?token=` jest jeszcze akceptowany; ustaw `false` po kroku 3 |
+| `MIN_SIZE_EXCEPTIONS` | `LPPP` | [12.10.2026] epiki (po przecinku), które wolno otworzyć w MINIMALNEJ wielkości brokera, nawet gdy przekracza tolerancję `ALLOC_PCT × MAX_OVERSHOOT` — decyzja właściciela dla LPP (0,1 akcji ≈ 2 500 PLN przy kapitale ~3 000 PLN). Hedge liczy się od faktycznej ekspozycji, więc rośnie razem z taką nogą; REDUCE jej nie zmniejszy; pozycja na minimum nie jest przeskalowywana. Pusty ciąg wyłącza wyjątek |
 
 Do **usunięcia** z Rendera (v1.8.1 ich nie czyta): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
 
