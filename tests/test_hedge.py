@@ -172,6 +172,73 @@ class TestPrzeskalowanie(unittest.TestCase):
         self.assertTrue(any("koszyk SHORT" in x for x in rep["pominiete"]))
 
 
+class TestWyjatekMinimalnejWielkosci(unittest.TestCase):
+    """MIN_SIZE_EXCEPTIONS (12.10.2026): LPP wchodzi jako 0,1 mimo tolerancji.
+
+    Przy kapitale ~2 900 PLN noga ma cel 293 PLN i tolerancję 469 PLN, a 0,1
+    akcji LPP to ok. 2 500 PLN. Bez wyjątku noga jest pomijana; z wyjątkiem
+    wchodzi w minimalnej wielkości, a hedge liczy się od faktycznej
+    ekspozycji. Pozycji stojącej na minimum nie wolno co bieg zamykać
+    i otwierać na nowo tylko dlatego, że jest ponad SIZE_TOL od celu.
+    """
+
+    SYG = dict(SYGNALY, long=["LPP", "PGE", "PEKAO", "PZU", "MBANK"],
+               epics=dict(SYGNALY["epics"], LPP="LPPP"))
+
+    def setUp(self):
+        CENY["LPPP"] = 25020.0
+        self._stare = set(app.MIN_SIZE_EXCEPTIONS)
+        app.MIN_SIZE_EXCEPTIONS.clear(); app.MIN_SIZE_EXCEPTIONS.add("LPPP")
+
+    def tearDown(self):
+        app.MIN_SIZE_EXCEPTIONS.clear(); app.MIN_SIZE_EXCEPTIONS.update(self._stare)
+        CENY.pop("LPPP", None)
+
+    def _uruchom(self, cap):
+        with mock.patch.object(app, "Capital", lambda: cap), \
+             mock.patch.object(app, "load_signals", lambda: (dict(self.SYG), "sha")), \
+             mock.patch.object(app, "notify", lambda *a, **k: None):
+            return app.sync()
+
+    def test_calc_size_daje_minimum_dla_wyjatku(self):
+        cap = FakeCapital(pozycje=[])
+        size, m, info = app.calc_size(cap, EQUITY * 0.10, "LPPP", "PLN")
+        self.assertEqual(size, 0.1)
+        self.assertIn("WYJĄTEK", info)
+
+    def test_bez_wyjatku_noga_jest_pomijana(self):
+        app.MIN_SIZE_EXCEPTIONS.clear()
+        cap = FakeCapital(pozycje=[])
+        size, m, info = app.calc_size(cap, EQUITY * 0.10, "LPPP", "PLN")
+        self.assertIsNone(size)
+        self.assertIn("pomijam", info)
+
+    def test_lpp_wchodzi_i_hedge_rosnie_z_ekspozycja(self):
+        cap = FakeCapital(pozycje=[poz("PEO", "BUY", 1.1),
+                                   poz("FW2020U2026", "SELL", 0.37)])
+        rep = self._uruchom(cap)
+        self.assertFalse(any("LPP" in x for x in rep["pominiete"]),
+                         f"LPP nie powinno być pominięte: {rep['pominiete']}")
+        self.assertIn("LPP", rep["ekspozycja_dluga"]["pozycje"])
+        self.assertAlmostEqual(rep["ekspozycja_dluga"]["pozycje"]["LPP"], 2502.0, places=0)
+        self.assertAlmostEqual(rep["hedge"]["cel"], rep["ekspozycja_dluga"]["razem"], places=2)
+
+    def test_pozycja_na_minimum_nie_jest_przeskalowywana(self):
+        cap = FakeCapital(pozycje=[poz("LPPP", "BUY", 0.1),
+                                   poz("FW2020U2026", "SELL", 0.9)])
+        rep = self._uruchom(cap)
+        self.assertFalse(any("PRZESKALUJ LPP" in x for x in rep["akcje"]),
+                         f"pozycja 0,1 LPP ma zostać bez zmian: {rep['akcje']}")
+        self.assertFalse(any("LPP" in x and "NIEWYKONALNE" in x for x in rep["pominiete"]))
+
+    def test_diagnostyka_nazywa_wyjatek(self):
+        cap = FakeCapital(pozycje=[])
+        d = app.diagnostyka_instrumentow(cap, self.SYG, EQUITY, "PLN")
+        lpp = next(w for w in d if w["ticker"] == "LPP")
+        self.assertIn("WYJĄTEK", lpp["werdykt"])
+        self.assertNotIn("NIE WEJDZIE", lpp["werdykt"])
+
+
 class TestDiagnostykaInstrumentow(unittest.TestCase):
     """Odpowiedź na „czemu ten long nie wszedł" bez czekania na kolejny bieg."""
 

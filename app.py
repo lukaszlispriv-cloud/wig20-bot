@@ -104,6 +104,15 @@ ALLOW_TOKEN_IN_URL = os.environ.get("ALLOW_TOKEN_IN_URL", "true").lower() == "tr
 DRY_RUN          = os.environ.get("DRY_RUN", "true").lower() == "true"
 ALLOC_PCT        = float(os.environ.get("ALLOC_PCT", "0.10"))
 MAX_OVERSHOOT    = float(os.environ.get("MAX_OVERSHOOT", "1.6"))
+# Epiki, które wolno otworzyć w MINIMALNEJ wielkości brokera, nawet gdy ta
+# minimalna pozycja przekracza tolerancję ALLOC_PCT × MAX_OVERSHOOT. Decyzja
+# właściciela z 12.10.2026 dla LPP (0,1 akcji ≈ 2 500 PLN przy kapitale
+# ~3 000 PLN): noga wchodzi jako 0,1 zamiast być pomijana. Hedge liczy się od
+# FAKTYCZNEJ ekspozycji, więc rośnie razem z nią; REDUCE takiej nogi nie
+# zmniejszy (poniżej minimum nie ma nic). Pusty ciąg wyłącza wyjątek.
+MIN_SIZE_EXCEPTIONS = {e.strip().upper() for e in
+                       os.environ.get("MIN_SIZE_EXCEPTIONS", "LPPP").split(",")
+                       if e.strip()}
 # Dopuszczalne odchylenie wielkości OTWARTEJ pozycji od celu, zanim bot ją
 # przeskaluje (zamknij+otwórz — Capital.com nie ma częściowego zamknięcia).
 # Ratuje sytuację, w której pozycja weszła jako taktyczna (połowa wielkości),
@@ -1019,6 +1028,10 @@ def calc_size(cap, target_acc, epic, acc_ccy):
         min_acc = step * m["mid"] / fx
         if min_acc <= target_acc * MAX_OVERSHOOT:
             return step, m, f"min. wielkość ({step})"
+        if epic.upper() in MIN_SIZE_EXCEPTIONS:
+            return step, m, (f"WYJĄTEK min. wielkości: {step} = {min_acc:.0f} "
+                             f"{acc_ccy} ponad tolerancję "
+                             f"{target_acc * MAX_OVERSHOOT:.0f} {acc_ccy}")
         return None, m, (f"min. wielkość {step} = {min_acc:.0f} {acc_ccy} "
                          f"> tolerancja — pomijam")
     return size, m, "ok"
@@ -1090,6 +1103,13 @@ def diagnostyka_instrumentow(cap, sig, equity, ccy):
                   "tolerancja": round(cel * MAX_OVERSHOOT, 2)})
         if min_wart is None:
             w["werdykt"] = "brak ceny — pominięty"
+        elif min_wart > cel * MAX_OVERSHOOT and epic.upper() in MIN_SIZE_EXCEPTIONS:
+            w["werdykt"] = (f"OK (WYJĄTEK MIN_SIZE_EXCEPTIONS): wejdzie "
+                            f"{m['min']} = {min_wart:.0f} {ccy}, czyli "
+                            f"{min_wart / cel:.1f}× cel {cel:.0f} {ccy}; "
+                            f"hedge rośnie razem z ekspozycją"
+                            if m["status"] == "TRADEABLE" else
+                            f"NIE WEJDZIE TERAZ: rynek {m['status']}")
         elif min_wart > cel * MAX_OVERSHOOT:
             w["werdykt"] = (f"NIE WEJDZIE: minimalna pozycja {min_wart:.0f} "
                             f"{ccy} > tolerancja {cel * MAX_OVERSHOOT:.0f} "
@@ -1329,6 +1349,14 @@ def sync():
                 f"{want['ticker']}: {powod} NIEWYKONALNE "
                 f"({info if not size else 'rynek ' + str(m2['status'])}) "
                 f"— pozycja bez zmian")
+            continue
+        if abs(size - float(p.get("size") or 0.0)) < 1e-9:
+            # Noga stoi na minimalnej wielkości brokera (wyjątek
+            # MIN_SIZE_EXCEPTIONS): cel jest niżej, ale mniejszej pozycji nie
+            # ma — zamknij+otwórz tej samej wielkości kosztowałoby dwa spready
+            # za nic. Zostaje jak jest, bez wpisu w każdym biegu.
+            log.info("%s: %s pominięta — pozycja już na minimalnej wielkości "
+                     "%s (%s)", want["ticker"], powod, size, info)
             continue
         if DRY_RUN:
             rep["akcje"].append(f"[DRY] PRZESKALUJ {want['ticker']} "
