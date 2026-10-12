@@ -41,11 +41,13 @@ opublikowane bez zmian ex post (pole `momentum_method: "uznaniowe"` w `rankings/
 Każda spółka ma w `rankings/<tydzień>.json` jednozdaniowe `uzasadnienie` punktów. Rewizje: tylko udokumentowana zmiana
 konsensusu lub zaskoczenie wynikowe z liczbami (vs konsensus PAP), nie „pozytywne sygnały". Przepływy: rejestr KNF
 (zmiany ≥0,1 p.p.), zmiany indeksów (MSCI, STOXX, cap GPW), skupy akcji; przy braku danych 5/10.
-Konsensus z TradingView (`get-forecasts`: liczba analityków, rozkład; cele po teście skali) i wskaźniki wyceny ze
-screenera TV są od 12.10.2026 wyłącznie KONTEKSTEM w `uzasadnienie` (z datą odczytu), nie wejściem do punktacji
-Rewizji ani Wyceny — zmiana celu/oceny TV liczy się jako udokumentowana rewizja dopiero po decyzji właściciela
-(flaga `konsensus_tv_do_punktacji`, dziś `false`) i dopisku tutaj. Konsensus TV ≠ konsensus PAP; n<5 analityków =
-„niska próba". Rejestru KNF TV nie zastępuje.
+Od 12.10.2026 (decyzja właściciela, flaga `konsensus_tv_do_punktacji: true`): wskaźniki wyceny ze screenera TV
+(`price_earnings_ttm`, `price_book_fq`, `enterprise_value_ebitda_ttm`, `dividends_yield`) z JEDNĄ datą odczytu są
+podstawą Wyceny 0–5 (bankier.pl jako kontrola przy null/wartości nieprawdopodobnej), a udokumentowana zmiana celu
+średniego lub oceny z `get-forecasts` wobec poprzedniego `rankings/<W>.json` liczy się jako rewizja NA RÓWNI z PAP —
+pod warunkiem testu skali celu (cel/kurs w 0,5–2,0; inaczej cel b.d.) i n≥5 analityków (n<5 = „niska próba", bez
+punktów); pierwszej soboty tylko poziom, bez punktów za zmianę. Konsensus TV ≠ konsensus PAP — w uzasadnieniu
+podaj, który jest źródłem. Rejestru KNF TV nie zastępuje (`docs/tradingview.md` §6.3).
 
 ## 5. Rozstrzyganie remisów
 

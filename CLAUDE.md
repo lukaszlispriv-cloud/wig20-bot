@@ -59,7 +59,7 @@ curl -sS -m 120 "$BOT_URL/status"
 - Rotacja (`/run`) odpala się o 08:01 UTC = 10:01 Warszawy; bieg Pulsu ok. 8:15 i raport sobotni widzą jeszcze stary koszyk — pisz, którego tygodnia pozycje widzisz (porównaj `pozycje` z `sygnaly.long`).
 - Stan rachunku nie opuszcza repozytorium: w raportach podawaj kapitał i wynik w PLN tylko w sekcji PROBLEMY/kontrola pokrycia, nie w powiadomieniach push.
 
-## TradingView MCP (od 12.10.2026 — faza 1, CIEŃ)
+## TradingView MCP (od 12.10.2026 — FAZA 2, pełne użycie)
 
 Właściciel 12.10.2026 wyraził zgodę na wdrożenie konektora TradingView MCP w czterech rutynach (plan:
 `WDROZENIE-TRADINGVIEW-2026-10-12.md` w repo ndx100-bot, sekcje 6.3, 6.4, 7). Pełne zasady dla rutyn WIG20:
@@ -68,8 +68,8 @@ Właściciel 12.10.2026 wyraził zgodę na wdrożenie konektora TradingView MCP 
 - Narzędzia `mcp__TradingView__mcp-tv-*` (odczyt + alerty) i `mcp__TradingView__mcp-watchlist-*`; schematy
   ładuje `ToolSearch` zapytaniem `select:<pełna nazwa>`. W rutynach WYŁĄCZNIE allowlista odczytu; ZAKAZ
   wszystkich narzędzi zapisu (alerty, watchlisty) i `get-active-watchlist` — rutyna nie dostaje pytania o zgodę.
-- Pliki: `data/tv-config.json` (`enabled`, `faza`, budżety: puls ≤20 wywołań / 8 min / przed 10:01 Warszawy,
-  sobota ≤25 / 15 min; flagi — wszystkie `false`), `data/tv-symbole.json` (jedyne źródło symboli: ticker
+- Pliki: `data/tv-config.json` (`enabled`, `faza: 2`, budżety: puls ≤25 wywołań / 8 min / przed 10:01 Warszawy,
+  sobota ≤35 / 15 min; flagi), `data/tv-symbole.json` (jedyne źródło symboli: ticker
   systemowy → `GPW:<ticker giełdowy>`, subindeksy, surowce/FX, `ECONOMICS:PL*`), `data/tv-kolumny.json`
   (jedyne źródło nazw kolumn), `data/tv-log.jsonl` (wiersz na bieg). Bez liczb z rachunku.
 - Skrypty: `scripts/waliduj_signals.py --diff HEAD --rutyna puls|sobota` (obowiązkowy PRZED każdym commitem
@@ -77,14 +77,16 @@ Właściciel 12.10.2026 wyraził zgodę na wdrożenie konektora TradingView MCP 
   z metodą v1.1, `rankings/` tylko plik bieżącej/nowej version — bot NIE odrzuca obcych pól), `scripts/tv_porownaj.py`
   (TV vs `kursy.py --json`, tabela ZGODNOŚĆ 21/21, wiersz logu), `scripts/tv_merge.py --tylko-brakujace` (backfill
   cache: walidacja D0 0,5%, test korekty serii 0,1% → `TV_DANE_ROZBIEZNE`, tylko brakujące sesje). Testy: `tests/test_tv.py`.
-- Faza 1 (cień, do raportu `reports/tv-cien-2026-10.html` ok. 31.10): `kursy.py` nadal źródłem tabel, progów
-  4%/8% i `d0.prices`; TV = drugie źródło (kontrola 21/21), bezpośrednia świeca D0 i backfill luk cache po
-  walidacji, kalendarze (makro z `min_importance=-1`, dywidendy `market='poland'`, daty wyników z kolumny
-  `earnings_release_next_date`). Żaden werdykt nie zależy od TV. Faza 2 (TV nr 1 kursów) po kryteriach z
-  `docs/tradingview.md` §9 i decyzji właściciela.
+- Faza 2 od startu (decyzja właściciela 12.10.2026, po południu — pełne użycie TV, bez fazy cienia i bez bramki
+  licencyjnej): TV jest źródłem nr 1 zamknięć do tabel i progów 4%/8% PO walidacji D0 (0,5%) i przy zgodności z
+  `kursy.py` ≤0,5% (rozjazd → bankier/Yahoo wygrywa, TV = b.d.); `kursy.py` ZAWSZE i RAZ jako drugi tor;
+  bezpośrednia świeca D0 i backfill luk cache (`tv_merge.py`); kalendarze (makro `min_importance=-1`, dywidendy
+  `market='poland'`, daty wyników z `earnings_release_next_date`); wycena ze screenera i konsensus z
+  `get-forecasts` w punktacji (W-R3, `docs/metoda.md` §4). Metryki i momentum WYŁĄCZNIE `metryki.py`. Raport
+  cienia 31.10 mierzy, nie bramkuje; progi wycofania: `docs/tradingview.md` §9.
 - Decyzje właściciela 12.10.2026: Puls o 8:15 (przed otwarciem); backfill zostaje w metodzie v1.1 z kodem
   `KURS_ZRODLO_TV`, bez korekty ex-div w momentum (v1.2 tylko po decyzji); flagi `event_blokada_taktycznej`,
-  `wstrzymanie_przy_rozjezdzie`, `konsensus_tv_do_punktacji`, `korekta_exdiv_momentum_v1_2` = `false`.
+  `konsensus_tv_do_punktacji` = `true`; `wstrzymanie_przy_rozjezdzie`, `korekta_exdiv_momentum_v1_2` = `false`.
 - Fakty z inwentaryzacji 12.10 (`docs/tradingview.md` §4): GPW 20/20 w screenerze `market='poland'` i w batchu;
   `get-ohlcv` bez korekty dywidendowej (LPP przez ex-date 8.10); `get-news`, `get-earnings-calendar(symbols)` i
   `get-dividends-calendar(symbols)` dla GPW puste; `get-forecasts` dla GPW z celami o złej skali (tylko liczba
@@ -94,8 +96,9 @@ Właściciel 12.10.2026 wyraził zgodę na wdrożenie konektora TradingView MCP 
 
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 
-KOLEJNOŚĆ ŹRÓDEŁ (od 12.10.2026): (1) skrypt `kursy.py` (Yahoo → bankier.pl → cache) ZAWSZE i RAZ na bieg →
-(2) TradingView MCP jako drugie źródło, bezpośrednia świeca D0 i backfill luk cache (`docs/tradingview.md` §5.1).
+KOLEJNOŚĆ ŹRÓDEŁ (od 12.10.2026, faza 2): (1) TradingView MCP — zamknięcia do tabel po walidacji D0, bezpośrednia
+świeca D0 i backfill luk cache (`docs/tradingview.md` §5.1) → (2) skrypt `kursy.py` (Yahoo → bankier.pl → cache)
+uruchamiany ZAWSZE i RAZ na bieg jako drugi tor i kontrola; przy rozjeździe >0,5% wygrywa bankier/Yahoo.
 Konektor FMP NIE jest już źródłem kursów: na obecnym planie odmawia końcówek cenowych (`FMP_PLAN_BLOKADA` W4–W9)
 — nie wołaj `mcp__FMP__chart` ani `quote`, kodu nie dopisuj. Historyczny opis FMP (wersja z 27.08–7.09.2026)
 usunięty 12.10.2026; tickery `.WA` i mapowanie nazw: `scripts/kursy.py` (`SYMBOLE`).

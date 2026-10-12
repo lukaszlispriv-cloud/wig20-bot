@@ -1,18 +1,27 @@
 {
-  "_opis": "Konfiguracja konektora TradingView MCP dla rutyn wig20-bot. Brak pliku lub enabled=false = rutyny pomijają wszystkie kroki TV. Zasady: docs/tradingview.md. Bez liczb z rachunku.",
+  "_opis": "Konfiguracja konektora TradingView MCP dla rutyn wig20-bot. Brak pliku lub enabled=false = rutyny pomijają wszystkie kroki TV. Zasady: docs/tradingview.md. Bez liczb z rachunku. Faza 2 od startu — decyzja właściciela 12.10.2026 (pełne użycie TV): TV źródłem nr 1 kursów po walidacji D0, kursy.py RAZ jako drugi tor; bankier wygrywa przy rozjeździe >0,5%.",
   "enabled": true,
-  "faza": 1,
-  "wersja_konfiguracji": "2026-10-12",
+  "faza": 2,
+  "wersja_konfiguracji": "2026-10-12b",
   "narzedzia_prefix": "mcp__TradingView__mcp-tv-",
   "budzet": {
-    "puls":   {"wywolania": 20, "wywolania_po_przerwie": 25, "czas_s": 480, "twarda_granica_utc": "08:01"},
-    "sobota": {"wywolania": 25, "czas_s": 900, "twarda_granica_utc": null}
+    "puls": {
+      "wywolania": 25,
+      "wywolania_po_przerwie": 30,
+      "czas_s": 480,
+      "twarda_granica_utc": "08:01"
+    },
+    "sobota": {
+      "wywolania": 35,
+      "czas_s": 900,
+      "twarda_granica_utc": null
+    }
   },
   "flagi": {
-    "_opis": "Każda flaga = osobna decyzja właściciela z datą w CLAUDE.md. Faza 1: wszystkie false.",
-    "event_blokada_taktycznej": false,
+    "_opis": "Decyzje właściciela 12.10.2026 (pełne użycie TV). wstrzymanie_przy_rozjezdzie zostaje false (łagodzi wyzwalacze); korekta_exdiv_momentum_v1_2 false (zmiana wersji metody wymaga osobnego licznika okien §10).",
+    "event_blokada_taktycznej": true,
     "wstrzymanie_przy_rozjezdzie": false,
-    "konsensus_tv_do_punktacji": false,
+    "konsensus_tv_do_punktacji": true,
     "korekta_exdiv_momentum_v1_2": false
   },
   "tolerancje": {
@@ -23,6 +32,9 @@
     "skala_celu_min": 0.5,
     "skala_celu_max": 2.0
   },
-  "kolejnosc_ciec": ["sektorowka", "kalendarze"],
+  "kolejnosc_ciec": [
+    "sektorowka",
+    "kalendarze"
+  ],
   "nigdy_nie_tnij": "kursy koszyka i backfill D0"
 }
