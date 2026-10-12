@@ -40,6 +40,24 @@ rachunek Capital.com NIE pozwala shortować CFD na akcje, a API nie ma pola, kt�
 Nie próbuj „naprawiać" `HEDGE_MODE` na `classic`. `/status` zwraca też `diagnostyka_instrumentow`
 (czy każda noga koszyka może wejść w docelowej wielkości) i `ekspozycja` (netto; ujemne = rachunek per saldo krótki).
 
+## Kontrola rachunku przez `/status` (od 12.10.2026 — rutyny mają dostęp)
+
+Środowisko rutyn ma zmienną `BOT_URL` (adres bota na Renderze) oraz network secret, który dokłada nagłówek
+`X-Run-Token` do żądań na ten host — token NIE jest w zmiennych sesji i nie wolno go szukać ani wypisywać.
+Wywołuj WYŁĄCZNIE endpoint tylko do odczytu:
+
+```bash
+curl -sS -m 120 "$BOT_URL/status"
+```
+
+- NIGDY nie wołaj `/run`, `/generate`, `/close_all` ani `/search` — `/run` uruchamia bieg bota ze zleceniami.
+- Brak `BOT_URL` w sesji = brak dostępu: napisz to w PROBLEMY i pomiń kontrolę (nie wymyślaj liczb).
+- Pierwsza odpowiedź po dłuższej przerwie może trwać do minuty (Render usypia serwis); `{"error":"zły token"}` = network secret nie dokłada nagłówka — zgłoś w PROBLEMY.
+- Z odpowiedzi bierz: `konto.kapital` (equity), `konta_wszystkie[aktywne_dla_bota].saldo` (różnica equity − saldo = otwarty wynik pozycji), `pozycje` (epic, direction, size, upl), `ekspozycja` (dlugie, krotkie, netto, netto_pct_kapitalu), `pokrycie_koszyka` (nogi_na_rachunku/nogi_koszyka, brakujace, ekspozycja_dluga_pct wobec cel_pct), `diagnostyka_instrumentow` (werdykt per noga), `hedge_kontrakt` (epic, dni_do_wygasniecia).
+- Kod `EKSPOZYCJA_NIEPELNA` dopisz do `data_quality`, gdy |`ekspozycja.netto_pct_kapitalu`| > 10 albo `pokrycie_koszyka.brakujace` zawiera nogę LONG, której nie wyklucza protokół (`wykluczone_przez_puls`). Noga z werdyktem „NIE WEJDZIE: minimalna pozycja … > tolerancja” to ograniczenie wielkości rachunku (`ALLOC_PCT × MAX_OVERSHOOT`), nie awaria — opisz ją w PROBLEMY jako nogę nieobecną na rachunku; rozliczenie modelowe liczysz dalej z pełnego koszyka.
+- Rotacja (`/run`) odpala się o 08:01 UTC = 10:01 Warszawy; bieg Pulsu ok. 8:15 i raport sobotni widzą jeszcze stary koszyk — pisz, którego tygodnia pozycje widzisz (porównaj `pozycje` z `sygnaly.long`).
+- Stan rachunku nie opuszcza repozytorium: w raportach podawaj kapitał i wynik w PLN tylko w sekcji PROBLEMY/kontrola pokrycia, nie w powiadomieniach push.
+
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 
 KOLEJNOŚĆ ŹRÓDEŁ: (1) konektor FMP → (2) skrypt `kursy.py` (Yahoo → bankier.pl → cache).
