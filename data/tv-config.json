@@ -1,0 +1,28 @@
+{
+  "_opis": "Konfiguracja konektora TradingView MCP dla rutyn wig20-bot. Brak pliku lub enabled=false = rutyny pomijają wszystkie kroki TV. Zasady: docs/tradingview.md. Bez liczb z rachunku.",
+  "enabled": true,
+  "faza": 1,
+  "wersja_konfiguracji": "2026-10-12",
+  "narzedzia_prefix": "mcp__TradingView__mcp-tv-",
+  "budzet": {
+    "puls":   {"wywolania": 20, "wywolania_po_przerwie": 25, "czas_s": 480, "twarda_granica_utc": "08:01"},
+    "sobota": {"wywolania": 25, "czas_s": 900, "twarda_granica_utc": null}
+  },
+  "flagi": {
+    "_opis": "Każda flaga = osobna decyzja właściciela z datą w CLAUDE.md. Faza 1: wszystkie false.",
+    "event_blokada_taktycznej": false,
+    "wstrzymanie_przy_rozjezdzie": false,
+    "konsensus_tv_do_punktacji": false,
+    "korekta_exdiv_momentum_v1_2": false
+  },
+  "tolerancje": {
+    "kurs_pct": 0.5,
+    "rozjazd_adnotacja_pct": 0.1,
+    "backfill_zgodnosc_pct": 0.1,
+    "sanity_rel_pp": 1.5,
+    "skala_celu_min": 0.5,
+    "skala_celu_max": 2.0
+  },
+  "kolejnosc_ciec": ["sektorowka", "kalendarze"],
+  "nigdy_nie_tnij": "kursy koszyka i backfill D0"
+}

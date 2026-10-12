@@ -14,6 +14,14 @@ opublikowane bez zmian ex post (pole `momentum_method: "uznaniowe"` w `rankings/
 - Ranga po rel5 (waga 2/3) i po rel20 (waga 1/3); ranga 1 → 25 pkt, ranga 20 → 0 pkt, liniowo; rangi średnie przy remisach.
 - Brak 20 sesji w cache → tylko rel5 i flaga `BRAK_20S` w rankingu (cache buduje się od 21.08.2026, komplet 20 sesji ok. 18.09).
 - Punktów momentum NIE koryguje się uznaniowo. Argument „spółka po korekcie odbije" nie jest sygnałem momentum.
+- Cache zasilają (od 12.10.2026) `kursy.py` (Yahoo → bankier) ORAZ backfill brakujących sesji z TradingView MCP
+  (`scripts/tv_merge.py`, tylko sesje nieskorygowane o dywidendy, po walidacji D0 — `docs/tradingview.md` §5.1).
+  Backfill nie zmienia definicji momentum, tylko kompletność serii, więc metoda zostaje **v1.1** (decyzja
+  właściciela 12.10.2026); tydzień, w którym backfill usunął `BRAK_20S`/`METRYKI_Nk_Z_20`, dostaje kod
+  `KURS_ZRODLO_TV`. Momentum liczy się na kursach SUROWYCH; luka ex-div w oknie 20 sesji to kod
+  `DYWIDENDA_KOREKTA_<TICKER>` i zdanie w PROBLEMY, nie korekta serii. Propozycja korekty ex-div w momentum
+  istnieje jako **v1.2** (flaga `korekta_exdiv_momentum_v1_2` w `data/tv-config.json`, dziś `false`) — wdrożenie
+  wymaga decyzji właściciela, nowej wersji w polu `metoda` i osobnego licznika okien z §10.
 
 ## 2. DM / portfele (0–15) — bazowo 7,5, ±3 za udokumentowane sygnały
 
@@ -33,6 +41,11 @@ opublikowane bez zmian ex post (pole `momentum_method: "uznaniowe"` w `rankings/
 Każda spółka ma w `rankings/<tydzień>.json` jednozdaniowe `uzasadnienie` punktów. Rewizje: tylko udokumentowana zmiana
 konsensusu lub zaskoczenie wynikowe z liczbami (vs konsensus PAP), nie „pozytywne sygnały". Przepływy: rejestr KNF
 (zmiany ≥0,1 p.p.), zmiany indeksów (MSCI, STOXX, cap GPW), skupy akcji; przy braku danych 5/10.
+Konsensus z TradingView (`get-forecasts`: liczba analityków, rozkład; cele po teście skali) i wskaźniki wyceny ze
+screenera TV są od 12.10.2026 wyłącznie KONTEKSTEM w `uzasadnienie` (z datą odczytu), nie wejściem do punktacji
+Rewizji ani Wyceny — zmiana celu/oceny TV liczy się jako udokumentowana rewizja dopiero po decyzji właściciela
+(flaga `konsensus_tv_do_punktacji`, dziś `false`) i dopisku tutaj. Konsensus TV ≠ konsensus PAP; n<5 analityków =
+„niska próba". Rejestru KNF TV nie zastępuje.
 
 ## 5. Rozstrzyganie remisów
 
@@ -132,14 +145,27 @@ Wszystkie trzy są POMIAREM, nie zmianą punktacji: nie dotykają wag, wyniku, p
 **Zakaz uśredniania wersji.** Każdy wpis `history` niesie `metoda` (`v1.0 (momentum uznaniowe)` dla W1–W4,
 `v1.1 (momentum mechaniczne)` od W5). Metryk z różnych wersji NIE wolno łączyć w jedną średnią ani
 przedstawiać jako dorobku jednej strategii; licznik zamkniętych okien z §10 biegnie osobno dla wersji.
+Backfill luk cache z TradingView (od 12.10.2026, §1 i §8 — kod `KURS_ZRODLO_TV`) NIE otwiera nowej wersji:
+dopisuje sesje nieskorygowane, zwalidowane wobec D0, więc momentum pozostaje v1.1 liczone tą samą formułą,
+tylko z kompletem sesji. Nową wersję (v1.2) otworzyłaby dopiero korekta ex-div w momentum — po decyzji.
 
 ## 8. Kody `data_quality`
 
 `RPP_DATE_ERROR` (błędna data posiedzenia), `OKNO_SKROCONE_Dn`, `BRAK_PELNEGO_RANKINGU`, `METRYKI_Nk_Z_20` (metryki z k spółek),
-`DYWIDENDA_KOREKTA_<TICKER>`, `KURS_ZRODLO_REZERWA` (kurs D0/D+5 spoza bankier/Yahoo), `KALENDARZ_NIEPOTWIERDZONY`,
-`FMP_PLAN_BLOKADA` (konektor w sesji, ale abonament blokuje endpointy), `KNF_SHORT_NIEDOSTEPNY` (rejestr krótkiej sprzedaży
+`DYWIDENDA_KOREKTA_<TICKER>`, `KURS_ZRODLO_REZERWA` (kurs D0/D+5 z rezerwy bankier.pl albo z cache zamiast z Yahoo;
+definicja poprawiona 12.10.2026 — wcześniej „spoza bankier/Yahoo”, co nie odpowiadało praktyce W4–W9), `KALENDARZ_NIEPOTWIERDZONY`,
+`FMP_PLAN_BLOKADA` (historyczny, W4–W9: konektor FMP w sesji, ale abonament blokował endpointy — od 12.10.2026 FMP nie
+jest źródłem kursów i kodu się nie dopisuje), `KNF_SHORT_NIEDOSTEPNY` (rejestr krótkiej sprzedaży
 poza zasięgiem sieci), `EBC_KONSENSUS_ROZBIEZNE_ZRODLA`, `EKSPOZYCJA_NIEPELNA` (rachunek nie odwzorował koszyka —
 pominięte nogi, patrz `pominiete`/`ekspozycja_dluga` w odpowiedzi `/run`).
+
+Kody konektora TradingView MCP (od 12.10.2026, `docs/tradingview.md`): `KURS_ZRODLO_TV` (brakujące sesje cache
+dopisane z TradingView po walidacji D0 i teście korekty serii — tydzień, w którym dzięki temu znikł `BRAK_20S` lub
+`METRYKI_Nk_Z_20`; w fazie 2 także kurs D0/D+5 z TV), `TV_MCP_NIEDOSTEPNY` (konektor włączony w konfiguracji, ale brak
+narzędzi w sesji, 401 albo dwa błędy 429 z rzędu — NIE dopisywany, gdy `enabled:false`), `TV_DANE_ROZBIEZNE` (seria TV
+odrzucona: rozjazd D0 >0,5% albo wspólne sesje niezgodne z cache >0,1% — serie skorygowane o dywidendę/split; nic nie
+dopisano). Rozjazd zamknięcia TV vs bankier/Yahoo >0,5% dla pojedynczej sesji to adnotacja w PROBLEMY i `b.d.` dla TV,
+nie kod jakości rankingu.
 
 ## 9. Lista kontrolna dat makro (przed scoringiem i w każdym Pulsie)
 
@@ -149,6 +175,12 @@ pominięte nogi, patrz `pominiete`/`ekspozycja_dluga` w odpowiedzi `/run`).
 2. Osobno: data ogłoszenia, godzina zdarzenia (Europe/Warsaw; BLS podaje ET), sesja, do której zdarzenie należy (po 17:00 = następna sesja).
 3. Konflikt źródeł → `b.d.` + `KALENDARZ_NIEPOTWIERDZONY`, deklaracja makro nie może się na nim opierać.
 4. Deklaracje falsyfikowalne z warunkiem makro mają w treści źródło i datę weryfikacji terminu.
+5. (od 12.10.2026) Kalendarz makro z TradingView MCP (`get-economic-calendar`, `countries='PL,US,EU'`,
+   `min_importance=-1` — PL ma −1 dla prawie wszystkiego) jest **datowanym źródłem** w rozumieniu pkt 1 WYŁĄCZNIE
+   wtedy, gdy odpowiedź zawiera datę i godzinę zdarzenia (UTC → Europe/Warsaw); komunikat organizatora (NBP, EBC,
+   Fed, GUS, BLS) z innym terminem zawsze wygrywa, a rozbieżność = `b.d.` + `KALENDARZ_NIEPOTWIERDZONY`. Zgodność TV
+   z bankier/PAP = termin potwierdzony; sam TV bez drugiego źródła = „TV: data, niepotwierdzona”. Daty wyników spółek
+   GPW z kolumny screenera `earnings_release_next_date` bywają estymowane — do potwierdzenia komunikatem spółki/PAP.
 
 ## 10. Uczciwość statystyczna
 

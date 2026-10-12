@@ -27,9 +27,9 @@ Tło i przykład (W3: papier +1,32 p.p., rachunek −1,61 p.p.) w `docs/metoda.m
 
 Do wyniku brutto dopisuj koszty: spread bid/ask przy wejściu i wyjściu (przy REDUCE i korekcie wielkości dwa razy —
 Capital.com nie ma częściowego zamknięcia), punkty swapowe za dobę utrzymania, luka między zamknięciem D0
-a realizacją (rotacja w poniedziałek 9:15, raport liczy od zamknięcia piątku).
+a realizacją (rotacja w poniedziałek o 10:01 Warszawy — `/run` o 08:01 UTC, sprostowanie z 15.09.2026 w `docs/metoda.md` §7a — raport liczy od zamknięcia piątku).
 
-Testy logiki portfela: `python3 tests/test_hedge.py` i `python3 tests/test_roll.py` (stdlib, bez pytest; wymagają `pip install -r requirements.txt`). Uruchom oba po każdej zmianie w `app.py`. Zmiany wykonania z 3.10.2026 (auto-roll hedge'u, uzgadnianie zleceń, pokrycie koszyka): `docs/poprawki-wykonania-2026-10-03.md`.
+Testy logiki portfela: `python3 tests/test_hedge.py` i `python3 tests/test_roll.py` (stdlib, bez pytest; wymagają `pip install -r requirements.txt`). Uruchom oba po każdej zmianie w `app.py`. Testy skryptów rutyn (walidator `signals.json`, `tv_porownaj.py`, `tv_merge.py`): `python3 tests/test_tv.py` — uruchom po każdej zmianie w `scripts/` lub `data/tv-*.json`. Zmiany wykonania z 3.10.2026 (auto-roll hedge'u, uzgadnianie zleceń, pokrycie koszyka): `docs/poprawki-wykonania-2026-10-03.md`.
 
 **Raportowanie bota: wyłącznie log Rendera** (Telegram odcięty w v1.8.1 — nigdy nie był podłączony).
 Filtruj po prefiksie `BOT |`; awarie lecą jako ERROR, bieg z błędami jako WARNING. Nie dodawaj wysyłki
@@ -59,22 +59,50 @@ curl -sS -m 120 "$BOT_URL/status"
 - Rotacja (`/run`) odpala się o 08:01 UTC = 10:01 Warszawy; bieg Pulsu ok. 8:15 i raport sobotni widzą jeszcze stary koszyk — pisz, którego tygodnia pozycje widzisz (porównaj `pozycje` z `sygnaly.long`).
 - Stan rachunku nie opuszcza repozytorium: w raportach podawaj kapitał i wynik w PLN tylko w sekcji PROBLEMY/kontrola pokrycia, nie w powiadomieniach push.
 
+## TradingView MCP (od 12.10.2026 — faza 1, CIEŃ)
+
+Właściciel 12.10.2026 wyraził zgodę na wdrożenie konektora TradingView MCP w czterech rutynach (plan:
+`WDROZENIE-TRADINGVIEW-2026-10-12.md` w repo ndx100-bot, sekcje 6.3, 6.4, 7). Pełne zasady dla rutyn WIG20:
+**`docs/tradingview.md`** — rutyny czytają go na starcie. Skrót:
+
+- Narzędzia `mcp__TradingView__mcp-tv-*` (odczyt + alerty) i `mcp__TradingView__mcp-watchlist-*`; schematy
+  ładuje `ToolSearch` zapytaniem `select:<pełna nazwa>`. W rutynach WYŁĄCZNIE allowlista odczytu; ZAKAZ
+  wszystkich narzędzi zapisu (alerty, watchlisty) i `get-active-watchlist` — rutyna nie dostaje pytania o zgodę.
+- Pliki: `data/tv-config.json` (`enabled`, `faza`, budżety: puls ≤20 wywołań / 8 min / przed 10:01 Warszawy,
+  sobota ≤25 / 15 min; flagi — wszystkie `false`), `data/tv-symbole.json` (jedyne źródło symboli: ticker
+  systemowy → `GPW:<ticker giełdowy>`, subindeksy, surowce/FX, `ECONOMICS:PL*`), `data/tv-kolumny.json`
+  (jedyne źródło nazw kolumn), `data/tv-log.jsonl` (wiersz na bieg). Bez liczb z rachunku.
+- Skrypty: `scripts/waliduj_signals.py --diff HEAD --rutyna puls|sobota` (obowiązkowy PRZED każdym commitem
+  `signals.json`: 12 kluczy, `epics` nietknięte, pola per rutyna, wpisy `exclude` z polami liczbowymi, `history` +1
+  z metodą v1.1, `rankings/` tylko plik bieżącej/nowej version — bot NIE odrzuca obcych pól), `scripts/tv_porownaj.py`
+  (TV vs `kursy.py --json`, tabela ZGODNOŚĆ 21/21, wiersz logu), `scripts/tv_merge.py --tylko-brakujace` (backfill
+  cache: walidacja D0 0,5%, test korekty serii 0,1% → `TV_DANE_ROZBIEZNE`, tylko brakujące sesje). Testy: `tests/test_tv.py`.
+- Faza 1 (cień, do raportu `reports/tv-cien-2026-10.html` ok. 31.10): `kursy.py` nadal źródłem tabel, progów
+  4%/8% i `d0.prices`; TV = drugie źródło (kontrola 21/21), bezpośrednia świeca D0 i backfill luk cache po
+  walidacji, kalendarze (makro z `min_importance=-1`, dywidendy `market='poland'`, daty wyników z kolumny
+  `earnings_release_next_date`). Żaden werdykt nie zależy od TV. Faza 2 (TV nr 1 kursów) po kryteriach z
+  `docs/tradingview.md` §9 i decyzji właściciela.
+- Decyzje właściciela 12.10.2026: Puls o 8:15 (przed otwarciem); backfill zostaje w metodzie v1.1 z kodem
+  `KURS_ZRODLO_TV`, bez korekty ex-div w momentum (v1.2 tylko po decyzji); flagi `event_blokada_taktycznej`,
+  `wstrzymanie_przy_rozjezdzie`, `konsensus_tv_do_punktacji`, `korekta_exdiv_momentum_v1_2` = `false`.
+- Fakty z inwentaryzacji 12.10 (`docs/tradingview.md` §4): GPW 20/20 w screenerze `market='poland'` i w batchu;
+  `get-ohlcv` bez korekty dywidendowej (LPP przez ex-date 8.10); `get-news`, `get-earnings-calendar(symbols)` i
+  `get-dividends-calendar(symbols)` dla GPW puste; `get-forecasts` dla GPW z celami o złej skali (tylko liczba
+  analityków i rozkład); kalendarz PL ma `importance = -1`.
+- Nowe kody `data_quality` (`docs/metoda.md` §8): `KURS_ZRODLO_TV`, `TV_MCP_NIEDOSTEPNY`, `TV_DANE_ROZBIEZNE`;
+  `KURS_ZRODLO_REZERWA` = kurs z bankier/cache; `FMP_PLAN_BLOKADA` nie jest już dopisywany.
+
 ## Źródło kursów (priorytet dla rutyny „Puls WIG20")
 
-KOLEJNOŚĆ ŹRÓDEŁ: (1) konektor FMP → (2) skrypt `kursy.py` (Yahoo → bankier.pl → cache).
+KOLEJNOŚĆ ŹRÓDEŁ (od 12.10.2026): (1) skrypt `kursy.py` (Yahoo → bankier.pl → cache) ZAWSZE i RAZ na bieg →
+(2) TradingView MCP jako drugie źródło, bezpośrednia świeca D0 i backfill luk cache (`docs/tradingview.md` §5.1).
+Konektor FMP NIE jest już źródłem kursów: na obecnym planie odmawia końcówek cenowych (`FMP_PLAN_BLOKADA` W4–W9)
+— nie wołaj `mcp__FMP__chart` ani `quote`, kodu nie dopisuj. Historyczny opis FMP (wersja z 27.08–7.09.2026)
+usunięty 12.10.2026; tickery `.WA` i mapowanie nazw: `scripts/kursy.py` (`SYMBOLE`).
 
-### 1. FMP (Financial Modeling Prep) — pierwszeństwo, gdy konektor jest w sesji
+### Skrypt `kursy.py` (Yahoo chart API → bankier.pl → cache)
 
-- Sprawdź, czy sesja ma narzędzia MCP `mcp__FMP__*`; jeśli nie widać ich na liście, poszukaj przez ToolSearch zapytaniem `+FMP`, zanim uznasz, że ich nie ma. Konektor jest podpięty do organizacji, ale bywa niewłączony dla sesji rutyny (enabledInChat=false) — wtedy FMP w tej sesji NIE działa: przejdź do skryptu `kursy.py` i odnotuj to w sekcji PROBLEMY raportu (żeby użytkownik wiedział, że grant konektora dla rutyny nadal nie jest ustawiony).
-- Tickery GPW z sufiksem `.WA` (jak w Yahoo): KGH.WA, DNP.WA, PEO.WA, BDX.WA, KRU.WA, CDR.WA, TPE.WA, PGE.WA, PCO.WA, MDV.WA; pozostałe wg mapowania w `scripts/kursy.py` (`SYMBOLE`); indeks WIG20.WA — gdy w FMP niekompletny, wartość indeksu z depesz PAP/Strefy Inwestorów.
-- Pobierz dzienne świece EOD za ostatni miesiąc i do tabel bierz zamknięcie OSTATNIEJ ZAKOŃCZONEJ sesji (przy otwartej sesji GPW odrzuć dzisiejszą, niedokończoną świecę — sesja kończy się 17:00, dogrywka do ~17:05, publikacje do 17:10 czasu Warszawy).
-- WALIDACJA OBOWIĄZKOWA (jak dla każdego źródła): zamknięcia z dnia D0 muszą zgadzać się z `d0.prices` w `signals.json` (tolerancja 0,5%). Symbol niezgodny lub bez świecy D0 → odrzuć serię FMP dla tego symbolu i weź go z rezerwy (`kursy.py`), z opisem w PROBLEMY.
-- Po udanym pobraniu dopisz zamknięcia do `data/kursy-cache.json` (format jak w `kursy.py`: `kursy[TICKER]["RRRR-MM-DD"] = close`, `aktualizacja[TICKER] = "RRRR-MM-DD HH:MM"`; trzymaj maks. 40 sesji na ticker) i SCOMMITUJ cache razem z raportem.
-- FMP nie podlega limiterowi Yahoo — możesz odpytać wszystkie symbole w jednym biegu; mimo to nie odpytuj w pętli wielokrotnie bez potrzeby.
-
-### 2. Rezerwa: skrypt `kursy.py` (Yahoo chart API → bankier.pl → cache)
-
-Gdy FMP niedostępny albo dane niekompletne/niezgodne — dzienne kursy zamknięcia pobieraj gotowym skryptem:
+Dzienne kursy zamknięcia pobieraj gotowym skryptem:
 
 ```bash
 python3 scripts/kursy.py WIG20.WA DNP.WA KGH.WA BDX.WA PKO.WA ALE.WA TPE.WA PKN.WA PGE.WA MDV.WA MBK.WA

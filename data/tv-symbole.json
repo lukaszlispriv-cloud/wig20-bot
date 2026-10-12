@@ -1,0 +1,54 @@
+{
+  "_opis": "Mapa ticker systemowy (klucz epics / signals.json) -> symbol TradingView (EXCHANGE:TICKER). Rutyny używają WYŁĄCZNIE symboli z tego pliku. Nigdy epic Capital.com (ALRR, LPPP, FW2020Z2026...) ani CFD brokera.",
+  "_data": "2026-10-12",
+  "_zrodlo": "inwentaryzacja na żywo 12.10.2026: run_screener(market='poland', symbolset=['SYML:GPW;WIG20']) = 20/20 nazw zgodnych z mapą; batch 5 symboli bez missing; LPP 11/11 sesji identycznych z data/kursy-cache.json (brak korekty dywidendowej); subindeksy, FW201!, surowce i FX przez get_ohlcv",
+  "_indeks": "GPW:WIG20",
+  "_symbolset_wig20": "SYML:GPW;WIG20",
+  "_market_screener": "poland",
+  "_fw20_seria_ciagla": "GPW:FW201!",
+  "_fw20_uwaga": "GPW:FW20 (symbol z search) zwraca invalid symbol w get_ohlcv — używać serii ciągłej FW201!",
+  "koszyk": {
+    "ALIOR": "GPW:ALR",
+    "ALLEGRO": "GPW:ALE",
+    "BUDIMEX": "GPW:BDX",
+    "CDPROJEKT": "GPW:CDR",
+    "DINOPL": "GPW:DNP",
+    "ERSTEPL": "GPW:EBP",
+    "KETY": "GPW:KTY",
+    "KGHM": "GPW:KGH",
+    "KRUK": "GPW:KRU",
+    "LPP": "GPW:LPP",
+    "MBANK": "GPW:MBK",
+    "MODIVO": "GPW:MDV",
+    "PEKAO": "GPW:PEO",
+    "PEPCO": "GPW:PCO",
+    "PGE": "GPW:PGE",
+    "PKNORLEN": "GPW:PKN",
+    "PKOBP": "GPW:PKO",
+    "PZU": "GPW:PZU",
+    "TAURONPE": "GPW:TPE",
+    "ZABKA": "GPW:ZAB"
+  },
+  "subindeksy": {
+    "WIG_BANKI": "GPW:WIG_BANKI",
+    "WIG_ENERG": "GPW:WIG_ENERG",
+    "WIG_PALIWA": "GPW:WIG_PALIWA"
+  },
+  "surowce_fx": {
+    "MIEDZ": "COMEX:HG1!",
+    "SREBRO": "COMEX:SI1!",
+    "BRENT": "ICEEUR:BRN1!",
+    "USDPLN": "FX_IDC:USDPLN",
+    "EURPLN": "FX_IDC:EURPLN",
+    "US10Y": "TVC:US10Y"
+  },
+  "economics_pl": {
+    "INFLACJA_RR": "ECONOMICS:PLIRYY",
+    "INFLACJA_MM": "ECONOMICS:PLIRMM",
+    "INFLACJA_BAZOWA_RR": "ECONOMICS:PLCIR",
+    "PPI_MM": "ECONOMICS:PLPPIMM",
+    "_uwaga": "pozostałe tickery przez get_economic_symbols(country='PL', search=...) w inwentaryzacji, nie w rutynie"
+  },
+  "taktyczne": {},
+  "_nierozstrzygniete": []
+}
