@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puls WIG20 — 12.10.2026</title>
+<style>
+  :root{ color-scheme: light; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#F6F7F4; color:#16202B;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:15px; line-height:1.5; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 40px; }
+  header{ background:#10243E; color:#fff; padding:22px 16px 18px; }
+  header .inner{ max-width:760px; margin:0 auto; }
+  header h1{ margin:0 0 2px; font-size:20px; letter-spacing:.02em; }
+  header .date{ font-size:13px; opacity:.75; }
+  .wig{ margin-top:14px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wig .val{ font-size:30px; font-weight:700; font-variant-numeric:tabular-nums;
+             font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .chg{ font-size:15px; font-weight:600; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .wig .lbl{ font-size:12px; opacity:.75; width:100%; }
+  .neg{ color:#C4372E; } .pos{ color:#0E7C4A; } .flat{ color:#5C6874; }
+  header .neg{ color:#FF8A7A; } header .pos{ color:#7BE0A8; } header .flat{ color:#C6CFD8; }
+  .stamp-box{ text-align:center; margin:22px 0 6px; }
+  .stamp{ display:inline-block; transform:rotate(-2.5deg); border:3px solid #0E7C4A; color:#0E7C4A;
+          padding:8px 22px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          font-size:19px; border-radius:4px; background:rgba(14,124,74,.06); }
+  .stamp-note{ font-size:12px; color:#5C6874; margin-top:10px; }
+  h2{ font-size:16px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid #DDE1DA; }
+  .chg-list{ list-style:none; margin:0; padding:0; }
+  .chg-list li{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+        padding:2px 7px; border-radius:4px; margin-right:7px; vertical-align:1px; }
+  .t-espi{ background:#10243E; color:#fff; }
+  .t-short{ background:#6B3FA0; color:#fff; }
+  .t-rek{ background:#B5651D; color:#fff; }
+  .t-makro{ background:#0E7C4A; color:#fff; }
+  .t-kurs{ background:#C4372E; color:#fff; }
+  .src{ display:block; font-size:11.5px; color:#6B7681; margin-top:4px; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; background:#fff; font-size:13.5px; min-width:560px; }
+  th,td{ padding:8px 9px; border-bottom:1px solid #E7EAE3; text-align:right; white-space:nowrap; }
+  th{ background:#EDF0EA; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#44515E; font-weight:700; }
+  th:first-child, td:first-child{ text-align:left; }
+  td.num{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+  tfoot td{ font-weight:700; background:#F1F3EE; border-top:2px solid #DDE1DA; }
+  .dir{ font-size:10.5px; font-weight:700; padding:2px 6px; border-radius:4px; }
+  .dir-l{ background:#DFF0E7; color:#0E7C4A; } .dir-s{ background:#FAE1DE; color:#C4372E; }
+  .badge-x{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#C4372E; color:#fff; margin-left:6px; }
+  .badge-r{ font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#B5651D; color:#fff; margin-left:6px; }
+  .basket-h{ font-size:13px; font-weight:700; margin:16px 0 6px; color:#44515E; letter-spacing:.04em; }
+  .score{ background:#10243E; color:#fff; border-radius:10px; padding:16px; margin-top:22px; }
+  .score .main{ font-size:12px; opacity:.8; letter-spacing:.06em; text-transform:uppercase; }
+  .score .big{ font-size:34px; font-weight:800; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height:1.1; margin:2px 0 2px; }
+  .score .sub{ font-size:12.5px; opacity:.8; }
+  .score .paper{ margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.2); font-size:12.5px; opacity:.85; }
+  .score .paper b{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .cal{ background:#fff; border:1px solid #E3E6DF; border-radius:8px; padding:4px 14px; }
+  .cal ul{ margin:10px 0; padding-left:18px; }
+  .cal li{ margin-bottom:6px; font-size:13.5px; }
+  .note{ background:#FFF8E6; border:1px solid #EAD9A6; border-radius:8px; padding:10px 12px; font-size:13px; }
+  .react{ background:#fff; border:1px solid #E3E6DF; border-left:5px solid #C4372E; border-radius:8px;
+          padding:11px 13px; margin-bottom:9px; }
+  .react.soft{ border-left-color:#B5651D; }
+  .react .hd{ font-weight:700; font-size:14px; margin-bottom:3px; }
+  .react .act{ font-size:10.5px; font-weight:800; letter-spacing:.07em; padding:2px 7px; border-radius:4px;
+               background:#C4372E; color:#fff; margin-right:8px; }
+  .react.soft .act{ background:#B5651D; }
+  .react .nums{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px; color:#44515E; margin-top:4px; }
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid #DDE1DA; font-size:11.5px; color:#6B7681; }
+</style></head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Puls WIG20</h1>
+    <div class="date">poniedziałek, 12 października 2026 — bieg poranny ok. 8:30, przed otwarciem GPW. Ostatnia zakończona sesja: piątek 9.10 = <b>D0 rankingu W9</b>; kursy w tabelach = zamknięcie D0, więc wszystkie zwroty okna wynoszą nadal 0,00%. Dziś pierwsza sesja okna W9 (D+1) i rotacja koszyka na rachunku (<code>/run</code> ok. 10:01 czasu Warszawy).</div>
+    <div class="wig">
+      <span class="val">4&nbsp;185,52</span>
+      <span class="chg pos">+1,37%</span>
+      <span class="lbl">WIG20, zamknięcie 9.10.2026 17:15 (bankier.pl, tabela indeksów, odczyt 12.10 ok. 8:25: min. 4&nbsp;148,97, maks. 4&nbsp;199,52, obrót 2,81 mld zł). To zamknięcie jest jednocześnie D0 rankingu W9 — <b>od D0: 0,00%</b>. FMP zablokowany planem (endpointy <code>chart</code> i <code>quote</code> „ACCESS DENIED”), Yahoo nieodpytywane — od D0 nie było sesji, cache bez zmian.</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stamp-box">
+    <div class="stamp">Aktualna</div>
+    <div class="stamp-note">Prognoza <b>2026-W9</b> (D0 9.10, okno do 16.10) obowiązuje od dzisiejszej sesji. <b>Bez reakcji exclude</b> (lista pusta), <b>bez zmian taktycznych</b> (lista pusta). Limit 2 nowych reakcji: wykorzystane 0.</div>
+  </div>
+
+  <p class="note">Od D0 nie było sesji, więc żaden próg cenowy (4% / 8% od D0) nie mógł zostać przebity. Między piątkowym zamknięciem a dzisiejszym biegiem żadna z dziesięciu spółek koszykowych nie opublikowała komunikatu ESPI ani nie dostała nowej rekomendacji; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (bez zmian kodu). Tło weekendu jest dla tez energetycznych dwukierunkowe (Huti kontra deal paliwowy Trump–Putin) i nie uruchamia protokołu — szczegóły niżej.</p>
+
+  <div class="score">
+    <div class="main">Wynik rachunku W9 — średnia LONG − WIG20 (D0 9.10 → ostatnia sesja 9.10)</div>
+    <div class="big flat" style="color:#C6CFD8">0,00 p.p.</div>
+    <div class="sub">Okno rusza dziś: ostatnie zamknięcie to zamknięcie D0, więc średnia LONG 0,00% wobec WIG20 0,00%. Bot o ok. 10:01 przestawia koszyk LONG z W8 na W9 — <b>zostają PGE, Tauron i CD Projekt</b>, wychodzą Allegro i Pepco, wchodzą LPP i Kęty — i utrzymuje krótki kontrakt na WIG20. Pierwsza realna różnica pojawi się po dzisiejszej sesji i będzie zawierała lukę między piątkowym zamknięciem a kursami realizacji w pierwszej godzinie sesji (kontrakty na Europę rano +0,3–0,5%). <b>Uwaga wykonawcza:</b> LPP (kurs 25&nbsp;040 zł) w oknach W6 i W7 nie weszło na rachunek z powodu wielkości minimalnej (docs/poprawki-wykonania-2026-10-03.md) — po biegu sprawdzić w <code>/status</code> pola <code>pokrycie_koszyka</code> i <code>ekspozycja</code>; pokrycie 4/5 oznaczałoby kod EKSPOZYCJA_NIEPELNA.</div>
+    <div class="paper">Spread papierowy LONG − SHORT: <b>0,00 p.p.</b> — papierowy (miara selekcji, nie wynik rachunku). Rozjazd 0,00 p.p. (poniżej progu 0,5 p.p.). Rachunek Capital.com nie shortuje CFD na akcje, więc koszyk SHORT (Alior, PKO BP, mBank, Pekao, Kruk) jest rozliczany wyłącznie na papierze.</div>
+  </div>
+
+  <h2>Najważniejsze zmiany</h2>
+  <ul class="chg-list">
+    <li><span class="tag t-espi">ESPI</span><b>Spółki koszykowe — żadnego komunikatu 10–12.10 (do 8:30).</b> Zakładki „wiadomości” bankier.pl dziesięciu spółek koszykowych nie mają pozycji nowszych niż zdarzenia znane rankingowi W9: Kruk 9.10 13:22 (nakłady na portfele 347 mln zł, −44% r/r; kurs −7,72% — dn=0), CD Projekt 9.10 07:45 (Paramount zekranizuje Cyberpunka), PGE 7.10 (porozumienie spółek SP o ochronie infrastruktury krytycznej), Tauron 8.10 (290 mln zł na modernizację bloku 910 MW w Jaworznie), PKO BP i Pekao 8.10 (ok. 500 mln zł finansowania dwóch magazynów energii), mBank 6.10 (koszty ryzyka prawnego CHF za Q3 ok. 78 mln zł), Alior 7.10 (promocja konta; 30.09 Fitch BBB−), Kęty 24.09 (szacunki Q3: ~201 mln zł zysku), LPP 17.09 (wyniki Q2). Żaden wpis nie uruchamia protokołu. Kontekst sektorowy dla PGE/Tauronu: PAP 12.10 07:32 — obroty energią elektryczną na TGE w III kw. +47,9% r/r (płynność hurtu, nie sygnał cenowy).
+      <span class="src">bankier.pl — zakładki „wiadomości spółki” PGE, LPP, TAURONPE, CDPROJEKT, KETY, ALIOR, PKOBP, MBANK, PEKAO, KRUK, odczyt 12.10.2026 ok. 8:25; bankier.pl „Na TGE w III kw. obroty energią elektryczną wzrosły o 47,9 proc. rdr”, 12.10.2026 07:32</span></li>
+
+    <li><span class="tag t-makro">Makro</span><b>Poranek przed sesją: Azja mieszana, kontrakty na Europę na plusie, geopolityka dwukierunkowa dla tez LONG PGE/Tauron.</b> KOSPI −3,39%, Shanghai −0,42%, CSI 300 −0,64%, Hang Seng +0,11% (Tokio wolne); kontrakty: DAX +0,49%, Stoxx 50 +0,42%, indeksy USA +0,2%. Wall Street w piątek: Dow +0,83% (51&nbsp;654,95), S&amp;P 500 +0,59% (7&nbsp;811,54), Nasdaq +0,64%; złoto 4&nbsp;207 USD (+0,3%), EUR/USD 1,1212. <b>Za drogim hurtem energii</b> (wsparcie tez LONG): Huti ostrzelali lotnisko w Rijadzie i grożą saudyjskiej infrastrukturze energetycznej (liczba ofiar rozbieżna między depeszami: 1 zabity/11 rannych wg porannej, 12/309 wg skrótu weekendu); analitycy: kryzys w Ormuz „bez rychłego rozwiązania”. <b>Przeciw:</b> Trump ogłosił, że Rosja i Ukraina wstrzymają ataki na infrastrukturę energetyczną (Zełenski czeka na szczegóły), a deal z Putinem na 4,8 mln t rosyjskiego diesla zawiesza sankcje na rosyjski olej napędowy do kwietnia 2027 — presja na ceny paliw w dół; bankier.pl 07:10: ropa rano lekko tanieje. Nastroje INI SII (badanie do 8.10): byki 42,4% (−13 p.p. t/t), niedźwiedzie 30,5% (+10,9 p.p.) — ochłodzenie po rekordach WIG20. Nic z tego nie jest zdarzeniem per spółka; protokół bez reakcji.
+      <span class="src">strefainwestorow.pl / PAP Biznes „Dzień na rynkach: W Azji na giełdach przeważają spadki indeksów”, 12.10.2026 08:27; „Skrót wiadomości — sobota, niedziela 10–11 października”, 11.10.2026; „Odsetek byków na GPW spadł do 42,4 proc.…”, 11.10.2026; bankier.pl „Ropa lekko tanieje, gdy Trump ogłasza rozejm energetyczny Rosji z Ukrainą”, 12.10.2026 07:10</span></li>
+
+    <li><span class="tag t-makro">Makro</span><b>Kalendarz tygodnia potwierdzony ponownie w datowanym źródle z dziś (PAP Biznes „Tydzień w kraju” i „Tydzień na rynkach”, 12.10 06:34) — daty z raportu tygodniowego poprawne.</b> Dziś: 14:00 konferencja Orlenu o morskiej energetyce wiatrowej, 15:00 MF podaż przed przetargiem, Warsaw Security Forum; 18:10 Hammack (Fed). Wtorek 13.10: 8:00 finalne CPI Niemiec, 15:00 BGK podaż przed zamianą, wyniki JPMorgan, Goldman Sachs, Citigroup i Wells Fargo, MFW nowe prognozy WEO. <b>Środa 14.10: 9:30 GUS pełne dane o inflacji za wrzesień</b> (wstępnie 4,0% r/r; Erste: inflacja bazowa 3,2% wobec 3,3%), 10:00 NWZ PKO BP (zmiana statutu), 11:30 przetarg SPW (podaż 7–12 mld zł, w tym nowa seria NZ0332), posiedzenie Rady Fiskalnej, 14:00 NBP bilans płatniczy (konsensus ok. −2,4 mld EUR), 14:30 CPI USA (prognoza +0,6% m/m, bazowa +0,2%), 20:00 Beige Book, wyniki Morgan Stanley i Bank of America. Czwartek 15.10: 9:30 GUS produkcja usług, 12:00 BGK przetarg zamiany FPC, 14:00 NBP inflacja bazowa (prognoza 3,2%), 14:30 PPI i sprzedaż detaliczna USA. Piątek 16.10: 9:30 GUS kwartalne rewizje PKB, 11:00 finalny HICP strefy euro (wstępnie 3,8% r/r), 15:15 produkcja przemysłowa USA — zamknięcie okna W9 (D+5). Dat posiedzeń FOMC i EBC w źródle brak (KALENDARZ_NIEPOTWIERDZONY tylko dla nich). Glapiński (wcześniej): RPP gotowa do podwyżek w listopadzie przy niepokojących sygnałach; PKO BP: stopy bez zmian do końca roku.
+      <span class="src">strefainwestorow.pl / PAP Biznes „TYDZIEŃ W KRAJU: Szczegóły CPI za IX, kwartalne rewizje PKB, aukcja MF i zamiana BGK”, 12.10.2026 06:34; „TYDZIEŃ NA RYNKACH: CPI w USA, prognozy MFW, wyniki banków w USA, wystąpienia EBC i Fed”, 12.10.2026 06:34; „Kalendarium rynku kapitałowego GPW 2026-10-12”; „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-12”</span></li>
+
+    <li><span class="tag t-rek">Rekom.</span><b>Brak nowych rekomendacji dla spółek koszykowych 8–12.10.</b> Lista rekomendacji bankier.pl ma z tego okresu tylko Skarbiec (BM Pekao, 8.10, kupuj, 47 zł). Ostatnie sygnały DM dla koszyków — Trigon DM na październik (9.10: mBank „gorzej niż rynek”) i Citi dla Aliora z 21.09 (kupuj, 146,80 zł) — są już w punktacji DM rankingu W9; żaden nie jest świeżą rekomendacją przeciw tezie, więc REDUCE z tytułu RECOMMENDATION nie przysługuje.
+      <span class="src">bankier.pl — lista rekomendacji, odczyt 12.10.2026 ok. 8:25; rankings/2026-W9.json (pkt DM)</span></li>
+
+    <li><span class="tag t-short">Short</span><b>Rejestr krótkiej sprzedaży KNF — bez odczytu.</b> rss.knf.gov.pl zwraca stronę 404, a www.knf.gov.pl jest odcięty przez politykę sieciową sesji (CONNECT 403); WebSearch nie znajduje datowanych wpisów z bieżącego tygodnia o zmianach ≥0,3 p.p. na spółkach koszykowych. Kod KNF_SHORT_NIEDOSTEPNY utrzymany.
+      <span class="src">rss.knf.gov.pl/rss_pub/rssE.xml i www.knf.gov.pl, próby 12.10.2026 ok. 8:20; WebSearch „KNF rejestr krótkiej sprzedaży 9 października 2026” — wyniki nietrafne</span></li>
+
+    <li><span class="tag t-makro">Makro</span><b>Wyzwalacz tez energetycznych (PGE, Tauron — LONG): projekt CIT 30% dla energetyki i paliw (UD459: 30% w 2027, 26% w 2028, 23% w 2029, firmy &gt;50 mln EUR przychodów) — bez zmian w ciągu 24 h.</b> Wyszukiwarka nie zwraca żadnego datowanego materiału z października o skierowaniu projektu do Sejmu; najnowsze dokumenty to przyjęcie przez Radę Ministrów i konsultacje z sierpnia–września. Nowy, miękki sygnał presji fiskalnej na spółki SP: szef MF Domański w TVN — „mam nadzieję, że dywidenda z Orlenu będzie wysoka” (PAP 12.10 08:04); dla PGE/Tauronu bez bezpośredniego przełożenia. Teza LONG (momentum sektorowe, WIG-Energia na rekordzie 9.10) nienaruszona; ryzyko regulacyjne otwarte i niedatowane — KALENDARZ_NIEPOTWIERDZONY utrzymany.
+      <span class="src">WebSearch „CIT 30 proc. energetyka paliwa Sejm projekt ustawy październik 2026” 12.10.2026 (parkiet.com, polsatnews.pl, energetyka24.com, polskiprzemysl.com.pl — materiały z sierpnia–września 2026); strefainwestorow.pl / PAP „Szef MF liczy, że dywidenda z Orlenu będzie wysoka”, 12.10.2026 08:04; rankings/2026-W9.json (PGE, TAURONPE)</span></li>
+  </ul>
+
+  <h2>Koszyki W9 — stan na ostatnią zakończoną sesję (9.10 = D0)</h2>
+  <div class="basket-h">KOSZYK LONG (5 spółek, kolejność z signals.json)</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0 (9.10)</th><th>Kurs ostatni (9.10)</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr></thead>
+    <tbody>
+<tr><td>PGE <span style="color:#6B7681;font-size:11px">PGE</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">16,70</td><td class="num">16,70</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>LPP <span style="color:#6B7681;font-size:11px">LPP</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">25 040,00</td><td class="num">25 040,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>Tauron <span style="color:#6B7681;font-size:11px">TAURONPE</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">9,642</td><td class="num">9,642</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>CD Projekt <span style="color:#6B7681;font-size:11px">CDPROJEKT</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">263,00</td><td class="num">263,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>Grupa Kęty <span style="color:#6B7681;font-size:11px">KETY</span></td><td><span class="dir dir-l">LONG</span></td><td class="num">1 282,00</td><td class="num">1 282,00</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia LONG (zmiana kursów)</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr></tfoot>
+  </table></div>
+
+  <div class="basket-h">KOSZYK SHORT (5 spółek, kolejność z signals.json) — papierowy, rachunek go nie handluje</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0 (9.10)</th><th>Kurs ostatni (9.10)</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr></thead>
+    <tbody>
+<tr><td>Alior Bank <span style="color:#6B7681;font-size:11px">ALIOR</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">130,15</td><td class="num">130,15</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>PKO BP <span style="color:#6B7681;font-size:11px">PKOBP</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">113,94</td><td class="num">113,94</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>mBank <span style="color:#6B7681;font-size:11px">MBANK</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">1 401,50</td><td class="num">1 401,50</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>Pekao <span style="color:#6B7681;font-size:11px">PEKAO</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">261,10</td><td class="num">261,10</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+<tr><td>Kruk <span style="color:#6B7681;font-size:11px">KRUK</span></td><td><span class="dir dir-s">SHORT</span></td><td class="num">347,90</td><td class="num">347,90</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Średnia SHORT (zwrot pozycji krótkiej)</td><td class="num flat">0,00%</td><td class="num flat">0,00 p.p.</td></tr></tfoot>
+  </table></div>
+  <p class="note" style="margin-top:10px">Zwrot pozycji SHORT = −(zmiana kursu). WIG20 od D0: 0,00% (4&nbsp;185,52 → 4&nbsp;185,52). Kursy D0 z <code>d0.prices</code> w signals.json, zgodne z data/kursy-cache.json (sesja 9.10, tabele bankier.pl). Progi protokołu na dzisiejszą sesję: REDUCE przy ruchu ≥4% od D0 przeciw tezie (LONG: PGE &lt;16,03, LPP &lt;24&nbsp;038, Tauron &lt;9,256, CD Projekt &lt;252,48, Kęty &lt;1&nbsp;230,7; SHORT: Alior &gt;135,36, PKO BP &gt;118,50, mBank &gt;1&nbsp;457,6, Pekao &gt;271,54, Kruk &gt;361,82), CLOSE przy ≥8%.</p>
+
+  <h2>Pozycje taktyczne</h2>
+  <p class="note">Brak otwartych pozycji taktycznych (lista pusta). Skan dziesięciu spółek WIG20 spoza koszyków za 10–12.10 (zakładki wiadomości bankier.pl): jedyne wpisy to Żabka 10.10 (spełniony warunek FSR wezwania Couche-Tard po 32,00 zł; zapisy do 26.10 — znane, dyskonto &lt;1%, arbitraż, nie alfa) i KGHM 9.10 (status projektów strategicznych UE — zdarzenie D0, już w cenie: +5,68%). Orlen: wypowiedź szefa MF o dywidendzie i dzisiejsza konferencja o offshore 14:00 — nie są twardym wyzwalaczem. Allegro, Pepco, Modivo, PZU, Dino, Budimex, Erste Bank Polska — bez komunikatów. Bez nowego wpisu.</p>
+
+  <h2>Kalendarz — poniedziałek 12 października 2026 (D+1)</h2>
+  <div class="cal"><ul>
+    <li><b>GPW 9:00–17:00</b> — pierwsza sesja okna W9; bieg bota <code>/run</code> ok. 10:01: zamknięcie Allegro i Pepco, otwarcie LPP i Kęty, utrzymanie PGE, Tauronu i CD Projektu oraz krótkiego kontraktu na WIG20 (auto-roll kontraktu grudniowego dopiero przed 18.12). Po biegu sprawdzić log Rendera (<code>BOT |</code>) i <code>/status</code> — pokrycie koszyka LONG (ryzyko LPP: wielkość minimalna) i ekspozycja netto.</li>
+    <li><b>Makro i rynek</b> — 14:00 konferencja prasowa Orlenu „Farma Baltic Power to dopiero początek” (energetyka wiatrowa na morzu); 15:00 MF — podaż przed przetargiem SPW 14.10; Warsaw Security Forum (dzień I); 11:30 i 14:50 wystąpienia Breeden i Mann (BoE), 18:10 Hammack (Fed Cleveland). Giełda w Tokio zamknięta. Brak publikacji GUS/NBP; brak posiedzeń RPP/EBC/Fed (RPP 7.10 — stopy bez zmian, referencyjna 3,75%).</li>
+    <li><b>Spółki koszykowe</b> — brak zapowiedzianych publikacji. Najbliższe datowane: NWZ PKO BP 14.10 10:00 (zmiana statutu), NWZ Aliora 20.10, premiera „Cyberpunk: Edgerunners 2” (Netflix) 20.10, Kęty raport Q3 26.10 (dn=11), Kruk Q3 27.10, mBank Q3 28.10, Pekao Q3 29.10.</li>
+    <li><b>Dalej w tygodniu</b> — 13.10 start sezonu wyników banków w USA, finalne CPI Niemiec; <b>14.10 9:30 GUS CPI za wrzesień</b> (flash 4,0%), 11:30 przetarg SPW, 14:30 CPI USA, 20:00 Beige Book; 15.10 12:00 zamiana BGK, 14:00 inflacja bazowa NBP; 16.10 9:30 rewizje PKB GUS — koniec okna W9 (D+5), rozliczenie w raporcie tygodniowym 17.10.</li>
+  </ul></div>
+
+  <h2>Problemy i jakość danych</h2>
+  <p class="note">FMP: konektor w sesji, ale endpointy <code>chart</code> i <code>quote</code> odrzucone („requires a higher plan”) — FMP_PLAN_BLOKADA (kod już w rankings/2026-W9.json). Kursy: bez nowej sesji od D0, więc skrypt kursy.py nie był uruchamiany i cache nie zmienił się (ostatnia sesja w cache: 9.10, źródło rezerwowe bankier.pl — KURS_ZRODLO_REZERWA utrzymany); zamknięcie WIG20 9.10 potwierdzone ponownie w tabeli indeksów bankier.pl (znacznik 17:15). KNF_SHORT_NIEDOSTEPNY — rejestr poza zasięgiem sieci (404 / CONNECT 403). KALENDARZ_NIEPOTWIERDZONY — dotyczy wyłącznie zdarzeń bez dnia (strategia PGE, CIT 30%, zgody antymonopolowe dla Żabki, zarząd Aliora, FOMC/EBC); daty krajowe 12–16.10 potwierdzone w depeszy PAP z 12.10 06:34. Kalendarium biznes.pap.pl odcięte przez Incapsula — użyto kopii depesz PAP na strefainwestorow.pl. Nowe kody: brak. Rejestr W9: +2 wpisy MAKRO (dn=1 poranek 12.10, dn=3 potwierdzenie kalendarza).</p>
+
+  <footer>
+    Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej w rozumieniu rozporządzenia MAR ani usługi doradztwa inwestycyjnego. Wygenerowany automatycznie przez model AI (rutyna „Puls WIG20”, bieg 12.10.2026 ok. 8:30 czasu Warszawy) na podstawie publicznie dostępnych źródeł wskazanych przy każdej pozycji; liczby mogą zawierać błędy — weryfikuj u źródła. Zwroty liczone od zamknięcia D0 bez kosztów transakcyjnych (spread, swap, luka realizacji).
+  </footer>
+</div>
+</body>
+</html>

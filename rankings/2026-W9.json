@@ -624,6 +624,22 @@
    "opis": "Tło weekendu przed pierwszą sesją okna: Trump ogłosił 9.10 porozumienie z Putinem o dostawach rosyjskiego oleju napędowego (≥300 tys. t, kolejne 500 tys. t w listopadzie; sankcje na rosyjski diesel zawieszone) — presja na ceny paliw w dół przed wyborami 3.11 (ryzyko pośrednie dla tez LONG PGE/Tauron przy drogim hurcie energii); Wall Street 9.10: Dow Jones +400 pkt. Kotecki (RPP) 10.10 09:41 „Sytuacja wokół NBP bez precedensu” — tylko nagłówek. Brak ESPI i rekomendacji dla spółek koszykowych 10–11.10; kalendarz 12.10 pusty (Tokio i Toronto zamknięte).",
    "wklad_pkt": null,
    "zrodlo": "money.pl „Paliwowy deal Trumpa z Putinem…” 9–10.10.2026; tvp.info 9.10.2026; bankier.pl „Wall Street ze wzrostami” 9.10.2026 23:09; strefainwestorow.pl / PAP 10.10.2026 09:41; bankier.pl zakładki wiadomości 10 spółek koszykowych, odczyt 11.10 ok. 8:20"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "Poranek 12.10 przed pierwszą sesją okna W9 (bieg 8:30, GPW jeszcze zamknięta — zwroty okna nadal 0,00%). Azja mieszana: KOSPI −3,39%, Shanghai −0,42%, CSI 300 −0,64%, Hang Seng +0,11% (Tokio wolne); kontrakty na DAX +0,49%, Stoxx 50 +0,42%, na indeksy USA +0,2%; Wall Street w piątek: Dow +0,83% (51 654,95), S&P 500 +0,59% (7 811,54), Nasdaq +0,64%; złoto 4 207 USD (+0,3%), EUR/USD 1,1212. Geopolityka dwukierunkowa dla tez LONG PGE/Tauron: Huti ostrzelali lotnisko w Rijadzie i grożą saudyjskiej infrastrukturze energetycznej, kryzys w Ormuz „bez rychłego rozwiązania” (drogi hurt energii = wsparcie tez) kontra ogłoszone przez Trumpa wstrzymanie ataków Rosji i Ukrainy na infrastrukturę energetyczną oraz deal na 4,8 mln t rosyjskiego diesla z zawieszeniem sankcji do kwietnia 2027 (presja na paliwa w dół). Nastroje INI SII (badanie do 8.10): byki 42,4% (−13 p.p. t/t), niedźwiedzie 30,5% (+10,9 p.p.). Szef MF Domański w TVN: „mam nadzieję, że dywidenda z Orlenu będzie wysoka” (PAP 08:04) — presja fiskalna na spółki SP, bez nowych decyzji ws. CIT 30%. Kalendarz 12.10: 14:00 konferencja Orlenu o morskiej energetyce wiatrowej, 15:00 MF podaż przed przetargiem SPW 14.10, Warsaw Security Forum; 18:10 Hammack (Fed). Brak ESPI i rekomendacji dla spółek koszykowych 10–12.10 (do 8:30).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl / PAP Biznes „Dzień na rynkach: W Azji na giełdach przeważają spadki indeksów”, 12.10.2026 08:27; „Skrót wiadomości — sobota, niedziela 10–11 października”, 11.10.2026; „Szef MF liczy, że dywidenda z Orlenu będzie wysoka”, 12.10.2026 08:04; „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-12”; SII INI za strefainwestorow.pl 11.10.2026; bankier.pl zakładki wiadomości 20 spółek WIG20, odczyt 12.10 ok. 8:25"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "Ponowne potwierdzenie kalendarza krajowego w datowanym źródle z bieżącego tygodnia (PAP Biznes „Tydzień w kraju”, 12.10 06:34): GUS pełny CPI za wrzesień 14.10 9:30 (wstępnie 4,0% r/r; Erste: inflacja bazowa 3,2% wobec 3,3%) — data z raportu tygodniowego poprawna; NBP bilans płatniczy 14.10 14:00 (konsensus PAP ok. −2,4 mld EUR); NBP inflacja bazowa 15.10 14:00. Pozycje nowe względem rejestru z 10.10: MF przetarg SPW 14.10 11:30 (podaż 7–12 mld zł, m.in. OK0129, PS1031, nowa NZ0332, DS0436; podaż ogłaszana 12.10 15:00), posiedzenie Rady Fiskalnej 14.10, BGK przetarg zamiany FPC 15.10 12:00 (podaż 13.10 15:00), GUS produkcja usług 15.10 9:30, GUS kwartalne rewizje PKB (I kw. 2025–II kw. 2026) 16.10 9:30. Zagranica (PAP „Tydzień na rynkach”, 12.10 06:34): CPI USA 14.10 14:30 (prognoza +0,6% m/m, bazowa +0,2%), Beige Book 14.10 20:00, PPI i sprzedaż detaliczna USA 15.10 14:30, finalny HICP strefy euro 16.10 11:00 (wstępny 3,8% r/r), wyniki JPMorgan/Goldman/Citi/Wells Fargo 13.10 i Morgan Stanley/BofA 14.10; MFW WEO 13.10. Dat posiedzeń FOMC i EBC w źródle brak → KALENDARZ_NIEPOTWIERDZONY wyłącznie dla nich. Glapiński wcześniej: RPP gotowa do podwyżek w listopadzie przy niepokojących sygnałach; PKO BP: stopy bez zmian do końca roku. Sejm: sprawozdanie ws. Trybunału Stanu dla prezesa NBP najwcześniej 5–6.11 (poza oknem).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl / PAP Biznes „TYDZIEŃ W KRAJU: Szczegóły CPI za IX, kwartalne rewizje PKB, aukcja MF i zamiana BGK”, 12.10.2026 06:34; „TYDZIEŃ NA RYNKACH: CPI w USA, prognozy MFW, wyniki banków w USA, wystąpienia EBC i Fed”, 12.10.2026 06:34; „Kalendarium rynku kapitałowego GPW 2026-10-12” (NWZ PKO BP 14.10 10:00)"
   }
  ],
  "data_quality": [
