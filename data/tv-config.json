@@ -2,8 +2,9 @@
   "_opis": "Konfiguracja konektora TradingView MCP dla rutyn wig20-bot. Brak pliku lub enabled=false = rutyny pomijają wszystkie kroki TV. Zasady: docs/tradingview.md. Bez liczb z rachunku. Faza 2 od startu — decyzja właściciela 12.10.2026 (pełne użycie TV): TV źródłem nr 1 kursów po walidacji D0, kursy.py RAZ jako drugi tor; bankier wygrywa przy rozjeździe >0,5%.",
   "enabled": true,
   "faza": 2,
-  "wersja_konfiguracji": "2026-10-12b",
+  "wersja_konfiguracji": "2026-10-13",
   "narzedzia_prefix": "mcp__TradingView__mcp-tv-",
+  "_prefiks_uwaga": "prefiks = mcp__<nazwa konektora w claude.ai>__; konektor dodany ponownie 13.10.2026 pod nazwą TradingView (12–13.10 nazywał się Traidingview). Inny prefiks w sesji ≠ brak konektora — docs/tradingview.md §1.",
   "budzet": {
     "puls": {
       "wywolania": 25,

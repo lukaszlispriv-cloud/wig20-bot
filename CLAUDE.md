@@ -66,7 +66,10 @@ Właściciel 12.10.2026 wyraził zgodę na wdrożenie konektora TradingView MCP 
 **`docs/tradingview.md`** — rutyny czytają go na starcie. Skrót:
 
 - Narzędzia `mcp__TradingView__mcp-tv-*` (odczyt + alerty) i `mcp__TradingView__mcp-watchlist-*`; schematy
-  ładuje `ToolSearch` zapytaniem `select:<pełna nazwa>`. W rutynach WYŁĄCZNIE allowlista odczytu; ZAKAZ
+  ładuje `ToolSearch` zapytaniem `select:<pełna nazwa>`. Prefiks = nazwa konektora w claude.ai; gdy w sesji
+  narzędzia `mcp-tv-*` są pod innym prefiksem (12–13.10.2026: „Traidingview”), używaj faktycznego prefiksu
+  tylko dla allowlisty odczytu, wpisz go do logu i do PROBLEMY — to nie jest `TV_MCP_NIEDOSTEPNY`
+  (`docs/tradingview.md` §1). 13.10.2026 konektor dodany ponownie jako „TradingView”. W rutynach WYŁĄCZNIE allowlista odczytu; ZAKAZ
   wszystkich narzędzi zapisu (alerty, watchlisty) i `get-active-watchlist` — rutyna nie dostaje pytania o zgodę.
 - Pliki: `data/tv-config.json` (`enabled`, `faza: 2`, budżety: puls ≤25 wywołań / 8 min / przed 10:01 Warszawy,
   sobota ≤35 / 15 min; flagi), `data/tv-symbole.json` (jedyne źródło symboli: ticker

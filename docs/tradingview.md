@@ -1,6 +1,6 @@
 # TradingView MCP w rutynach WIG20 — pełne zasady (plik czytany przez rutyny na starcie)
 
-Wersja 2026-10-12b (FAZA 2 od startu). Właściciel zgodził się na wdrożenie
+Wersja 2026-10-13 (FAZA 2 od startu; 13.10: reguła prefiksu konektora w §1). Właściciel zgodził się na wdrożenie
 12.10.2026 wg planu `../ndx100-bot/WDROZENIE-TRADINGVIEW-2026-10-12.md`
 (sekcje 6.3, 6.4, 7, 11.5) i tego samego dnia zdecydował: **pełne użycie TV,
 bez fazy cienia i bez bramki licencyjnej** (ryzyko regulaminu TV §3 przyjmuje
@@ -40,6 +40,24 @@ zapisu, których nie ładujesz. Brak narzędzi po obu testach = kod
 `TV_MCP_NIEDOSTEPNY` w `data_quality` + zdanie w PROBLEMY „TradingView MCP:
 brak narzędzi w sesji”, dotychczasowa ścieżka, niczego nie udawaj. Pełną nazwę
 pierwszego załadowanego narzędzia wpisujesz do logu.
+
+PREFIKS INNY NIŻ W CONFIGU (reguła od 13.10.2026): nazwa narzędzia w sesji to
+`mcp__<nazwa konektora w claude.ai>__<narzędzie>`, więc prefiks zależy od tego,
+jak właściciel nazwał konektor w Ustawieniach → Konektory. Gdy `select:` z
+prefiksem z configu nie zwraca nic, a test słowny `tradingview` pokazuje
+narzędzia `mcp-tv-*` pod innym prefiksem (np. literówka w nazwie konektora),
+to NIE jest brak konektora: ładujesz WYŁĄCZNIE nazwy z allowlisty odczytu pod
+faktycznym prefiksem, wpisujesz faktyczny prefiks do logu (`tv_porownaj.py
+--prefix`), piszesz w PROBLEMY „prefiks konektora w sesji X ≠ config Y — do
+decyzji właściciela” i NIE dopisujesz `TV_MCP_NIEDOSTEPNY`; pliku
+`data/tv-config.json` rutyna nie zmienia. Precedens: 12–13.10.2026 konektor
+nazywał się „Traidingview” (`mcp__Traidingview__mcp-tv-*`), Puls 13.10 poszedł
+tą ścieżką; 13.10.2026 właściciel usunął ten konektor i dodał go ponownie jako
+„TradingView” — prefiks z configu `mcp__TradingView__mcp-tv-` obowiązuje od
+następnego biegu (pierwszy bieg po zmianie potwierdza go w logu). Po
+usunięciu i ponownym dodaniu konektora grant w każdej rutynie (sekcja
+konektorów rutyny) trzeba zaznaczyć od nowa — bez grantu sesja rutyny nie
+widzi narzędzi.
 
 ALLOWLISTA (tylko odczyt): `mcp-tv-get-ohlcv`, `mcp-tv-get-symbol-data`,
 `mcp-tv-get-symbol-data-batch`, `mcp-tv-run-screener`,
