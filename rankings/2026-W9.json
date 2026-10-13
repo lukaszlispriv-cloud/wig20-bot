@@ -648,6 +648,70 @@
    "opis": "Bieg powtórny Pulsu 10:05 (po rotacji koszyka na rachunku o 10:01 — pięć nóg LONG W9 i short na WIG20 potwierdzone w /status, pokrycie 5/5, netto ok. 0% kapitału; LPP w wielkości minimalnej = ok. 68% koszyka LONG na rachunku). Pierwsza godzina sesji D+1: WIG20 otwarcie 4 196,34 (+0,26%), 10:00 4 212,42 (+0,64%); Europa +0,5%, Brent 104,36 USD (−0,34%). Śródsesyjnie ok. 9:45 (orientacyjnie): LONG +1,17% śr. (LPP i Tauron +1,6%) vs WIG20 +0,64%; SHORT +0,75% w kursach — banki rosną z europejskim sektorem (PKO BP +2,0%, mBank +1,9%), Kruk −2,5% kontynuuje reakcję na ESPI z 9.10. Bezrobocie IX 5,8% (MRPiPS, zgodnie z konsensusem PAP, 908,3 tys. bezrobotnych). Orlen (poza koszykami) −3,3% bez ESPI (dywidenda wg MF, deal diesla Trump–Putin, konferencja offshore 14:00). Brak ESPI i rekomendacji dla spółek koszykowych do 10:05; projekt CIT 30% bez zmian (do Sejmu trafił 1.10 tylko projekt wsparcia firm energochłonnych finansowany z tej podwyżki).",
    "wklad_pkt": null,
    "zrodlo": "strefainwestorow.pl / PAP Biznes „WIG20 na otwarciu wyniósł 4196,34 pkt (0,26%)” 12.10.2026 09:16; „DZIEŃ NA GPW: Początek sesji może być wzrostowy” 12.10.2026 08:39; „DZIEŃ NA RYNKACH: W Europie na giełdach wzrosty” 12.10.2026 09:52; „Stopa bezrobocia we wrześniu wyniosła 5,8 proc. … — MRPiPS (opis)” 12.10.2026 09:20; bankier.pl tabele notowań akcji i indeksów 12.10.2026 09:44–10:00; bankier.pl „Komunikaty spółek” odczyt 10:05; /status bota 12.10.2026 10:03"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "Sesja D+1: WIG20 4 209,17 (+0,57%), WIG +0,59%, obroty 2,34 mld zł; banki najsilniejszy sektor (WIG-Banki +1,6% wg bankier.pl, WIGBANKI +2,13% wg tabeli PAP): PKO BP +2,11%, mBank +2,71%, Erste +2,79%, ING +3,01%; Orlen −3,43% po słowach min. Domańskiego o wysokiej dywidendzie i decyzji o pakiecie paliwowym w grudniu; Kruk −3,13%, Kęty −2,65%, LPP +2,48%. Brent >107 USD (Huti — lotnisko w Rijadzie); DAX +0,8%, S&P 500 −0,1%, Moskwa +3% po deklaracji Trumpa o wstrzymaniu ataków na infrastrukturę energetyczną (Axios: rafinerie). Fitch: deficyt gg Polski 2027 7,1% PKB, 2028 6,5%. Wynik rachunku po D+1: LONG −0,09% vs WIG20 +0,57% = −0,66 p.p.; spread papierowy −0,94 p.p.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Mocne banki i słaby Orlen, a Herkules z największymi wzrostami…”, 12.10.2026 17:21; PAP Biznes „WIG20 na zamknięciu wyniósł 4209,17 pkt (0,57%)” 12.10.2026; TradingView MCP get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC; PAP Biznes „Agencja Fitch zrewidowała prognozę deficytu gg Polski…” 12.10.2026"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "UOKiK: 147,09 mln zł kar dla czterech banków za klauzule jednostronnej zmiany warunków umów i opłat (podwyżki nawet o 200%): Erste Bank Polska 80,68 mln zł, ING BSK 63,25 mln zł, Bank Pocztowy 2,71 mln zł, Plus Bank 0,45 mln zł; decyzje nieprawomocne. Żaden bank z koszyka SHORT W9 (Alior, PKO BP, mBank, Pekao) nie jest objęty; sektor decyzję zignorował. Bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP „UOKiK nałożył na 4 banki łącznie 147,09 mln zł kary za stosowanie niedozwolonych klauzul”, 12.10.2026 16:50; strefainwestorow.pl 12.10.2026; rp.pl 12.10.2026"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "Kara UOKiK 80,68 mln zł (największa z czterech; klauzule zmiany warunków i opłat), decyzja nieprawomocna; kurs +2,79% do 789,20 zł — 10,6% powyżej ceny wezwania Erste Group 713,60 zł. Spółka poza koszykami.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP 12.10.2026 16:50; TradingView MCP get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "−3,43% (153,88 zł), pierwszy spadek po pięciu sesjach wzrostów (+10,4% w W8): reakcja na wypowiedzi min. Domańskiego („mam nadzieję, że dywidenda z Orlenu będzie wysoka”; decyzja o przedłużeniu pakietu paliwowego w grudniu); konferencja Orlen Neptun: Baltic East do FID w 2–3 lata. Bez ESPI; spółka poza koszykami, bez wpisu taktycznego (poniżej rangi szoku).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Mocne banki i słaby Orlen, a Herkules z największymi wzrostami…”, 12.10.2026 17:21; PAP Biznes „WIG20 na zamknięciu wyniósł 4209,17 pkt (0,57%)” 12.10.2026; TradingView MCP get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC; PAP Biznes „Projekt farmy wiatrowej Baltic East w ciągu 2-3 lat dojdzie do etapu FID - Orlen Neptun” 12.10.2026"
+  },
+  {
+   "ticker": "KRUK",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "−3,13% do 337,00 zł — druga sesja reakcji na ESPI z 9.10 (nakłady Q3 347 mln zł, −44% r/r; spłaty 960 mln zł); od D0 −3,13%, rel. −3,70 p.p. — noga SHORT zgodna z tezą. Brak nowych komunikatów 10–13.10.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Mocne banki i słaby Orlen, a Herkules z największymi wzrostami…”, 12.10.2026 17:21; PAP Biznes „WIG20 na zamknięciu wyniósł 4209,17 pkt (0,57%)” 12.10.2026; TradingView MCP get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC; bankier.pl profil KRUK, zakładka wiadomości, odczyt 13.10.2026 ok. 8:25"
+  },
+  {
+   "ticker": "KETY",
+   "data": "2026-10-12",
+   "dn": 1,
+   "opis": "−2,65% do 1 248 zł bez komunikatu (najnowszy wpis w serwisie 24.09; raport Q3 26.10 = D+11 potwierdzony także w kolumnie TV earnings_release_next_date) — najsłabsza noga LONG po D+1 (rel. −3,22 p.p.), daleko od progu REDUCE 4%.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Mocne banki i słaby Orlen, a Herkules z największymi wzrostami…”, 12.10.2026 17:21; PAP Biznes „WIG20 na zamknięciu wyniósł 4209,17 pkt (0,57%)” 12.10.2026; TradingView MCP get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC; bankier.pl profil KETY, odczyt 13.10.2026 ok. 8:25; TradingView MCP earnings_release_next_date, odczyt 2026-10-13 06:20 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "Poranek 13.10 (bieg 8:19–8:5x, przed otwarciem): wyprzedaż spółek półprzewodnikowych w Azji — KOSPI w trakcie sesji do −7,4% (5 914 pkt, najniżej od końca lipca; Samsung, SK Hynix), Nikkei 225 ok. −2,5% (ok. 67 300; Tokio po święcie), Taiex ok. −2,5% (TSMC ok. −2%), Hang Seng i Shanghai ok. −1%; Brent 105,54 USD (−1,0%, 06:17), USD/PLN 3,92, EUR/PLN 4,39. MFW: PKB Polski 2026 3,4%, 2027 2,5%. Kalendarz dnia: 15:00 Pracodawcy RP z min. Domańskim i wicemin. Wrochną o przemyśle energochłonnym (wątek CIT 30% dla energetyki — bez nowych decyzji 12–13.10); 16:00 USA sprzedaż domów (TV: prognoza 3,96 mln); wystąpienia Fed (Waller 9:45, Barkin 19:00, Collins 22:00) i EBC (Elderson, Lane); start sezonu wyników banków w USA. Brak ESPI i rekomendacji dla 10 spółek koszykowych 10–13.10 (do 8:25). Werdykt: AKTUALNA, bez reakcji.",
+   "wklad_pkt": null,
+   "zrodlo": "invezz.com „KOSPI crashes 7.4% and Nikkei sinks 2.5%…”, 13.10.2026; ticker bankier.pl 13.10.2026 06:17–06:20; PAP Biznes „MFW utrzymał prognozę wzrostu PKB Polski…” 13.10.2026; strefainwestorow.pl / PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-13”, 13.10.2026 07:01; TradingView MCP get-economic-calendar, odczyt 2026-10-13 06:20 UTC; bankier.pl zakładki wiadomości 10 spółek koszykowych, odczyt 13.10 ok. 8:25"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "Potwierdzenie kalendarza drugim datowanym źródłem (TradingView get-economic-calendar, PL/US/EU, min_importance=-1, okno 13–20.10): GUS CPI za wrzesień 14.10 9:30 (prognoza 4,0% r/r, 0,7% m/m) — zgodne z PAP 12.10 → data potwierdzona; NBP bilans płatniczy 14.10 14:00; USA CPI 14.10 14:30 (prognoza 3,7% r/r, bazowa 2,5%, 0,6% m/m); Beige Book 14.10 20:00; NBP inflacja bazowa 15.10 14:00; USA PPI (0,5% m/m) i sprzedaż detaliczna (0,3% m/m) 15.10 14:30; finalny HICP strefy euro 16.10 11:00; wystąpienie przewodniczącego Fed 16.10 5:30 (tylko TV). GUS wynagrodzenia/zatrudnienie/produkcja/PPI 20.10 9:30 — TV: data, niepotwierdzona (KALENDARZ_NIEPOTWIERDZONY utrzymany; FOMC/EBC/RPP poza oknem TV). Daty wyników (kolumna earnings_release_next_date): żadna spółka WIG20 w D+1…D+10; Kęty 26.10 i Żabka 27.10 już w rejestrze — bez EVENT.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar i get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC (dane opóźnione); strefainwestorow.pl / PAP Biznes „TYDZIEŃ W KRAJU…”, 12.10.2026 06:34"
   }
  ],
  "data_quality": [
@@ -656,6 +720,7 @@
   "KNF_SHORT_NIEDOSTEPNY",
   "DYWIDENDA_KOREKTA_PZU",
   "DYWIDENDA_KOREKTA_LPP",
-  "KALENDARZ_NIEPOTWIERDZONY"
+  "KALENDARZ_NIEPOTWIERDZONY",
+  "TV_DANE_ROZBIEZNE"
  ]
 }
