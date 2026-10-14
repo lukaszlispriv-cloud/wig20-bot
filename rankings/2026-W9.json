@@ -712,6 +712,86 @@
    "opis": "Potwierdzenie kalendarza drugim datowanym źródłem (TradingView get-economic-calendar, PL/US/EU, min_importance=-1, okno 13–20.10): GUS CPI za wrzesień 14.10 9:30 (prognoza 4,0% r/r, 0,7% m/m) — zgodne z PAP 12.10 → data potwierdzona; NBP bilans płatniczy 14.10 14:00; USA CPI 14.10 14:30 (prognoza 3,7% r/r, bazowa 2,5%, 0,6% m/m); Beige Book 14.10 20:00; NBP inflacja bazowa 15.10 14:00; USA PPI (0,5% m/m) i sprzedaż detaliczna (0,3% m/m) 15.10 14:30; finalny HICP strefy euro 16.10 11:00; wystąpienie przewodniczącego Fed 16.10 5:30 (tylko TV). GUS wynagrodzenia/zatrudnienie/produkcja/PPI 20.10 9:30 — TV: data, niepotwierdzona (KALENDARZ_NIEPOTWIERDZONY utrzymany; FOMC/EBC/RPP poza oknem TV). Daty wyników (kolumna earnings_release_next_date): żadna spółka WIG20 w D+1…D+10; Kęty 26.10 i Żabka 27.10 już w rejestrze — bez EVENT.",
    "wklad_pkt": null,
    "zrodlo": "TradingView MCP get-economic-calendar i get-symbol-data-batch, odczyt 2026-10-13 06:20 UTC (dane opóźnione); strefainwestorow.pl / PAP Biznes „TYDZIEŃ W KRAJU…”, 12.10.2026 06:34"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "Trójstronne porozumienie Ministerstwa Energii, Polskich Elektrowni Jądrowych i PGE o zasadach współpracy przy przygotowaniu drugiej polskiej elektrowni jądrowej (PEJ inwestor i koordynator, PGE analizy lokalizacji i wstępne studia wykonalności); kurs +2,98% do 17,29 zł (ok. +30% od 28.09), WIG-Energia +2,35% i rekord 5 624,95 pkt. Zgodne z tezą LONG; zdarzenie po D0.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Atomowe plany PGE i wystrzał ZE PAK-u. WIG20 obronił zieleń”, 13.10.2026 17:26; PAP Biznes „Skrót wiadomości – wtorek, 13 października, 21.00” (strefainwestorow.pl)"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-19",
+   "dn": 6,
+   "opis": "Konferencja prasowa PGE z aktualizacją strategii spółki, poniedziałek 19.10 12:30 — pierwszy datowany termin (wcześniej „II połowa października” bez daty, wpis z 10.10).",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-14”, 14.10.2026 07:01 (strefainwestorow.pl)"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "Tauron Wytwarzanie podpisał umowę o wartości ponad 300 mln zł na budowę nowego źródła ciepła dla Jaworzna; kurs +2,23% do 9,792 zł (z sektorem energetycznym). Zgodne z tezą LONG.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Atomowe plany PGE i wystrzał ZE PAK-u. WIG20 obronił zieleń”, 13.10.2026 17:26; PAP Biznes „Skrót wiadomości – wtorek, 13 października, 21.00” (strefainwestorow.pl)"
+  },
+  {
+   "ticker": "LPP",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "LPP Logistics zawarło z Hai Robotics umowę na system automatyzacji nowego centrum e-commerce w Tczewie (ponad 1 500 robotów, 30 tys. m kw.; uruchomienie przełom I/II kw. 2027; bez kwoty) — komunikat prasowy 11:10, nie ESPI; kurs −1,56% do 25 260 zł (korekta po ok. +23% w poprzednich tygodniach). Bez wpływu na tezę.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP Biznes „LPP wdroży zaawansowany system automatyzacji w nowym centrum logistycznym”, 13.10.2026 11:10"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "PKO BP szacuje koszty ryzyka prawnego kredytów hipotecznych denominowanych/indeksowanych do walut obcych w III kw. 2026 na 371 mln zł (aktualizacja parametrów modelu i wyższy szacowany koszt zawieranych ugód) — komunikat 16:12; kurs +0,24% do 116,62 zł, bez reakcji. Kierunkowo zgodne z tezą SHORT, poniżej rangi szoku (bez wpisu exclude).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl / PAP Biznes „PKO BP szacuje koszty ryzyka zw. z kredytami hipotecznymi … w III kw. na 371 mln zł”, 13.10.2026 16:12"
+  },
+  {
+   "ticker": "KETY",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "+3,37% do 1 290 zł, lider wzrostów w WIG20 — bez komunikatu spółki (szczyt 1 362 zł z końca lipca); odrobiony spadek z 12.10. Raport Q3 26.10 = D+11 bez zmian.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Atomowe plany PGE i wystrzał ZE PAK-u. WIG20 obronił zieleń”, 13.10.2026 17:26; PAP Biznes „Skrót wiadomości – wtorek, 13 października, 21.00” (strefainwestorow.pl)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "Sesja D+2: WIG20 4 225,00 (+0,38%, dzienne maksimum na fixingu), WIG 159 312,40 (+0,30%), mWIG40 +0,17%, sWIG80 −0,33%, obroty 2,16 mld zł (1,78 mld w WIG20); WIG-Banki −0,06% (Alior −0,19%, Erste −0,53%; PKO BP +0,24%, Pekao +0,19%, mBank +0,66%), WIG-Energia +2,35% (rekord); Allegro +2,4%, KGHM −1,44%, Dino −0,95%. USA: S&P 500 −0,02% (7 805,45), Nasdaq −0,15% (27 204,38), DJIA −0,35% (51 670,10); JPMorgan i Wells Fargo poniżej oczekiwań, Goldman Sachs i Citigroup powyżej; UST10Y 5,20% (−3 pb). Europa: DAX/FTSE przy zerze, CAC −0,2%, IBEX −0,4%.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Atomowe plany PGE i wystrzał ZE PAK-u. WIG20 obronił zieleń”, 13.10.2026 17:26; PAP Biznes „Skrót wiadomości – wtorek, 13 października, 21.00” (strefainwestorow.pl); PAP Biznes „DZIEŃ NA RYNKACH: W Azji na giełdach przewaga spadków”, 14.10.2026 08:24"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "Wątek podatkowy: MF w odpowiedzi na interpelację — planowana podwyżka ogólnego CIT z 19 do 22% dotknie ok. 0,6% podatników CIT (to inna danina niż 30% CIT dla energetyki i paliw z projektu UD 459); wicemin. energii Wrochna: zgoda KE na pomoc dla firm energochłonnych (finansowanie z podwyższonego CIT energetyki) możliwa w ciągu kilku tygodni; wskaźnik WPI (BIEC) za październik sygnalizuje narastanie presji inflacyjnej; Erste: ewentualne podwyżki RPP ograniczone do 50 pb, bazowo stabilizacja stóp do końca 2027. Wyzwalacz tez LONG PGE/Tauron (CIT 30%) bez nowej decyzji.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes „Skrót wiadomości – wtorek, 13 października, 21.00” (strefainwestorow.pl)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-10-13",
+   "dn": 2,
+   "opis": "Czechy: projekt opodatkowania rafinerii Orlenu (Unipetrol) przeszedł pierwsze czytanie w parlamencie; kurs +0,08% do 154,00 zł. Spółka poza koszykami W9.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes „W Czechach bliżej do opodatkowania rafinerii Orlenu; projekt przeszedł pierwsze czytanie”, 13.10.2026 (strefainwestorow.pl)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "Poranek 14.10 (bieg 8:17–8:4x, przed otwarciem): Azja mieszana — Nikkei 225 −0,03%, Topix −0,28%, KOSPI −0,16% po śródsesyjnym +2,6% (odreagowanie wtorkowego −5,46%), Hang Seng +0,17%, SCI −0,84%, CSI 300 −1,21%, TAIEX +0,59%; kontrakty na indeksy USA −0,20…+0,08%; złoto 4 163 USD (+0,1%), EUR/USD 1,1209. Dziś 9:30 GUS CPI za wrzesień (pełne dane; flash 4,0% r/r, 0,7% m/m), 10:00 NWZ PKO BP (statut), 14:00 NBP bilans płatniczy, 14:30 USA CPI (prognoza 3,6% r/r, bazowa 2,5%), 20:00 Beige Book.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes „DZIEŃ NA RYNKACH: W Azji na giełdach przewaga spadków”, 14.10.2026 08:24; TradingView MCP get-economic-calendar, odczyt 2026-10-14 06:19 UTC; kalendarium bankier.pl 14.10"
   }
  ],
  "data_quality": [
