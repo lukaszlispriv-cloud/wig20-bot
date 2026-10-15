@@ -792,6 +792,86 @@
    "opis": "Poranek 14.10 (bieg 8:17–8:4x, przed otwarciem): Azja mieszana — Nikkei 225 −0,03%, Topix −0,28%, KOSPI −0,16% po śródsesyjnym +2,6% (odreagowanie wtorkowego −5,46%), Hang Seng +0,17%, SCI −0,84%, CSI 300 −1,21%, TAIEX +0,59%; kontrakty na indeksy USA −0,20…+0,08%; złoto 4 163 USD (+0,1%), EUR/USD 1,1209. Dziś 9:30 GUS CPI za wrzesień (pełne dane; flash 4,0% r/r, 0,7% m/m), 10:00 NWZ PKO BP (statut), 14:00 NBP bilans płatniczy, 14:30 USA CPI (prognoza 3,6% r/r, bazowa 2,5%), 20:00 Beige Book.",
    "wklad_pkt": null,
    "zrodlo": "PAP Biznes „DZIEŃ NA RYNKACH: W Azji na giełdach przewaga spadków”, 14.10.2026 08:24; TradingView MCP get-economic-calendar, odczyt 2026-10-14 06:19 UTC; kalendarium bankier.pl 14.10"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "Sesja D+3: WIG20 4 207,97 (−0,40%; dwa razy w sesji blisko rekordu, zamknięcie pod kreską po CPI USA), WIG 158 710,14 (−0,38%), mWIG40 10 692,74 (−0,41%), sWIG80 +0,21%. WIG-Banki −0,8% (Pekao −1,32%, PKO BP −1,23%, mBank −1,45%, Alior +0,27%), WIG-Energia −0,9% po wtorkowym rekordzie (Tauron −0,35%, PGE −0,03% — PGE najwyżej od 2015 r.). KGHM −3,93% do 331,10 zł (srebro −4,6%, prognozy wyższych dostaw miedzi w 2027). Auto Partner (mWIG40) −10,81% po ABB głównego akcjonariusza z dyskontem >15%. Największe obroty: PKO BP, KGHM, Allegro, Orlen, LPP (122,8 mln zł).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Amerykańska inflacja podcięła WIG20…” 14.10.2026 17:05; PAP „DZIEŃ NA GPW” 16:01 i „WIG20 na zamknięciu…” 17:31 (strefainwestorow.pl); TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "GUS 9:30: inflacja CPI za wrzesień finalnie 4,1% r/r (szybki szacunek 30.09: 4,0%; sierpień 3,4%) i 0,7% m/m — powyżej prognoz; paliwa +36,1% r/r, usługi +5,3%, towary +3,6%; CPI powyżej stopy referencyjnej NBP 3,75% (realna stopa ujemna). Część członków RPP rozważa podwyżkę stóp (bankier: nawet w grudniu); XTB: od października program CPN (obniżka VAT/akcyzy, ceny maksymalne paliw) łagodzi odczyt dla RPP. Złoty stabilny.",
+   "wklad_pkt": null,
+   "zrodlo": "GUS 14.10.2026 9:30 (bankier.pl „Inflacja we wrześniu jednak jeszcze wyższa…”, wprost.pl, PAP „DZIEŃ NA GPW” 16:01)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "USA (14.10 14:30, zdarzenie po zamknięciu GPW nie — przed, ale reakcja Wall Street po 17:00 → dn=4): CPI za wrzesień 3,7% r/r (konsensus 3,6%, sierpień 3,4%), bazowa 2,6% r/r (oczek. 2,5%), 0,6% m/m (benzyna +9,1% m/m). Wall Street: S&P 500 7 718,94 (−1,11%, pierwszy spadek ≥1% od ponad 50 sesji), Nasdaq 26 692,87 (−1,88%), DJIA 51 622,32 (−0,09%); FedWatch >90% na co najmniej jedną podwyżkę 25 pb w tym roku; półprzewodniki (Nvidia −3%, AMD −5,7%, Dell −11%), Oracle −9%; Bank of America −5% (kara 1,2 mld USD za obchodzenie sankcji, wyniki poniżej oczekiwań). UST10Y +10 pb po danych, potem powrót.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Inflacja w górę, Wall Street w dół…” 14.10.2026 22:05; BLS/Reuters via wyszukiwarka 14.10"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "Poranek 15.10 (bieg 8:12–8:4x, przed otwarciem GPW): ostra przecena w Azji po CPI USA i odwrocie od AI — KOSPI −7,4% o 4:14 (5 565,90) i −8,52% o 5:34 (5 496,67), handel wstrzymany na 20 min (circuit breaker; Samsung, SK Hynix); Nikkei 225 −4,77% (64 515,69 o 4:29); Taiex ok. −3%, Hang Seng ok. −1%, Shanghai −1,5…−2%. Złoto 4 153,97 USD (+1,1%), ropa 104,33 USD (−1,6%) o 6:12. Ryzyko dla sesji D+4: risk-off dotyka cały WIG20 (hedge na indeksie), nie jest zdarzeniem unieważniającym tezy.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl notowania KOSPI/NIKKEI225 15.10.2026 04:14–05:34 i pasek 06:12; invezz/BusinessToday/AP 15.10 via wyszukiwarka"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "NWZ 10:00 — uchwały podjęte (raport 38/2026: zmiana statutu), wykaz akcjonariuszy ≥5% głosów; bank deklaruje cel 30% udziału w rynku OKI (bankier 11:37). Kurs −1,23% do 115,18 zł (z sektorem i po szacunku 371 mln zł kosztów CHF z 13.10); od D0 +1,09% — zgodnie z tezą SHORT ruch zmalał.",
+   "wklad_pkt": null,
+   "zrodlo": "ESPI PKO BP 38/2026 14.10.2026 (parkiet.com komunikaty); bankier.pl 14.10 11:37; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "KRUK",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "+3,11% do 348,30 zł — lider WIG20, odbicie po −10,4% w trzech sesjach po ESPI z 9.10 (nakłady Q3 −44% r/r, spłaty „poniżej operacyjnych oczekiwań”); bez nowego komunikatu (ostatni ESPI 9.10). Od D0 +0,11% — noga SHORT wróciła do punktu wyjścia; raport Q3 27.10 (D+12, poza oknem).",
+   "wklad_pkt": null,
+   "zrodlo": "PAP „DZIEŃ NA GPW” 14.10.2026 16:01; bankier.pl 17:05; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "LPP",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "+2,53% do 25 900 zł — nowe maksimum historyczne (dzienne max 25 900, min 25 160), obrót 122,8 mln zł (5. na GPW); od początku lipca ok. +38%. Bez komunikatu spółki. Od D0 +3,43% — druga najlepsza noga LONG.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl notowania/obroty 14.10.2026 17:03; PAP „DZIEŃ NA GPW” 16:01; stockwatch.pl; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "KETY",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "−1,63% do 1 269 zł (oddane wtorkowe +3,37%), bez komunikatu; PAP: kurs od trzech miesięcy w trendzie bocznym. Od D0 −1,01% — jedyna noga LONG poniżej D0 (próg REDUCE 4% = 1 230,72 zł). Raport Q3 26.10 (D+11, poza oknem; TV earnings_release_next_date = 26.10 zgodnie z kalendarium spółki).",
+   "wklad_pkt": null,
+   "zrodlo": "PAP „DZIEŃ NA GPW” 14.10.2026 16:01; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-14",
+   "dn": 3,
+   "opis": "Korekta energetyki po rekordzie WIG-Energia (−0,9% w sesji): PGE −0,03% do 17,285 zł (w sesji −0,6%; bankier: najwyżej od 2015 r.), Tauron −0,35% do 9,758 zł (w sesji −1,6%). Apator wygrał przetarg PGE Dystrybucja na liczniki zdalnego odczytu (169 mln zł netto; bankier 11:38) — bez wpływu na tezę. Projekt CIT 30% dla energetyki i paliw: bez nowych informacji o pierwszym czytaniu (wyszukiwarka 15.10) — wyzwalacz tez LONG nadal otwarty.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP „DZIEŃ NA GPW” 14.10.2026 16:01; bankier.pl 14.10 11:38 i 17:05; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "Kalendarz D+4 potwierdzony w dwóch datowanych źródłach: 14:00 NBP inflacja bazowa za wrzesień (TV 12:00 UTC, poprzednio 3,3%; PAP „Tydzień w kraju” 12.10); 11:00 Eurostat produkcja przemysłowa strefy euro (TV); 14:30 USA PPI (TV: prognoza 0,5% m/m), sprzedaż detaliczna (0,3% m/m), Philly Fed (28,4), wnioski o zasiłek (200 tys.); 17:00 GDPNow; 22:30 Fed Hammack; 16.10 5:30 „Fed Chair Warsh Speech” (TV, niepotwierdzone), 15:15 produkcja przemysłowa USA. 20.10 9:30 GUS wynagrodzenia/zatrudnienie/produkcja/PPI (TV, niepotwierdzone w PAP). PGE strategia 19.10 12:30 (PAP, organizator). Bez spółek WIG20 z datą wyników w D+1…D+10 (TV: najbliższe Kęty 26.10, Alior/Budimex/Kruk/Żabka 27.10, mBank/Pekao 29.10, Erste 30.10) — bez flagi EVENT.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-15 06:15 UTC; PAP „Tydzień w kraju” 12.10 06:34; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
   }
  ],
  "data_quality": [
