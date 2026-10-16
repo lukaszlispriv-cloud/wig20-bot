@@ -872,6 +872,78 @@
    "opis": "Kalendarz D+4 potwierdzony w dwóch datowanych źródłach: 14:00 NBP inflacja bazowa za wrzesień (TV 12:00 UTC, poprzednio 3,3%; PAP „Tydzień w kraju” 12.10); 11:00 Eurostat produkcja przemysłowa strefy euro (TV); 14:30 USA PPI (TV: prognoza 0,5% m/m), sprzedaż detaliczna (0,3% m/m), Philly Fed (28,4), wnioski o zasiłek (200 tys.); 17:00 GDPNow; 22:30 Fed Hammack; 16.10 5:30 „Fed Chair Warsh Speech” (TV, niepotwierdzone), 15:15 produkcja przemysłowa USA. 20.10 9:30 GUS wynagrodzenia/zatrudnienie/produkcja/PPI (TV, niepotwierdzone w PAP). PGE strategia 19.10 12:30 (PAP, organizator). Bez spółek WIG20 z datą wyników w D+1…D+10 (TV: najbliższe Kęty 26.10, Alior/Budimex/Kruk/Żabka 27.10, mBank/Pekao 29.10, Erste 30.10) — bez flagi EVENT.",
    "wklad_pkt": null,
    "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-15 06:15 UTC; PAP „Tydzień w kraju” 12.10 06:34; TradingView MCP get-symbol-data-batch, odczyt 2026-10-15 06:15 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "Sesja D+4: WIG20 4 208,42 (+0,01%; rano −1%, min. 4 151,45, odrobione), WIG 158 581,36 (−0,08%), mWIG40 10 670,50 (−0,21%), sWIG80 30 588,76 (−0,98%), WIG-Energia −0,42% (druga sesja korekty po rekordzie 13.10), WIG-Banki +0,12%; obroty 2,67 mld zł (WIG20 2,17 mld zł), największe KGHM. Dino +2,80%, Pepco +2,63%, LPP +1,93%, Allegro +1,18%; KGHM −2,07%, Budimex −2,33%, Orlen −1,16%. Ipopema (S. Kozłowski): rotacja między sektorami, spadki surowcowych to korekta. Zamknięcie tuż nad kreską po wyższym od oczekiwań PPI z USA.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl „Spadki KGHM, Orlenu i CD Projekt, wzrosty Dino, Pepco i banków. Zmienna sesja na konto byków” 15.10.2026 17:16 (M. Kubicki); PAP Biznes „DZIEŃ NA GPW” 15.10 11:08 i 16:00 (strefainwestorow.pl); TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "NBP 14:00: inflacja bazowa (bez cen żywności i energii) za wrzesień 3,1% r/r (sierpień 3,3%; konsensus BM BNP Paribas 3,2%), 0,0% m/m — niżej od oczekiwań przy CPI 4,1%. USA 14:30 (BLS): PPI za wrzesień +1,3% m/m — największy wzrost od marca 2022 (1,7%), 6,3% r/r (sierpień 5,4%), energia +10,8% m/m; konsensus 0,5–0,7% m/m. Reakcja GPW w sesji: WIG20 z −1% rano do +0,01% na zamknięciu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes 15.10.2026 16:00; bankier.pl 15.10 17:16; BLS „Producer Price Index News Release — September 2026” 15.10.2026 (bls.gov/news.release/archives/ppi_10152026.htm); TradingView MCP get-economic-calendar odczyt 2026-10-16 06:20 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-16",
+   "dn": 5,
+   "opis": "Wall Street 15.10 (po zamknięciu GPW → dn=5): S&P 500 7 744,06 (+0,3%), DJIA 52 177,69 (+1,1%), Nasdaq 26 713,03 (+0,1%) — odbicie po środowej przecenie, rotacja z AI do zdrowia/konsumpcji; FTSE 100 +1,2%, DAX +0,3%, CAC 40 +0,7%; USD/PLN −0,6% do 3,90. Poranek 16.10 (bieg 8:11–8:5x, przed otwarciem): Azja odrabia czwartkowy krach — KOSPI +1,6% (Saxo, ok. 5 644) do +2,8% (Reuters) po −8,7%, Nikkei 225 +1,8% (zamknięcie 15.10: 64 426), Hang Seng +1,1%; Indonezja −11%. Zdarzenia indeksowe — hedge FW20 neutralizuje.",
+   "wklad_pkt": null,
+   "zrodlo": "AP „How major US stock indexes fared Thursday 10/15/2026”; Saxo „Asia Market Quick Take 16.10.2026”; Reuters via Business Standard / Business Recorder 16.10.2026; bankier.pl 15.10 17:16"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-16",
+   "dn": 5,
+   "opis": "Kalendarz D+5 (zamknięcie okna W9) potwierdzony w dwóch datowanych źródłach: 11:00 Eurostat finalny HICP IX (TV 09:00 UTC, prognoza 3,8% r/r, bazowa 2,5%; ISBnews/Macronext 15.10 — konsensus 3,8%); 15:15 produkcja przemysłowa USA IX (TV 13:15 UTC, +0,4% m/m; ISBnews); 14:30 ceny importu/eksportu USA (TV); 20:00 budżet federalny USA (TV, ISBnews); 5:30 „Fed Chair Warsh Speech” (tylko TV). D+6…D+10: PGE strategia 19.10 12:30 (PAP, organizator); 20.10 9:30 GUS wynagrodzenia/zatrudnienie/produkcja/PPI (tylko TV, niepotwierdzone); 22.10 9:30 GUS sprzedaż detaliczna, 14:00 NBP M3 (TV); 23.10 9:30 GUS bezrobocie, PMI flash EU/USA (TV). Daty wyników WIG20 poza D+10 (Kęty 26.10 = D+11) — bez flagi EVENT.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-16 06:20 UTC (97 zdarzeń PL/US/EU 16–23.10); ISBnews/Macronext „Kalendarium wydarzeń makroekonomicznych na piątek” 15.10.2026; PAP zapowiedzi 14–15.10; TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "Kepler Cheuvreux: rekomendacja „kupuj” dla PKO BP, cena docelowa 141,03 zł (+22% wobec kursu 115,20 zł z czwartku); w tym samym raporcie „kupuj” BNP Paribas BP (199,24 zł) i „trzymaj” Erste Bank Polska (851,60 zł). PKO BP +0,57% do 115,84 zł (od D0 +1,67%), WIG-Banki +0,12% — bankier: rekomendacja wsparła sektor. REAKCJA PROTOKOŁU 16.10: REDUCE (trigger RECOMMENDATION, price_before 115,84) — świeża rekomendacja liczącego się DM przeciw tezie SHORT; wariant papierowy/zarządzany, rachunek bez skutku (koszyk SHORT nie jest handlowany). PAP/bankier nie precyzują, czy to inicjacja czy podtrzymanie.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes „DZIEŃ NA GPW: Na giełdzie spadki głównych indeksów; rynkowi ciążą spółki surowcowe” 15.10.2026 16:00 (strefainwestorow.pl); bankier.pl 15.10 17:16; TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "LPP",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "+1,93% do 26 400 zł — kolejne maksimum historyczne (bankier: ponad +24% w sześć tygodni), bez komunikatu spółki. Od D0 +5,43% (rel. +4,88 p.p.) — najmocniejsza noga LONG; na rachunku LPP = ok. 69% ekspozycji długiej (wyjątek minimalnej wielkości).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 15.10.2026 17:16; TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "KETY",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "−1,18% do 1 254 zł — druga sesja spadkowa (14.10 −1,63%), bez komunikatu spółki (bankier/PAP); od D0 −2,18% (rel. −2,73 p.p.), 1,82 p.p. od progu REDUCE (1 230,72 zł). Raport za III kw. 26.10 (TV earnings_release_next_date = kalendarz spółki) — poza D+10.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione); bankier.pl 15.10 17:16 (brak Kęt w relacji); PAP „DZIEŃ NA GPW” 15.10"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "−0,14% do 17,26 zł (WIG-Energia −0,42%, druga sesja korekty po rekordzie). Raport bieżący 61/2026 (art. 19 MAR): powiadomienie o transakcjach PKO BP jako podmiotu blisko związanego z członkiem RN P. Stolarczykiem (kontynuacja 60/2026 z 14.10) — bez wpływu na tezę. PAP 15.10: PGE i NASK podpisały umowę ws. inwestycji w centra danych w Polsce; PGE zapowiada przedstawienie strategii 19.10 (12:30). Tauron −0,59% do 9,70 zł bez komunikatu.",
+   "wklad_pkt": null,
+   "zrodlo": "PGE raport bieżący 61/2026 z 15.10.2026 (parkiet.com/komunikaty-espi, bankier.pl); PAP Biznes „DZIEŃ NA GPW” 15.10.2026 16:00; TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione)"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-10-15",
+   "dn": 4,
+   "opis": "−0,79% do 264,50 zł (od D0 +0,57%). PAP Biznes (M. Nowakowski, joint CEO): sprzedaż „Wiedźmina 3” utrzymuje się powyżej poziomu sprzed remastera; zakończony etap prac nad wizją świata w projekcie Hadar; film Paramount o Cyberpunku nie ma być bezpośrednią ekranizacją gry — bez wpływu na tezę. SHORT: mBank −1,65% do 1 404,50 zł (od D0 +0,21%), Kruk −1,15% do 344,30 zł (od D0 −1,03%; bez ESPI, wyniki 27.10), Pekao +0,54%, Alior +0,27%.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes „DZIEŃ NA GPW” 15.10.2026 11:08 i 16:00 (strefainwestorow.pl); TradingView MCP get-symbol-data-batch, odczyt 2026-10-16 06:20 UTC (dane opóźnione)"
   }
  ],
  "data_quality": [
