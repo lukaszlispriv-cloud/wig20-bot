@@ -1,0 +1,1132 @@
+{
+  "week": "2026-W10",
+  "d0": "2026-10-16",
+  "generated": "2026-10-17",
+  "momentum_method": "mechaniczne",
+  "uwaga": "momentum ze scripts/metryki.py momentum --d0 2026-10-16 na kursach SUROWYCH z data/kursy-cache.json (komplet 20 sesji dla 20/20 spółek, bez BRAK_20S; −5 sesji = 9.10, −20 sesji = 18.09); w oknie 20 sesji leży dzień ex-div LPP (8.10, 500 zł) — zgodnie z decyzją właściciela z 12.10.2026 (flaga korekta_exdiv_momentum_v1_2 = false) seria NIE jest korygowana: kod DYWIDENDA_KOREKTA_LPP oznacza tylko lukę (rel20 LPP +6,25 p.p. na kursach surowych; z korektą byłoby ok. +8,4 p.p. i 21,4 pkt zamiast 20,6 — bez wpływu na skład koszyków); PZU (ex 16.09) wypadło z okna; kursy D0 16.10 z TradingView MCP run-screener (odczyt 2026-10-17 06:35 UTC, totalCount=20, 20/20 nazw po mapie) po zgodności 21/21 Δ 0,00% z kursy.py (Yahoo 429 → rezerwa bankier.pl, zamknięcia 16.10) → KURS_ZRODLO_TV + KURS_ZRODLO_REZERWA; DM ±3 wyłącznie za datowane sygnały z okna 16.09–16.10 (Kepler Cheuvreux PKO BP „kupuj” 141,03 zł 15.10 — jedyna nowa rekomendacja dla WIG20 w tygodniu, lista strefainwestorow.pl 16.09–17.10 bez innych spółek indeksu; Trigon top picks 8–9.10; DM BOŚ portfel na październik 24.09; Noble 17.09; Citi 21.09; Wood & Company 24.09; Citi ok. 1.10 Allegro); WYCENA 0–5 kompozytowo z kolumn screenera TV po kursie D0 (rangi: C/Z TTM 50%, C/WK 25%, DY 25%; Modivo ze stratą TTM = ranga ostatnia C/Z), bankier tylko jako kontrola: C/Z TV różni się od bankier o kilka % (inny okres TTM), waluta PLN zgodna — wpis _waluta_okres w data/tv-kolumny.json pozostawiony właścicielowi (plik poza listą plików commitu rutyny); REWIZJE: konsensus TV (get-forecasts, 20 wywołań) zapisany jako poziom per spółka — pierwsza sobota, bez punktów za zmianę; cele średnie TV dla 20/20 spółek poza testem skali (cel/kurs 0,20–0,26) → b.d.; KATALIZATORY 10 + wkłady za zdarzenia D+1…D+10 (19.10–30.10): PGE strategia 19.10 (+1), CD Projekt Edgerunners 2 20.10 (+2); raporty Q3 Kęty 26.10, Kruk/Alior/Budimex/Żabka 27.10, mBank 28.10, Pekao 29.10, Erste 30.10 z wkładem 0 (znane szacunki albo kierunek nieudokumentowany); remisów punktowych brak (najbliżej DINOPL 55,6 vs PGE 55,5 oraz KETY 46,1 vs BUDIMEX 46,0 — nie remisy), wagi WIG20 z profilu bankier.pl 16.10.2026 17:15 zapisane per spółka; kalendarz GUS 20–23.10 potwierdzony TV = bankier 16.10, FOMC 28.10 / EBC 29.10 / CPI flash 30.10 tylko z TV (KALENDARZ_NIEPOTWIERDZONY); TAURONPE, CDPROJEKT, KETY (koszyk LONG W9, rel5 przeciw tezie) i ALIOR, PKOBP, PEKAO, MBANK (koszyk SHORT W9, rel5 przeciw tezie) oceniane bez kotwicy na poprzedniej pozycji (§6); TOP5 pokrywa się w czterech spółkach z pięcioma najwyższymi rel5 (PEPCO, ALLEGRO, DINOPL, LPP), różni się PGE zamiast PZU — raport nazywa to w sekcji o benchmarku; BOTTOM5 pokrywa się z pięcioma najniższymi rel5 w dwóch (KGHM, PKNORLEN).",
+  "long": [
+    "PEPCO",
+    "LPP",
+    "ALLEGRO",
+    "DINOPL",
+    "PGE"
+  ],
+  "short": [
+    "ZABKA",
+    "MODIVO",
+    "PKNORLEN",
+    "KRUK",
+    "KGHM"
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "PEPCO",
+      "score": 65.1,
+      "p": 0.58,
+      "waga_wig20_pct": 1.45,
+      "rel5_pp": 8.06,
+      "rel20_pp": 11.62,
+      "pts": {
+        "momentum": 24.6,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 8,
+        "przeplywy": 6,
+        "wycena": 2
+      },
+      "teza": "Najwyższe momentum w uniwersum (rel5 +8,06, rel20 +11,62 p.p.; +9,54% w oknie W9, piątek +5,10% do 48,00 zł — najwyżej od ponad 3 lat), podniesiona prognoza FY26 (29.09) i uruchomiony wieloletni skup do 400 mln EUR; teza: kontynuacja rotacji do konsumpcji dyskontowej przy mocniejszym złotym.",
+      "ryzyko": "Po +15% w miesiąc korekta techniczna jest naturalna; C/WK 31 (kapitał własny bliski zera) i raportowanie w EUR; brak datowanego katalizatora do 9.12.",
+      "uzasadnienie": "MOM 24,6/25 (rel5 +8.06 p.p., rel20 +11.62 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — wstępny raport FY26 9.12 (dn=38) poza oknem; skup bez harmonogramu transz → 10 (10); MAKRO USD/PLN −0,60% i EUR/PLN −0,28% w tygodniu (TV get-ohlcv) obniżają koszt zakupów importerów, CPI 4,1% przy bazowej 3,1% i wynagrodzeniach ~6% r/r (GUS 20.10) utrzymują realny wzrost płac; sprzedaż detaliczna IX 22.10 9:30; Pepco raportuje w EUR, więc mocniejszy złoty obniża wynik w PLN tylko księgowo (7); DM brak datowanego sygnału DM w oknie 16.09–16.10 (komentarz Noble 29.09 nie jest rekomendacją) → 7,5 (7,5); REW trading update 29.09: prognoza bazowego zysku netto FY26 podniesiona do >+60% (z >+50%), przychody >4,5 mld EUR, LFL ex-FMCG +9,5% — udokumentowana rewizja w górę w oknie 30 dni → 8 (8); PRZ nowy skup do 400 mln EUR na FY27–29 zatwierdzony 29.09 (Ibex zamierza uczestniczyć), krótka pozycja wypadła z rejestru wg Parkietu 1.10; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 6 (6); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 13,1, C/WK 31,5, EV/EBITDA 8,8, DY 0,9% (2); konsensus TV: Strong Buy (score 1.32), 11 kupuj / 2 trzymaj / 1 sprzedaj, n=14; cel średni b.d. — test skali cel/kurs = 0.25 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 14,
+        "buy": 11,
+        "hold": 2,
+        "sell": 1,
+        "ocena": "Strong Buy",
+        "score": 1.32,
+        "cel_sredni": null,
+        "cel_surowy_tv": 12.06,
+        "test_skali": 0.25,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 13.08,
+        "price_book_fq": 31.46,
+        "enterprise_value_ebitda_ttm": 8.8,
+        "dividends_yield": 0.87,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 48.3,
+      "earnings_release_next_date_tv": "2026-12-09"
+    },
+    {
+      "rank": 2,
+      "ticker": "LPP",
+      "score": 61.1,
+      "p": 0.56,
+      "waga_wig20_pct": 5.92,
+      "rel5_pp": 3.96,
+      "rel20_pp": 6.25,
+      "pts": {
+        "momentum": 20.6,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 10.5,
+        "rewizje": 7,
+        "przeplywy": 4,
+        "wycena": 1
+      },
+      "teza": "Drugi tydzień w TOP5: +5,43% w oknie W9 (rel. +3,96 p.p.), dwa rekordy historyczne (25 900 i 26 400 zł) bez komunikatu spółki, rel20 +6,25 p.p. na kursach surowych mimo luki ex-div 500 zł z 8.10; lista „lepiej niż rynek” DM BOŚ i najwyższy udział „kupuj” w konsensusie TV (10/14).",
+      "ryzyko": "Po +24% w sześć tygodni ryzyko realizacji zysków jak w energetyce 16.10; C/Z 25,3, C/WK 9,4; na rachunku LPP wchodzi w wielkości minimalnej 0,1 szt. (ok. 2 640 zł = koncentracja ok. 80% ekspozycji długiej) — ryzyko pojedynczej nogi, nie modelu.",
+      "uzasadnienie": "MOM 20,6/25 (rel5 +3.96 p.p., rel20 +6.25 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — wypłata dywidendy 30.10 (dn=10) to sama płatność bez wpływu na kurs, wstępne dane sprzedażowe za Q3 bez daty, raport Q3 3.12 → 10 (10); MAKRO USD/PLN −0,60% i EUR/PLN −0,28% w tygodniu (TV get-ohlcv) obniżają koszt zakupów importerów, CPI 4,1% przy bazowej 3,1% i wynagrodzeniach ~6% r/r (GUS 20.10) utrzymują realny wzrost płac; sprzedaż detaliczna IX 22.10 9:30; LPP kupuje towar w USD, więc USD/PLN −0,60% to bezpośrednia ulga kosztowa (8); DM +3 za utrzymanie na liście „lepiej niż rynek” DM BOŚ na październik (24.09, w oknie 30 dni) → 10,5 (10,5); REW zysk netto Q2 768 mln zł wobec 684,1 mln konsensusu PAP (+12%, raport 17.09) — ostatni dzień w oknie 30 dni, waga obniżona z 8 do 7 → 7 (7); PRZ krótka pozycja na LPP w rejestrze KNF wg omówienia Parkietu z 1.10 (wielkość nieznana), sprzedaż 32 akcji przez osobę blisko związaną z prezesem 28.09; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 25,3, C/WK 9,4, EV/EBITDA 10,1, DY 3,4% (1); konsensus TV: Strong Buy (score 1.39), 10 kupuj / 2 trzymaj / 2 sprzedaj, n=14; cel średni b.d. — test skali cel/kurs = 0.26 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 14,
+        "buy": 10,
+        "hold": 2,
+        "sell": 2,
+        "ocena": "Strong Buy",
+        "score": 1.39,
+        "cel_sredni": null,
+        "cel_surowy_tv": 6732.67,
+        "test_skali": 0.26,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 25.3,
+        "price_book_fq": 9.38,
+        "enterprise_value_ebitda_ttm": 10.13,
+        "dividends_yield": 3.41,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 100.1,
+      "earnings_release_next_date_tv": "2026-12-03"
+    },
+    {
+      "rank": 3,
+      "ticker": "ALLEGRO",
+      "score": 59.7,
+      "p": 0.55,
+      "waga_wig20_pct": 9.93,
+      "rel5_pp": 6.08,
+      "rel20_pp": 8.74,
+      "pts": {
+        "momentum": 23.2,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 7,
+        "przeplywy": 4,
+        "wycena": 1
+      },
+      "teza": "Drugie momentum w uniwersum (rel5 +6,08, rel20 +8,74 p.p.; +7,56% w oknie W9, 16.10 +3,0% do 55,66 zł — najwyżej od 5 lat), podniesiona prognoza 2026 (17.09) i 12 „kupuj” na 18 analityków w konsensusie TV; teza: kontynuacja wybicia przy braku negatywnego katalizatora do 12.11.",
+      "ryzyko": "Najwyższy mnożnik w koszyku LONG (C/Z 31,8); skup zablokowany limitem ceny 50 zł do WZ 18.11; wrażliwość na wyprzedaż Nasdaq (16.10 −2,1%, najgorszy tydzień od czerwca).",
+      "uzasadnienie": "MOM 23,2/25 (rel5 +6.08 p.p., rel20 +8.74 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — raport Q3 12.11 (dn=19; ESPI 5.02: termin przesunięty z 19.11), WZ 18.11; 14.10 dostawy do Ukrainy (operacyjne, bez wpływu) → 10 (10); MAKRO USD/PLN −0,60% i EUR/PLN −0,28% w tygodniu (TV get-ohlcv) obniżają koszt zakupów importerów, CPI 4,1% przy bazowej 3,1% i wynagrodzeniach ~6% r/r (GUS 20.10) utrzymują realny wzrost płac; sprzedaż detaliczna IX 22.10 9:30; platforma e-commerce wyceniana mnożnikiem — Nasdaq −2,1% 16.10 i rentowności USA ciążą, konsumpcja krajowa sprzyja (7); DM netto 0: top pick Trigon DM na październik (9.10, +3) kontra obniżka Citi ok. 1.10 z „kupuj” do „neutralnie” (cel 52 zł, −3) → 7,5 (7,5); REW 17.09 spółka podniosła prognozę 2026 (GMV +13–15%, skorygowana EBITDA +13–17%) — ostatni dzień w oknie 30 dni, waga obniżona z 8 do 7 → 7 (7); PRZ faza II skupu (do 800 mln zł, limit 50 zł) przy kursie 55,66 zł faktycznie zablokowana do WZ 18.11; krótka pozycja wypadła z rejestru wg Parkietu 1.10; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 31,8, C/WK 5,1, EV/EBITDA 16,7, DY b.d. (1); konsensus TV: Strong Buy (score 1.39), 12 kupuj / 6 trzymaj / 0 sprzedaj, n=18; cel średni b.d. — test skali cel/kurs = 0.24 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 18,
+        "buy": 12,
+        "hold": 6,
+        "sell": 0,
+        "ocena": "Strong Buy",
+        "score": 1.39,
+        "cel_sredni": null,
+        "cel_surowy_tv": 13.6,
+        "test_skali": 0.24,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 31.77,
+        "price_book_fq": 5.1,
+        "enterprise_value_ebitda_ttm": 16.72,
+        "dividends_yield": null,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 212.1,
+      "earnings_release_next_date_tv": "2027-03-18"
+    },
+    {
+      "rank": 4,
+      "ticker": "DINOPL",
+      "score": 55.6,
+      "p": 0.53,
+      "waga_wig20_pct": 3.17,
+      "rel5_pp": 4.0,
+      "rel20_pp": 2.66,
+      "pts": {
+        "momentum": 21.1,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 4,
+        "wycena": 1
+      },
+      "teza": "Trzecie momentum (rel5 +4,00, rel20 +2,66 p.p.; +5,47% w oknie W9, 15.10 +2,80%), kurs 37,77 zł 0,4% pod maksimum 3 miesięcy; teza: rotacja do konsumpcji podstawowej przy CPI 4,1% i bazowej 3,1%, 256 nowych sklepów od stycznia.",
+      "ryzyko": "Momentum 20-sesyjne słabe (+2,66 p.p.) — ruch to głównie ostatnie dwa tygodnie; C/Z 23,7; najwyższa krótka pozycja w uniwersum wg wrześniowych omówień rejestru (Qube 1,23%); deflacja żywności ciąży wolumenom.",
+      "uzasadnienie": "MOM 21,1/25 (rel5 +4,00 p.p., rel20 +2.66 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — raport Q3 5.11 (dn=14) poza oknem; manifestacja OPZZ 13.10 bez następstw, strajk 20–23.12 poza oknem → 10 (10); MAKRO USD/PLN −0,60% i EUR/PLN −0,28% w tygodniu (TV get-ohlcv) obniżają koszt zakupów importerów, CPI 4,1% przy bazowej 3,1% i wynagrodzeniach ~6% r/r (GUS 20.10) utrzymują realny wzrost płac; sprzedaż detaliczna IX 22.10 9:30; dla Dino liczy się sprzedaż detaliczna i deflacja żywności (CPI towary +3,6%), mocniejszy złoty neutralny (7); DM brak datowanego sygnału DM w oknie — DM BOŚ „kupuj” 40,10 zł z 5.08 poza oknem; Trigon kwiecień poza oknem → 7,5 (7,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach → 5 (5); PRZ krótka pozycja na Dino w rejestrze KNF wg Parkietu 1.10 (wrześniowe omówienia: Qube 1,23%); rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 23,6, C/WK 4,0, EV/EBITDA 14,2, DY b.d. (1); konsensus TV: Buy (score 1.68), 10 kupuj / 5 trzymaj / 4 sprzedaj, n=19; cel średni b.d. — test skali cel/kurs = 0.24 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 19,
+        "buy": 10,
+        "hold": 5,
+        "sell": 4,
+        "ocena": "Buy",
+        "score": 1.68,
+        "cel_sredni": null,
+        "cel_surowy_tv": 9.02,
+        "test_skali": 0.24,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 23.65,
+        "price_book_fq": 3.95,
+        "enterprise_value_ebitda_ttm": 14.23,
+        "dividends_yield": null,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 136.0,
+      "earnings_release_next_date_tv": "2026-11-05"
+    },
+    {
+      "rank": 5,
+      "ticker": "PGE",
+      "score": 55.5,
+      "p": 0.53,
+      "waga_wig20_pct": 2.48,
+      "rel5_pp": -2.7,
+      "rel20_pp": 15.39,
+      "pts": {
+        "momentum": 11.0,
+        "katalizatory": 11,
+        "makro": 8,
+        "dm": 10.5,
+        "rewizje": 6,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "teza": "Spada z 1. na 5. miejsce: rel20 +15,39 p.p. nadal najwyższe w uniwersum, ale rel5 −2,70 p.p. po realizacji zysków 16.10 (−4,43%, WIG-Energia −3,55%); 19.10 12:30 konferencja z aktualizacją strategii (PAP, pierwszy datowany termin) — jedyny katalizator D+1 w uniwersum; C/Z 4,8 i C/WK 0,79 nadal najtańsze w indeksie.",
+      "ryzyko": "Energetyka po +32% od 28.09 jest w trybie „sprzedaj fakty” — strategia 19.10 może być takim faktem; projekt CIT 30% po pierwszym czytaniu w Sejmie 8.10 (druk 3159); momentum 5-sesyjne już przeciw tezie.",
+      "uzasadnienie": "MOM 11,0/25 (rel5 -2.70 p.p., rel20 +15.39 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 19.10 (dn=1) konferencja prasowa z aktualizacją strategii Grupy PGE (PAP Biznes „Przewidywane wydarzenia” 14.10; organizator PGE) — zdarzenie datowane w oknie wyniku, oczekiwanie pozytywne (wyższe cele EBITDA/capex OZE i atom po porozumieniu ME–PEJ–PGE 13.10) → wkład +1; raport Q3 24.11 poza oknem → 11 (11); MAKRO WIG-Energia −2,10% w oknie 9–16.10 (TV get-ohlcv) po rekordzie 14.10 — realizacja zysków 16.10 (PGE −4,43%, Tauron −4,00%); projekt CIT 30% dla energetyki i paliw na 2027 r. po pierwszym czytaniu w Sejmie 8.10 (druk 3159) — ryzyko regulacyjne datowane; Brent +4,91% w tygodniu (109,86 USD) podtrzymuje drogi hurt energii; dystrybucja PGE w zakresie podmiotowym projektu CIT 30% (energetyka), decyzje Baltica 3 nadal bez daty (8); DM +3 za utrzymanie na liście „lepiej niż rynek” DM BOŚ na październik (24.09, w oknie 30 dni) → 10,5 (10,5); REW zarząd 16.09 oczekuje wzrostu r/r powtarzalnej EBITDA — kierunek udokumentowany bez liczby konsensusu; konsensus TV 5/7 „kupuj” → 6 (6); PRZ ESPI art. 19 MAR 14–16.10 (60–62/2026): transakcje PKO BP jako podmiotu blisko związanego z członkiem RN — kierunek nieczytelny, nie zakupy zarządu; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 4,8, C/WK 0,8, EV/EBITDA 3,5, DY b.d. (4); konsensus TV: Buy (score 1.5), 5 kupuj / 1 trzymaj / 1 sprzedaj, n=7; cel średni b.d. — test skali cel/kurs = 0.20 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 7,
+        "buy": 5,
+        "hold": 1,
+        "sell": 1,
+        "ocena": "Buy",
+        "score": 1.5,
+        "cel_sredni": null,
+        "cel_surowy_tv": 3.34,
+        "test_skali": 0.2,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 4.84,
+        "price_book_fq": 0.79,
+        "enterprise_value_ebitda_ttm": 3.52,
+        "dividends_yield": null,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 68.2,
+      "earnings_release_next_date_tv": "2026-11-24"
+    },
+    {
+      "rank": 6,
+      "ticker": "PZU",
+      "score": 53.6,
+      "p": 0.52,
+      "waga_wig20_pct": 7.39,
+      "rel5_pp": 1.93,
+      "rel20_pp": -0.6,
+      "pts": {
+        "momentum": 17.1,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "teza": "Rel5 +1,93 p.p. (+3,40% w oknie W9) po zakończeniu korekty dywidendowej w oknie momentum (16.09 wypadło z 20 sesji) — pierwszy tydzień z „czystym” momentum 17,1/25; wyższe rentowności podnoszą dochód z reinwestycji, DY 6,5%.",
+      "ryzyko": "Obniżka Wood & Company 24.09 do „trzymaj” jeszcze w oknie 30 dni; struktura holdingowa z Pekao bez daty; NWZ 3.11 poza oknem.",
+      "uzasadnienie": "MOM 17,1/25 (rel5 +1.93 p.p., rel20 -0.60 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — NWZ 3.11 (dn=12; obligacje kapitałowe do 3 mld zł) i raport Q3 19.11 poza oknem → 10 (10); MAKRO rentowności 10-latek blisko 6,3% podnoszą dochód z reinwestycji ubezpieczyciela, WIG-Banki +2,25% w tygodniu poprawia wycenę pakietu Pekao/Aliora; sprzedaż detaliczna i płace (GUS 20–22.10) neutralne (8); DM −3 za obniżkę rekomendacji Wood & Company 24.09 do „trzymaj” (w oknie 30 dni) → 4,5 (4,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach; konsensus TV 5 kupuj / 5 trzymaj (n=10) → 5 (5); PRZ wypłata dywidendy 8.10 zrealizowana, brak skupu i zmian indeksowych; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 9,9, C/WK 1,9, EV/EBITDA b.d., DY 6,5% (4); konsensus TV: Buy (score 1.5), 5 kupuj / 5 trzymaj / 0 sprzedaj, n=10; cel średni b.d. — test skali cel/kurs = 0.27 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 10,
+        "buy": 5,
+        "hold": 5,
+        "sell": 0,
+        "ocena": "Buy",
+        "score": 1.5,
+        "cel_sredni": null,
+        "cel_surowy_tv": 19.88,
+        "test_skali": 0.27,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 9.89,
+        "price_book_fq": 1.86,
+        "enterprise_value_ebitda_ttm": null,
+        "dividends_yield": 6.47,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 116.0,
+      "earnings_release_next_date_tv": "2026-11-19"
+    },
+    {
+      "rank": 7,
+      "ticker": "ALIOR",
+      "score": 51.9,
+      "p": 0.51,
+      "waga_wig20_pct": 2.09,
+      "rel5_pp": 1.68,
+      "rel20_pp": -0.66,
+      "pts": {
+        "momentum": 15.4,
+        "katalizatory": 10,
+        "makro": 8,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "teza": "Bank z najlepszym momentum w sektorze (rel5 +1,68 p.p.; +3,15% w oknie W9 przeciw tezie SHORT W9) i najmniejszym portfelem SPW; DY 6,7%, C/Z 8,7 — najtańszy bank indeksu; wypada z BOTTOM5 (16. → 7.).",
+      "ryzyko": "DM netto −3 (Wood 24.09, lista „gorzej niż rynek” DM BOŚ 24.09 przeważają Citi 21.09); NWZ 20.10 zmienia RN na wniosek PZU, wybór prezesa nadal bez daty; raport Q3 27.10 (dn=7) bez szacunków.",
+      "uzasadnienie": "MOM 15,4/25 (rel5 +1.68 p.p., rel20 -0.66 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 20.10 (dn=2) NWZ — zmiany w RN na wniosek PZU i zmiana uchwał 5/2017 i 6/2017, bez wpływu na wynik (wkład 0); 27.10 (dn=7) raport Q3 — potwierdzony kalendarium bankier i kolumną TV earnings_release_next_date, bez szacunków spółki, kierunek nieznany (wkład 0) → 10 (10); MAKRO WIG-Banki +2,25% w oknie 9–16.10 (TradingView get-ohlcv, odczyt 2026-10-17 06:36 UTC) — sektor odrabiał po wyprzedaży z W8; CPI IX 4,1% r/r (GUS 14.10) przy bazowej 3,1% (NBP 15.10) utrzymuje RPP w zawieszeniu (posiedzenie 3–4.11 poza oknem), rentowności 10-latek blisko 6,3%; Alior ma najmniejszy w indeksie portfel SPW, więc wyprzedaż obligacji dotyka go najmniej (8); DM netto −3: Citi 21.09 „kupuj” 146,80 zł (+3) kontra obniżka Wood & Company 24.09 (−3) i lista „gorzej niż rynek” DM BOŚ na październik 24.09 (−3), obcięte do minimum → 4,5 (4,5); REW Fitch 30.09 podniósł rating do BBB− (rating, nie konsensus wynikowy); konsensus TV 4 kupuj / 4 trzymaj (n=8) → 5 (5); PRZ ESPI 15.10: rezygnacja i zgłoszenie kandydatów do RN — neutralne; brak insiderów i zmian indeksowych; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 8,7, C/WK 1,4, EV/EBITDA b.d., DY 6,7% (4); konsensus TV: Buy (score 1.56), 4 kupuj / 4 trzymaj / 0 sprzedaj, n=8; cel średni b.d. — test skali cel/kurs = 0.29 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 8,
+        "buy": 4,
+        "hold": 4,
+        "sell": 0,
+        "ocena": "Buy",
+        "score": 1.56,
+        "cel_sredni": null,
+        "cel_surowy_tv": 38.93,
+        "test_skali": 0.29,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 8.68,
+        "price_book_fq": 1.4,
+        "enterprise_value_ebitda_ttm": null,
+        "dividends_yield": 6.65,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 39.0,
+      "earnings_release_next_date_tv": "2026-10-27"
+    },
+    {
+      "rank": 8,
+      "ticker": "PKOBP",
+      "score": 51.8,
+      "p": 0.51,
+      "waga_wig20_pct": 14.54,
+      "rel5_pp": 1.53,
+      "rel20_pp": -5.09,
+      "pts": {
+        "momentum": 12.3,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 10.5,
+        "rewizje": 4,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "teza": "Wypada z BOTTOM5 (17. → 8.): rel5 +1,53 p.p. (+3,00% w oknie W9) po rekomendacji „kupuj” Kepler Cheuvreux (15.10, cel 141,03 zł) i utrzymaniu w „lepiej niż rynek” DM BOŚ — DM 10,5/15 to drugi najwyższy wynik kategorii; rel20 −5,09 p.p. nadal ujemne.",
+      "ryzyko": "Największy w indeksie portfel SPW przy rentownościach 6,3%; koszty CHF za Q3 371 mln zł (13.10) wyżej przez aktualizację modelu ugód; raport Q3 5.11 poza oknem — brak katalizatora.",
+      "uzasadnienie": "MOM 12,3/25 (rel5 +1.53 p.p., rel20 -5.09 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — raport Q3 5.11 (dn=14) poza oknem; NWZ 14.10 odbyło się → 10 (10); MAKRO WIG-Banki +2,25% w oknie 9–16.10 (TradingView get-ohlcv, odczyt 2026-10-17 06:36 UTC) — sektor odrabiał po wyprzedaży z W8; CPI IX 4,1% r/r (GUS 14.10) przy bazowej 3,1% (NBP 15.10) utrzymuje RPP w zawieszeniu (posiedzenie 3–4.11 poza oknem), rentowności 10-latek blisko 6,3%; PKO BP ma największy portfel SPW w indeksie — korzysta z odbicia sektora, traci na każdym ruchu rentowności w górę (7); DM +3 za utrzymanie na liście „lepiej niż rynek” DM BOŚ na październik (24.09) i +3 za rekomendację „kupuj” Kepler Cheuvreux 15.10 (cel 141,03 zł; PAP 15.10 16:00) — obcięte do maksimum → 10,5 (10,5); REW komunikat 13.10: koszty ryzyka prawnego CHF za Q3 371 mln zł (aktualizacja parametrów modelu, wyższy koszt ugód) — udokumentowane liczbowo obciążenie wyniku, bez reakcji kursu → 4 (4); PRZ waga w WIG20 14,54% po capie, odpływy z PKO TFI −0,3 mld zł we wrześniu (6.10); rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 13,5, C/WK 2,6, EV/EBITDA b.d., DY 5,2% (3); konsensus TV: Buy (score 1.63), 7 kupuj / 8 trzymaj / 1 sprzedaj, n=16; cel średni b.d. — test skali cel/kurs = 0.26 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 16,
+        "buy": 7,
+        "hold": 8,
+        "sell": 1,
+        "ocena": "Buy",
+        "score": 1.63,
+        "cel_sredni": null,
+        "cel_surowy_tv": 30.53,
+        "test_skali": 0.26,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 13.53,
+        "price_book_fq": 2.62,
+        "enterprise_value_ebitda_ttm": null,
+        "dividends_yield": 5.23,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 343.0,
+      "earnings_release_next_date_tv": "2026-11-05"
+    },
+    {
+      "rank": 9,
+      "ticker": "ERSTEPL",
+      "score": 50.7,
+      "p": 0.5,
+      "waga_wig20_pct": 5.75,
+      "rel5_pp": -0.15,
+      "rel20_pp": 0.85,
+      "pts": {
+        "momentum": 13.2,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 3
+      },
+      "teza": "Kurs 778 zł jest 9,0% powyżej ceny wezwania Erste Group (713,60 zł) — rynek wycenia wyższą cenę lub brak odpowiedzi; rel5 −0,15 p.p. (najsłabszy bank w oknie W9, +1,33%), rel20 +0,85 p.p.; DY 6,4%.",
+      "ryzyko": "Raport Q3 30.10 (dn=10) bez szacunków; kara UOKiK 80,68 mln zł (12.10, nieprawomocna); decyzja KNF o buforze O-SII i zgoda na >50% bez daty; ogłoszenie wezwania „na początku listopada”.",
+      "uzasadnienie": "MOM 13,2/25 (rel5 -0.15 p.p., rel20 +0.85 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 30.10 (dn=10) raport Q3 (kalendarium bankier + TV earnings_release_next_date), bez szacunków — wkład 0; decyzje KNF (bufor O-SII, zgoda >50%) bez daty → KALENDARZ_NIEPOTWIERDZONY → 10 (10); MAKRO WIG-Banki +2,25% w oknie 9–16.10 (TradingView get-ohlcv, odczyt 2026-10-17 06:36 UTC) — sektor odrabiał po wyprzedaży z W8; CPI IX 4,1% r/r (GUS 14.10) przy bazowej 3,1% (NBP 15.10) utrzymuje RPP w zawieszeniu (posiedzenie 3–4.11 poza oknem), rentowności 10-latek blisko 6,3%; dla Erste BP dochodzi kurs EUR/PLN −0,28% (wycena wezwania w PLN przez Erste Group) i kara UOKiK 80,68 mln zł z 12.10 (7); DM brak datowanego sygnału DM w oknie 16.09–16.10 (Kepler 15.10 „trzymaj” 851,60 zł to podtrzymanie bez zmiany — neutralne) → 7,5 (7,5); REW brak udokumentowanej zmiany konsensusu; konsensus TV 2 kupuj / 6 trzymaj (n=8) → 5 (5); PRZ ESPI 15.10: udział Erste BP w Erste TFI obniżony do ok. 49,99% (sprzedaż jednej akcji — techniczne); wezwanie zmniejszy free float dopiero w XI–XII; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 13,4, C/WK 2,5, EV/EBITDA b.d., DY 6,4% (3); konsensus TV: Buy (score 1.75), 2 kupuj / 6 trzymaj / 0 sprzedaj, n=8; cel średni b.d. — test skali cel/kurs = 0.25 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 8,
+        "buy": 2,
+        "hold": 6,
+        "sell": 0,
+        "ocena": "Buy",
+        "score": 1.75,
+        "cel_sredni": null,
+        "cel_surowy_tv": 195.93,
+        "test_skali": 0.25,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 13.41,
+        "price_book_fq": 2.47,
+        "enterprise_value_ebitda_ttm": null,
+        "dividends_yield": 6.42,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 56.8,
+      "earnings_release_next_date_tv": "2026-10-30"
+    },
+    {
+      "rank": 10,
+      "ticker": "MBANK",
+      "score": 47.7,
+      "p": 0.49,
+      "waga_wig20_pct": 3.31,
+      "rel5_pp": 0.81,
+      "rel20_pp": -0.6,
+      "pts": {
+        "momentum": 13.2,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 4.5,
+        "rewizje": 6,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "teza": "Rel5 +0,81 p.p. (+2,28% w oknie W9; 16.10 +2,06% — lider banków na spekulacji o przejęciu Commerzbanku przez UniCredit po zgodzie EBC z 15.10 na przekroczenie 30%), rel20 −0,60 p.p.; lista „gorzej niż rynek” Trigon DM (9.10) ciąży DM.",
+      "ryzyko": "Najdroższy bank indeksu (C/Z 15,7, C/WK 2,6, brak dywidendy); raport Q3 28.10 (dn=8, termin przesunięty przez bank z 29.10 — raport bieżący 51/2026) z CHF 78 mln zł już znanym; 0 „kupuj” na 7 analityków w konsensusie TV.",
+      "uzasadnienie": "MOM 13,2/25 (rel5 +0.81 p.p., rel20 -0.60 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 28.10 (dn=8) raport Q3 — termin zmieniony przez bank raportem bieżącym 51/2026 (14.09) z 29.10 (TV earnings_release_next_date nadal 29.10 — rozbieżność, wygrywa komunikat spółki); koszty CHF za Q3 ok. 78 mln zł znane z ESPI 6.10, więc raport częściowo „znany” — wkład 0 → 10 (10); MAKRO WIG-Banki +2,25% w oknie 9–16.10 (TradingView get-ohlcv, odczyt 2026-10-17 06:36 UTC) — sektor odrabiał po wyprzedaży z W8; CPI IX 4,1% r/r (GUS 14.10) przy bazowej 3,1% (NBP 15.10) utrzymuje RPP w zawieszeniu (posiedzenie 3–4.11 poza oknem), rentowności 10-latek blisko 6,3%; wątek UniCredit–Commerzbank (EBC 15.10) to opcja na wezwanie przy >50%, bez daty (7); DM −3 za listę „gorzej niż rynek” Trigon DM na październik (9.10, w oknie 30 dni) → 4,5 (4,5); REW ESPI 6.10: koszty ryzyka prawnego CHF za Q3 ok. 78 mln zł — kwota niska wobec poprzednich kwartałów, kierunek udokumentowany bez liczby konsensusu → 6 (6); PRZ AT1 250 mln EUR dopuszczone do obrotu (29.09), brak skupu i insiderów; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 15,7, C/WK 2,6, EV/EBITDA b.d., DY b.d. (2); konsensus TV: Buy (score 2.29), 0 kupuj / 5 trzymaj / 2 sprzedaj, n=7; cel średni b.d. — test skali cel/kurs = 0.23 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 7,
+        "buy": 0,
+        "hold": 5,
+        "sell": 2,
+        "ocena": "Buy",
+        "score": 2.29,
+        "cel_sredni": null,
+        "cel_surowy_tv": 327.34,
+        "test_skali": 0.23,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 15.68,
+        "price_book_fq": 2.61,
+        "enterprise_value_ebitda_ttm": null,
+        "dividends_yield": null,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 30.9,
+      "earnings_release_next_date_tv": "2026-10-29"
+    },
+    {
+      "rank": 11,
+      "ticker": "CDPROJEKT",
+      "score": 47.0,
+      "p": 0.48,
+      "waga_wig20_pct": 3.24,
+      "rel5_pp": -1.7,
+      "rel20_pp": 7.97,
+      "pts": {
+        "momentum": 10.5,
+        "katalizatory": 12,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 1
+      },
+      "teza": "Premiera „Cyberpunk: Edgerunners 2” na Netflix we wtorek 20.10 (dn=2) — jedyny katalizator z pełnym wkładem w oknie wyniku (+2); rel20 +7,97 p.p. (film Paramount, remaster Wiedźmina 3), ale rel5 −1,70 p.p. (−0,23% w oknie W9); wypada z TOP5 (4. → 12.).",
+      "ryzyko": "Najwyższy mnożnik w uniwersum (C/Z 42,6, EV/EBITDA 49,6) przy wyprzedaży Nasdaq (16.10 −2,1%); 5 „sprzedaj” na 15 analityków w konsensusie TV; efekt serialu na sprzedaż gry widać dopiero po premierze — w 2022 r. kurs reagował z opóźnieniem.",
+      "uzasadnienie": "MOM 10,5/25 (rel5 -1.70 p.p., rel20 +7.97 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 20.10 (dn=2) premiera serialu „Cyberpunk: Edgerunners 2” (10 odcinków, Netflix) — potwierdzona komunikatem spółki (press.cdprojektred.com); zdarzenie datowane w oknie wyniku D+1…D+5 → pełny wkład +2 (w W9 jako D+7 miało +1); raport Q3 24.11 poza oknem → 12 (12); MAKRO Nasdaq −2,1% 16.10 (najgorszy tydzień od czerwca), rentowności USA wysoko — ciążą mnożnikom spółek wzrostowych; USD/PLN −0,60% obniża przychody w PLN; brak ekspozycji na dane GUS → 6 (6); DM netto 0: top pick Trigon DM na październik (9.10, +3) kontra usunięcie z listy DM BOŚ 24.09 po przesunięciu „Wiedźmina 4” na 2028 (−3) → 7,5 (7,5); REW brak udokumentowanej zmiany konsensusu w 30 dniach (zaskoczenie Q2 z 2.09 poza oknem); PAP 15.10 (joint CEO): sprzedaż „Wiedźmina 3” powyżej poziomu sprzed remastera — bez liczb → 5 (5); PRZ krótka pozycja wypadła z rejestru KNF wg Parkietu 1.10; brak skupu i insiderów; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 42,6, C/WK 7,4, EV/EBITDA 49,6, DY b.d. (1); konsensus TV: Buy (score 1.93), 6 kupuj / 4 trzymaj / 5 sprzedaj, n=15; cel średni b.d. — test skali cel/kurs = 0.24 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 15,
+        "buy": 6,
+        "hold": 4,
+        "sell": 5,
+        "ocena": "Buy",
+        "score": 1.93,
+        "cel_sredni": null,
+        "cel_surowy_tv": 63.24,
+        "test_skali": 0.24,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 42.63,
+        "price_book_fq": 7.36,
+        "enterprise_value_ebitda_ttm": 49.61,
+        "dividends_yield": null,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 73.7,
+      "earnings_release_next_date_tv": "2026-11-24"
+    },
+    {
+      "rank": 12,
+      "ticker": "PEKAO",
+      "score": 46.3,
+      "p": 0.48,
+      "waga_wig20_pct": 8.26,
+      "rel5_pp": 0.86,
+      "rel20_pp": -3.92,
+      "pts": {
+        "momentum": 11.8,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 4.5,
+        "rewizje": 5,
+        "przeplywy": 4,
+        "wycena": 4
+      },
+      "teza": "Rel5 +0,86 p.p. (+2,34% w oknie W9 przeciw tezie SHORT W9), rel20 −3,92 p.p.; DY 7,4% najwyższa w indeksie, C/Z 10,8; wypada z BOTTOM5 (19. → 13.), bo cztery banki pobiły indeks w W9.",
+      "ryzyko": "Obniżka Wood & Company 24.09 do „trzymaj” w oknie; BlackRock <5% (8.10) — podaż pasywna; raport Q3 29.10 (dn=9) bez szacunków; struktura holdingowa PZU–Pekao bez daty.",
+      "uzasadnienie": "MOM 11,8/25 (rel5 +0.86 p.p., rel20 -3.92 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 29.10 (dn=9) raport Q3 — kalendarium bankier (W9) i TV earnings_release_next_date zgodne, bez szacunków spółki, kierunek nieznany — wkład 0; struktura PZU–Pekao bez daty → 10 (10); MAKRO WIG-Banki +2,25% w oknie 9–16.10 (TradingView get-ohlcv, odczyt 2026-10-17 06:36 UTC) — sektor odrabiał po wyprzedaży z W8; CPI IX 4,1% r/r (GUS 14.10) przy bazowej 3,1% (NBP 15.10) utrzymuje RPP w zawieszeniu (posiedzenie 3–4.11 poza oknem), rentowności 10-latek blisko 6,3%; Pekao ma duży portfel SPW i najwyższą dywidendę — pierwszy adres powrotu kapitału przy uspokojeniu obligacji (7); DM −3 za obniżkę rekomendacji Wood & Company 24.09 z „kupuj” do „trzymaj” (w oknie 30 dni) → 4,5 (4,5); REW brak udokumentowanej zmiany konsensusu; konsensus TV 6 kupuj / 7 trzymaj (n=13) → 5 (5); PRZ ESPI 8.10: BlackRock poniżej 5% głosów — podaż pasywnego inwestora, udokumentowana; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 10,8, C/WK 2,1, EV/EBITDA b.d., DY 7,4% (4); konsensus TV: Buy (score 1.58), 6 kupuj / 7 trzymaj / 0 sprzedaj, n=13; cel średni b.d. — test skali cel/kurs = 0.27 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 13,
+        "buy": 6,
+        "hold": 7,
+        "sell": 0,
+        "ocena": "Buy",
+        "score": 1.58,
+        "cel_sredni": null,
+        "cel_surowy_tv": 73.21,
+        "test_skali": 0.27,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 10.83,
+        "price_book_fq": 2.13,
+        "enterprise_value_ebitda_ttm": null,
+        "dividends_yield": 7.4,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 149.9,
+      "earnings_release_next_date_tv": "2026-10-29"
+    },
+    {
+      "rank": 13,
+      "ticker": "KETY",
+      "score": 46.1,
+      "p": 0.48,
+      "waga_wig20_pct": 2.23,
+      "rel5_pp": -0.69,
+      "rel20_pp": -1.21,
+      "pts": {
+        "momentum": 9.6,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 2
+      },
+      "teza": "Rel5 −0,69 p.p. (+0,78% w oknie W9 przy dwóch sesjach −1,6/−1,2% i odbiciu +3,03% 16.10 — PAP: trzy miesiące w wąskim zakresie), rel20 −1,21 p.p.; raport Q3 26.10 (dn=6) ze znanymi szacunkami (24.09, ~201 mln zł netto zgodnie z konsensusem); wypada z TOP5 (5. → 11.).",
+      "ryzyko": "Mocniejszy złoty (USD/PLN −0,60%) działa przeciw eksporterowi; brak katalizatora z zaskoczeniem — szacunki Q3 już opublikowane; 4 „sprzedaj” na 8 analityków w konsensusie TV.",
+      "uzasadnienie": "MOM 9,6/25 (rel5 -0.69 p.p., rel20 -1.21 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 26.10 (dn=6) raport Q3 — potwierdzony kalendarium spółki i TV earnings_release_next_date; szacunki z 24.09 (zysk netto ~201 mln zł, zgodne z konsensusem PAP) czynią go zdarzeniem „znanym” — wkład 0; II transza dywidendy 32,64 zł wypłata 4.11 (dzień prawa minął 19.08) → 10 (10); MAKRO aluminium bez nowego impulsu w tygodniu (b.d. z TV — poza mapą symboli), USD/PLN −0,60% i EUR/PLN −0,28% obniżają przychody eksportera w PLN, popyt budowlany przy stopach 3,75% bez obniżek; produkcja przemysłowa IX 20.10 9:30 (prognoza TV 2,6% r/r wobec 4,3%) → 7 (7); DM brak datowanego sygnału DM w oknie 16.09–16.10 → 7,5 (7,5); REW szacunki Q3 z 24.09 zgodne z konsensusem — bez zaskoczenia; konsensus TV 3 kupuj / 1 trzymaj / 4 sprzedaj (n=8) → 5 (5); PRZ brak insiderów i zmian indeksowych, Kęty nie figurują w omówieniu rejestru KNF Parkietu z 1.10; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 19,2, C/WK 6,7, EV/EBITDA 12,0, DY 3,8% (2); konsensus TV: Buy (score 2.13), 3 kupuj / 1 trzymaj / 4 sprzedaj, n=8; cel średni b.d. — test skali cel/kurs = 0.24 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 8,
+        "buy": 3,
+        "hold": 1,
+        "sell": 4,
+        "ocena": "Buy",
+        "score": 2.13,
+        "cel_sredni": null,
+        "cel_surowy_tv": 307.27,
+        "test_skali": 0.24,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 19.24,
+        "price_book_fq": 6.68,
+        "enterprise_value_ebitda_ttm": 12.02,
+        "dividends_yield": 3.79,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 22.3,
+      "earnings_release_next_date_tv": "2026-10-26"
+    },
+    {
+      "rank": 14,
+      "ticker": "BUDIMEX",
+      "score": 46.0,
+      "p": 0.48,
+      "waga_wig20_pct": 1.57,
+      "rel5_pp": 0.38,
+      "rel20_pp": -2.45,
+      "pts": {
+        "momentum": 10.5,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 4,
+        "wycena": 2
+      },
+      "teza": "Rel5 +0,38 p.p. (+1,86% w oknie W9; 16.10 +3,47% bez komunikatu), rel20 −2,45 p.p.; raport Q3 i nowa strategia 27.10 (dn=7) — zdarzenie datowane, bez szacunków; top pick Trigon równoważony „sprzedaj” Noble (17.09, 562 zł).",
+      "ryzyko": "Najdroższa spółka sektora (C/Z 24,7); „sprzedaj” Noble w oknie 30 dni; krótka pozycja w rejestrze wg Parkietu 1.10; udział w konsorcjum D35 (6.10) nadal nieznany.",
+      "uzasadnienie": "MOM 10,5/25 (rel5 +0.38 p.p., rel20 -2.45 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 27.10 (dn=7) raport Q3 i publikacja nowej strategii — kalendarium bankier (W9) i TV earnings_release_next_date zgodne; w D+6…D+10 działa tylko oczekiwanie, kierunek nieudokumentowany — wkład 0; podpisanie umowy D35 (Czechy, PPP) bez daty → 10 (10); MAKRO program inwestycji publicznych (KPO, kolej, energetyka) po stronie popytu, stopy 3,75% bez obniżek po stronie kosztu finansowania; produkcja budowlano-montażowa IX w pakiecie GUS 20.10 9:30 → 7 (7); DM netto 0: top pick Trigon DM na październik (9.10, +3) kontra Noble Securities 17.09 „sprzedaj” 562 zł (−3; ostatni dzień w oknie 30 dni) → 7,5 (7,5); REW brak udokumentowanej zmiany konsensusu; konsensus TV 2 kupuj / 3 trzymaj / 2 sprzedaj (n=7) → 5 (5); PRZ krótka pozycja na Budimex w rejestrze KNF wg Parkietu z 1.10; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 24,7, C/WK 23,5, EV/EBITDA 15,0, DY 4,6% (2); konsensus TV: Buy (score 2.0), 2 kupuj / 3 trzymaj / 2 sprzedaj, n=7; cel średni b.d. — test skali cel/kurs = 0.27 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 7,
+        "buy": 2,
+        "hold": 3,
+        "sell": 2,
+        "ocena": "Buy",
+        "score": 2.0,
+        "cel_sredni": null,
+        "cel_surowy_tv": 192.46,
+        "test_skali": 0.27,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 24.67,
+        "price_book_fq": 23.52,
+        "enterprise_value_ebitda_ttm": 15.04,
+        "dividends_yield": 4.61,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 20.0,
+      "earnings_release_next_date_tv": "2026-10-27"
+    },
+    {
+      "rank": 15,
+      "ticker": "TAURONPE",
+      "score": 43.2,
+      "p": 0.47,
+      "waga_wig20_pct": 1.7,
+      "rel5_pp": -4.9,
+      "rel20_pp": 0.4,
+      "pts": {
+        "momentum": 5.7,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 4,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "teza": "Wypada z TOP5 (3. → 15.): rel5 −4,90 p.p. (−3,42% w oknie W9, 16.10 −4,00% bez komunikatu — realizacja zysków w energetyce), rel20 +0,40 p.p.; C/Z 5,8 i C/WK 0,74 nadal tanie, ale momentum 5,7/25.",
+      "ryzyko": "Największy w indeksie udział dystrybucji = największa ekspozycja na projekt CIT 30% (Sejm, druk 3159) i projekt opłat koncesyjnych ME; perspektywa Fitch obniżona do stabilnej 25.09; ugoda z ArcelorMittal bez daty.",
+      "uzasadnienie": "MOM 5,7/25 (rel5 -4.90 p.p., rel20 +0.40 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — raport Q3 18.11, strategia 17.12 (niepotwierdzona), ugoda z ArcelorMittal (598,1 mln zł) bez daty → 10 (10); MAKRO WIG-Energia −2,10% w oknie 9–16.10 (TV get-ohlcv) po rekordzie 14.10 — realizacja zysków 16.10 (PGE −4,43%, Tauron −4,00%); projekt CIT 30% dla energetyki i paliw na 2027 r. po pierwszym czytaniu w Sejmie 8.10 (druk 3159) — ryzyko regulacyjne datowane; Brent +4,91% w tygodniu (109,86 USD) podtrzymuje drogi hurt energii; Tauron ma największy udział dystrybucji w wyniku, więc projekt CIT 30% i projekt opłat koncesyjnych dotykają go najmocniej (7); DM brak datowanego sygnału DM w oknie 16.09–16.10 (DM BOŚ „trzymaj” 10,00 zł z 22.07 poza oknem) → 7,5 (7,5); REW Fitch 25.09 zmienił perspektywę na stabilną z pozytywnej (niższa EBITDA dystrybucji i sprzedaży) — udokumentowana rewizja w dół w oknie 30 dni → 4 (4); PRZ zawiadomienie Goldman Sachs 2.10 (pozycja zmienna, część syntetyczna) — techniczne; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 5,8, C/WK 0,7, EV/EBITDA 4,0, DY 2,1% (4); konsensus TV: Strong Buy (score 1.33), 4 kupuj / 2 trzymaj / 0 sprzedaj, n=6; cel średni b.d. — test skali cel/kurs = 0.30 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 6,
+        "buy": 4,
+        "hold": 2,
+        "sell": 0,
+        "ocena": "Strong Buy",
+        "score": 1.33,
+        "cel_sredni": null,
+        "cel_surowy_tv": 2.77,
+        "test_skali": 0.3,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 5.78,
+        "price_book_fq": 0.74,
+        "enterprise_value_ebitda_ttm": 3.97,
+        "dividends_yield": 2.15,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 33.8,
+      "earnings_release_next_date_tv": "2026-11-18"
+    },
+    {
+      "rank": 16,
+      "ticker": "ZABKA",
+      "score": 43.0,
+      "p": 0.47,
+      "waga_wig20_pct": 2.92,
+      "rel5_pp": -1.47,
+      "rel20_pp": -2.36,
+      "pts": {
+        "momentum": 7.5,
+        "katalizatory": 10,
+        "makro": 7,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 5,
+        "wycena": 1
+      },
+      "teza": "Kurs 31,70 zł przyspawany do ceny wezwania Couche-Tard 32,00 zł (dyskonto 0,94%); 16.10 wieczorem termin zapisów przedłużony do 2.12 (cena bez zmian) i wniosek Circle K do UOKiK — pozycja SHORT to zakład o dalszy wzrost indeksu, nie o spółkę: rel5 −1,47, rel20 −2,36 p.p. są artefaktem beta≈0.",
+      "ryzyko": "Symetryczne: jeśli WIG20 spadnie, Żabka „pobije” indeks stojąc w miejscu; zgoda KE/UOKiK może przyjść w każdej chwili (bez daty); wyniki 9M 27.10 (dn=7) bez wpływu przy cenie zamrożonej wezwaniem.",
+      "uzasadnienie": "MOM 7,5/25 (rel5 -1.47 p.p., rel20 -2.36 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 27.10 (dn=7) wyniki 9M (TV earnings_release_next_date = kalendarium bankier) — przy kursie zamrożonym wezwaniem bez wpływu, wkład 0; koniec zapisów przesunięty z 26.10 na 2.12 (bankier 16.10 19:16) — poza oknem; zgody antymonopolowe KE/UOKiK bez daty → KALENDARZ_NIEPOTWIERDZONY → 10 (10); MAKRO beta ≈ 0 wobec rynku (arbitraż do 32,00 zł), dane GUS o konsumpcji bez znaczenia dla kursu; USD/PLN i stopy bez przełożenia → 7 (7); DM brak sygnału — pokrycie DM wygasło po ogłoszeniu wezwania → 7,5 (7,5); REW brak udokumentowanej zmiany konsensusu; konsensus TV 5 kupuj / 9 trzymaj (n=15, większość „trzymaj” = czekanie na wezwanie) → 5 (5); PRZ zobowiązania do sprzedaży 57,245% kapitału, arbitraż absorbuje podaż; GPW Benchmark bez korekty nadzwyczajnej składu (stan 17.10), spółka zostaje w WIG20 co najmniej do rozliczenia wezwania w grudniu; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 24,8, C/WK 14,5, EV/EBITDA 9,4, DY 1,7% (1); konsensus TV: Buy (score 1.77), 5 kupuj / 9 trzymaj / 1 sprzedaj, n=15; cel średni b.d. — test skali cel/kurs = 0.25 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 15,
+        "buy": 5,
+        "hold": 9,
+        "sell": 1,
+        "ocena": "Buy",
+        "score": 1.77,
+        "cel_sredni": null,
+        "cel_surowy_tv": 8.07,
+        "test_skali": 0.25,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 24.77,
+        "price_book_fq": 14.52,
+        "enterprise_value_ebitda_ttm": 9.45,
+        "dividends_yield": 1.67,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 45.0,
+      "earnings_release_next_date_tv": "2026-10-27"
+    },
+    {
+      "rank": 17,
+      "ticker": "MODIVO",
+      "score": 41.6,
+      "p": 0.46,
+      "waga_wig20_pct": 0.84,
+      "rel5_pp": -1.54,
+      "rel20_pp": 2.47,
+      "pts": {
+        "momentum": 10.1,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 2,
+        "przeplywy": 5,
+        "wycena": 1
+      },
+      "teza": "Rel5 −1,54 p.p. (−0,06% w oknie W9), rel20 +2,47 p.p. — odbicie po PSr z 2.10 (strata −319 mln zł, odpisy 557 mln zł) wygasa; 6 „sprzedaj” na 10 analityków w konsensusie TV — najgorsza ocena w uniwersum; C/Z ujemny.",
+      "ryzyko": "Najmniejsza spółka indeksu (waga 0,84%, obrót ~20 mln zł/10 sesji) — ruchy skokowe na domykaniu krótkich pozycji; lista „lepiej niż rynek” DM BOŚ (24.09) równoważy Trigon „gorzej”.",
+      "uzasadnienie": "MOM 10,1/25 (rel5 -1.54 p.p., rel20 +2.47 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT brak datowanych zdarzeń w D+1…D+10 — raport Q3 27.11 (dn=30), wstępne dane sprzedażowe za Q3 bez daty (za Q2 były 7.08) → 10 (10); MAKRO mocniejszy złoty obniża koszt towaru, ale CPI 4,1% i stopy bez obniżek przy wysokim zadłużeniu ciążą; sprzedaż detaliczna IX 22.10 9:30 → 6 (6); DM netto 0: „lepiej niż rynek” DM BOŚ na październik (24.09, +3) kontra lista „gorzej niż rynek” Trigon DM na październik (9.10, −3) → 7,5 (7,5); REW raport PSr 2.10: strata netto −319,0 mln zł w I półroczu, EBIT −175,3 mln zł, odpisy 557,4 mln zł — największe udokumentowane zaskoczenie negatywne w indeksie, w oknie 30 dni → 2 (2); PRZ Modivo nie figuruje w omówieniu rejestru Parkietu z 1.10; brak insiderów; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z b.d., C/WK 3,6, EV/EBITDA 10,2, DY b.d. (1); konsensus TV: Buy (score 2.35), 2 kupuj / 2 trzymaj / 6 sprzedaj, n=10; cel średni b.d. — test skali cel/kurs = 0.25 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 10,
+        "buy": 2,
+        "hold": 2,
+        "sell": 6,
+        "ocena": "Buy",
+        "score": 2.35,
+        "cel_sredni": null,
+        "cel_surowy_tv": 23.22,
+        "test_skali": 0.25,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": null,
+        "price_book_fq": 3.63,
+        "enterprise_value_ebitda_ttm": 10.23,
+        "dividends_yield": null,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 20.2,
+      "earnings_release_next_date_tv": "2026-11-27"
+    },
+    {
+      "rank": 18,
+      "ticker": "PKNORLEN",
+      "score": 40.6,
+      "p": 0.45,
+      "waga_wig20_pct": 14.28,
+      "rel5_pp": -4.21,
+      "rel20_pp": -0.48,
+      "pts": {
+        "momentum": 6.1,
+        "katalizatory": 10,
+        "makro": 4,
+        "dm": 7.5,
+        "rewizje": 4,
+        "przeplywy": 5,
+        "wycena": 4
+      },
+      "teza": "Wchodzi do BOTTOM5 (9. → 18.): rel5 −4,21 p.p. (−2,74% w oknie W9; 12.10 −3,43% po słowach min. Domańskiego o „wysokiej dywidendzie” i pakiecie paliwowym), rel20 −0,48 p.p.; najgorsze tło regulacyjne w indeksie: podatek 60% od nadwyżki przychodów, CIT 30% w Sejmie, czeski podatek od rafinerii po pierwszym czytaniu (13.10), wniosek o areszt b. prezesa (15.10).",
+      "ryzyko": "C/Z 8,6 i DY 5,2% ograniczają downside; Brent +4,91% w tygodniu i powrót dostaw Saudi Aramco (15.10) poprawiają wsad; Litwa wycofuje się z podatku od Orlen Lietuva (15.10); szacunki operacyjne za Q3 mogą wypaść w oknie (ok. 20.10, bez daty).",
+      "uzasadnienie": "MOM 6,1/25 (rel5 -4.21 p.p., rel20 -0.48 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT szacunkowe dane operacyjne za Q3 bez daty (za Q2 publikowano 21.07 — wzorcowo ok. 20.10, w oknie, nieogłoszone) → KALENDARZ_NIEPOTWIERDZONY; raport Q3 5.11 poza oknem; orzeczenie TK ws. podatku od nadwyżki przychodów bez terminu → 10 (10); MAKRO podatek 60% od nadwyżki przychodów obowiązuje (2 mld zł za III–VIII, ESPI 2.10); projekt CIT 30% dla paliw i wydobycia po pierwszym czytaniu w Sejmie 8.10 (druk 3159); Czechy: projekt podatku od rafinerii po pierwszym czytaniu 13.10; Brent +4,91% (109,86 USD) po stronie kosztu wsadu; WIG-Paliwa −2,69% w tygodniu (TV get-ohlcv) → 4 (4); DM netto 0: utrzymanie w „lepiej niż rynek” DM BOŚ (24.09, +3) kontra usunięcie z top picks Trigon DM 8.10 z obniżką do „przeważaj” (−3) → 7,5 (7,5); REW ESPI 2.10: podatek 2 mld zł za marzec–sierpień — udokumentowane liczbowo obciążenie wyniku; konsensus TV 5 kupuj / 4 trzymaj / 2 sprzedaj (n=11) → 4 (4); PRZ cap 15% w WIG20 (waga 14,28%), odpływ na wykup Energi zrealizowany; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 5 (5); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 8,6, C/WK 1,2, EV/EBITDA 3,6, DY 5,2% (4); konsensus TV: Buy (score 1.68), 5 kupuj / 4 trzymaj / 2 sprzedaj, n=11; cel średni b.d. — test skali cel/kurs = 0.26 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 11,
+        "buy": 5,
+        "hold": 4,
+        "sell": 2,
+        "ocena": "Buy",
+        "score": 1.68,
+        "cel_sredni": null,
+        "cel_surowy_tv": 39.65,
+        "test_skali": 0.26,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 8.56,
+        "price_book_fq": 1.22,
+        "enterprise_value_ebitda_ttm": 3.6,
+        "dividends_yield": 5.16,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 202.9,
+      "earnings_release_next_date_tv": "2026-11-05"
+    },
+    {
+      "rank": 19,
+      "ticker": "KRUK",
+      "score": 39.6,
+      "p": 0.45,
+      "waga_wig20_pct": 1.09,
+      "rel5_pp": -0.87,
+      "rel20_pp": -12.07,
+      "pts": {
+        "momentum": 6.1,
+        "katalizatory": 10,
+        "makro": 5,
+        "dm": 7.5,
+        "rewizje": 3,
+        "przeplywy": 4,
+        "wycena": 4
+      },
+      "teza": "Najniższe rel20 w uniwersum (−12,07 p.p.) po ESPI z 9.10 (nakłady −44% r/r) i szacunku Q3 z 16.10 po sesji (zysk netto ok. 198 mln zł, 9M 753 mln zł wobec 877 mln zł rok wcześniej — spadek r/r; spłaty poniżej planu o 8 mln zł); rel5 −0,87 p.p. mimo odbicia 14.10; raport Q3 27.10 (dn=7) jest już „znany”.",
+      "ryzyko": "Po −21,7% od maksimum 3-miesięcznego C/Z 6,9 i DY 5,7% przyciągają kupujących kontrariańskich; 6/6 „kupuj” w konsensusie TV; zarząd: EBITDA gotówkowa 9M rekordowa (2 052 mln zł) — argument za odbiciem.",
+      "uzasadnienie": "MOM 6,1/25 (rel5 -0.87 p.p., rel20 -12.07 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT 27.10 (dn=7) raport Q3 — szacunki opublikowane 16.10 17:06 (ESPI 40/2026) czynią go zdarzeniem „znanym”, wkład 0; brak innych datowanych zdarzeń → 10 (10); MAKRO rentowności 10-latek ~6,3% podnoszą koszt finansowania zakupów portfeli, słabszy rynek w Rumunii (prezes, 16.10), przy CPI 4,1% realne wpłaty słabną; EUR/PLN −0,28% obniża spłaty zagraniczne w PLN → 5 (5); DM brak datowanego sygnału DM w oknie 16.09–16.10 (komentarz DM BDM po ESPI 9.10 nie jest rekomendacją) → 7,5 (7,5); REW ESPI 40/2026 (16.10): zysk netto Q3 ok. 198 mln zł, 9M ok. 753 mln zł wobec 877,2 mln zł rok wcześniej (−14% r/r), spłaty poniżej planu o 8 mln zł; ESPI 9.10: nakłady 347 mln zł (−44% r/r) — dwa udokumentowane zaskoczenia negatywne z liczbami w oknie 30 dni, częściowo zrównoważone rekordową EBITDA gotówkową 9M → 3 (3); PRZ krótka pozycja na Kruk w rejestrze KNF wg Parkietu 1.10 (Two Sigma 0,6% we wrześniu), suma krótkich rośnie od połowy września (omówienie z 10.10), dziewięć sprzedaży insiderów w 12 miesięcy; rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 6,9, C/WK 1,2, EV/EBITDA 8,6, DY 5,7% (4); konsensus TV: Strong Buy (score 1.08), 6 kupuj / 0 trzymaj / 0 sprzedaj, n=6; cel średni b.d. — test skali cel/kurs = 0.37 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 6,
+        "buy": 6,
+        "hold": 0,
+        "sell": 0,
+        "ocena": "Strong Buy",
+        "score": 1.08,
+        "cel_sredni": null,
+        "cel_surowy_tv": 130.88,
+        "test_skali": 0.37,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 6.86,
+        "price_book_fq": 1.24,
+        "enterprise_value_ebitda_ttm": 8.64,
+        "dividends_yield": 5.71,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 46.0,
+      "earnings_release_next_date_tv": "2026-10-27"
+    },
+    {
+      "rank": 20,
+      "ticker": "KGHM",
+      "score": 35.9,
+      "p": 0.43,
+      "waga_wig20_pct": 7.83,
+      "rel5_pp": -7.02,
+      "rel20_pp": -5.78,
+      "pts": {
+        "momentum": 0.4,
+        "katalizatory": 10,
+        "makro": 6,
+        "dm": 7.5,
+        "rewizje": 5,
+        "przeplywy": 4,
+        "wycena": 3
+      },
+      "teza": "Najniższe momentum w uniwersum (0,4/25: rel5 −7,02, rel20 −5,78 p.p.; −5,55% w oknie W9, 14.10 −3,93%, 15.10 −2,07%) przy srebrze −6,13% i miedzi −1,77% w tygodniu (TV get-ohlcv) — surowce odwróciły się od rekordów; wstępne dane produkcyjne za wrzesień bez daty.",
+      "ryzyko": "Miedź nadal blisko rekordów (6,57 USD/lb), status projektów strategicznych UE (9.10) i C/Z 7,5 — odbicie po −14,6% od maksimum 3-miesięcznego jest realne; 5 „sprzedaj” na 13 analityków w konsensusie TV.",
+      "uzasadnienie": "MOM 0,4/25 (rel5 -7.02 p.p., rel20 -5.78 p.p.; metryki.py momentum --d0 2026-10-16, kursy surowe); KAT wstępne dane produkcyjno-sprzedażowe za wrzesień bez daty w kalendarium (sierpień 22.09, wrzesień 2025 publikowano 22.10 → prawdopodobnie 20–23.10, w oknie, nieogłoszone) → KALENDARZ_NIEPOTWIERDZONY; NWZ 28.10 i raport Q3 18.11 poza oknem → 10 (10); MAKRO miedź COMEX −1,77% (6,692 → 6,574 USD/lb) i srebro −6,13% (61,05 → 57,31 USD/oz) w oknie 9–16.10 (TradingView get-ohlcv, odczyt 2026-10-17 06:36 UTC) — pierwszy tydzień odwrotu od rekordów; USD/PLN −0,60% obniża przychody w PLN; Chiny PKB III kw. 19.10 → 6 (6); DM brak datowanego sygnału DM w oknie 16.09–16.10 → 7,5 (7,5); REW brak udokumentowanej zmiany konsensusu; sprzedaż miedzi w sierpniu 53,2 tys. t (−3% r/r); konsensus TV 3 kupuj / 5 trzymaj / 5 sprzedaj (n=13) → 5 (5); PRZ krótka pozycja na KGHM w rejestrze KNF wg Parkietu z 1.10 (wielkość nieznana); rejestr krótkiej sprzedaży KNF poza zasięgiem sieci (KNF_SHORT_NIEDOSTEPNY) → 4 (4); WYC wskaźniki: TradingView screener, odczyt 2026-10-17 06:35 UTC (PLN, TTM): C/Z 7,5, C/WK 1,6, EV/EBITDA 5,9, DY 0,5% (3); konsensus TV: Buy (score 2.15), 3 kupuj / 5 trzymaj / 5 sprzedaj, n=13; cel średni b.d. — test skali cel/kurs = 0.25 poza 0,5–2,0; odczyt 2026-10-17 06:35 UTC (get-forecasts); pierwsza sobota = tylko poziom, bez punktów za zmianę.",
+      "konsensus_tv": {
+        "n": 13,
+        "buy": 3,
+        "hold": 5,
+        "sell": 5,
+        "ocena": "Buy",
+        "score": 2.15,
+        "cel_sredni": null,
+        "cel_surowy_tv": 82.34,
+        "test_skali": 0.25,
+        "data": "2026-10-17",
+        "zrodlo": "TradingView MCP get-forecasts"
+      },
+      "wycena_tv": {
+        "price_earnings_ttm": 7.55,
+        "price_book_fq": 1.65,
+        "enterprise_value_ebitda_ttm": 5.94,
+        "dividends_yield": 0.46,
+        "odczyt": "2026-10-17 06:35 UTC"
+      },
+      "plynnosc_mln_zl_10d": 205.4,
+      "earnings_release_next_date_tv": "2026-11-18"
+    }
+  ],
+  "katalizatory": [
+    {
+      "ticker": "PGE",
+      "data": "2026-10-19",
+      "dn": 1,
+      "opis": "Konferencja prasowa PGE z aktualizacją strategii Grupy (12:30) — pierwszy datowany termin po zapowiedziach „II połowa października”; zdarzenie w oknie wyniku, oczekiwanie pozytywne (cele EBITDA/capex, atom po porozumieniu ME–PEJ–PGE 13.10). Ryzyko „sprzedaj fakty” po +32% od 28.09 nazwane w tezie.",
+      "wklad_pkt": 1,
+      "zrodlo": "PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-14”, 14.10.2026 07:01 (strefainwestorow.pl); Puls WIG20 14–17.10.2026"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "data": "2026-10-20",
+      "dn": 2,
+      "opis": "Premiera serialu „Cyberpunk: Edgerunners 2” na Netflix (10 odcinków) — potwierdzona komunikatem spółki; w W9 było to D+7 (+1), teraz D+2 w oknie wyniku → pełny wkład +2.",
+      "wklad_pkt": 2,
+      "zrodlo": "press.cdprojektred.com (komunikat spółki); rankings/2026-W9.json"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-10-20",
+      "dn": 2,
+      "opis": "NWZ — zmiany w składzie Rady Nadzorczej (wniosek PZU) i zmiana uchwał 5/2017 i 6/2017; datowane, bez wpływu na wynik. Wybór prezesa i zarządu nadal bez daty (KALENDARZ_NIEPOTWIERDZONY).",
+      "wklad_pkt": 0,
+      "zrodlo": "ESPI Alior Bank (zwołanie NWZ); kalendarium bankier.pl; ESPI 15.10.2026 (kandydaci do RN)"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-20",
+      "dn": 2,
+      "opis": "9:30 GUS — wynagrodzenia (poprz. 5,6% r/r; bankier: konsensus 6,1%) i zatrudnienie (−0,8%) w sektorze przedsiębiorstw, produkcja przemysłowa IX (TV prognoza 2,6% r/r wobec 4,3%), produkcja budowlano-montażowa, PPI (4,2%); 11:00 ZEW (TV 24,2); 14:30 USA pozwolenia/rozpoczęte budowy (TV importance 1). Termin potwierdzony w dwóch datowanych źródłach: TradingView get-economic-calendar (odczyt 2026-10-17 06:34 UTC, 07:30 UTC) = bankier.pl „Meta i Tesla znów rozgrzeją głowy inwestorów” 16.10.2026 11:04.",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC; bankier.pl 16.10.2026 11:04 (M. Kubicki); Puls WIG20 17.10.2026"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-19",
+      "dn": 1,
+      "opis": "Rotacja koszyka W9 → W10 na rachunku (/run 08:01 UTC = 10:01 Warszawy); 4:00 Chiny PKB III kw. i dane za wrzesień (bankier 16.10); 16:00 USA NAHB (TV = bankier). Wall Street 16.10: S&P 500 −1,1%, Nasdaq −2,1% (najgorszy tydzień od czerwca) — tło pierwszej sesji okna.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 16.10.2026 11:04 i 17:18; TradingView get-economic-calendar odczyt 2026-10-17 06:34 UTC"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "9:30 GUS koniunktura konsumencka X (TV 07:30 UTC = bankier); 16:00 wystąpienie prezes EBC Lagarde (TV); po sesji NY wyniki Meta, Tesla, IBM.",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC; bankier.pl 16.10.2026 11:04"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "9:30 GUS sprzedaż detaliczna IX (poprz. 3,8% r/r) i koniunktura w przedsiębiorstwach; 14:00 NBP podaż pieniądza M3 (poprz. 11,3%); 14:30 USA wnioski o zasiłek; 16:00 zaufanie konsumentów strefy euro flash — TV = bankier.",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC; bankier.pl 16.10.2026 11:04"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "Zamknięcie okna W10 (D+5). 9:30 GUS stopa bezrobocia IX (5,8%; TV importance 0 = bankier); 10:00 PMI flash strefy euro (TV: przemysł 52,8, usługi 52,8); 15:45 PMI flash USA (TV: 55,6 / 57,9); 11:00 oczekiwania inflacyjne konsumentów EBC. Nd 25.10 zmiana czasu — od 26.10 dane z USA o godzinę wcześniej czasu warszawskiego.",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC; bankier.pl 16.10.2026 11:04"
+    },
+    {
+      "ticker": "KETY",
+      "data": "2026-10-26",
+      "dn": 6,
+      "opis": "Raport Q3 — potwierdzony kalendarium spółki i kolumną TV earnings_release_next_date; szacunki z 24.09 (zysk netto ~201 mln zł, zgodne z konsensusem) czynią go zdarzeniem „znanym”.",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium bankier.pl; TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "KRUK",
+      "data": "2026-10-27",
+      "dn": 7,
+      "opis": "Raport Q3 — zdarzenie „znane” po ESPI 40/2026 z 16.10 17:06 (szacunek zysku netto Q3 ok. 198 mln zł, 9M ok. 753 mln zł — spadek r/r; EBITDA gotówkowa 9M 2 052 mln zł; spłaty poniżej planu o 8 mln zł).",
+      "wklad_pkt": 0,
+      "zrodlo": "ESPI Kruk 40/2026, 16.10.2026 17:06; kalendarium bankier.pl; TV earnings_release_next_date odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "ALIOR",
+      "data": "2026-10-27",
+      "dn": 7,
+      "opis": "Raport Q3 — kalendarium bankier (W9) i TV earnings_release_next_date zgodne; bez szacunków spółki, kierunek nieznany → wkład 0 (D+6…D+10: działa tylko oczekiwanie).",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium bankier.pl; TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "BUDIMEX",
+      "data": "2026-10-27",
+      "dn": 7,
+      "opis": "Raport Q3 i publikacja nowej strategii — kalendarium bankier (W9) i TV zgodne; kierunek nieudokumentowany → wkład 0. Podpisanie umowy D35 (Czechy) bez daty.",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium bankier.pl; TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "ZABKA",
+      "data": "2026-10-27",
+      "dn": 7,
+      "opis": "Wyniki 9M — przy kursie zamrożonym wezwaniem (32,00 zł) bez wpływu, wkład 0. Zapisy w wezwaniu Couche-Tard przedłużone 16.10 do 2.12 (cena bez zmian; bankier 16.10 19:16) — poprzedni termin 26.10 nieaktualny; Circle K Polska złożył 16.10 wniosek do UOKiK; zgody KE/UOKiK bez daty → KALENDARZ_NIEPOTWIERDZONY.",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl 16.10.2026 11:52 i 19:16; TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "MBANK",
+      "data": "2026-10-28",
+      "dn": 8,
+      "opis": "Raport Q3 — termin zmieniony przez bank raportem bieżącym 51/2026 (14.09) z 29.10 na 28.10 (TV earnings_release_next_date nadal 29.10 — rozbieżność, wygrywa komunikat spółki); koszty CHF Q3 ok. 78 mln zł znane (ESPI 6.10) → wkład 0.",
+      "wklad_pkt": 0,
+      "zrodlo": "mBank raport bieżący 51/2026 z 14.09.2026 (mbank.pl/relacje-inwestorskie); TradingView MCP screener, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-28",
+      "dn": 8,
+      "opis": "FOMC: decyzja 18:00 UTC = 19:00 Warszawy (po zmianie czasu), konferencja 18:30 UTC — zdarzenie po sesji GPW → sesja 29.10 (dn=9). Termin WYŁĄCZNIE z TradingView (importance 1), bez potwierdzenia u organizatora ani w kalendarzu bankier/PAP z bieżącego tygodnia → „TV: data, niepotwierdzona”, KALENDARZ_NIEPOTWIERDZONY; żadna deklaracja się na nim nie opiera.",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-29",
+      "dn": 9,
+      "opis": "EBC: decyzja 13:15 UTC = 14:15 Warszawy, konferencja 13:45 UTC; USA PKB III kw. (adv) i PCE 12:30 UTC. Terminy wyłącznie z TradingView (importance 1) → „TV: data, niepotwierdzona”, KALENDARZ_NIEPOTWIERDZONY.",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC"
+    },
+    {
+      "ticker": "PEKAO",
+      "data": "2026-10-29",
+      "dn": 9,
+      "opis": "Raport Q3 — kalendarium bankier (W9) i TV earnings_release_next_date zgodne; bez szacunków → wkład 0.",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium bankier.pl; TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "data": "2026-10-30",
+      "dn": 10,
+      "opis": "Raport Q3 — kalendarium bankier (W9) i TV zgodne; bez szacunków → wkład 0. Decyzje KNF (bufor O-SII, zgoda >50%) i ogłoszenie wezwania „na początku listopada” bez daty.",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium bankier.pl; TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "LPP",
+      "data": "2026-10-30",
+      "dn": 10,
+      "opis": "Wypłata dywidendy 500 zł/akcję (dzień prawa 9.10) — sama płatność, bez wpływu na kurs; wstępne dane sprzedażowe za Q3 bez daty.",
+      "wklad_pkt": 0,
+      "zrodlo": "kalendarium bankier.pl LPP; strefainwestorow.pl lista dywidend"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-30",
+      "dn": 10,
+      "opis": "GUS szybki szacunek CPI X — TV podaje 08:30 UTC (9:30 CET), GUS publikuje flash zwyczajowo o 10:00 — rozbieżność godziny → „TV: data, niepotwierdzona”, KALENDARZ_NIEPOTWIERDZONY; PKB strefy euro flash 10:00 UTC (TV).",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-17 06:34 UTC"
+    },
+    {
+      "ticker": "KGHM",
+      "data": null,
+      "dn": null,
+      "opis": "Wstępne dane produkcyjno-sprzedażowe za wrzesień — bez daty (sierpień publikowano 22.09, wrzesień 2025 — 22.10.2025 → prawdopodobnie 20–23.10, w oknie); bez punktów → KALENDARZ_NIEPOTWIERDZONY. NWZ 28.10, raport Q3 18.11 poza oknem.",
+      "wklad_pkt": 0,
+      "zrodlo": "kghm.com raporty produkcyjno-sprzedażowe (lipiec 2026 — 24.08; wrzesień 2025 — 22.10.2025); kalendarium bankier.pl"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": null,
+      "dn": null,
+      "opis": "Szacunkowe dane operacyjne za Q3 — bez daty (za Q2 publikowano 21.07; wzorcowo ok. 20.10, w oknie); orzeczenie TK ws. podatku od nadwyżki przychodów bez terminu; projekt CIT 30% (druk 3159) po pierwszym czytaniu 8.10, dalszy harmonogram prac Sejmu bez daty → KALENDARZ_NIEPOTWIERDZONY. Znane przed D0: Czechy — projekt podatku od rafinerii po pierwszym czytaniu (13.10); prokuratura o areszt D. Obajtka (15.10); Litwa sceptyczna wobec podatku od Orlen Lietuva (15.10); dostawy Saudi Aramco wznowione (15.10).",
+      "wklad_pkt": 0,
+      "zrodlo": "bankier.pl wiadomości PKNORLEN 12–16.10.2026; api.sejm.gov.pl posiedzenie 66 (8.10.2026); biznesradar.pl 21.07.2026"
+    },
+    {
+      "ticker": "PGE",
+      "data": null,
+      "dn": null,
+      "opis": "Decyzje ws. Baltica 3 „w połowie października” — bez dnia; raport Q3 24.11 poza oknem → bez punktów (poza konferencją 19.10).",
+      "wklad_pkt": 0,
+      "zrodlo": "parkiet.com 16.09.2026 (K. Rozenfeld); rankings/2026-W9.json"
+    },
+    {
+      "ticker": "TAURONPE",
+      "data": null,
+      "dn": null,
+      "opis": "Ugoda z ArcelorMittal po zawieszeniu arbitrażu 1.10 (598,1 mln zł) — bez daty; raport Q3 18.11, strategia 17.12 (niepotwierdzona) poza oknem; projekt opłat koncesyjnych ME (MAP 7.10 przeciw) bez harmonogramu.",
+      "wklad_pkt": 0,
+      "zrodlo": "biznes.pap.pl / bankier.pl 1–7.10.2026"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-11-12",
+      "dn": 19,
+      "opis": "Raport Q3 12.11 (ESPI 5.02.2026: termin przesunięty z 19.11; TV earnings_release_next_date podaje 18.03.2027 = raport roczny — kolumna nie widzi raportu kwartalnego) — poza oknem; WZ 18.11 (limit ceny skupu 65 zł) poza oknem.",
+      "wklad_pkt": 0,
+      "zrodlo": "ESPI Allegro.eu 5.02.2026 (parkiet.com komunikaty); TradingView MCP screener, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-12-09",
+      "dn": 38,
+      "opis": "Wstępny raport FY26 — poza oknem; skup do 400 mln EUR (29.09) bez harmonogramu transz.",
+      "wklad_pkt": 0,
+      "zrodlo": "TradingView MCP screener earnings_release_next_date, odczyt 2026-10-17 06:35 UTC; stockwatch.pl 29.09.2026"
+    },
+    {
+      "ticker": "DINOPL",
+      "data": "2026-11-05",
+      "dn": 14,
+      "opis": "Raport Q3 — poza oknem (TV = kalendarium bankier). 14.10: kupony z recyklomatów z 5-letnim terminem ważności (operacyjne, bez wpływu).",
+      "wklad_pkt": 0,
+      "zrodlo": "TradingView MCP screener, odczyt 2026-10-17 06:35 UTC; bankier.pl 14.10.2026"
+    },
+    {
+      "ticker": "PKOBP",
+      "data": "2026-11-05",
+      "dn": 14,
+      "opis": "Raport Q3 — poza oknem; znane przed D0: koszty CHF Q3 371 mln zł (13.10), NWZ 14.10 (zmiana statutu), rekomendacja Kepler Cheuvreux „kupuj” 141,03 zł (15.10).",
+      "wklad_pkt": 0,
+      "zrodlo": "TradingView MCP screener, odczyt 2026-10-17 06:35 UTC; PAP Biznes 13–15.10.2026"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-11-27",
+      "dn": 30,
+      "opis": "Raport Q3 — poza oknem; wstępne dane sprzedażowe za Q3 bez daty (za Q2 były 7.08).",
+      "wklad_pkt": 0,
+      "zrodlo": "TradingView MCP screener, odczyt 2026-10-17 06:35 UTC; kalendarium bankier.pl"
+    },
+    {
+      "ticker": "PZU",
+      "data": "2026-11-03",
+      "dn": 12,
+      "opis": "NWZ (obligacje kapitałowe do 3 mld zł, zmiana statutu, roszczenia wobec b. zarządu) i raport Q3 19.11 — poza oknem.",
+      "wklad_pkt": 0,
+      "zrodlo": "ESPI PZU 6.10.2026; TradingView MCP screener, odczyt 2026-10-17 06:35 UTC"
+    }
+  ],
+  "data_quality": [
+    "KURS_ZRODLO_TV",
+    "KURS_ZRODLO_REZERWA",
+    "KNF_SHORT_NIEDOSTEPNY",
+    "DYWIDENDA_KOREKTA_LPP",
+    "KALENDARZ_NIEPOTWIERDZONY"
+  ]
+}
