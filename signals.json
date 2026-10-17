@@ -1,20 +1,20 @@
 {
-  "version": "2026-W9",
-  "generated": "2026-10-10",
+  "version": "2026-W10",
+  "generated": "2026-10-17",
   "status": "AKTUALNA",
   "long": [
-    "PGE",
+    "PEPCO",
     "LPP",
-    "TAURONPE",
-    "CDPROJEKT",
-    "KETY"
+    "ALLEGRO",
+    "DINOPL",
+    "PGE"
   ],
   "short": [
-    "ALIOR",
-    "PKOBP",
-    "MBANK",
-    "PEKAO",
-    "KRUK"
+    "ZABKA",
+    "MODIVO",
+    "PKNORLEN",
+    "KRUK",
+    "KGHM"
   ],
   "epics": {
     "ALIOR": "ALRR",
@@ -39,32 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "PKOBP",
-      "action": "REDUCE",
-      "date": "2026-10-16",
-      "reason": "Swieza rekomendacja liczacego sie DM przeciw tezie SHORT: Kepler Cheuvreux - zalecenie 'kupuj' dla PKO BP, cena docelowa 141,03 zl (+22% wobec kursu 115,20 zl z czwartku; w tym samym raporcie 'kupuj' BNP Paribas BP 199,24 zl i 'trzymaj' Erste Bank Polska 851,60 zl). Depesza PAP Biznes 15.10.2026 16:00 ('Analitycy Kepler Cheuvreux wydali rekomendacje kupuj dla PKO BP...'), bankier.pl 15.10 17:16 (M. Kubicki: rekomendacja wsparla sektor bankowy, WIG-Banki +0,12%). Szczebel miekki (RECOMMENDATION): kurs 15.10 115,84 zl wobec D0 113,94 zl = +1,67% (+1,12 p.p. wobec WIG20 +0,55%) - prog cenowy 4% (118,50 zl) nieprzebity, prog CLOSE (PRICE_8) 123,06 zl. PAP/bankier nie podaja, czy to inicjacja czy podtrzymanie - klasyfikacja nie zmienia szczebla. DM BOS (lista 'lepiej od rynku' 24.09) pozostaje 'sprzed D0, znane rankingowi'. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 16.10 (D+5, ostatnia sesja okna) waga 50% od kursu 115,84 zl. Zrodlo: PAP Biznes 'DZIEN NA GPW' 15.10.2026 16:00 (strefainwestorow.pl); bankier.pl 'Spadki KGHM, Orlenu i CD Projekt, wzrosty Dino, Pepco i bankow. Zmienna sesja na konto bykow' 15.10.2026 17:16; TradingView MCP get-symbol-data-batch odczyt 2026-10-16 06:20 UTC (PKO close 115,84 = bankier); d0.prices w signals.json.",
-      "price_before": 115.84,
-      "move_from_d0_pct": 1.67,
-      "trigger": "RECOMMENDATION"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-10-17",
   "d0": {
-    "date": "2026-10-09",
-    "wig20": 4185.52,
+    "date": "2026-10-16",
+    "wig20": 4247.22,
     "prices": {
-      "PGE": 16.7,
-      "LPP": 25040.0,
-      "TAURONPE": 9.642,
-      "CDPROJEKT": 263.0,
-      "KETY": 1282.0,
-      "ALIOR": 130.15,
-      "PKOBP": 113.94,
-      "MBANK": 1401.5,
-      "PEKAO": 261.1,
-      "KRUK": 347.9
+      "PEPCO": 48.0,
+      "LPP": 26400.0,
+      "ALLEGRO": 55.66,
+      "DINOPL": 37.77,
+      "PGE": 16.495,
+      "ZABKA": 31.7,
+      "MODIVO": 92.9,
+      "PKNORLEN": 154.98,
+      "KRUK": 350.0,
+      "KGHM": 327.75
     }
   },
   "history": [
@@ -233,6 +223,32 @@
         "KALENDARZ_NIEPOTWIERDZONY"
       ],
       "metoda": "v1.1 (momentum mechaniczne)"
+    },
+    {
+      "week": "2026-W9",
+      "long_vs_index_pp": -1.21,
+      "long_abs_pct": 0.27,
+      "spread_pp": -2.01,
+      "rozjazd_pp": -0.8,
+      "hit_top": "1/5",
+      "hit_bottom": "1/5",
+      "tactical_pp": null,
+      "managed_pp": -1.87,
+      "reaction_pp": 0.14,
+      "base_rate": 0.5,
+      "spearman": -0.278,
+      "brier": 0.2634,
+      "data_quality": [
+        "KURS_ZRODLO_TV",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "DYWIDENDA_KOREKTA_PZU",
+        "DYWIDENDA_KOREKTA_LPP",
+        "KALENDARZ_NIEPOTWIERDZONY",
+        "TV_DANE_ROZBIEZNE"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)",
+      "benchmark_momentum_pp": 0.66
     }
   ],
   "tactical": []
