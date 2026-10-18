@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puls WIG20 — 18.10.2026</title>
+<style>
+:root{--bg:#F6F7F4;--navy:#10243E;--g:#0E7C4A;--r:#C4372E;--amb:#B7791F;--ink:#1C2430;--mut:#5B6572;--card:#fff;--line:#E2E5E0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:20px 16px 24px}header h1{margin:0 0 4px;font-size:22px;letter-spacing:.3px}
+header .sub{opacity:.85;font-size:14px}header .wig{margin-top:14px;font-size:30px;font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+header .wig small{font-size:14px;font-weight:400;opacity:.85;font-family:inherit}
+.stamp{display:inline-block;margin:14px 0 0;padding:6px 14px;border:3px solid #3DBE7A;color:#3DBE7A;border-radius:6px;font-weight:800;letter-spacing:2px;text-transform:uppercase;transform:rotate(-2.5deg);background:rgba(255,255,255,.04)}
+main{max-width:860px;margin:0 auto;padding:16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px}
+h2{font-size:17px;margin:0 0 10px;color:var(--navy)}h3{font-size:15px;margin:14px 0 6px;color:var(--navy)}
+.pos{color:var(--g)}.neg{color:var(--r)}.m{font-family:ui-monospace,Menlo,Consolas,monospace;text-align:right;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}
+.wrap{overflow-x:auto}
+.bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}.bar .main{font-size:34px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace}
+.bar .lab{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}.bar .side{font-size:18px;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--mut)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;color:#fff;margin-right:6px;vertical-align:middle}
+.ESPI{background:#2F5D8A}.SHORT{background:#7A3E9D}.REKOM{background:#B7791F}.MAKRO{background:#4C6B2F}.TV{background:#355C7D}.RACH{background:#6B4F2F}
+.red{background:#FFF4E5;border-left:4px solid var(--amb);padding:8px 12px;border-radius:6px}
+ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+.note{font-size:13px;color:var(--mut)}pre{font-size:12px;overflow-x:auto;background:#F2F3EF;padding:8px;border-radius:6px;line-height:1.35}
+footer{text-align:center;font-size:12px;color:var(--mut);padding:18px 16px 30px}
+</style></head><body>
+<header><h1>Puls WIG20</h1><div class="sub">niedziela, 18 października 2026, bieg poranny ok. 8:11–8:40 Warszawy — GPW zamknięta od piątku · tydzień <b>2026-W10</b> · D0 = 16.10.2026 (ostatnia zakończona sesja) · okno 19–23.10. Kursy w tabelach = zamknięcia D0, więc wszystkie zwroty okna wynoszą 0,00%. Jutro (poniedziałek 19.10) pierwsza sesja okna W10 i rotacja koszyka na rachunku (<code>/run</code> 10:01 Warszawy).</div>
+<div class="wig">WIG20 4 247,22 <small>zamknięcie 16.10 (D0) · +0,92% d/d · od D0 0,00% · TradingView MCP (get-symbol-data-batch, odczyt 2026-10-18 06:12 UTC, dane opóźnione) = bankier.pl 16.10 17:15 (tabela indeksów, przez kursy.py)</small></div>
+<div class="stamp">Aktualna</div></header>
+<main>
+
+<section><h2>Pasek wyniku okna W10 (D0 16.10 → ostatnia sesja 16.10, 0 z 5 sesji)</h2>
+<div class="bar"><div><div class="lab">Wynik rachunku = średnia LONG − WIG20</div><div class="main">0,00 p.p.</div>
+<div class="note">Okno jeszcze nie ruszyło: ostatnie zamknięcie to zamknięcie D0, więc średnia LONG 0,00% wobec WIG20 0,00%. Tak gra bot: kupuje koszyk LONG (Pepco, LPP, Allegro, Dino, PGE) i sprzedaje kontrakt FW20.</div></div>
+<div><div class="lab">papierowy — miara selekcji, nie wynik rachunku</div><div class="side">spread LONG−SHORT 0,00 p.p.</div><div class="note">Rozjazd 0,00 p.p. (poniżej progu 0,5 p.p.). Rachunek Capital.com nie shortuje CFD na akcje — koszyk SHORT (Żabka, Modivo, Orlen, Kruk, KGHM) rozliczany wyłącznie na papierze.</div></div></div>
+<p class="note"><b>Co się stanie jutro:</b> bot o 10:01 przestawia koszyk LONG z W9 na W10 — <b>zostają LPP i PGE</b>, wychodzą Tauron, CD Projekt i Kęty, wchodzą Pepco, Allegro i Dino — i utrzymuje krótki kontrakt FW2020Z2026 (auto-roll). Pierwsza realna różnica wobec rozliczenia modelowego pojawi się po sesji 19.10 i będzie zawierała lukę między piątkowym zamknięciem a kursami realizacji w pierwszej godzinie sesji (raport liczy od zamknięcia D0), spread bid/ask przy wyjściu z trzech nóg i wejściu w trzy nowe oraz koszt korekty wielkości hedge'u. Tło pierwszej sesji: Wall Street 16.10 S&amp;P 500 −1,1%, Nasdaq −2,1% (najgorszy tydzień od czerwca) — zdarzenie indeksowe, hedge na FW20 neutralizuje. Uwaga wykonawcza: LPP wchodzi jako 0,1 akcji (ok. 2 632 PLN, wyjątek minimalnej wielkości) — to nadal ok. 2/3 ekspozycji długiej, więc na rachunku tydzień W10 będzie w dużej mierze „tygodniem LPP”; rozliczenie modelowe pozostaje przy równych wagach.</p></section>
+
+<section><h2>Najważniejsze zmiany (weekend 17–18.10)</h2><ul>
+<li><span class="tag ESPI">ESPI</span><b>Spółki koszykowe W10 — żadnego komunikatu w weekend.</b> Zakładki „wiadomości” bankier.pl dziesięciu spółek (odczyt 18.10 ok. 8:25) nie mają pozycji z 17–18.10; ostatnie wpisy to zdarzenia znane rankingowi W10: <b>Kruk</b> 16.10 17:16 (szacunek zysku netto Q3 198 mln zł, 9M 753 mln zł — spadek r/r; EBITDA gotówkowa Q3 651 mln zł; za tezą SHORT, reakcja kursu dopiero 19.10), <b>Żabka</b> 16.10 19:16 (wezwanie Couche-Tard przedłużone do 2.12, cena 32,00 zł bez zmian) i 11:52 (wniosek Circle K Polska do UOKiK), <b>PGE</b> 15.10 13:26 (list intencyjny z NASK ws. centrów danych), <b>Orlen</b> 16.10 08:02 (bp o polskim rynku paliw) i 15.10 (podatek litewski, ropa od Saudi Aramco), <b>Allegro</b> 14.10 (dostawy do Ukrainy), <b>Dino</b> 14.10 (kupony z recyklomatów), <b>LPP</b> 13.10 (automatyzacja centrum w Tczewie), <b>KGHM</b> 9.10 (projekty strategiczne UE), <b>Pepco</b> 29.09 (skup do 400 mln EUR, prognoza FY26), <b>Modivo</b> 2.10 (strata Q2 204 mln zł). Żaden wpis nie jest nowy i żaden nie uruchamia protokołu. Lista „Giełda — wiadomości” bankier.pl z 17–18.10 bez pozycji o spółkach WIG20.</li>
+<li><span class="tag ESPI">ESPI</span><b>Żabka (SHORT): wezwanie przedłużone do 2.12</b> — fakt z piątkowego wieczoru (bankier.pl 16.10 19:16, za Ipopema Securities), już ujęty w rankingu W10 (wpis rejestru ZABKA 27.10 i kod KALENDARZ_NIEPOTWIERDZONY). Konsekwencja dla okna: kurs 31,70 zł zamrożony wezwaniem (dyskonto 0,94% do 32,00 zł) — noga SHORT „pobije” indeks, jeśli WIG20 wzrośnie, i przegra, jeśli spadnie; próg +4% (32,97 zł) leży powyżej ceny wezwania, więc praktycznie nieosiągalny. Weekendowy artykuł bankier.pl 18.10 06:00 („Żabka i Auchan idą tą samą drogą. Sale and leaseback nowym hitem”) to tekst branżowy, nie komunikat spółki.</li>
+<li><span class="tag MAKRO">MAKRO</span><b>PGE (LONG): konferencja z aktualizacją strategii jutro 19.10 o 12:30 — potwierdzona ponownie</b> w kalendarium PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-16” (16.10 07:01, strefainwestorow.pl; wpis rejestru W10 PGE dn=1, wkład +1). To pierwsze zdarzenie spółkowe okna i jedyny katalizator nogi LONG w D+1. Ryzyko „sprzedaj fakty” po +32% od 28.09 i piątkowych −4,43% nazwane w tezie rankingu. Rząd 17.10 (bankier 21:00) zapowiedział zmianę przepisów dla elektrowni jądrowych (bezpieczeństwo) — regulacyjne tło dla PEJ/PGE, bez wpływu cenowego, bez wpisu. Projekt CIT 30% dla energetyki i paliw (UD459) jest w Sejmie od 1.10 — wyszukiwarka 18.10 bez nowego etapu (pierwszego czytania / głosowania); wyzwalacz tezy bez zmian.</li>
+<li><span class="tag REKOM">REKOM.</span><b>Rekomendacje 16–18.10: brak</b> dla spółek koszykowych i całego WIG20 — lista strefainwestorow.pl kończy się na BM Pekao „trzymaj” ZE PAK (15.10); bankier/PAP bez nowych raportów DM w weekend. Ostatnia rekomendacja dla WIG20 to Kepler Cheuvreux „kupuj” PKO BP (15.10) — spółka spoza koszyków W10.</li>
+<li><span class="tag SHORT">SHORT</span><b>Rejestr krótkiej sprzedaży KNF:</b> poza zasięgiem sieci rutyny, TV nie ma rejestru — zmian pozycji krótkich nie weryfikowano (KNF_SHORT_NIEDOSTEPNY, kod już w <code>data_quality</code>).</li>
+<li><span class="tag MAKRO">MAKRO</span><b>Weekend bez danych makro.</b> Kalendarz TV (get-economic-calendar, 18–25.10, 84 zdarzenia PL/US/EU) nie ma pozycji na 17–18.10 poza wystąpieniami. Tydzień 19–23.10: GUS 20.10 9:30 (produkcja przemysłowa IX — TV prognoza 2,6% r/r wobec 4,3%, PPI 4,2%, wynagrodzenia 5,6%, zatrudnienie −0,8%), 21.10 koniunktura konsumencka, 22.10 sprzedaż detaliczna (poprz. 3,8%) i NBP M3 14:00, 23.10 bezrobocie (5,8%) — <b>TV = bankier.pl 16.10 11:04</b> (potwierdzone, bez zmian wobec raportu sobotniego). FOMC 28.10 i EBC 29.10 poza oknem kalendarza TV → KALENDARZ_NIEPOTWIERDZONY utrzymany.</li>
+<li><span class="tag TV">TV</span><b>TradingView MCP, faza 2 — 3 wywołania, bez 429:</b> batch 21/21 (06:12 UTC, close = zamknięcia 16.10, Δ 0,00% wobec bankier dla 21/21), kalendarz makro 18–25.10, kalendarz dywidend (market='poland', 16.09–2.11, 27 wierszy). Daty wyników (<code>earnings_release_next_date</code>) w oknie D+1…D+10 (19–30.10): Kęty 26.10 (D+6), Alior/Budimex/<b>Kruk</b>/<b>Żabka</b> 27.10 (D+7), mBank/Pekao 29.10 (D+9; mBank wg ESPI 51/2026 — 28.10), Erste 30.10 (D+10) — wszystkie już w rejestrze W10, bez dubli; <b>żadna noga koszyka nie raportuje w 2 najbliższych sesjach → bez flagi EVENT</b>. Pozostałe: PKO BP/Orlen/Dino 5.11, KGHM/Tauron 18.11, PZU 19.11, CD Projekt/PGE 24.11, Modivo 27.11, LPP 3.12, Pepco 9.12, Allegro 18.03.2027 (TV; ESPI spółki: 12.11). Dywidendy w WIG20: tylko LPP 500 zł ex 8.10 (w oknie 20 sesji; kod DYWIDENDA_KOREKTA_LPP już w <code>data_quality</code>; kurs D0 26 400 po odcięciu — progi bez wpływu luki); PZU 4,80 zł ex 16.09 wypadło z okna 20 sesji; brak nowych ex-date do 2.11 (Votum 20.10, Ambra 27.10, spółki zagraniczne — poza uniwersum). <code>vol_ratio_10d</code> = null 21/21.</li>
+</ul></section>
+
+<section><h2>Koszyk LONG (5 spółek, kolejność z signals.json)</h2><div class="wrap"><table>
+<tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0 (16.10)</th><th>Kurs ostatni (16.10)</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr>
+<tr><td><b>PEPCO</b></td><td>LONG</td><td class=m>48,00</td><td class=m>48,00</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>LPP</b></td><td>LONG</td><td class=m>26 400</td><td class=m>26 400</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>ALLEGRO</b></td><td>LONG</td><td class=m>55,66</td><td class=m>55,66</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>DINOPL</b></td><td>LONG</td><td class=m>37,77</td><td class=m>37,77</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>PGE</b></td><td>LONG</td><td class=m>16,495</td><td class=m>16,495</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr>
+<tr><td colspan=4><b>Średnia LONG</b></td><td class="m"><b>0,00%</b></td><td class="m"><b>0,00 p.p.</b></td></tr>
+</table></div><p class="note">Źródło kursów: TradingView MCP (get-symbol-data-batch, odczyt 2026-10-18 06:12 UTC, GPW zamknięta — close = zamknięcie 16.10) przy zgodności z <code>kursy.py</code> (Yahoo 429 → rezerwa bankier.pl, zamknięcia 16.10, odczyty 16:59–17:15) — Δ 0,00% dla 21/21; walidacja D0 OK dla 11/11 symboli koszyków i indeksu (<code>d0.prices</code>). Od D0 nie było sesji. Progi protokołu na kursach surowych (REDUCE −4% / CLOSE −8%): PEPCO 46,08 / 44,16, LPP 25 344 / 24 288, ALLEGRO 53,43 / 51,21, DINOPL 36,26 / 34,75, PGE 15,835 / 15,175.</p></section>
+
+<section><h2>Koszyk SHORT (5 spółek, papierowo — nie jest handlowany)</h2><div class="wrap"><table>
+<tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0 (16.10)</th><th>Kurs ostatni (16.10)</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr>
+<tr><td><b>ZABKA</b></td><td>SHORT</td><td class=m>31,70</td><td class=m>31,70</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>MODIVO</b></td><td>SHORT</td><td class=m>92,90</td><td class=m>92,90</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>PKNORLEN</b></td><td>SHORT</td><td class=m>154,98</td><td class=m>154,98</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>KRUK</b></td><td>SHORT</td><td class=m>350,00</td><td class=m>350,00</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr><tr><td><b>KGHM</b></td><td>SHORT</td><td class=m>327,75</td><td class=m>327,75</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td></tr>
+<tr><td colspan=4><b>Średnia SHORT (zwrot kursu)</b></td><td class="m"><b>0,00%</b></td><td class="m"><b>0,00 p.p.</b></td></tr>
+</table></div><p class="note">Zwrot pozycji = zmiana kursu (dla SHORT wzrost kursu działa przeciw tezie). Progi protokołu (REDUCE +4% / CLOSE +8%): ZABKA 32,97 / 34,24, MODIVO 96,62 / 100,33, PKNORLEN 161,18 / 167,38, KRUK 364,00 / 378,00, KGHM 340,86 / 353,97. Żabka: próg +4% powyżej ceny wezwania 32,00 zł. Rachunek Capital.com nie shortuje CFD na akcje — koszyk SHORT jest wyłącznie miarą selekcji.</p></section>
+
+<section><h2>Reakcje protokołu i moduł taktyczny</h2>
+<ul><li><b>exclude: lista PUSTA</b> (wpisy W9 — REDUCE PKOBP z 16.10 — wygasły wraz z zamknięciem tygodnia w sobotę; PKO BP nie jest w koszykach W10). Od D0 nie było sesji, więc żaden próg cenowy (4% / 8%) nie mógł zostać przebity; brak nowych rekomendacji, komunikatów rangi REDUCE/CLOSE i zmian KNF. Limit 2 nowych reakcji dziennie: wykorzystane 0.</li>
+<li><b>tactical: bez zmian (0 otwartych).</b> Skan weekendu spoza koszyków: żadna spółka WIG20 nie opublikowała komunikatu 17–18.10; brak twardego BUY/SELL. Flaga <code>event_blokada_taktycznej</code> bez zastosowania (brak EVENT).</li>
+<li><b>Status prognozy: AKTUALNA</b> — ranking W10 (D0 16.10) obowiązuje od pierwszej sesji 19.10; koszyki i kierunki bez zmian. Rejestr katalizatorów W10 (30 wpisów z soboty) bez nowych zdarzeń z 24 h — nic do dopisania; <code>data_quality</code> bez nowych kodów.</li></ul></section>
+
+<section><h2>Kalendarz</h2>
+<h3>Dziś, niedziela 18.10 — GPW zamknięta</h3><ul><li>Bez danych makro (TV: 18.10 tylko wystąpienia; EBC Sleijpen 19.10 03:20 Warszawy). Wall Street 16.10: S&amp;P 500 −1,1%, Nasdaq −2,1% — tło poniedziałku.</li></ul>
+<h3>Jutro, poniedziałek 19.10 (D+1) — datowane źródła: PAP Biznes 16.10 07:01, bankier.pl 16.10 11:04, TradingView get-economic-calendar (odczyt 2026-10-18 06:12 UTC)</h3><ul>
+<li>4:00 Chiny — PKB III kw. i dane za wrzesień (bankier); <b>10:01 rotacja koszyka na rachunku W9 → W10</b>; 12:00 ZBP konferencja (PAP); <b>12:30 PGE — konferencja prasowa z aktualizacją strategii Grupy</b> (PAP 16.10 07:01 = rejestr W10; organizator); 16:00 USA NAHB (TV importance 0, prognoza 31 = bankier). Wyniki: BHP.</li></ul>
+<h3>Reszta okna 20–23.10 (TV = bankier.pl 16.10 11:04)</h3><ul>
+<li><b>Wt 20.10 (D+2):</b> 9:30 GUS — produkcja przemysłowa IX (TV 2,6% r/r, poprz. 4,3%), PPI (4,2%), wynagrodzenia (5,6%; bankier konsensus 6,1%), zatrudnienie (−0,8%); 11:00 ZEW (24,2); 14:30 USA pozwolenia/rozpoczęte budowy (TV importance 1); Netflix po sesji; NWZ Alior (rejestr); premiera „Cyberpunk: Edgerunners 2” (CD Projekt, spoza koszyków).</li>
+<li><b>Śr 21.10 (D+3):</b> 9:30 GUS koniunktura konsumencka X; 18:00 wystąpienie Lagarde (TV); po sesji NY: Meta, Tesla, IBM.</li>
+<li><b>Czw 22.10 (D+4):</b> 9:30 GUS sprzedaż detaliczna IX (poprz. 3,8%) i koniunktura w przedsiębiorstwach; 14:00 NBP M3 (11,3%); 14:30 USA wnioski (TV 200 tys.); 16:00 zaufanie konsumentów strefy euro flash (TV −16).</li>
+<li><b>Pt 23.10 (D+5, zamknięcie okna):</b> 9:30 GUS bezrobocie IX (5,8%; TV importance 0); 10:00 PMI flash strefy euro (52,8 / 52,8); 15:45 PMI flash USA; 16:00 Michigan finalny (46,3). Nd 25.10 zmiana czasu.</li>
+<li><b>Dalej:</b> Kęty 26.10, Kruk/Alior/Budimex/Żabka 27.10, FOMC 28.10, mBank 28.10, EBC 29.10, Pekao 29.10, Erste 30.10, GUS CPI flash 30.10, RPP 3–4.11 — organizatorzy (Fed, EBC, NBP) poza allowlistą sieci → KALENDARZ_NIEPOTWIERDZONY utrzymany.</li></ul></section>
+
+<section><h2>Kontrola rachunku (/status, odczyt 18.10.2026 ok. 8:12 Warszawy, GPW zamknięta)</h2>
+<ul><li><span class="tag RACH">RACH.</span>Widoczne pozycje = <b>nadal koszyk W9</b> (PGE 19,1 szt., LPP 0,1 szt., Tauron 32 szt., CD Projekt 1,2 szt., Kęty 0,2 szt.) + short FW2020Z2026 0,88 kontr. (auto-roll, wygaśnięcie 18.12, 61 dni). Endpoint porównuje już z <code>sygnaly.long</code> = W10, stąd <code>pokrycie_koszyka</code> 2/5 (wspólne LPP, PGE) i <code>brakujace</code> = PEPCO, ALLEGRO, DINOPL — to stan sprzed rotacji (poniedziałek 10:01), nie brak nogi: <b>bez kodu EKSPOZYCJA_NIEPELNA</b>; <code>wykluczone_przez_puls</code> puste. Jutrzejszy Puls (ok. 8:15) zobaczy jeszcze W9; pokrycie W10 sprawdzi dopiero bieg 20.10.</li>
+<li>Kapitał (equity) 3 141,86 PLN; saldo 3 022,79 PLN → otwarty wynik pozycji <b>+119,07 PLN</b> (bez zmian wobec soboty — rynek zamknięty). UPL: LPP +99,95; PGE +20,82; CD Projekt +17,63; Tauron +6,02; Kęty −0,01; FW20 short −25,34.</li>
+<li>Ekspozycja: długa 3 821,11 PLN, krótka 3 761,56 PLN, <b>netto +59,55 PLN = +1,9% kapitału</b> (|netto| &lt; 10%). <code>ekspozycja_dluga_pct</code> 121,6% kapitału wobec celu 50% — skutek <code>MIN_SIZE_EXCEPTIONS</code> (LPP 0,1 szt. ≈ 2 632 PLN); po rotacji LPP zostaje, więc koncentracja na LPP utrzyma się w W10.</li>
+<li>Diagnostyka instrumentów W10: wszystkie nogi LONG „NIE WEJDZIE TERAZ: rynek CLOSED” (niedziela) — stan rynku, nie awaria; cel per noga 314,19 PLN, tolerancja 502,70 PLN; minimalne wartości pozycji Pepco 4,79, Allegro 5,56, Dino 3,77, PGE 1,64 PLN (wejdą), <b>LPP 2 632 PLN &gt; tolerancja — wchodzi tylko dzięki wyjątkowi minimalnej wielkości</b> (opisane 12.10, nie powtarzamy reakcji). Nogi SHORT nie handlowane (short indeksu). Tryb hedge <code>index</code>, <code>dry_run</code> false.</li></ul></section>
+
+<section><h2>Wolumen vs 10 sesji (TV, kolumna vol_ratio_10d)</h2><p class="note">b.d. — kolumna <code>vol_ratio_10d</code> zwróciła <code>null</code> dla 21/21 symboli (06:12 UTC), jak 13–17.10; bez wpływu na werdykt.</p></section>
+
+<section><h2>PROBLEMY i stan źródeł</h2><ul>
+<li><b>STAN ŹRÓDEŁ:</b> 2026-10-18, puls-wig20, prefiks narzędzi <code>mcp__TradingView__mcp-tv-</code> (= config; pierwsze załadowane narzędzie <code>mcp__TradingView__mcp-tv-get-symbol-data-batch</code>), stan OK, 3 wywołania (batch, kalendarz makro, kalendarz dywidend — wszystkie za pierwszym razem, bez 429; bez get-ohlcv), czas bloku TV ok. 75 s (06:12 UTC, zamknięty przed granicą 08:01 UTC), porównań 21, komplet 21/21, max |Δ| 0,00%, mediana 0,00%, rozjazdy &gt;0,5%: brak, adnotacje &gt;0,1%: brak, missing: brak, backfill: brak (GPW zamknięta od D0 16.10 — cache kompletny 40/40 sesji WIG20 dla 18 tickerów, okno 24.08–16.10; KRUK/PEKAO/PEPCO 39/40 bez 24.08 — serie odrzucone TV_DANE_ROZBIEZNE 13.10, nie ponawiano; batch 06:12 UTC bez 429, bez get-ohlcv); faza 2; werdykt zmieniony: nie.</li>
+<li><b>Bieg niedzielny:</b> od D0 (16.10) nie było sesji — batch TV i bankier (przez <code>kursy.py</code>) dają te same zamknięcia 16.10 = <code>d0.prices</code> (walidacja D0 OK 11/11). Kody KURS_ZRODLO_TV i KURS_ZRODLO_REZERWA dla W10 nadał już raport sobotni; dziś bez nowych kodów.</li>
+<li><b>kursy.py (drugi tor, jeden bieg 8:12 Warszawy):</b> Yahoo bez użytecznej odpowiedzi dla 21/21 (HTTP 429 z IP chmury) → rezerwa bankier.pl 21/21 (zamknięcia 16.10). Cache: żadnej nowej sesji — skrypt zmienił wyłącznie znaczniki <code>aktualizacja</code> (21 wierszy), bez zmiany kursów; zmianę samych znaczników cofnięto, <code>data/kursy-cache.json</code> nie wchodzi do commitu (jak w niedzielę 11.10).</li>
+<li><b>Luki cache:</b> KRUK, PEKAO, PEPCO bez 24.08 (poza oknem rel5/rel20; serie TV odrzucone 13.10 z TV_DANE_ROZBIEZNE, nie ponawiano); <code>get-ohlcv</code> nie wołano.</li>
+<li><b>KNF_SHORT_NIEDOSTEPNY:</b> rejestr krótkiej sprzedaży KNF poza allowlistą sieci; TV nie ma tego rejestru.</li>
+<li><b>Kalendarz:</b> 19–23.10 potwierdzony TV = bankier.pl 16.10 11:04 (GUS 20–23.10, NBP M3 22.10 14:00, NAHB, dane z USA); konferencja PGE 19.10 12:30 potwierdzona kalendarium PAP 16.10 07:01 (strefainwestorow.pl) — datowane źródło z bieżącego tygodnia. FOMC 28.10, EBC 29.10, RPP 3–4.11 — poza oknem TV i poza zasięgiem stron organizatorów → KALENDARZ_NIEPOTWIERDZONY pozostaje. <code>biznes.pap.pl</code> (strona główna i „firmy”) zwrócił pustą treść 18.10 — depesze PAP czytane przez strefainwestorow.pl i bankier.pl.</li>
+<li><b>Dywidendy (TV get-dividends-calendar, 27 wierszy, 16.09–2.11):</b> w WIG20 tylko LPP 500 zł ex 8.10 (kod już w <code>data_quality</code>); PZU ex 16.09 poza oknem 20 sesji; brak nowych ex-date.</li>
+<li><b>Nie wołano:</b> <code>get-ohlcv</code> (brak luk w oknie), <code>get-forecasts</code> (Puls nie punktuje), <code>get-news</code> dla GPW (0 wyników), FMP (FMP_PLAN_BLOKADA — kod już nie dopisywany). <code>rankings/2026-W10.json</code> nietknięty (brak nowych zdarzeń z 24 h, brak nowych kodów). Walidator <code>waliduj_signals.py --rutyna puls</code>: OK (zmienione tylko <code>last_daily</code>).</li></ul>
+<h3>Tabela ZGODNOŚĆ (scripts/tv_porownaj.py, 18.10.2026 06:12 UTC)</h3><pre>ZGODNOŚĆ ŹRÓDEŁ (Δ% = TV / kursy.py − 1; TV = ostatnia zakończona świeca ohlcv, a gdy jej brak — close z batcha)
+TICKER       kursy.py źródło    data                TV    Δ% TV  uwagi
+ ALIOR         134.25 bankier ( 2026-10-16      134.25    +0.00  
+*ALLEGRO        55.66 bankier ( 2026-10-16       55.66    +0.00  
+ BUDIMEX        702.8 bankier ( 2026-10-16       702.8    +0.00  
+ CDPROJEKT      262.4 bankier ( 2026-10-16       262.4    +0.00  
+*DINOPL         37.77 bankier ( 2026-10-16       37.77    +0.00  
+ ERSTEPL        778.0 bankier ( 2026-10-16         778    +0.00  
+ KETY          1292.0 bankier ( 2026-10-16        1292    +0.00  
+*KGHM          327.75 bankier ( 2026-10-16      327.75    +0.00  
+*KRUK           350.0 bankier ( 2026-10-16         350    +0.00  
+*LPP          26400.0 bankier ( 2026-10-16       26400    +0.00  
+ MBANK         1433.5 bankier ( 2026-10-16      1433.5    +0.00  
+*MODIVO          92.9 bankier ( 2026-10-16        92.9    +0.00  
+ PEKAO          267.2 bankier ( 2026-10-16       267.2    +0.00  
+*PEPCO           48.0 bankier ( 2026-10-16          48    +0.00  
+*PGE           16.495 bankier ( 2026-10-16      16.495    +0.00  
+*PKNORLEN      154.98 bankier ( 2026-10-16      154.98    +0.00  
+ PKOBP         117.36 bankier ( 2026-10-16      117.36    +0.00  
+ PZU             74.2 bankier ( 2026-10-16        74.2    +0.00  
+ TAURONPE       9.312 bankier ( 2026-10-16       9.312    +0.00  
+*WIG20        4247.22 bankier ( 2026-10-16     4247.22    +0.00  
+*ZABKA           31.7 bankier ( 2026-10-16        31.7    +0.00  
+
+n = 21; max |Δ| = 0.00%; mediana |Δ| = 0.00%
+|Δ| &gt; 0,1%: brak
+|Δ| &gt; 0,5% (ROZJAZD): brak
+missing / błędy TV: brak
+komplet 21/21 z dwóch źródeł: 21/21
+</pre></section>
+
+</main>
+<footer>Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej. Wygenerowano automatycznie przez AI (rutyna „Puls WIG20”, 18.10.2026) na podstawie: TradingView MCP (dane opóźnione), bankier.pl, PAP Biznes / strefainwestorow.pl, <code>/status</code> bota, signals.json i rankings/2026-W10.json.</footer>
+</body></html>
