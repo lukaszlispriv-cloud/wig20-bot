@@ -1120,6 +1120,14 @@
       "opis": "NWZ (obligacje kapitałowe do 3 mld zł, zmiana statutu, roszczenia wobec b. zarządu) i raport Q3 19.11 — poza oknem.",
       "wklad_pkt": 0,
       "zrodlo": "ESPI PZU 6.10.2026; TradingView MCP screener, odczyt 2026-10-17 06:35 UTC"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-19",
+      "dn": 1,
+      "opis": "Tło pierwszej sesji okna (odczyty poranne): Chiny PKB III kw. +4,5% r/r wobec oczekiwanych 4,4% (II kw. 4,3%), +1,2% k/k; sprzedaż detaliczna IX +1,1% r/r (prognoza +0,5%), produkcja +5,5% (zgodnie); Azja mieszana (Nikkei −0,60%, Shanghai +0,73%, KOSPI +1,44%); Wall Street 16.10: S&P 500 −1,09%, Nasdaq −2,15%. Ropa cofa się z 5-miesięcznych maksimów: Brent 107,88 USD (−1,80%), WTI 99,88 USD (−1,51%) po uchyleniu przez Trumpa części ceł/sankcji wobec importerów rosyjskiej ropy — tło nogi SHORT PKNORLEN (bez wpływu na punkty). Miedź LME 14 436 USD/t (+0,2%) — tło nogi SHORT KGHM.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes (strefainwestorow.pl) „DZIEŃ NA RYNKACH: W Azji na giełdach wahania indeksów” 19.10.2026; „Ceny ropy wycofują się z najwyższych poziomów od 5 miesięcy” 19.10.2026 08:00; „Ceny miedzi w Londynie rosną” 19.10.2026 08:10; bankier.pl 19.10.2026 08:00 (USA łagodzą restrykcje wobec Rosji); Puls WIG20 19.10.2026"
     }
   ],
   "data_quality": [
