@@ -39,8 +39,18 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-10-19",
+  "exclude": [
+    {
+      "ticker": "PGE",
+      "action": "REDUCE",
+      "date": "2026-10-20",
+      "reason": "Twardy prog cenowy szczebla miekkiego (PRICE_4_8): zamkniecie 19.10 15,795 zl wobec D0 16,495 zl = -4,24% przeciw tezie LONG (prog REDUCE 15,835 zl przebity, prog CLOSE 15,175 zl nie). Relatywnie -3,46 p.p. wobec WIG20 (-0,78%). Tlo: 19.10 12:30 PGE przedstawila aktualizacje strategii do 2035 r. (capex ok. 210 mld zl w 2025-2035 wobec 235 mld zl w planie z czerwca 2025, EBITDA ok. 15 mld zl w 2030 i >30 mld zl w 2035, powrot do dywidendy od zysku za 2026 r. przy stopie max 5% i dlugu netto/EBITDA max 2,8x) - rynek sprzedal fakt: drugi dzien realizacji zyskow po +33% od poczatku wrzesnia (16.10 -4,43%, 19.10 -4,24%, WIG-Energia -3,3%), ryzyko nazwane w tezie rankingu W10. Brak ESPI poza strategia, brak rekomendacji, KNF niedostepny. Bot: desired_book() tnie noge PGE do polowy przy najblizszym /run (20.10 10:01); Capital.com nie ma czesciowego zamkniecia - zamkniecie i ponowne otwarcie 50% (dwa spready). Rozliczenie zarzadzane: waga 50% od kursu 15,795 zl od sesji 20.10 (D+2). Zrodla: TradingView MCP get-symbol-data-batch odczyt 2026-10-20 06:15 UTC (PGE close 15,795 = bankier.pl 19.10 17:04 przez kursy.py); bankier.pl 'WIG20 zszedl ze szczytu. Banki i KGHM pociagnely rynek w dol' 19.10.2026 17:15; bankier.pl '210 mld zl na inwestycje i powrot do dywidendy. PGE przedstawila strategie' 19.10.2026 12:15; d0.prices w signals.json.",
+      "price_before": 15.795,
+      "move_from_d0_pct": -4.24,
+      "trigger": "PRICE_4_8"
+    }
+  ],
+  "last_daily": "2026-10-20",
   "d0": {
     "date": "2026-10-16",
     "wig20": 4247.22,

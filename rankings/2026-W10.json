@@ -1128,6 +1128,22 @@
       "opis": "Tło pierwszej sesji okna (odczyty poranne): Chiny PKB III kw. +4,5% r/r wobec oczekiwanych 4,4% (II kw. 4,3%), +1,2% k/k; sprzedaż detaliczna IX +1,1% r/r (prognoza +0,5%), produkcja +5,5% (zgodnie); Azja mieszana (Nikkei −0,60%, Shanghai +0,73%, KOSPI +1,44%); Wall Street 16.10: S&P 500 −1,09%, Nasdaq −2,15%. Ropa cofa się z 5-miesięcznych maksimów: Brent 107,88 USD (−1,80%), WTI 99,88 USD (−1,51%) po uchyleniu przez Trumpa części ceł/sankcji wobec importerów rosyjskiej ropy — tło nogi SHORT PKNORLEN (bez wpływu na punkty). Miedź LME 14 436 USD/t (+0,2%) — tło nogi SHORT KGHM.",
       "wklad_pkt": null,
       "zrodlo": "PAP Biznes (strefainwestorow.pl) „DZIEŃ NA RYNKACH: W Azji na giełdach wahania indeksów” 19.10.2026; „Ceny ropy wycofują się z najwyższych poziomów od 5 miesięcy” 19.10.2026 08:00; „Ceny miedzi w Londynie rosną” 19.10.2026 08:10; bankier.pl 19.10.2026 08:00 (USA łagodzą restrykcje wobec Rosji); Puls WIG20 19.10.2026"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-10-19",
+      "dn": 1,
+      "opis": "WYNIK ZDARZENIA (konferencja 12:30): aktualizacja strategii do 2035 r. — capex ok. 210 mld zł w 2025–2035 (wobec 235 mld zł w planie z czerwca 2025; 70 mld zł dystrybucja i sieci, 80 mld zł OZE i magazyny, 5 mld zł utrzymanie bloków węglowych), EBITDA ok. 15 mld zł w 2030 i >30 mld zł w 2035 (skumulowana ok. 209 mld zł), powrót do dywidendy od zysku za 2026 r. (stopa max 5%, dług netto/EBITDA max 2,8x, rating inwestycyjny); PGE Baltica przenosi siedzibę do Gdańska. Reakcja: −4,24% do 15,795 zł (drugi dzień realizacji zysków po +33% od początku września; WIG-Energia −3,3%) = przebity próg REDUCE −4% od D0 → wpis exclude PGE REDUCE z 20.10 (PRICE_4_8). Scenariusz „sprzedaj fakty” nazwany w tezie W10 zrealizował się.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „210 mld zł na inwestycje i powrót do dywidendy. PGE przedstawiła strategię” 19.10.2026 12:15 i „PGE Baltica przenosi siedzibę z Warszawy do Gdańska” 19.10.2026 14:07; bankier.pl „WIG20 zszedł ze szczytu. Banki i KGHM pociągnęły rynek w dół” 19.10.2026 17:15; TradingView MCP get-symbol-data-batch odczyt 2026-10-20 06:15 UTC; Puls WIG20 20.10.2026"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-20",
+      "dn": 2,
+      "opis": "Tło sesji D+1 (19.10) i poranka D+2: WIG20 −0,78% do 4 213,90 (WIG −0,93%, mWIG40 −1,48%, obroty 2,1 mld zł; górnictwo −3,2%, energetyka −3,3%, chemia −2,6%; KGHM prawie −3%, Kruk −2,14% po szacunku Q3, Allegro +3,47% najwyżej od 5 lat, LPP rekord nominalny 26 640 zł w trakcie sesji, DAX −1,18%); Wall Street 19.10: S&P 500 +0,41% (7 690,73), Nasdaq +1,11% (26 430,89), Dow −0,07% — wzrosty tylko w AI/technologii, reszta rynku w dół przy rosnących rentownościach; ropa 20.10 06:14: 110,62 USD (+0,98%) po atakach Huti na saudyjskie instalacje — tło nogi SHORT PKNORLEN. Dziś 9:30 GUS: produkcja przemysłowa IX (konsensus 3,1% r/r, poprz. 4,3%), PPI (5,8%, poprz. 4,2%), wynagrodzenia (6,1%, poprz. 5,6%), zatrudnienie (−0,8%) — TV = bankier = PAP.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „WIG20 zszedł ze szczytu…” 19.10.2026 17:15 (w tym tabela notowań 20.10 06:14); Yahoo Finance/AP „How major US stock indexes fared Monday 10/19/2026”; TradingView MCP get-economic-calendar odczyt 2026-10-20 06:15 UTC (GUS 07:30 UTC, prognozy 3,1/5,8/6,1/−0,8); PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-20” 20.10.2026 07:01 (strefainwestorow.pl); Puls WIG20 20.10.2026"
     }
   ],
   "data_quality": [
