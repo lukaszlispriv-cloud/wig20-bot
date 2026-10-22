@@ -48,9 +48,27 @@
       "price_before": 15.795,
       "move_from_d0_pct": -4.24,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "MODIVO",
+      "action": "CLOSE",
+      "date": "2026-10-22",
+      "reason": "Twardy prog cenowy (PRICE_8): zamkniecie 21.10 102,75 zl wobec D0 92,90 zl = +10,60% przeciw tezie SHORT (prog CLOSE 100,33 zl przebity; prog REDUCE 96,62 zl byl przebity juz 20.10 zamknieciem 97,88 zl = +5,36%, ale Puls 21.10 nie odbyl sie, wiec reakcja idzie od razu na szczebel CLOSE). Relatywnie +10,14 p.p. wobec WIG20 (+0,47%). Tlo: dwie sesje +5,36% (20.10, lider WIG20) i +4,98% (21.10) bez komunikatu ESPI (ostatni 2.10) i bez rekomendacji - kontynuacja odbicia od dolka 71,64 zl z 13.05 (+34% od maja, +12% w pazdzierniku), kurs wybil opor 100 zl; spolka pozostaje najmocniej shortowana w rejestrze KNF (ok. 4,3% kapitalu wg agregatorow, rejestr KNF niedostepny z chmury) - squeeze pozycji krotkich jako hipoteza, nie fakt. Bot: koszyk SHORT nie jest handlowany (HEDGE_MODE=index) - wpis dotyczy wylacznie wariantu papierowego i zarzadzanego: noga MODIVO zamknieta od sesji 22.10 (D+4) po kursie 102,75 zl. Zrodla: TradingView MCP get-ohlcv/get-symbol-data-batch odczyt 2026-10-22 06:22 UTC (zgodne 21/21 z bankier.pl 21.10 17:04 przez kursy.py); PAP Biznes/strefainwestorow.pl 'DZIEN NA GPW' 21.10.2026 16:48 (Modivo ok. +3% do 100,8 zl, +34% od 13.05); xyz.pl 'Dzien na GPW 20 pazdziernika 2026' (Modivo +5,4%, lider WIG20); bankier.pl wiadomosci MODIVO (ostatni komunikat 2.10.2026); d0.prices w signals.json.",
+      "price_before": 102.75,
+      "move_from_d0_pct": 10.6,
+      "trigger": "PRICE_8"
+    },
+    {
+      "ticker": "KRUK",
+      "action": "REDUCE",
+      "date": "2026-10-22",
+      "reason": "Miekki wyzwalacz RECOMMENDATION: 21.10.2026 Oddo BHF rozpoczal pokrywanie Kruka od zalecenia 'powyzej rynku' (outperform) z cena docelowa 423 zl (ok. +24% wobec kursu ok. 350 zl) - swieza rekomendacja liczacego sie domu maklerskiego przeciw tezie SHORT (precedens: PKOBP REDUCE 16.10 po Kepler Cheuvreux). Kurs 21.10 +2,51% do 350,80 zl = +0,23% od D0 350,00 zl (prog PRICE_4_8 364,00 zl nieprzebity), relatywnie -0,24 p.p. wobec WIG20. Tlo tezy bez zmian: szacunek Q3 z 16.10 (zysk netto ok. 198 mln zl, splaty ponizej planu) - raport Q3 27.10. Bot: koszyk SHORT nie jest handlowany - wpis dla wariantu papierowego/zarzadzanego: waga 50% od kursu 350,80 zl od sesji 22.10 (D+4). Zrodla: PAP Biznes/strefainwestorow.pl 'DZIEN NA GPW: Na gieldzie poprawa nastrojow po dwoch spadkowych sesjach; Pepco rosnie o 5,5 proc.' 21.10.2026 11:03 i 'DZIEN NA GPW: WIG20 i WIG w okolicach maksimow' 21.10.2026 16:48; bankier.pl 'Hype na GPW. 100 procent na jednej sesji przy rekordach glownych indeksow' 21.10.2026 17:30 (M. Kubicki); TradingView MCP get-ohlcv odczyt 2026-10-22 06:22 UTC = bankier.pl 21.10 17:01 przez kursy.py.",
+      "price_before": 350.8,
+      "move_from_d0_pct": 0.23,
+      "trigger": "RECOMMENDATION"
     }
   ],
-  "last_daily": "2026-10-20",
+  "last_daily": "2026-10-22",
   "d0": {
     "date": "2026-10-16",
     "wig20": 4247.22,
