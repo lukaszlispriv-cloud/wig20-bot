@@ -1144,6 +1144,78 @@
       "opis": "Tło sesji D+1 (19.10) i poranka D+2: WIG20 −0,78% do 4 213,90 (WIG −0,93%, mWIG40 −1,48%, obroty 2,1 mld zł; górnictwo −3,2%, energetyka −3,3%, chemia −2,6%; KGHM prawie −3%, Kruk −2,14% po szacunku Q3, Allegro +3,47% najwyżej od 5 lat, LPP rekord nominalny 26 640 zł w trakcie sesji, DAX −1,18%); Wall Street 19.10: S&P 500 +0,41% (7 690,73), Nasdaq +1,11% (26 430,89), Dow −0,07% — wzrosty tylko w AI/technologii, reszta rynku w dół przy rosnących rentownościach; ropa 20.10 06:14: 110,62 USD (+0,98%) po atakach Huti na saudyjskie instalacje — tło nogi SHORT PKNORLEN. Dziś 9:30 GUS: produkcja przemysłowa IX (konsensus 3,1% r/r, poprz. 4,3%), PPI (5,8%, poprz. 4,2%), wynagrodzenia (6,1%, poprz. 5,6%), zatrudnienie (−0,8%) — TV = bankier = PAP.",
       "wklad_pkt": null,
       "zrodlo": "bankier.pl „WIG20 zszedł ze szczytu…” 19.10.2026 17:15 (w tym tabela notowań 20.10 06:14); Yahoo Finance/AP „How major US stock indexes fared Monday 10/19/2026”; TradingView MCP get-economic-calendar odczyt 2026-10-20 06:15 UTC (GUS 07:30 UTC, prognozy 3,1/5,8/6,1/−0,8); PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-20” 20.10.2026 07:01 (strefainwestorow.pl); Puls WIG20 20.10.2026"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-20",
+      "dn": 2,
+      "opis": "WYNIK ZDARZENIA 9:30 GUS: produkcja przemysłowa IX +4,6% r/r (konsensus 3,1%, poprz. 4,3%; +17% m/m; odsezonowana +3,3%), PPI +6,1% r/r (konsensus 5,8%, poprz. 4,8% po rewizji; +0,7% m/m), wynagrodzenia +5,9% r/r do 9 266,48 zł (konsensus 6,1%; realnie +1,6%), zatrudnienie −0,8% r/r, produkcja budowlano-montażowa −9% r/r. Sesja D+2: WIG20 −0,33% do 4 199,79 (trzecia spadkowa z rzędu, poniżej 4 200), banki i KGHM ciążyły (WIG-Banki −0,7%), Orlen −2,5% najsłabszy w WIG20, Modivo +5,4% lider.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Produkcja przemysłowa we wrześniu 2026. Polski przemysł przebił oczekiwania, ale boomu wciąż nie ma” 20.10.2026; wnp.pl / finwire.pl / ceo.com.pl dane GUS 20.10.2026; PAP Biznes „WIG20 na zamknięciu wyniósł 4199,79 pkt (−0,33%)” 20.10.2026; xyz.pl „Banki odciągają giełdę od szczytów. Dzień na GPW 20 października 2026 r.”; parkiet.com 20.10.2026; Puls WIG20 22.10.2026"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-20",
+      "dn": 2,
+      "opis": "+5,36% do 97,88 zł (lider WIG20 w dniu) bez komunikatu spółki — kontynuacja październikowego odbicia (+12% od 1.10, +30% od maja); zamknięcie przebiło próg REDUCE +4% od D0 (96,62 zł) przeciw tezie SHORT — reakcja niezapisana 21.10, bo bieg Pulsu 21.10 nie odbył się (patrz wpis 21.10).",
+      "wklad_pkt": null,
+      "zrodlo": "xyz.pl „Dzień na GPW 20 października 2026 r.” (Modivo +5,4%); comparic.pl „Modivo już ponad +12% w październiku…”; TradingView MCP get-ohlcv / get-symbol-data-batch, odczyt 2026-10-22 06:22 UTC (dane opóźnione; zgodne 21/21 z bankier.pl przez kursy.py)"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "+4,98% do 102,75 zł = +10,60% od D0 (92,90 zł) — przebity próg CLOSE +8% przeciw tezie SHORT (100,33 zł); kurs wybił opór 100 zł, +34% od dołka 71,64 zł z 13.05; brak ESPI (ostatni 2.10) i rekomendacji; spółka najmocniej shortowana w rejestrze KNF (ok. 4,3% wg agregatorów; rejestr niedostępny z chmury) — squeeze jako hipoteza. REAKCJA PROTOKOŁU 22.10: CLOSE (PRICE_8, price_before 102,75) — wariant papierowy/zarządzany; rachunek bez skutku (koszyk SHORT nie jest handlowany).",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW: WIG20 i WIG w okolicach maksimów; motorem wzrostów m. in. banki i energetyka” 21.10.2026 16:48; bankier.pl „Hype na GPW…” 21.10.2026 17:30; TradingView MCP get-ohlcv / get-symbol-data-batch, odczyt 2026-10-22 06:22 UTC (dane opóźnione; zgodne 21/21 z bankier.pl przez kursy.py)"
+    },
+    {
+      "ticker": "KRUK",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "Oddo BHF rozpoczął pokrywanie spółki od zalecenia „powyżej rynku” z ceną docelową 423 zł (ok. +24%); kurs +2,51% do 350,80 zł (+0,23% od D0). REAKCJA PROTOKOŁU 22.10: REDUCE (RECOMMENDATION, price_before 350,80) — świeża rekomendacja liczącego się DM przeciw tezie SHORT (precedens PKOBP/Kepler 16.10); wariant papierowy/zarządzany, rachunek bez skutku.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW: Na giełdzie poprawa nastrojów po dwóch spadkowych sesjach; Pepco rośnie o 5,5 proc.” 21.10.2026 11:03 i 16:48; bankier.pl „Hype na GPW…” 21.10.2026 17:30; TradingView MCP get-ohlcv / get-symbol-data-batch, odczyt 2026-10-22 06:22 UTC (dane opóźnione; zgodne 21/21 z bankier.pl przez kursy.py)"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "ABB: Ibex Retail Investments Europe (główny akcjonariusz) sprzedał ok. 32,3 mln akcji po 44 zł (ponad 1,42 mld zł; księga: Goldman Sachs, JPMorgan, UniCredit, Kepler Cheuvreux, PKO BP) — ogłoszenie 20.10 po sesji, wycena 21.10 rano (ESPI 38/2026 „Update on IBEX shareholding” 21.10). Kurs mimo dyskonta ok. 7% zamknął +2,55% do 47,48 zł przy rekordowych obrotach 262 mln zł (ok. 13% obrotów WIG20); od D0 −1,08% (20.10 zamknięcie 46,30 zł = −3,54%, próg REDUCE 46,08 zł nieprzebity).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl/PAP „Kurs Pepco rośnie o 2,6 proc. do 47,5 zł; WIG20 lekko spada” 21.10.2026 09:18; bankier.pl „Hype na GPW…” 21.10.2026 17:30; ESPI Pepco Group 38/2026 21.10.2026 (bankier.pl/parkiet.com); TradingView MCP get-ohlcv / get-symbol-data-batch, odczyt 2026-10-22 06:22 UTC (dane opóźnione; zgodne 21/21 z bankier.pl przez kursy.py)"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "Konsorcjum Atlas (Orlen z Aker BP i Höegh Evi) otrzyma 223 mln euro z unijnego Funduszu Innowacyjnego na transport i magazynowanie CO₂ na Norweskim Szelfie Kontynentalnym; kurs +3,00% do 154,94 zł po −2,48% dzień wcześniej — od D0 −0,03% (neutralnie dla tezy SHORT). Raport Q3 przesunięty na 5.11 (ESPI 21.09), szacunkowe dane operacyjne Q3 nadal bez daty.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW…” 21.10.2026 16:48; bankier.pl „Hype na GPW…” 21.10.2026 17:30; bankier.pl ESPI „Zmiana terminu publikacji raportu okresowego za 3 kwartał 2026” 21.09.2026; TradingView MCP get-ohlcv / get-symbol-data-batch, odczyt 2026-10-22 06:22 UTC (dane opóźnione; zgodne 21/21 z bankier.pl przez kursy.py)"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "Odbicie po realizacji zysków: 20.10 +3,77% do 16,39 zł i 21.10 +4,33% do 17,10 zł (WIG-Energia +3,54%, Tauron +4,1%) — kurs wrócił ponad D0 (+3,67%), bez nowych faktów poza ESPI 66/2026 (transakcje MAR podmiotu blisko związanego — PKO BP, 21.10). Wpis exclude REDUCE z 20.10 pozostaje do soboty (raz zredukowana zostaje; rozliczenie zarządzane: waga 50% od 15,795 zł od sesji 20.10).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Hype na GPW…” 21.10.2026 17:30; PAP Biznes/strefainwestorow.pl 21.10.2026 16:48; ESPI PGE 66/2026 21.10.2026 (bankier.pl/parkiet.com); TradingView MCP get-ohlcv / get-symbol-data-batch, odczyt 2026-10-22 06:22 UTC (dane opóźnione; zgodne 21/21 z bankier.pl przez kursy.py)"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-21",
+      "dn": 3,
+      "opis": "Sesja D+3: WIG20 +1,60% do 4 267,00 (nowy rekord na zamknięciu i intraday), WIG +1,35% do 160 445,78 (rekord, ponad 160 tys.), mWIG40 +0,93%, obroty 2,49 mld zł (WIG20 2,05 mld zł); WIG-Banki +2,0% (PKO +2,09%, Pekao +1,99%, mBank +1,91%), WIG-Energia +3,54%, KGHM −2,72% najsłabszy (−8,5% w 6 sesji). 9:30 GUS koniunktura konsumencka X: silny spadek bieżącego wskaźnika ufności (najmocniej ocena sytuacji gospodarczej kraju). Europa: DAX +1,3%, CAC +1,0%; Wall Street 21.10: S&P 500 +0,58% (7 757,17), Nasdaq +1,05% (26 702,86), Dow +0,69% (52 856,09) — technologia/AI (SpaceX, Tesla), po sesji wyniki Meta i Tesli; ropa 20.10: Brent 108,79 USD (−0,7%), 21.10 rano ok. 108,9 USD (ataki na żeglugę w Zatoce Perskiej).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „Hype na GPW. 100 procent na jednej sesji przy rekordach głównych indeksów” 21.10.2026 17:30 (M. Kubicki); PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW…” 21.10.2026 11:03 i 16:48; AP/CNBC „How major US stock indexes fared Wednesday 10/21/2026”; Yahoo Finance „Stock Market News for Oct 21, 2026”; Investrade „Morning Preview: October 21, 2026”; Puls WIG20 22.10.2026"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "Kalendarz dnia potwierdzony: 9:30 GUS sprzedaż detaliczna IX (TV prognoza 3,7% r/r, poprz. 3,8%) i koniunktura w przedsiębiorstwach X (poprz. −5,8); 14:00 NBP podaż pieniądza M3 (TV 11,4%, poprz. 11,3%); 14:15 wystąpienie Panetty (EBC); 14:30 USA wnioski o zasiłek (TV 200 tys.); 17:00 Kansas Fed. PAP zapowiedzi 22.10 07:01: tylko 10:00 V Kongres FPP „Dialog o gospodarce 2026”. TradingView get-economic-calendar odczyt 2026-10-22 06:25 UTC (data i godzina) = wpis z 17.10 (bankier 16.10) — data potwierdzona. Puls 21.10 nie odbył się (luka jednej sesji w cache uzupełniona świecami TV).",
+      "wklad_pkt": null,
+      "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-22 06:25 UTC; PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-22” 22.10.2026 07:01 (strefainwestorow.pl); rankings/2026-W10.json wpis MAKRO 22.10"
     }
   ],
   "data_quality": [
