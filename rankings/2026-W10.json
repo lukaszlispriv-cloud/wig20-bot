@@ -1216,6 +1216,54 @@
       "opis": "Kalendarz dnia potwierdzony: 9:30 GUS sprzedaż detaliczna IX (TV prognoza 3,7% r/r, poprz. 3,8%) i koniunktura w przedsiębiorstwach X (poprz. −5,8); 14:00 NBP podaż pieniądza M3 (TV 11,4%, poprz. 11,3%); 14:15 wystąpienie Panetty (EBC); 14:30 USA wnioski o zasiłek (TV 200 tys.); 17:00 Kansas Fed. PAP zapowiedzi 22.10 07:01: tylko 10:00 V Kongres FPP „Dialog o gospodarce 2026”. TradingView get-economic-calendar odczyt 2026-10-22 06:25 UTC (data i godzina) = wpis z 17.10 (bankier 16.10) — data potwierdzona. Puls 21.10 nie odbył się (luka jednej sesji w cache uzupełniona świecami TV).",
       "wklad_pkt": null,
       "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-22 06:25 UTC; PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-22” 22.10.2026 07:01 (strefainwestorow.pl); rankings/2026-W10.json wpis MAKRO 22.10"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "WYNIK ZDARZENIA (zdarzenie „bez daty” w rejestrze): ESPI 37/2026 — wstępne wyniki produkcyjno-sprzedażowe za wrzesień: sprzedaż miedzi 57,9 tys. t (−4% r/r; spadek w Sierra Gorda i KGHM International, wzrost w KGHM Polska Miedź), produkcja miedzi płatnej 60,4 tys. t (60,1 rok wcześniej), srebro: produkcja 108,9 t (+28%), sprzedaż 103,2 t (−2%); po 9M produkcja miedzi 2% poniżej budżetu Grupy (gorsza ruda w KGHM International), srebro i złoto ponad plan. Kurs −4,69% do 296,70 zł (najniżej od końca lipca; −9,47% od D0, −13% od 13.10) przy miedzi LME −1,8% do 14 089 USD/t (najniżej od 15.09, zapasy LME 272,95 tys. t) — za tezą SHORT; próg 4%/8% dotyczy ruchu PRZECIW tezie, bez reakcji.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes/bankier.pl „KGHM sprzedał mniej miedzi. We wrześniu spadek o 4 proc.” 22.10.2026 15:40; ESPI KGHM 37/2026 (biznes.pap.pl); PAP „DZIEŃ NA GPW: WIG20 i WIG spadają z rekordowych poziomów…” 22.10 16:41; Reuters/Kitco „Copper price falls to five-week low as LME inventory build continues” 22.10; TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "Start wieloletniego programu skupu akcji własnych do 400 mln EUR (zatwierdzony 29.09): I etap do 50 mln EUR od 22.10 do najpóźniej 31.12.2026, maks. 4,6 mln akcji, cena ≤110% bieżącej rynkowej; równolegle procedura umorzenia 51 153 590 akcji własnych; zarząd: kurs poniżej wartości wewnętrznej. Kurs +1,28% do 48,09 zł (+0,19% od D0 — wrócił ponad D0 po ABB Ibex z 21.10) — za tezą LONG.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes „DZIEŃ NA GPW…” 22.10.2026 11:13 i 16:41; wiadomoscihandlowe.pl „Pepco rozpoczyna skup akcji własnych za 400 mln euro” 22.10; Investing.com „Pepco Group uruchamia pierwszy etap skupu akcji za 400 mln €” 22.10; TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
+    },
+    {
+      "ticker": "KRUK",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "Aneks do umowy konsorcjalnego kredytu rewolwingowego: limit zwiększony o 265 mln EUR do 1 020 mln EUR (poprzednio 755 mln EUR po aneksie z 30.10.2025) — większa zdolność zakupu portfeli, neutralnie-pozytywne dla spółki, przeciw tezie SHORT, ale poniżej rangi wyzwalacza NEWS. Kurs +0,97% do 354,20 zł (+1,20% od D0; próg REDUCE 364,00 zł nieprzebity). Noga od 22.10 z wagą 50% (REDUCE RECOMMENDATION, Oddo BHF).",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes „DZIEŃ NA GPW: WIG20 i WIG spadają z rekordowych poziomów; zyskują spółki konsumenckie” 22.10.2026 16:41; parkiet.com ESPI Kruk „Zawarcie aneksu do umowy konsorcjalnego kredytu rewolwingowego” (poprzedni aneks 30.10.2025: 755 mln EUR); TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
+    },
+    {
+      "ticker": "MODIVO",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "−6,96% do 95,60 zł (najsłabsza spółka WIG20 w dniu) bez komunikatu — realizacja zysków przy oporze 99–100 zł po dwóch sesjach +10,6%; od D0 +2,91%. Noga SHORT została zamknięta protokołem 22.10 po 102,75 zł (CLOSE PRICE_8 z zamknięcia 21.10), więc ten spadek nie wchodzi do wariantu zarządzanego — wchodzi do wariantu papierowego (pełny koszyk). Odnotować w rozliczeniu sobotnim jako koszt sztywnego progu.",
+      "wklad_pkt": null,
+      "zrodlo": "xyz.pl „Spadki na GPW, w dół poszedł kurs Modivo i KGHM. Notowania 22 października 2026 r.” 22.10 18:10; comparic.pl „KGHM poniżej 300 zł, w dół PKO BP i Pekao… Co dalej z Modivo? — analiza na koniec sesji” 22.10; PAP „DZIEŃ NA GPW…” 22.10 11:13 i 16:41; TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "−2,37% do 16,695 zł z sektorem (WIG-Energia ok. −2% w dniu po +14,5% w miesiąc; Tauron −0,86%, Enea −2,5% w trakcie sesji); +1,21% od D0 — nad D0, próg REDUCE 15,835 zł nieprzebity (noga i tak z wagą 50% od 20.10). Jedyny komunikat: ESPI 67/2026 (transakcje MAR podmiotu blisko związanego) — bez wpływu. Baltica 3: nadal bez datowanej decyzji.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes „DZIEŃ NA GPW: Na giełdzie korekcyjna sesja; przecenione są m.in. banki i energetyka” 22.10.2026 11:13 i 16:41; parkiet.com ESPI PGE 67/2026 22.10; TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-22",
+      "dn": 4,
+      "opis": "WYNIK ZDARZENIA 9:30 GUS: sprzedaż detaliczna IX +3,3% r/r w cenach stałych (konsensus 3,7%, PAP 4,1%; trzeci miesiąc z rzędu poniżej oczekiwań; nominalnie +6,7%, m/m −3,8%, odsezonowana +2,9% r/r; paliwa −9,8% r/r wolumenowo po zakupach na zapas przed końcem obniżki VAT; auta +13,1%, RTV/AGD +10,7%, żywność +1,4%); 14:00 NBP: M3 2 973,1 mld zł (+49,4 mld m/m). Sesja D+4: WIG20 −1,73% do 4 193,28 (z rekordu 4 267,00; −1,27% od D0), WIG −0,8%, mWIG40 −0,2%, sWIG80 −0,4%; WIG-Banki ok. −2% (Pekao −3,86%, PKO BP −3,19% do 112,40 — −10,5% od rekordu 125,58 z 30.09, Erste −3,19%, mBank −2,46%, Alior −1,88%), WIG-Energia ok. −2%, KGHM −4,69%, Modivo −6,96%; w górę konsumenckie: Dino +1,28% do 39,56, Pepco +1,28%, Allegro +0,24% do 59,00, LPP +0,15%, Kruk +0,97%. Europa: DAX −0,4%, CAC −1,0%; Wall Street 22.10: S&P 500 −1,21% (7 663,43), Nasdaq −2,6% (26 008,86; najgorsza sesja od czerwca — Tesla −3% po wynikach, Meta w dół, chipy ok. −7%), Dow +0,02%; ropa na 5-miesięcznym maksimum. Koszyk LONG (konsumpcja) odporny na korektę banków/energetyki — wynik rachunku po D+4 +4,33 p.p.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl (K. Kolany) „Sprzedaż detaliczna we wrześniu 2026 ponownie rozczarowała ekonomistów” 22.10.2026 09:30; ISBnews/Investing.com „GUS: Sprzedaż detaliczna… +3,3% r/r; konsensus +3,7%” 22.10; PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW…” 22.10 11:13 i 16:41; xyz.pl 22.10 18:10; CNBC „Stock market news for Oct. 22, 2026”; Yahoo Finance „Stock market today: S&P 500, Nasdaq tanks…” 22.10; TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
     }
   ],
   "data_quality": [
