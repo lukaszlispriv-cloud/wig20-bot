@@ -1264,6 +1264,70 @@
       "opis": "WYNIK ZDARZENIA 9:30 GUS: sprzedaż detaliczna IX +3,3% r/r w cenach stałych (konsensus 3,7%, PAP 4,1%; trzeci miesiąc z rzędu poniżej oczekiwań; nominalnie +6,7%, m/m −3,8%, odsezonowana +2,9% r/r; paliwa −9,8% r/r wolumenowo po zakupach na zapas przed końcem obniżki VAT; auta +13,1%, RTV/AGD +10,7%, żywność +1,4%); 14:00 NBP: M3 2 973,1 mld zł (+49,4 mld m/m). Sesja D+4: WIG20 −1,73% do 4 193,28 (z rekordu 4 267,00; −1,27% od D0), WIG −0,8%, mWIG40 −0,2%, sWIG80 −0,4%; WIG-Banki ok. −2% (Pekao −3,86%, PKO BP −3,19% do 112,40 — −10,5% od rekordu 125,58 z 30.09, Erste −3,19%, mBank −2,46%, Alior −1,88%), WIG-Energia ok. −2%, KGHM −4,69%, Modivo −6,96%; w górę konsumenckie: Dino +1,28% do 39,56, Pepco +1,28%, Allegro +0,24% do 59,00, LPP +0,15%, Kruk +0,97%. Europa: DAX −0,4%, CAC −1,0%; Wall Street 22.10: S&P 500 −1,21% (7 663,43), Nasdaq −2,6% (26 008,86; najgorsza sesja od czerwca — Tesla −3% po wynikach, Meta w dół, chipy ok. −7%), Dow +0,02%; ropa na 5-miesięcznym maksimum. Koszyk LONG (konsumpcja) odporny na korektę banków/energetyki — wynik rachunku po D+4 +4,33 p.p.",
       "wklad_pkt": null,
       "zrodlo": "bankier.pl (K. Kolany) „Sprzedaż detaliczna we wrześniu 2026 ponownie rozczarowała ekonomistów” 22.10.2026 09:30; ISBnews/Investing.com „GUS: Sprzedaż detaliczna… +3,3% r/r; konsensus +3,7%” 22.10; PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW…” 22.10 11:13 i 16:41; xyz.pl 22.10 18:10; CNBC „Stock market news for Oct. 22, 2026”; Yahoo Finance „Stock market today: S&P 500, Nasdaq tanks…” 22.10; TradingView MCP get-symbol-data-batch, odczyt 2026-10-23 06:13 UTC (dane opóźnione) = bankier.pl 22.10 16:59–17:15 przez kursy.py"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "Zamknięcie okna W10 (D+5) — sesja 23.10: WIG20 −0,62% do 4 167,13 pkt (od D0 −1,89%), WIG −0,50% do 157 362,56, mWIG40 −0,05% (10 674,10), sWIG80 −0,38%; WIG-Banki −1,9% (tydzień −5%, miesiąc ponad −8,8%) — PKO BP −2,54%, Erste −2,27%, Pekao −1,76%, mBank −1,14%, Alior −1,23%; Tauron −2,48%; w górę Orlen +2,53%, Budimex +1,05%. Obroty 2,5 mld zł (WIG20 2,08 mld). W całym tygodniu tylko jedna sesja wzrostowa (21.10, rekord 4 267,00). Tło: Brent >116 USD (+2,5%) po eskalacji na Bliskim Wschodzie, rentowności UST >5%, PMI flash w Europie i USA słabsze od konsensusu, złoto −3% poniżej 4 000 USD, USD/PLN +0,6%; DAX −1,1%, CAC 40 −0,7%. Wall Street 23.10: S&P 500 −0,52% (7 623,68), Nasdaq −0,21% (25 955,34), Dow −1,23% (52 215,16); tydzień S&P −0,5%, Nasdaq −0,7%. Zdarzenie indeksowe — hedge FW20 neutralizuje.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl (M. Kubicki) „Tylko jedna sesja na zielono, ale jaka! Piątek niestety taki, jak większość tygodnia” 23.10.2026 17:13; PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW: Główne indeksy kontynuują zniżki; przecenione są banki, ale lekko rośnie Orlen” 23.10.2026 11:24; AP „How major US stock indexes fared Friday 10/23/2026”; Reuters 23.10; TradingView MCP get-symbol-data-batch odczyt 2026-10-24 06:15 UTC = bankier.pl 16:59–17:04 (kursy.py)"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "WYNIK ZDARZENIA 9:30 GUS: stopa bezrobocia rejestrowanego IX 5,8% (= konsensus/TV 5,8%, = VIII; rok wcześniej 5,6%); bezrobotni 907,0 tys. (909,5 tys. w VIII), nowo zarejestrowani 108,9 tys. wobec 87,6 tys. — sygnał ostrzegawczy z rynku pracy. 10:00 PMI flash strefy euro X: composite 51,9 (IX 53,1; minimum 4 mies.), usługi 51,7 (kons. 52,5), przemysł 52,4 (kons. 52,7; minimum 3 mies.), rosnąca presja kosztów energii podsyca spekulacje o podwyżce EBC 29.10. USA PMI flash (15:45): wg macronext przemysł 56,0 (kons. 55,5), usługi 57,9 (kons. 58,0) — wartości niepotwierdzone w komunikacie S&P Global (b.d. do potwierdzenia). Bez wpływu na progi protokołu.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP/portalsamorzadowy.pl „Stopa bezrobocia we wrześniu wyniosła 5,8 proc. – GUS” 23.10.2026; rp.pl „Stopa bezrobocia bez zmian, ale nowych bezrobotnych przybywa” 23.10.2026; finwire.pl; bankier.pl „Słabszy początek kwartału w strefie euro. Francja wraca do spadków, presja cenowa rośnie” 23.10.2026; investinglive.com (PMI flash strefy euro); macronext.pl kalendarium (USA, niepotwierdzone); TradingView MCP get-economic-calendar odczyt 2026-10-23 06:20 UTC (termin)"
+    },
+    {
+      "ticker": "PKNORLEN",
+      "data": "2026-10-22",
+      "dn": 5,
+      "opis": "WYNIK ZDARZENIA (zdarzenie „bez daty” z rejestru W10 dostało datę): ESPI 38/2026 z 22.10 19:53 (po sesji → sesja 23.10) — szacunkowe dane operacyjne i zdarzenia jednorazowe za III kw.: odpisy aktualizujące netto 1,6 mld zł (Downstream 1,6 mld zł — głównie projekt Nowa Chemia, Energy 0,8 mld zł, odwrócenie odpisów Upstream & Supply 0,8 mld zł), niegotówkowe; przerób ropy 10,083 mln t (−1% r/r, +10% k/k), wykorzystanie mocy 94% (0 p.p. r/r), produkcja gazu 21,6 TWh (−7% r/r), energii elektrycznej 4,0 TWh (+9%), ciepła 12,8 PJ (−5%); raport za III kw. 5.11. Kurs 23.10 +2,53% do 156,34 zł (+0,88% od D0 — przeciw tezie SHORT, daleko od progu REDUCE 161,18 zł): rynek zignorował odpis, wsparcie od ropy (Brent >116 USD) i doniesień „Rzeczpospolitej” (23.10), że Saudi Aramco rozważa sprzedaż aktywów w Polsce — 30% Rafinerii Gdańskiej (Orlen ma prawo pierwokupu / wskazania inwestora) albo Aramco Fuels Poland; JPMorgan przygotował krótką listę trzech zainteresowanych; Aramco bez komentarza. Bez reakcji protokołu (ruch <4%, komunikat poniżej rangi szoku, odpis działa ZA tezą).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl ESPI „ORLEN S.A.: Szacunkowe wybrane dane operacyjne i zdarzenia jednorazowe wpływające istotnie na wyniki Grupy ORLEN za III kwartał 2026 roku” 22.10.2026 19:53 (raport bieżący 38/2026); bankier.pl „Saudi Aramco może sprzedać biznes w Polsce. W grze miliardy złotych” 23.10.2026; energia.rp.pl 23.10.2026; bankier.pl 23.10 17:13 (kurs); TradingView MCP batch odczyt 2026-10-24 06:15 UTC"
+    },
+    {
+      "ticker": "PGE",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "PGE Energia Odnawialna wybrała Elektrotim na wykonawcę czterech magazynów energii przy farmach wiatrowych (Lotnisko 180 MWh, Pelplin 96 MWh, Wojciechowo 56 MWh, Ścieki 40 MWh — łącznie 372 MWh) za ok. 331,7 mln zł netto (dostawy 254,4 mln zł + montaż 77,2 mln zł; ok. 408 mln zł brutto), uruchomienie I kw. 2028; przetargi w trybie PZP, umowy potwierdzą osobne raporty. Element strategii 2035 (18 GWh magazynów). Kurs +0,18% do 16,725 zł (+1,39% od D0; noga po REDUCE z 20.10 — waga 50%) przy WIG-Energia w dół (Tauron −2,48%). Bez wpływu na szczebel reakcji.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl „PGE wyda 331 mln zł na magazyny energii. Wybrano wykonawcę” 23.10.2026; wnp.pl „Magazyny energii dla PGE. Oferty Elektrotimu warte niemal 408 mln zł” 23.10.2026; energetyka24.com 23.10.2026; bankier.pl 23.10 17:13 (kurs)"
+    },
+    {
+      "ticker": "ALLEGRO",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "−0,95% do 58,44 zł — koniec serii dziesięciu wzrostowych sesji (łącznie +17%, maksima 5-letnie 22.10 przy 59,00 zł), bez komunikatu (ostatni ESPI 12.10 — skup akcji). Zamknięcie okna: +4,99% od D0, relatywnie +6,88 p.p. — najmocniejsza noga LONG W10 (ex aequo z Dino +4,98%). Realizacja zysków przy słabym Nasdaqu, nie zdarzenie fundamentalne.",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW…” 23.10.2026 11:24; bankier.pl 23.10.2026 17:13; TradingView MCP batch odczyt 2026-10-24 06:15 UTC = bankier.pl 17:00 (kursy.py); scripts/metryki.py rozlicz --week 2026-W10"
+    },
+    {
+      "ticker": "KGHM",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "−1,18% do 293,20 zł — ósma spadkowa sesja z rzędu (ok. −15% w serii; zakres 3 mies. 292–384 zł), presja z rynku metali przemysłowych po ESPI 37/2026 z 22.10 (sprzedaż Cu −4% r/r, 9M 2% pod budżetem); bez nowego komunikatu i bez rekomendacji 23.10. Zamknięcie okna: −10,54% od D0, relatywnie −8,66 p.p. — najmocniejsza noga SHORT W10 i jedyna z BOTTOM5, która zamknęła tydzień poniżej indeksu (noga nie jest handlowana na rachunku).",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl 23.10.2026 17:13 (M. Kubicki); PAP Biznes/strefainwestorow.pl 23.10.2026 11:24; TradingView MCP batch odczyt 2026-10-24 06:15 UTC = bankier.pl 17:04; scripts/metryki.py rozlicz --week 2026-W10"
+    },
+    {
+      "ticker": "MAKRO",
+      "data": "2026-10-23",
+      "dn": 5,
+      "opis": "Tło dla uniwersum (banki spoza koszyków W10, istotne dla rankingu W11): PAP Biznes/bankier.pl 13:06 — sezon wyników banków za III kw. od 27.10: Alior i Millennium 27.10, mBank 28.10, Pekao i ING 29.10, Erste 30.10 (PKO BP 5.11). Konsensus 9 banków: wynik odsetkowy 22 904 mln zł (+3,6% r/r, +5,6% k/k), prowizje 5 169 mln (+6,6% r/r), koszty 9 454 mln (−14,9% r/r), rezerwy −1 475 mln (−6,2% r/r), zysk netto 9 737 mln zł (−8,6% r/r, +3,5% k/k; CIT 30% zamiast 19% zaniża porównanie r/r). Per bank zysk netto: PKO BP 2 824 mln (0% r/r), Pekao 1 478 mln (−22%), Erste 1 490 mln (−21%), mBank 1 106 mln (+32%), Alior 422 mln (−25%). BM mBanku: najwyższa dynamika PKO BP i BNP (niższe rezerwy CHF), najsłabsza Handlowy, Alior, Erste; wynik handlowy sektora ok. −52% k/k. Sektor w tygodniu −5% przed wynikami.",
+      "wklad_pkt": null,
+      "zrodlo": "bankier.pl/PAP Biznes „Sezon wyników banków rusza w przyszłym tygodniu. Oto prognozy” 23.10.2026 13:06; TradingView MCP batch earnings_release_next_date odczyt 2026-10-24 06:15 UTC (Alior/Kruk/Budimex/Żabka 27.10, mBank 28.10, Pekao 29.10, Erste 30.10 — zgodne)"
+    },
+    {
+      "ticker": "PEPCO",
+      "data": "2026-10-27",
+      "dn": 7,
+      "opis": "Czat inwestorski z prezesem Pepco Group 27.10 o 12:00 (podsumowanie strategii i wyników) — zapowiedź PAP w kalendarium 23.10; zdarzenie po oknie W10 (D+7), bez wpływu na rozliczenie; trwa I etap skupu akcji (do 50 mln EUR, start 22.10). Kurs 23.10 +0,23% do 48,20 zł (+0,42% od D0, relatywnie +2,30 p.p. — najsłabsza noga LONG okna, ale nad indeksem).",
+      "wklad_pkt": null,
+      "zrodlo": "PAP Biznes/strefainwestorow.pl „DZIEŃ NA GPW…” 23.10.2026 11:24 (kalendarium); TradingView MCP batch odczyt 2026-10-24 06:15 UTC = bankier.pl 17:00"
     }
   ],
   "data_quality": [
