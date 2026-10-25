@@ -1384,6 +1384,22 @@
    "opis": "14:30 USA payrolls X (TV; poprz. 29 tys.) i stopa bezrobocia (4,2%); 14:00 NBP rezerwy walutowe X; 16:00 Michigan.",
    "wklad_pkt": null,
    "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-10-24 06:40 UTC"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-10-26",
+   "dn": 1,
+   "opis": "KNF (decyzja z 23.10, depesza PAP 17:26 — po sesji → dn=1) jednogłośnie stwierdziła brak podstaw do sprzeciwu wobec bezpośredniego nabycia przez Erste Group Bank akcji Erste Banku Polska zapewniającego przekroczenie 50% głosów i kapitału; termin nabycia do 30.06.2027. Spełnia warunek regulacyjny zapowiedzianego dobrowolnego wezwania (713,60 zł, do 26% akcji, ogłoszenie „na początku listopada” — bez daty). Cena wezwania 3,6% PONIŻEJ kursu D0 (740,40 zł) — nie jest wyzwalaczem przeciw tezie SHORT (wezwanie znane rankingowi W11; bez wpisu exclude); gdy wezwanie zostanie ogłoszone, ocena ponownie w Pulsie.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl/PAP Biznes „KNF stwierdziła brak podstaw do sprzeciwu ws. nabycia akcji Erste Bank Polska przez Erste Group Bank” 23.10.2026 17:26; bankier.pl „Erste Group Bank zamierza wezwać do sprzedaży akcji Erste Bank Polska po cenie 713,6 zł” (IX 2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-26",
+   "dn": 1,
+   "opis": "Tło weekendu 24–25.10 (bez sesji, bez ESPI spółek koszykowych): piątek na Wall Street spadkowy przy ropie powyżej 100 USD/bbl (bankier 23.10 22:20); 24.10 wyciek ropy z tankowca w Zatoce Perskiej (kurorty ZEA zamykają plaże) i fiasko rozmów Iran–USA o umowie tymczasowej (bankier 24.10 15:48, 18:12) — ryzyko dalszego wzrostu cen ropy na otwarciu 26.10 (bez spółki paliwowej w koszykach W11; dla banków i energetyki pośrednio przez stopy/inflację). Zmiana czasu 25.10: rotacja /run o 08:01 UTC = 09:01 Warszawy, tuż po otwarciu GPW.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 23.10.2026 22:20 „Spadki na Wall Street. Ropa powyżej 100 USD za baryłkę”; bankier.pl 24.10.2026 15:48 i 18:12; TradingView MCP get-economic-calendar, odczyt 2026-10-25 06:20 UTC (26.10: Chicago Fed 13:30, Dallas Fed 15:30 Warszawy)"
   }
  ],
  "data_quality": [
