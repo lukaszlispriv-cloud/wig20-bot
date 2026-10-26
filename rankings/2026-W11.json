@@ -1400,6 +1400,22 @@
    "opis": "Tło weekendu 24–25.10 (bez sesji, bez ESPI spółek koszykowych): piątek na Wall Street spadkowy przy ropie powyżej 100 USD/bbl (bankier 23.10 22:20); 24.10 wyciek ropy z tankowca w Zatoce Perskiej (kurorty ZEA zamykają plaże) i fiasko rozmów Iran–USA o umowie tymczasowej (bankier 24.10 15:48, 18:12) — ryzyko dalszego wzrostu cen ropy na otwarciu 26.10 (bez spółki paliwowej w koszykach W11; dla banków i energetyki pośrednio przez stopy/inflację). Zmiana czasu 25.10: rotacja /run o 08:01 UTC = 09:01 Warszawy, tuż po otwarciu GPW.",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl 23.10.2026 22:20 „Spadki na Wall Street. Ropa powyżej 100 USD za baryłkę”; bankier.pl 24.10.2026 15:48 i 18:12; TradingView MCP get-economic-calendar, odczyt 2026-10-25 06:20 UTC (26.10: Chicago Fed 13:30, Dallas Fed 15:30 Warszawy)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-26",
+   "dn": 1,
+   "opis": "Tło przed pierwszą sesją okna W11 (bieg Pulsu 7:16–7:50): Brent 109,65 USD, −6,06% wobec piątkowego rozliczenia (TV ICEEUR:BRN1!, 06:37 UTC, opóźnione) po weekendowej deklaracji Trumpa o nieatakowaniu Iranu w niedzielę i atakach dronów na Togliatti/Omsk (skrót PAP 24–25.10); Wall Street 23.10: S&P 500 −0,52%, DJIA −1,23%, Nasdaq −0,21% (tabela PAP 26.10); FW201! 4 189 (−0,90%, TV 06:37 UTC, orientacyjnie); miedź COMEX 6,4855 USD/lb (−0,34%), US10Y 4,966%, USD/PLN 3,9245, EUR/PLN 4,4032. Skrót PAP 25.10: Sejm zrezygnował z podwyżki CIT do 22% dla firm >50 mln EUR przychodów (budżet 2027; Neneman: ubytek 6,2 mld zł) — stawka ogólna, nie sektorowa; projekt CIT 30/26/23% dla paliw i energetyki (druk 3159) po I czytaniu 8.10 bez nowego kroku. PAP „Tydzień w kraju” 26.10: CPI flash 30.10 9:30 — prognozy Erste 3,9% r/r (paliwa ok. −9% m/m po przywróceniu obniżonego VAT/akcyzy), PKO 3,7%; aukcja SPW MF 28.10 11:30 (7–12 mld zł); konferencje wynikowe mBank 28.10 11:30, Pekao 29.10 9:30, Erste 30.10. Bez ESPI i rekomendacji dla spółek koszykowych 24–26.10 (do 7:30). Rotacja /run 08:01 UTC = 9:01 Warszawy.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-symbol-data-batch (surowce/FX/subindeksy), odczyt 2026-10-26 06:37 UTC; strefainwestorow.pl/PAP Biznes 26.10.2026: „Zamknięcia na giełdach w Ameryce (tabela)”, „TYDZIEŃ W KRAJU: Wstępny odczyt CPI za październik, wyniki banków, aukcja MF”, „TYDZIEŃ NA RYNKACH: Decyzje Fed, EBC i BoJ…”, „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-26”; strefainwestorow.pl/PAP 25.10.2026 „Skrót wiadomości: sobota-niedziela, 24-25 października”; bankier.pl zakładki wiadomości spółek i lista rekomendacji, odczyt 26.10 ok. 7:30"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-04",
+   "dn": 8,
+   "opis": "RPP: posiedzenie 3–4 listopada POTWIERDZONE datowanym źródłem z bieżącego tygodnia — depesza PAP „Tydzień w kraju” 26.10.2026 („Posiedzenie: 3–4 listopada. Rada zapozna się z nową projekcją inflacji i PKB”), zgodna z TV get-economic-calendar (4.11 14:00 UTC = 15:00 Warszawy); status „TV: data, niepotwierdzona” z wpisu z 24.10 zdjęty. Komentarze członków RPP za PAP: Kotecki — reakcja dopiero po efektach drugiej rundy wzrostu cen energii; Masłowska — podwyżki nie wyklucza jeszcze w 2026, raczej w grudniu; Zarzecki — w listopadzie podwyżki nie oczekuje, ale jej nie wyklucza (słabość złotego). Kod KALENDARZ_NIEPOTWIERDZONY w data_quality pozostaje z powodu ogłoszenia wezwania Erste bez daty.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes 26.10.2026 „TYDZIEŃ W KRAJU: Wstępny odczyt CPI za październik, wyniki banków, aukcja MF”; TradingView MCP get-economic-calendar, odczyt 2026-10-26 06:26 UTC"
   }
  ],
  "data_quality": [
