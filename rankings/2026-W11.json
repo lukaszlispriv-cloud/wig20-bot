@@ -1416,6 +1416,38 @@
    "opis": "RPP: posiedzenie 3–4 listopada POTWIERDZONE datowanym źródłem z bieżącego tygodnia — depesza PAP „Tydzień w kraju” 26.10.2026 („Posiedzenie: 3–4 listopada. Rada zapozna się z nową projekcją inflacji i PKB”), zgodna z TV get-economic-calendar (4.11 14:00 UTC = 15:00 Warszawy); status „TV: data, niepotwierdzona” z wpisu z 24.10 zdjęty. Komentarze członków RPP za PAP: Kotecki — reakcja dopiero po efektach drugiej rundy wzrostu cen energii; Masłowska — podwyżki nie wyklucza jeszcze w 2026, raczej w grudniu; Zarzecki — w listopadzie podwyżki nie oczekuje, ale jej nie wyklucza (słabość złotego). Kod KALENDARZ_NIEPOTWIERDZONY w data_quality pozostaje z powodu ogłoszenia wezwania Erste bez daty.",
    "wklad_pkt": null,
    "zrodlo": "strefainwestorow.pl/PAP Biznes 26.10.2026 „TYDZIEŃ W KRAJU: Wstępny odczyt CPI za październik, wyniki banków, aukcja MF”; TradingView MCP get-economic-calendar, odczyt 2026-10-26 06:26 UTC"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-10-26",
+   "dn": 1,
+   "opis": "PGE rozpoczęła budowę magazynu energii Gryfino (Nowe Czarnowo): moc do 400 MW, pojemność co najmniej 800 MWh, kontrakt ponad 1,14 mld zł brutto (konsorcjum SPEC BAU POLSKA / EL PROFESSIONAL, technologia Fluence), uruchomienie koniec 2028 r. — komunikat prasowy spółki 26.10 15:06 (w sesji → dn=1), bez ESPI; inwestycja bez wpływu na wynik okna; kurs 26.10 −1,20% przy WIG-Energ −0,78%. ESPI PGE 26.10: transakcja w trybie art. 19 MAR (bez treści na stronie).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl/PAP Biznes 26.10.2026 15:06; skrót wiadomości PAP 26.10 21:00 (strefainwestorow.pl); profil PGE bankier.pl (odczyt 27.10 ok. 7:20)"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-10-27",
+   "dn": 2,
+   "opis": "NCBR (II etap Ścieżki SMART FENG, ocena zakończona 26.10, 36 projektów za 337,7 mln zł) wybrał do dofinansowania projekt CD Projekt — „prawie 15 mln zł” (Puls Biznesu za PAP, 27.10 07:00; projekt nieopisany; wybór ≠ wypłata). Skala pomijalna wobec kapitalizacji — zdarzenie informacyjne, bez wpływu na tezę.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 27.10.2026 07:00 „Miliony złotych dla spółek z GPW. CD Projekt i WP z dotacjami od NCBR”"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-26",
+   "dn": 1,
+   "opis": "Pierwsza sesja okna W11: WIG20 4 198,02 (+0,74%, otwarcie 4 178,91; obroty 2,0 mld zł, w WIG20 1,61 mld), WIG +0,86%, mWIG40 +1,23%, sWIG80 +0,78%; WIG-Banki +1,92% (TV 26 389,11), WIG-Budow +1,85%, WIG-Paliwa −0,90%, WIG-Energ −0,78% (TV). Cały koszyk SHORT nad indeksem (KGHM +2,32% — odbicie po dwutygodniowej serii spadków o ok. 16%; Pekao +2,02%, mBank +1,87%, PKO +1,79%, Erste +1,40%), w LONG tylko Allegro (+0,96%) nad indeksem; Dino −1,46%, PGE −1,20%, CD Projekt −0,81%, LPP −0,07%. Tło: Wall Street S&P 500 +0,70% (7 676,77), Nasdaq +0,83%, DJIA +0,28% — wniosek Anthropic o IPO (Nasdaq, ANT) wsparł AI; Meta −1,9% (emisja do 95 mld USD); WTI −1,81% 101,4 USD, Brent −1,2% 115,34 USD (PAP 21:13); Ifo X 90,2 (oczek. 89,9); EUR/PLN 4,4028 (najwyżej od 2023 wg ING), USD/PLN 3,9384, PS1031 5,95%, DS0436 6,40%; rozporządzenie o cenach maksymalnych paliw od 27.10 (Pb95 6,58 zł/l). Bovespa −16% po wyborach w Brazylii.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 26.10 17:35 (M. Kubicki, „Dramat spekulantów na Herkulesie…”); PAP Biznes 26.10 17:48 WIG20 na zamknięciu, 21:00 skrót, 21:13 Wall Street, 17:27 FX/FI (strefainwestorow.pl); TradingView MCP get-symbol-data-batch, odczyt 2026-10-27 06:14 i 06:21 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-27",
+   "dn": 2,
+   "opis": "Przed sesją 27.10: Alior Bank (poza koszykami, EVENT) zysk netto Q3 473,2 mln zł, +12,2% ponad konsensus PAP 421,7 mln zł (wynik odsetkowy 1 313,7 mln zł, +2,1% vs konsensus; rezerwy 73,5 mln zł, −41% vs konsensus; koszt ryzyka 0,41%; CoR ≤0,8% w kolejnych latach; NPL 4,97%) — pozytywny odczyt sektorowy PRZECIW tezie SHORT na bankach (4/5 koszyka SHORT); Millennium Q3 vs konsensus (PAP 07:12). Senacka komisja budżetowa proponuje przywrócenie podwyżki CIT do 22% dla największych firm i wykreślenie waloryzacji progów PIT (PAP 26.10) — ogólna stawka, projekt sektorowy 30/26/23% dla paliw/energetyki (druk 3159) bez nowego kroku. Rada Ministrów 13:00: projekt usprawnienia rynku kapitałowego (squeeze-out 90% zamiast 95%, po wezwaniu na wszystkie akcje i zapisach ≥90%; cena = cena z wezwania; prospekty) — dotyczy przyszłych wezwań (Erste/Żabka pośrednio). MF 28.10 aukcja SPW 8–12 mld zł (NZ0928, OK0129, PS0730, PS1031, NZ0332, DS0436). Rano TV 06:21 UTC: FW201! 4 222 (+0,79%), Brent 109,94 (−0,72%), miedź 6,5595 USD/lb (+0,27%), srebro 53,08 (−2,32%), USD/PLN 3,9429, EUR/PLN 4,4032, US10Y 4,972%. Kalendarz dnia (TV = PAP): 13:30 USA zamówienia dóbr trwałych IX (TV 1,5%; ex transp. 0,6%), 15:00 Conference Board (TV 81,0 vs 81,9), 15:00 nowe domy, 16:00 GDPNow, 18:00 Lagarde; Alior konf. 10:30, Millennium 10:00, Kęty 11:00, Pepco czat 12:00, 15:00 MAP (KGS/Enea).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 27.10 06:04 (Alior), 06:00 (Rada Ministrów), skrót PAP 26.10 21:00; PAP „Przewidywane wydarzenia” 27.10 (strefainwestorow.pl); TradingView MCP get-economic-calendar (odczyt 2026-10-27 06:15 UTC, 130 zdarzeń PL/US/EU) i get-symbol-data-batch 06:21 UTC"
   }
  ],
  "data_quality": [
