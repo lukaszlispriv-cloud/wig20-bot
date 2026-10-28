@@ -39,8 +39,27 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-10-27",
+  "exclude": [
+    {
+      "ticker": "MBANK",
+      "action": "REDUCE",
+      "date": "2026-10-28",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8% (PRICE_4_8): zamkniecie 27.10.2026 1 484,50 zl wobec D0 1 392,50 zl = +6,61% (+4,90 p.p. wobec WIG20 +1,71%); prog miekki 4% = 1 448,20 zl przebity we wtorek (+4,65% w jednej sesji), prog twardy CLOSE (PRICE_8) = 1 503,90 zl - brakuje +1,31%. Tlo: rajd sektora 27.10 (WIG-Banki +3,11%) po wynikach Q3 Aliora (+12,2% ponad konsensus PAP) i Millennium (+6,3%); rano 28.10 mBank: zysk netto Q3 1 085 mln zl, zgodny z konsensusem PAP 1 097 mln zl (wynik odsetkowy +3,6%, prowizje +2,4% ponad konsensus, koszty -2,2%, rezerwy 261 mln zl +30% ponad konsensus, CHF 78 mln zl) - raport neutralny, nie szok. Najwiekszy z pieciu ruchow koszyka SHORT ponad progiem 4% (limit 2 nowe wpisy dziennie). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 28.10 (D+3) waga 50% od kursu 1 484,50 zl. Przy zamknieciu powyzej 1 503,90 zl wpis awansuje do CLOSE. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-28 06:16-06:19 UTC, dane opoznione; swieca D0 23.10 i sesja 26.10 zgodne z cache <=0,1%), get-symbol-data-batch 06:15 UTC (ten sam close); drugi tor kursy.py bez sesji 27.10 (Yahoo HTTP 429, bankier.pl HTTP 403 Cloudflare -> cache 26.10); strefainwestorow.pl/PAP Biznes: tabela indeksow (WIG20 4 238,38 +0,96%, WIG-Banki 27 211,05 +3,11%, 27.10), 'Skrot wiadomosci - wtorek, 27 pazdziernika, 21.00', 'Zysk netto mBanku w III kw. 26 wyniosl 1.085 mln zl, zgodny z oczekiwaniami' 28.10 06:33; d0.prices w signals.json.",
+      "price_before": 1484.5,
+      "move_from_d0_pct": 6.61,
+      "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "PKOBP",
+      "action": "REDUCE",
+      "date": "2026-10-28",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8% (PRICE_4_8): zamkniecie 27.10.2026 115,48 zl wobec D0 109,54 zl = +5,42% (+3,71 p.p. wobec WIG20 +1,71%); prog miekki 4% = 113,92 zl przebity we wtorek (+3,57% w jednej sesji), prog twardy CLOSE (PRICE_8) = 118,30 zl. Tlo: sektorowy rajd 27.10 (WIG-Banki +3,11%) po wynikach Q3 Aliora i Millennium powyzej konsensusu; brak komunikatu PKO BP w 24 h, raport Q3 5.11 (dn=9). Drugi co do wielkosci ruch koszyka SHORT ponad progiem 4%; Pekao (+4,25%), KGHM (+4,21%) i Erste (+4,02%) tez sa ponad progiem, ale limit 2 nowych wpisow dziennie - ocena w kolejnym Pulsie. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje, desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 28.10 (D+3) waga 50% od kursu 115,48 zl. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-28 06:16-06:19 UTC, dane opoznione; swieca D0 23.10 i sesja 26.10 zgodne z cache <=0,1%), get-symbol-data-batch 06:15 UTC (ten sam close); drugi tor kursy.py bez sesji 27.10 (Yahoo HTTP 429, bankier.pl HTTP 403 Cloudflare -> cache 26.10); strefainwestorow.pl/PAP Biznes: tabela indeksow (WIG20 4 238,38 +0,96%, WIG-Banki 27 211,05 +3,11%, 27.10), 'Skrot wiadomosci - wtorek, 27 pazdziernika, 21.00', 'Zysk netto mBanku w III kw. 26 wyniosl 1.085 mln zl, zgodny z oczekiwaniami' 28.10 06:33; d0.prices w signals.json.",
+      "price_before": 115.48,
+      "move_from_d0_pct": 5.42,
+      "trigger": "PRICE_4_8"
+    }
+  ],
+  "last_daily": "2026-10-28",
   "d0": {
     "date": "2026-10-23",
     "wig20": 4167.13,

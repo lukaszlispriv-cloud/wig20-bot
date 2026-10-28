@@ -1448,6 +1448,30 @@
    "opis": "Przed sesją 27.10: Alior Bank (poza koszykami, EVENT) zysk netto Q3 473,2 mln zł, +12,2% ponad konsensus PAP 421,7 mln zł (wynik odsetkowy 1 313,7 mln zł, +2,1% vs konsensus; rezerwy 73,5 mln zł, −41% vs konsensus; koszt ryzyka 0,41%; CoR ≤0,8% w kolejnych latach; NPL 4,97%) — pozytywny odczyt sektorowy PRZECIW tezie SHORT na bankach (4/5 koszyka SHORT); Millennium Q3 vs konsensus (PAP 07:12). Senacka komisja budżetowa proponuje przywrócenie podwyżki CIT do 22% dla największych firm i wykreślenie waloryzacji progów PIT (PAP 26.10) — ogólna stawka, projekt sektorowy 30/26/23% dla paliw/energetyki (druk 3159) bez nowego kroku. Rada Ministrów 13:00: projekt usprawnienia rynku kapitałowego (squeeze-out 90% zamiast 95%, po wezwaniu na wszystkie akcje i zapisach ≥90%; cena = cena z wezwania; prospekty) — dotyczy przyszłych wezwań (Erste/Żabka pośrednio). MF 28.10 aukcja SPW 8–12 mld zł (NZ0928, OK0129, PS0730, PS1031, NZ0332, DS0436). Rano TV 06:21 UTC: FW201! 4 222 (+0,79%), Brent 109,94 (−0,72%), miedź 6,5595 USD/lb (+0,27%), srebro 53,08 (−2,32%), USD/PLN 3,9429, EUR/PLN 4,4032, US10Y 4,972%. Kalendarz dnia (TV = PAP): 13:30 USA zamówienia dóbr trwałych IX (TV 1,5%; ex transp. 0,6%), 15:00 Conference Board (TV 81,0 vs 81,9), 15:00 nowe domy, 16:00 GDPNow, 18:00 Lagarde; Alior konf. 10:30, Millennium 10:00, Kęty 11:00, Pepco czat 12:00, 15:00 MAP (KGS/Enea).",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl 27.10 06:04 (Alior), 06:00 (Rada Ministrów), skrót PAP 26.10 21:00; PAP „Przewidywane wydarzenia” 27.10 (strefainwestorow.pl); TradingView MCP get-economic-calendar (odczyt 2026-10-27 06:15 UTC, 130 zdarzeń PL/US/EU) i get-symbol-data-batch 06:21 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-27",
+   "dn": 2,
+   "opis": "Druga sesja okna W11: WIG20 4 238,38 (+0,96%), WIG +0,93%, mWIG40 +1,03%; WIG-Banki +3,11% (27 211,05) po wynikach Q3 Aliora (+12,2% ponad konsensus PAP) i Millennium (400,4 mln zł, +6,3% ponad konsensus); WIG-Budow +1,40%, WIG-Energ −0,22%, WIG-Paliwa −1,00%. Cały koszyk SHORT ponad progiem 4% od D0 (mBank +6,61%, PKO +5,42%, Pekao +4,25%, KGHM +4,21%, Erste +4,02%) — sesja przeciw tezie SHORT; w LONG CD Projekt +1,42%, reszta pod kreską (LPP −1,11%, Dino −0,79%, PGE −0,57%, Allegro −0,34%). Po sesji: Budimex Q3 zysk netto 182,4 mln zł vs konsensus 172,4 mln zł, portfel 17,3 mld zł; Kruk Q3 198 mln zł (zgodnie z szacunkiem 16.10); Żabka skoryg. EBITDA 1 489 mln zł vs 1 441 mln zł. Senat zgłosił poprawki przywracające podwyżkę CIT dla największych firm (ogólna stawka, ustawa wraca do Sejmu); projekt sektorowy CIT dla paliw/energetyki bez nowego kroku. USA: zamówienia na dobra trwałe IX +1,8% m/m (oczek. 1,9%), Conference Board 91,7 (z 84,2), sprzedaż nowych domów 676 tys.; S&P 500 +0,60% (7 722,6).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes: tabela indeksów 27.10, „Skrót wiadomości — wtorek, 27 października, 21.00”, „Zamknięcia na giełdach w Ameryce… (tabela)” 28.10 06:43; TradingView MCP get-ohlcv 1D i get-symbol-data-batch, odczyt 2026-10-28 06:15–06:19 UTC, dane opóźnione"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-10-28",
+   "dn": 3,
+   "opis": "Wyniki Q3 opublikowane przed sesją: zysk netto 1 085 mln zł (+29,6% r/r, +2,4% k/k) wobec konsensusu PAP 1 097 mln zł (−1%, „zgodny”); wynik odsetkowy 2 673 mln zł (+3,6% vs konsensus), prowizje 594 mln zł (+2,4%), koszty 946 mln zł (−2,2%), rezerwy 261 mln zł (+30% vs konsensus), koszty ryzyka prawnego CHF 78 mln zł; ROE 17,6%, marża 3,6%. Raport neutralny dla tezy SHORT (bez szoku); konferencja 11:30. Tego dnia REDUCE (PRICE_4_8) za ruch +6,61% od D0.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes 28.10.2026 06:33 „Zysk netto mBanku w III kw. '26 wyniósł 1.085 mln zł, zgodny z oczekiwaniami” i 06:27 „Wyniki mBanku w III kw. 2026 roku vs. konsensus PAP (tabela)”"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-28",
+   "dn": 3,
+   "opis": "Kalendarz 28.10 (PAP = TV): 10:00 Żabka konferencja wynikowa, 11:00 Kruk, 11:30 mBank; aukcja SPW MF; 16:00 GDPNow; 19:00 Fed decyzja (TV prognoza 4,00% = bez zmian), 19:30 konferencja Powella → reakcja GPW 29.10 (dn=4). 29.10: 9:30 Pekao konf., 11:00 Budimex strategia 2030, 13:30 PKB USA III kw. adv. i PCE, 14:15 EBC (TV 2,50% depozytowa, bez zmian). 30.10: 9:30 CPI flash PL, 11:00 PKB strefy euro flash. Terminy TV zgodne z zapowiedziami PAP (datowane źródło, bieżący tydzień).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-28”; TradingView MCP get-economic-calendar(PL,US,EU; min_importance=-1), odczyt 2026-10-28 06:15 UTC (137 zdarzeń)"
   }
  ],
  "data_quality": [
