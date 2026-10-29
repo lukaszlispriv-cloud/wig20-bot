@@ -1472,6 +1472,38 @@
    "opis": "Kalendarz 28.10 (PAP = TV): 10:00 Żabka konferencja wynikowa, 11:00 Kruk, 11:30 mBank; aukcja SPW MF; 16:00 GDPNow; 19:00 Fed decyzja (TV prognoza 4,00% = bez zmian), 19:30 konferencja Powella → reakcja GPW 29.10 (dn=4). 29.10: 9:30 Pekao konf., 11:00 Budimex strategia 2030, 13:30 PKB USA III kw. adv. i PCE, 14:15 EBC (TV 2,50% depozytowa, bez zmian). 30.10: 9:30 CPI flash PL, 11:00 PKB strefy euro flash. Terminy TV zgodne z zapowiedziami PAP (datowane źródło, bieżący tydzień).",
    "wklad_pkt": null,
    "zrodlo": "strefainwestorow.pl/PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-28”; TradingView MCP get-economic-calendar(PL,US,EU; min_importance=-1), odczyt 2026-10-28 06:15 UTC (137 zdarzeń)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-28",
+   "dn": 3,
+   "opis": "Trzecia sesja okna W11: WIG20 4 247,19 (+0,21%), WIG 160 348,58 (+0,10%); WIG-Banki +1,92% (27 733,53) — mBank +8,56% (1 611,50, maksimum dnia) po konferencji Q3, Erste +4,13% (802,00), Pekao +1,45%, PKO +0,52%; WIG-Budow −3,13% (Budimex −5,46% przed strategią 2030), Kruk −6,98% (zarząd: zysk 2026 może być niższy niż w 2025), Orlen −2,40%, Dino −2,71%, PGE −1,10%, CD Projekt −1,77%. Koszyk SHORT +7,88% od D0 (mBank +15,73%, Erste +8,32% — oba ponad progiem CLOSE 8%), LONG −1,66%. Wieczorem Fed bez zmian 3,75–4,00% (Warsh: inflacja wciąż za wysoka); Bank Kanady podniósł stopy do 2,50%; gaz w Europie 100 EUR/MWh; Jeronimo Martins zysk netto 154 mln EUR (−28,2%), Żabka obniżyła oczekiwania LFL 2026; MF sprzedało SPW za 12 mld zł; MF (Neneman): luka CIT wg MFW 20–22%.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes: „WIG20 na zamknięciu wyniósł 4247,19 pkt (0,21%)” 28.10, „Skrót wiadomości — środa, 28 października, 21.00”, „DZIEŃ NA RYNKACH: Indeksy w Europie lekko zwyżkowały…” 28.10; TradingView MCP get-ohlcv 1D i get-symbol-data-batch, odczyt 2026-10-29 06:12–06:15 UTC, dane opóźnione"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2026-10-28",
+   "dn": 3,
+   "opis": "Konferencja wynikowa Q3 (11:30): zarząd zakłada wzrost przychodów 2026 o ok. 2% i wyraźnie wyższy zysk netto w 2027 (szybki wzrost hipotek i kredytów korporacyjnych); kurs +8,56% d/d do 1 611,50 zł (+15,73% od D0). Ruch przeciw tezie SHORT — 29.10 awans REDUCE→CLOSE (PRICE_8).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes „Skrót wiadomości — środa, 28 października, 21.00”; TradingView MCP get-ohlcv 1D GPW:MBK, odczyt 2026-10-29 06:13 UTC"
+  },
+  {
+   "ticker": "PEKAO",
+   "data": "2026-10-29",
+   "dn": 4,
+   "opis": "Wyniki Q3 przed sesją (06:49): zysk netto 1 516 mln zł wobec konsensusu PAP 1 471,7 mln zł (+3,0%, „lekko powyżej oczekiwań”; −20,4% r/r przez CIT 30% i BFG +59 mln zł); wynik odsetkowy 3 525 mln zł (−0,5% vs konsensus), NIM 3,89%, prowizje 853 mln zł (+1%), koszty 1 467 mln zł (+0,8%), rezerwy 332 mln zł (+7%), CoR 61 pb; TCR 17,8%; cel CoR 2027 65–75 pb. Dzień wcześniej RN zgodziła się na AT1 do 500 mln zł. Konferencja 9:30. Lekko pozytywne przeciw tezie SHORT; noga +5,76% od D0 (ponad progiem REDUCE, poza limitem 2 nowych wpisów).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes 29.10.2026 06:49 „Zysk netto grupy Pekao w III kw. wyniósł 1,52 mld zł, lekko powyżej oczekiwań (opis)”, 28.10 „RN Pekao zgodziła się na emisję obligacji AT1…”"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-29",
+   "dn": 4,
+   "opis": "Kalendarz 29–30.10 (TV = PAP): 29.10 9:30 Pekao konf., 11:00 Budimex strategia 2030, 11:00 ING BSK Q3, 13:30 USA PKB III kw. (TV 3,2%) i PCE IX (TV 3,6% r/r; bazowy m/m 0,3%), 14:15 EBC (TV depozytowa 2,50%, bez zmian), 16:00 XTB; 30.10 9:30 GUS CPI flash X (poprz. 4,1%), 11:00 PKB strefy euro flash, Erste Bank Polska Q3 (TV, data estymowana), LPP wypłata dywidendy, Santander dzień dywidendy (0,127 EUR — spółka zagraniczna, poza WIG20). Dalej: 2.11 PMI PL, 3.11 PZU NWZ 12:00, 4.11 RPP (TV 14:00 UTC = 15:00), 5.11 PKO BP/Orlen/Dino Q3.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-29”, „Kalendarium rynku kapitałowego GPW 2026-10-29”; TradingView MCP get-economic-calendar(PL,US,EU; min_importance=-1), odczyt 2026-10-29 06:12 UTC (131 zdarzeń); get-symbol-data-batch earnings_release_next_date 06:12 UTC"
   }
  ],
  "data_quality": [

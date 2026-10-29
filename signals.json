@@ -42,24 +42,42 @@
   "exclude": [
     {
       "ticker": "MBANK",
-      "action": "REDUCE",
-      "date": "2026-10-28",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8% (PRICE_4_8): zamkniecie 27.10.2026 1 484,50 zl wobec D0 1 392,50 zl = +6,61% (+4,90 p.p. wobec WIG20 +1,71%); prog miekki 4% = 1 448,20 zl przebity we wtorek (+4,65% w jednej sesji), prog twardy CLOSE (PRICE_8) = 1 503,90 zl - brakuje +1,31%. Tlo: rajd sektora 27.10 (WIG-Banki +3,11%) po wynikach Q3 Aliora (+12,2% ponad konsensus PAP) i Millennium (+6,3%); rano 28.10 mBank: zysk netto Q3 1 085 mln zl, zgodny z konsensusem PAP 1 097 mln zl (wynik odsetkowy +3,6%, prowizje +2,4% ponad konsensus, koszty -2,2%, rezerwy 261 mln zl +30% ponad konsensus, CHF 78 mln zl) - raport neutralny, nie szok. Najwiekszy z pieciu ruchow koszyka SHORT ponad progiem 4% (limit 2 nowe wpisy dziennie). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 28.10 (D+3) waga 50% od kursu 1 484,50 zl. Przy zamknieciu powyzej 1 503,90 zl wpis awansuje do CLOSE. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-28 06:16-06:19 UTC, dane opoznione; swieca D0 23.10 i sesja 26.10 zgodne z cache <=0,1%), get-symbol-data-batch 06:15 UTC (ten sam close); drugi tor kursy.py bez sesji 27.10 (Yahoo HTTP 429, bankier.pl HTTP 403 Cloudflare -> cache 26.10); strefainwestorow.pl/PAP Biznes: tabela indeksow (WIG20 4 238,38 +0,96%, WIG-Banki 27 211,05 +3,11%, 27.10), 'Skrot wiadomosci - wtorek, 27 pazdziernika, 21.00', 'Zysk netto mBanku w III kw. 26 wyniosl 1.085 mln zl, zgodny z oczekiwaniami' 28.10 06:33; d0.prices w signals.json.",
-      "price_before": 1484.5,
-      "move_from_d0_pct": 6.61,
-      "trigger": "PRICE_4_8"
+      "action": "CLOSE",
+      "date": "2026-10-29",
+      "reason": "AWANS REDUCE -> CLOSE (PRICE_8): zamkniecie 28.10.2026 1 611,50 zl wobec D0 1 392,50 zl = +15,73% (+13,81 p.p. wobec WIG20 +1,92%); prog twardy 8% = 1 503,90 zl przebity w sesji 28.10 (+8,56% d/d, zamkniecie na maksimum dnia, wolumen 45,7 tys. szt. = 1,4x sesji 27.10) po konferencji wynikowej Q3 (zysk 1 085 mln zl zgodny z konsensusem PAP; zarzad: przychody 2026 ok. +2%, zysk netto 2027 'wyraznie wyzszy', szybki wzrost portfela kredytowego - skrot PAP 28.10 21:00). Wczesniejszy szczebel: REDUCE 28.10 (D+3) za +6,61% od D0, waga 50% od 1 484,50 zl; teraz zamkniecie pozostalej polowy od kursu 1 611,50 zl od sesji 29.10 (D+4). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index - pozycji na rachunku nie zmienia. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-27.10 zgodne z cache) i get-symbol-data-batch 06:12 UTC (ten sam close 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4247,19 pkt (0,21%)' 28.10, 'Skrot wiadomosci - sroda, 28 pazdziernika, 21.00' (WIG-Banki +1,92%, 27 733,53); d0.prices w signals.json.",
+      "price_before": 1611.5,
+      "move_from_d0_pct": 15.73,
+      "trigger": "PRICE_8"
     },
     {
       "ticker": "PKOBP",
       "action": "REDUCE",
       "date": "2026-10-28",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8% (PRICE_4_8): zamkniecie 27.10.2026 115,48 zl wobec D0 109,54 zl = +5,42% (+3,71 p.p. wobec WIG20 +1,71%); prog miekki 4% = 113,92 zl przebity we wtorek (+3,57% w jednej sesji), prog twardy CLOSE (PRICE_8) = 118,30 zl. Tlo: sektorowy rajd 27.10 (WIG-Banki +3,11%) po wynikach Q3 Aliora i Millennium powyzej konsensusu; brak komunikatu PKO BP w 24 h, raport Q3 5.11 (dn=9). Drugi co do wielkosci ruch koszyka SHORT ponad progiem 4%; Pekao (+4,25%), KGHM (+4,21%) i Erste (+4,02%) tez sa ponad progiem, ale limit 2 nowych wpisow dziennie - ocena w kolejnym Pulsie. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje, desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 28.10 (D+3) waga 50% od kursu 115,48 zl. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-28 06:16-06:19 UTC, dane opoznione; swieca D0 23.10 i sesja 26.10 zgodne z cache <=0,1%), get-symbol-data-batch 06:15 UTC (ten sam close); drugi tor kursy.py bez sesji 27.10 (Yahoo HTTP 429, bankier.pl HTTP 403 Cloudflare -> cache 26.10); strefainwestorow.pl/PAP Biznes: tabela indeksow (WIG20 4 238,38 +0,96%, WIG-Banki 27 211,05 +3,11%, 27.10), 'Skrot wiadomosci - wtorek, 27 pazdziernika, 21.00', 'Zysk netto mBanku w III kw. 26 wyniosl 1.085 mln zl, zgodny z oczekiwaniami' 28.10 06:33; d0.prices w signals.json.",
+      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8% (PRICE_4_8): zamkniecie 27.10.2026 115,48 zl wobec D0 109,54 zl = +5,42% (+3,71 p.p. wobec WIG20 +1,71%); prog miekki 4% = 113,92 zl przebity we wtorek (+3,57% w jednej sesji), prog twardy CLOSE (PRICE_8) = 118,30 zl. Tlo: sektorowy rajd 27.10 (WIG-Banki +3,11%) po wynikach Q3 Aliora i Millennium powyzej konsensusu; brak komunikatu PKO BP w 24 h, raport Q3 5.11 (dn=9). Drugi co do wielkosci ruch koszyka SHORT ponad progiem 4%; Pekao (+4,25%), KGHM (+4,21%) i Erste (+4,02%) tez sa ponad progiem, ale limit 2 nowych wpisow dziennie - ocena w kolejnym Pulsie. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje, desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 28.10 (D+3) waga 50% od kursu 115,48 zl. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-28 06:16-06:19 UTC, dane opoznione; swieca D0 23.10 i sesja 26.10 zgodne z cache <=0,1%), get-symbol-data-batch 06:15 UTC (ten sam close); drugi tor kursy.py bez sesji 27.10 (Yahoo HTTP 429, bankier.pl HTTP 403 Cloudflare -> cache 26.10); strefainwestorow.pl/PAP Biznes: tabela indeksow (WIG20 4 238,38 +0,96%, WIG-Banki 27 211,05 +3,11%, 27.10), 'Skrot wiadomosci - wtorek, 27 pazdziernika, 21.00', 'Zysk netto mBanku w III kw. 26 wyniosl 1.085 mln zl, zgodny z oczekiwaniami' 28.10 06:33; d0.prices w signals.json. | 29.10: REDUCE utrzymany - zamkniecie 28.10 116,08 zl = +5,97% od D0 (prog CLOSE 118,30 zl nieprzebity); raport Q3 5.11.",
       "price_before": 115.48,
       "move_from_d0_pct": 5.42,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "ERSTEPL",
+      "action": "CLOSE",
+      "date": "2026-10-29",
+      "reason": "Ruch od D0 przeciw tezie SHORT ponad 8% (PRICE_8): zamkniecie 28.10.2026 802,00 zl wobec D0 740,40 zl = +8,32% (+6,40 p.p. wobec WIG20 +1,92%); prog twardy 8% = 799,63 zl przebity w sesji 28.10 (+4,13% d/d, zamkniecie na maksimum dnia) przy WIG-Banki +1,92%. Bez komunikatu spolki w 24 h; raport Q3 30.10 (TV earnings_release_next_date, EVENT). Dzien wczesniej (+4,02%) poza limitem 2 nowych wpisow - bez REDUCE, wiec od razu szczebel CLOSE. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje, desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym zamkniecie od kursu 802,00 zl od sesji 29.10 (D+4). Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-27.10 zgodne z cache) i get-symbol-data-batch 06:12 UTC (ten sam close 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4247,19 pkt (0,21%)' 28.10, 'Skrot wiadomosci - sroda, 28 pazdziernika, 21.00' (WIG-Banki +1,92%, 27 733,53); d0.prices w signals.json.",
+      "price_before": 802.0,
+      "move_from_d0_pct": 8.32,
+      "trigger": "PRICE_8"
+    },
+    {
+      "ticker": "DINOPL",
+      "action": "REDUCE",
+      "date": "2026-10-29",
+      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8% (PRICE_4_8): zamkniecie 28.10.2026 37,71 zl wobec D0 39,65 zl = -4,89% (-6,81 p.p. wobec WIG20 +1,92%); prog miekki 4% = 38,064 zl przebity w sesji 28.10 (-2,71% d/d, zamkniecie na minimum dnia; 27.10 minimum 36,16 zl), prog twardy CLOSE (PRICE_8) = 36,478 zl. Brak komunikatu Dino w 24 h; tlo sektorowe (nie potwierdzone jako przyczyna): Jeronimo Martins zysk netto 154 mln EUR (-28,2%), Zabka obnizyla oczekiwania LFL 2026 (skrot PAP 28.10 21:00); raport Q3 Dino 5.11 (TV, dn=9). Noga LONG jest handlowana: bot przy biegu /run 10:01 tnie pozycje DNP do polowy (Capital.com bez czesciowego zamkniecia - zamkniecie i ponowne otwarcie, podwojny spread). Wybor przy limicie 2 nowych wpisow: Erste CLOSE (twardy) i Dino REDUCE (jedyna noga na rachunku) przed Pekao (+5,76%, wyniki Q3 29.10 +3% ponad konsensus - ocena w kolejnym Pulsie). Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-27.10 zgodne z cache) i get-symbol-data-batch 06:12 UTC (ten sam close 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4247,19 pkt (0,21%)' 28.10, 'Skrot wiadomosci - sroda, 28 pazdziernika, 21.00' (WIG-Banki +1,92%, 27 733,53); d0.prices w signals.json.",
+      "price_before": 37.71,
+      "move_from_d0_pct": -4.89,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-10-28",
+  "last_daily": "2026-10-29",
   "d0": {
     "date": "2026-10-23",
     "wig20": 4167.13,

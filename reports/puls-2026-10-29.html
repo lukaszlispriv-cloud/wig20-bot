@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puls WIG20 — 29.10.2026</title>
+<style>
+:root{--bg:#F6F7F4;--navy:#10243E;--g:#0E7C4A;--r:#C4372E;--amb:#B7791F;--ink:#1C2430;--mut:#5B6572;--card:#fff;--line:#E2E5E0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:20px 16px 24px}header h1{margin:0 0 4px;font-size:22px;letter-spacing:.3px}
+header .sub{opacity:.85;font-size:14px}header .wig{margin-top:14px;font-size:30px;font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+header .wig small{font-size:14px;font-weight:400;opacity:.85;font-family:inherit}
+.stamp{display:inline-block;margin:14px 0 0;padding:6px 14px;border:3px solid #3DBE7A;color:#3DBE7A;border-radius:6px;font-weight:800;letter-spacing:2px;text-transform:uppercase;transform:rotate(-2.5deg);background:rgba(255,255,255,.04)}
+main{max-width:860px;margin:0 auto;padding:16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px}
+h2{font-size:17px;margin:0 0 10px;color:var(--navy)}h3{font-size:15px;margin:14px 0 6px;color:var(--navy)}
+.pos{color:var(--g)}.neg{color:var(--r)}.m{font-family:ui-monospace,Menlo,Consolas,monospace;text-align:right;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}
+.wrap{overflow-x:auto}
+.bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}.bar .main{font-size:34px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace}
+.bar .lab{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}.bar .side{font-size:18px;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--mut)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;color:#fff;margin-right:6px;vertical-align:middle}
+.ESPI{background:#2F5D8A}.SHORT{background:#7A3E9D}.REKOM{background:#B7791F}.MAKRO{background:#4C6B2F}.TV{background:#355C7D}.RACH{background:#6B4F2F}
+.red{background:#FFF4E5;border-left:4px solid var(--amb);padding:8px 12px;border-radius:6px}
+ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+.note{font-size:13px;color:var(--mut)}pre{font-size:12px;overflow-x:auto;background:#F2F3EF;padding:8px;border-radius:6px;line-height:1.35}
+footer{text-align:center;font-size:12px;color:var(--mut);padding:18px 16px 30px}
+</style></head><body>
+<header><h1>Puls WIG20</h1><div class="sub">czwartek, 29 października 2026, bieg poranny ok. 7:11–7:40 Warszawy (przed otwarciem GPW) · tydzień <b>2026-W11</b> · D0 = 23.10.2026 · okno 26–30.10 · po 3 z 5 sesji okna (zamknięcie 28.10).</div>
+<div class="wig">WIG20 4 247,19 <small>zamknięcie 28.10 · +0,21% d/d · od D0 +1,92% · TradingView MCP (get-ohlcv 1D, odczyt 2026-10-29 06:13 UTC, dane opóźnione) = depesza PAP „WIG20 na zamknięciu wyniósł 4247,19 pkt (0,21%)” (strefainwestorow.pl, 28.10) · bankier/Yahoo w tym biegu niedostępne (patrz PROBLEMY)</small></div>
+<div class="stamp">Aktualna</div></header>
+<main>
+
+<section><h2>Pasek wyniku okna W11 (D0 23.10 → ostatnia zakończona sesja 28.10, 3 z 5 sesji)</h2>
+<div class="bar"><div><div class="lab">Wynik rachunku = średnia LONG − WIG20</div><div class="main neg">−3,58 p.p.</div>
+<div class="note">Średnia LONG −1,66% wobec WIG20 +1,92%. Tak gra bot: kupuje koszyk LONG (PGE, Allegro, Dino, CD Projekt, LPP) i sprzedaje kontrakt FW20. Trzecia sesja z rzędu pod prąd: indeks ciągną banki (WIG-Banki +1,92%, mBank +8,56%), a cztery z pięciu nóg LONG są pod D0 (Dino −4,89%, PGE −2,84%).</div></div>
+<div><div class="lab">papierowy — miara selekcji, nie wynik rachunku</div><div class="side">spread LONG−SHORT −9,54 p.p.</div><div class="note">Średnia SHORT +7,88% (wzrost kursów działa przeciw tezie). <b>Rozjazd −5,96 p.p.</b> (ponad próg 0,5 p.p.): spread papierowy jest dużo gorszy od wyniku rachunku, bo koszyk SHORT rośnie szybciej niż indeks. Rachunek Capital.com nie shortuje CFD na akcje, więc tej nogi bot w ogóle nie gra.</div></div></div>
+<p class="note">Rachunek trzyma pełny koszyk W11 (5/5 nóg + short FW2020Z2026); szczegóły w kontroli rachunku. Raport liczy od zamknięcia D0 (23.10), bot wszedł 26.10 o 10:01 — luka otwarcie–realizacja i koszty spreadów/swapów nie są ujęte w wyniku modelowym. <b>Dzisiejszy REDUCE Dino dotyczy nogi handlowanej</b> — bot przy biegu <code>/run</code> 10:01 tnie DNP do połowy (zamknięcie i ponowne otwarcie, podwójny spread). Dwa CLOSE (mBank, Erste) dotyczą papierowego koszyka SHORT i rachunku nie zmieniają.</p></section>
+
+<section><h2>Najważniejsze zmiany (sesja 28.10 i poranek 29.10)</h2><ul>
+<li><span class="tag MAKRO">MAKRO</span><b>Sesja 28.10 — banki dalej w górę:</b> WIG20 4 247,19 (+0,21%), WIG 160 348,58 (+0,10%); <b>WIG-Banki +1,92%</b> (27 733,53), WIG-Budow −3,13% (PAP 28.10). W WIG20: <b>mBank +8,56%</b> (1 611,50 zł, zamknięcie na maksimum dnia), Erste +4,13% (802,00), Pepco +2,44%, Alior +1,85%, Pekao +1,45%; w dół Kruk −6,98% (zarząd: zysk 2026 może być niższy niż w 2025), Budimex −5,46% (dzień przed strategią 2030), Dino −2,71%, Orlen −2,40%, CD Projekt −1,77%, PGE −1,10% (TV get-ohlcv 1D, odczyt 06:13–06:15 UTC).</li>
+<li><span class="tag ESPI">ESPI</span><b>mBank — konferencja Q3 (SHORT, CLOSE):</b> zarząd zakłada wzrost przychodów 2026 o ok. 2% i <b>wyraźnie wyższy zysk netto w 2027</b> (szybki wzrost hipotek i kredytów korporacyjnych); sam zysk Q3 1 085 mln zł był zgodny z konsensusem PAP 1 097 mln zł (skrót PAP 28.10 21:00). Kurs +15,73% od D0 → przebity próg twardy 8% (1 503,90 zł).</li>
+<li><span class="tag ESPI">ESPI</span><b>Pekao — wyniki Q3 przed sesją (SHORT, EVENT):</b> zysk netto <b>1 516 mln zł</b> wobec konsensusu PAP 1 471,7 mln zł (<b>+3,0%</b>, „lekko powyżej oczekiwań”; −20,4% r/r przez CIT 30% i BFG +59 mln zł). Wynik odsetkowy 3 525 mln zł (−0,5% vs konsensus), NIM 3,89%, prowizje 853 mln zł (+1%), koszty 1 467 mln zł (+0,8%), rezerwy 332 mln zł (+7%), CoR 61 pb; TCR 17,8%, cel CoR 2027 65–75 pb (PAP 29.10 06:49). Dzień wcześniej RN zgodziła się na AT1 do 500 mln zł. Konferencja 9:30. Odczyt lekko przeciw tezie SHORT, bez szoku.</li>
+<li><span class="tag ESPI">ESPI</span><b>Pozostałe spółki koszykowe:</b> bez komunikatów rangi protokołu w 24 h (lista depesz strefainwestorow.pl/PAP 28–29.10 do ok. 7:15). Tło dla Dino (nie potwierdzone jako przyczyna spadku): Jeronimo Martins zysk netto 154 mln EUR (−28,2%), Żabka obniżyła oczekiwania LFL 2026 do „bliższych średnim jednocyfrowym” (skrót PAP 28.10). PKO BP i Banca Transilvania — porozumienie o współpracy dla firm (bez wpływu na tezę).</li>
+<li><span class="tag REKOM">REKOM.</span><b>Rekomendacje:</b> w liście depesz PAP 28–29.10 brak nowych rekomendacji DM dla spółek koszykowych. Komentarze rynkowe: Trigon DM preferuje m.in. paliwa, energetykę, spółki konsumenckie, wybrane banki i e-commerce; VIG/C-Quadrat TFI widzi atrakcyjne wyceny banków i możliwe dwie podwyżki stóp w Polsce (skrót PAP 28.10) — to opinie, nie rekomendacje.</li>
+<li><span class="tag SHORT">SHORT</span><b>Rejestr krótkiej sprzedaży KNF:</b> poza zasięgiem sieci rutyny, TV nie ma rejestru — zmian pozycji krótkich nie weryfikowano (KNF_SHORT_NIEDOSTEPNY, kod już w <code>data_quality</code>).</li>
+<li><span class="tag MAKRO">MAKRO</span><b>Wyzwalacze tez — CIT:</b> bez nowego kroku legislacyjnego w 24 h. Wiceminister finansów Neneman: luka CIT wg MFW ok. 20–22%, MF ma własne, korzystniejsze szacunki (PAP 28.10). Projekt <b>CIT 30/26/23% dla paliw i energetyki</b> bez zmian; ustawa z senackimi poprawkami (ogólna stawka CIT dla największych firm) czeka na Sejm. Maksymalne ceny paliw od 29.10: Pb95 6,53 zł/l, ON 8,20 zł/l.</li>
+<li><span class="tag MAKRO">MAKRO</span><b>Świat:</b> <b>Fed bez zmian, 3,75–4,00%</b> (Warsh: działania przynoszą efekty, inflacja wciąż za wysoka); Bank Kanady podniósł stopy do 2,50%; gaz w Europie 100 EUR/MWh (pierwszy raz od prawie 4 lat); Wall Street kolejny dzień wzrostów; MF sprzedało SPW za 12 mld zł przy popycie 18,5 mld zł (PAP 28.10).</li>
+<li><span class="tag TV">TV</span><b>TradingView MCP, faza 2 — 24 wywołania, bez 429:</b> batch koszyka (06:12 UTC), kalendarz makro 29.10–5.11 (131 zdarzeń), kalendarz dywidend, <b>21 × get-ohlcv</b> (sesja 28.10 dla 21/21 — drugi tor jej nie miał). Dywidendy: w WIG20 tylko LPP 500 zł ex 8.10 (wypłata 30.10; kod już w <code>data_quality</code>), bez nowych ex-date. <code>earnings_release_next_date</code>: Erste 30.10, PKO BP/Orlen/Dino 5.11 — wszystkie już w rejestrze, bez nowych wpisów.</li>
+</ul></section>
+
+<section><h2>Koszyk LONG (5 spółek, kolejność z signals.json)</h2><div class="wrap"><table>
+<tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0 (23.10)</th><th>Kurs ostatni (28.10)</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr>
+<tr><td><b>PGE</b></td><td>LONG</td><td class=m>16,725</td><td class=m>16,250</td><td class='m neg'>−2,84%</td><td class='m neg'>−4,76 p.p.</td></tr>
+<tr><td><b>ALLEGRO</b></td><td>LONG</td><td class=m>58,44</td><td class=m>59,07</td><td class='m pos'>+1,08%</td><td class='m neg'>−0,84 p.p.</td></tr>
+<tr><td><b>DINOPL</b> <span class="tag REKOM">REDUCE</span></td><td>LONG</td><td class=m>39,65</td><td class=m>37,71</td><td class='m neg'>−4,89%</td><td class='m neg'>−6,81 p.p.</td></tr>
+<tr><td><b>CDPROJEKT</b></td><td>LONG</td><td class=m>270,20</td><td class=m>267,00</td><td class='m neg'>−1,18%</td><td class='m neg'>−3,11 p.p.</td></tr>
+<tr><td><b>LPP</b></td><td>LONG</td><td class=m>27 000</td><td class=m>26 880</td><td class='m neg'>−0,44%</td><td class='m neg'>−2,37 p.p.</td></tr>
+<tr><td colspan=4><b>Średnia LONG</b></td><td class="m neg"><b>−1,66%</b></td><td class="m neg"><b>−3,58 p.p.</b></td></tr>
+</table></div><p class="note">Źródło kursów: <b>TV</b> — TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13–06:15 UTC, dane opóźnione), świeca 28.10 = close z batcha 06:12 UTC; walidacja D0 23.10 OK (= <code>d0.prices</code>), sesje 26–27.10 zgodne z cache. Drugi tor (bankier/Yahoo) bez sesji 28.10 — patrz PROBLEMY. Progi protokołu od D0 (REDUCE −4% / CLOSE −8%): PGE 16,056 / 15,387, Allegro 56,10 / 53,77, <b>Dino 38,064 / 36,478 (REDUCE przebity)</b>, CD Projekt 259,39 / 248,58, LPP 25 920 / 24 840.</p></section>
+
+<section><h2>Koszyk SHORT (5 spółek, papierowo — nie jest handlowany)</h2><div class="wrap"><table>
+<tr><th>Spółka</th><th>Kierunek</th><th>Kurs D0 (23.10)</th><th>Kurs ostatni (28.10)</th><th>Zwrot pozycji</th><th>Relatywnie vs WIG20</th></tr>
+<tr><td><b>PKOBP</b> <span class="tag REKOM">REDUCE</span></td><td>SHORT</td><td class=m>109,54</td><td class=m>116,08</td><td class='m neg'>+5,97%</td><td class='m neg'>+4,05 p.p.</td></tr>
+<tr><td><b>MBANK</b> <span class="tag SHORT">CLOSE</span></td><td>SHORT</td><td class=m>1 392,50</td><td class=m>1 611,50</td><td class='m neg'>+15,73%</td><td class='m neg'>+13,81 p.p.</td></tr>
+<tr><td><b>ERSTEPL</b> <span class="tag SHORT">CLOSE</span> <span class="tag ESPI">EVENT</span></td><td>SHORT</td><td class=m>740,40</td><td class=m>802,00</td><td class='m neg'>+8,32%</td><td class='m neg'>+6,40 p.p.</td></tr>
+<tr><td><b>PEKAO</b> <span class="tag ESPI">EVENT</span></td><td>SHORT</td><td class=m>251,90</td><td class=m>266,40</td><td class='m neg'>+5,76%</td><td class='m neg'>+3,84 p.p.</td></tr>
+<tr><td><b>KGHM</b></td><td>SHORT</td><td class=m>293,20</td><td class=m>303,85</td><td class='m neg'>+3,63%</td><td class='m neg'>+1,71 p.p.</td></tr>
+<tr><td colspan=4><b>Średnia SHORT (zwrot kursu)</b></td><td class="m neg"><b>+7,88%</b></td><td class="m neg"><b>+5,96 p.p.</b></td></tr>
+</table></div><p class="note">Kolumna „zwrot pozycji” pokazuje zmianę kursu; dla SHORT wzrost kursu działa przeciw tezie (stąd kolor czerwony). Źródło: TV get-ohlcv 1D (jak wyżej), D0 zwalidowane. Progi (REDUCE +4% / CLOSE +8%): PKOBP 113,92 / 118,30, MBANK 1 448,20 / 1 503,90, ERSTEPL 770,02 / 799,63, PEKAO 261,98 / 272,05, KGHM 304,93 / 316,66. Średnie liczone na równych wagach (rozliczenie modelowe); wariant zarządzany z wagami 50%/0% rozlicza sobotni raport przez <code>metryki.py</code>.</p></section>
+
+<section><h2>Wolumen</h2><p class="note">b.d. z kolumny <code>vol_ratio_10d</code> (<code>null</code> dla 21/21, jak w poprzednich biegach). Z get-ohlcv: wolumen 28.10 wobec 27.10 — mBank 45,7 tys. szt. (1,4×), Kruk 210 tys. (5,6×), Budimex 92,7 tys. (2,2×), PGE 2,95 mln (1,4×); Erste 77 tys. (0,5×) i Pekao 0,56 mln (0,4×) rosły na mniejszym obrocie niż we wtorek.</p></section>
+
+<section><h2>Reakcje protokołu i moduł taktyczny</h2>
+<ul><li class="red"><b>exclude: 1 awans + 2 NOWE wpisy (limit dzienny), lista pełna 4 wpisy.</b><br>
+<b>MBANK REDUCE → CLOSE (PRICE_8)</b> — zamknięcie 28.10 1 611,50 zł = <b>+15,73% od D0</b> (próg twardy 1 503,90 zł). Wczoraj REDUCE (waga 50% od 1 484,50 zł od D+3); dziś zamknięcie pozostałej połowy od 1 611,50 zł od sesji 29.10 (D+4). Awans istniejącego wpisu, nie nowy ticker.<br>
+<b>ERSTEPL CLOSE (PRICE_8, nowy)</b> — zamknięcie 28.10 802,00 zł = <b>+8,32% od D0</b> (próg 799,63 zł; zamknięcie na maksimum dnia). Wczoraj (+4,02%) poza limitem, więc bez szczebla REDUCE — od razu twardy. Raport Q3 jutro (EVENT).<br>
+<b>DINOPL REDUCE (PRICE_4_8, nowy)</b> — zamknięcie 28.10 37,71 zł = <b>−4,89% od D0</b> (próg 38,064 zł; CLOSE przy 36,478 zł). Bez komunikatu spółki; raport Q3 5.11. <b>Jedyna z dzisiejszych reakcji, która zmienia rachunek</b> — bot o 10:01 tnie DNP do połowy; redukcja zostaje do soboty.<br>
+<b>PKOBP REDUCE utrzymany</b> — +5,97% od D0 (CLOSE przy 118,30 zł).<br>
+<span class="note">Kolejność przy limicie 2 nowych: twardy wyzwalacz (Erste) i jedyna noga na rachunku (Dino) przed <b>Pekao (+5,76%, ponad progiem REDUCE)</b> — Pekao oceni kolejny Puls na zamknięciu 29.10, po dzisiejszych wynikach (+3% ponad konsensus). KGHM wrócił pod próg (+3,63%). Wpisy SHORT dotyczą wariantu papierowego/zarządzanego: <code>desired_book()</code> pomija koszyk SHORT w trybie <code>index</code>.</span></li>
+<li><b>tactical: bez zmian (0 otwartych).</b> Skan spoza koszyków: brak twardego wyzwalacza BUY/SELL z 24 h. Kruk (−6,98%) — komentarz zarządu o niższym zysku 2026, nie szokowy raport (wynik Q3 był zgodny z szacunkiem z 16.10); Budimex (−5,46%) — przed prezentacją strategii 2030 (CAGR przychodów &gt;8%, marża EBIT &gt;6%), ruch bez nowego raportu; XTB poza WIG20. Spółki z EVENT w 2 sesjach (Pekao, Erste, Budimex, ING) i tak są zablokowane flagą <code>event_blokada_taktycznej</code>.</li>
+<li><b>Status prognozy: AKTUALNA</b> — rajd banków jest ruchem przeciw tezie SHORT, a nie zdarzeniem unieważniającym całą prognozę; ranking W11 obowiązuje, koszyki i kierunki bez zmian. Rejestr katalizatorów W11: +4 wpisy (MAKRO dn=3 sesja 28.10; MBANK dn=3 konferencja; PEKAO dn=4 wyniki Q3; MAKRO dn=4 kalendarz), łącznie 48; <code>data_quality</code> bez nowych kodów (KURS_ZRODLO_TV, KURS_ZRODLO_REZERWA, KNF_SHORT_NIEDOSTEPNY, DYWIDENDA_KOREKTA_LPP, KALENDARZ_NIEPOTWIERDZONY już są).</li></ul></section>
+
+<section><h2>Kalendarz</h2>
+<h3>Dziś, czwartek 29.10 (D+4) — PAP „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-29” = TradingView get-economic-calendar (odczyt 2026-10-29 06:12 UTC)</h3><ul>
+<li><b>Spółki:</b> <b>9:30 Pekao konferencja wynikowa (SHORT, EVENT)</b>; 11:00 Budimex strategia 2030 + Q3; 11:00 ING BSK Q3; 12:00 Polsat Plus konferencja; 16:00 XTB wyniki Q3. Bogdanka NWZ 10:00.</li>
+<li><b>Makro:</b> 13:30 USA PKB III kw. adv (TV 3,2% k/k ann., poprz. 2,2%), PCE IX (TV 3,6% r/r; bazowy 0,3% m/m), dochody i wydatki; <b>14:15 EBC</b> (TV depozytowa 2,50%, refinansowa 2,65% — bez zmian), konferencja 14:45; 11:00 sentyment w strefie euro.</li></ul>
+<h3>Reszta okna — piątek 30.10 (D+5, zamknięcie okna)</h3><ul>
+<li><b>Erste Bank Polska raport Q3 (SHORT, CLOSE, EVENT; TV — data estymowana)</b>; <b>9:30 GUS CPI flash X</b> (TV; poprz. 4,1% r/r, 0,7% m/m); 11:00 PKB strefy euro flash (TV 0,2% k/k, 1,1% r/r), bezrobocie strefy euro IX; LPP wypłata dywidendy (900 zł łącznie z zaliczką — sama płatność, ex-date 8.10); Santander dzień dywidendy (spółka zagraniczna, poza WIG20); 11:00 PFR terminal T5, 12:00 PSE/ME CSIRT Energia.</li>
+<li><b>Dalej:</b> 1.11 Wszystkich Świętych (niedziela, TV Holidays), 2.11 PMI PL (poprz. 49,0) i ISM USA, 3.11 PZU NWZ 12:00, JOLTS; 4.11 <b>RPP</b> (TV 14:00 UTC = 15:00 Warszawy, poprz. 3,75%; potwierdzone PAP 26.10), inflacja flash strefy euro, KĘTY wypłata II transzy dywidendy; 5.11 PKO BP/Orlen/Dino Q3.</li></ul></section>
+
+<section><h2>Kontrola rachunku (/status, odczyt 29.10.2026 ok. 7:13 Warszawy, GPW przed otwarciem)</h2>
+<ul><li><span class="tag RACH">RACH.</span>Widoczne pozycje = <b>koszyk W11, 5/5 nóg</b> (zgodne z <code>sygnaly.long</code>): LPP 0,1 szt., PGE 20,2 szt., CD Projekt 1,2 szt., Dino 8,4 szt., Allegro 5,7 szt. + short FW2020Z2026 0,88 kontr. (auto-roll, wygaśnięcie 18.12, <b>50 dni</b>). <code>pokrycie_koszyka</code> 5/5, <code>brakujace</code> puste, <code>wykluczone_przez_puls</code> puste — <code>/status</code> czyta jeszcze wczorajszy <code>signals.json</code>; REDUCE Dino wejdzie po tym commicie przy biegu 10:01.</li>
+<li>Kapitał (equity) 3 178,87 PLN; saldo 3 055,86 PLN → otwarty wynik pozycji <b>+123,01 PLN</b> (= suma UPL). UPL: LPP +149,95; Allegro +14,47; Dino −2,60; CD Projekt −6,61; PGE −10,81; FW20 short −21,38. Equity wobec wczoraj (3 163,73 PLN) +15,14 PLN.</li>
+<li>Ekspozycja: długa 3 982,83 PLN, krótka 3 757,60 PLN, <b>netto +225,23 PLN = +7,1% kapitału</b> (|netto| &lt; 10% — bez kodu EKSPOZYCJA_NIEPELNA). <code>ekspozycja_dluga_pct</code> 125,3% wobec celu 50% — skutek <code>MIN_SIZE_EXCEPTIONS</code> (LPP 0,1 szt. ≈ 2 690 PLN ≈ 2/3 ekspozycji długiej); koncentracja znana, bez nowej reakcji. Po REDUCE Dino (≈ −160 PLN długiej ekspozycji) netto spadnie do ok. +2% kapitału.</li>
+<li>Diagnostyka instrumentów: nogi LONG „NIE WEJDZIE TERAZ: rynek CLOSED” — stan przed otwarciem, nie awaria; cel per noga 317,89 PLN, tolerancja 508,62 PLN; LPP na rachunku dzięki wyjątkowi minimalnej wielkości (opisane 12.10).</li></ul></section>
+
+<section><h2>PROBLEMY i stan źródeł</h2><ul>
+<li><b>STAN ŹRÓDEŁ:</b> 2026-10-29, puls-wig20, prefiks <code>mcp__TradingView__mcp-tv-</code> (= config; pierwsze załadowane narzędzie <code>mcp__TradingView__mcp-tv-get-symbol-data-batch</code>), stan OK, faza 2, 24 wywołania (batch 06:12 UTC, kalendarz makro 06:12, kalendarz dywidend 06:12, 21 × get-ohlcv 06:13–06:15 — wszystkie za pierwszym razem, bez 429), czas bloku TV ok. 240 s (budżet 480 s, granica 08:01 UTC), n=21, komplet 21/21, max |Δ| 8,56%, mediana 1,27% — Δ to ruch sesji 28.10 (TV 28.10 vs cache 27.10), nie rozbieżność źródeł; missing brak; backfill 21/21 × 1 sesja (28.10) przez <code>tv_merge.py</code>, wspólne sesje 23/26/27.10 zgodne 21/21; werdykt zmieniony: tak.</li>
+<li><b>Drugi tor kursów bez sesji 28.10:</b> <code>kursy.py --json</code> — Yahoo HTTP 429 dla 21/21 (budżet ponowień wyczerpany), <b>bankier.pl HTTP 403 (Cloudflare) drugi dzień z rzędu</b> (sprawdzone jednym zapytaniem curl o 06:26 UTC) → cache z sesją 27.10. Zamknięcia 28.10 w tabelach i progach pochodzą więc wyłącznie z TV; WIG20 4 247,19 potwierdzony depeszą PAP, PGE 16,25 i PKN 149,64 — paskiem notowań strefainwestorow.pl/PAP. Reguła „rozjazd → bankier/Yahoo wygrywa” nie miała czego porównać (różne daty). <b>Odstępstwo od „kursy.py RAZ”:</b> pierwszy bieg (06:11) przerwał mój zewnętrzny limit 400 s, krótszy niż wbudowany budżet ponowień skryptu (360 s + czas zapytań) — bez wyniku i bez zapisu cache; drugi bieg 06:18–06:25 UTC zakończył się normalnie. Na przyszłość limit zewnętrzny ≥ 600 s.</li>
+<li><b>Cache:</b> <code>data/kursy-cache.json</code> +sesja 28.10 dla 21/21 serii (z TV, znacznik „(TV)”) — w commicie. Kod KURS_ZRODLO_TV już jest w <code>data_quality</code> W11.</li>
+<li><b>Guard podwójnego biegu:</b> <code>reports/puls-2026-10-29.html</code> nie było w HEAD — bieg pierwszy. Środowisko wymusza gałąź roboczą <code>claude/happy-pascal-45kyqr</code> → PR do main scalony w tym samym biegu.</li>
+<li><b>KNF_SHORT_NIEDOSTEPNY:</b> rejestr KNF poza allowlistą sieci; TV go nie ma. Przyczyna spadku Dino 28.10 niepotwierdzona (WebSearch bez relacji z sesji) — w raporcie tylko tło sektorowe.</li>
+<li><b>Kalendarz:</b> EBC 29.10 14:15, CPI flash 30.10 9:30, RPP 4.11 — TV (data + godzina) zgodne z PAP = potwierdzone; data raportu Erste 30.10 tylko z TV (estymowana). KALENDARZ_NIEPOTWIERDZONY zostaje (wezwanie Erste bez daty).</li>
+<li><b>Dywidendy (TV get-dividends-calendar, 24 wiersze, 23.09–13.11):</b> w WIG20 tylko LPP 500 zł ex 8.10 (kod już w <code>data_quality</code>); pozostałe wiersze to spółki zagraniczne na GPW i małe spółki — pominięte.</li>
+<li><b>Nie wołano:</b> <code>get-forecasts</code> (Puls nie punktuje), <code>get-news</code> dla GPW (0 wyników), batch surowców/FX (ucięty — sektorówka pierwsza w kolejności cięć przy 24/25 wywołań), FMP.</li></ul>
+<h3>Tabela ZGODNOŚĆ (scripts/tv_porownaj.py, 29.10.2026 ok. 06:27 UTC)</h3><pre>
+ZGODNOŚĆ ŹRÓDEŁ (Δ% = TV / kursy.py − 1; TV = ostatnia zakończona świeca ohlcv, a gdy jej brak — close z batcha)
+TICKER       kursy.py źródło    data                TV    Δ% TV  uwagi
+ ALIOR          135.0 cache z 2 2026-10-27       137.5    +1.85  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*ALLEGRO         58.8 cache z 2 2026-10-27       59.07    +0.46  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; odnotuj (&gt;0,1%)
+ BUDIMEX        740.6 cache z 2 2026-10-27       700.2    -5.46  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*CDPROJEKT      271.8 cache z 2 2026-10-27         267    -1.77  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*DINOPL         38.76 cache z 2 2026-10-27       37.71    -2.71  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*ERSTEPL        770.2 cache z 2 2026-10-27         802    +4.13  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ KETY          1254.0 cache z 2 2026-10-27        1266    +0.96  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*KGHM          305.55 cache z 2 2026-10-27      303.85    -0.56  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ KRUK           358.0 cache z 2 2026-10-27         333    -6.98  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*LPP          26680.0 cache z 2 2026-10-27       26880    +0.75  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*MBANK         1484.5 cache z 2 2026-10-27      1611.5    +8.56  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ MODIVO          98.4 cache z 2 2026-10-27        97.4    -1.02  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*PEKAO          262.6 cache z 2 2026-10-27       266.4    +1.45  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ PEPCO           48.8 cache z 2 2026-10-27       49.99    +2.44  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*PGE            16.43 cache z 2 2026-10-27       16.25    -1.10  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ PKNORLEN      153.32 cache z 2 2026-10-27      149.64    -2.40  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*PKOBP         115.48 cache z 2 2026-10-27      116.08    +0.52  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ PZU            72.74 cache z 2 2026-10-27       73.24    +0.69  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+ TAURONPE       9.266 cache z 2 2026-10-27       9.148    -1.27  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; ROZJAZD &gt;0,5% — bankier/Yahoo wygrywa, TV = b.d.
+*WIG20        4238.38 cache z 2 2026-10-27     4247.19    +0.21  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; odnotuj (&gt;0,1%)
+ ZABKA          31.73 cache z 2 2026-10-27       31.68    -0.16  inna data świecy: TV 2026-10-28 vs kursy.py 2026-10-27; odnotuj (&gt;0,1%)
+
+n = 21; max |Δ| = 8.56%; mediana |Δ| = 1.27%
+|Δ| &gt; 0,1%: ALLEGRO, WIG20, ZABKA
+|Δ| &gt; 0,5% (ROZJAZD): ALIOR, BUDIMEX, CDPROJEKT, DINOPL, ERSTEPL, KETY, KGHM, KRUK, LPP, MBANK, MODIVO, PEKAO, PEPCO, PGE, PKNORLEN, PKOBP, PZU, TAURONPE
+missing / błędy TV: brak
+komplet 21/21 z dwóch źródeł: 21/21</pre>
+<p class="note">Kolumna „data” pokazuje, że kursy.py ma tylko 27.10 z cache — Δ to ruch sesji 28.10, a nie rozbieżność. Rzeczywista zgodność TV z cache na wspólnych sesjach (23.10, 26.10, 27.10): 21/21 zgodnych (<code>tv_merge.py</code>).</p></section>
+
+</main>
+<footer>Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej. Wygenerowano automatycznie przez AI (rutyna „Puls WIG20”, 29.10.2026) na podstawie: TradingView MCP (dane opóźnione), strefainwestorow.pl (przedruki PAP Biznes), <code>/status</code> bota, signals.json i rankings/2026-W11.json.</footer>
+</body></html>
