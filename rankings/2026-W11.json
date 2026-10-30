@@ -1504,6 +1504,30 @@
    "opis": "Kalendarz 29–30.10 (TV = PAP): 29.10 9:30 Pekao konf., 11:00 Budimex strategia 2030, 11:00 ING BSK Q3, 13:30 USA PKB III kw. (TV 3,2%) i PCE IX (TV 3,6% r/r; bazowy m/m 0,3%), 14:15 EBC (TV depozytowa 2,50%, bez zmian), 16:00 XTB; 30.10 9:30 GUS CPI flash X (poprz. 4,1%), 11:00 PKB strefy euro flash, Erste Bank Polska Q3 (TV, data estymowana), LPP wypłata dywidendy, Santander dzień dywidendy (0,127 EUR — spółka zagraniczna, poza WIG20). Dalej: 2.11 PMI PL, 3.11 PZU NWZ 12:00, 4.11 RPP (TV 14:00 UTC = 15:00), 5.11 PKO BP/Orlen/Dino Q3.",
    "wklad_pkt": null,
    "zrodlo": "strefainwestorow.pl/PAP Biznes „Przewidywane najważniejsze wydarzenia gospodarcze 2026-10-29”, „Kalendarium rynku kapitałowego GPW 2026-10-29”; TradingView MCP get-economic-calendar(PL,US,EU; min_importance=-1), odczyt 2026-10-29 06:12 UTC (131 zdarzeń); get-symbol-data-batch earnings_release_next_date 06:12 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-29",
+   "dn": 4,
+   "opis": "Czwarta sesja okna W11: WIG20 4 283,82 (+0,86%), WIG 161 499,83 (+0,72%); WIG-Banki +1,96% (28 276,04) - mBank +3,48% (1 667,50), PKO BP +2,00% (118,40, maksimum dnia; przebity prog CLOSE 118,30), Pekao +1,58% (270,60), Erste +1,30% (812,40); WIG-Paliwa -1,72% (Orlen -1,76%), Dino +1,83%, Allegro +1,41%, PGE +1,23%, CD Projekt +1,24%, KGHM -0,26%. Koszyk SHORT +9,67% od D0, LONG -0,38%. EBC bez zmian; USA PKB III kw. +3,4% (oczek. 3,2%), PCE IX 3,6% r/r; Wall Street wieczorem S&P -0,30%, Nasdaq -1,38%; Brent 115,74 USD (miny w ciesninie Ormuz); MAP: podatek od nadzwyczajnych zyskow 'nie jest wykluczony'; ceny maksymalne paliw od 30.10 Pb95 6,51, ON 8,19 zl/l.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4283,82 pkt (0,86%)' 29.10 17:34, 'Skrot wiadomosci - czwartek, 29 pazdziernika, 21.00', 'DZIEN NA RYNKACH: Gieldy w USA w dol...' 29.10; TradingView MCP get-ohlcv 1D i get-symbol-data-batch, odczyt 2026-10-30 06:13-06:16 UTC, dane opoznione"
+  },
+  {
+   "ticker": "PEKAO",
+   "data": "2026-10-29",
+   "dn": 4,
+   "opis": "Konferencja wynikowa Q3: zarzad oczekuje stabilnej marzy odsetkowej; w IV kw. 70-80 mln zl kosztow programu dobrowolnych odejsc; zysk 9M -18% do ok. 4,3 mld zl (glownie wyzszy podatek dochodowy); brak decyzji o zmianie nazwy w 2027. Kurs +1,58% d/d, +7,42% od D0 - 30.10 REDUCE (PRICE_4_8).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes 'Skrot wiadomosci - czwartek, 29 pazdziernika, 21.00'; TradingView MCP get-ohlcv 1D GPW:PEO, odczyt 2026-10-30 06:14 UTC"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-10-30",
+   "dn": 5,
+   "opis": "KNF nie nalozyla na Erste Bank Polska dodatkowego bufora P2G na pokrycie strat w scenariuszu skrajnym (depesza wieczorna 29.10, po sesji -> dn=5); lekko pozytywne dla kapitalu, przeciw tezie SHORT; noga juz CLOSE od 29.10. Raport Q3 30.10, konferencja 9:30.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes 'Skrot wiadomosci - czwartek, 29 pazdziernika, 21.00', 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-30'"
   }
  ],
  "data_quality": [
