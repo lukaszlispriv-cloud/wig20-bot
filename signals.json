@@ -84,9 +84,18 @@
       "price_before": 270.6,
       "move_from_d0_pct": 7.42,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "CDPROJEKT",
+      "action": "REDUCE",
+      "date": "2026-10-31",
+      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8% (PRICE_4_8): zamkniecie 30.10.2026 257,50 zl wobec D0 270,20 zl = -4,70% (-5,03 p.p. wobec WIG20 +0,33%); prog miekki 4% = 259,39 zl przebity w sesji 30.10 (-4,74% d/d, minimum dnia 254,10 zl, wolumen 404,3 tys. szt. = ok. 2,1x sesji 29.10) przy WIG20 -2,40% (korekta po czterech sesjach wzrostow, wyprzedaz spolek technologicznych na swiecie); prog twardy CLOSE (PRICE_8) = 248,58 zl. Brak komunikatu ESPI CD Projektu w 24 h i brak potwierdzonej przyczyny spolkowej; raport Q3 24.11 (TV earnings_release_next_date, data estymowana, poza oknem). Okno W11 zamkniete po D+5 (30.10) - wpis nie zmienia rozliczenia W11 (brak kolejnych sesji okna); dziala wylacznie, gdyby bieg /run 2.11 10:01 zastal jeszcze signals.json W11 (wtedy bot tnie CDR do polowy; Capital.com bez czesciowego zamkniecia - podwojny spread). Zrodla: TradingView MCP get-ohlcv 1D GPW:CDR i get-symbol-data-batch (odczyt 2026-10-31 06:12-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-29.10 zgodne z cache); bankier.pl notowania CDPROJEKT 30.10 17:03 '257,5000 zl -4,74%'; drugi tor kursy.py bez sesji 30.10 (Yahoo HTTP 429 -> cache 29.10); strefainwestorow.pl/PAP Biznes 'WIG20 na zamknieciu wyniosl 4180,88 pkt (-2,40%)' 30.10; d0.prices w signals.json.",
+      "price_before": 257.5,
+      "move_from_d0_pct": -4.7,
+      "trigger": "PRICE_4_8"
     }
   ],
-  "last_daily": "2026-10-30",
+  "last_daily": "2026-10-31",
   "d0": {
     "date": "2026-10-23",
     "wig20": 4167.13,

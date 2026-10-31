@@ -1528,6 +1528,38 @@
    "opis": "KNF nie nalozyla na Erste Bank Polska dodatkowego bufora P2G na pokrycie strat w scenariuszu skrajnym (depesza wieczorna 29.10, po sesji -> dn=5); lekko pozytywne dla kapitalu, przeciw tezie SHORT; noga juz CLOSE od 29.10. Raport Q3 30.10, konferencja 9:30.",
    "wklad_pkt": null,
    "zrodlo": "strefainwestorow.pl/PAP Biznes 'Skrot wiadomosci - czwartek, 29 pazdziernika, 21.00', 'Przewidywane najwazniejsze wydarzenia gospodarcze 2026-10-30'"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-10-30",
+   "dn": 5,
+   "opis": "Piata (ostatnia) sesja okna W11: WIG20 4 180,88 (-2,40%), WIG 157 676,17 (-2,37%), mWIG40 -2,45%; WIG-Banki -3,40% (27 314,33) - korekta po czterech sesjach wzrostow: PKO BP -3,28% (114,52), Pekao -2,99% (262,50), mBank -2,13% (1 632,00), Erste -4,51% (775,80), Alior -6,09%; KGHM -7,08% (281,60; tansza miedz na LME, obawy o wzrost globalny po wyprzedazy spolek technologicznych i drozszej ropie), CD Projekt -4,74%, Modivo -5,10%; w WIG20 rosly tylko Budimex +0,26% i Zabka +0,09%. GUS CPI flash X 3,5% r/r wobec oczekiwan 3,7%. Okno D0->D+5: WIG20 +0,33%, koszyk LONG -2,13%, SHORT +5,36% (metryki.py rozlicz).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4180,88 pkt (-2,40%)' 30.10, 'DZIEN NA GPW: Na GPW korekta po czterech wzrostowych sesjach; KGHM i Cyfrowy traca po kilka proc.' 30.10 11:11, 'Skrot wiadomosci - piatek, 30 pazdziernika, 17.00'; TradingView MCP get-ohlcv 1D i get-symbol-data-batch, odczyt 2026-10-31 06:12-06:15 UTC, dane opoznione"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-10-30",
+   "dn": 5,
+   "opis": "Raport Q3: zysk netto 1 490,4 mln zl (-21,1% r/r, +27,1% k/k) wobec konsensusu PAP 1 499,5 mln zl (-0,6%, zgodny); wynik odsetkowy 3 303,2 mln zl (konsensus 3 262,5), prowizje 643,4 mln zl (-14,5% wobec konsensusu), odpisy 117,1 mln zl (-7,3%). Erste Group planuje 2.11 oglosic wezwanie po 713,60 zl/akcje (cena ponizej zamkniecia 775,80 zl), zapisy od 3.11 przez 30 dni, cel 50-75% kapitalu, rozliczenie w grudniu. Kurs -4,51% d/d; noga juz CLOSE od 29.10 - bez nowej reakcji.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 'Zysk netto Erste Bank Polska w III kw. 26 wyniosl 1,49 mld zl, zgodny z oczekiwaniami (opis)' 30.10, 'Erste Group Bank planuje 2 XI oglosic wezwanie na akcje Erste Bank Polska' 30.10; strefainwestorow.pl/PAP Biznes 'Wyniki Erste Bank Polska w III kw. 2026 roku vs. konsensus PAP Biznes (tabela)'; TradingView MCP get-ohlcv 1D GPW:EBP, odczyt 2026-10-31 06:14 UTC"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-10-30",
+   "dn": 5,
+   "opis": "Kurs -4,74% d/d do 257,50 zl (minimum 254,10, wolumen ok. 2,1x sesji 29.10) przy WIG20 -2,40%; bez komunikatu ESPI i bez potwierdzonej przyczyny spolkowej (tlo: wyprzedaz spolek technologicznych). Ruch od D0 -4,70% - 31.10 REDUCE (PRICE_4_8); okno W11 juz zamkniete, wiec bez wplywu na rozliczenie W11.",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl notowania CDPROJEKT 30.10 17:03; TradingView MCP get-ohlcv 1D GPW:CDR, odczyt 2026-10-31 06:13 UTC"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-10-30",
+   "dn": 5,
+   "opis": "Kurs -7,08% d/d do 281,60 zl (wolumen 1,58 mln szt., ok. 2,9x sesji 29.10) - tansza miedz na LME i obawy o globalny wzrost; od D0 -3,96% (za teza SHORT), od 13.10 ponad -13%. Bez komunikatu spolki; raport Q3 18.11 poza oknem.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes 'DZIEN NA GPW: Na GPW korekta po czterech wzrostowych sesjach; KGHM i Cyfrowy traca po kilka proc.' 30.10 11:11; TradingView MCP get-ohlcv 1D GPW:KGH, odczyt 2026-10-31 06:14 UTC"
   }
  ],
  "data_quality": [
