@@ -1,19 +1,19 @@
 {
-  "version": "2026-W11",
-  "generated": "2026-10-24",
+  "version": "2026-W12",
+  "generated": "2026-10-31",
   "status": "AKTUALNA",
   "long": [
-    "PGE",
-    "ALLEGRO",
-    "DINOPL",
-    "CDPROJEKT",
-    "LPP"
+    "MBANK",
+    "PKOBP",
+    "ALIOR",
+    "PEPCO",
+    "ERSTEPL"
   ],
   "short": [
-    "PKOBP",
-    "MBANK",
-    "ERSTEPL",
-    "PEKAO",
+    "TAURONPE",
+    "CDPROJEKT",
+    "PKNORLEN",
+    "KRUK",
     "KGHM"
   ],
   "epics": {
@@ -39,77 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "MBANK",
-      "action": "CLOSE",
-      "date": "2026-10-29",
-      "reason": "AWANS REDUCE -> CLOSE (PRICE_8): zamkniecie 28.10.2026 1 611,50 zl wobec D0 1 392,50 zl = +15,73% (+13,81 p.p. wobec WIG20 +1,92%); prog twardy 8% = 1 503,90 zl przebity w sesji 28.10 (+8,56% d/d, zamkniecie na maksimum dnia, wolumen 45,7 tys. szt. = 1,4x sesji 27.10) po konferencji wynikowej Q3 (zysk 1 085 mln zl zgodny z konsensusem PAP; zarzad: przychody 2026 ok. +2%, zysk netto 2027 'wyraznie wyzszy', szybki wzrost portfela kredytowego - skrot PAP 28.10 21:00). Wczesniejszy szczebel: REDUCE 28.10 (D+3) za +6,61% od D0, waga 50% od 1 484,50 zl; teraz zamkniecie pozostalej polowy od kursu 1 611,50 zl od sesji 29.10 (D+4). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index - pozycji na rachunku nie zmienia. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-27.10 zgodne z cache) i get-symbol-data-batch 06:12 UTC (ten sam close 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4247,19 pkt (0,21%)' 28.10, 'Skrot wiadomosci - sroda, 28 pazdziernika, 21.00' (WIG-Banki +1,92%, 27 733,53); d0.prices w signals.json.",
-      "price_before": 1611.5,
-      "move_from_d0_pct": 15.73,
-      "trigger": "PRICE_8"
-    },
-    {
-      "ticker": "PKOBP",
-      "action": "CLOSE",
-      "date": "2026-10-30",
-      "reason": "AWANS REDUCE -> CLOSE (PRICE_8): zamkniecie 29.10.2026 118,40 zl wobec D0 109,54 zl = +8,09% (+5,29 p.p. wobec WIG20 +2,80%); prog twardy 8% = 118,30 zl przebity o 0,10 zl w sesji 29.10 (+2,00% d/d, zamkniecie na maksimum dnia, wolumen 3,24 mln szt.) przy WIG-Banki +1,96%; brak komunikatu PKO BP w 24 h, raport Q3 5.11 (dn=9). Kurs 29.10 wylacznie z TV (drugi tor bez sesji 29.10, PAP nie podal kursu PKO) - margines nad progiem 0,08%, do weryfikacji w raporcie sobotnim. Wczesniejszy szczebel: REDUCE 28.10 (D+3) za +5,42% od D0, waga 50% od 115,48 zl; teraz zamkniecie pozostalej polowy od kursu 118,40 zl od sesji 30.10 (D+5). Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index - pozycji na rachunku nie zmienia. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-30 06:14-06:16 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-28.10 zgodne z cache) i get-symbol-data-batch 06:13 UTC (ten sam close 29.10); drugi tor kursy.py bez sesji 29.10 (Yahoo HTTP 429 -> cache 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4283,82 pkt (0,86%)' 29.10 17:34 (WIG-Banki +1,96%, 28 276,04), 'Skrot wiadomosci - czwartek, 29 pazdziernika, 21.00'; d0.prices w signals.json.",
-      "price_before": 118.4,
-      "move_from_d0_pct": 8.09,
-      "trigger": "PRICE_8"
-    },
-    {
-      "ticker": "ERSTEPL",
-      "action": "CLOSE",
-      "date": "2026-10-29",
-      "reason": "Ruch od D0 przeciw tezie SHORT ponad 8% (PRICE_8): zamkniecie 28.10.2026 802,00 zl wobec D0 740,40 zl = +8,32% (+6,40 p.p. wobec WIG20 +1,92%); prog twardy 8% = 799,63 zl przebity w sesji 28.10 (+4,13% d/d, zamkniecie na maksimum dnia) przy WIG-Banki +1,92%. Bez komunikatu spolki w 24 h; raport Q3 30.10 (TV earnings_release_next_date, EVENT). Dzien wczesniej (+4,02%) poza limitem 2 nowych wpisow - bez REDUCE, wiec od razu szczebel CLOSE. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje, desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym zamkniecie od kursu 802,00 zl od sesji 29.10 (D+4). Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-27.10 zgodne z cache) i get-symbol-data-batch 06:12 UTC (ten sam close 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4247,19 pkt (0,21%)' 28.10, 'Skrot wiadomosci - sroda, 28 pazdziernika, 21.00' (WIG-Banki +1,92%, 27 733,53); d0.prices w signals.json.",
-      "price_before": 802.0,
-      "move_from_d0_pct": 8.32,
-      "trigger": "PRICE_8"
-    },
-    {
-      "ticker": "DINOPL",
-      "action": "REDUCE",
-      "date": "2026-10-29",
-      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8% (PRICE_4_8): zamkniecie 28.10.2026 37,71 zl wobec D0 39,65 zl = -4,89% (-6,81 p.p. wobec WIG20 +1,92%); prog miekki 4% = 38,064 zl przebity w sesji 28.10 (-2,71% d/d, zamkniecie na minimum dnia; 27.10 minimum 36,16 zl), prog twardy CLOSE (PRICE_8) = 36,478 zl. Brak komunikatu Dino w 24 h; tlo sektorowe (nie potwierdzone jako przyczyna): Jeronimo Martins zysk netto 154 mln EUR (-28,2%), Zabka obnizyla oczekiwania LFL 2026 (skrot PAP 28.10 21:00); raport Q3 Dino 5.11 (TV, dn=9). Noga LONG jest handlowana: bot przy biegu /run 10:01 tnie pozycje DNP do polowy (Capital.com bez czesciowego zamkniecia - zamkniecie i ponowne otwarcie, podwojny spread). Wybor przy limicie 2 nowych wpisow: Erste CLOSE (twardy) i Dino REDUCE (jedyna noga na rachunku) przed Pekao (+5,76%, wyniki Q3 29.10 +3% ponad konsensus - ocena w kolejnym Pulsie). Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-29 06:13-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-27.10 zgodne z cache) i get-symbol-data-batch 06:12 UTC (ten sam close 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4247,19 pkt (0,21%)' 28.10, 'Skrot wiadomosci - sroda, 28 pazdziernika, 21.00' (WIG-Banki +1,92%, 27 733,53); d0.prices w signals.json. | 30.10: REDUCE utrzymany (raz zredukowana zostaje do soboty) - zamkniecie 29.10 38,40 zl = -3,15% od D0; na rachunku DNP 4,1 szt. po redukcji w biegu 29.10 10:01.",
-      "price_before": 37.71,
-      "move_from_d0_pct": -4.89,
-      "trigger": "PRICE_4_8"
-    },
-    {
-      "ticker": "PEKAO",
-      "action": "REDUCE",
-      "date": "2026-10-30",
-      "reason": "Ruch od D0 przeciw tezie SHORT w przedziale 4-8% (PRICE_4_8): zamkniecie 29.10.2026 270,60 zl wobec D0 251,90 zl = +7,42% (+4,62 p.p. wobec WIG20 +2,80%); prog miekki 4% = 261,98 zl przebity od sesji 28.10 (+5,76%; wtedy poza limitem 2 nowych wpisow), prog twardy CLOSE (PRICE_8) = 272,05 zl. Tlo: wyniki Q3 29.10 - zysk netto 1 516 mln zl, +3,0% ponad konsensus PAP 1 471,7 mln zl; konferencja: stabilna marza odsetkowa, 70-80 mln zl kosztow dobrowolnych odejsc w IV kw. (skrot PAP 29.10 21:00) - bez szoku. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje, desired_book() pomija go w trybie index; w rozliczeniu zarzadzanym od sesji 30.10 (D+5) waga 50% od kursu 270,60 zl. Zrodla: TradingView MCP get-ohlcv 1D (odczyt 2026-10-30 06:14-06:16 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-28.10 zgodne z cache) i get-symbol-data-batch 06:13 UTC (ten sam close 29.10); drugi tor kursy.py bez sesji 29.10 (Yahoo HTTP 429 -> cache 28.10); strefainwestorow.pl/PAP Biznes: 'WIG20 na zamknieciu wyniosl 4283,82 pkt (0,86%)' 29.10 17:34 (WIG-Banki +1,96%, 28 276,04), 'Skrot wiadomosci - czwartek, 29 pazdziernika, 21.00'; d0.prices w signals.json.",
-      "price_before": 270.6,
-      "move_from_d0_pct": 7.42,
-      "trigger": "PRICE_4_8"
-    },
-    {
-      "ticker": "CDPROJEKT",
-      "action": "REDUCE",
-      "date": "2026-10-31",
-      "reason": "Ruch od D0 przeciw tezie LONG w przedziale 4-8% (PRICE_4_8): zamkniecie 30.10.2026 257,50 zl wobec D0 270,20 zl = -4,70% (-5,03 p.p. wobec WIG20 +0,33%); prog miekki 4% = 259,39 zl przebity w sesji 30.10 (-4,74% d/d, minimum dnia 254,10 zl, wolumen 404,3 tys. szt. = ok. 2,1x sesji 29.10) przy WIG20 -2,40% (korekta po czterech sesjach wzrostow, wyprzedaz spolek technologicznych na swiecie); prog twardy CLOSE (PRICE_8) = 248,58 zl. Brak komunikatu ESPI CD Projektu w 24 h i brak potwierdzonej przyczyny spolkowej; raport Q3 24.11 (TV earnings_release_next_date, data estymowana, poza oknem). Okno W11 zamkniete po D+5 (30.10) - wpis nie zmienia rozliczenia W11 (brak kolejnych sesji okna); dziala wylacznie, gdyby bieg /run 2.11 10:01 zastal jeszcze signals.json W11 (wtedy bot tnie CDR do polowy; Capital.com bez czesciowego zamkniecia - podwojny spread). Zrodla: TradingView MCP get-ohlcv 1D GPW:CDR i get-symbol-data-batch (odczyt 2026-10-31 06:12-06:15 UTC, dane opoznione; swieca D0 23.10 zgodna z d0.prices, sesje 26-29.10 zgodne z cache); bankier.pl notowania CDPROJEKT 30.10 17:03 '257,5000 zl -4,74%'; drugi tor kursy.py bez sesji 30.10 (Yahoo HTTP 429 -> cache 29.10); strefainwestorow.pl/PAP Biznes 'WIG20 na zamknieciu wyniosl 4180,88 pkt (-2,40%)' 30.10; d0.prices w signals.json.",
-      "price_before": 257.5,
-      "move_from_d0_pct": -4.7,
-      "trigger": "PRICE_4_8"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-10-31",
   "d0": {
-    "date": "2026-10-23",
-    "wig20": 4167.13,
+    "date": "2026-10-30",
+    "wig20": 4180.88,
     "prices": {
-      "PGE": 16.725,
-      "ALLEGRO": 58.44,
-      "DINOPL": 39.65,
-      "CDPROJEKT": 270.2,
-      "LPP": 27000,
-      "PKOBP": 109.54,
-      "MBANK": 1392.5,
-      "ERSTEPL": 740.4,
-      "PEKAO": 251.9,
-      "KGHM": 293.2
+      "MBANK": 1632.0,
+      "PKOBP": 114.52,
+      "ALIOR": 133.35,
+      "PEPCO": 49.2,
+      "ERSTEPL": 775.8,
+      "TAURONPE": 9.028,
+      "CDPROJEKT": 257.5,
+      "PKNORLEN": 146.38,
+      "KRUK": 335.7,
+      "KGHM": 281.6
     }
   },
   "history": [
@@ -328,6 +273,30 @@
       ],
       "metoda": "v1.1 (momentum mechaniczne)",
       "benchmark_momentum_pp": 0.79
+    },
+    {
+      "week": "2026-W11",
+      "long_vs_index_pp": -2.46,
+      "long_abs_pct": -2.13,
+      "spread_pp": -7.49,
+      "rozjazd_pp": -5.03,
+      "hit_top": "1/5",
+      "hit_bottom": "1/5",
+      "tactical_pp": null,
+      "managed_pp": -7.76,
+      "reaction_pp": -0.27,
+      "base_rate": 0.45,
+      "spearman": -0.525,
+      "brier": 0.2665,
+      "data_quality": [
+        "KURS_ZRODLO_TV",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "DYWIDENDA_KOREKTA_LPP",
+        "KALENDARZ_NIEPOTWIERDZONY"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)",
+      "benchmark_momentum_pp": -0.74
     }
   ],
   "tactical": []
