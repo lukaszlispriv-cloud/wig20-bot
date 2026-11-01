@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puls WIG20 — 1.11.2026</title>
+<style>
+:root{--bg:#F6F7F4;--navy:#10243E;--g:#0E7C4A;--r:#C4372E;--amb:#B7791F;--ink:#1C2430;--mut:#5B6572;--card:#fff;--line:#E2E5E0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:20px 16px 24px}header h1{margin:0 0 4px;font-size:22px;letter-spacing:.3px}
+header .sub{opacity:.85;font-size:14px}header .wig{margin-top:14px;font-size:30px;font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+header .wig small{font-size:14px;font-weight:400;opacity:.85;font-family:inherit}
+.stamp{display:inline-block;margin:14px 0 0;padding:6px 14px;border:3px solid #3DBE7A;color:#3DBE7A;border-radius:6px;font-weight:800;letter-spacing:2px;text-transform:uppercase;transform:rotate(-2.5deg);background:rgba(255,255,255,.04)}
+main{max-width:860px;margin:0 auto;padding:16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px}
+h2{font-size:17px;margin:0 0 10px;color:var(--navy)}h3{font-size:15px;margin:14px 0 6px;color:var(--navy)}
+.pos{color:var(--g)}.neg{color:var(--r)}.m{font-family:ui-monospace,Menlo,Consolas,monospace;text-align:right;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}
+.wrap{overflow-x:auto}
+.bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}.bar .main{font-size:34px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace}
+.bar .lab{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}.bar .side{font-size:18px;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--mut)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;color:#fff;margin-right:6px;vertical-align:middle}
+.ESPI{background:#2F5D8A}.SHORT{background:#7A3E9D}.REKOM{background:#B7791F}.MAKRO{background:#4C6B2F}.TV{background:#355C7D}.RACH{background:#6B4F2F}
+.red{background:#FFF4E5;border-left:4px solid var(--amb);padding:8px 12px;border-radius:6px}
+ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+.note{font-size:13px;color:var(--mut)}pre{font-size:12px;overflow-x:auto;background:#F2F3EF;padding:8px;border-radius:6px;line-height:1.35}
+footer{text-align:center;font-size:12px;color:var(--mut);padding:18px 16px 30px}
+</style></head><body>
+<header><h1>Puls WIG20</h1><div class="sub">niedziela, 1 listopada 2026 (Wszystkich Świętych), bieg poranny ok. 7:10–7:40 Warszawy — GPW zamknięta od piątku · tydzień <b>2026-W12</b> · D0 = 30.10.2026 (ostatnia zakończona sesja) · okno 2–6.11. Kursy w tabelach = zamknięcia D0, więc wszystkie zwroty okna wynoszą 0,00%; pierwsza sesja okna jutro.</div>
+<div class="wig">WIG20 4 180,88 <small>zamknięcie 30.10 (D0) · −2,40% d/d · od D0 0,00% · TradingView MCP (get-symbol-data-batch, odczyt 2026-11-01 06:12 UTC, dane opóźnione; GPW zamknięta — close = zamknięcie 30.10) = cache kursy.py (= PAP 30.10)</small></div>
+<div class="stamp">Aktualna</div></header>
+<main>
+
+<section><h2>Pasek wyniku okna W12 (D0 30.10 → ostatnia sesja 30.10, 0 z 5 sesji)</h2>
+<div class="bar"><div><div class="lab">Wynik rachunku = średnia LONG − WIG20</div><div class="main">0,00 p.p.</div>
+<div class="note">Okno jeszcze nie ruszyło: średnia LONG 0,00% wobec WIG20 0,00%. Tak gra bot: kupuje koszyk LONG (mBank, PKO BP, Alior, Pepco, Erste BP) i sprzedaje kontrakt FW20.</div></div>
+<div><div class="lab">papierowy — miara selekcji, nie wynik rachunku</div><div class="side">spread LONG−SHORT 0,00 p.p.</div><div class="note">Rozjazd 0,00 p.p. (poniżej progu 0,5 p.p.). Koszyk SHORT (Tauron, CD Projekt, Orlen, Kruk, KGHM) rozliczany wyłącznie papierowo — rachunek nie shortuje CFD na akcje.</div></div></div>
+<p class="note"><b>Co się stanie jutro (2.11):</b> <code>/run</code> o 08:01 UTC = <b>9:01 Warszawy</b> (czas zimowy) wymienia CAŁY koszyk LONG: wychodzą PGE, Allegro, Dino, CD Projekt i LPP (koszyk W11), wchodzą mBank, PKO BP, Alior, Pepco i Erste BP; hedge FW2020Z2026 zostaje (auto-roll) i dostosuje się do nowej ekspozycji. Wypada też LPP 0,1 szt. — koncentracja ~2/3 ekspozycji długiej w jednej nodze znika; w koszyku W12 nie ma nogi z wyjątkiem minimalnej wielkości. Cały koszyk LONG W12 to cztery banki + Pepco, czyli silna ekspozycja sektorowa na WIG-Banki — przy hedge'u FW20 (banki ≈ 40% indeksu) wynik rachunku zależy od tego, czy banki wygrają z resztą indeksu.</p></section>
+
+<section><h2>Najważniejsze zmiany (weekend 31.10–1.11)</h2><ul>
+<li><span class="tag ESPI">ESPI</span><b>Erste Bank Polska (LONG): jutro (2.11, dn=1) planowane ogłoszenie wezwania Erste Group po 713,60 zł</b> — znane rankingowi (rejestr W12, wkład 0; opisane w ryzyku nogi). W weekend brak nowego komunikatu; wyszukiwanie zwraca tylko materiały z ogłoszenia zamiaru (bankier.pl/PAP, ad hoc Erste Group z 25.09). <b>Uwaga dla protokołu:</b> próg CLOSE nogi (−8% od D0) wynosi 713,74 zł — praktycznie równy cenie wezwania 713,60 zł; zejście kursu do ceny wezwania oznaczałoby jednocześnie twardy wyzwalacz cenowy PRICE_8. Samo ogłoszenie wezwania będzie ocenione w Pulsie 2.11 (wezwanie jest formalnie wyzwalaczem „wezwanie/delisting”, ale tu cena leży 8% POD kursem i nie kończy notowań — zmiana nie jest automatyczna).</li>
+<li><span class="tag ESPI">ESPI</span><b>Pozostałe spółki koszykowe W12 — brak nowych komunikatów w weekend</b> (WebSearch 1.11 ok. 7:30; brak depesz PAP z 31.10–1.11 dla mBanku, PKO BP, Aliora, Pepco, Taurona, CD Projektu, Orlenu, Kruka, KGHM). Najbliższe zdarzenia spółek: 5.11 wyniki Q3 PKO BP (LONG, konferencja 9:00) i Orlenu (SHORT) — D+4, bez flagi EVENT na dziś (EVENT = raport w ciągu 2 sesji).</li>
+<li><span class="tag REKOM">REKOM.</span><b>Rekomendacje 31.10–1.11: b.d./brak</b> — weekend, WebSearch nie zwraca nowych raportów DM dla spółek koszykowych.</li>
+<li><span class="tag SHORT">SHORT</span><b>Rejestr krótkiej sprzedaży KNF:</b> poza zasięgiem sieci rutyny, TV nie ma rejestru — nie weryfikowano (KNF_SHORT_NIEDOSTEPNY już w <code>data_quality</code>).</li>
+<li><span class="tag MAKRO">MAKRO</span><b>Kalendarz tygodnia 2–6.11 (TradingView get-economic-calendar, odczyt 2026-11-01 06:12 UTC, 118 zdarzeń PL/US/EU, min_importance −1)</b> zgodny z rejestrem W12 z soboty: 2.11 9:00 PMI przemysłu PL (poprz. 49,0), 16:00 ISM przemysł USA (prog. 54,7); 3.11 wybory połówkowe w USA, 16:00 JOLTS; <b>4.11 RPP — decyzja 15:00 Warszawy</b> (TV 14:00 UTC, prog. i poprz. 3,75%; termin potwierdzony PAP „Tydzień w kraju” 26.10 — posiedzenie 3–4.11), 11:00 CPI flash strefy euro (prog. 3,9%), 16:00 ISM usługi; 5.11 16:00 wystąpienie Lagarde; 6.11 14:30 payrolls USA (prog. 65 tys.; bezrobocie 4,2%), 16:00 Michigan. Godziny przeliczone z UTC na czas zimowy (UTC+1). Pozostałe terminy z samego TV = „TV: data, niepotwierdzona” (bankier „Ważny tydzień” na 2–6.11 niedostępny w wyszukiwaniu). Wyzwalacze tez bez nowych kroków w weekend (podwyżka CIT dla największych firm — po Senacie, wg Pulsu 28.10).</li>
+<li><span class="tag TV">TV</span><b>Dywidendy (get-dividends-calendar, market='poland', 30.09–16.11):</b> spośród spółek WIG20 wyłącznie LPP (ex-date 8.10, 500 zł; kod DYWIDENDA_KOREKTA_LPP już w <code>data_quality</code>; LPP nie jest w koszykach W12). Brak ex-date w koszykach W12 w ostatnich 20 i najbliższych 10 sesjach. Daty wyników z kolumny <code>earnings_release_next_date</code> bez zmian wobec soboty (PKO/Orlen/Dino 5.11, Allegro 12.11, KGHM/Tauron 18.11) — wszystkie już w rejestrze, bez dubli.</li>
+</ul></section>
+
+<section><h2>Koszyk LONG (W12, kolejność z signals.json)</h2><div class="wrap"><table><tr><th>Spółka</th><th>Kier.</th><th class='m'>Kurs D0 30.10</th><th class='m'>Kurs ostatni</th><th class='m'>Zwrot poz.</th><th class='m'>Rel. vs WIG20</th><th>Źródło</th></tr><tr><td><b>MBANK</b></td><td>LONG</td><td class='m'>1 632,00</td><td class='m'>1 632,00</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>PKOBP</b></td><td>LONG</td><td class='m'>114,52</td><td class='m'>114,52</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>ALIOR</b></td><td>LONG</td><td class='m'>133,35</td><td class='m'>133,35</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>PEPCO</b></td><td>LONG</td><td class='m'>49,20</td><td class='m'>49,20</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>ERSTEPL</b></td><td>LONG</td><td class='m'>775,80</td><td class='m'>775,80</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr></table></div>
+<p class="note">Progi protokołu od D0 (REDUCE −4% / CLOSE −8%): MBANK 1 566,72 / 1 501,44 · PKOBP 109,94 / 105,36 · ALIOR 128,02 / 122,68 · PEPCO 47,23 / 45,26 · ERSTEPL 744,77 / 713,74 (≈ cena wezwania 713,60).</p></section>
+
+<section><h2>Koszyk SHORT (W12, kolejność z signals.json)</h2><div class="wrap"><table><tr><th>Spółka</th><th>Kier.</th><th class='m'>Kurs D0 30.10</th><th class='m'>Kurs ostatni</th><th class='m'>Zwrot poz.</th><th class='m'>Rel. vs WIG20</th><th>Źródło</th></tr><tr><td><b>TAURONPE</b></td><td>SHORT</td><td class='m'>9,028</td><td class='m'>9,028</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>CDPROJEKT</b></td><td>SHORT</td><td class='m'>257,50</td><td class='m'>257,50</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>PKNORLEN</b></td><td>SHORT</td><td class='m'>146,38</td><td class='m'>146,38</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>KRUK</b></td><td>SHORT</td><td class='m'>335,70</td><td class='m'>335,70</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr><tr><td><b>KGHM</b></td><td>SHORT</td><td class='m'>281,60</td><td class='m'>281,60</td><td class='m'>0,00%</td><td class='m'>0,00 p.p.</td><td>TV = cache</td></tr></table></div>
+<p class="note">Zwrot pozycji SHORT = −zmiana kursu. Progi przeciw tezie (REDUCE +4% / CLOSE +8%): TAURONPE 9,389 / 9,750 · CDPROJEKT 267,80 / 278,10 · PKNORLEN 152,24 / 158,09 · KRUK 349,13 / 362,56 · KGHM 292,86 / 304,13. Wpis CDPROJEKT REDUCE z 31.10 dotyczył okna W11 i wygasł z rotacją rankingu (exclude W12 pusty od soboty).</p></section>
+
+<section><h2>Werdykt</h2><ul>
+<li><b>Status prognozy: AKTUALNA</b> — ranking W12 (D0 30.10) obowiązuje od pierwszej sesji 2.11; koszyki i kierunki bez zmian.</li>
+<li><b>exclude: pusta lista</b> (brak sesji od D0 → brak wyzwalaczy cenowych; brak nowych komunikatów, rekomendacji, danych KNF).</li>
+<li><b>Moduł taktyczny: bez zmian (pusty)</b> — weekend, brak świeżych twardych wyzwalaczy w spółkach spoza koszyków.</li>
+<li>Rejestr katalizatorów W12 i <code>data_quality</code>: <b>bez zmian</b> (zdarzenia tygodnia wpisane w sobotę; brak nowych z 24h).</li>
+</ul></section>
+
+<section><h2>Kalendarz dnia</h2><ul><li><b>1.11 (niedziela):</b> Wszystkich Świętych — GPW zamknięta, bez publikacji. Jutro 2.11: 9:00 PMI PL, 9:01 rotacja koszyka na rachunku, planowane ogłoszenie wezwania Erste Group, 16:00 ISM USA.</li>
+<li><b>Dalej:</b> 3.11 wybory w USA · 4.11 RPP 15:00 · 5.11 PKO BP, Orlen, Dino (Q3) · 6.11 payrolls, zamknięcie okna W12 · 11.11 Święto Niepodległości (GPW zamknięta).</li></ul></section>
+
+<section><h2>PROBLEMY i kontrola rachunku</h2><ul>
+<li><b>STAN ŹRÓDEŁ:</b> TradingView MCP (prefiks <code>mcp__TradingView__mcp-tv-</code>, pierwsze narzędzie <code>mcp__TradingView__mcp-tv-get-symbol-data-batch</code>) — stan OK, faza 2, 3 wywołania (batch, kalendarz makro, dywidendy), ok. 60 s, bez 429; porównanie 21/21, max |Δ| 0,00%, rozjazdów brak, missing brak; backfill: brak (cache 40/40 bez luk). Drugi tor <code>kursy.py</code>: Yahoo HTTP 429 dla wszystkich tickerów, rezerwa bankier.pl bez danych → kursy z cache (sesja 30.10, dopisana 31.10 z TV i zwalidowana PAP dla WIG20). Zgodność TV = cache jest więc częściowo porównaniem TV z TV; niezależna kontrola tylko wobec <code>d0.prices</code> (11/11 OK) i depeszy PAP z soboty. Bez wpływu na dziś (zwroty 0,00%).</li>
+<li><b>Przebieg drugiego toru:</b> pierwszy start <code>kursy.py</code> (06:12 UTC) przerwałem zewnętrznym limitem 300 s, krótszym niż wewnętrzny budżet ponowień skryptu (360 s) — bez wyniku; skrypt uruchomiony drugi raz (06:17–06:23 UTC) zakończył się poprawnie z cache. To odstępstwo od zasady „RAZ na bieg” (kolejna seria do Yahoo) — wpływ: limiter Yahoo mógł się dłużej uzbroić, co może dotknąć jutrzejszy Puls (TV pozostaje źródłem nr 1). <code>data/kursy-cache.json</code> bez zmian.</li>
+<li><b>Kontrola rachunku (/status, odczyt 2026-11-01 ok. 06:13 UTC):</b> kapitał 3 220,99 PLN, saldo 3 076,52 PLN → otwarty wynik pozycji +144,47 PLN. Na rachunku nadal <b>koszyk W11</b> (rotacja jutro 9:01): CD Projekt 1,2 szt. (upl −18,25), LPP 0,1 szt. (+123,95), PGE 20,2 szt. (−11,72), Dino 4,1 szt. (−2,17 — po REDUCE z 29.10), Allegro 5,7 szt. (+16,40) oraz SELL FW2020Z2026 0,88 (+36,26). Ekspozycja: długa 3 783,73, krótka 3 699,96, netto +83,77 PLN = +2,6% kapitału. Pokrycie koszyka W12: 0/5 (brakują wszystkie nogi) — stan sprzed rotacji, nie awaria, dlatego bez kodu EKSPOZYCJA_NIEPELNA. Diagnostyka W12: wszystkie nogi „NIE WEJDZIE TERAZ: rynek CLOSED” (niedziela); cel per noga 322,10 PLN, tolerancja 515,36 PLN, minimalne wartości pozycji 4,94–162,80 PLN (mBank 162,80) — wszystkie zmieszczą się w tolerancji. Hedge FW2020Z2026, wygasa 18.12, 47 dni, auto-roll włączony.</li>
+<li>Rejestr KNF krótkiej sprzedaży niedostępny (KNF_SHORT_NIEDOSTEPNY — kod już w <code>data_quality</code>). Kolumna <code>vol_ratio_10d</code> = null 21/21 (jak w poprzednich biegach).</li>
+</ul>
+<h3>ZGODNOŚĆ (scripts/tv_porownaj.py)</h3><pre>ZGODNOŚĆ ŹRÓDEŁ (Δ% = TV / kursy.py − 1; TV = ostatnia zakończona świeca ohlcv, a gdy jej brak — close z batcha)
+TICKER       kursy.py źródło    data                TV    Δ% TV  uwagi
+*ALIOR         133.35 cache z 2 2026-10-30      133.35    +0.00  
+ ALLEGRO        59.55 cache z 2 2026-10-30       59.55    +0.00  
+ BUDIMEX        704.2 cache z 2 2026-10-30       704.2    +0.00  
+*CDPROJEKT      257.5 cache z 2 2026-10-30       257.5    +0.00  
+ DINOPL         37.92 cache z 2 2026-10-30       37.92    +0.00  
+*ERSTEPL        775.8 cache z 2 2026-10-30       775.8    +0.00  
+ KETY          1255.0 cache z 2 2026-10-30        1255    +0.00  
+*KGHM           281.6 cache z 2 2026-10-30       281.6    +0.00  
+*KRUK           335.7 cache z 2 2026-10-30       335.7    +0.00  
+ LPP          26740.0 cache z 2 2026-10-30       26740    +0.00  
+*MBANK         1632.0 cache z 2 2026-10-30        1632    +0.00  
+ MODIVO         95.66 cache z 2 2026-10-30       95.66    +0.00  
+ PEKAO          262.5 cache z 2 2026-10-30       262.5    +0.00  
+*PEPCO           49.2 cache z 2 2026-10-30        49.2    +0.00  
+ PGE             16.3 cache z 2 2026-10-30        16.3    +0.00  
+*PKNORLEN      146.38 cache z 2 2026-10-30      146.38    +0.00  
+*PKOBP         114.52 cache z 2 2026-10-30      114.52    +0.00  
+ PZU            72.14 cache z 2 2026-10-30       72.14    +0.00  
+*TAURONPE       9.028 cache z 2 2026-10-30       9.028    +0.00  
+*WIG20        4180.88 cache z 2 2026-10-30     4180.88    +0.00  
+ ZABKA          31.75 cache z 2 2026-10-30       31.75    +0.00  
+
+n = 21; max |Δ| = 0.00%; mediana |Δ| = 0.00%
+|Δ| &gt; 0,1%: brak
+|Δ| &gt; 0,5% (ROZJAZD): brak
+missing / błędy TV: brak
+komplet 21/21 z dwóch źródeł: 21/21</pre>
+<h3>Wiersz logu data/tv-log.jsonl</h3><pre>{&quot;data&quot;: &quot;2026-11-01&quot;, &quot;rutyna&quot;: &quot;puls-wig20&quot;, &quot;narzedzia_prefix&quot;: &quot;mcp__TradingView__mcp-tv-&quot;, &quot;stan&quot;: &quot;OK&quot;, &quot;wywolania&quot;: 3, &quot;czas_s&quot;: 60, &quot;n_porownan&quot;: 21, &quot;komplet_21&quot;: 21, &quot;max_delta_pct&quot;: 0.0, &quot;mediana_delta_pct&quot;: 0.0, &quot;rozjazdy_gt_0_5&quot;: [], &quot;adnotacje_gt_0_1&quot;: [], &quot;missing&quot;: [], &quot;backfill&quot;: &quot;brak (cache 40/40 bez luk; niedziela, ostatnia sesja 30.10 = D0 już w cache); drugi tor kursy.py: Yahoo 429, bankier bez odpowiedzi -&gt; cache 21/21 (sesja 30.10 z TV dopisana 31.10) - porownanie niezalezne tylko wobec d0.prices; 3 wywolania: batch, kalendarz makro, dywidendy&quot;, &quot;faza&quot;: 2, &quot;werdykt_zmieniony&quot;: &quot;nie&quot;}</pre></section>
+</main>
+<footer>Materiał analityczno-edukacyjny, nie stanowi rekomendacji inwestycyjnej. Raport przygotowany automatycznie przez AI (Claude, rutyna „Puls WIG20”). Źródła: TradingView MCP (dane opóźnione), kursy.py (cache), PAP Biznes, bankier.pl, /status bota (tylko odczyt).</footer>
+</body></html>
