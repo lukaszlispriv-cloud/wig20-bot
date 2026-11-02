@@ -1598,6 +1598,22 @@
    "opis": "Następny raport 25.03.2027 (TV); Q3 opublikowany 26.10 — brak zdarzenia w oknie → 10/20.",
    "wklad_pkt": 0,
    "zrodlo": "TradingView screener earnings_release_next_date, odczyt 2026-10-31 07:40 UTC"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-02",
+   "dn": 1,
+   "opis": "1.11 (niedziela) weszła w życie ustawa o podatku od nadzwyczajnych zysków ze zbycia paliw ciekłych (szac. wpływy ok. 5,2 mld zł; Orlen szacował zobowiązanie ok. 2 mld zł za III–VIII 2026) — zdarzenie znane od podpisu ustawy 1.10, pierwsza sesja po wejściu w życie = dn 1; kierunek zgodny z tezą SHORT, bez nowej informacji cenotwórczej.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP „Skrót wiadomości: sobota-niedziela, 31.10–1.11” (1.11.2026); comparic.pl (podpis 1.10.2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-06",
+   "dn": 6,
+   "opis": "Przegląd ratingu Polski przez S&P w piątek 6.11 (zwykle po sesji → reakcja 9.11 = dn 6, po zamknięciu okna W12); Erste BP spodziewa się obniżenia perspektywy do negatywnej przy ocenie A-. 6.11 14:00 NBP: rezerwy i minutes RPP. PAP potwierdza RPP 4.11 (decyzja, konferencja prezesa NBP) i PMI PL 2.11 9:00 — zgodne z TV.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP „TYDZIEŃ W KRAJU: Decyzja RPP, rating S&P, PMI, wyniki PKO BP, Orlenu” (2.11.2026 06:20)"
   }
  ]
 }
