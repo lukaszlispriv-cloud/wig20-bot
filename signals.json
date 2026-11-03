@@ -39,8 +39,18 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-11-02",
+  "exclude": [
+    {
+      "ticker": "TAURONPE",
+      "action": "REDUCE",
+      "date": "2026-11-03",
+      "reason": "NEWS (noga SHORT): szacunki Tauronu za III kw. 2026 opublikowane 2.11.2026 o 17:55 (po sesji -> reakcja od sesji 3.11 = D+2) wyraznie POWYZEJ konsensusu PAP Biznes: EBITDA 1 821 mln zl vs 1 565,4 mln zl (+16,3%), przychody 8 624 vs 7 720,7 mln zl, EBIT 1 115 vs 881 mln zl, zysk netto 1 020 mln zl (rok wczesniej 844 mln zl). Pozytywna niespodzianka wynikowa przeciw tezie SHORT (teza: najslabsze momentum w energetyce i ekspozycja regulacyjna) - istotny news ponizej rangi szoku (raport pelny 18.11 poza oknem). Kurs przed reakcja = zamkniecie 2.11 8,77 zl (-2,86% od D0 9,028 zl, ruch zgodny z teza). Waga 50% od 8,77 zl od sesji 3.11. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index - pozycji na rachunku nie zmienia. Zrodla: strefainwestorow.pl/PAP Biznes 'Tauron szacuje wynik EBITDA w III kw. na 1.821 mln zl wobec 1.565,4 mln zl' (2.11.2026 17:55) i 'Skrot wiadomosci - poniedzialek, 2 listopada, 21.00'; zamkniecie 2.11 z TradingView MCP get-ohlcv 1D (odczyt 2026-11-03 ok. 06:15 UTC, dane opoznione) = get-symbol-data-batch; d0.prices w signals.json.",
+      "price_before": 8.77,
+      "move_from_d0_pct": -2.86,
+      "trigger": "NEWS"
+    }
+  ],
+  "last_daily": "2026-11-03",
   "d0": {
     "date": "2026-10-30",
     "wig20": 4180.88,

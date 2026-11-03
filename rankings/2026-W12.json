@@ -1614,6 +1614,22 @@
    "opis": "Przegląd ratingu Polski przez S&P w piątek 6.11 (zwykle po sesji → reakcja 9.11 = dn 6, po zamknięciu okna W12); Erste BP spodziewa się obniżenia perspektywy do negatywnej przy ocenie A-. 6.11 14:00 NBP: rezerwy i minutes RPP. PAP potwierdza RPP 4.11 (decyzja, konferencja prezesa NBP) i PMI PL 2.11 9:00 — zgodne z TV.",
    "wklad_pkt": null,
    "zrodlo": "Strefa Inwestorów/PAP „TYDZIEŃ W KRAJU: Decyzja RPP, rating S&P, PMI, wyniki PKO BP, Orlenu” (2.11.2026 06:20)"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-11-03",
+   "dn": 2,
+   "opis": "Szacunki III kw. 2026 (ESPI 2.11 17:55, po sesji → reakcja 3.11): EBITDA 1 821 mln zł vs konsensus PAP 1 565,4 mln zł (+16,3%), przychody 8 624 vs 7 720,7 mln zł, EBIT 1 115 vs 881 mln zł, zysk netto 1 020 mln zł (r/r 844). Pozytywna niespodzianka przeciw tezie SHORT → Puls 3.11: REDUCE (NEWS) od 8,77 zł.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Tauron szacuje wynik EBITDA w III kw. na 1.821 mln zł wobec 1.565,4 mln zł” (2.11.2026 17:55)"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-11-02",
+   "dn": 1,
+   "opis": "Wezwanie ogłoszone zgodnie z zapowiedzią: Erste Group Bank AG wzywa do sprzedaży 52 113 041 akcji Erste Bank Polska po 713,60 zł (zdarzenie znane rankingowi — potwierdzenie wpisu z 2.11). Kurs 2.11: 761,80 zł (−1,80% od D0), 6,8% nad ceną wezwania.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości – poniedziałek, 2 listopada, 17.00 / 21.00”; kurs TradingView MCP get-ohlcv 1D (odczyt 2026-11-03 ok. 06:15 UTC)"
   }
  ]
 }
