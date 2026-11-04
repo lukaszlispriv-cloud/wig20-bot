@@ -1630,6 +1630,30 @@
    "opis": "Wezwanie ogłoszone zgodnie z zapowiedzią: Erste Group Bank AG wzywa do sprzedaży 52 113 041 akcji Erste Bank Polska po 713,60 zł (zdarzenie znane rankingowi — potwierdzenie wpisu z 2.11). Kurs 2.11: 761,80 zł (−1,80% od D0), 6,8% nad ceną wezwania.",
    "wklad_pkt": null,
    "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości – poniedziałek, 2 listopada, 17.00 / 21.00”; kurs TradingView MCP get-ohlcv 1D (odczyt 2026-11-03 ok. 06:15 UTC)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-03",
+   "dn": 2,
+   "opis": "Orlen analizuje dodatkowe nakłady na projekt BoB (Bottom of the Barrel) w Możejkach — wg doniesień brakuje 600–700 mln USD (PAP 3.11). Negatywny news zgodny z tezą SHORT, poniżej rangi szoku; kurs 3.11 144,24 zł (−0,04% d/d, −1,46% od D0). Raport Q3 5.11.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości - wtorek 3 listopada, 21.00” (3.11.2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-03",
+   "dn": 2,
+   "opis": "Zysk netto sektora bankowego I–IX 2026: 32,28 mld zł, −10,5% r/r (wg PAP 3.11) — tło dla nóg bankowych LONG (mBank, PKO BP, Alior, Erste BP); WIG-Banki 3.11 +1,27% (27 133,15).",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości - wtorek 3 listopada, 21.00” (3.11.2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-05",
+   "dn": 4,
+   "opis": "Sejm: I i II czytanie rządowego projektu podwyższenia CIT dla dużych firm i zmiany progów PIT zaplanowane na 5.11 (PAP 3.11) — wyzwalacz tez regulacyjnych (energetyka/paliwa: Tauron, Orlen SHORT; banki LONG).",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości - wtorek 3 listopada, 21.00” (3.11.2026)"
   }
  ]
 }
