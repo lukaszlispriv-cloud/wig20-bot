@@ -1678,6 +1678,14 @@
    "opis": "Po deklaracji Orlenu o możliwym wycofaniu się z rafinerii w Możejkach litewski resort energetyki wyraża nadzieję na porozumienie (PAP 4.11); Orlen zakończył inwestycję ok. 600 mln zł w PMG Wierzchowice (pojemność 1,3 → 2,1 mld m³). Kurs 4.11: 140,28 zł (−2,75% d/d, −4,17% od D0 — zgodnie z tezą SHORT). Raport Q3 5.11 (konferencja 17:15, prawdopodobnie po sesji → reakcja 6.11).",
    "wklad_pkt": null,
    "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości – środa, 4 listopada, 21.00” (4.11.2026); kurs TradingView MCP get-ohlcv 1D (odczyt 2026-11-05 ok. 06:14 UTC, dane opóźnione); „Przewidywane najważniejsze wydarzenia gospodarcze” (5.11.2026)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-04",
+   "dn": 3,
+   "opis": "Ropa −8,7% w środę 4.11: Brent 94,62 USD (−8,98 USD), WTI 88,12 USD (−8,3%); w trzy sesje Brent ze 118 do 94 USD. Przyczyna wg XTB/Forex Club: realizacja zysków po zwycięstwie Demokratów w wyborach do Kongresu USA i nadzieje na odprężenie USA–Iran. Orlen −2,75% d/d (jedyna spadająca spółka WIG20, WIG-Paliwa −2,69%) — ruch zgodny z tezą SHORT, bez reakcji protokołu. Dopisane w biegu powtórnym 5.11 8:10–8:25.",
+   "wklad_pkt": null,
+   "zrodlo": "Forex Club 'Ropa tanieje najmocniej od miesięcy. Brent traci prawie 10% po wyborach w USA' (4.11.2026), Interia Biznes 'Spadek cen ropy naftowej po wyborach w USA' (4.11.2026, XTB), PAP Biznes 5.11 rano 'Ceny ropy na świecie kontynuują spadki po stracie w środę ponad 8 proc.' (nagłówek, Strefa Inwestorów)"
   }
  ]
 }
