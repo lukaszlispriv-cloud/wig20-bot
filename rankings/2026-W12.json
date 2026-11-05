@@ -1654,6 +1654,30 @@
    "opis": "Sejm: I i II czytanie rządowego projektu podwyższenia CIT dla dużych firm i zmiany progów PIT zaplanowane na 5.11 (PAP 3.11) — wyzwalacz tez regulacyjnych (energetyka/paliwa: Tauron, Orlen SHORT; banki LONG).",
    "wklad_pkt": null,
    "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości - wtorek 3 listopada, 21.00” (3.11.2026)"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2026-11-05",
+   "dn": 4,
+   "opis": "Wyniki III kw. 2026 (publikacja 5.11 ok. 6:02, przed sesją → reakcja 5.11 = dn 4): zysk netto 2 933 mln zł vs konsensus PAP 2 817,9 mln zł (+4,1%; widełki 6 DM 2 774–2 870,3), r/r +3,4%, k/k +6%; wynik odsetkowy 6 472 mln zł (+1,3% vs konsensus), prowizje 1 408 (zgodnie), koszty 2 387 (+1,6%), odpisy netto 213 mln zł (−47,7% vs konsensus 407,3); ryzyko prawne kredytów walutowych 370 mln zł (zgodnie z wcześniejszą zapowiedzią). Pozytywna niespodzianka zgodna z tezą LONG — bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Zysk netto grupy PKO BP w III kw. '26 wyniósł 2,93 mld zł, powyżej oczekiwań” i „Wyniki PKO BP w III kw. 2026 roku vs konsensus PAP (tabela)” (5.11.2026 05:55–06:02)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-04",
+   "dn": 3,
+   "opis": "RPP utrzymała stopy bez zmian (referencyjna 3,75%), zgodnie z oczekiwaniami; komunikat: tempo wzrostu PKB w III kw. spowolniło. Konferencja prezesa NBP 5.11 15:00. Tego samego dnia marszałek Senatu wnioskuje o odwołanie z RPP P. Litwiniuka i L. Koteckiego po ich rezygnacjach. Tło dla nóg bankowych LONG — brak zmiany stóp.",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości – środa, 4 listopada, 21.00” i „Marszałek Senatu wnioskuje o odwołanie z RPP P. Litwiniuka i L. Koteckiego” (4.11.2026)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-04",
+   "dn": 3,
+   "opis": "Po deklaracji Orlenu o możliwym wycofaniu się z rafinerii w Możejkach litewski resort energetyki wyraża nadzieję na porozumienie (PAP 4.11); Orlen zakończył inwestycję ok. 600 mln zł w PMG Wierzchowice (pojemność 1,3 → 2,1 mld m³). Kurs 4.11: 140,28 zł (−2,75% d/d, −4,17% od D0 — zgodnie z tezą SHORT). Raport Q3 5.11 (konferencja 17:15, prawdopodobnie po sesji → reakcja 6.11).",
+   "wklad_pkt": null,
+   "zrodlo": "Strefa Inwestorów/PAP Biznes „Skrót wiadomości – środa, 4 listopada, 21.00” (4.11.2026); kurs TradingView MCP get-ohlcv 1D (odczyt 2026-11-05 ok. 06:14 UTC, dane opóźnione); „Przewidywane najważniejsze wydarzenia gospodarcze” (5.11.2026)"
   }
  ]
 }
