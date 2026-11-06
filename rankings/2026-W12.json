@@ -1686,6 +1686,38 @@
    "opis": "Ropa −8,7% w środę 4.11: Brent 94,62 USD (−8,98 USD), WTI 88,12 USD (−8,3%); w trzy sesje Brent ze 118 do 94 USD. Przyczyna wg XTB/Forex Club: realizacja zysków po zwycięstwie Demokratów w wyborach do Kongresu USA i nadzieje na odprężenie USA–Iran. Orlen −2,75% d/d (jedyna spadająca spółka WIG20, WIG-Paliwa −2,69%) — ruch zgodny z tezą SHORT, bez reakcji protokołu. Dopisane w biegu powtórnym 5.11 8:10–8:25.",
    "wklad_pkt": null,
    "zrodlo": "Forex Club 'Ropa tanieje najmocniej od miesięcy. Brent traci prawie 10% po wyborach w USA' (4.11.2026), Interia Biznes 'Spadek cen ropy naftowej po wyborach w USA' (4.11.2026, XTB), PAP Biznes 5.11 rano 'Ceny ropy na świecie kontynuują spadki po stracie w środę ponad 8 proc.' (nagłówek, Strefa Inwestorów)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-06",
+   "dn": 5,
+   "opis": "Wyniki III kw. 2026 opublikowane 5.11 o 17:28 (po sesji → reakcja od sesji 6.11 = dn 5): zysk netto 5 581 mln zł wobec konsensusu PAP Biznes 7 480 mln zł (−25%; rok wcześniej 2 139 mln zł), EBITDA LIFO po odpisach 14 779 mln zł vs konsensus 15 320 mln zł (−3,5%), EBITDA raportowana 15 136 vs 14 596 mln zł (+3,7%), przychody 80,1 mld zł vs 85 mld zł oczekiwanych; capex 7,8 mld zł, dług netto/EBITDA −0,06; capex 2026 może być niższy niż 36 mld zł. Negatywna niespodzianka na zysku netto — zgodna z tezą SHORT (bez reakcji protokołu; kurs 5.11 140,72 zł, −3,87% od D0, zamknięcie przed publikacją).",
+   "wklad_pkt": null,
+   "zrodlo": "Bankier.pl/PAP Biznes 'Wyniki Orlenu w III kw. 2026 roku vs. konsensus PAP (tabela)' i 'Orlen zwiększył zysk netto o 163 proc. rdr. Konsensus pozostał poza zasięgiem' (5.11.2026), komunikat Orlen SA 5.11.2026 17:28 (Strefa Inwestorów), managerplus.pl, ISBnews (odczyt WebSearch 2026-11-06 ok. 07:20 UTC)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-05",
+   "dn": 4,
+   "opis": "Sejm przyjął w czwartek 5.11 poprawki Senatu do ustawy o wsparciu przedsiębiorstw energochłonnych, finansowanej czasową podwyżką CIT z 19% do 30% w 2027 r. dla największych firm (przychody >50 mln euro) z wydobycia ropy i gazu, handlu paliwami oraz przesyłu i dystrybucji energii elektrycznej (dotyczy m.in. Orlenu, Tauronu, PGE — nogi SHORT); wsparcie 4,8 mld zł w latach 2027–2030, wejście w życie 1.01.2027; ustawa trafia do prezydenta (wcześniej nieoficjalnie rozważane weto). Godzina głosowania niepotwierdzona (artykuł Bankier/PAP opublikowany 5.11 przed 17:30) — zdarzenie przypisane do sesji 5.11. Osobna nowelizacja PIT/CIT 22%: Komisja Finansów Publicznych 5.11 odrzuciła poprawki rezygnujące z podwyżki CIT i daniny solidarnościowej.",
+   "wklad_pkt": null,
+   "zrodlo": "Bankier.pl/PAP 'Wyższy CIT dla firm paliwowych i energetycznych. Sejm przyjął ustawę' (5.11.2026; strona zwraca 403 dla rutyny — treść z wyników WebSearch), Skrót wiadomości PAP/Strefa Inwestorów 5.11 17:00 i 21:00"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-05",
+   "dn": 4,
+   "opis": "Konferencja prezesa NBP po RPP (5.11, 15:00): nastawienie Rady „jastrzębie”, gotowość do działania przy rosnących ryzykach dla inflacji (ceny surowców, wygaśnięcie osłon paliwowych od Nowego Roku, PPI, żywność); w grudniu zwykle bez zmian stóp; ekonomiści: ewentualne podwyżki w 2027 r. ok. 50 pb. Senat ma głosować nad odwołaniem Litwiniuka i Koteckiego z RPP najpewniej 6.11. Tło dla banków LONG (marża odsetkowa) — bez wpływu na protokół.",
+   "wklad_pkt": null,
+   "zrodlo": "Skrót wiadomości PAP Biznes/Strefa Inwestorów, czwartek 5.11.2026, 17:00 i 21:00"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-11-05",
+   "dn": 4,
+   "opis": "Erste Bank Polska planuje emisję obligacji senior preferred do 2 mld zł oraz Tier II do 1 mld zł; wraz z Pekao i PKO BP przeznaczy łącznie 500 mln zł na fundusze PE/PD/VC w programie Innovate Poland (PFR Ventures). Kurs 5.11 786,40 zł (+1,03% d/d, +1,37% od D0) — zgodnie z tezą LONG, bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "Skrót wiadomości PAP Biznes/Strefa Inwestorów, czwartek 5.11.2026, 17:00 i 21:00"
   }
  ]
 }
