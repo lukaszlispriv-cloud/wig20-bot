@@ -1718,6 +1718,38 @@
    "opis": "Erste Bank Polska planuje emisję obligacji senior preferred do 2 mld zł oraz Tier II do 1 mld zł; wraz z Pekao i PKO BP przeznaczy łącznie 500 mln zł na fundusze PE/PD/VC w programie Innovate Poland (PFR Ventures). Kurs 5.11 786,40 zł (+1,03% d/d, +1,37% od D0) — zgodnie z tezą LONG, bez reakcji protokołu.",
    "wklad_pkt": null,
    "zrodlo": "Skrót wiadomości PAP Biznes/Strefa Inwestorów, czwartek 5.11.2026, 17:00 i 21:00"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-06",
+   "dn": 5,
+   "opis": "Reakcja na wyniki III kw. 2026 (publikacja 5.11 po sesji): kurs 6.11 −7,52% d/d do 130,14 zł (TV get-ohlcv 1D) przy wolumenie 2,34 mln akcji (ok. 1,5× średniej 4 sesji) — lider spadków WIG20, od D0 −11,09% (zgodnie z tezą SHORT, bez wpisu exclude: ruch zgodny z kierunkiem). XTB (Sobierajski): „Orlen dowiózł dobry kwartał, ale nie taki, na jaki liczył rynek”; Ipopema (Kozłowski): EBITDA LIFO ok. 4% poniżej oczekiwań „chyba nie przesądza o takiej reakcji” — spadek wiązany też z ropą i realizacją zysków po najgorszej od lat sesji w USA 5.11; capex 2026 może być niższy niż 36 mld zł. Bankier 6.11: kurs ok. 20% poniżej wrześniowego rekordu („terytorium bessy”).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl/PAP Biznes „DZIEŃ NA GPW: Piątkowa sesja pod znakiem spadków; rynek ciągnie w dół Orlen” (6.11.2026 16:38) i „WIG20 spada m.in. przez zniżki Orlenu i Dino” (11:24); xyz.pl 6.11; bankier.pl „Orlen wkracza na terytorium bessy” (6.11); TradingView MCP get-ohlcv, odczyt 2026-11-07 07:13 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-06",
+   "dn": 5,
+   "opis": "Payrolls USA za październik: +165 tys. wobec konsensusu ok. 65 tys., bezrobocie 4,1% (z 4,2%), rewizje +84 tys., płace +0,4% m/m i +3,1% r/r (publikacja 6.11 14:30 Warszawy, BLS). Dane mocniejsze od oczekiwań = mniej miejsca na cięcia Fed; S&P 500 +1% w trakcie sesji GPW po spadkach 5.11.",
+   "wklad_pkt": null,
+   "zrodlo": "BLS Employment Situation (6.11.2026); morningstar.com, benzinga.com 6.11.2026; strefainwestorow.pl 6.11 16:38"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-06",
+   "dn": 6,
+   "opis": "S&P Global Ratings (6.11 po sesji → reakcja od sesji 9.11 = dn 6, poza oknem W12): rating Polski A− utrzymany, perspektywa obniżona ze stabilnej do NEGATYWNEJ; wg części źródeł rating w walucie krajowej obniżony z A do A−. Uzasadnienie: wysokie deficyty i szybki wzrost długu (ponad 70% PKB do 2029 r.); MF wiąże decyzję z wetami prezydenta. Fitch A−/negatywna, Moody's A3/stabilna — S&P była ostatnią agencją ze stabilną perspektywą. Ryzyko dla koszyka LONG (4 banki: PKO BP, mBank, Alior, Erste BP) przez rentowności obligacji i złotego w poniedziałek.",
+   "wklad_pkt": null,
+   "zrodlo": "polsatnews.pl 6.11.2026 „Agencja S&P zdecydowała w sprawie ratingu Polski”; superbiz.se.pl, goniec.pl 6–7.11.2026; zbp.pl (tytuł z wyszukiwarki, strona poza allowlistą)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-06",
+   "dn": 5,
+   "opis": "Senat w piątek 6.11 formalnie odwołał Ludwika Koteckiego i Przemysława Litwiniuka z RPP po ich rezygnacjach (powołani przez prezydenta do zarządu NBP; Litwiniuk wiceprezesem) — dwa wakaty w Radzie z puli Senatu; kierunek polityki NBP (nastawienie jastrzębie z 5.11) bez zmian.",
+   "wklad_pkt": null,
+   "zrodlo": "wnp.pl „Zmiany w Radzie Polityki Pieniężnej po nominacjach do zarządu NBP” (6.11.2026); bankier.pl „Nawrocki powołał nowych członków zarządu NBP” (6.11.2026); tvn24.pl"
   }
  ]
 }
