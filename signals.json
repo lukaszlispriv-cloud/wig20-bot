@@ -1,19 +1,19 @@
 {
-  "version": "2026-W12",
-  "generated": "2026-10-31",
+  "version": "2026-W13",
+  "generated": "2026-11-07",
   "status": "AKTUALNA",
   "long": [
-    "MBANK",
-    "PKOBP",
-    "ALIOR",
-    "PEPCO",
-    "ERSTEPL"
+    "BUDIMEX",
+    "MODIVO",
+    "ALLEGRO",
+    "CDPROJEKT",
+    "ALIOR"
   ],
   "short": [
-    "TAURONPE",
-    "CDPROJEKT",
-    "PKNORLEN",
     "KRUK",
+    "DINOPL",
+    "PGE",
+    "PKNORLEN",
     "KGHM"
   ],
   "epics": {
@@ -39,32 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "TAURONPE",
-      "action": "REDUCE",
-      "date": "2026-11-03",
-      "reason": "NEWS (noga SHORT): szacunki Tauronu za III kw. 2026 opublikowane 2.11.2026 o 17:55 (po sesji -> reakcja od sesji 3.11 = D+2) wyraznie POWYZEJ konsensusu PAP Biznes: EBITDA 1 821 mln zl vs 1 565,4 mln zl (+16,3%), przychody 8 624 vs 7 720,7 mln zl, EBIT 1 115 vs 881 mln zl, zysk netto 1 020 mln zl (rok wczesniej 844 mln zl). Pozytywna niespodzianka wynikowa przeciw tezie SHORT (teza: najslabsze momentum w energetyce i ekspozycja regulacyjna) - istotny news ponizej rangi szoku (raport pelny 18.11 poza oknem). Kurs przed reakcja = zamkniecie 2.11 8,77 zl (-2,86% od D0 9,028 zl, ruch zgodny z teza). Waga 50% od 8,77 zl od sesji 3.11. Wpis dotyczy wariantu papierowego/zarzadzanego: koszyka SHORT bot NIE handluje (rachunek Capital.com nie shortuje CFD na akcje), desired_book() pomija go w trybie index - pozycji na rachunku nie zmienia. Zrodla: strefainwestorow.pl/PAP Biznes 'Tauron szacuje wynik EBITDA w III kw. na 1.821 mln zl wobec 1.565,4 mln zl' (2.11.2026 17:55) i 'Skrot wiadomosci - poniedzialek, 2 listopada, 21.00'; zamkniecie 2.11 z TradingView MCP get-ohlcv 1D (odczyt 2026-11-03 ok. 06:15 UTC, dane opoznione) = get-symbol-data-batch; d0.prices w signals.json.",
-      "price_before": 8.77,
-      "move_from_d0_pct": -2.86,
-      "trigger": "NEWS"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-11-07",
   "d0": {
-    "date": "2026-10-30",
-    "wig20": 4180.88,
+    "date": "2026-11-06",
+    "wig20": 4131.37,
     "prices": {
-      "MBANK": 1632.0,
-      "PKOBP": 114.52,
-      "ALIOR": 133.35,
-      "PEPCO": 49.2,
-      "ERSTEPL": 775.8,
-      "TAURONPE": 9.028,
-      "CDPROJEKT": 257.5,
-      "PKNORLEN": 146.38,
-      "KRUK": 335.7,
-      "KGHM": 281.6
+      "BUDIMEX": 739.8,
+      "MODIVO": 102.3,
+      "ALLEGRO": 59.8,
+      "CDPROJEKT": 266.9,
+      "ALIOR": 137.8,
+      "KRUK": 331.0,
+      "DINOPL": 37.4,
+      "PGE": 15.755,
+      "PKNORLEN": 130.14,
+      "KGHM": 276.8
     }
   },
   "history": [
@@ -307,6 +297,30 @@
       ],
       "metoda": "v1.1 (momentum mechaniczne)",
       "benchmark_momentum_pp": -0.74
+    },
+    {
+      "week": "2026-W12",
+      "long_vs_index_pp": 1.81,
+      "long_abs_pct": 0.63,
+      "spread_pp": 2.8,
+      "rozjazd_pp": 0.99,
+      "hit_top": "5/5",
+      "hit_bottom": "3/5",
+      "tactical_pp": null,
+      "managed_pp": 3.05,
+      "reaction_pp": 0.25,
+      "base_rate": 0.75,
+      "spearman": 0.275,
+      "brier": 0.2376,
+      "data_quality": [
+        "KURS_ZRODLO_TV",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "DYWIDENDA_KOREKTA_LPP",
+        "KALENDARZ_NIEPOTWIERDZONY"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)",
+      "benchmark_momentum_pp": -0.06
     }
   ],
   "tactical": []
