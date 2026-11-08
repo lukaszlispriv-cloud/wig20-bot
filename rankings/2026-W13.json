@@ -1589,6 +1589,38 @@
    "opis": "Raport roczny 5.03.2027 (TV); Q3 opublikowany 5.11 (zysk 483,0 mln zł vs konsensus PAP 484,5 mln zł, LFL +0,1%) — zdarzenie znane → 10/20.",
    "wklad_pkt": 0,
    "zrodlo": "TradingView screener; strefainwestorow.pl 5.11.2026"
+  },
+  {
+   "ticker": "BUDIMEX",
+   "data": "2026-11-06",
+   "dn": 0,
+   "opis": "Oferta konsorcjum Budimex (lider) + Keppel Seghers Belgium wybrana przez Veolia Nowa Energia jako najkorzystniejsza na budowę Zakładu Odzysku Energii w Łodzi: 712,6 mln zł netto + 109,2 mln EUR netto, realizacja do 36 miesięcy od podpisania (komunikat 6.11 14:34, w sesji D0 — kurs D0 739,80 zł, −2,17% d/d, już zawiera zdarzenie; umowa niepodpisana). Znane rankingowi (uzasadnienie BUDIMEX w rankingu W13, kategoria KAT), bez osobnego wpisu w rejestrze z 7.11 — dopisane przez Puls 8.11 dla kompletności rejestru.",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl 6.11.2026 14:34 (odczyt 8.11.2026)"
+  },
+  {
+   "ticker": "DINOPL",
+   "data": "2026-11-06",
+   "dn": 0,
+   "opis": "Konferencja po wynikach Q3 (6.11, sesja D0): zarząd „analizuje możliwości wypłaty dywidendy” (M. Krauze), ok. 400 otwarć sklepów w 2026 r. i podobny cel na 2027, zapowiedź poprawy marży brutto w IV kw. przy nacisku na wolumeny — miękko przeciw tezie SHORT, kurs D0 37,40 zł (−6,15% d/d) już zawiera; bez reakcji protokołu (brak sesji od D0).",
+   "wklad_pkt": null,
+   "zrodlo": "strefainwestorow.pl 6.11.2026 (odczyt 8.11.2026)"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-11-06",
+   "dn": 0,
+   "opis": "ESPI 31/2026 z 5.11 20:23 (po sesji → sesja D0 6.11): zakończenie subskrypcji obligacji senioralnych (Senior Notes) o łącznej wartości nominalnej 500 mln EUR. Agregator podaje NWZ 24.11 (D+11) — bez potwierdzenia ESPI w wynikach wyszukiwania → termin b.d.",
+   "wklad_pkt": null,
+   "zrodlo": "ESPI Alior Bank 31/2026 (przez agregator gielda360.pl w WebSearch 8.11.2026)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-13",
+   "dn": 4,
+   "opis": "Potwierdzenie terminu GUS 13.11 9:30 (PKB III kw. szybki szacunek + CPI październik final) drugim datowanym źródłem: bankier.pl „Tym będą żyły rynki: inflacyjny test dla USA i prawda o polskim PKB” (7.11) zgodne z TradingView get-economic-calendar (odczyt 2026-11-08 07:14 UTC) — konflikt z finwire (CPI 14.11) z wpisu 7.11 rozstrzygnięty na 13.11; kod KALENDARZ_NIEPOTWIERDZONY pozostaje jako historia. Ten sam tekst bankier.pl potwierdza 10.11 CPI USA i 11.11 GPW zamkniętą (TV bez wpisu Holidays PL).",
+   "wklad_pkt": null,
+   "zrodlo": "bankier.pl 7.11.2026 (przez WebSearch; artykuł 403 w fetchu); TradingView MCP get-economic-calendar, odczyt 2026-11-08 07:14 UTC"
   }
  ]
 }
