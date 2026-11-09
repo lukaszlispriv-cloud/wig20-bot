@@ -1621,6 +1621,38 @@
    "opis": "Potwierdzenie terminu GUS 13.11 9:30 (PKB III kw. szybki szacunek + CPI październik final) drugim datowanym źródłem: bankier.pl „Tym będą żyły rynki: inflacyjny test dla USA i prawda o polskim PKB” (7.11) zgodne z TradingView get-economic-calendar (odczyt 2026-11-08 07:14 UTC) — konflikt z finwire (CPI 14.11) z wpisu 7.11 rozstrzygnięty na 13.11; kod KALENDARZ_NIEPOTWIERDZONY pozostaje jako historia. Ten sam tekst bankier.pl potwierdza 10.11 CPI USA i 11.11 GPW zamkniętą (TV bez wpisu Holidays PL).",
    "wklad_pkt": null,
    "zrodlo": "bankier.pl 7.11.2026 (przez WebSearch; artykuł 403 w fetchu); TradingView MCP get-economic-calendar, odczyt 2026-11-08 07:14 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Druga agencja w weekend: Morningstar DBRS obniżyła długoterminowy rating Polski w walucie obcej z A do A (low)/A−, trend z negatywnego na stabilny (depesza PAP 8.11 19:19; uzasadnienie: deficyt gg ok. 7% PKB w 2026 i 2027, dług do 74% PKB do 2028, brak konsolidacji przed wyborami 2027). Łącznie z S&P z 6.11 — tło pierwszej sesji okna W13 dla banków (Alior LONG) i Kruka (SHORT). Rynek długu przed decyzjami: rentowność 10-latek spadła o 31 pb od szczytu 3.11 do 5.11 (<6,09%; PAP 8.11 19:03); EUR/PLN 9.11 7:00 = 4,3913 (money.pl) wobec 4,3890 na zamknięciu 6.11 — bez szoku walutowego przed otwarciem. Bez reakcji protokołu (nie jest wyzwalaczem per spółka).",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 8.11.2026 19:19 i 19:03; money.pl 9.11.2026 7:00 (przez WebSearch); odczyt 9.11.2026 ok. 8:25"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Ropa: Brent 96,74 USD/b (−1,61%) i WTI 89,82 USD/b (−1,11%) rano 9.11 po tygodniowym spadku Brent o ponad 16% — największym od kwietnia 2020 (nadzieje na rozmowy USA–Iran; premia za ryzyko nadal wysoka; CBA: ugoda znosząca blokadę morską = Brent 70–85 USD). Tło dla tezy SHORT (po wynikach Q3 5.11 i −7,52% na D0) — surowiec, nie zdarzenie spółki; bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 9.11.2026 07:56"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Miedź LME 13 881 USD/t (+0,8%) rano 9.11 — odbicie z 3-miesięcznego minimum (poprzednie zamknięcie 13 768 USD/t; skup metalu przez Trafigurę pod sprzedaż w Azji, niedobór koncentratu w chińskich hutach). Miękko przeciw tezie SHORT KGHM, ale to notowanie surowca, nie zdarzenie spółki — bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 9.11.2026 08:11"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "PAP „Tydzień w kraju” (9.11 06:31) potwierdza terminy okna: Allegro raport Q3 12.11 z konferencją 12:00 (D+3; TV podaje 10.03.2027 — raport roczny), 12.11 12:00 MF przetarg zamiany SPW (podaż 10.11 15:00), 11.11 Święto Niepodległości — dzień wolny (drugie źródło obok kalendarza ustawowego), 13.11 9:30 GUS PKB III kw. flash (prognozy: ING 3,4%, Erste 3,8% r/r; II kw. zrewidowany do 4,1%) i CPI X final (flash 3,5%), 13.11 14:00 NBP saldo C/A IX (ING: −2 380 mln EUR). Zgodne z TradingView get-economic-calendar (odczyt 2026-11-09 07:23 UTC: GUS 13.11 08:30 UTC, NBP 13.11 13:00 UTC, CPI USA 10.11 13:30 UTC). NBP 16.11 inflacja bazowa nadal tylko TV.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 9.11.2026 06:31; TradingView MCP get-economic-calendar, odczyt 2026-11-09 07:23 UTC"
   }
  ]
 }
