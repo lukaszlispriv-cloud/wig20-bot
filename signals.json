@@ -39,8 +39,18 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [],
-  "last_daily": "2026-11-09",
+  "exclude": [
+    {
+      "ticker": "KGHM",
+      "action": "REDUCE",
+      "date": "2026-11-10",
+      "reason": "PRICE_4_8: zamknięcie 9.11 = 289,40 zł, +4,55% od D0 (276,80) przeciw tezie SHORT (próg REDUCE 287,87 / CLOSE 298,94); odbicie miedzi LME z 3-mies. minimum (13 896,5 USD/t 9.11, 13 937 10.11 rano) przed wynikami Q3 18.11; pozycja papierowa — rachunek nie shortuje akcji",
+      "price_before": 289.4,
+      "move_from_d0_pct": 4.55,
+      "trigger": "PRICE_4_8"
+    }
+  ],
+  "last_daily": "2026-11-10",
   "d0": {
     "date": "2026-11-06",
     "wig20": 4131.37,

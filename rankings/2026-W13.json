@@ -1653,6 +1653,38 @@
    "opis": "PAP „Tydzień w kraju” (9.11 06:31) potwierdza terminy okna: Allegro raport Q3 12.11 z konferencją 12:00 (D+3; TV podaje 10.03.2027 — raport roczny), 12.11 12:00 MF przetarg zamiany SPW (podaż 10.11 15:00), 11.11 Święto Niepodległości — dzień wolny (drugie źródło obok kalendarza ustawowego), 13.11 9:30 GUS PKB III kw. flash (prognozy: ING 3,4%, Erste 3,8% r/r; II kw. zrewidowany do 4,1%) i CPI X final (flash 3,5%), 13.11 14:00 NBP saldo C/A IX (ING: −2 380 mln EUR). Zgodne z TradingView get-economic-calendar (odczyt 2026-11-09 07:23 UTC: GUS 13.11 08:30 UTC, NBP 13.11 13:00 UTC, CPI USA 10.11 13:30 UTC). NBP 16.11 inflacja bazowa nadal tylko TV.",
    "wklad_pkt": null,
    "zrodlo": "PAP Biznes/strefainwestorow.pl 9.11.2026 06:31; TradingView MCP get-economic-calendar, odczyt 2026-11-09 07:23 UTC"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Sesja D+1: +4,55% d/d do 289,40 zł (o 279, h 290, l 278; wolumen 528 tys.) — druga najmocniejsza spółka WIG20 po Modivo; miedź LME 3M zamknęła 9.11 na 13 896,5 USD/t (+0,8% od 3-mies. minimum), 10.11 o 7:54 13 937 (+0,3%; rekord 14 875 we wrześniu, +11,9% YTD; metale podążają za rajdem spółek AI). Ruch od D0 +4,55% przeciw tezie SHORT = próg PRICE_4_8 (REDUCE 287,87 / CLOSE 298,94) → reakcja protokołu REDUCE 10.11 (dn=2), price_before 289,40. Wyniki Q3 18.11 (D+7, TV earnings_release_next_date 18.11 + bankier). Noga SHORT jest papierowa — rachunek nie shortuje CFD na akcje; wariant zarządzany liczy od 289,40.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-ohlcv GPW:KGH (odczyt 2026-11-10 07:24 UTC, dane opóźnione); PAP Biznes/strefainwestorow.pl 10.11.2026 07:54 (miedź); bithub.pl 9.11.2026 (przez WebSearch)"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Sesja D+1: +8,70% d/d do 111,20 zł (o 105, h 111,20 = zamknięcie na maksimum dnia, l 102,50; wolumen 820 tys.) — lider wzrostów WIG20 (XYZ, PAP: „Modivo zyskuje 7 proc.” w trakcie sesji), kontynuacja po wstępnych wynikach Q3 roku obr. 2026/27 (5.11 po sesji: skor. EBITDA +48% r/r, zapasy −300 mln zł; D0 6.11 +5,25%). Zgodnie z tezą LONG; bez reakcji protokołu. Pełny raport Q3 27.11 (TV; poza oknem).",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-ohlcv GPW:MDV (odczyt 2026-11-10 07:24 UTC); xyz.pl i biznes.pap.pl 9.11.2026 (przez WebSearch); parkiet.com (wstępne wyniki, przez WebSearch)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Sesja D+1: −3,23% d/d do 125,94 zł (o 130,14, h 131,38, l 124,60; wolumen 2,63 mln) — najsłabsza spółka WIG20 drugą sesję z rzędu (po −7,52% na D0 po wynikach Q3); ropa Brent spadła w poniedziałek o prawie 6%, 10.11 o 7:48 Brent 91,22 USD/b (−1,46%), WTI 85,53 (−1,52%) — Trump: dalsze ataki na Iran „niepotrzebne”, konflikt „praktycznie zakończony”, Katar mediatorem; Itochu: Brent >85 USD bez porozumienia. Od D0 −3,23% zgodnie z tezą SHORT (próg wyzwalaczy dotyczy ruchu przeciw tezie) — bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-ohlcv GPW:PKN (odczyt 2026-11-10 07:24 UTC); PAP Biznes/strefainwestorow.pl 10.11.2026 07:48 (ropa); xyz.pl 9.11.2026 (przez WebSearch)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-09",
+   "dn": 1,
+   "opis": "Pierwsza sesja okna W13: WIG20 4 165,30 (+0,82%; PAP „WIG20 na zamknięciu wyniósł 4165,30 pkt”), banki na plusach (Pekao +2,11%, mBank +2,11%, PKO BP +0,96%, Alior LONG +1,63%) mimo decyzji S&P/DBRS; EUR/PLN poniżej 4,39, złoty mocniejszy przy słabszym dolarze (PAP „Dzień na FX/FI”). Po sesji (17:13) S&P GR obniżyła perspektywę ratingu Banku Pekao do negatywnej (ratingi A−/A-2 potwierdzone) — pochodna zmiany perspektywy Polski; metodologia S&P ogranicza ratingi banków krajowych do ratingu państwa → tło także dla Aliora (LONG), bez wyzwalacza per spółka. Marszałek Senatu wyznaczyła termin kandydatur do RPP 9–25.11 (po rezygnacjach Koteckiego i Litwiniuka). Kalendarz dnia 10.11 (TV get-economic-calendar, odczyt 07:23 UTC, 185 zdarzeń PL/US/EU): CPI USA 14:30 (prog. 3,9% r/r, bazowa 2,8%, m/m 0,3%) — zgodne z PAP z 9.11 → data potwierdzona; 15:00 MF podaż na przetarg zamiany 12.11; kalendarium PAP 10.11 bez spółek koszykowych (Allegro konferencja 12.11 12:00 potwierdzona ponownie). Ustawa CIT 30% dla energetyki/paliw: nadal bez informacji o podpisie prezydenta (WebSearch 10.11) — status bez zmian.",
+   "wklad_pkt": null,
+   "zrodlo": "biznes.pap.pl 9.11.2026 (zamknięcie WIG20, przez WebSearch); PAP Biznes/strefainwestorow.pl 9.11.2026 17:13 (S&P Pekao) i lista depesz 9–10.11; TradingView MCP get-economic-calendar (odczyt 2026-11-10 07:23 UTC); kalendarium PAP 10.11 przez strefainwestorow.pl"
   }
  ]
 }
