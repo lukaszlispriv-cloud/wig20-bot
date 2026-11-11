@@ -1685,6 +1685,38 @@
    "opis": "Pierwsza sesja okna W13: WIG20 4 165,30 (+0,82%; PAP „WIG20 na zamknięciu wyniósł 4165,30 pkt”), banki na plusach (Pekao +2,11%, mBank +2,11%, PKO BP +0,96%, Alior LONG +1,63%) mimo decyzji S&P/DBRS; EUR/PLN poniżej 4,39, złoty mocniejszy przy słabszym dolarze (PAP „Dzień na FX/FI”). Po sesji (17:13) S&P GR obniżyła perspektywę ratingu Banku Pekao do negatywnej (ratingi A−/A-2 potwierdzone) — pochodna zmiany perspektywy Polski; metodologia S&P ogranicza ratingi banków krajowych do ratingu państwa → tło także dla Aliora (LONG), bez wyzwalacza per spółka. Marszałek Senatu wyznaczyła termin kandydatur do RPP 9–25.11 (po rezygnacjach Koteckiego i Litwiniuka). Kalendarz dnia 10.11 (TV get-economic-calendar, odczyt 07:23 UTC, 185 zdarzeń PL/US/EU): CPI USA 14:30 (prog. 3,9% r/r, bazowa 2,8%, m/m 0,3%) — zgodne z PAP z 9.11 → data potwierdzona; 15:00 MF podaż na przetarg zamiany 12.11; kalendarium PAP 10.11 bez spółek koszykowych (Allegro konferencja 12.11 12:00 potwierdzona ponownie). Ustawa CIT 30% dla energetyki/paliw: nadal bez informacji o podpisie prezydenta (WebSearch 10.11) — status bez zmian.",
    "wklad_pkt": null,
    "zrodlo": "biznes.pap.pl 9.11.2026 (zamknięcie WIG20, przez WebSearch); PAP Biznes/strefainwestorow.pl 9.11.2026 17:13 (S&P Pekao) i lista depesz 9–10.11; TradingView MCP get-economic-calendar (odczyt 2026-11-10 07:23 UTC); kalendarium PAP 10.11 przez strefainwestorow.pl"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-10",
+   "dn": 2,
+   "opis": "Sesja D+2: WIG20 4 208,46 (+1,04%; PAP „WIG20 na zamknięciu wyniósł 4208,46 pkt”), spokojna wzrostowa sesja mimo CPI USA za X +0,4% m/m (kons. +0,3%), bazowa +0,3% (kons. +0,2%), bez odczytu r/r (zaległości BLS po shutdownie) — rynek wycenia podwyżkę Fed w grudniu (Waller: popiera, przy dalszym przyspieszeniu nawet 50 pb; Logan: dwie po 25 pb), 10Y USA >5%; Wall Street DJI −0,30%, S&P 500 −0,38%, Nasdaq −0,74%, Nvidia −5% (śledztwo FBI). Złoty słabszy (EUR/PLN 4,3978 +0,25%, USD/PLN 3,9407 +0,64% o 16:50), SPW lekko w dół (DS0436 6,12%); RPP Masłowska: projekcja przemawia za podwyżką w styczniu. Koszyki: wszystkie 5 nóg LONG na plusie (CDR +2,04%, BDX +1,69%, ALR +1,54% — 7. sesja wzrostowa, ALE +1,16%, MDV +1,08%), SHORT: KRU +2,01% i PKN +1,64% przeciw tezie (poniżej progów), PGE −0,57% i KGH −0,48% zgodnie; WIG-Energia −1,7% (−8% w 3 tyg.), Dino −0,92%, Erste −1,01%. Wynik rachunku po D+2 +2,45 p.p., spread papierowy +3,47 p.p. (rozjazd +1,02). Kalendarz TV 11–18.11 (186 zdarzeń, odczyt 07:14 UTC): GUS 13.11 08:30 UTC (PKB flash poprz. 3,8% r/r, CPI final poprz. 4,1%), NBP C/A 13.11 13:00 UTC, NBP inflacja bazowa 16.11 13:00 UTC (tylko TV), PPI USA 13.11, sprzedaż detaliczna USA 17.11 — zgodne z PAP z 9.11; 11.11 GPW zamknięta (PAP), TV bez Holidays PL. Bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 10.11.2026: „Dzień na GPW” 16:19, „Dzień na rynkach” 22:20, „Dzień na FX/FI” 17:13, „Skrót wiadomości” 21:00; biznes.pap.pl (zamknięcie WIG20, przez WebSearch); TradingView MCP get-ohlcv 21 symboli + get-economic-calendar (odczyt 2026-11-11 07:14–07:16 UTC, dane opóźnione)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "Po sesji 10.11 (PAP 20:49 → liczy się na sesję 12.11) Orlen wypowiedział jedną z dwóch długoterminowych umów LNG z QatarEnergy: umowa PGNiG–Qatargas z 29.06.2009, 1 mln t LNG rocznie (ok. 15,3 TWh), formuła cenowa oparta na ropie, dostawy 2016–2034, szacowana wartość 2026 ok. 570 mln EUR (2,5 mld zł); powód: utrzymująca się siła wyższa i brak dostaw (Katar nie dostarcza LNG do Polski od kwietnia 2026 — Ormuz); umowa wygasa po 60 dniach, druga (do 1 mln t, indeksowana do gazu, do 2034) kontynuowana; spółka: bez wpływu na bezpieczeństwo dostaw. Kurs 10.11 +1,64% do 128,00 zł (o 127, h 128,80, l 125,80; wol. 1,71 mln) — pierwsze odbicie po 11 sesjach spadków (−19%; Brent −16% od 26.10); od D0 −1,64% zgodnie z tezą SHORT (próg przeciw tezie 135,35). Ropa 11.11 7:50: Brent 92,51 USD/b (+1,11%), WTI 86,66 (+0,72%) po dwóch sesjach spadków (Brent −7% w tygodniu); API zapasy ropy USA +9 mln b; Trump: dalsze ataki na Iran „bardzo mało prawdopodobne” przy postępie rozmów, Rubio: żądania Teheranu „nie do przyjęcia”. Ocena: porządkowanie kontraktów, nie szok — bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 10.11.2026 20:49 (umowa) i 11.11.2026 07:50 (ropa); TradingView MCP get-ohlcv GPW:PKN (odczyt 2026-11-11 07:15 UTC, dane opóźnione)"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-11-10",
+   "dn": 2,
+   "opis": "Sesja D+2: −0,48% d/d do 288,00 zł (o 292,50 = h, l 284,30; wol. 601 tys.) — od D0 +4,05%, nadal nad progiem REDUCE 287,87 (o 0,13 zł), daleko od CLOSE 298,94; wpis REDUCE z 10.11 utrzymany (protokół: do soboty, awans tylko do CLOSE). Miedź LME 3M: zamknięcie 10.11 13 679,00 USD/t; 11.11 o 8:05 13 788,50 (+0,8%; +10,1% YTD; Comex 6,3230 USD/lb +1,42%, SHFE 105 810 CNY/t −0,07%) — kryzysowa sytuacja w Chinach: rekordowe premie importowe, huty ograniczają produkcję, metal płynie do USA pod cła. Wyniki Q3 18.11 17:15 (D+7). Bez komunikatów spółki i rekomendacji.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-ohlcv GPW:KGH (odczyt 2026-11-11 07:15 UTC, dane opóźnione); PAP Biznes/strefainwestorow.pl 11.11.2026 08:05 (miedź)"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-11-10",
+   "dn": 2,
+   "opis": "Sesja D+2: −0,57% d/d do 15,65 zł (o 15,80, h 15,80, l 15,27; wol. 2,83 mln; w trakcie sesji −2,8% wg PAP) — energetyka najsłabsza na GPW: WIG-Energia −1,7% do 5 059 pkt, −8% od zamknięcia poniedziałku trzy tygodnie temu; Enea −2%, Tauron zamknął +1,46%. Od D0 −0,67% zgodnie z tezą SHORT. Tło regulacyjne: SKRM zajmie się 16.11 projektem ustawy o szczególnej ochronie odbiorców paliw gazowych w 2027 (cena maksymalna wg taryfy URE dla sprzedawcy z urzędu 2026, rekompensaty dla obrotu, mechanizm ograniczenia zysków nadzwyczajnych niektórych firm obrotu gazem; min. Motyka: projekt do parlamentu w listopadzie) — PAP 16:49; CIT 30% dla energetyki/paliw nadal bez informacji o podpisie prezydenta. Raport Q3 24.11 poza oknem. Bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-ohlcv GPW:PGE (odczyt 2026-11-11 07:15 UTC, dane opóźnione); PAP Biznes/strefainwestorow.pl 10.11.2026 16:19 („Dzień na GPW”) i 16:49 (SKRM)"
   }
  ]
 }
