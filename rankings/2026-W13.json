@@ -1717,6 +1717,46 @@
    "opis": "Sesja D+2: −0,57% d/d do 15,65 zł (o 15,80, h 15,80, l 15,27; wol. 2,83 mln; w trakcie sesji −2,8% wg PAP) — energetyka najsłabsza na GPW: WIG-Energia −1,7% do 5 059 pkt, −8% od zamknięcia poniedziałku trzy tygodnie temu; Enea −2%, Tauron zamknął +1,46%. Od D0 −0,67% zgodnie z tezą SHORT. Tło regulacyjne: SKRM zajmie się 16.11 projektem ustawy o szczególnej ochronie odbiorców paliw gazowych w 2027 (cena maksymalna wg taryfy URE dla sprzedawcy z urzędu 2026, rekompensaty dla obrotu, mechanizm ograniczenia zysków nadzwyczajnych niektórych firm obrotu gazem; min. Motyka: projekt do parlamentu w listopadzie) — PAP 16:49; CIT 30% dla energetyki/paliw nadal bez informacji o podpisie prezydenta. Raport Q3 24.11 poza oknem. Bez reakcji protokołu.",
    "wklad_pkt": null,
    "zrodlo": "TradingView MCP get-ohlcv GPW:PGE (odczyt 2026-11-11 07:15 UTC, dane opóźnione); PAP Biznes/strefainwestorow.pl 10.11.2026 16:19 („Dzień na GPW”) i 16:49 (SKRM)"
+  },
+  {
+   "ticker": "ALLEGRO",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "Raport Q3 2026 przed sesją 12.11 (D+3) POWYŻEJ KONSENSUSU PAP: skoryg. EBITDA 1 129,0 mln zł vs 1 076,7 (+4,9%; +23% r/r), przychody 3 406,0 vs 3 392,7 (+0,4%; +20% r/r), EBIT 789,7 vs 773,1 (+2,2%), zysk netto j.d. 574,7 vs 566,1 (+1,5%; +45% r/r), marża EBITDA 33,1% vs 31,7%. PODNIESIONE prognozy 2026: GMV grupy 79,5–80,5 mld zł, przychody 13,6–13,7 mld zł, skoryg. EBITDA 4,2–4,3 mld zł (GMV Polska ok. +13% r/r wobec 11–13% w sierpniu). Start IV kw. (5 tyg.): GMV grupy ok. +17% r/r, Polska +16%, International ok. +100%. Nowa umowa ramowa z InPost do 31.12.2031 (min. ok. 8 mld zł, opcja +2/3 lata; retroaktywne stawki = +270–280 mln zł skoryg. EBITDA za pełny 2026; InPost wycofa pozew po arbitrażu). Konferencja 12:00. Noga LONG, zdarzenie zgodne z tezą — bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "ESPI Allegro.eu 12.11.2026 (przed sesją); PAP Biznes / strefainwestorow.pl 12.11 00:22 (umowa InPost), 06:00 (GMV IV kw.), tabela „Wyniki grupy Allegro w III kw. 2026 vs konsensus PAP” (bankier.pl 12.11); WebSearch 12.11 ok. 7:15 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "Wall Street 11.11: DJI +0,49% (52 486,49), S&P 500 +1,31% (7 619,38), Nasdaq +1,60% (25 466,19) — odbicie AI po wynikach CoreWeave (+20%), Nvidia +2,9% w sesji; Stoxx Europe 600 z rekordem. PO SESJI Nvidia −7…−8,6% (ok. 159,5 USD) po doniesieniach WSJ, że zarząd przygotowuje odwołanie prezesa Huanga (NYT: drugi zarzut romansu); kontrakty na Nasdaq-100 w dół, Azja 12.11 rano na minusie: Nikkei −0,70%, Shanghai −0,73%, Hang Seng −1,27%, KOSPI −0,61%. Ryzyko sentymentu dla spółek wzrostowych koszyka LONG (CD Projekt, Allegro) na sesji 12.11 — tło, bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP/strefainwestorow.pl 11.11 „Dzień na rynkach: giełdy w USA w górę, w centrum uwagi CoreWeave”, 12.11 08:09 „Najważniejsze indeksy giełdowe w Azji”; CNN/NBC/Yahoo 11.11 po sesji (WebSearch 12.11 ok. 7:14 UTC)"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "Ropa rano 12.11 (7:51): Brent (I 2027) 92,47 USD/b (−0,31%), WTI 86,23 (−0,35%) — najniżej od ok. 2 miesięcy; Arabia Saudyjska zwiększyła wydobycie w październiku o 26%, Irak także; ANZ: podaż odbudowana na rozwiązaniach tymczasowych, premia geopolityczna USA–Iran utrzymana. Pierwsza sesja po wypowiedzeniu umowy LNG z QatarEnergy (komunikat 10.11 po sesji). Tło dla tezy SHORT (marże rafineryjne/wydobycie), bez reakcji protokołu.",
+   "wklad_pkt": null,
+   "zrodlo": "PAP/strefainwestorow.pl 12.11 07:51 „Ceny ropy na świecie spadają; wiele czynników przemawia za zniżkami”"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "Miedź: zamknięcie LME 3M 11.11 = 13 817,00 USD/t (+138 USD d/d); 12.11 rano w dół — Comex 6,2275 USD/lb (−0,99%), SHFE 104 960 CNY/t (−0,26%); metal płynie do USA z obawy przed cłami, Chiny z trudnościami w uzupełnianiu zapasów. KGHM nadal nad progiem REDUCE (288,00 vs 287,87) — wpis z 10.11 utrzymany, bez awansu do CLOSE. Wyniki Q3 18.11 17:15 (D+7).",
+   "wklad_pkt": null,
+   "zrodlo": "PAP/strefainwestorow.pl 12.11 08:06 „Ceny miedzi w Londynie spadają”; 11.11 „Ceny miedzi w Londynie rosną”"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-12",
+   "dn": 3,
+   "opis": "RPP: Iwona Duda (wywiad Interia 12.11) — Rada utrzymała stopy (3,75% od 4.11), ale „jeśli wystąpią określone uwarunkowania, politykę monetarną trzeba będzie zaostrzyć”; początek roku „trudny”, RPP musi być „wyjątkowo czujna”. Trzeci jastrzębi głos w tygodniu (po Masłowskiej 10.11) — tło dla banków (Alior LONG), bez reakcji.",
+   "wklad_pkt": null,
+   "zrodlo": "Interia Biznes 12.11.2026 (WebSearch 12.11 ok. 7:15 UTC); nagłówek PAP w liście bankier.pl 12.11 „Jeśli wystąpią określone uwarunkowania, politykę monetarną trzeba będzie zaostrzyć – Duda, RPP”"
   }
  ]
 }
