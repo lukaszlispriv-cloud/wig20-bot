@@ -1,0 +1,1724 @@
+{
+ "week": "2026-W14",
+ "d0": "2026-11-13",
+ "generated": "2026-11-14",
+ "momentum_method": "mechaniczne",
+ "uwaga": "momentum ze scripts/metryki.py momentum --d0 2026-11-13 na kursach SUROWYCH z data/kursy-cache.json (komplet 20 sesji dla 20/20 spółek, bez BRAK_20S; −5 sesji = 5.11, −20 sesji = 15.10); w oknie 20 sesji nie ma dnia ex-div żadnej spółki WIG20 (LPP 8.10 = 26 sesji temu; TradingView get-dividends-calendar market='poland' 6.11–27.11: 13 wpisów, żaden z WIG20); kursy D0 13.11 z TradingView MCP run-screener/get-symbol-data (odczyt 2026-11-14 07:47–07:48 UTC) zgodne 21/21 (Δ 0,00%) z kursy.py → cache (sesja 13.11 dopisana z TV przez tv_merge w Pulsie 14.11 08:14 Warszawy; Yahoo HTTP 429 dla 21/21, bankier.pl bez odpowiedzi) → KURS_ZRODLO_TV + KURS_ZRODLO_REZERWA; okno rozliczane W13 miało 4 sesje (11.11 święto) → OKNO_SKROCONE_D4 w history; piąta sobota W-R3: punkty za udokumentowaną zmianę konsensusu TV wobec rankings/2026-W13.json (próg |Δscore| ≥ 0,15 albo zmiana etykiety): tylko PGE 1,79 → 1,50 (poprawa; n=7, 3/3/0), pozostałe 19 spółek poniżej progu (Erste +0,12, Orlen +0,09, Pekao +0,08, PKO +0,07, Allegro −0,07, Dino +0,06, mBank +0,04 przy n 7→6, Żabka n 14→11); cele TV dla 20/20 poza testem skali (cel/kurs 0,20–0,36) → cele b.d.; DM: okno 30 dni = 14.10–13.11 — sygnały Trigon z 9.10 (top picks oraz „gorzej niż rynek” dla Modivo i mBanku) WYPADŁY z okna, zostają: Kepler PKO BP 15.10 (ostatni tydzień), lista DM BOŚ Polish Equities Monthly 10/2026 z 19.10 (długa: mBank, CD Projekt, LPP, Modivo, Orlen, PKO BP; „gorzej niż rynek”: Alior; usunięcie PGE), Oddo BHF Kruk 21.10, Trigon 28.10 (Budimex i Allegro top pick, Orlen Hold→Buy 174 zł, PGE top pick), Wood & Co PGE „kupuj” 18,50 (5.11); NOWY: William O'Neil & Co Pepco „kupuj” 12.11 (bez celu); lista DM BOŚ 11/2026 i Trigon top picks XI do 14.11 nieznalezione; wagi do reguły remisu z profilu WIG20 bankier.pl z 23.10 (bankier HTTP 403 także 14.11 — bez aktualizacji); remisów po zaokrągleniu do 0,1 brak; tło tygodnia 6.11→13.11 (TradingView MCP get-ohlcv, odczyt 2026-11-14 07:48 UTC, dane opóźnione): WIG-Banki +4,08%, WIG-Energia +3,11%, WIG-Paliwa +0,74%, miedź COMEX −2,36% (6,2375→6,0905 USD/lb), srebro −5,43% (51,94→49,12), Brent −2,52% (98,32→95,84), USD/PLN +1,36% (3,9425→3,9960), EUR/PLN +0,35% (4,3890→4,4045), US10Y 4,859→5,139%; GUS 13.11: PKB III kw. flash +3,5% r/r (kons. 3,6%), CPI X final 3,5% r/r; NBP C/A IX −718 mln EUR; w oknie W14: NBP inflacja bazowa 16.11 (tylko TV/finwire — niepotwierdzona), Nvidia 17.11, Allegro ZWZ/NWZ 18.11, KGHM i Tauron Q3 18.11, FOMC minutes 18.11 20:00 (federalreserve.gov), PZU Q3 19.11, GUS przemysł — konflikt 18/19/23.11 (b.d.), CD Projekt i PGE Q3 24.11, Alior NWZ 24.11, decyzja prezydenta ws. CIT 30% do 26.11, Modivo 27.11; MSCI 11.11: zmian dla polskich spółek nie znaleziono (wnioskowanie z braku depesz)",
+ "long": [
+  "ALLEGRO",
+  "MBANK",
+  "MODIVO",
+  "ALIOR",
+  "PEPCO"
+ ],
+ "short": [
+  "PEKAO",
+  "ZABKA",
+  "DINOPL",
+  "PKNORLEN",
+  "KGHM"
+ ],
+ "data_quality": [
+  "KURS_ZRODLO_TV",
+  "KURS_ZRODLO_REZERWA",
+  "KNF_SHORT_NIEDOSTEPNY",
+  "KALENDARZ_NIEPOTWIERDZONY"
+ ],
+ "remisy": [],
+ "sanity_check_tv": {
+  "wig20_perfW": 3.17,
+  "wig20_perf1M": 1.51,
+  "prog_pp": 1.5,
+  "uwaga": "tydzień ze świętem GPW 11.11 — porównanie Perf.W vs rel5 orientacyjne (pominięte w ocenie wg docs/tradingview.md §6.1 pkt 4), flaga tylko dla Perf.1M vs rel20",
+  "wiersze": [
+   {
+    "ticker": "ALLEGRO",
+    "perfW_rel": 10.51,
+    "rel5": 9.92,
+    "dW": 0.59,
+    "perf1M_rel": 23.24,
+    "rel20": 21.14,
+    "dM": 2.1,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "MODIVO",
+    "perfW_rel": 10.92,
+    "rel5": 13.62,
+    "dW": -2.7,
+    "perf1M_rel": 19.46,
+    "rel20": 19.72,
+    "dM": -0.26,
+    "flag_1M": false,
+    "flag_W_orientacyjna": true
+   },
+   {
+    "ticker": "ALIOR",
+    "perfW_rel": 5.32,
+    "rel5": 5.23,
+    "dW": 0.09,
+    "perf1M_rel": 9.85,
+    "rel20": 9.47,
+    "dM": 0.38,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "MBANK",
+    "perfW_rel": 2.35,
+    "rel5": 3.3,
+    "dW": -0.95,
+    "perf1M_rel": 17.1,
+    "rel20": 21.07,
+    "dM": -3.97,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "KETY",
+    "perfW_rel": 3.79,
+    "rel5": 3.99,
+    "dW": -0.2,
+    "perf1M_rel": 2.13,
+    "rel20": 4.48,
+    "dM": -2.35,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "CDPROJEKT",
+    "perfW_rel": 4.73,
+    "rel5": 3.89,
+    "dW": 0.84,
+    "perf1M_rel": 3.19,
+    "rel20": 3.12,
+    "dM": 0.07,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "PEPCO",
+    "perfW_rel": 2.58,
+    "rel5": 2.03,
+    "dW": 0.55,
+    "perf1M_rel": 12.92,
+    "rel20": 9.36,
+    "dM": 3.56,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "PKOBP",
+    "perfW_rel": 1.51,
+    "rel5": 0.71,
+    "dW": 0.8,
+    "perf1M_rel": 1.14,
+    "rel20": 1.37,
+    "dM": -0.23,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "LPP",
+    "perfW_rel": -0.23,
+    "rel5": 0.09,
+    "dW": -0.32,
+    "perf1M_rel": 12.11,
+    "rel20": 6.57,
+    "dM": 5.54,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "PZU",
+    "perfW_rel": 0.3,
+    "rel5": 0.43,
+    "dW": -0.13,
+    "perf1M_rel": 1.12,
+    "rel20": 0.55,
+    "dM": 0.57,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "BUDIMEX",
+    "perfW_rel": -0.85,
+    "rel5": -0.91,
+    "dW": 0.06,
+    "perf1M_rel": 8.46,
+    "rel20": 10.55,
+    "dM": -2.09,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "ERSTEPL",
+    "perfW_rel": 0.7,
+    "rel5": -0.39,
+    "dW": 1.09,
+    "perf1M_rel": -1.59,
+    "rel20": 0.56,
+    "dM": -2.15,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "TAURONPE",
+    "perfW_rel": -0.23,
+    "rel5": -0.26,
+    "dW": 0.03,
+    "perf1M_rel": -6.58,
+    "rel20": -6.3,
+    "dM": -0.28,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "KRUK",
+    "perfW_rel": -1.17,
+    "rel5": -0.37,
+    "dW": -0.8,
+    "perf1M_rel": -2.28,
+    "rel20": -4.38,
+    "dM": 2.1,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "PEKAO",
+    "perfW_rel": -0.44,
+    "rel5": -1.29,
+    "dW": 0.85,
+    "perf1M_rel": -0.91,
+    "rel20": -0.58,
+    "dM": -0.33,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "PGE",
+    "perfW_rel": -1.62,
+    "rel5": -1.21,
+    "dW": -0.41,
+    "perf1M_rel": -8.87,
+    "rel20": -9.18,
+    "dM": 0.31,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "DINOPL",
+    "perfW_rel": -3.76,
+    "rel5": -4.83,
+    "dW": 1.07,
+    "perf1M_rel": 5.0,
+    "rel20": 1.41,
+    "dM": 3.59,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "ZABKA",
+    "perfW_rel": -2.67,
+    "rel5": -1.9,
+    "dW": -0.77,
+    "perf1M_rel": -1.04,
+    "rel20": -1.89,
+    "dM": 0.85,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "KGHM",
+    "perfW_rel": -2.07,
+    "rel5": -3.48,
+    "dW": 1.41,
+    "perf1M_rel": -22.16,
+    "rel20": -17.02,
+    "dM": -5.14,
+    "flag_1M": true,
+    "flag_W_orientacyjna": false
+   },
+   {
+    "ticker": "PKNORLEN",
+    "perfW_rel": -9.1,
+    "rel5": -8.99,
+    "dW": -0.11,
+    "perf1M_rel": -17.11,
+    "rel20": -17.28,
+    "dM": 0.17,
+    "flag_1M": false,
+    "flag_W_orientacyjna": false
+   }
+  ]
+ },
+ "ranking": [
+  {
+   "rank": 1,
+   "ticker": "ALLEGRO",
+   "score": 65.6,
+   "p": 0.58,
+   "waga_wig20_pct": 10.62,
+   "rel5_pp": 9.92,
+   "rel20_pp": 21.14,
+   "pts": {
+    "momentum": 24.1,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 10.5,
+    "rewizje": 8,
+    "przeplywy": 5,
+    "wycena": 1
+   },
+   "uzasadnienie": "MOM 24.1/25 (rel5 +9,92, rel20 +21,14 p.p. — pierwsze miejsce ex aequo z Modivo); KAT ZWZ 18.11 14:00 i NWZ 14:30 (Kalendarium GPW/PAP 13.11: umorzenie 17,88 mln akcji z Fazy I skupu, podniesienie limitu ceny skupu do 65 zł) — zdarzenie korporacyjne bez kierunku → wkład 0; raport roczny 10.03.2027 → 10; MAKRO konsumpcja: CPI X 3,5%, bazowa poniżej 3% (prognozy ING/Pekao/mBank 2,9%), PKB III kw. +3,5%; rynek e-commerce po opłacie 2 EUR od małych przesyłek; US10Y 5,14% i Nasdaq −0,91% 13.11 ciążą wycenom wzrostowym (7); DM +3 Trigon top pick (28.10, w oknie 14.10–13.11) → 10,5; REW udokumentowane zaskoczenie: Q3 12.11 skoryg. EBITDA 1 129,0 vs konsensus PAP 1 076,7 mln zł (+4,9%), podniesione prognozy 2026 (EBITDA 4,2–4,3 mld zł), umowa InPost do 2031; konsensus TV Strong Buy 1,31 (10/4/0, n=16; Δ −0,07 poniżej progu) → 8; PRZ skup Fazy II (do 800 mln zł) z proponowanym limitem 65 zł PONIŻEJ kursu 66,62 — skup w praktyce wstrzymany do zmiany limitu; umorzenie 18.11 zmniejsza liczbę akcji; wolumen 13.11 0,92× średniej; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 38,0, C/WK 6,1, EV/EBITDA 19,7, DY brak → 1.",
+   "teza": "Z 3. na 1. miejsce po najlepszym tygodniu w uniwersum (+11,40%, alfa +7,36 p.p.): raport Q3 nad konsensusem PAP (+4,9% EBITDA), podniesione prognozy roczne i umowa z InPost do 2031 dały udokumentowaną rewizję (REW 8/10) na szczycie momentum (rel20 +21,14 p.p.); Trigon top pick 28.10 nadal w oknie. Jedna z trzech nóg wspólnych z naiwnym momentum.",
+   "ryzyko": "Kurs 0,4% pod maksimum 3 miesięcy po +11,4% w tygodniu — realizacja zysków po dwóch sesjach lidera; limit skupu 65 zł poniżej kursu, więc wsparcie buybacku nie działa do decyzji NWZ 18.11; C/Z 38 i Nasdaq w dół (Nvidia −11% w tygodniu, wyniki 17.11 po sesji) — rotacja od spółek wzrostowych; waga 10,6% w WIG20 tłumi alfę relatywną.",
+   "konsensus_tv": {
+    "n": 16,
+    "buy": 10,
+    "hold": 4,
+    "sell": 0,
+    "overweight": 2,
+    "underweight": 0,
+    "ocena": "Strong Buy",
+    "score": 1.31,
+    "cel_sredni": null,
+    "cel_surowy_tv": 15.18,
+    "test_skali": 0.23,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Strong Buy",
+     "score": 1.38,
+     "n": 16
+    },
+    "delta_score": -0.07,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 38.03,
+    "price_book_fq": 6.1,
+    "enterprise_value_ebitda_ttm": 19.73,
+    "dividends_yield": null,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 342.0,
+   "earnings_release_next_date_tv": "2027-03-10",
+   "tv_perf": {
+    "Perf.W": 13.69,
+    "Perf.1M": 24.76
+   },
+   "kurs_d0": 66.62,
+   "sma50_tv": 53.34,
+   "sma200_tv": 39.4,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 3
+  },
+  {
+   "rank": 2,
+   "ticker": "MBANK",
+   "score": 60.7,
+   "p": 0.55,
+   "waga_wig20_pct": 3.28,
+   "rel5_pp": 3.3,
+   "rel20_pp": 21.07,
+   "pts": {
+    "momentum": 20.2,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 10.5,
+    "rewizje": 6,
+    "przeplywy": 5,
+    "wycena": 2
+   },
+   "uzasadnienie": "MOM 20.2/25 (rel5 +3,30, rel20 +21,07 p.p. — drugi rel20 w uniwersum); KAT brak datowanego zdarzenia w D+1…D+10 (raport roczny 4.02.2027, TV) → 10; MAKRO banki jak Alior: jastrzębia RPP, WIG-Banki +4,08%, 10Y PL 6,34%; podatek bankowy obniżony od 2027 (ustawa z 27.11.2025) (7); DM +3 lista długa DM BOŚ (19.10, PAP 27.10 — w oknie); sygnał Trigon „gorzej niż rynek” z 9.10 WYPADŁ z okna → netto +3 → 10,5; REW Q3 (28.10) znany, konsensus TV Buy 2,33 (0/4/2, n=6 — spadek n z 7, Δ +0,04 poniżej progu) → 6; PRZ brak danych; wolumen 13.11 0,91×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 17,8, C/WK 3,22, DY brak (30% zysku za 2026 zapowiedziane) → 2.",
+   "teza": "Z 8. na 2. miejsce: +5,91% w W13 (alfa +1,86 p.p.), rel20 +21,07 p.p. (drugi w uniwersum) i lista długa DM BOŚ bez przeciwwagi Trigona (9.10 poza oknem) — pozycja z momentum i DM; w W12 spółka nr 1 (alfa +1,31 tylko dzięki spadkowi indeksu), w W13 poza TOP5 zrobiła +1,86.",
+   "ryzyko": "Zero „kupuj” w konsensusie TV (0/4/2) i najdroższy bank (C/Z 17,8, C/WK 3,2); 1,6% pod maksimum 3 mies. po +18,6% w miesiącu; 13.11 −0,83% przy rosnących rentownościach i słabszym złotym; bez dywidendy; płynność 57 mln zł/10 sesji.",
+   "konsensus_tv": {
+    "n": 6,
+    "buy": 0,
+    "hold": 4,
+    "sell": 2,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 2.33,
+    "cel_sredni": null,
+    "cel_surowy_tv": 346.14,
+    "test_skali": 0.2,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 2.29,
+     "n": 7
+    },
+    "delta_score": 0.04,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 17.79,
+    "price_book_fq": 3.22,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": null,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 57.1,
+   "earnings_release_next_date_tv": "2027-02-04",
+   "tv_perf": {
+    "Perf.W": 5.52,
+    "Perf.1M": 18.61
+   },
+   "kurs_d0": 1730.5,
+   "sma50_tv": 1493.78,
+   "sma200_tv": 1300.75,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 8
+  },
+  {
+   "rank": 3,
+   "ticker": "MODIVO",
+   "score": 60.6,
+   "p": 0.55,
+   "waga_wig20_pct": 0.87,
+   "rel5_pp": 13.62,
+   "rel20_pp": 19.72,
+   "pts": {
+    "momentum": 24.1,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 10.5,
+    "rewizje": 3,
+    "przeplywy": 6,
+    "wycena": 1
+   },
+   "uzasadnienie": "MOM 24.1/25 (rel5 +13,62 — najwyższy w uniwersum, rel20 +19,72 p.p.); KAT pełny raport za III kw. 2026/27 27.11 (D+10; kalendarium strefainwestorow.pl + TV) — wstępne wyniki znane od 5.11 → zdarzenie znane, wkład 0 → 10; MAKRO konsumpcja odzieżowo-obuwnicza przy CPI 3,5% i realnym wzroście płac, ale IV kw. zależy od pogody i promocji; EUR/PLN 4,40 (koszt zakupów) (6); DM +3 lista długa DM BOŚ Polish Equities Monthly 10/2026 (19.10, PAP 27.10 — w oknie); sygnał Trigon „gorzej niż rynek” z 9.10 WYPADŁ z okna 30 dni → netto +3 → 10,5; REW wstępna EBITDA 372 mln zł vs konsensus PAP 380,1 (−2%), skoryg. 450 mln; konsensus TV Hold 2,50 (1/2/5, n=10, bez zmiany) — brak nowych rekomendacji po wynikach (research 14.11) → 3; PRZ najwyższy short interest w indeksie wg agregatorów (wielkość nieznana), squeeze trwa (+9,97% w W13 przy wolumenie 13.11 0,66×); KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 6; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z b.d. (strata TTM), C/WK 4,4, EV/EBITDA 11,7, DY brak → 1.",
+   "teza": "Zostaje w TOP5 (2 → 3) na najwyższym rel5 w uniwersum (+13,62 p.p.; +9,97% w W13 po wstępnych wynikach i +8,70% w jednej sesji 9.11); z okna DM wypadł negatywny sygnał Trigona (9.10), więc lista długa DM BOŚ (19.10) daje +3; model nadal kupuje kurs, nie fundamenty — konsensus TV Hold z 5 „sprzedaj” na 10.",
+   "ryzyko": "Wstępna EBITDA 2% pod konsensusem PAP, C/Z b.d.; po +21% od 3-mies. minimum i 3,2% pod maksimum squeeze może się odwrócić równie szybko; pełny raport 27.11 w ostatnim dniu okna; płynność 51,6 mln zł/10 sesji i 0,1 akcji = 11 zł — noga wejdzie na rachunek w pełnej wielkości.",
+   "konsensus_tv": {
+    "n": 10,
+    "buy": 1,
+    "hold": 2,
+    "sell": 5,
+    "overweight": 0,
+    "underweight": 2,
+    "ocena": "Hold",
+    "score": 2.5,
+    "cel_sredni": null,
+    "cel_surowy_tv": 22.64,
+    "test_skali": 0.2,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Hold",
+     "score": 2.5,
+     "n": 10
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": null,
+    "price_book_fq": 4.4,
+    "enterprise_value_ebitda_ttm": 11.68,
+    "dividends_yield": null,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 51.6,
+   "earnings_release_next_date_tv": "2026-11-27",
+   "tv_perf": {
+    "Perf.W": 14.1,
+    "Perf.1M": 20.97
+   },
+   "kurs_d0": 112.5,
+   "sma50_tv": 94.03,
+   "sma200_tv": 93.33,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 2
+  },
+  {
+   "rank": 4,
+   "ticker": "ALIOR",
+   "score": 59.0,
+   "p": 0.55,
+   "waga_wig20_pct": 2.05,
+   "rel5_pp": 5.23,
+   "rel20_pp": 9.47,
+   "pts": {
+    "momentum": 21.5,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 4.5,
+    "rewizje": 7,
+    "przeplywy": 5,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 21.5/25 (rel5 +5,23, rel20 +9,47 p.p. — 8 sesji wzrostowych z rzędu do 12.11, seria wygasła 13.11); KAT NWZ 24.11 10:00 na wniosek PZU (zmiany w Radzie Nadzorczej; komunikat spółki 27.10 wg money.pl) — D+7, zdarzenie korporacyjne bez kierunku → wkład 0; raport 3.03.2027 → 10; MAKRO banki: jastrzębia RPP (Janczyk 13.11: w grudniu stopy bez zmian; Duda 12.11: możliwe zaostrzenie), WIG-Banki +4,08% w tygodniu, 10Y PL 6,34%; S&P obniżył perspektywę Pekao (pochodna ratingu Polski) — Alior bez komunikatu (7); DM −3 lista „gorzej niż rynek” DM BOŚ Polish Equities Monthly 10/2026 (19.10, w oknie) → 4,5; REW Q3 (27.10) powyżej konsensusu (zapis W12/W13), konsensus TV Strong Buy 1,25 (6/2/0, n=8, bez zmiany) → 7; PRZ bez danych o zmianie pozycji funduszy, PZU zwołuje NWZ (zmiana RN); KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 10,0, C/WK 1,52, DY 6,05% → 4.",
+   "teza": "Z 5. na 4. miejsce: najmocniejszy bank tygodnia (+7,08%, alfa +3,03 p.p.) na momentum (rel20 +9,47 p.p.) i najtańszy w sektorze (C/Z 10,0, DY 6,1%) — mimo listy „gorzej niż rynek” DM BOŚ (−3); konsensus TV Strong Buy bez głosu „sprzedaj”.",
+   "ryzyko": "Seria 8 wzrostów wygasła 13.11 (o 16:00 −1,17%), kurs 0,3% pod maksimum 3 mies.; NWZ 24.11 z inicjatywy PZU (zmiany w RN) to ryzyko korporacyjne; DM BOŚ trzyma Alior na liście krótkiej; rating Polski z perspektywą negatywną (S&P, DBRS) ogranicza ratingi banków krajowych; płynność 45,5 mln zł/10 sesji.",
+   "konsensus_tv": {
+    "n": 8,
+    "buy": 6,
+    "hold": 2,
+    "sell": 0,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Strong Buy",
+    "score": 1.25,
+    "cel_sredni": null,
+    "cel_surowy_tv": 39.4,
+    "test_skali": 0.27,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Strong Buy",
+     "score": 1.25,
+     "n": 8
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 9.98,
+    "price_book_fq": 1.52,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": 6.05,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 45.5,
+   "earnings_release_next_date_tv": "2027-03-03",
+   "tv_perf": {
+    "Perf.W": 8.49,
+    "Perf.1M": 11.36
+   },
+   "kurs_d0": 147.55,
+   "sma50_tv": 135.27,
+   "sma200_tv": 128.43,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 5
+  },
+  {
+   "rank": 5,
+   "ticker": "PEPCO",
+   "score": 58.0,
+   "p": 0.54,
+   "waga_wig20_pct": 1.49,
+   "rel5_pp": 2.03,
+   "rel20_pp": 9.36,
+   "pts": {
+    "momentum": 17.5,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 10.5,
+    "rewizje": 5,
+    "przeplywy": 6,
+    "wycena": 2
+   },
+   "uzasadnienie": "MOM 17.5/25 (rel5 +2,03, rel20 +9,36 p.p.); KAT wstępne wyniki FY26 9.12 poza oknem (pepcogroup.eu) → 10; MAKRO konsument dyskontowy w CEE/Europie Zachodniej przy spadającej inflacji, EUR/PLN 4,40 stabilny; pre-close FY26 (29.09): underlying zysk netto >+60% r/r (7); DM +3 William O'Neil & Co „kupuj” 12.11 07:07 (pierwsza rekomendacja, bez ceny docelowej — Bloomberg/PAP, w oknie) → 10,5; REW konsensus TV Strong Buy 1,42 (9/1/2, n=13, bez zmiany); brak nowych liczb vs konsensus → 5; PRZ skup akcji do 400 mln EUR (I etap do 50 mln EUR do 31.12 trwa); wolumen 13.11 1,09× przy +2,45%; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 6; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 13,9, C/WK 33,4 (nieprawdopodobne — kapitał po odpisach Poundland; bankier.pl HTTP 403, bez kontroli), EV/EBITDA 9,4, DY 0,8% → 2.",
+   "teza": "Z 11. na 5. miejsce i do TOP5: nowy sygnał DM w oknie (William O'Neil „kupuj” 12.11) przy rel20 +9,36 p.p., trwającym skupie akcji i konsensusie TV Strong Buy (9 „kupuj” na 13); 0,35% pod maksimum 3 mies. (51,10) po +2,45% 13.11.",
+   "ryzyko": "Rekomendacja O'Neila bez ceny docelowej i oparta na sile relatywnej (metodologia CAN SLIM), nie na fundamentach; C/WK 33 ze screenera nieprawdopodobne i bez kontroli bankier; najbliższe twarde zdarzenie (FY26) dopiero 9.12; kurs tuż pod oporem 51,10; waga 1,49% — mała, ale płynność 80 mln zł wystarcza.",
+   "konsensus_tv": {
+    "n": 13,
+    "buy": 9,
+    "hold": 1,
+    "sell": 2,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Strong Buy",
+    "score": 1.42,
+    "cel_sredni": null,
+    "cel_surowy_tv": 12.69,
+    "test_skali": 0.25,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Strong Buy",
+     "score": 1.42,
+     "n": 13
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 13.87,
+    "price_book_fq": 33.38,
+    "enterprise_value_ebitda_ttm": 9.4,
+    "dividends_yield": 0.83,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 80.2,
+   "earnings_release_next_date_tv": "2026-12-09",
+   "tv_perf": {
+    "Perf.W": 5.75,
+    "Perf.1M": 14.43
+   },
+   "kurs_d0": 50.92,
+   "sma50_tv": 45.32,
+   "sma200_tv": 37.0,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 11
+  },
+  {
+   "rank": 6,
+   "ticker": "PKOBP",
+   "score": 57.0,
+   "p": 0.54,
+   "waga_wig20_pct": 13.83,
+   "rel5_pp": 0.71,
+   "rel20_pp": 1.37,
+   "pts": {
+    "momentum": 14.5,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 10.5,
+    "rewizje": 7,
+    "przeplywy": 5,
+    "wycena": 3
+   },
+   "uzasadnienie": "MOM 14.5/25 (rel5 +0,71, rel20 +1,37 p.p.); KAT brak zdarzenia w D+1…D+10 (18/20.11 odsetki obligacji — bez wpływu; raport 5.03.2027) → 10; MAKRO banki jak wyżej (7); DM +3 Kepler Cheuvreux „kupuj” 141,03 zł (15.10 — ostatni tydzień w oknie) i lista długa DM BOŚ (19.10) → 10,5; REW Q3 5.11: zysk 2 933 mln zł, +4,1% vs konsensus PAP (znane); konsensus TV Buy 1,66 (6/9/0, n=16, Δ +0,07 poniżej progu) → 7; PRZ największa płynność w indeksie (400 mln zł/10 sesji), bez danych o przepływach; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 13,7, C/WK 2,62, DY 5,12% → 3.",
+   "teza": "Z 9. na 6. miejsce — pierwszy pod koszykiem: +4,62% w W13 (alfa +0,58), dwa sygnały DM w oknie (Kepler 15.10, BOŚ 19.10) i Q3 nad konsensusem, ale momentum tylko 14,5/25 (rel5 +0,71 p.p.); waga 13,8% w WIG20 ogranicza alfę relatywną.",
+   "ryzyko": "Kepler (15.10) wypada z okna w przyszłym tygodniu; 4,5% pod maksimum 3 mies.; udział w WIG20 ograniczony do 15% — spółka porusza się z indeksem.",
+   "konsensus_tv": {
+    "n": 16,
+    "buy": 6,
+    "hold": 9,
+    "sell": 0,
+    "overweight": 0,
+    "underweight": 1,
+    "ocena": "Buy",
+    "score": 1.66,
+    "cel_sredni": null,
+    "cel_surowy_tv": 30.64,
+    "test_skali": 0.26,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.59,
+     "n": 16
+    },
+    "delta_score": 0.07,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 13.7,
+    "price_book_fq": 2.62,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": 5.12,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 399.9,
+   "earnings_release_next_date_tv": "2027-03-05",
+   "tv_perf": {
+    "Perf.W": 4.68,
+    "Perf.1M": 2.65
+   },
+   "kurs_d0": 119.9,
+   "sma50_tv": 117.92,
+   "sma200_tv": 104.51,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 9
+  },
+  {
+   "rank": 7,
+   "ticker": "KETY",
+   "score": 55.8,
+   "p": 0.53,
+   "waga_wig20_pct": 2.18,
+   "rel5_pp": 3.99,
+   "rel20_pp": 4.48,
+   "pts": {
+    "momentum": 19.3,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 5,
+    "wycena": 2
+   },
+   "uzasadnienie": "MOM 19.3/25 (rel5 +3,99, rel20 +4,48 p.p.; +6,87% w W13, alfa +2,83); KAT brak datowanego zdarzenia (zgoda UOKiK na przejęcie Grupy Metra do 450 mln EUR — data nieznana, zamknięcie planowane do I kw. 2027; raport 25.03.2027) → 10; MAKRO USD/PLN 3,996 (+1,36% w tygodniu) i EUR/PLN 4,40 sprzyjają eksporterowi, ale koniunktura przemysłowa w strefie euro słaba (produkcja IX prog. +0,1% r/r), aluminium bez danych (6); DM brak sygnału z datą w oknie → 7,5; REW Q3 (26.10) zgodny z konsensusem PAP; konsensus TV Buy 1,71 (4/1/2, n=7, bez zmiany) → 6; PRZ brak danych; wolumen 13.11 1,41× przy +1,52%; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 19,0, C/WK 6,16, EV/EBITDA 12,2, DY 3,66% → 2.",
+   "teza": "Z 15. na 7. miejsce na momentum: +6,87% w W13 (0,6% pod maksimum 3 mies.) przy wolumenie 1,4× średniej 13.11; bez sygnału DM i bez zdarzenia w oknie — czysty tilt cenowy, zgodny z naiwnym momentum (4. rel5 w uniwersum).",
+   "ryzyko": "Przejęcie Metra (450 mln EUR, kredyt do 2 mld zł) czeka na UOKiK — decyzja może przyjść w oknie; płynność 26 mln zł/10 sesji; C/Z 19 przy słabnącym przemyśle europejskim; dwa „sprzedaj” w konsensusie TV.",
+   "konsensus_tv": {
+    "n": 7,
+    "buy": 4,
+    "hold": 1,
+    "sell": 2,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 1.71,
+    "cel_sredni": null,
+    "cel_surowy_tv": 324.99,
+    "test_skali": 0.24,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.71,
+     "n": 7
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 19.01,
+    "price_book_fq": 6.16,
+    "enterprise_value_ebitda_ttm": 12.24,
+    "dividends_yield": 3.66,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 26.3,
+   "earnings_release_next_date_tv": "2027-03-25",
+   "tv_perf": {
+    "Perf.W": 6.96,
+    "Perf.1M": 3.64
+   },
+   "kurs_d0": 1337,
+   "sma50_tv": 1257.9,
+   "sma200_tv": 1178.88,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 15
+  },
+  {
+   "rank": 8,
+   "ticker": "CDPROJEKT",
+   "score": 54.5,
+   "p": 0.52,
+   "waga_wig20_pct": 3.4,
+   "rel5_pp": 3.89,
+   "rel20_pp": 3.12,
+   "pts": {
+    "momentum": 18.0,
+    "katalizatory": 10,
+    "makro": 5,
+    "dm": 10.5,
+    "rewizje": 5,
+    "przeplywy": 5,
+    "wycena": 1
+   },
+   "uzasadnienie": "MOM 18.0/25 (rel5 +3,89, rel20 +3,12 p.p.); KAT raport Q3 24.11 (D+7; kalendarium strefainwestorow.pl + TV) — bez konsensusu PAP w depeszach do 13.11, kierunek nieznany, D+6…D+10 co najwyżej połowa → wkład 0 → 10; MAKRO sentyment do spółek wzrostowych: Nvidia −11% w tygodniu po rezygnacji Huanga, wyniki Nvidii 17.11 po sesji USA (bankier/Ipopema), Nasdaq −0,91% 13.11, US10Y 5,14% (+28 pb) (5); DM +3 lista długa DM BOŚ (19.10) i Trigon top pick (28.10) → 10,5; REW Q2 (2.09) +44% vs konsensus znane; konsensus TV Buy 1,97 (5/4/5, n=15, bez zmiany) → 5; PRZ brak danych; wolumen 13.11 0,79×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 45,2, C/WK 7,8, EV/EBITDA 52,2 → 1.",
+   "teza": "Wypada z TOP5 (4 → 8): alfa w W13 tylko +0,26 p.p. (+4,31%), momentum 18,0 bez wsparcia makro (Nasdaq i Nvidia w dół, rentowności USA w górę); raport Q3 24.11 poza oknem wyniku.",
+   "ryzyko": "C/Z 45 i EV/EBITDA 52 — najwyższa wycena w uniwersum; 5 „sprzedaj” w konsensusie TV; Nvidia 17.11 to zdarzenie binarne dla całego sektora; 0,9% pod maksimum 3 mies.",
+   "konsensus_tv": {
+    "n": 15,
+    "buy": 5,
+    "hold": 4,
+    "sell": 5,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 1.97,
+    "cel_sredni": null,
+    "cel_surowy_tv": 63.01,
+    "test_skali": 0.23,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.97,
+     "n": 15
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 45.23,
+    "price_book_fq": 7.8,
+    "enterprise_value_ebitda_ttm": 52.22,
+    "dividends_yield": null,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 78.1,
+   "earnings_release_next_date_tv": "2026-11-24",
+   "tv_perf": {
+    "Perf.W": 7.91,
+    "Perf.1M": 4.7
+   },
+   "kurs_d0": 278.4,
+   "sma50_tv": 255.42,
+   "sma200_tv": 247.85,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 4
+  },
+  {
+   "rank": 9,
+   "ticker": "PZU",
+   "score": 51.2,
+   "p": 0.51,
+   "waga_wig20_pct": 7.34,
+   "rel5_pp": 0.43,
+   "rel20_pp": 0.55,
+   "pts": {
+    "momentum": 12.7,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 5,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 12.7/25 (rel5 +0,43, rel20 +0,55 p.p.); KAT raport Q3 19.11 (D+4; kalendarium strefainwestorow.pl + kalendarz inwestora + TV) — bez konsensusu PAP w depeszach, kierunek nieznany → wkład 0 → 10; MAKRO S&P 13.11 potwierdził A− z perspektywą POZYTYWNĄ (Solvency II 230%, ROE >19%) mimo obniżki ratingu Polski; 10Y PL 6,34% (wynik lokacyjny) (7); DM brak sygnału w oknie → 7,5; REW Q2 (+12% vs konsensus) znane; konsensus TV Buy 1,55 (4/5/0, n=10, bez zmiany) → 5; PRZ brak danych; wolumen 13.11 1,21×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 10,1, C/WK 1,90, DY 6,35% → 4.",
+   "teza": "Z 7. na 9.: tania (C/Z 10, DY 6,4%) z pozytywną perspektywą S&P (13.11), ale bez momentum (rel5 +0,43) i z raportem Q3 19.11 bez konsensusu w depeszach — zdarzenie w oknie wyniku o nieznanym kierunku.",
+   "ryzyko": "Raport 19.11 (D+4) może pójść w obie strony; 2,1% pod maksimum 3 mies.; brak nowych rekomendacji od sierpnia.",
+   "konsensus_tv": {
+    "n": 10,
+    "buy": 4,
+    "hold": 5,
+    "sell": 0,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 1.55,
+    "cel_sredni": null,
+    "cel_surowy_tv": 19.66,
+    "test_skali": 0.26,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.55,
+     "n": 10
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 10.08,
+    "price_book_fq": 1.9,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": 6.35,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 106.8,
+   "earnings_release_next_date_tv": "2026-11-19",
+   "tv_perf": {
+    "Perf.W": 3.48,
+    "Perf.1M": 2.63
+   },
+   "kurs_d0": 75.6,
+   "sma50_tv": 73.4,
+   "sma200_tv": 69.01,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 7
+  },
+  {
+   "rank": 10,
+   "ticker": "LPP",
+   "score": 51.0,
+   "p": 0.51,
+   "waga_wig20_pct": 6.17,
+   "rel5_pp": 0.09,
+   "rel20_pp": 6.57,
+   "pts": {
+    "momentum": 14.5,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 10.5,
+    "rewizje": 4,
+    "przeplywy": 4,
+    "wycena": 1
+   },
+   "uzasadnienie": "MOM 14.5/25 (rel5 +0,09, rel20 +6,57 p.p.); KAT raport Q3 3.12 poza oknem (kalendarium) → 10; MAKRO konsumpcja odzieżowa jak Modivo, EUR/PLN 4,40, USD/PLN 4,00 (koszt zakupów w USD rośnie +1,4% w tygodniu) (7); DM +3 lista długa DM BOŚ (19.10) → 10,5; REW wstępne dane sprzedażowe Q3 (4.11) znane; konsensus TV Buy 1,58 (8/2/2, n=13, bez zmiany) → 4; PRZ brak danych; wolumen 13.11 0,88×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 27,5, C/WK 10,2, EV/EBITDA 10,9, DY 3,14% → 1.",
+   "teza": "Z 6. na 10.: alfa w W13 +0,40 p.p. (+4,44%), rel5 zgasł do +0,09 — momentum miesięczne (rel20 +6,57) zostało, ale bez katalizatora do 3.12; lista DM BOŚ (+3) trzyma ją w górnej połowie.",
+   "ryzyko": "1,0% pod maksimum 3 mies. po +13,6% w miesiącu; droższy dolar podnosi koszt zakupów; dwa „sprzedaj” w konsensusie TV; płynność 135 mln zł.",
+   "konsensus_tv": {
+    "n": 13,
+    "buy": 8,
+    "hold": 2,
+    "sell": 2,
+    "overweight": 0,
+    "underweight": 1,
+    "ocena": "Buy",
+    "score": 1.58,
+    "cel_sredni": null,
+    "cel_surowy_tv": 6839.06,
+    "test_skali": 0.24,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.58,
+     "n": 13
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 27.51,
+    "price_book_fq": 10.19,
+    "enterprise_value_ebitda_ttm": 10.92,
+    "dividends_yield": 3.14,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 134.9,
+   "earnings_release_next_date_tv": "2026-12-03",
+   "tv_perf": {
+    "Perf.W": 2.94,
+    "Perf.1M": 13.62
+   },
+   "kurs_d0": 28700,
+   "sma50_tv": 25190.4,
+   "sma200_tv": 21926.45,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 6
+  },
+  {
+   "rank": 11,
+   "ticker": "PGE",
+   "score": 49.3,
+   "p": 0.5,
+   "waga_wig20_pct": 2.57,
+   "rel5_pp": -1.21,
+   "rel20_pp": -9.18,
+   "pts": {
+    "momentum": 5.3,
+    "katalizatory": 12.5,
+    "makro": 5,
+    "dm": 10.5,
+    "rewizje": 7,
+    "przeplywy": 5,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 5.3/25 (rel5 −1,21, rel20 −9,18 p.p.); KAT reakcja rynku na szacunki Q3 (ESPI 13.11 po sesji, PAP 18:30) przypada na 16.11 = D+1 okna W14: zysk netto j.d. 3,0 mld zł vs konsensus PAP 1,3 mld, EBITDA raportowana 4,61 vs 3,2 mld — pozytywna niespodzianka nagłówkowa (precedens Tauron 2.11 → kurs +2,6% w 4 sesje), ale +1,73 mld zdarzeń jednorazowych i EBITDA powtarzalna 2,89 mld PONIŻEJ konsensusu → wkład +2 (nie +3); pełny raport 24.11 (D+7, znany) → +0,5 → 12,5; MAKRO SKRM 16.11: projekt ustawy o cenie maksymalnej gazu 2027 i mechanizm ograniczenia zysków nadzwyczajnych obrotu; CIT 30% dla energetyki od 2027 u prezydenta (Sejm 5.11, 21 dni — decyzja do 26.11, bez informacji na 14.11); WIG-Energia +3,11% w tygodniu (5); DM +3 Wood & Co „kupuj” 18,50 zł (5.11) i Trigon top pick (28.10); −3 usunięcie z listy długiej DM BOŚ (19.10) — netto w W13 zapisane +3 → 10,5; REW udokumentowana poprawa konsensusu TV 1,79 → 1,50 (Δ −0,29 ponad progiem 0,15; 3/3/0, n=7; odczyt 2026-11-14) i zaskoczenie nagłówkowe szacunków Q3 vs PAP → 7; PRZ brak danych; wolumen 13.11 1,18× przy −1,56% przed komunikatem; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 4,7, C/WK 0,77, EV/EBITDA 3,3 → 4.",
+   "teza": "Wychodzi z BOTTOM5 (18 → 11) po twardym zdarzeniu przeciw tezie SHORT: szacunki Q3 13.11 po sesji (zysk 3,0 vs 1,3 mld zł konsensusu) — Puls 14.11 dał REDUCE (NEWS), ranking ocenia spółkę od zera (§6): katalizator +2,5 i rewizja 7 podnoszą ją do środka tabeli mimo najsłabszego poza KGHM/Orlenem momentum (rel20 −9,18 p.p.).",
+   "ryzyko": "EBITDA powtarzalna 2,89 mld zł poniżej konsensusu 3,2 — po pierwszej reakcji rynek może policzyć jednorazówki (+1,73 mld); CIT 30% u prezydenta (decyzja do 26.11) i ustawa gazowa 16.11; 8,6% pod maksimum 3 mies., WIG-Energia oddał piątek −0,96%.",
+   "konsensus_tv": {
+    "n": 7,
+    "buy": 3,
+    "hold": 3,
+    "sell": 0,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 1.5,
+    "cel_sredni": null,
+    "cel_surowy_tv": 4.27,
+    "test_skali": 0.27,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.79,
+     "n": 7
+    },
+    "delta_score": -0.29,
+    "zmiana_ponad_progiem": true
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 4.71,
+    "price_book_fq": 0.77,
+    "enterprise_value_ebitda_ttm": 3.34,
+    "dividends_yield": null,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 44.0,
+   "earnings_release_next_date_tv": "2026-11-24",
+   "tv_perf": {
+    "Perf.W": 1.55,
+    "Perf.1M": -7.36
+   },
+   "kurs_d0": 16.045,
+   "sma50_tv": 15.28,
+   "sma200_tv": 11.54,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 18
+  },
+  {
+   "rank": 12,
+   "ticker": "BUDIMEX",
+   "score": 48.8,
+   "p": 0.49,
+   "waga_wig20_pct": 1.62,
+   "rel5_pp": -0.91,
+   "rel20_pp": 10.55,
+   "pts": {
+    "momentum": 12.3,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 10.5,
+    "rewizje": 4,
+    "przeplywy": 4,
+    "wycena": 2
+   },
+   "uzasadnienie": "MOM 12.3/25 (rel5 −0,91, rel20 +10,55 p.p.); KAT umowa na ZOE Łódź (oferta wybrana 6.11, 712,6 mln zł + 109,2 mln EUR) niepodpisana — data nieznana, bez punktów; III Kongres Budownictwa 16–17.11 (PAP) bez znaczenia; raport 24.02.2027 → 10; MAKRO IRG SGH 10.11: pogorszenie koniunktury w budownictwie w IV kw., oczekiwania pesymistyczne; produkcja budowlano-montażowa IX −9% r/r; 10Y PL 6,34%, KPO/kolej bez nowych dat; CIT 22% (Senat przywrócił podwyżkę, Sejm głosuje) (6); DM +3 Trigon „Top Pick w budownictwie” (28.10, w oknie) → 10,5; REW konsensus TV Buy 2,00 (2/3/2, n=7, bez zmiany wobec W13 — pogorszenie z W12 już zaliczone), strategia 2030 → 4; PRZ krótka pozycja wg omówień (wielkość nieznana), wolumen 13.11 1,20× przy −0,08%; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 26,4, C/WK 20,7 (nieprawdopodobne — bankier 403, bez kontroli), EV/EBITDA 16,3, DY 4,24% → 2.",
+   "teza": "Wypada z TOP5 i z pierwszego miejsca (1 → 12): jedyne pudło koszyka LONG W13 (alfa −0,58 p.p. — cztery sesje bez kierunku po kontrakcie ZOE), rel5 zgasł do −0,91 p.p.; zostaje Trigon top pick (28.10) i rel20 +10,55.",
+   "ryzyko": "Umowa Łódź wciąż niepodpisana (możliwe podpisanie w oknie = katalizator, ale bez daty); koniunktura budowlana pesymistyczna (IRG SGH 10.11); dwa „sprzedaj” w TV; najwyższa wycena sektora (C/Z 26).",
+   "konsensus_tv": {
+    "n": 7,
+    "buy": 2,
+    "hold": 3,
+    "sell": 2,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 2,
+    "cel_sredni": null,
+    "cel_surowy_tv": 192.46,
+    "test_skali": 0.25,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 2.0,
+     "n": 7
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 26.44,
+    "price_book_fq": 20.69,
+    "enterprise_value_ebitda_ttm": 16.28,
+    "dividends_yield": 4.24,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 27.2,
+   "earnings_release_next_date_tv": "2027-02-24",
+   "tv_perf": {
+    "Perf.W": 2.33,
+    "Perf.1M": 9.97
+   },
+   "kurs_d0": 765.4,
+   "sma50_tv": 710.61,
+   "sma200_tv": 711.4,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 1
+  },
+  {
+   "rank": 13,
+   "ticker": "TAURONPE",
+   "score": 48.2,
+   "p": 0.49,
+   "waga_wig20_pct": 1.76,
+   "rel5_pp": -0.26,
+   "rel20_pp": -6.3,
+   "pts": {
+    "momentum": 9.2,
+    "katalizatory": 10.5,
+    "makro": 5,
+    "dm": 7.5,
+    "rewizje": 7,
+    "przeplywy": 5,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 9.2/25 (rel5 −0,26, rel20 −6,30 p.p.); KAT pełny raport Q3 18.11 (D+3; kalendarium strefainwestorow.pl + komunikat spółki z 2.11) po szacunkach z 2.11 (EBITDA 1 821 vs 1 565,4 mln zł konsensusu, +16%) — zdarzenie znane, pełny raport wkład ≤1 → +0,5 → 10,5; list intencyjny z Onde (13.11, 4,5–5,4 mln EUR) poniżej rangi; MAKRO jak PGE: ustawa gazowa (SKRM 16.11), CIT 30% u prezydenta, WIG-Energia +3,11% w tygodniu, aktualizacja strategii 2.12 poza oknem (5); DM brak sygnału w oknie → 7,5; REW szacunki +16% vs konsensus (znane), konsensus TV Strong Buy 1,33 (4/2/0, n=6, bez zmiany) → 7; PRZ brak danych; wolumen 13.11 1,12×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z b.d., C/WK b.d., DY 2,15% → 4 (po wskaźnikach bankier z W13: C/Z ok. 8, C/WK ok. 0,6 — kontrola niedostępna, utrzymane).",
+   "teza": "13. miejsce bez zmian: +3,29% w W13 (alfa −0,76) w rajdzie energetyki 12.11; pełny raport 18.11 po dobrych szacunkach to zdarzenie znane (+0,5), momentum miesięczne ujemne (rel20 −6,30).",
+   "ryzyko": "Regulacje (gaz 2027, CIT 30%) z datami w oknie; 5,6% pod maksimum 3 mies.; wycena ze screenera pusta (C/Z, C/WK b.d.); płynność 24 mln zł/10 sesji.",
+   "konsensus_tv": {
+    "n": 6,
+    "buy": 4,
+    "hold": 2,
+    "sell": 0,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Strong Buy",
+    "score": 1.33,
+    "cel_sredni": null,
+    "cel_surowy_tv": 2.68,
+    "test_skali": 0.29,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Strong Buy",
+     "score": 1.33,
+     "n": 6
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": null,
+    "price_book_fq": null,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": 2.15,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 24.4,
+   "earnings_release_next_date_tv": "2027-03-31",
+   "tv_perf": {
+    "Perf.W": 2.95,
+    "Perf.1M": -5.07
+   },
+   "kurs_d0": 9.296,
+   "sma50_tv": 9.21,
+   "sma200_tv": 9.55,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 13
+  },
+  {
+   "rank": 14,
+   "ticker": "KRUK",
+   "score": 47.3,
+   "p": 0.49,
+   "waga_wig20_pct": 1.13,
+   "rel5_pp": -0.37,
+   "rel20_pp": -4.38,
+   "pts": {
+    "momentum": 8.8,
+    "katalizatory": 10,
+    "makro": 7,
+    "dm": 10.5,
+    "rewizje": 3,
+    "przeplywy": 4,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 8.8/25 (rel5 −0,37, rel20 −4,38 p.p.); KAT 17.11 ustalenie praw do odsetek i 20.11 wypłata (Catalyst) — bez wpływu; raport 4.03.2027 → 10; MAKRO wysokie stopy (3,75%, jastrzębia RPP) i rentowności 6,3% podnoszą koszt finansowania, ale sprzyjają podaży portfeli; złoty słabszy (portfele zagraniczne) (7); DM +3 Oddo BHF „powyżej rynku” 423 zł (21.10, w oknie) → 10,5; REW Q3 (28.10) poniżej oczekiwań (W12/W13: 3), konsensus TV Strong Buy 1,07 (6/0/0, n=7, bez zmiany) → 3; PRZ brak danych; wolumen 13.11 0,88×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 7,2, C/WK 1,13, EV/EBITDA 8,2, DY 5,94% → 4.",
+   "teza": "Z 16. na 14. — wychodzi z BOTTOM5 mimo alfy −2,35 p.p. w W13 (teza SHORT trafiona): momentum poprawiło się na tyle (rel5 −0,37 vs −0,22 → ranga wyżej), że Pekao i Żabka spadły niżej; Oddo BHF (+3) i najniższe C/Z (7,2) poza sektorem paliwowym.",
+   "ryzyko": "24,7% pod maksimum 3 mies. — trend spadkowy od wyników Q3 trwa; rel20 −4,38; płynność 20,6 mln zł/10 sesji (najniższa w uniwersum); 16,9% pod EMA200.",
+   "konsensus_tv": {
+    "n": 7,
+    "buy": 6,
+    "hold": 0,
+    "sell": 0,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Strong Buy",
+    "score": 1.07,
+    "cel_sredni": null,
+    "cel_surowy_tv": 120.65,
+    "test_skali": 0.36,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Strong Buy",
+     "score": 1.07,
+     "n": 7
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 7.24,
+    "price_book_fq": 1.13,
+    "enterprise_value_ebitda_ttm": 8.24,
+    "dividends_yield": 5.94,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 20.6,
+   "earnings_release_next_date_tv": "2027-03-04",
+   "tv_perf": {
+    "Perf.W": 2.0,
+    "Perf.1M": -0.77
+   },
+   "kurs_d0": 336.6,
+   "sma50_tv": 362.21,
+   "sma200_tv": 419.91,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 16
+  },
+  {
+   "rank": 15,
+   "ticker": "ERSTEPL",
+   "score": 45.1,
+   "p": 0.48,
+   "waga_wig20_pct": 5.58,
+   "rel5_pp": -0.39,
+   "rel20_pp": 0.56,
+   "pts": {
+    "momentum": 9.6,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 5,
+    "wycena": 3
+   },
+   "uzasadnienie": "MOM 9.6/25 (rel5 −0,39, rel20 +0,56 p.p.); KAT koniec zapisów w wezwaniu Erste Group (713,60 zł) 2.12 poza oknem; 13.11 NSZZ Solidarność żąda deklaracji Erste ws. zatrudnienia — bez rangi → 10; MAKRO banki (jak wyżej), ale kurs 800 zł trzymany powyżej ceny wezwania (6); DM Kepler „trzymaj” (15.10) neutralne → 7,5; REW konsensus TV Buy 2,00 (1/6/1, n=8, Δ +0,12 poniżej progu) → 4; PRZ wezwanie do 75% (free float ≥25%) — odpływ akcji z rynku po 7.12 (poza oknem); KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 5; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 14,8, C/WK 2,48, DY 6,25% → 3.",
+   "teza": "Z 10. na 15.: alfa −1,59 p.p. w W13 (+2,46% przy rynku +4,04%) — kurs 800 zł, 12% nad ceną wezwania 713,60, porusza się wolniej od sektora; bez momentum i bez sygnału DM.",
+   "ryzyko": "Wezwanie ogranicza płynność do 2.12, a cena rynkowa 12% nad ceną wezwania zakłada podwyżkę, której Erste nie zapowiedziało; 6 „trzymaj” na 8 w TV.",
+   "konsensus_tv": {
+    "n": 8,
+    "buy": 1,
+    "hold": 6,
+    "sell": 1,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 2,
+    "cel_sredni": null,
+    "cel_surowy_tv": 200.54,
+    "test_skali": 0.25,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.88,
+     "n": 8
+    },
+    "delta_score": 0.12,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 14.78,
+    "price_book_fq": 2.48,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": 6.25,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 67.0,
+   "earnings_release_next_date_tv": "2027-02-03",
+   "tv_perf": {
+    "Perf.W": 3.87,
+    "Perf.1M": -0.07
+   },
+   "kurs_d0": 800,
+   "sma50_tv": 775.25,
+   "sma200_tv": 670.1,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 10
+  },
+  {
+   "rank": 16,
+   "ticker": "PEKAO",
+   "score": 43.6,
+   "p": 0.47,
+   "waga_wig20_pct": 7.94,
+   "rel5_pp": -1.29,
+   "rel20_pp": -0.58,
+   "pts": {
+    "momentum": 6.1,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 6,
+    "przeplywy": 4,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 6.1/25 (rel5 −1,29, rel20 −0,58 p.p. — najsłabszy bank w uniwersum); KAT NWZ 19.11 10:00 (wynagrodzenia zarządu/RN, polityka równowagi płci — Kalendarium GPW/PAP 13.11) bez znaczenia wynikowego → wkład 0; raport 4.03.2027 → 10; MAKRO S&P 9.11 obniżył perspektywę ratingu Pekao do negatywnej (pochodna ratingu Polski; A−/A-2 potwierdzone); reszta tła bankowego jak wyżej (6); DM brak sygnału w oknie → 7,5; REW Q3 (29.10) znany, konsensus TV Buy 1,73 (4/7/1, n=13, Δ +0,08 poniżej progu — lekkie pogorszenie) → 6; PRZ brak danych; wolumen 13.11 0,94× przy −0,52%; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 11,5, C/WK 2,09, DY 7,40% (najwyższa w uniwersum) → 4.",
+   "teza": "Z 14. do BOTTOM5 (16): jedyny bank z ujemnym rel5 (−1,29) i rel20 (−0,58) w tygodniu, w którym WIG-Banki zrobił +4,08%; perspektywa S&P obniżona 9.11; brak sygnału DM; kurs pod SMA50 (267,1 vs 267,7) — relatywna słabość w mocnym sektorze.",
+   "ryzyko": "DY 7,4% i C/Z 11,5 przyciągają kapitał dywidendowy; 6,6% pod maksimum 3 mies. — odbicie „catch-up” do sektora jest typowe; waga 7,9% w WIG20.",
+   "konsensus_tv": {
+    "n": 13,
+    "buy": 4,
+    "hold": 7,
+    "sell": 1,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 1.73,
+    "cel_sredni": null,
+    "cel_surowy_tv": 73.74,
+    "test_skali": 0.28,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.65,
+     "n": 13
+    },
+    "delta_score": 0.08,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 11.52,
+    "price_book_fq": 2.09,
+    "enterprise_value_ebitda_ttm": null,
+    "dividends_yield": 7.4,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 162.8,
+   "earnings_release_next_date_tv": "2027-03-04",
+   "tv_perf": {
+    "Perf.W": 2.73,
+    "Perf.1M": 0.6
+   },
+   "kurs_d0": 267.1,
+   "sma50_tv": 267.69,
+   "sma200_tv": 243.16,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 14
+  },
+  {
+   "rank": 17,
+   "ticker": "ZABKA",
+   "score": 40.3,
+   "p": 0.45,
+   "waga_wig20_pct": 2.97,
+   "rel5_pp": -1.9,
+   "rel20_pp": -1.89,
+   "pts": {
+    "momentum": 4.8,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 5,
+    "przeplywy": 6,
+    "wycena": 1
+   },
+   "uzasadnienie": "MOM 4.8/25 (rel5 −1,90, rel20 −1,89 p.p. — kurs 31,82 „przyspawany” do ceny wezwania 32,00); KAT zapisy w wezwaniu Couche-Tard (32,00 zł) do 2.12 poza oknem; decyzja UOKiK (ostatni warunek) oczekiwana do 2.12 — data nieznana, bez punktów → 10; MAKRO konsumpcja (CPI 3,5%, bazowa <3%) bez znaczenia dla kursu zakotwiczonego w wezwaniu (6); DM brak pokrycia w oknie → 7,5; REW konsensus TV Buy 1,68 (3/7/0, n=11 — spadek n z 14, bez zmiany oceny) → 5; PRZ akcjonariusze z 57,2% zobowiązani nieodwołalnie; kurs trzymany arbitrażem wezwania (W13: 6) → 6; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11); WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 23,5, C/WK 11,6, EV/EBITDA 9,0, DY 1,67% → 1.",
+   "teza": "Z 12. do BOTTOM5 (17) jako zakład strukturalny: kurs przyspawany do ceny wezwania 32,00 zł (zakres 3 mies. 31,25–31,88) oznacza alfę ≈ −(zwrot WIG20) — w tygodniu rekordów indeksu (+4,04%) dało to −3,92 p.p., najgorszą alfę w uniwersum poza KGHM; squeeze-out i delisting po 2.12.",
+   "ryzyko": "Jeśli WIG20 spadnie, Żabka „pobije” indeks stojąc w miejscu — teza SHORT działa tylko w rosnącym rynku; ryzyko podniesienia ceny wezwania (Couche-Tard ma 57,2% zobowiązań — mało prawdopodobne); zdarzenie UOKiK może przyjść w oknie.",
+   "konsensus_tv": {
+    "n": 11,
+    "buy": 3,
+    "hold": 7,
+    "sell": 0,
+    "overweight": 1,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 1.68,
+    "cel_sredni": null,
+    "cel_surowy_tv": 8.17,
+    "test_skali": 0.26,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.68,
+     "n": 14
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 23.53,
+    "price_book_fq": 11.62,
+    "enterprise_value_ebitda_ttm": 9.03,
+    "dividends_yield": 1.67,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 47.5,
+   "earnings_release_next_date_tv": "2027-03-25",
+   "tv_perf": {
+    "Perf.W": 0.51,
+    "Perf.1M": 0.47
+   },
+   "kurs_d0": 31.82,
+   "sma50_tv": 31.65,
+   "sma200_tv": 27.08,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 12
+  },
+  {
+   "rank": 18,
+   "ticker": "DINOPL",
+   "score": 37.8,
+   "p": 0.44,
+   "waga_wig20_pct": 3.39,
+   "rel5_pp": -4.83,
+   "rel20_pp": 1.41,
+   "pts": {
+    "momentum": 5.3,
+    "katalizatory": 10,
+    "makro": 6,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 4,
+    "wycena": 1
+   },
+   "uzasadnienie": "MOM 5.3/25 (rel5 −4,83, rel20 +1,41 p.p. — po −6,15% 6.11 i mimo +3,66% w W13); KAT brak zdarzeń spółki do 27.11 (raport roczny 5.03.2027) → 10; MAKRO sprzedaż detaliczna X (GUS 24.11 9:30 wg TV — termin niepotwierdzony), CPI 3,5%, ale LFL +0,1% w Q3 (6); DM brak sygnału w oknie (DM BOŚ „kupuj” 40,10 z 5.08 poza oknem) → 7,5; REW Q3 5.11 zgodny z konsensusem (483,0 vs 484,5 mln zł), zarząd „analizuje dywidendę”; konsensus TV Buy 1,91 (5/8/3, n=17, Δ +0,06 poniżej progu — lekkie pogorszenie) → 4; PRZ brak danych; wolumen 13.11 0,83× przy +2,51% bez komunikatu; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 24,3, C/WK 3,86, EV/EBITDA 14,2, DY brak → 1.",
+   "teza": "BOTTOM5 bez zmian (17 → 18): rel5 −4,83 p.p. (druga najgorsza w uniwersum) po wynikach „zgodnych” z konsensusem przy LFL +0,1%, bez katalizatora do marca i z najwyższą wyceną w handlu (C/Z 24); w W13 alfa −0,38 — teza trafiona minimalnie.",
+   "ryzyko": "Kurs odbił +3,66% w W13 (13.11 zamknięcie na maksimum dnia bez komunikatu) i stanął 0,34 p.p. pod progiem REDUCE poprzedniego okna — momentum krótkie odwraca się; zapowiedź dywidendy (6.11) może przerodzić się w rekomendację zarządu; 3,1% pod maksimum 3 mies.",
+   "konsensus_tv": {
+    "n": 17,
+    "buy": 5,
+    "hold": 8,
+    "sell": 3,
+    "overweight": 0,
+    "underweight": 1,
+    "ocena": "Buy",
+    "score": 1.91,
+    "cel_sredni": null,
+    "cel_surowy_tv": 8.96,
+    "test_skali": 0.23,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.85,
+     "n": 17
+    },
+    "delta_score": 0.06,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 24.26,
+    "price_book_fq": 3.86,
+    "enterprise_value_ebitda_ttm": 14.19,
+    "dividends_yield": null,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 151.1,
+   "earnings_release_next_date_tv": "2027-03-05",
+   "tv_perf": {
+    "Perf.W": -0.59,
+    "Perf.1M": 6.51
+   },
+   "kurs_d0": 38.77,
+   "sma50_tv": 36.63,
+   "sma200_tv": 34.44,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 17
+  },
+  {
+   "rank": 19,
+   "ticker": "PKNORLEN",
+   "score": 36.5,
+   "p": 0.43,
+   "waga_wig20_pct": 14.69,
+   "rel5_pp": -8.99,
+   "rel20_pp": -17.28,
+   "pts": {
+    "momentum": 0.0,
+    "katalizatory": 10,
+    "makro": 5,
+    "dm": 10.5,
+    "rewizje": 3,
+    "przeplywy": 4,
+    "wycena": 4
+   },
+   "uzasadnienie": "MOM 0.0/25 (rel5 −8,99, rel20 −17,28 p.p. — ostatni w uniwersum trzeci tydzień z rzędu); KAT brak raportu w oknie (kalendarium strefainwestorow.pl „19.11” nieaktualne — Q3 opublikowany 5.11; TV 25.02.2027); decyzja prezydenta ws. CIT 30% dla paliw od 2027 do 26.11 (21 dni od 5.11) — data nieznana, bez punktów → 10; MAKRO Brent 95,84 (−2,5% w tygodniu, ale odbicie z 91,5 od 12.11; Trump o Iranie), litewski windfall tax („głównym płatnikiem Orlen Lietuva”, do 70 mln EUR w 2027; Motyka 13.11: „nadzwyczajne straty”), wyrok SN Norwegii 13.11 (Tyrving 11,9%, Yggdrasil 12%), wypowiedzenie umowy LNG z QatarEnergy (10.11), ceny paliw na stacjach spadają (e-petrol) (5); DM +3 Trigon Hold → Buy 174 zł (28.10) i lista długa DM BOŚ (19.10) → 10,5; REW Q3 5.11 zysk netto 25% pod konsensusem (znane); konsensus TV Buy 1,77 (4/5/1, n=11, Δ +0,09 poniżej progu — pogorszenie) → 3; PRZ brak danych; wolumen 13.11 1,01×; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 6,2, C/WK 1,03, EV/EBITDA 2,6, DY 6,10% → 4.",
+   "teza": "BOTTOM5 trzeci tydzień (19 → 19): momentum 0/25 (rel20 −17,28 p.p.), trzy nowe obciążenia regulacyjne w tygodniu (windfall tax na Litwie, wyrok SN Norwegii, umowa LNG), CIT 30% u prezydenta; alfa −3,33 p.p. w W13 (deklaracja trafiona); zdarzenie wynikowe dopiero 25.02.2027.",
+   "ryzyko": "20% pod maksimum 3 mies. przy C/WK 1,03, DY 6,1% i Trigon „kupuj” 174 zł — odbicie techniczne (12.11 +3,39%) powtarzalne przy wzroście ropy; 14,7% wagi w WIG20 tłumi alfę relatywną; podpis prezydenta pod CIT 30% w dużej mierze w cenie.",
+   "konsensus_tv": {
+    "n": 11,
+    "buy": 4,
+    "hold": 5,
+    "sell": 1,
+    "overweight": 0,
+    "underweight": 1,
+    "ocena": "Buy",
+    "score": 1.77,
+    "cel_sredni": null,
+    "cel_surowy_tv": 39.78,
+    "test_skali": 0.3,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 1.68,
+     "n": 11
+    },
+    "delta_score": 0.09,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 6.22,
+    "price_book_fq": 1.03,
+    "enterprise_value_ebitda_ttm": 2.55,
+    "dividends_yield": 6.1,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 219.8,
+   "earnings_release_next_date_tv": "2027-02-25",
+   "tv_perf": {
+    "Perf.W": -5.93,
+    "Perf.1M": -15.6
+   },
+   "kurs_d0": 131.06,
+   "sma50_tv": 149.92,
+   "sma200_tv": 138.78,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 19
+  },
+  {
+   "rank": 20,
+   "ticker": "KGHM",
+   "score": 34.7,
+   "p": 0.42,
+   "waga_wig20_pct": 7.14,
+   "rel5_pp": -3.48,
+   "rel20_pp": -17.02,
+   "pts": {
+    "momentum": 2.2,
+    "katalizatory": 10,
+    "makro": 4,
+    "dm": 7.5,
+    "rewizje": 4,
+    "przeplywy": 4,
+    "wycena": 3
+   },
+   "uzasadnienie": "MOM 2.2/25 (rel5 −3,48, rel20 −17,02 p.p.); KAT raport Q3 18.11 17:15 (D+3; kalendarium strefainwestorow.pl + kalendarz inwestora + TV) → reakcja 19.11 (D+4) — bez konsensusu PAP w depeszach, kierunek nieznany → wkład 0 → 10; MAKRO miedź LME 3M 13 588 USD/t (12.11, −7,0% m/m; 13.11 w sesji 13 455–13 617 — najniżej od połowy lipca, piąty tygodniowy spadek z rzędu), COMEX −2,36% w tygodniu, srebro −5,43% (oddane całe odbicie z W12); Goldman 13.11: średnia 15 400 USD/t w 2027 z ryzykiem spadku; USD/PLN 4,00 (+1,4%) łagodzi (4); DM brak sygnału w oknie → 7,5; REW Q2 (19.08) zgodny; konsensus TV Buy 2,15 (3/5/5, n=13, bez zmiany) → 4; PRZ brak danych; wolumen 13.11 0,98× przy −2,92% (największy w tygodniu) i zamknięcie na minimum dnia; KNF poza zasięgiem (rss.knf.gov.pl błąd aplikacji 14.11) → 4; WYC wskaźniki: TradingView screener, odczyt 2026-11-14 07:47 UTC — C/Z 6,35, C/WK 1,39, EV/EBITDA 5,3, DY 0,54% → 3.",
+   "teza": "Ostatnie miejsce (20 → 20): najsłabsza spółka WIG20 w piątek (−2,92%, zamknięcie na minimum), miedź w piątym tygodniu spadków i srebro −5,4%, rel20 −17,02 p.p.; raport Q3 18.11 po sesji (D+3) to jedyne twarde zdarzenie w oknie — bez konsensusu w depeszach, więc bez punktów; w W13 alfa −4,33 p.p. (teza trafiona po REDUCE, który kosztował 2,53 p.p. na nodze).",
+   "ryzyko": "Raport 18.11 może zaskoczyć w obie strony (Q2 skoryg. EBITDA 3 734 vs 3 699 mln zł kons.); 28% pod maksimum 3 mies. i 1,5% nad minimum — odbicie techniczne jak 9.11 (+4,55%) uruchamia REDUCE; Goldman widzi 15 400 USD/t w 2027; słabszy złoty wspiera przychody w USD.",
+   "konsensus_tv": {
+    "n": 13,
+    "buy": 3,
+    "hold": 5,
+    "sell": 5,
+    "overweight": 0,
+    "underweight": 0,
+    "ocena": "Buy",
+    "score": 2.15,
+    "cel_sredni": null,
+    "cel_surowy_tv": 81.46,
+    "test_skali": 0.3,
+    "data": "2026-11-14",
+    "zrodlo": "TradingView MCP get-forecasts",
+    "odczyt_utc": "2026-11-14 07:49-07:54",
+    "poprzednio_W13": {
+     "ocena": "Buy",
+     "score": 2.15,
+     "n": 13
+    },
+    "delta_score": 0.0,
+    "zmiana_ponad_progiem": false
+   },
+   "wycena_tv": {
+    "price_earnings_ttm": 6.35,
+    "price_book_fq": 1.39,
+    "enterprise_value_ebitda_ttm": 5.25,
+    "dividends_yield": 0.54,
+    "odczyt": "2026-11-14 07:47 UTC"
+   },
+   "plynnosc_mln_zl_10d": 223.5,
+   "earnings_release_next_date_tv": "2026-11-18",
+   "tv_perf": {
+    "Perf.W": 1.1,
+    "Perf.1M": -20.64
+   },
+   "kurs_d0": 276,
+   "sma50_tv": 322.4,
+   "sma200_tv": 322.54,
+   "momentum_flagi": [],
+   "poprzednio_W13_rank": 20
+  }
+ ],
+ "katalizatory": [
+  {
+   "ticker": "PGE",
+   "data": "2026-11-16",
+   "dn": 1,
+   "opis": "Pierwsza sesja po szacunkach Q3 2026 (ESPI 13.11 po sesji; PAP/strefainwestorow 18:30): zysk netto j.d. ok. 3,0 mld zł vs konsensus PAP 1,3 mld, EBITDA raportowana 4,61 vs 3,2 mld — pozytywna niespodzianka nagłówkowa; zastrzeżenie: +1,73 mld zł zdarzeń jednorazowych (rezerwa rekultywacyjna +1,67 mld niegotówkowo, ugoda Turów +299 mln, opłaty wodne −245 mln), EBITDA powtarzalna ok. 2,89 mld PONIŻEJ konsensusu. Precedens Tauron (szacunki 2.11 → +2,6% w 4 sesje). Puls 14.11: REDUCE (NEWS) nogi SHORT W13 — wygasa rotacją.",
+   "wklad_pkt": 2.0,
+   "zrodlo": "PAP Biznes/strefainwestorow.pl 13.11 18:30 „PGE szacuje zysk netto j.d. w III kw. '26 na 3 mld zł, powyżej oczekiwań (opis)”"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-16",
+   "dn": 1,
+   "opis": "10:01 rotacja koszyka W14 na rachunku (/run 08:01 UTC). 14:00 NBP inflacja bazowa X (TV 13:00 UTC, importance −1; prognozy ING/Pekao/mBank 2,9%, poprz. 3,1% — PAP 13.11) — termin TYLKO z TV i finwire, nbp.pl poza allowlistą → niepotwierdzony (KALENDARZ_NIEPOTWIERDZONY). 11:00 Eurostat produkcja przemysłowa IX (TV 10:00 UTC). SKRM: projekt ustawy o cenie maksymalnej gazu 2027 (PAP 10.11, 13.11).",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar 14–27.11 (331 zdarzeń PL/US/EU, min_importance −1, odczyt 2026-11-14 07:48 UTC); PAP 13.11"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-17",
+   "dn": 2,
+   "opis": "14:30 sprzedaż detaliczna USA X (TV 13:30 UTC, importance 1; prog. +0,2% m/m, poprz. +0,8%); 14:30 NY Empire State (TV); 11:00 ZEW (TV). Po sesji USA wyniki Nvidii (bankier.pl tytuł kalendarza 16–22.11; Ipopema 6.11) — tło dla CD Projekt i Allegro po −11% Nvidii w tygodniu (rezygnacja Huanga 12.11).",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-11-14 07:48 UTC; bankier.pl (tytuł, treść 403)"
+  },
+  {
+   "ticker": "ALLEGRO",
+   "data": "2026-11-18",
+   "dn": 3,
+   "opis": "ZWZ 14:00 i NWZ 14:30 (Kalendarium rynku kapitałowego GPW 2026-11-13, PAP): umorzenie 17 879 330 akcji skupionych w Fazie I (800 mln zł, śr. 44,74 zł), podniesienie maksymalnej ceny skupu w Fazie II do 65,00 zł (kurs D0 66,62 — powyżej proponowanego limitu), powołanie K. Ostap-Tomann na dyrektora wykonawczego. Zdarzenie korporacyjne bez kierunku → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "PAP 13.11 Kalendarium GPW; komunikat zarządu Allegro.eu z 28.09.2026 (snippety bankier/biznesradar RB 51/2026)"
+  },
+  {
+   "ticker": "KGHM",
+   "data": "2026-11-18",
+   "dn": 3,
+   "opis": "Raport Q3 2026 18.11 17:15 (po sesji → reakcja 19.11 = D+4, w oknie wyniku). Bez konsensusu PAP Biznes w depeszach do 13.11 (odniesienie: Q2 skoryg. EBITDA 3 734 vs 3 699 mln zł kons.); miedź LME −7% m/m. Kierunek nieznany → wkład 0 (zdarzenie twarde w oknie — deklaracja 2).",
+   "wklad_pkt": 0.0,
+   "zrodlo": "kalendarium publikacji raportów WIG20 strefainwestorow.pl (odczyt 14.11); kalendarz inwestora KGHM (W13); TV earnings_release_next_date 2026-11-18"
+  },
+  {
+   "ticker": "TAURONPE",
+   "data": "2026-11-18",
+   "dn": 3,
+   "opis": "Pełny raport Q3 2026 18.11 (kalendarium strefainwestorow.pl + komunikat spółki z 2.11; TV podaje 31.03.2027 = raport roczny) po szacunkach z 2.11 (EBITDA 1 821 mln zł vs konsensus PAP 1 565,4, +16%) — zdarzenie znane, pełny raport wkład ≤1 → +0,5.",
+   "wklad_pkt": 0.5,
+   "zrodlo": "strefainwestorow.pl kalendarium WIG20; ESPI Tauron 2.11 (xyz.pl snippet)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-18",
+   "dn": 3,
+   "opis": "11:00 Eurostat HICP X final (TV 10:00 UTC; prog. 4,0% r/r, bazowa 2,5%); 14:30 USA housing starts/pozwolenia (TV, importance 1); 20:00 protokół FOMC z 27–28.10 (kalendarz federalreserve.gov — snippet WebSearch; w odpowiedzi TV brak wpisu) — po CPI USA X +0,4% m/m rynek wycenia podwyżkę Fed w grudniu (PAP 13.11). GUS produkcja przemysłowa/PPI/wynagrodzenia X: PAP kalendarium 18.11 vs finwire 19.11 vs TV 23.11 08:30 UTC → KONFLIKT ŹRÓDEŁ, termin b.d. (KALENDARZ_NIEPOTWIERDZONY).",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-11-14 07:48 UTC; federalreserve.gov (snippet); research 14.11"
+  },
+  {
+   "ticker": "PZU",
+   "data": "2026-11-19",
+   "dn": 4,
+   "opis": "Raport Q3 2026 19.11 (kalendarium strefainwestorow.pl + kalendarz inwestora PZU + TV; godzina b.d. — w 2025 raport 19.11, konferencja 20.11). Bez konsensusu PAP w depeszach (Q2: 1 647 vs 1 470 mln zł, +12%). S&P 13.11 potwierdził A− z perspektywą pozytywną. Kierunek nieznany → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "strefainwestorow.pl kalendarium WIG20 (odczyt 14.11); TV earnings_release_next_date 2026-11-19; PAP 13.11 (S&P)"
+  },
+  {
+   "ticker": "PEKAO",
+   "data": "2026-11-19",
+   "dn": 4,
+   "opis": "NWZ 10:00 — zmiana uchwał ZWZ dot. wynagrodzeń zarządu i RN, polityka równowagi płci (Kalendarium GPW/PAP 13.11). Bez znaczenia wynikowego → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "PAP 13.11 Kalendarium rynku kapitałowego GPW 2026-11-13"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-19",
+   "dn": 4,
+   "opis": "14:30 USA wnioski o zasiłek (TV 13:30 UTC; prog. 196 tys.), Philly Fed (TV). Koniec okna wyniku W14 = 20.11 (D+5): 16:00 Michigan final (TV 15:00 UTC); GUS stopa bezrobocia X — PAP kalendarium 20.11 (snippet) vs TV 25.11 08:30 UTC → konflikt, b.d.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-11-14 07:48 UTC; research 14.11"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-23",
+   "dn": 6,
+   "opis": "9:30 GUS (wg TV 08:30 UTC): produkcja przemysłowa X (poprz. +4,6% r/r), PPI (poprz. 6,1%), wynagrodzenia (poprz. 5,9%), zatrudnienie — termin sprzeczny z PAP (18.11) i finwire (19.11) → b.d.; 10:00 PMI flash strefy euro i 15:45 USA (TV; S&P Global — organizator niedostępny). D+6: poza oknem wyniku, w oknie katalizatorów.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-11-14 07:48 UTC"
+  },
+  {
+   "ticker": "PGE",
+   "data": "2026-11-24",
+   "dn": 7,
+   "opis": "Pełny raport Q3 2026 24.11 (depesza PAP 13.11 + kalendarium strefainwestorow.pl) po szacunkach z 13.11 — zdarzenie znane, pełny raport wkład ≤1, D+6…D+10 połowa → +0,5.",
+   "wklad_pkt": 0.5,
+   "zrodlo": "PAP 13.11; strefainwestorow.pl kalendarium WIG20"
+  },
+  {
+   "ticker": "CDPROJEKT",
+   "data": "2026-11-24",
+   "dn": 7,
+   "opis": "Raport Q3 2026 24.11 (kalendarium strefainwestorow.pl + TV; godzina b.d., w 2025 po sesji). Bez konsensusu PAP w depeszach do 13.11 (Q2: zysk 142,9 vs 99,3 mln zł kons., +44%). D+7 → co najwyżej połowa wkładu, kierunek nieznany → 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "strefainwestorow.pl kalendarium WIG20 (odczyt 14.11); TV earnings_release_next_date 2026-11-24"
+  },
+  {
+   "ticker": "ALIOR",
+   "data": "2026-11-24",
+   "dn": 7,
+   "opis": "NWZ 10:00 zwołane na wniosek PZU — powoływanie/odwoływanie członków Rady Nadzorczej (komunikat spółki 27.10 wg money.pl; brak dostępu do ESPI wprost). Zdarzenie korporacyjne bez kierunku → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "money.pl komunikat 27.10.2026 (snippet WebSearch)"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-24",
+   "dn": 7,
+   "opis": "9:30 GUS sprzedaż detaliczna X (TV 08:30 UTC; poprz. +3,3% r/r realnie); 14:00 NBP podaż pieniądza M3 (TV; poprz. 12,5%) — terminy tylko z TV (stat.gov.pl/nbp.pl poza allowlistą) → niepotwierdzone.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-11-14 07:48 UTC"
+  },
+  {
+   "ticker": "MAKRO",
+   "data": "2026-11-25",
+   "dn": 8,
+   "opis": "14:30 USA: PCE X (bazowy prog. b.d., poprz. +0,3% m/m), PKB III kw. 2. szacunek (poprz. 1,5%), zamówienia na dobra trwałe (TV 13:30 UTC, importance 1); 9:30 GUS stopa bezrobocia X wg TV (poprz. 5,8%). 26.11 Święto Dziękczynienia — rynki USA zamknięte (czwarty czwartek listopada; w odpowiedzi TV brak wpisu Holidays US), 27.11 skrócona sesja.",
+   "wklad_pkt": null,
+   "zrodlo": "TradingView MCP get-economic-calendar, odczyt 2026-11-14 07:48 UTC"
+  },
+  {
+   "ticker": "PKNORLEN",
+   "data": "2026-11-26",
+   "dn": 9,
+   "opis": "Ostatni dzień 21-dniowego terminu prezydenta na ustawę o wsparciu przemysłu energochłonnego z CIT 30% dla paliw i energetyki od 2027 (Sejm przyjął poprawki Senatu 5.11; na 14.11 brak informacji o podpisie, wecie lub skierowaniu do TK — PAP skrót 13.11 wymienia podpisy pod innymi ustawami). Data decyzji nieznana → bez punktów; dotyczy też PGE i Tauronu.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "research 14.11 (WebSearch; PAP skrót 13.11 21:00)"
+  },
+  {
+   "ticker": "MODIVO",
+   "data": "2026-11-27",
+   "dn": 10,
+   "opis": "Pełny raport za III kw. 2026/27 27.11 (kalendarium strefainwestorow.pl + TV) — wstępne wyniki znane od 5.11 (EBITDA 372 vs 380,1 mln zł kons.; skoryg. 450 mln) → zdarzenie znane, D+10 → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "strefainwestorow.pl kalendarium WIG20; TV earnings_release_next_date 2026-11-27"
+  },
+  {
+   "ticker": "ZABKA",
+   "data": "2026-12-02",
+   "dn": 13,
+   "opis": "Koniec zapisów w wezwaniu Couche-Tard (32,00 zł; 57,2% akcji zobowiązanych nieodwołalnie; 2 z 3 warunków spełnione, pozostaje UOKiK — decyzja oczekiwana do 2.12, może przyjść w oknie, data nieznana) poza oknem → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "PAP/strefainwestorow.pl 13.11 „Wezwanie na akcje Żabka Group — zbliża się ważny termin”"
+  },
+  {
+   "ticker": "ERSTEPL",
+   "data": "2026-12-02",
+   "dn": 13,
+   "opis": "Koniec zapisów w wezwaniu Erste Group (713,60 zł; transakcja 7.12, rozliczenie 9.12) poza oknem → wkład 0; 13.11 NSZZ Solidarność żąda deklaracji Erste ws. zatrudnienia (PAP skrót 21:00).",
+   "wklad_pkt": 0.0,
+   "zrodlo": "PAP 13.11; W13"
+  },
+  {
+   "ticker": "LPP",
+   "data": "2026-12-03",
+   "dn": 14,
+   "opis": "Raport Q3 3.12 poza oknem (kalendarium strefainwestorow.pl); wstępne dane sprzedażowe Q3 z 4.11 znane → wkład 0.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "strefainwestorow.pl kalendarium WIG20"
+  },
+  {
+   "ticker": "PEPCO",
+   "data": "2026-12-09",
+   "dn": 18,
+   "opis": "Wstępne wyniki FY26 9.12 poza oknem (pepcogroup.eu; TV 2026-12-09) → wkład 0; I etap skupu (do 50 mln EUR) trwa do 31.12.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "pepcogroup.eu (snippet); TV earnings_release_next_date"
+  },
+  {
+   "ticker": "BUDIMEX",
+   "data": null,
+   "dn": null,
+   "opis": "Umowa na ZOE Łódź (oferta wybrana 6.11: 712,6 mln zł + 109,2 mln EUR netto) — podpisanie nieznalezione do 14.11, data nieznana → bez punktów; raport 24.02.2027 (TV) → 10/20.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "research 14.11 (WebSearch, PAP 9–13.11 bez komunikatu Budimeksu)"
+  },
+  {
+   "ticker": "KETY",
+   "data": null,
+   "dn": null,
+   "opis": "Zgoda UOKiK na przejęcie Grupy Metra (do 450 mln EUR) — nieznaleziona, zamknięcie planowane do I kw. 2027; raport 25.03.2027 (TV) → 10/20.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "PAP 15.09.2026; research 14.11"
+  },
+  {
+   "ticker": "KRUK",
+   "data": "2026-11-17",
+   "dn": 2,
+   "opis": "Ustalenie praw do odsetek obligacji (17.11) i wypłata (20.11, Catalyst) — bez wpływu na akcje; raport 4.03.2027 → 10/20.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "PAP 13.11 (kalendarz Catalyst Michael/Ström)"
+  },
+  {
+   "ticker": "MBANK",
+   "data": "2027-02-04",
+   "dn": null,
+   "opis": "Raport roczny 4.02.2027 (TV); Q3 opublikowany 28.10 — brak datowanego zdarzenia w D+1…D+10 → 10/20.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "TV earnings_release_next_date"
+  },
+  {
+   "ticker": "PKOBP",
+   "data": "2027-03-05",
+   "dn": null,
+   "opis": "Następny raport 5.03.2027 (TV); Q3 5.11 (+4,1% vs konsensus PAP) znane; 18/20.11 odsetki obligacji bez wpływu → 10/20.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "TV earnings_release_next_date; PAP 13.11"
+  },
+  {
+   "ticker": "DINOPL",
+   "data": "2027-03-05",
+   "dn": null,
+   "opis": "Raport roczny 5.03.2027 (TV); Q3 5.11 zgodny z konsensusem (483,0 vs 484,5 mln zł) znane; brak zdarzeń do 27.11 → 10/20.",
+   "wklad_pkt": 0.0,
+   "zrodlo": "TV earnings_release_next_date; W13"
+  }
+ ]
+}
