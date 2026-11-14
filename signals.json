@@ -48,9 +48,18 @@
       "price_before": 289.4,
       "move_from_d0_pct": 4.55,
       "trigger": "PRICE_4_8"
+    },
+    {
+      "ticker": "PGE",
+      "action": "REDUCE",
+      "date": "2026-11-14",
+      "reason": "NEWS (noga SHORT): szacunki PGE za III kw. 2026 opublikowane 13.11.2026 po sesji (ESPI; depesza PAP/strefainwestorow 18:30 → reakcja od sesji 16.11 = D+5): zysk netto j.d. ok. 3,0 mld zł (1,34 zł/akcję; skoryg. o odpisy ok. 3,11 mld) wobec konsensusu PAP Biznes 1,3 mld zł, EBITDA raportowana ok. 4,61 mld zł wobec 3,2 mld zł; zastrzeżenie: +1,73 mld zł zdarzeń jednorazowych (zmiana rezerwy rekultywacyjnej +1,67 mld niegotówkowo, ugoda z wykonawcą bloku 7 Turów +299 mln, rezerwa na opłaty wodne −245 mln), EBITDA powtarzalna ok. 2,89 mld zł — poniżej konsensusu 3,2 mld; ekonomiczny dług netto 14,16 mld zł; pełny raport 24.11. Pozytywna niespodzianka nagłówkowa przeciw tezie SHORT (precedens protokołu: Tauron REDUCE 3.11 po szacunkach +16,3% vs konsensus) — istotny news poniżej rangi szoku; od D0 +1,84% (16,045 zł; próg PRICE_4_8 16,385). Pozycja papierowa — rachunek nie shortuje akcji, bot nic nie zleca",
+      "price_before": 16.045,
+      "move_from_d0_pct": 1.84,
+      "trigger": "NEWS"
     }
   ],
-  "last_daily": "2026-11-13",
+  "last_daily": "2026-11-14",
   "d0": {
     "date": "2026-11-06",
     "wig20": 4131.37,
