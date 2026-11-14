@@ -1,18 +1,18 @@
 {
-  "version": "2026-W13",
-  "generated": "2026-11-07",
+  "version": "2026-W14",
+  "generated": "2026-11-14",
   "status": "AKTUALNA",
   "long": [
-    "BUDIMEX",
-    "MODIVO",
     "ALLEGRO",
-    "CDPROJEKT",
-    "ALIOR"
+    "MBANK",
+    "MODIVO",
+    "ALIOR",
+    "PEPCO"
   ],
   "short": [
-    "KRUK",
+    "PEKAO",
+    "ZABKA",
     "DINOPL",
-    "PGE",
     "PKNORLEN",
     "KGHM"
   ],
@@ -39,41 +39,22 @@
     "ZABKA": "ZAB"
   },
   "_instrukcja": "Plik zarzadzany AUTOMATYCZNIE przez bota (/generate). Reczna edycja tylko awaryjnie: version/status/long/short/exclude. Sekcje 'epics' wypelniasz JEDEN raz (/search). status NIEAKTUALNA = bot zamyka wszystko. exclude = lista {ticker, reason} do zamkniecia.",
-  "exclude": [
-    {
-      "ticker": "KGHM",
-      "action": "REDUCE",
-      "date": "2026-11-10",
-      "reason": "PRICE_4_8: zamknięcie 9.11 = 289,40 zł, +4,55% od D0 (276,80) przeciw tezie SHORT (próg REDUCE 287,87 / CLOSE 298,94); odbicie miedzi LME z 3-mies. minimum (13 896,5 USD/t 9.11, 13 937 10.11 rano) przed wynikami Q3 18.11; pozycja papierowa — rachunek nie shortuje akcji",
-      "price_before": 289.4,
-      "move_from_d0_pct": 4.55,
-      "trigger": "PRICE_4_8"
-    },
-    {
-      "ticker": "PGE",
-      "action": "REDUCE",
-      "date": "2026-11-14",
-      "reason": "NEWS (noga SHORT): szacunki PGE za III kw. 2026 opublikowane 13.11.2026 po sesji (ESPI; depesza PAP/strefainwestorow 18:30 → reakcja od sesji 16.11 = D+5): zysk netto j.d. ok. 3,0 mld zł (1,34 zł/akcję; skoryg. o odpisy ok. 3,11 mld) wobec konsensusu PAP Biznes 1,3 mld zł, EBITDA raportowana ok. 4,61 mld zł wobec 3,2 mld zł; zastrzeżenie: +1,73 mld zł zdarzeń jednorazowych (zmiana rezerwy rekultywacyjnej +1,67 mld niegotówkowo, ugoda z wykonawcą bloku 7 Turów +299 mln, rezerwa na opłaty wodne −245 mln), EBITDA powtarzalna ok. 2,89 mld zł — poniżej konsensusu 3,2 mld; ekonomiczny dług netto 14,16 mld zł; pełny raport 24.11. Pozytywna niespodzianka nagłówkowa przeciw tezie SHORT (precedens protokołu: Tauron REDUCE 3.11 po szacunkach +16,3% vs konsensus) — istotny news poniżej rangi szoku; od D0 +1,84% (16,045 zł; próg PRICE_4_8 16,385). Pozycja papierowa — rachunek nie shortuje akcji, bot nic nie zleca",
-      "price_before": 16.045,
-      "move_from_d0_pct": 1.84,
-      "trigger": "NEWS"
-    }
-  ],
+  "exclude": [],
   "last_daily": "2026-11-14",
   "d0": {
-    "date": "2026-11-06",
-    "wig20": 4131.37,
+    "date": "2026-11-13",
+    "wig20": 4298.46,
     "prices": {
-      "BUDIMEX": 739.8,
-      "MODIVO": 102.3,
-      "ALLEGRO": 59.8,
-      "CDPROJEKT": 266.9,
-      "ALIOR": 137.8,
-      "KRUK": 331.0,
-      "DINOPL": 37.4,
-      "PGE": 15.755,
-      "PKNORLEN": 130.14,
-      "KGHM": 276.8
+      "ALLEGRO": 66.62,
+      "MBANK": 1730.5,
+      "MODIVO": 112.5,
+      "ALIOR": 147.55,
+      "PEPCO": 50.92,
+      "PEKAO": 267.1,
+      "ZABKA": 31.82,
+      "DINOPL": 38.77,
+      "PKNORLEN": 131.06,
+      "KGHM": 276
     }
   },
   "history": [
@@ -340,6 +321,30 @@
       ],
       "metoda": "v1.1 (momentum mechaniczne)",
       "benchmark_momentum_pp": -0.06
+    },
+    {
+      "week": "2026-W13",
+      "long_vs_index_pp": 3.2,
+      "long_abs_pct": 7.24,
+      "spread_pp": 5.72,
+      "rozjazd_pp": 2.52,
+      "hit_top": "4/5",
+      "hit_bottom": "5/5",
+      "tactical_pp": null,
+      "managed_pp": 5.22,
+      "reaction_pp": -0.51,
+      "base_rate": 0.45,
+      "spearman": 0.656,
+      "brier": 0.2318,
+      "data_quality": [
+        "KURS_ZRODLO_TV",
+        "KURS_ZRODLO_REZERWA",
+        "KNF_SHORT_NIEDOSTEPNY",
+        "KALENDARZ_NIEPOTWIERDZONY",
+        "OKNO_SKROCONE_D4"
+      ],
+      "metoda": "v1.1 (momentum mechaniczne)",
+      "benchmark_momentum_pp": 1.39
     }
   ],
   "tactical": []
